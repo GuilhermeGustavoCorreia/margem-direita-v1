@@ -2799,10 +2799,10 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1790965562614</Id>
-		<Name><![CDATA[connector100]]></Name>
-		<X>0</X>
-		<Y>0</Y>
+		<Id>1791660000029</Id>
+		<Name><![CDATA[connector_alt005_a]]></Name>
+		<X>530</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2813,31 +2813,86 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>T39</ClassName>
-			<ItemName>delay1</ItemName>
+			<ItemName>encosta_L1K1_fim</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Delay</ClassName>
-			<ItemName>in</ItemName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>T39</ClassName>
-			<ItemName>encosta_L1K1_fim</ItemName>
+			<ItemName>liberar_faixas_circulacao</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>610</X>
-				<Y>400</Y>
+				<X>0</X>
+				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>550</X>
-				<Y>400</Y>
+				<X>0</X>
+				<Y>60</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>60</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1791660000030</Id>
+		<Name><![CDATA[connector_alt005_b]]></Name>
+		<X>580</X>
+		<Y>450</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>T39</ClassName>
+			<ItemName>liberar_faixas_circulacao</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>T39</ClassName>
+			<ItemName>delay1</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>-60</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>-60</Y>
 			</Point>
 		</Points>
 	</Connector>

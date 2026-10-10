@@ -82,3 +82,38 @@ int get_quantidade_vazios()
 return 0;
 /*ALCODEEND*/}
 
+double atualizarFerroviaEProdutoEmAtendimento(Trem trem)
+{/*ALCODESTART::1791662803557*/
+for (int i = 0; i < trem.size(); i++) {
+        Agent carro = trem.getCar(i); // confere o nome exato do método com Ctrl+Espaço
+
+        if (carro instanceof Vagao) {
+            Vagao vagao = (Vagao) carro;
+            ferrovia_em_atendimento = vagao.ferrovia;
+            segmento_em_atendimento = vagao.segmento;
+            return; // achou o primeiro vagão, encerra
+        }
+    }
+
+    traceln("erro: trem não tem nenhum vagão");
+/*ALCODEEND*/}
+
+int _getVagoesVazios()
+{/*ALCODESTART::1791662924046*/
+int vagoes_linhaMar 	= main().getTamanhoDoTrem(loteVazios_linhaMar);
+int vagoes_linhaMoega	= main().getTamanhoDoTrem(loteVazios_linhaMoega);
+
+
+
+return (vagoes_linhaMar + vagoes_linhaMoega);
+
+/*ALCODEEND*/}
+
+int _getVagoesCarregados()
+{/*ALCODESTART::1791663125070*/
+int vagoes_linhaTerra = main().getNumeroDeVagoes(lote_linhaTerra);
+int vagoes_linhaMar   = main().getNumeroDeVagoes(lote_linhaMar);
+
+return (vagoes_linhaTerra + vagoes_linhaMar);
+/*ALCODEEND*/}
+

@@ -4,7 +4,7 @@
 		<Id>1784661717054</Id>
 		<Name><![CDATA[tira10vgs]]></Name>
 		<X>520</X>
-		<Y>950</Y>
+		<Y>1050</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -145,7 +145,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784664137016</Id>
 		<Name><![CDATA[recuaLinhaBomba]]></Name>
 		<X>600</X>
-		<Y>930</Y>
+		<Y>1030</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -208,7 +208,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784667746774</Id>
 		<Name><![CDATA[encosteLinhaMeio]]></Name>
 		<X>80</X>
-		<Y>1180</Y>
+		<Y>1280</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -325,7 +325,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784667748653</Id>
 		<Name><![CDATA[paraEncosteLinhaMeio]]></Name>
 		<X>780</X>
-		<Y>940</Y>
+		<Y>1040</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -379,7 +379,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784720494481</Id>
 		<Name><![CDATA[tira10vgs3]]></Name>
 		<X>500</X>
-		<Y>1190</Y>
+		<Y>1290</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -520,7 +520,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784720548866</Id>
 		<Name><![CDATA[recuaLinhaBomba1]]></Name>
 		<X>600</X>
-		<Y>1170</Y>
+		<Y>1270</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -583,7 +583,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784721094542</Id>
 		<Name><![CDATA[encosteLinhaTerra]]></Name>
 		<X>80</X>
-		<Y>1440</Y>
+		<Y>1540</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -700,7 +700,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784721094570</Id>
 		<Name><![CDATA[encostaLinhaTerraBarracao]]></Name>
 		<X>210</X>
-		<Y>1440</Y>
+		<Y>1540</Y>
 		<Label>
 			<X>-45</X>
 			<Y>-35</Y>
@@ -844,7 +844,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784723065811</Id>
 		<Name><![CDATA[paraEncosteLinhaTerra]]></Name>
 		<X>800</X>
-		<Y>1180</Y>
+		<Y>1280</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -898,7 +898,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784723126967</Id>
 		<Name><![CDATA[encosteLinhaMar]]></Name>
 		<X>80</X>
-		<Y>940</Y>
+		<Y>1040</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -1015,7 +1015,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784737135468</Id>
 		<Name><![CDATA[tira10vgs1]]></Name>
 		<X>400</X>
-		<Y>1450</Y>
+		<Y>1550</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -1156,7 +1156,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784813962074</Id>
 		<Name><![CDATA[tira10vgs2]]></Name>
 		<X>610</X>
-		<Y>1450</Y>
+		<Y>1550</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -1297,7 +1297,7 @@ Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784814042246</Id>
 		<Name><![CDATA[tira4vgs]]></Name>
 		<X>430</X>
-		<Y>1690</Y>
+		<Y>1790</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -1438,7 +1438,7 @@ Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784814090468</Id>
 		<Name><![CDATA[tira3vgs]]></Name>
 		<X>620</X>
-		<Y>1690</Y>
+		<Y>1790</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -1579,7 +1579,7 @@ Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784818309026</Id>
 		<Name><![CDATA[encostarLinhaBomba]]></Name>
 		<X>80</X>
-		<Y>1680</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -1696,7 +1696,7 @@ Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784818482087</Id>
 		<Name><![CDATA[paraLinhBomba]]></Name>
 		<X>800</X>
-		<Y>1440</Y>
+		<Y>1540</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -1750,7 +1750,7 @@ Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784819041153</Id>
 		<Name><![CDATA[tira4vgs5]]></Name>
 		<X>300</X>
-		<Y>950</Y>
+		<Y>1050</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -1891,7 +1891,7 @@ Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784819075225</Id>
 		<Name><![CDATA[encostaMoegaMar]]></Name>
 		<X>210</X>
-		<Y>940</Y>
+		<Y>1040</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-25</Y>
@@ -2044,7 +2044,7 @@ main().railwaySwitch.connectTracks(
 		<Id>1784824387261</Id>
 		<Name><![CDATA[tira4vgs6]]></Name>
 		<X>300</X>
-		<Y>1190</Y>
+		<Y>1290</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -2185,7 +2185,7 @@ Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 		<Id>1784824387286</Id>
 		<Name><![CDATA[encostaMoegaMeio]]></Name>
 		<X>210</X>
-		<Y>1180</Y>
+		<Y>1280</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-25</Y>
@@ -2337,7 +2337,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784826775417</Id>
 		<Name><![CDATA[recuaParaHidrovias1]]></Name>
 		<X>380</X>
-		<Y>1170</Y>
+		<Y>1270</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-15</Y>
@@ -2454,7 +2454,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784826794632</Id>
 		<Name><![CDATA[recuaParaHidrovias]]></Name>
 		<X>380</X>
-		<Y>930</Y>
+		<Y>1030</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-10</Y>
@@ -2562,7 +2562,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784826846897</Id>
 		<Name><![CDATA[recuaParaHidrovias2]]></Name>
 		<X>500</X>
-		<Y>1430</Y>
+		<Y>1530</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -2676,7 +2676,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784826857549</Id>
 		<Name><![CDATA[recua7]]></Name>
 		<X>520</X>
-		<Y>1670</Y>
+		<Y>1770</Y>
 		<Label>
 			<X>5</X>
 			<Y>-10</Y>
@@ -2790,7 +2790,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784826863238</Id>
 		<Name><![CDATA[recua5]]></Name>
 		<X>340</X>
-		<Y>1670</Y>
+		<Y>1770</Y>
 		<Label>
 			<X>5</X>
 			<Y>-10</Y>
@@ -3120,7 +3120,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784835516452</Id>
 		<Name><![CDATA[paraDescarga]]></Name>
 		<X>780</X>
-		<Y>1020</Y>
+		<Y>1120</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3174,7 +3174,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784835614469</Id>
 		<Name><![CDATA[paraDescarga1]]></Name>
 		<X>800</X>
-		<Y>1250</Y>
+		<Y>1350</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3228,7 +3228,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784835622040</Id>
 		<Name><![CDATA[paraDescarga2]]></Name>
 		<X>800</X>
-		<Y>1520</Y>
+		<Y>1620</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3282,7 +3282,7 @@ main().railwaySwitch40.connectTracks(
 		<Id>1784835636564</Id>
 		<Name><![CDATA[paraDescarga3]]></Name>
 		<X>800</X>
-		<Y>1760</Y>
+		<Y>1860</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -8466,7 +8466,7 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 	<EmbeddedObject>
 		<Id>1788997082908</Id>
 		<Name><![CDATA[tremTeste_rumo]]></Name>
-		<X>70</X>
+		<X>80</X>
 		<Y>-150</Y>
 		<Label>
 			<X>-20</X>
@@ -8543,7 +8543,7 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 			<Parameter>
 				<Name><![CDATA[numberOfCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[83]]></Code>
+					<Code><![CDATA[84]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8720,11 +8720,11 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 	<EmbeddedObject>
 		<Id>1788997082989</Id>
 		<Name><![CDATA[paraGestorCirculacao_chegadaCarregados]]></Name>
-		<X>300</X>
+		<X>310</X>
 		<Y>-110</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-15</Y>
+			<X>-130</X>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -8775,7 +8775,7 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 		<Id>1789129284428</Id>
 		<Name><![CDATA[encostarLinhaVerde]]></Name>
 		<X>80</X>
-		<Y>440</Y>
+		<Y>600</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -8902,7 +8902,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789130948261</Id>
 		<Name><![CDATA[irLinhaVerde]]></Name>
 		<X>310</X>
-		<Y>430</Y>
+		<Y>590</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-10</Y>
@@ -8995,7 +8995,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789131348858</Id>
 		<Name><![CDATA[deixar27vgs]]></Name>
 		<X>540</X>
-		<Y>450</Y>
+		<Y>610</Y>
 		<Label>
 			<X>-24</X>
 			<Y>-20</Y>
@@ -9123,7 +9123,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789131399023</Id>
 		<Name><![CDATA[paraManobraMarginal]]></Name>
 		<X>660</X>
-		<Y>440</Y>
+		<Y>600</Y>
 		<Label>
 			<X>-18</X>
 			<Y>-16</Y>
@@ -9177,7 +9177,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789133980558</Id>
 		<Name><![CDATA[vaiMarginal2]]></Name>
 		<X>200</X>
-		<Y>620</Y>
+		<Y>780</Y>
 		<Label>
 			<X>-7</X>
 			<Y>-12</Y>
@@ -9270,7 +9270,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789134057475</Id>
 		<Name><![CDATA[manobraMarginal]]></Name>
 		<X>80</X>
-		<Y>630</Y>
+		<Y>790</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -9387,7 +9387,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789134064403</Id>
 		<Name><![CDATA[paraEncosteLinhaMar2]]></Name>
 		<X>400</X>
-		<Y>840</Y>
+		<Y>940</Y>
 		<Label>
 			<X>-14</X>
 			<Y>-16</Y>
@@ -9441,7 +9441,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789135188106</Id>
 		<Name><![CDATA[para_acoplar27]]></Name>
 		<X>660</X>
-		<Y>510</Y>
+		<Y>670</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -9542,10 +9542,10 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789339381266</Id>
 		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
 		<X>420</X>
-		<Y>430</Y>
+		<Y>590</Y>
 		<Label>
-			<X>-40</X>
-			<Y>-10</Y>
+			<X>-65</X>
+			<Y>65</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -9641,7 +9641,7 @@ main().railwaySwitch73.connectTracks(
 		<Id>1789340504661</Id>
 		<Name><![CDATA[pst_marginal_bloquear]]></Name>
 		<X>210</X>
-		<Y>430</Y>
+		<Y>590</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-10</Y>
@@ -9867,7 +9867,7 @@ main().gestorDeCirculacao.faixa_intervalo4000_b.bloquear((Trem) agent);
 		<Id>1789600147806</Id>
 		<Name><![CDATA[pst_marginal_liberar]]></Name>
 		<X>310</X>
-		<Y>1430</Y>
+		<Y>1530</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -9988,7 +9988,7 @@ main().gestorDeCirculacao.faixa_intervalo4000_b.liberar();
 		<Id>1789651328826</Id>
 		<Name><![CDATA[devolverLocomotiva]]></Name>
 		<X>840</X>
-		<Y>1670</Y>
+		<Y>1770</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-15</Y>
@@ -10532,7 +10532,7 @@ atualiza_vaiDescarga();]]></Code>
 		<Id>1789669096589</Id>
 		<Name><![CDATA[encostarLinhaMoega]]></Name>
 		<X>80</X>
-		<Y>840</Y>
+		<Y>940</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -10649,7 +10649,7 @@ atualiza_vaiDescarga();]]></Code>
 		<Id>1789669101004</Id>
 		<Name><![CDATA[para_encostarLinhaMoega]]></Name>
 		<X>350</X>
-		<Y>630</Y>
+		<Y>790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -10703,7 +10703,7 @@ atualiza_vaiDescarga();]]></Code>
 		<Id>1789669104690</Id>
 		<Name><![CDATA[mnbCarregados_ocupar]]></Name>
 		<X>240</X>
-		<Y>830</Y>
+		<Y>930</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -10907,7 +10907,7 @@ atualiza_vaiDescarga();]]></Code>
 		<Id>1789669942802</Id>
 		<Name><![CDATA[mnbCarregados_liberar]]></Name>
 		<X>710</X>
-		<Y>1670</Y>
+		<Y>1770</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>
@@ -21777,7 +21777,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791553985356</Id>
 		<Name><![CDATA[tremTeste_mrs]]></Name>
-		<X>70</X>
+		<X>80</X>
 		<Y>-100</Y>
 		<Label>
 			<X>-20</X>
@@ -21854,7 +21854,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[numberOfCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[83]]></Code>
+					<Code><![CDATA[84]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -22031,7 +22031,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791553994486</Id>
 		<Name><![CDATA[tremTeste_vli]]></Name>
-		<X>70</X>
+		<X>80</X>
 		<Y>-50</Y>
 		<Label>
 			<X>-20</X>
@@ -22108,7 +22108,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[numberOfCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[83]]></Code>
+					<Code><![CDATA[84]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -23078,7 +23078,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 		<Id>1791640000201</Id>
 		<Name><![CDATA[semHelper]]></Name>
 		<X>470</X>
-		<Y>440</Y>
+		<Y>600</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -23158,8 +23158,8 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791640000203</Id>
 		<Name><![CDATA[para_cortarHelper]]></Name>
-		<X>480</X>
-		<Y>500</Y>
+		<X>670</X>
+		<Y>720</Y>
 		<Label>
 			<X>-18</X>
 			<Y>-16</Y>
@@ -23212,8 +23212,8 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791640000205</Id>
 		<Name><![CDATA[cortarHelper]]></Name>
-		<X>80</X>
-		<Y>300</Y>
+		<X>70</X>
+		<Y>390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -23330,7 +23330,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 		<Id>1791640000207</Id>
 		<Name><![CDATA[separarTraseira_helper]]></Name>
 		<X>180</X>
-		<Y>300</Y>
+		<Y>400</Y>
 		<Label>
 			<X>-24</X>
 			<Y>-20</Y>
@@ -23455,7 +23455,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 		<Id>1791640000211</Id>
 		<Name><![CDATA[tirarHelper]]></Name>
 		<X>290</X>
-		<Y>300</Y>
+		<Y>400</Y>
 		<Label>
 			<X>-24</X>
 			<Y>-20</Y>
@@ -23579,8 +23579,8 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791640000215</Id>
 		<Name><![CDATA[devolverHelper]]></Name>
-		<X>300</X>
-		<Y>360</Y>
+		<X>360</X>
+		<Y>460</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-15</Y>
@@ -23628,7 +23628,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 		<Id>1791640000217</Id>
 		<Name><![CDATA[reencostarTraseira]]></Name>
 		<X>400</X>
-		<Y>300</Y>
+		<Y>390</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -23788,8 +23788,8 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791640000219</Id>
 		<Name><![CDATA[reacoplarTraseira]]></Name>
-		<X>520</X>
-		<Y>310</Y>
+		<X>540</X>
+		<Y>400</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>

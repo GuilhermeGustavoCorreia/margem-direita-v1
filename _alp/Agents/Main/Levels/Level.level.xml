@@ -28711,7 +28711,7 @@ if (senha.equals("FIPS123")) {
 			</RailroadSwitch>
 			<RailTrack SourceId="1783955849739" TargetId="1783955849735">
 				<Id>1783955849737</Id>
-				<Name><![CDATA[railwayTrack26]]></Name>
+				<Name><![CDATA[track_entrada_pera]]></Name>
 				<X>1633.0209999999997</X>
 				<Y>307.3879999999999</Y>
 				<Label>
@@ -29312,6 +29312,112 @@ if (senha.equals("FIPS123")) {
 					</Point>
 				</Points>
 				<Bidirectional>true</Bidirectional>
+				<Presentation>
+					<RailStopline>
+						<Id>1791645688718</Id>
+						<Name><![CDATA[_coper_xii_encoste]]></Name>
+						<X>1638</X>
+						<Y>1111</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<Z>0</Z>
+						<EmbeddedObject>
+							<Id>1791645688721</Id>
+							<ActiveObjectClass>
+								<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+								<ClassName>RailStopLineDescriptor</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+									<ClassName>RailStopLineDescriptor</ClassName>
+									<ItemName>1588157718720</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters>
+								<Parameter>
+									<Name><![CDATA[onTrainEnter]]></Name>
+								</Parameter>
+								<Parameter>
+									<Name><![CDATA[onTrainExit]]></Name>
+								</Parameter>
+							</Parameters>
+							<ReplicationFlag>false</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>SPECIFIED_NUMBER</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1791645688720</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EmbeddedObject>
+						<Offset>789.0</Offset>
+						<EmbeddedObject>
+							<Id>1791645688721</Id>
+							<ActiveObjectClass>
+								<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+								<ClassName>RailStopLineDescriptor</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+									<ClassName>RailStopLineDescriptor</ClassName>
+									<ItemName>1588157718720</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters>
+								<Parameter>
+									<Name><![CDATA[onTrainEnter]]></Name>
+								</Parameter>
+								<Parameter>
+									<Name><![CDATA[onTrainExit]]></Name>
+								</Parameter>
+							</Parameters>
+							<ReplicationFlag>false</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>SPECIFIED_NUMBER</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1791645688720</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EmbeddedObject>
+					</RailStopline>
+				</Presentation>
 			</RailTrack>
 			<RailroadSwitch>
 				<Id>1783955849747</Id>
@@ -39962,8 +40068,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1786650986277</Id>
 		<Name><![CDATA[tgrao_presentation]]></Name>
-		<X>480</X>
-		<Y>280</Y>
+		<X>460</X>
+		<Y>170</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -41117,6 +41223,28 @@ if (senha.equals("FIPS123")) {
 		<Name><![CDATA[t39_presentation]]></Name>
 		<X>460</X>
 		<Y>160</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<ScaleType>DEFINED_EXPLICITLY</ScaleType>
+		<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+		<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+		<Latitude>0.0</Latitude>
+		<Longitude>0.0</Longitude>
+	</EmbeddedObjectPresentation>
+	<EmbeddedObjectPresentation>
+		<Id>1791643906848</Id>
+		<Name><![CDATA[coperXXI_presentation]]></Name>
+		<X>480</X>
+		<Y>10</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

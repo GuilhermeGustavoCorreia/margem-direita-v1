@@ -149,3 +149,76 @@ if (temVagoesNaMoega || temVagoesNaPera){
 
 /*ALCODEEND*/}
 
+boolean podeReceberNovoLote()
+{/*ALCODESTART::1791650000004*/
+// ALT-003: CoperXXI ainda não usa esse critério; só não recebe durante alívio
+return !fazendoAlivio;
+/*ALCODEEND*/}
+
+float getOverloadVazios()
+{/*ALCODESTART::1791650000005*/
+// ALT-003: vazios / capacidade das linhas de alívio (a + b)
+int capacidade = CAPACIDADE_ALIVIO_A + CAPACIDADE_ALIVIO_B;
+if (capacidade <= 0) return 0;
+return (float) _getVagosVazios() / capacidade;
+/*ALCODEEND*/}
+
+String getPatio()
+{/*ALCODESTART::1791650000006*/
+return "pst";
+/*ALCODEEND*/}
+
+String getSegmento()
+{/*ALCODESTART::1791650000007*/
+return produto_em_atendimento;
+/*ALCODEEND*/}
+
+String getFerrovia()
+{/*ALCODESTART::1791650000008*/
+return ferrovia_em_atendimento;
+/*ALCODEEND*/}
+
+double takeAlivio(Trem trem)
+{/*ALCODESTART::1791650000009*/
+// ALT-003: o CoperXXI ainda faz alívio próprio (locoMnb) e não está em terminais_pst do GestorDeAlivios
+error("CoperXXI.takeAlivio chamado, mas o CoperXXI ainda não está integrado ao GestorDeAlivios");
+/*ALCODEEND*/}
+
+int getNumeroLocomotivasAlivio()
+{/*ALCODESTART::1791650000010*/
+return 2;
+/*ALCODEEND*/}
+
+PositionOnTrack get_pos_alivio()
+{/*ALCODESTART::1791650000011*/
+// ALT-003: provisório — revisar na integração com o GestorDeAlivios
+return main().posAlivio_coperXII_a;
+/*ALCODEEND*/}
+
+ArrayList<Faixa> getPrimeiroAlivioFaixas()
+{/*ALCODESTART::1791650000012*/
+// ALT-003: provisório — sem faixas até integrar com o GestorDeAlivios
+return new ArrayList<Faixa>();
+/*ALCODEEND*/}
+
+ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios()
+{/*ALCODESTART::1791650000013*/
+// ALT-003: provisório — sem faixas até integrar com o GestorDeAlivios
+return new ArrayList<Faixa>();
+/*ALCODEEND*/}
+
+double set_quantidade_alivio(int qt_quantidade)
+{/*ALCODESTART::1791650000014*/
+// ALT-003: provisório — alívio do CoperXXI ainda é próprio (leva tudo das linhas a e b)
+/*ALCODEEND*/}
+
+int get_quantidade_vazios()
+{/*ALCODESTART::1791650000015*/
+return _getVagosVazios();
+/*ALCODEEND*/}
+
+int _getVagosVazios()
+{/*ALCODESTART::1791650000016*/
+return main().getTamanhoDoTrem(_loteVazios_a) + main().getTamanhoDoTrem(_loteVazios_b);
+/*ALCODEEND*/}
+

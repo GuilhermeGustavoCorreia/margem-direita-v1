@@ -189,27 +189,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1790777501578</Id>
 		<Name><![CDATA[ferrovia_em_atendimento]]></Name>
-		<X>1130</X>
-		<Y>-500</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[String]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1790777501580</Id>
-		<Name><![CDATA[segmento_em_atendimento]]></Name>
-		<X>1130</X>
-		<Y>-480</Y>
+		<X>50</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -244,6 +225,25 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[0]]></Code>
 			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791662803569</Id>
+		<Name><![CDATA[segmento_em_atendimento]]></Name>
+		<X>50</X>
+		<Y>200</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[String]]></Type>
 		</Properties>
 	</Variable>
 	<Variable Class="Parameter">

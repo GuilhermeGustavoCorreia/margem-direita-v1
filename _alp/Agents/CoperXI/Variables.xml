@@ -4,7 +4,7 @@
 		<Id>1784830116029</Id>
 		<Name><![CDATA[_loteDeCarregados_linhaBomba]]></Name>
 		<X>80</X>
-		<Y>1820</Y>
+		<Y>1920</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -23,7 +23,7 @@
 		<Id>1784830963054</Id>
 		<Name><![CDATA[_loteDeCarregados_MoegaMar]]></Name>
 		<X>80</X>
-		<Y>1000</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -42,7 +42,7 @@
 		<Id>1784830972355</Id>
 		<Name><![CDATA[_loteDeCarregados_HidroviasMar]]></Name>
 		<X>80</X>
-		<Y>1080</Y>
+		<Y>1180</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -61,7 +61,7 @@
 		<Id>1784830998038</Id>
 		<Name><![CDATA[_loteDeCarregados_MoegaMeio]]></Name>
 		<X>90</X>
-		<Y>1290</Y>
+		<Y>1390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -80,7 +80,7 @@
 		<Id>1784830998040</Id>
 		<Name><![CDATA[_loteDeCarregados_HidroviasMeio]]></Name>
 		<X>90</X>
-		<Y>1310</Y>
+		<Y>1410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -99,7 +99,7 @@
 		<Id>1784831016177</Id>
 		<Name><![CDATA[_loteDeCarregados_BarracaoTerra]]></Name>
 		<X>80</X>
-		<Y>1560</Y>
+		<Y>1660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -118,7 +118,7 @@
 		<Id>1784831016179</Id>
 		<Name><![CDATA[_loteDeCarregados_HidroviasTerra]]></Name>
 		<X>80</X>
-		<Y>1580</Y>
+		<Y>1680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -137,7 +137,7 @@
 		<Id>1784831050052</Id>
 		<Name><![CDATA[_loteDeCarregados_linhaBomba1]]></Name>
 		<X>80</X>
-		<Y>1800</Y>
+		<Y>1900</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -295,7 +295,7 @@
 		<Id>1789149213057</Id>
 		<Name><![CDATA[_loteDeCarregados_linhaVerde]]></Name>
 		<X>100</X>
-		<Y>500</Y>
+		<Y>660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -317,7 +317,7 @@
 		<Id>1789177016202</Id>
 		<Name><![CDATA[capacidade_linhas_moega]]></Name>
 		<X>60</X>
-		<Y>800</Y>
+		<Y>900</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -531,7 +531,7 @@
 		<Id>1784830063513</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_BOMBA]]></Name>
 		<X>330</X>
-		<Y>1820</Y>
+		<Y>1920</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -559,7 +559,7 @@
 		<Id>1784831208070</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_MOEGA_MAR]]></Name>
 		<X>80</X>
-		<Y>1020</Y>
+		<Y>1120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -587,7 +587,7 @@
 		<Id>1784831237216</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_HIDROVIAS_MAR]]></Name>
 		<X>80</X>
-		<Y>1100</Y>
+		<Y>1200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -615,7 +615,7 @@
 		<Id>1784831252003</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_MOEGA_MEIO]]></Name>
 		<X>330</X>
-		<Y>1290</Y>
+		<Y>1390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -643,7 +643,7 @@
 		<Id>1784831252010</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_HIDROVIAS_MEIO]]></Name>
 		<X>330</X>
-		<Y>1310</Y>
+		<Y>1410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -671,7 +671,7 @@
 		<Id>1784831269302</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_BARRACAO_TERRA]]></Name>
 		<X>330</X>
-		<Y>1560</Y>
+		<Y>1660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -699,7 +699,7 @@
 		<Id>1784831269309</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_HIDROVIAS_TERRA]]></Name>
 		<X>330</X>
-		<Y>1580</Y>
+		<Y>1680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -727,7 +727,7 @@
 		<Id>1784831349602</Id>
 		<Name><![CDATA[_CAPACIDADE_LINHA_BOMBA1]]></Name>
 		<X>330</X>
-		<Y>1800</Y>
+		<Y>1900</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

@@ -198,8 +198,8 @@
 		<ReturnType>int</ReturnType>
 		<Id>1785247647217</Id>
 		<Name><![CDATA[_getVagosLinhaMoega]]></Name>
-		<X>60</X>
-		<Y>300</Y>
+		<X>70</X>
+		<Y>330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -313,7 +313,7 @@
 		<Id>1789176244746</Id>
 		<Name><![CDATA[pode_rechegar_loteDeCarregados_linhaVerde]]></Name>
 		<X>100</X>
-		<Y>520</Y>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
