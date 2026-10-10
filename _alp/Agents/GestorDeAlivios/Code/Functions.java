@@ -222,7 +222,20 @@ double analisar_pst()
 {/*ALCODESTART::1791466610125*/
 boolean podeReceber = main().gestorDeDVs.condicao_pode_receber_alivio();
 
-
+// DEBUG ALT-003 (remover depois): a cada 60s, mostra por que um terminal em overload não está sendo aliviado
+if (((int) time()) % 60 == 0) {
+    for (ITerminalMoega t : colecaoMoegas) {
+        float ov = t.getOverloadVazios();
+        if (ov > 1) {
+            traceln(time() + " | [diag_pst] " + ((Agent) t).getName()
+                + " | overload=" + String.format("%.2f", ov)
+                + " | em terminais_pst=" + terminais_pst.contains(t)
+                + " | podeReceber(DVs)=" + podeReceber
+                + " | rp_alivio_pst livre=" + rp_alivio_pst.idle() + "/" + rp_alivio_pst.size()
+                + " | ferrovia=" + t.getFerrovia());
+        }
+    }
+}
 
 if (podeReceber && rp_alivio_pst.idle() > 0) {
 
@@ -253,6 +266,21 @@ boolean condicao_DVs_eh_compativel_com_terminal = main().gestorDeDVs.condicao_po
 
 if (condicao_DVs_eh_compativel_com_terminal) {
 
+    // ALT-003: só tira o terminal da análise se houver locomotiva da ferrovia para fazer o alívio.
+    // Sem loco, o terminal continua em terminais_pst e o alívio dispara quando ela voltar.
+    String ferroviaTerminal = terminal.getFerrovia();
+    Wait<Agent> waitLocos = null;
+    if      ("rumo".equals(ferroviaTerminal)) waitLocos = main().gestorDeLocomotivas.locomotivasRumo;
+    else if ("mrs".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasMRS;
+    else if ("vli".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasVLI;
+
+    if (waitLocos == null || waitLocos.size() == 0) {
+        if (((int) time()) % 60 == 0) {
+            traceln(time() + " | [diag_pst] " + nomeTerminal + " | aguardando loco '" + ferroviaTerminal + "' para aliviar");
+        }
+        return;
+    }
+
     colocar_terminal_em_alivio_pst(terminal);
     
     //criar novo trem
@@ -263,6 +291,9 @@ if (condicao_DVs_eh_compativel_com_terminal) {
         aux_esta_ocorrendo_alivio_pst = true;
         chamar_locomotiva_de_alivio_pst();
 		
+    } else {
+        // DEBUG ALT-003
+        traceln(time() + " | [diag_pst] " + nomeTerminal + " | NAO solicitou loco: lote_alivio_pst != null");
     }
 
 }
@@ -416,9 +447,15 @@ switch (ferrovia) {
         return;
 }
 
+// DEBUG ALT-003
+traceln(time() + " | [diag_pst] chamar loco | ferrovia=" + ferrovia + " | locos no wait=" + wait.size());
+
 if (wait.size() > 0) {
     Agent loco = wait.remove(wait.get(0));
     loco_alivio_pst.take(loco);
+} else {
+    // DEBUG ALT-003
+    traceln(time() + " | [diag_pst] SEM LOCO '" + ferrovia + "' -> alivio NAO iniciado e terminal ficou FORA de terminais_pst");
 }
 /*ALCODEEND*/}
 

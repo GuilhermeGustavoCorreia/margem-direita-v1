@@ -3943,7 +3943,10 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[ITerminalMoega terminal_atual = alivio_em_andamento_pst.get_moega_atual();
 alivio_em_andamento_pst.atualizar_moegas();
-terminais_pst.add(terminal_atual);]]></Code>
+terminais_pst.add(terminal_atual);
+
+// DEBUG ALT-003
+traceln(time() + " | [diag_pst] alivio terminou | " + ((Agent) terminal_atual).getName() + " voltou para terminais_pst");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

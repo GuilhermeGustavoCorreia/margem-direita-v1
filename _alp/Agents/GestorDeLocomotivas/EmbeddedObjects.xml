@@ -3770,7 +3770,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[rp_locoRumo.set_capacity(rp_locoRumo.size() + 1);]]></Code>
+					<Code><![CDATA[// ALT-004: contador de locos = locomotivasRumo.size(); não mexer mais na capacidade do pool
+//rp_locoRumo.set_capacity(rp_locoRumo.size() + 1);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3848,7 +3849,7 @@
 			<Parameter>
 				<Name><![CDATA[capacity]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[0]]></Code>
+					<Code><![CDATA[10]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

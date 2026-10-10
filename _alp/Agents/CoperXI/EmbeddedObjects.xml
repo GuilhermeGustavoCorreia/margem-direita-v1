@@ -46,7 +46,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -416,7 +421,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1047,7 +1057,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1183,7 +1198,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1319,7 +1339,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[4]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1455,7 +1480,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[3]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1762,7 +1792,12 @@
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[4]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2051,7 +2086,12 @@ main().railwaySwitch.connectTracks(
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[4]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3990,11 +4030,15 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[_loteEmDescarga = null;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[condicao_ficar_linhaTerra_b = true;
+					<Code><![CDATA[_loteEmDescarga = null;
+condicao_ficar_linhaTerra_b = true;
 liberar_wait_lote_linhaTerra_b();]]></Code>
 				</Value>
 			</Parameter>
@@ -4286,11 +4330,15 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[_loteEmDescarga = null;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[condicao_ficar_linhaTerra_a = true;
+					<Code><![CDATA[_loteEmDescarga = null;
+condicao_ficar_linhaTerra_a = true;
 liberar_wait_lote_linhaTerra_a();]]></Code>
 				</Value>
 			</Parameter>
@@ -4453,9 +4501,21 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | enterLinhaTerra_a (descarga) | carros: " + ((Trem) agent).size()
+    + " | loteA=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_a)
+    + " | loteB=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_b)
+    + " | trens na track=" + main().pstSaidaCoperXI_terra_a.getTrains().size());]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | enterLinhaTerra_b (descarga) | carros: " + ((Trem) agent).size()
+    + " | loteA=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_a)
+    + " | loteB=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_b)
+    + " | trens na track=" + main().pstSaidaCoperXI_terra_a.getTrains().size());]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7539,6 +7599,10 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-002: fim do alívio, descarga pode voltar
+fazendoAlivio = false;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8593,13 +8657,13 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 			<Parameter>
 				<Name><![CDATA[newRailCar]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[(carindex < 1)? new Locomotiva() : new Vagao();]]></Code>
+					<Code><![CDATA[(carindex < 2)? new Locomotiva() : new Vagao();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[carLength]]></Name>
 				<Value Class="CodeUnitValue">
-					<Code><![CDATA[(carindex < 1) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Code><![CDATA[(carindex < 2) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
 					<Unit Class="LengthUnits">METER</Unit>
 				</Value>
 			</Parameter>
@@ -14030,7 +14094,12 @@ atualiza_vaiDescarga();]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -14313,7 +14382,12 @@ atualiza_vaiDescarga();]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(10, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15026,7 +15100,12 @@ atualiza_vaiDescarga();]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[4]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(4, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15162,7 +15241,12 @@ atualiza_vaiDescarga();]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[3]]></Code>
+					<Code><![CDATA[/* ALT-006: conta só VAGÕES e nunca leva a loco da cabeça.
+   - Rumo/MRS: 2 locos na cabeça + 81 vgs
+   - VLI: 1 loco na cabeça + 81 vgs (helper já cortado na ALT-005)
+   - formação original: 1 loco + 82 vgs (resultado igual ao número fixo)
+   Se faltar vagão, o lote sai menor (ex.: linha bomba com 2 em vez de 3). */
+Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -18654,6 +18738,10 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-002: excedente voltou para linha vazia, atualiza contagem
+_loteDeVazios_LinhaMar_b = (Trem) agent;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -19097,6 +19185,10 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-002: excedente voltou para linha vazia, atualiza contagem
+_loteDeVazios_LinhaMar_a = (Trem) agent;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -19693,7 +19785,7 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[retornar_linhaTerra_b.take(agent)]]></Code>
+					<Code><![CDATA[retornar_linhaTerra_a1.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -20545,8 +20637,8 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 	<EmbeddedObject>
 		<Id>1791551443292</Id>
 		<Name><![CDATA[retornar_linhaTerra_b]]></Name>
-		<X>1880</X>
-		<Y>1970</Y>
+		<X>1840</X>
+		<Y>2360</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -20628,6 +20720,12 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | enterLinhaMar_b3 (excedente) | carros: " + ((Trem) agent).size()
+    + " | loteA=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_a)
+    + " | loteB=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_b)
+    + " | trens na track=" + main().pstSaidaCoperXI_terra_a.getTrains().size());]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -20661,7 +20759,7 @@ liberar_wait_lote_linhaMar_a();]]></Code>
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1791551443362</Id>
-		<Name><![CDATA[enterLinhaMar_b2]]></Name>
+		<Name><![CDATA[enter_linhaTerra_a1]]></Name>
 		<X>1950</X>
 		<Y>1970</Y>
 		<Label>
@@ -20961,6 +21059,10 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-002: excedente voltou para linha vazia, atualiza contagem
+_loteDeVazios_LinhaTerra_a = (Trem) agent;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -21105,8 +21207,8 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 	<EmbeddedObject>
 		<Id>1791551714531</Id>
 		<Name><![CDATA[retornar_linhaTerra_a1]]></Name>
-		<X>1880</X>
-		<Y>2370</Y>
+		<X>1820</X>
+		<Y>1970</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -21188,6 +21290,12 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | enter_linhaTerra_a1 (excedente) | carros: " + ((Trem) agent).size()
+    + " | loteA=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_a)
+    + " | loteB=" + main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_b)
+    + " | trens na track=" + main().pstSaidaCoperXI_terra_a.getTrains().size());]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -21222,8 +21330,8 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 	<EmbeddedObject>
 		<Id>1791551714605</Id>
 		<Name><![CDATA[enterLinhaMar_b3]]></Name>
-		<X>1950</X>
-		<Y>2370</Y>
+		<X>1970</X>
+		<Y>2360</Y>
 		<Label>
 			<X>-30</X>
 			<Y>60</Y>
@@ -21405,8 +21513,8 @@ liberar_wait_lote_linhaTerra_a();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[condicao_ficar_linhaMar_b = true;
-liberar_wait_lote_linhaMar_b();]]></Code>
+					<Code><![CDATA[condicao_ficar_linhaTerra_b = true;
+liberar_wait_lote_linhaTerra_b();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -21521,6 +21629,10 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-002: excedente voltou para linha vazia, atualiza contagem
+_loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -21856,13 +21968,13 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			<Parameter>
 				<Name><![CDATA[newRailCar]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[(carindex < 1)? new Locomotiva() : new Vagao();]]></Code>
+					<Code><![CDATA[(carindex < 2)? new Locomotiva() : new Vagao();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[carLength]]></Name>
 				<Value Class="CodeUnitValue">
-					<Code><![CDATA[(carindex < 1) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Code><![CDATA[(carindex < 2) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
 					<Unit Class="LengthUnits">METER</Unit>
 				</Value>
 			</Parameter>
@@ -21871,7 +21983,7 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (car instanceof Vagao) {
 
-    ((Vagao) car).setSegmento("acuar");
+    ((Vagao) car).setSegmento("acucar");
     ((Vagao) car).setFerrovia("mrs"); 
 	((Vagao) car).setTerminal(main().coperXI);
 
@@ -22110,13 +22222,13 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 			<Parameter>
 				<Name><![CDATA[newRailCar]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[(carindex < 1|| carindex < 36)? new Locomotiva() : new Vagao();]]></Code>
+					<Code><![CDATA[(carindex < 1|| carindex == 36)? new Locomotiva() : new Vagao();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[carLength]]></Name>
 				<Value Class="CodeUnitValue">
-					<Code><![CDATA[(carindex < 1|| carindex < 36) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Code><![CDATA[(carindex < 1|| carindex == 36) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
 					<Unit Class="LengthUnits">METER</Unit>
 				</Value>
 			</Parameter>
@@ -22125,7 +22237,7 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (car instanceof Vagao) {
 
-    ((Vagao) car).setSegmento("acuar");
+    ((Vagao) car).setSegmento("acucar");
     ((Vagao) car).setFerrovia("vli"); 
 	((Vagao) car).setTerminal(main().coperXI);
 
@@ -22957,6 +23069,784 @@ liberar_wait_lote_linhaMar_b();]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1791568284030</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000201</Id>
+		<Name><![CDATA[semHelper]]></Name>
+		<X>470</X>
+		<Y>440</Y>
+		<Label>
+			<X>-15</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[((Trem) agent).getCarrosAtrasDoHelper() <= 0]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | [ALT-005] helper detectado: " + ((Trem) agent).getCarrosAtrasDoHelper() + " carros atrás dele -> cortar antes dos encostes");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000202</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000203</Id>
+		<Name><![CDATA[para_cortarHelper]]></Name>
+		<X>480</X>
+		<Y>500</Y>
+		<Label>
+			<X>-18</X>
+			<Y>-16</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[cortarHelper.take(agent)]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000204</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000205</Id>
+		<Name><![CDATA[cortarHelper]]></Name>
+		<X>80</X>
+		<Y>300</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000206</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000207</Id>
+		<Name><![CDATA[separarTraseira_helper]]></Name>
+		<X>180</X>
+		<Y>300</Y>
+		<Label>
+			<X>-24</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642016</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[decoupleFirstCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[nCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[((Trem) train).getCarrosAtrasDoHelper()]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1791640000208</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1791640000209</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitDecoupled]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000210</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000211</Id>
+		<Name><![CDATA[tirarHelper]]></Name>
+		<X>290</X>
+		<Y>300</Y>
+		<Label>
+			<X>-24</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642016</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[decoupleFirstCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[nCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1791640000212</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1791640000213</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitDecoupled]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000214</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000215</Id>
+		<Name><![CDATA[devolverHelper]]></Name>
+		<X>300</X>
+		<Y>360</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>DevolverLocomotiva</ClassName>
+				<ItemName>1789651316428</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters/>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InEnvironment>true</InEnvironment>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000216</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000217</Id>
+		<Name><![CDATA[reencostarTraseira]]></Name>
+		<X>400</X>
+		<Y>300</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().pos_PontaDaPraia]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().pst_silosMuro_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[40]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000218</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791640000219</Id>
+		<Name><![CDATA[reacoplarTraseira]]></Name>
+		<X>520</X>
+		<Y>310</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainCouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainCouple</ClassName>
+				<ItemName>1412464641999</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainCouple</ClassName>
+				<ItemName>1412464642999</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onEnter1]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter2]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[traceln(time() + " | [ALT-005] helper guardado, trem reacoplado com " + ((Trem) train1).size() + " carros");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791640000220</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

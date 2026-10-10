@@ -944,7 +944,7 @@ possui uma quantidade.]]></Text>
 		<Rotation>0.0</Rotation>
 		<Color>-12566464</Color>
 		<Text><![CDATA[0]]></Text>
-		<TextCode>rp_locoRumo.capacity - rp_locoRumo.busy()</TextCode>
+		<TextCode>locomotivasRumo.size()</TextCode>
 		<Font>
 			<Name><![CDATA[Saira Thin]]></Name>
 			<Size>14</Size>
@@ -970,7 +970,7 @@ possui uma quantidade.]]></Text>
 		<Rotation>0.0</Rotation>
 		<Color>-12566464</Color>
 		<Text><![CDATA[0]]></Text>
-		<TextCode>rp_locoMRS.capacity - rp_locoMRS.busy()</TextCode>
+		<TextCode>locomotivasMRS.size()</TextCode>
 		<Font>
 			<Name><![CDATA[Saira Thin]]></Name>
 			<Size>14</Size>
@@ -996,7 +996,7 @@ possui uma quantidade.]]></Text>
 		<Rotation>0.0</Rotation>
 		<Color>-12566464</Color>
 		<Text><![CDATA[0]]></Text>
-		<TextCode>rp_locoVLI.capacity - rp_locoVLI.busy()</TextCode>
+		<TextCode>locomotivasVLI.size()</TextCode>
 		<Font>
 			<Name><![CDATA[Saira Thin]]></Name>
 			<Size>14</Size>

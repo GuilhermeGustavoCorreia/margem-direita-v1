@@ -444,6 +444,10 @@ return ferrovia_em_atendimento;
 
 double takeAlivio(Trem trem)
 {/*ALCODESTART::1790782150407*/
+// ALT-002: pausa a descarga enquanto o alívio está no terminal
+fazendoAlivio = true;
+aguardaAlivio.block();
+
 iniciar_alivio.take(trem);
 /*ALCODEEND*/}
 

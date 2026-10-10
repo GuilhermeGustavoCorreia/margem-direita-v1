@@ -235,3 +235,16 @@ if (this.size() == 0) return false;
 return (naCabeca ? getFirst() : getLast()) instanceof Locomotiva;
 /*ALCODEEND*/}
 
+int getCarrosAtrasDoHelper()
+{/*ALCODESTART::1791640000232*/
+// ALT-005: quantos carros existem atrás da locomotiva helper
+// (1ª locomotiva depois do bloco de locos da cabeça). Retorna -1 se não houver helper.
+int n = this.size();
+int i = 0;
+while (i < n && getCar(i) instanceof Locomotiva) i++;   // pula as locos da cabeça
+for (; i < n; i++) {
+    if (getCar(i) instanceof Locomotiva) return n - 1 - i;
+}
+return -1;
+/*ALCODEEND*/}
+
