@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Connectors>
+	<Connector>
+		<Id>1789651328793</Id>
+		<Name><![CDATA[connector]]></Name>
+		<X>410</X>
+		<Y>310</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+			<ItemName>paraDevolverLocomotiva</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</SourceConnectableItemReference>
+		<TargetId>1789651328811</TargetId>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>-50</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>-50</X>
+				<Y>-180</Y>
+			</Point>
+			<Point>
+				<X>-20</X>
+				<Y>-180</Y>
+			</Point>
+		</Points>
+	</Connector>
+</Connectors>

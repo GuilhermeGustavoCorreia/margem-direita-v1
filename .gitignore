@@ -1,0 +1,19 @@
+# Logs de crash da JVM
+hs_err_*.log
+replay_*.log
+
+# Backups automáticos do AnyLogic
+*.bak
+*.original.alp
+
+# Arquivos temporários do banco HSQLDB
+database/db.lck
+database/db.log
+database/db.tmp/
+
+# Capturas de tela
+Captura de tela *.png
+
+# Saídas de build / execução
+*.class
+output/

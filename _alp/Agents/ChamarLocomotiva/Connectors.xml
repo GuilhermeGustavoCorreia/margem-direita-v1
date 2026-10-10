@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Connectors>
+	<Connector>
+		<Id>1789663128280</Id>
+		<Name><![CDATA[connector]]></Name>
+		<X>420</X>
+		<Y>310</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ChamarLocomotiva</ClassName>
+			<ItemName>enter1</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetId>1789663128282</TargetId>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>-210</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+</Connectors>

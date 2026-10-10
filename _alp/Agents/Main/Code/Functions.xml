@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Functions>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773258126585</Id>
+		<Name><![CDATA[pararSimulacao]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1440</X>
+		<Y>-6560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782267899505</Id>
+		<Name><![CDATA[getVagosNaLinha]]></Name>
+		<Description><![CDATA[Este era pra versão sem a pera]]></Description>
+		<X>1520</X>
+		<Y>-7460</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[track]]></Name>
+			<Type><![CDATA[Object]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>RailwayTrack</ReturnType>
+		<Id>1782412019217</Id>
+		<Name><![CDATA[getLinhaCirculacao]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>-7440</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1782498772574</Id>
+		<Name><![CDATA[getDestinoDoTrem]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1440</X>
+		<Y>-6650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[train]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1782501199582</Id>
+		<Name><![CDATA[getBlocoParaAtentimento]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>840</X>
+		<Y>-7480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[train]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782842439071</Id>
+		<Name><![CDATA[_getTotalCarrosNasTracks]]></Name>
+		<X>840</X>
+		<Y>-7220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[tracks]]></Name>
+			<Type><![CDATA[RailwayTrack[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782842640969</Id>
+		<Name><![CDATA[dev_chamarLocoMnb]]></Name>
+		<X>840</X>
+		<Y>-7360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782845058198</Id>
+		<Name><![CDATA[getVagosNaLinhaSemTrem]]></Name>
+		<X>840</X>
+		<Y>-7320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[tremAtual]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[track]]></Name>
+			<Type><![CDATA[Object]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782845989180</Id>
+		<Name><![CDATA[getLoteAtendimento_efetivo]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1440</X>
+		<Y>-6790</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782846039922</Id>
+		<Name><![CDATA[getLoteAtendimento_nominal]]></Name>
+		<X>1840</X>
+		<Y>-6790</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[moega]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1782932707570</Id>
+		<Name><![CDATA[getVagoesLinhaAtendimento]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1450</X>
+		<Y>-7190</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1782992207626</Id>
+		<Name><![CDATA[getDestinoLogica]]></Name>
+		<X>1840</X>
+		<Y>-6810</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[moega]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[agent]]></Name>
+			<Type><![CDATA[Agent]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ITerminalMoega</ReturnType>
+		<Id>1783018617194</Id>
+		<Name><![CDATA[getTerminalAgent]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1450</X>
+		<Y>-7170</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[moega]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>PositionOnTrack</ReturnType>
+		<Id>1783520667992</Id>
+		<Name><![CDATA[getLinhaCirculacao_v2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>-7480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1783949206630</Id>
+		<Name><![CDATA[getAgenteMoega]]></Name>
+		<X>1840</X>
+		<Y>-6830</Y>
+		<Label>
+			<X>11</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[moega]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Object</ReturnType>
+		<Id>1783950130657</Id>
+		<Name><![CDATA[getBlocoPeloNome]]></Name>
+		<Description><![CDATA[Busca, via reflection, o valor de um campo (variável, elemento ou bloco) dentro de um objeto container, a partir do nome do campo em texto.
+
+Parâmetros:
+- nomeBloco: nome exato do campo a ser localizado (deve corresponder ao nome do elemento no diagrama, com maiúsculas/minúsculas idênticas).
+- container: objeto onde o campo será procurado (ex: Main, ou uma instância de agente).
+
+Retorno: o objeto encontrado (tipo Object, requer cast no ponto de uso), ou null se o campo não existir ou não for acessível.
+
+Uso típico: localizar dinamicamente agentes ou blocos (ex: Enter, Queue) cujo nome vem de uma tabela do banco de dados, evitando escrever um "if/else" para cada caso.
+
+Limitação: só encontra campos declarados diretamente na classe do container — não busca em superclasses.]]></Description>
+		<X>1840</X>
+		<Y>-6768</Y>
+		<Label>
+			<X>11</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[nomeBloco]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[container]]></Name>
+			<Type><![CDATA[Object]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1783968921731</Id>
+		<Name><![CDATA[fraciona_trem]]></Name>
+		<X>1440</X>
+		<Y>-6770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[qt_fracao]]></Name>
+			<Type><![CDATA[int]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1784038039506</Id>
+		<Name><![CDATA[getTotalCarrosNasTracks_v2]]></Name>
+		<X>840</X>
+		<Y>-7160</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[tracks]]></Name>
+			<Type><![CDATA[List<RailwayTrack>]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1784039086096</Id>
+		<Name><![CDATA[getVagoesEntrePontos_mesmaTrack]]></Name>
+		<Description><![CDATA[Conta quantos vagões estão fisicamente localizados entre dois pontos (Position on Track) na mesma railway track.
+
+Parâmetros:
+- pontoA: um dos pontos de referência na track.
+- pontoB: o outro ponto de referência na track.
+
+Funcionamento: obtém a track a partir de pontoA, calcula o intervalo de offset entre os dois pontos (independente de qual está "antes" ou "depois"), e percorre todos os vagões presentes na track, verificando se a frente ou a traseira de cada vagão está dentro desse intervalo.
+
+Retorno: número inteiro de vagões que têm ao menos uma extremidade (frente ou traseira) dentro do intervalo definido pelos dois pontos.
+
+Limitação: assume que pontoA e pontoB estão na mesma track. Se os pontos estiverem em tracks diferentes (ex: conectadas por um switch), a função não soma vagões de múltiplas tracks.]]></Description>
+		<X>1440</X>
+		<Y>-6750</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[pontoA]]></Name>
+			<Type><![CDATA[PositionOnTrack]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[pontoB]]></Name>
+			<Type><![CDATA[PositionOnTrack]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1784146673120</Id>
+		<Name><![CDATA[getVagoesEntrePontos_variasTracks]]></Name>
+		<Description><![CDATA[Conta quantos vagões estão fisicamente localizados entre dois pontos (Position on Track), somando a frente e a traseira de cada vagão presente na track.
+
+Parâmetros:
+- pontoA: um dos pontos de referência.
+- pontoB: o outro ponto de referência.
+
+Funcionamento: obtém a track a partir de pontoA, calcula o intervalo de offset entre os dois pontos (independente de qual está "antes" ou "depois" na track), e percorre todos os vagões presentes nessa track, contando os que têm ao menos uma extremidade (frente ou traseira) dentro do intervalo.
+
+Retorno: número inteiro de vagões encontrados no intervalo.
+
+Comportamento importante:
+- Considera vagões de QUALQUER trem presente na track (não distingue entre trens diferentes).
+- Considera vagões em movimento: a contagem reflete a posição instantânea no momento exato da chamada, podendo mudar a cada chamada se houver trens se deslocando.
+
+Limitação: assume que pontoA e pontoB estão na MESMA railway track. Se os pontos estiverem em tracks diferentes (conectadas por switches, por exemplo), esta função não soma corretamente os vagões — ela ignora a track de pontoB e usa apenas a track de pontoA, produzindo um resultado incorreto nesse cenário.]]></Description>
+		<X>1440</X>
+		<Y>-6730</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[pontoA]]></Name>
+			<Type><![CDATA[PositionOnTrack]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[pontoB]]></Name>
+			<Type><![CDATA[PositionOnTrack]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[tracksNoCaminho]]></Name>
+			<Type><![CDATA[List<RailwayTrack>]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1784289730389</Id>
+		<Name><![CDATA[getTrensEmListaDeTracks]]></Name>
+		<Description><![CDATA[Conta quantos trens distintos estão fisicamente presentes (mesmo que parcialmente) em uma lista de railway tracks.
+
+Parâmetros:
+- tracks: lista de RailwayTrack a serem verificadas.
+
+Funcionamento: percorre cada track da lista, coletando os trens presentes nela (via getTrains()) em um Set, que descarta automaticamente duplicatas. Isso evita contar o mesmo trem mais de uma vez caso ele esteja ocupando simultaneamente mais de uma track da lista (por exemplo, atravessando a fronteira entre duas tracks conectadas).
+
+Retorno: número de trens distintos encontrados no conjunto de tracks informado.
+
+Observação: considera trens em qualquer estado (parados ou em movimento) no instante exato da chamada.]]></Description>
+		<X>1440</X>
+		<Y>-6710</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[tracks]]></Name>
+			<Type><![CDATA[List<RailwayTrack>]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>boolean</ReturnType>
+		<Id>1784657298071</Id>
+		<Name><![CDATA[jaEstaNoDestino]]></Name>
+		<Description><![CDATA[Busca, via reflection, o valor de um campo (variável, elemento ou bloco) dentro de um objeto container, a partir do nome do campo em texto.
+
+Parâmetros:
+- nomeBloco: nome exato do campo a ser localizado (deve corresponder ao nome do elemento no diagrama, com maiúsculas/minúsculas idênticas).
+- container: objeto onde o campo será procurado (ex: Main, ou uma instância de agente).
+
+Retorno: o objeto encontrado (tipo Object, requer cast no ponto de uso), ou null se o campo não existir ou não for acessível.
+
+Uso típico: localizar dinamicamente agentes ou blocos (ex: Enter, Queue) cujo nome vem de uma tabela do banco de dados, evitando escrever um "if/else" para cada caso.
+
+Limitação: só encontra campos declarados diretamente na classe do container — não busca em superclasses.]]></Description>
+		<X>1440</X>
+		<Y>-6690</Y>
+		<Label>
+			<X>11</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[destino]]></Name>
+			<Type><![CDATA[PositionOnTrack ]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1784915523107</Id>
+		<Name><![CDATA[getTamanhoDoTrem]]></Name>
+		<X>1440</X>
+		<Y>-6670</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1791226566308</Id>
+		<Name><![CDATA[getNumeroDeVagoes]]></Name>
+		<X>1440</X>
+		<Y>-6630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+</Functions>

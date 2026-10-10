@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Variables>
+	<Variable Class="PlainVariable">
+		<Id>1787668476473</Id>
+		<Name><![CDATA[irParaFrente]]></Name>
+		<X>50</X>
+		<Y>370</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[true]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1787668479271</Id>
+		<Name><![CDATA[destino]]></Name>
+		<X>50</X>
+		<Y>390</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[PositionOnTrack]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789314692594</Id>
+		<Name><![CDATA[faixa_via3_intermar]]></Name>
+		<X>1575</X>
+		<Y>675</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via3_intermar 			= new Faixa();
+faixa_via3_intermar.ordem   	= 1;
+faixa_via3_intermar.recurso 	= rp_via3_intermar;
+faixa_via3_intermar.track   	= main().via3_intermar;
+faixa_via3_intermar.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via3_intermar.enter   	= circular_via3_intermar;
+faixa_via3_intermar.linhaTMDS	= pl_pst_via_3_intermar;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789314706440</Id>
+		<Name><![CDATA[faixa_via3_a]]></Name>
+		<X>1575</X>
+		<Y>975</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via3_a          			= new Faixa();
+faixa_via3_a.ordem          	= 2;
+faixa_via3_a.recurso        	= rp_pst_via3_a;
+faixa_via3_a.track          	= main().via3_a;
+faixa_via3_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_via3_a.enter          	= circular_via3_a;
+faixa_via3_a.linhaTMDS			= pl_pst_via_3_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789314742220</Id>
+		<Name><![CDATA[faixa_via3_b]]></Name>
+		<X>875</X>
+		<Y>2275</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via3_b          	= new Faixa();
+faixa_via3_b.ordem   	= 3;
+faixa_via3_b.recurso  	= rp_pst_via3_b;
+faixa_via3_b.track    	= main().via3_b;
+faixa_via3_b.estado   	= Faixa.EstadoFaixa.LIVRE;
+faixa_via3_b.enter    	= circular_via3_b;
+faixa_via3_b.linhaTMDS	= pl_pst_via_3_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789324002458</Id>
+		<Name><![CDATA[faixa_via2_c]]></Name>
+		<X>1570</X>
+		<Y>1295</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via2_c 			= new Faixa();
+faixa_via2_c.ordem   	= 1;
+faixa_via2_c.recurso 	= rp_via2_c;
+faixa_via2_c.track   	= main().via2_c;
+faixa_via2_c.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via2_c.enter   	= circular_via2_c;
+faixa_via2_c.linhaTMDS	= pl_pst_via_2_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789335995994</Id>
+		<Name><![CDATA[faixa_via2_d]]></Name>
+		<X>1565</X>
+		<Y>1585</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via2_d          			= new Faixa();
+faixa_via2_d.ordem          	= 2;
+faixa_via2_d.recurso        	= rp_pst_via2_d;
+faixa_via2_d.track          	= main().via2_d;
+faixa_via2_d.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_via2_d.enter          	= circular_via2_d;
+faixa_via2_d.linhaTMDS			= pl_pst_via2_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789385773216</Id>
+		<Name><![CDATA[faixa_marginal_a]]></Name>
+		<X>-1534</X>
+		<Y>724</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_marginal_a          			= new Faixa();
+faixa_marginal_a.ordem          	= 2;
+faixa_marginal_a.recurso        	= rp_pmc_marginal_a;
+faixa_marginal_a.track          	= main().pst_marginal_a;
+faixa_marginal_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_marginal_a.enter          	= circular_marginal_a;
+faixa_marginal_a.linhaTMDS			= pl_pmc_marginal_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789390106561</Id>
+		<Name><![CDATA[faixa_marginal_b]]></Name>
+		<X>-1525</X>
+		<Y>975</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_marginal_b          			= new Faixa();
+faixa_marginal_b.ordem          	= 2;
+faixa_marginal_b.recurso        	= rp_pmc_marginal_b;
+faixa_marginal_b.track          	= main().pst_marginal_b;
+faixa_marginal_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_marginal_b.enter          	= circular_marginal_b;
+faixa_marginal_b.linhaTMDS			= pl_pmc_marginal_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789390286730</Id>
+		<Name><![CDATA[faixa_marginal_c]]></Name>
+		<X>-1535</X>
+		<Y>1235</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_marginal_c          			= new Faixa();
+faixa_marginal_c.ordem          	= 2;
+faixa_marginal_c.recurso        	= rp_pmc_marginal_c;
+faixa_marginal_c.track          	= main().pst_marginal_c;
+faixa_marginal_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_marginal_c.enter          	= circular_marginal_c;
+faixa_marginal_c.linhaTMDS			= pl_pmc_marginal_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789391033346</Id>
+		<Name><![CDATA[faixa_intervalo4000_a]]></Name>
+		<X>-1535</X>
+		<Y>1485</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_intervalo4000_a          			= new Faixa();
+faixa_intervalo4000_a.ordem          	= 2;
+faixa_intervalo4000_a.recurso        	= rp_pmc_intervalo4000_a;
+faixa_intervalo4000_a.track          	= main().pmc_intervalo4000_a;
+faixa_intervalo4000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_intervalo4000_a.enter          	= circular_intervalo4000_a;
+faixa_intervalo4000_a.linhaTMDS			= pl_pmc_intervalo4000_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789391414678</Id>
+		<Name><![CDATA[faixa_intervalo4000_b]]></Name>
+		<X>-1535</X>
+		<Y>1735</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_intervalo4000_b          			= new Faixa();
+faixa_intervalo4000_b.ordem          	= 2;
+faixa_intervalo4000_b.recurso        	= rp_pmc_intervalo4000_b;
+faixa_intervalo4000_b.track          	= main().pmc_intervalo4000_b;
+faixa_intervalo4000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_intervalo4000_b.enter          	= circular_intervalo4000_b;
+faixa_intervalo4000_b.linhaTMDS			= pl_pmc_intervalo4000_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1789392431052</Id>
+		<Name><![CDATA[faixa_intervalo4000_c]]></Name>
+		<X>-1531</X>
+		<Y>1988</Y>
+		<Label>
+			<X>9</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_intervalo4000_c          			= new Faixa();
+faixa_intervalo4000_c.ordem          	= 2;
+faixa_intervalo4000_c.recurso        	= rp_pmc_intervalo4000_c;
+faixa_intervalo4000_c.track          	= main().pmc_intervalo4000_c;
+faixa_intervalo4000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_intervalo4000_c.enter          	= circular_intervalo4000_c;
+faixa_intervalo4000_c.linhaTMDS			= pl_pmc_intervalo4000_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790787941759</Id>
+		<Name><![CDATA[faixa_via1_intermar_d]]></Name>
+		<X>2165</X>
+		<Y>675</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via1_intermar_d 			= new Faixa();
+faixa_via1_intermar_d.ordem   	= 1;
+faixa_via1_intermar_d.recurso 	= rp_via1_intermar_d;
+faixa_via1_intermar_d.track   	= main().via1_intermar_d;
+faixa_via1_intermar_d.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via1_intermar_d.enter   	= circular_via1_intermar_d;
+faixa_via1_intermar_d.linhaTMDS	= pl_pst_via_1_intermar_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790788983972</Id>
+		<Name><![CDATA[faixa_via1_intermar_c]]></Name>
+		<X>2165</X>
+		<Y>975</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via1_intermar_c 			= new Faixa();
+faixa_via1_intermar_c.ordem   	= 1;
+faixa_via1_intermar_c.recurso 	= rp_via1_intermar_c;
+faixa_via1_intermar_c.track   	= main().via1_intermar_c;
+faixa_via1_intermar_c.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via1_intermar_c.enter   	= circular_via1_intermar_c;
+faixa_via1_intermar_c.linhaTMDS	= pl_pst_via_1_intermar_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790789088946</Id>
+		<Name><![CDATA[faixa_via1_intermar_b]]></Name>
+		<X>2165</X>
+		<Y>1275</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via1_intermar_b 			= new Faixa();
+faixa_via1_intermar_b.ordem   	= 1;
+faixa_via1_intermar_b.recurso 	= rp_via1_intermar_b;
+faixa_via1_intermar_b.track   	= main().via1_intermar_b;
+faixa_via1_intermar_b.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via1_intermar_b.enter   	= circular_via1_intermar_b;
+faixa_via1_intermar_b.linhaTMDS	= pl_pst_via_1_intermar_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790789141995</Id>
+		<Name><![CDATA[faixa_via1_intermar_a]]></Name>
+		<X>2165</X>
+		<Y>1575</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_via1_intermar_a 			= new Faixa();
+faixa_via1_intermar_a.ordem   	= 1;
+faixa_via1_intermar_a.recurso 	= rp_via1_intermar_a;
+faixa_via1_intermar_a.track   	= main().via1_intermar_a;
+faixa_via1_intermar_a.estado  	= Faixa.EstadoFaixa.LIVRE;
+faixa_via1_intermar_a.enter   	= circular_via1_intermar_a;
+faixa_via1_intermar_a.linhaTMDS	= pl_pst_via_1_intermar_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790963989351</Id>
+		<Name><![CDATA[faixa_linha1000_a]]></Name>
+		<X>-900</X>
+		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha1000_a          			= new Faixa();
+faixa_linha1000_a.ordem          	= 2;
+faixa_linha1000_a.recurso        	= rp_pmc_linha1000_a;
+faixa_linha1000_a.track          	= main().pmc_linha1000_a;
+faixa_linha1000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_a.enter          	= circular_via3_a;
+faixa_linha1000_a.linhaTMDS			= pl_pmc_linha1000_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790964019767</Id>
+		<Name><![CDATA[faixa_linha1000_b]]></Name>
+		<X>-900</X>
+		<Y>1330</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha1000_b          			= new Faixa();
+faixa_linha1000_b.ordem          	= 2;
+faixa_linha1000_b.recurso        	= rp_pmc_linha1000_b;
+faixa_linha1000_b.track          	= main().pmc_linha1000_b;
+faixa_linha1000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_b.enter          	= circular_via3_b;
+faixa_linha1000_b.linhaTMDS			= pl_pmc_linha1000_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790964020800</Id>
+		<Name><![CDATA[faixa_linha1000_c]]></Name>
+		<X>-900</X>
+		<Y>1480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha1000_c          			= new Faixa();
+faixa_linha1000_c.ordem          	= 2;
+faixa_linha1000_c.recurso        	= rp_pmc_linha1000_c;
+faixa_linha1000_c.track          	= main().pmc_linha1000_c;
+faixa_linha1000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_c.enter          	= circular_via3_c;
+faixa_linha1000_c.linhaTMDS			= pl_pmc_linha1000_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970452933</Id>
+		<Name><![CDATA[faixa_linha2000_a]]></Name>
+		<X>-650</X>
+		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha2000_a          			= new Faixa();
+faixa_linha2000_a.ordem          	= 2;
+faixa_linha2000_a.recurso        	= rp_pmc_linha2000_a;
+faixa_linha2000_a.track          	= main().pmc_linha2000_a;
+faixa_linha2000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha2000_a.enter          	= circular_via3_a;
+faixa_linha2000_a.linhaTMDS			= pl_pmc_linha2000_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970705748</Id>
+		<Name><![CDATA[faixa_linha2000_b]]></Name>
+		<X>-650</X>
+		<Y>1330</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha2000_b          			= new Faixa();
+faixa_linha2000_b.ordem          	= 2;
+faixa_linha2000_b.recurso        	= rp_pmc_linha2000_b;
+faixa_linha2000_b.track          	= main().pmc_linha2000_b;
+faixa_linha2000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha2000_b.enter          	= circular_via3_b;
+faixa_linha2000_b.linhaTMDS			= pl_pmc_linha2000_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970717745</Id>
+		<Name><![CDATA[faixa_linha2000_c]]></Name>
+		<X>-650</X>
+		<Y>1480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha2000_c          			= new Faixa();
+faixa_linha2000_c.ordem          	= 2;
+faixa_linha2000_c.recurso        	= rp_pmc_linha2000_c;
+faixa_linha2000_c.track          	= main().pmc_linha2000_c;
+faixa_linha2000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha2000_c.enter          	= circular_via3_c;
+faixa_linha2000_c.linhaTMDS			= pl_pmc_linha2000_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970725019</Id>
+		<Name><![CDATA[faixa_linha2000_d]]></Name>
+		<X>-650</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha2000_d          			= new Faixa();
+faixa_linha2000_d.ordem          	= 2;
+faixa_linha2000_d.recurso        	= rp_pmc_linha2000_d;
+faixa_linha2000_d.track          	= main().pmc_linha2000_d;
+faixa_linha2000_d.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha2000_d.enter          	= circular_via3_d;
+faixa_linha2000_d.linhaTMDS			= pl_pmc_linha2000_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970730306</Id>
+		<Name><![CDATA[faixa_linha2000_e]]></Name>
+		<X>-650</X>
+		<Y>1770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha2000_e          			= new Faixa();
+faixa_linha2000_e.ordem          	= 2;
+faixa_linha2000_e.recurso        	= rp_pmc_linha2000_e;
+faixa_linha2000_e.track          	= main().pmc_linha2000_e;
+faixa_linha2000_e.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha2000_e.enter          	= circular_via3_e;
+faixa_linha2000_e.linhaTMDS			= pl_pmc_linha2000_e;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970744515</Id>
+		<Name><![CDATA[faixa_linha3000_a]]></Name>
+		<X>-400</X>
+		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha3000_a          			= new Faixa();
+faixa_linha3000_a.ordem          	= 2;
+faixa_linha3000_a.recurso        	= rp_pmc_linha3000_a;
+faixa_linha3000_a.track          	= main().pmc_linha3000_a;
+faixa_linha3000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha3000_a.enter          	= circular_via3_a;
+faixa_linha3000_a.linhaTMDS			= pl_pmc_linha3000_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970744517</Id>
+		<Name><![CDATA[faixa_linha3000_b]]></Name>
+		<X>-400</X>
+		<Y>1330</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha3000_b          			= new Faixa();
+faixa_linha3000_b.ordem          	= 2;
+faixa_linha3000_b.recurso        	= rp_pmc_linha3000_b;
+faixa_linha3000_b.track          	= main().pmc_linha3000_b;
+faixa_linha3000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha3000_b.enter          	= circular_via3_b;
+faixa_linha3000_b.linhaTMDS			= pl_pmc_linha3000_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970744519</Id>
+		<Name><![CDATA[faixa_linha3000_c]]></Name>
+		<X>-400</X>
+		<Y>1480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha3000_c          			= new Faixa();
+faixa_linha3000_c.ordem          	= 2;
+faixa_linha3000_c.recurso        	= rp_pmc_linha3000_c;
+faixa_linha3000_c.track          	= main().pmc_linha3000_c;
+faixa_linha3000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha3000_c.enter          	= circular_via3_c;
+faixa_linha3000_c.linhaTMDS			= pl_pmc_linha3000_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970744521</Id>
+		<Name><![CDATA[faixa_linha3000_d]]></Name>
+		<X>-400</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha3000_d          			= new Faixa();
+faixa_linha3000_d.ordem          	= 2;
+faixa_linha3000_d.recurso        	= rp_pmc_linha3000_d;
+faixa_linha3000_d.track          	= main().pmc_linha3000_d;
+faixa_linha3000_d.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha3000_d.enter          	= circular_via3_d;
+faixa_linha3000_d.linhaTMDS			= pl_pmc_linha3000_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1790970744523</Id>
+		<Name><![CDATA[faixa_linha3000_e]]></Name>
+		<X>-400</X>
+		<Y>1770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha3000_e          			= new Faixa();
+faixa_linha3000_e.ordem          	= 2;
+faixa_linha3000_e.recurso        	= rp_pmc_linha3000_e;
+faixa_linha3000_e.track          	= main().pmc_linha3000_e;
+faixa_linha3000_e.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha3000_e.enter          	= circular_via3_e;
+faixa_linha3000_e.linhaTMDS			= pl_pmc_linha3000_e;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791313655659</Id>
+		<Name><![CDATA[faixa_linha4000_a]]></Name>
+		<X>-150</X>
+		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha4000_a          			= new Faixa();
+faixa_linha4000_a.ordem          	= 2;
+faixa_linha4000_a.recurso        	= rp_pmc_linha4000_a;
+faixa_linha4000_a.track          	= main().pmc_linha4000_a;
+faixa_linha4000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_a.enter          	= circular_via3_a;
+faixa_linha4000_a.linhaTMDS			= pl_pmc_linha4000_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791313655661</Id>
+		<Name><![CDATA[faixa_linha4000_b]]></Name>
+		<X>-150</X>
+		<Y>1330</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha4000_b          			= new Faixa();
+faixa_linha4000_b.ordem          	= 2;
+faixa_linha4000_b.recurso        	= rp_pmc_linha4000_b;
+faixa_linha4000_b.track          	= main().pmc_linha4000_b;
+faixa_linha4000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_b.enter          	= circular_via3_b;
+faixa_linha4000_b.linhaTMDS			= pl_pmc_linha4000_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791313655663</Id>
+		<Name><![CDATA[faixa_linha4000_c]]></Name>
+		<X>-150</X>
+		<Y>1480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_linha4000_c          			= new Faixa();
+faixa_linha4000_c.ordem          	= 2;
+faixa_linha4000_c.recurso        	= rp_pmc_linha4000_c;
+faixa_linha4000_c.track          	= main().pmc_linha4000_c;
+faixa_linha4000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+//faixa_linha1000_c.enter          	= circular_via3_c;
+faixa_linha4000_c.linhaTMDS			= pl_pmc_linha4000_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1787602396616</Id>
+		<Name><![CDATA[coordenadas_ferroviarias]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>60</X>
+		<Y>500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>LinkedHashMap</CollectionClass>
+			<ElementClass>PositionOnTrack</ElementClass>
+			<ValueElementClass>Integer</ValueElementClass>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788899316997</Id>
+		<Name><![CDATA[coll_trecho5000]]></Name>
+		<X>1810</X>
+		<Y>-400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().pmc_linha5000_a,
+	main().pmc_linha5000_b,
+	main().pmc_linha5000_c,
+	main().pmc_linha5000_d,
+	main().pmc_linha5000_e
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788900353070</Id>
+		<Name><![CDATA[linhas_e_recursos]]></Name>
+		<X>60</X>
+		<Y>480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>LinkedHashMap</CollectionClass>
+			<ElementClass>ResourcePool</ElementClass>
+			<ValueElementClass>Collection&lt;RailwayTrack&gt;</ValueElementClass>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788901748760</Id>
+		<Name><![CDATA[coll_trecho5001]]></Name>
+		<X>2220</X>
+		<Y>-400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().pmc_linha5000_a,
+	main().pmc_linha5000_b,
+	main().pmc_linha5000_c,
+	main().pmc_linha5000_d,
+	main().pmc_linha5000_e
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788901755524</Id>
+		<Name><![CDATA[coll_trecho5002]]></Name>
+		<X>2584</X>
+		<Y>-400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().pmc_linha5000_a,
+	main().pmc_linha5000_b,
+	main().pmc_linha5000_c,
+	main().pmc_linha5000_d,
+	main().pmc_linha5000_e
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788986569902</Id>
+		<Name><![CDATA[coll_intervalo4k]]></Name>
+		<X>3849.632</X>
+		<Y>620</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().pmc_intervalo4000_b,
+	main().pmc_intervalo4000_c
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788986941785</Id>
+		<Name><![CDATA[coll_marginalRetaVelha]]></Name>
+		<X>3849.632</X>
+		<Y>820</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().pst_marginal_a, 
+	main().pmc_intervalo4000_a, 
+	main().pst_marginal_c, 
+	main().pst_marginal_b
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788987025281</Id>
+		<Name><![CDATA[coll_via2]]></Name>
+		<X>3849.632</X>
+		<Y>1070</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().via3_a, 
+	//main().railwayTrack77
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1788987138161</Id>
+		<Name><![CDATA[coll_via2_intermar]]></Name>
+		<X>3849.632</X>
+		<Y>1320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>RailwayTrack</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+	main().via2_intermar_a, 
+	main().via2_intermar_b,
+	main().via2_intermar_c
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1789316927425</Id>
+		<Name><![CDATA[faixas]]></Name>
+		<X>920</X>
+		<Y>990</Y>
+		<Label>
+			<X>12</X>
+			<Y>2</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>Faixa</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{ faixa_intervalo4000_a, faixa_intervalo4000_b, faixa_intervalo4000_c, faixa_via2_c, faixa_via2_d, faixa_via3_intermar, faixa_via3_a, faixa_via3_b, faixa_via1_intermar_a, faixa_via1_intermar_b, faixa_via1_intermar_c, faixa_via1_intermar_d }]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+</Variables>
