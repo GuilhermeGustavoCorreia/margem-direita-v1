@@ -35,15 +35,6 @@
 				<Name><![CDATA[GestorDeLocomotivas]]></Name>
 				<ParentId>1782076424653</ParentId>
 			</Folder>
-			<Folder>
-				<Id>1790260318033</Id>
-				<Name><![CDATA[agentes-auxiliares]]></Name>
-			</Folder>
-			<Folder>
-				<Id>1790260416620</Id>
-				<Name><![CDATA[gestor-de-alivios]]></Name>
-				<ParentId>1790260318033</ParentId>
-			</Folder>
 		</Folders>
 		<ActiveObjectClasses/>
 		<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
