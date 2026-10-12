@@ -5,10 +5,8 @@ return (Main) getEngine().getRoot();
 
 float getOverloadVazios()
 {/*ALCODESTART::1787231640652*/
-int tamanhoVazios = (
-	main.getTamanhoDoTrem(lote_linhaMar) +
-	main.getTamanhoDoTrem(lote_linhaTerra)
-);
+// ALT-005: conta os lotes vazios (antes contava os carregados)
+int tamanhoVazios = _getVagoesVazios();
 
 int capacidadeVazios = (
 	CAPACIDADE_LINHA_MAR +
@@ -44,11 +42,13 @@ return 2;
 
 String getPatio()
 {/*ALCODESTART::1787663062252*/
-return "PMC";
+return "pst";
 /*ALCODEEND*/}
 
-ArrayList<Faixa>  getPrimeiroAlivioFaixas()
+ArrayList<Faixa>  get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790637932726*/
+// faixas do caminho da loco de manobra até o Tgrao
+// (a faixa de criação, marginal_a, é apreendida à parte pelo gestor)
 return primeiro_alivio_faixas;
 /*ALCODEEND*/}
 
@@ -79,7 +79,7 @@ quantidade_alivio = qt_quantidade;
 
 int get_quantidade_vazios()
 {/*ALCODESTART::1791224533452*/
-return 0;
+return _getVagoesVazios();
 /*ALCODEEND*/}
 
 double atualizarFerroviaEProdutoEmAtendimento(Trem trem)
@@ -115,5 +115,16 @@ int vagoes_linhaTerra = main().getNumeroDeVagoes(lote_linhaTerra);
 int vagoes_linhaMar   = main().getNumeroDeVagoes(lote_linhaMar);
 
 return (vagoes_linhaTerra + vagoes_linhaMar);
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1791700000013*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "manobra";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000014*/
+return 2;
 /*ALCODEEND*/}
 

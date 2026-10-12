@@ -127,31 +127,6 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Alignment>LEFT</Alignment>
 	</Text>
 	<Text>
-		<Id>1786649343147</Id>
-		<Name><![CDATA[text21]]></Name>
-		<X>3000</X>
-		<Y>60</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Indicadores]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>26</Size>
-			<Style>1</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
 		<Id>1786649353303</Id>
 		<Name><![CDATA[text22]]></Name>
 		<X>760</X>
@@ -329,6 +304,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 	<Text>
 		<Id>1786968748624</Id>
 		<Name><![CDATA[text18]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>500</X>
 		<Y>1110</Y>
 		<Label>
@@ -405,7 +381,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787685494099</Id>
 		<Name><![CDATA[text27]]></Name>
 		<X>2200</X>
-		<Y>580</Y>
+		<Y>720</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -430,7 +406,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787685517400</Id>
 		<Name><![CDATA[text28]]></Name>
 		<X>2200</X>
-		<Y>1360</Y>
+		<Y>1500</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -455,7 +431,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787686912878</Id>
 		<Name><![CDATA[text29]]></Name>
 		<X>2240</X>
-		<Y>630</Y>
+		<Y>770</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -480,7 +456,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787686950202</Id>
 		<Name><![CDATA[text30]]></Name>
 		<X>2240</X>
-		<Y>810</Y>
+		<Y>950</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -505,7 +481,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787687096186</Id>
 		<Name><![CDATA[text31]]></Name>
 		<X>2240</X>
-		<Y>1020</Y>
+		<Y>1160</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -530,7 +506,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787687105980</Id>
 		<Name><![CDATA[text32]]></Name>
 		<X>2240</X>
-		<Y>1150</Y>
+		<Y>1290</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -555,7 +531,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787851225151</Id>
 		<Name><![CDATA[text33]]></Name>
 		<X>2240</X>
-		<Y>130</Y>
+		<Y>270</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -580,7 +556,7 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Id>1787918884788</Id>
 		<Name><![CDATA[text34]]></Name>
 		<X>2240</X>
-		<Y>1430</Y>
+		<Y>1570</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>

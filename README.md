@@ -15,3 +15,10 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
   - **003.3**: decisões como no documento: fim da via3_a "é coperXI ou pêra?", fim da via2_c "é pêra?".
   - **003.4**: rota do Tgrao (… → via3_c → silosMuro_a → marginal_c → comecar_encoste).
 - **ALT-004** (em andamento): MoegaoMar + pendências da ALT-002 (CoperXI)
+- **ALT-005**: Tgrao — loco volta ao GestorDeLocomotivas, lotes de carregados zerados após a descarga, overload conta os vazios
+- **ALT-006**: gestor de alívios — tipo e quantidade de locos por terminal (Tgrao: 2 locos de manobra em `pos_locoManobra_PST`), seize da faixa de criação, ◇ `ehLocoManobra`
+- **ALT-007**: Tgrao — alívio libera a loco B para acoplar nos vazios (`aguardaPrimeiraManobra.unblock()`)
+- **ALT-008**: faixas 7000_a..d no GestorDeCirculacao; Tgrao ocupa/libera essas faixas no encoste e no alívio; `voltarPosInicial3` sai para o lado Valongo
+- **ALT-009**: Tgrao — alívio ocupa a 7000_a..d e, na saída, 6000_a/marginal_c/silosMuro_a (faixa nova 6000_a); `voltarPosInicial3` vai até `pos_saida_tgrao`
+- **ALT-010** (diagnóstico): traces `[diag_liberar]` em `liberar_faixas_ocupadas` para achar o pool liberado sem posse
+- **ALT-011**: console espelhado em `logs/sim.log` (função `configurar_log_em_arquivo` no On startup do Main)

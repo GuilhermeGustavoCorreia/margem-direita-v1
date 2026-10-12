@@ -237,9 +237,11 @@ String getPatio()
 return "PST";
 /*ALCODEEND*/}
 
-ArrayList<Faixa>  getPrimeiroAlivioFaixas()
+ArrayList<Faixa>  get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790638014122*/
-return primeiro_alivio_faixas;
+// a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
+// é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
+return new ArrayList<Faixa>();
 /*ALCODEEND*/}
 
 String getSegmento()
@@ -270,5 +272,16 @@ quantidade_alivio = qt_quantidade;
 int get_quantidade_vazios()
 {/*ALCODESTART::1791224520511*/
 return 0;
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1791700000009*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "ferrovia";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000010*/
+return 1;
 /*ALCODEEND*/}
 

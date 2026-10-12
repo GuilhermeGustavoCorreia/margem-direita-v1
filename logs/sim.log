@@ -1,0 +1,61 @@
+[log] 2026-10-12T12:43:03.316385700 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
+[diag_liberar] t=725.5 trem 14948 | possui: rp_via3_intermar rp_pst_via3_a 
+[diag_liberar] t=1528.70217326982 trem 14948 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b 
+[diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
+[diag_liberar] t=1532.3264499495376 trem 14948 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c 
+[diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
+[diag_liberar]   rp_pst_via3_a | vazia=false | temUnidade=true
+[diag_liberar] t=1744.6646485786205 trem 14948 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c rp_silosMuro_a 
+[diag_liberar]   rp_via3_intermar | vazia=true | temUnidade=true
+[diag_liberar]   rp_pst_via3_a | vazia=true | temUnidade=true
+[diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
+[diag_liberar] t=1836.0991487962742 trem 14948 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+[diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
+[diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
+[diag_liberar] t=1914.4560334114321 trem 14948 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+[diag_liberar]   rp_pst_via3_b | vazia=true | temUnidade=true
+[diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
+[diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
+[diag_liberar] t=2058.190269998241 trem 14948 | possui: rp_via3_c rp_silosMuro_a rp_pmc_marginal_c rp_pmc_linha7000_a rp_pmc_linha7000_b rp_pmc_linha7000_c rp_pmc_linha7000_d 
+[diag_liberar]   rp_via3_c | vazia=true | temUnidade=true
+[diag_liberar]   rp_silosMuro_a | vazia=true | temUnidade=true
+[diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=true
+2281.0 | [qtd_alivio] tgrao | vazios no terminal: 40 | cabem_na_dv0: 25 | definido: 25 (limitado pela 4000)
+2281.0 | [diag_pst] criar 2 loco(s) de manobra em pos_locoManobra_PST
+2468.6173909628737 | [diag_pst] alivio terminou | tgrao voltou para terminais_pst
+[diag_liberar] t=2470.6173909628737 trem 14993 | possui: rp_via1_intermar_c rp_via1_intermar_d 
+[diag_liberar]   rp_via3_c | vazia=false | temUnidade=false
+[diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=false
+[diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=false  <-- VAI DAR ERRO
+[diag_liberar]   rp_pmc_linha6000_a | vazia=true | temUnidade=false  <-- VAI DAR ERRO
+Exceção durante execução de evento discreto:
+Erro de lógica do modelo:
+
+root.gestorDeCirculacao.liberar_faixas_usadas:
+The agent does not possess the resource(s) it wants to release
+com.anylogic.engine.ModelException: root.gestorDeCirculacao.liberar_faixas_usadas:
+The agent does not possess the resource(s) it wants to release
+	at com.anylogic.engine.Engine.errorInModel(Unknown Source)
+	at com.anylogic.engine.Agent.errorInModel(Unknown Source)
+	at com.anylogic.engine.Utilities.errorInModel(Unknown Source)
+	at com.anylogic.libraries.processmodeling.Release.releaseUnitsOf(Unknown Source)
+	at com.anylogic.libraries.processmodeling.Release.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.Release$10.onEnter(Unknown Source)
+	at com.anylogic.libraries.processmodeling.PlainTransfer$2.b(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.InPort.receiveImmediately(Unknown Source)
+	at com.anylogic.libraries.processmodeling.InputBlock$1.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.b(Unknown Source)
+	at com.anylogic.libraries.processmodeling.PlainTransfer$1.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.b(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutPort.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutputBlock.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutputBlock$2.a(Unknown Source)
+	at com.anylogic.libraries.processmodeling.OutputBlock$2.action(Unknown Source)
+	at com.anylogic.libraries.processmodeling.AsynchronousExecutor_xjal$a.execute(Unknown Source)
+	at com.anylogic.engine.LibraryEventHandler$i.execute(Unknown Source)
+	at com.anylogic.engine.Engine.c(Unknown Source)
+	at com.anylogic.engine.Engine.ie(Unknown Source)
+	at com.anylogic.engine.Engine$i.run(Unknown Source)

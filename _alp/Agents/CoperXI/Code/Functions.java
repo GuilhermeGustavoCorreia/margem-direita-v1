@@ -427,9 +427,11 @@ for (int i = 0; i < waitLotesParaDescarga.size(); i++) {
 return result.isEmpty() ? "Vazio" : result;
 /*ALCODEEND*/}
 
-ArrayList<Faixa> getPrimeiroAlivioFaixas()
+ArrayList<Faixa> get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790637769491*/
-return primeiro_alivio_faixas;
+// a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
+// é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
+return new ArrayList<Faixa>();
 /*ALCODEEND*/}
 
 String getSegmento()
@@ -499,5 +501,16 @@ double liberar_wait_lote_linhaTerra_b()
 if (wait_blocoTerra_b.size() > 0) {
     wait_blocoTerra_b.free(wait_blocoTerra_b.get(0));
 }
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1791700000003*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "ferrovia";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000004*/
+return 1;
 /*ALCODEEND*/}
 

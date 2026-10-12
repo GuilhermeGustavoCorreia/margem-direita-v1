@@ -213,6 +213,8 @@
     ((Vagao) car).setFerrovia("rumo");
 	((Vagao) car).setTerminal(main().tgrao);
 
+} else if (car instanceof Locomotiva) {
+    ((Locomotiva) car).ferrovia = "rumo";
 }]]></Code>
 				</Value>
 			</Parameter>
@@ -376,7 +378,7 @@
 	<EmbeddedObject>
 		<Id>1786710475452</Id>
 		<Name><![CDATA[colocarTrem_L7]]></Name>
-		<X>710</X>
+		<X>870</X>
 		<Y>130</Y>
 		<Label>
 			<X>-20</X>
@@ -1200,7 +1202,7 @@
 	<EmbeddedObject>
 		<Id>1786731945310</Id>
 		<Name><![CDATA[encostar_Moega]]></Name>
-		<X>710</X>
+		<X>680</X>
 		<Y>560</Y>
 		<Label>
 			<X>-30</X>
@@ -2199,6 +2201,7 @@
 	<EmbeddedObject>
 		<Id>1786968787794</Id>
 		<Name><![CDATA[precisaRemoverLoco]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>530</X>
 		<Y>1215</Y>
 		<Label>
@@ -2316,6 +2319,7 @@
 	<EmbeddedObject>
 		<Id>1786968803422</Id>
 		<Name><![CDATA[temLocomotiva]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>730</X>
 		<Y>1215</Y>
 		<Label>
@@ -2394,6 +2398,7 @@
 	<EmbeddedObject>
 		<Id>1786968819850</Id>
 		<Name><![CDATA[paraColocaLinhaMar2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1000</X>
 		<Y>1290</Y>
 		<Label>
@@ -2448,6 +2453,7 @@
 	<EmbeddedObject>
 		<Id>1786968839343</Id>
 		<Name><![CDATA[removerLoco]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>855</X>
 		<Y>1225</Y>
 		<Label>
@@ -2573,6 +2579,7 @@
 	<EmbeddedObject>
 		<Id>1786968900287</Id>
 		<Name><![CDATA[trainDispose]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1000</X>
 		<Y>1225</Y>
 		<Label>
@@ -2616,57 +2623,6 @@
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1786968900285</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1786972889284</Id>
-		<Name><![CDATA[trainDispose1]]></Name>
-		<X>1000</X>
-		<Y>570</Y>
-		<Label>
-			<X>-25</X>
-			<Y>-29</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDispose</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.rail</PackageName>
-				<ClassName>TrainDispose</ClassName>
-				<ItemName>1412464642030</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1786972889282</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
@@ -3037,6 +2993,7 @@
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_linhaMoega = ((Trem) agent);
+lote_linhaTerra = null; // ALT-005: vazios saem do lote de carregados
 acoplarAlivioMoega.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -3092,6 +3049,7 @@ acoplarAlivioMoega.take(agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_linhaMar = ((Trem) agent);
+lote_linhaMar = null; // ALT-005: vazios saem do lote de carregados
 espera_loteMoega.block();
 acoplarAlivioMar.take(agent);]]></Code>
 				</Value>
@@ -3190,7 +3148,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787242633474</Id>
 		<Name><![CDATA[alivioVazios]]></Name>
 		<X>2280</X>
-		<Y>200</Y>
+		<Y>340</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -3310,7 +3268,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787681735438</Id>
 		<Name><![CDATA[entrarNaLinhaDoTerminal]]></Name>
 		<X>2395</X>
-		<Y>200</Y>
+		<Y>340</Y>
 		<Label>
 			<X>-45</X>
 			<Y>-25</Y>
@@ -3447,8 +3405,8 @@ acoplarAlivioMar.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1787685077449</Id>
 		<Name><![CDATA[separarLocomotivas]]></Name>
-		<X>2530</X>
-		<Y>210</Y>
+		<X>2580</X>
+		<Y>350</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-20</Y>
@@ -3572,8 +3530,8 @@ acoplarAlivioMar.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1787686699516</Id>
 		<Name><![CDATA[paraPrimeiraManobra]]></Name>
-		<X>2650</X>
-		<Y>300</Y>
+		<X>2700</X>
+		<Y>440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3627,7 +3585,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787686817806</Id>
 		<Name><![CDATA[alivioMar]]></Name>
 		<X>2250</X>
-		<Y>690</Y>
+		<Y>830</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -3744,7 +3702,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787686832552</Id>
 		<Name><![CDATA[engatarLoteMar]]></Name>
 		<X>2370</X>
-		<Y>690</Y>
+		<Y>830</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -3888,7 +3846,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787686848404</Id>
 		<Name><![CDATA[acoplar]]></Name>
 		<X>2490</X>
-		<Y>750</Y>
+		<Y>890</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-20</Y>
@@ -3952,7 +3910,7 @@ acoplarAlivioMar.take(agent);]]></Code>
 		<Id>1787686883646</Id>
 		<Name><![CDATA[paraProximaEtapa]]></Name>
 		<X>2650</X>
-		<Y>740</Y>
+		<Y>880</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -4007,7 +3965,7 @@ proximaEtapa.take(agent);]]></Code>
 		<Id>1787686889919</Id>
 		<Name><![CDATA[acoplarAlivioMar]]></Name>
 		<X>2380</X>
-		<Y>790</Y>
+		<Y>930</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -4124,7 +4082,7 @@ proximaEtapa.take(agent);]]></Code>
 		<Id>1787686950248</Id>
 		<Name><![CDATA[alivioMoega]]></Name>
 		<X>2250</X>
-		<Y>890</Y>
+		<Y>1030</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -4241,7 +4199,7 @@ proximaEtapa.take(agent);]]></Code>
 		<Id>1787686950364</Id>
 		<Name><![CDATA[acoplar1]]></Name>
 		<X>2490</X>
-		<Y>950</Y>
+		<Y>1090</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -4310,8 +4268,8 @@ proximaEtapa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1787686950406</Id>
 		<Name><![CDATA[paraProximaEtapa1]]></Name>
-		<X>2650</X>
-		<Y>940</Y>
+		<X>2740</X>
+		<Y>1080</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -4334,7 +4292,7 @@ proximaEtapa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linhaTerra  = null;
+					<Code><![CDATA[loteVazios_linhaMoega = null; // ALT-005: vazios saem do lote apos o alivio (antes zerava lote_linhaTerra)
 proximaEtapa.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -4366,7 +4324,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787686950444</Id>
 		<Name><![CDATA[acoplarAlivioMoega]]></Name>
 		<X>2380</X>
-		<Y>990</Y>
+		<Y>1130</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -4483,7 +4441,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787687146803</Id>
 		<Name><![CDATA[linha7k]]></Name>
 		<X>2250</X>
-		<Y>1090</Y>
+		<Y>1230</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -4600,7 +4558,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787687273546</Id>
 		<Name><![CDATA[retirarLocomotiva_a]]></Name>
 		<X>2250</X>
-		<Y>1220</Y>
+		<Y>1360</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -4717,7 +4675,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787687295007</Id>
 		<Name><![CDATA[trainDecouple]]></Name>
 		<X>2430</X>
-		<Y>1230</Y>
+		<Y>1370</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-20</Y>
@@ -4836,7 +4794,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787687336747</Id>
 		<Name><![CDATA[paraAcoplarLoco_b]]></Name>
 		<X>2650</X>
-		<Y>1220</Y>
+		<Y>1360</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -4859,7 +4817,9 @@ proximaEtapa.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[acoplarLoco_b.take(agent)]]></Code>
+					<Code><![CDATA[// ALT-007: libera a loco B (o unblock ficava no antigo paraDevolverLocomotiva_a)
+aguardaPrimeiraManobra.unblock();
+acoplarLoco_b.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -4889,8 +4849,8 @@ proximaEtapa.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1787687618499</Id>
 		<Name><![CDATA[paraRetirarLocomotiva_a]]></Name>
-		<X>2650</X>
-		<Y>1090</Y>
+		<X>2660</X>
+		<Y>1230</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -4944,7 +4904,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787831799236</Id>
 		<Name><![CDATA[engatarLoteMoega]]></Name>
 		<X>2370</X>
-		<Y>890</Y>
+		<Y>1030</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -5088,7 +5048,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787848313077</Id>
 		<Name><![CDATA[voltarPosInicial]]></Name>
 		<X>2570</X>
-		<Y>730</Y>
+		<Y>870</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -5180,8 +5140,8 @@ proximaEtapa.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1787849520509</Id>
 		<Name><![CDATA[voltarPosInicial1]]></Name>
-		<X>2570</X>
-		<Y>930</Y>
+		<X>2660</X>
+		<Y>1070</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -5274,7 +5234,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851315067</Id>
 		<Name><![CDATA[temLoteVzs_linhaMar]]></Name>
 		<X>2430</X>
-		<Y>390</Y>
+		<Y>530</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -5354,7 +5314,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851318057</Id>
 		<Name><![CDATA[temLoteVzs_linhaMoega]]></Name>
 		<X>2530</X>
-		<Y>465</Y>
+		<Y>605</Y>
 		<Label>
 			<X>-52</X>
 			<Y>-20</Y>
@@ -5434,7 +5394,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851373623</Id>
 		<Name><![CDATA[paraAlivioMar]]></Name>
 		<X>2650</X>
-		<Y>390</Y>
+		<Y>530</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -5488,7 +5448,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851382839</Id>
 		<Name><![CDATA[paraAlivioMoega]]></Name>
 		<X>2650</X>
-		<Y>465</Y>
+		<Y>605</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -5542,7 +5502,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851396981</Id>
 		<Name><![CDATA[paraLinha7k]]></Name>
 		<X>2650</X>
-		<Y>540</Y>
+		<Y>680</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -5596,7 +5556,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787851460193</Id>
 		<Name><![CDATA[proximaEtapa]]></Name>
 		<X>2280</X>
-		<Y>390</Y>
+		<Y>530</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -5713,7 +5673,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787853851987</Id>
 		<Name><![CDATA[vaiPara_linha7k]]></Name>
 		<X>2480</X>
-		<Y>1080</Y>
+		<Y>1220</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -5806,7 +5766,7 @@ proximaEtapa.take(agent)]]></Code>
 		<Id>1787854433333</Id>
 		<Name><![CDATA[pausar1]]></Name>
 		<X>2360</X>
-		<Y>1080</Y>
+		<Y>1220</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-10</Y>
@@ -5828,6 +5788,9 @@ proximaEtapa.take(agent)]]></Code>
 		<Parameters>
 			<Parameter>
 				<Name><![CDATA[ativo]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5856,8 +5819,8 @@ proximaEtapa.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1787854501579</Id>
 		<Name><![CDATA[voltarPosInicial2]]></Name>
-		<X>2580</X>
-		<Y>290</Y>
+		<X>2600</X>
+		<Y>430</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -5947,65 +5910,10 @@ proximaEtapa.take(agent)]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1787858338601</Id>
-		<Name><![CDATA[paraDevolverLocomotiva_a]]></Name>
-		<X>2650</X>
-		<Y>1290</Y>
-		<Label>
-			<X>-10</X>
-			<Y>-15</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Exit</ClassName>
-				<ItemName>1412336242934</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[aguardaPrimeiraManobra.unblock();
-main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
-				</Value>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1787858338599</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
 		<Id>1787918309926</Id>
 		<Name><![CDATA[paraAguardaLote7K]]></Name>
-		<X>2650</X>
-		<Y>200</Y>
+		<X>2700</X>
+		<Y>340</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -6059,7 +5967,7 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 		<Id>1787918801586</Id>
 		<Name><![CDATA[aguardaLote7K]]></Name>
 		<X>2280</X>
-		<Y>1500</Y>
+		<Y>1640</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -6178,8 +6086,8 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1787918809174</Id>
 		<Name><![CDATA[aguardaPrimeiraManobra]]></Name>
-		<X>2420</X>
-		<Y>1500</Y>
+		<X>2410</X>
+		<Y>1640</Y>
 		<Label>
 			<X>-45</X>
 			<Y>-20</Y>
@@ -6245,9 +6153,9 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 		<Id>1787918839759</Id>
 		<Name><![CDATA[trainMoveTo]]></Name>
 		<X>2540</X>
-		<Y>1500</Y>
+		<Y>1640</Y>
 		<Label>
-			<X>-20</X>
+			<X>-10</X>
 			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -6389,7 +6297,7 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 		<Id>1787918847734</Id>
 		<Name><![CDATA[trainCouple]]></Name>
 		<X>2640</X>
-		<Y>1560</Y>
+		<Y>1700</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -6453,7 +6361,7 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 		<Id>1787918861076</Id>
 		<Name><![CDATA[acoplarLoco_b]]></Name>
 		<X>2520</X>
-		<Y>1600</Y>
+		<Y>1740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -6569,8 +6477,8 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1787918933632</Id>
 		<Name><![CDATA[paraSairDoTerminal]]></Name>
-		<X>2760</X>
-		<Y>1550</Y>
+		<X>3070</X>
+		<Y>1690</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -6593,7 +6501,7 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[//sairDoTerminal.take(agent)]]></Code>
+					<Code><![CDATA[main().gestorDeAlivios.retornar_alivio.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6615,123 +6523,6 @@ main().gestorDeLocomotivas.devolverLocomotiva.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1787918933630</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1790791250040</Id>
-		<Name><![CDATA[iniciar_alivio]]></Name>
-		<X>1220</X>
-		<Y>-240</Y>
-		<Label>
-			<X>-5</X>
-			<Y>-15</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Enter</ClassName>
-				<ItemName>1412336242933</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[locationType]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationX]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationY]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationZ]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationLatitude]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationLongitude]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationGeoPlaceName]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationXYZInNetwork]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationNetwork]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationLevel]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationNode]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[locationAttractor]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[speed]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[changeDimensions]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[length]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[width]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[height]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[addToCustomPopulation]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[population]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[pushProtocol]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onRemove]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onAtEnter]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1790791250038</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
@@ -6886,6 +6677,1922 @@ main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1791680000014</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791667248828</Id>
+		<Name><![CDATA[devolverLocomotiva]]></Name>
+		<X>990</X>
+		<Y>550</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>DevolverLocomotiva</ClassName>
+				<ItemName>1789651316428</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters/>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791667248826</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791727842479</Id>
+		<Name><![CDATA[para_alivioVazios]]></Name>
+		<X>2750</X>
+		<Y>190</Y>
+		<Label>
+			<X>-18</X>
+			<Y>-16</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[alivioVazios.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791727842477</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791727842516</Id>
+		<Name><![CDATA[iniciar_alivio]]></Name>
+		<X>2280</X>
+		<Y>190</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791727842514</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791729466037</Id>
+		<Name><![CDATA[devolverLocomotiva1]]></Name>
+		<X>2640</X>
+		<Y>1420</Y>
+		<Label>
+			<X>-45</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>DevolverLocomotiva</ClassName>
+				<ItemName>1789651316428</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters/>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791729466035</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000017</Id>
+		<Name><![CDATA[ocupar_7000_abcd]]></Name>
+		<X>760</X>
+		<Y>130</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-008
+new ResourcePool[][] {
+    {
+        main().gestorDeCirculacao.rp_pmc_linha7000_a,
+        main().gestorDeCirculacao.rp_pmc_linha7000_b,
+        main().gestorDeCirculacao.rp_pmc_linha7000_c,
+        main().gestorDeCirculacao.rp_pmc_linha7000_d
+    }
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-008
+main().gestorDeCirculacao.faixa_linha7000_a.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_b.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_c.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_d.bloquear((Trem) agent);
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000018</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000021</Id>
+		<Name><![CDATA[liberar_7000_d]]></Name>
+		<X>770</X>
+		<Y>330</Y>
+		<Label>
+			<X>-20</X>
+			<Y>60</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-008
+new ResourcePool[] { main().gestorDeCirculacao.rp_pmc_linha7000_d }]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.faixa_linha7000_d.liberar();
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000022</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000025</Id>
+		<Name><![CDATA[liberar_7000_abc]]></Name>
+		<X>760</X>
+		<Y>550</Y>
+		<Label>
+			<X>-30</X>
+			<Y>60</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-008
+new ResourcePool[] { main().gestorDeCirculacao.rp_pmc_linha7000_a, main().gestorDeCirculacao.rp_pmc_linha7000_b, main().gestorDeCirculacao.rp_pmc_linha7000_c }]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.faixa_linha7000_a.liberar();
+main().gestorDeCirculacao.faixa_linha7000_b.liberar();
+main().gestorDeCirculacao.faixa_linha7000_c.liberar();
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000026</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000029</Id>
+		<Name><![CDATA[ocupar_7000_abcd_alivio]]></Name>
+		<X>2570</X>
+		<Y>1070</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+new ResourcePool[][] {
+    {
+        main().gestorDeCirculacao.rp_pmc_linha7000_a,
+        main().gestorDeCirculacao.rp_pmc_linha7000_b,
+        main().gestorDeCirculacao.rp_pmc_linha7000_c,
+        main().gestorDeCirculacao.rp_pmc_linha7000_d
+    }
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+main().gestorDeCirculacao.faixa_linha7000_a.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_b.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_c.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_d.bloquear((Trem) agent);
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000030</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000033</Id>
+		<Name><![CDATA[passar_7000_abcd_vazios]]></Name>
+		<X>2540</X>
+		<Y>1350</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-35</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+new ResourcePool[] { main().gestorDeCirculacao.rp_pmc_linha7000_a, main().gestorDeCirculacao.rp_pmc_linha7000_b, main().gestorDeCirculacao.rp_pmc_linha7000_c, main().gestorDeCirculacao.rp_pmc_linha7000_d }]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000034</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000037</Id>
+		<Name><![CDATA[ocupar_7000_abcd_locoB]]></Name>
+		<X>2480</X>
+		<Y>1630</Y>
+		<Label>
+			<X>-50</X>
+			<Y>65</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+new ResourcePool[][] {
+    {
+        main().gestorDeCirculacao.rp_pmc_linha7000_a,
+        main().gestorDeCirculacao.rp_pmc_linha7000_b,
+        main().gestorDeCirculacao.rp_pmc_linha7000_c,
+        main().gestorDeCirculacao.rp_pmc_linha7000_d
+    }
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+main().gestorDeCirculacao.faixa_linha7000_a.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_b.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_c.bloquear((Trem) agent);
+main().gestorDeCirculacao.faixa_linha7000_d.bloquear((Trem) agent);
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000038</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000041</Id>
+		<Name><![CDATA[liberar_7000_abcd_alivio]]></Name>
+		<X>2900</X>
+		<Y>1680</Y>
+		<Label>
+			<X>-50</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009
+new ResourcePool[] { main().gestorDeCirculacao.rp_pmc_linha7000_a, main().gestorDeCirculacao.rp_pmc_linha7000_b, main().gestorDeCirculacao.rp_pmc_linha7000_c, main().gestorDeCirculacao.rp_pmc_linha7000_d }]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.faixa_linha7000_a.liberar();
+main().gestorDeCirculacao.faixa_linha7000_b.liberar();
+main().gestorDeCirculacao.faixa_linha7000_c.liberar();
+main().gestorDeCirculacao.faixa_linha7000_d.liberar();
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000042</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791743832089</Id>
+		<Name><![CDATA[pausar2]]></Name>
+		<X>2500</X>
+		<Y>180</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>Pausar</ClassName>
+				<ItemName>1782075489328</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[ativo]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791743832087</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791743850674</Id>
+		<Name><![CDATA[pausar3]]></Name>
+		<X>2990</X>
+		<Y>1680</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>Pausar</ClassName>
+				<ItemName>1782075489328</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[ativo]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791743850672</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791800000048</Id>
+		<Name><![CDATA[ocupar_saida_alivio]]></Name>
+		<X>2720</X>
+		<Y>1680</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009: faixas da saida do alivio, liberadas pelo laco do GestorDeCirculacao
+new ResourcePool[][] {
+    {
+        main().gestorDeCirculacao.rp_pmc_linha6000_a,
+        main().gestorDeCirculacao.rp_pmc_marginal_c,
+        main().gestorDeCirculacao.rp_silosMuro_a,
+        main().gestorDeCirculacao.rp_via3_c
+    }
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-009: OCUPADA (nao bloqueada) para o liberar_faixas_ocupadas soltar conforme o trem anda
+main().gestorDeCirculacao.faixa_linha6000_a.ocupar((Trem) agent);
+main().gestorDeCirculacao.faixa_marginal_c.ocupar((Trem) agent);
+main().gestorDeCirculacao.faixa_silosMuro_a.ocupar((Trem) agent);
+main().gestorDeCirculacao.faixa_via3_c.ocupar((Trem) agent);
+
+
+
+//main().railwaySwitch72.connectTracks(main().pst_silosMuro_a, main().via3_c);
+
+//pst_marginal_c]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791800000049</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791750173877</Id>
+		<Name><![CDATA[liberar_faixas_circulacao1]]></Name>
+		<X>2620</X>
+		<Y>180</Y>
+		<Label>
+			<X>-65</X>
+			<Y>65</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[new ResourcePool[] {
+	main().gestorDeCirculacao.rp_pmc_marginal_a,
+	main().gestorDeCirculacao.rp_pmc_marginal_b,
+	main().gestorDeCirculacao.rp_pmc_marginal_c
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.faixa_marginal_a.liberar();
+main().gestorDeCirculacao.faixa_marginal_b.liberar();
+main().gestorDeCirculacao.faixa_marginal_c.liberar();
+]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791750173875</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791754128040</Id>
+		<Name><![CDATA[trainMoveTo1]]></Name>
+		<X>2820</X>
+		<Y>1700</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._tgrao_ultima_posicao]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791754128038</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

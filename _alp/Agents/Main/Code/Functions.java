@@ -481,3 +481,41 @@ for (int i = 0; i < trem.size(); i++) {
 return vagoes;
 /*ALCODEEND*/}
 
+double configurar_log_em_arquivo()
+{/*ALCODESTART::1791820000001*/
+// ALT-011: espelha o console em logs/sim.log (sobrescrito a cada execução)
+// Guarda os streams originais nas propriedades do sistema para não
+// encadear o espelho de novo se a simulação for reiniciada na mesma JVM.
+java.util.Properties props = System.getProperties();
+if (!props.containsKey("md.out.original")) {
+	props.put("md.out.original", System.out);
+	props.put("md.err.original", System.err);
+}
+java.io.PrintStream outOriginal = (java.io.PrintStream) props.get("md.out.original");
+java.io.PrintStream errOriginal = (java.io.PrintStream) props.get("md.err.original");
+
+try {
+	java.io.File arquivo = new java.io.File("logs/sim.log").getAbsoluteFile();
+	arquivo.getParentFile().mkdirs();
+	final java.io.PrintStream log = new java.io.PrintStream(
+		new java.io.FileOutputStream(arquivo, false), true, "UTF-8");
+
+	java.io.PrintStream[][] pares = { { outOriginal, log }, { errOriginal, log } };
+	java.io.PrintStream[] espelhos = new java.io.PrintStream[2];
+	for (int i = 0; i < 2; i++) {
+		final java.io.PrintStream a = pares[i][0], b = pares[i][1];
+		espelhos[i] = new java.io.PrintStream(new java.io.OutputStream() {
+			public void write(int x) { a.write(x); b.write(x); }
+			public void write(byte[] x, int o, int n) { a.write(x, o, n); b.write(x, o, n); }
+			public void flush() { a.flush(); b.flush(); }
+		}, true, "UTF-8");
+	}
+	System.setOut(espelhos[0]);
+	System.setErr(espelhos[1]);
+
+	traceln("[log] " + java.time.LocalDateTime.now() + " gravando em " + arquivo.getPath());
+} catch (Exception e) {
+	e.printStackTrace();
+}
+/*ALCODEEND*/}
+

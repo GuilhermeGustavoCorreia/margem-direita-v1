@@ -4322,8 +4322,8 @@ variáveis de faixa]]></Text>
 	<Text>
 		<Id>1789335995992</Id>
 		<Name><![CDATA[text90]]></Name>
-		<X>1500</X>
-		<Y>1080</Y>
+		<X>2760</X>
+		<Y>480</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -4347,8 +4347,8 @@ variáveis de faixa]]></Text>
 	<Text>
 		<Id>1789336499234</Id>
 		<Name><![CDATA[text91]]></Name>
-		<X>1500</X>
-		<Y>1380</Y>
+		<X>2760</X>
+		<Y>780</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -4497,8 +4497,8 @@ variáveis de faixa]]></Text>
 	<Text>
 		<Id>1789384384701</Id>
 		<Name><![CDATA[text96]]></Name>
-		<X>1500</X>
-		<Y>1110</Y>
+		<X>2760</X>
+		<Y>510</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -4522,8 +4522,8 @@ variáveis de faixa]]></Text>
 	<Text>
 		<Id>1789384578497</Id>
 		<Name><![CDATA[text97]]></Name>
-		<X>1500</X>
-		<Y>1410</Y>
+		<X>2760</X>
+		<Y>810</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -5288,7 +5288,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5314,7 +5314,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5339,7 +5339,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5379,7 +5379,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5419,7 +5419,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5459,7 +5459,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5484,7 +5484,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5509,7 +5509,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5534,7 +5534,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5574,7 +5574,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5614,7 +5614,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5654,7 +5654,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5694,7 +5694,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -5719,7 +5719,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5750,6 +5750,206 @@ variáveis de faixa]]></Text>
 		</Points>
 		<Closed>false</Closed>
 	</Polyline>
+	<Polyline>
+		<Id>1791800000004</Id>
+		<Name><![CDATA[pl_pmc_linha7000_a]]></Name>
+		<X>-910</X>
+		<Y>40</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>80</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791800000047</Id>
+		<Name><![CDATA[pl_pmc_linha6000_a]]></Name>
+		<X>-910</X>
+		<Y>60</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>80</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791800000008</Id>
+		<Name><![CDATA[pl_pmc_linha7000_b]]></Name>
+		<X>-823</X>
+		<Y>40</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>356</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791800000012</Id>
+		<Name><![CDATA[pl_pmc_linha7000_c]]></Name>
+		<X>-460</X>
+		<Y>40</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>87</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791800000016</Id>
+		<Name><![CDATA[pl_pmc_linha7000_d]]></Name>
+		<X>-366</X>
+		<Y>40</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>201</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
 	<Line>
 		<Id>1790962045074</Id>
 		<Name><![CDATA[line13]]></Name>
@@ -5759,7 +5959,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5787,7 +5987,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5827,7 +6027,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5855,7 +6055,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5895,7 +6095,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5923,7 +6123,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -5963,7 +6163,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6003,7 +6203,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6031,7 +6231,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6059,7 +6259,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6087,7 +6287,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6127,7 +6327,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6167,7 +6367,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6195,7 +6395,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6235,7 +6435,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6275,7 +6475,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6301,7 +6501,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6327,7 +6527,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6353,7 +6553,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6393,7 +6593,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6433,7 +6633,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6473,7 +6673,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6513,7 +6713,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6553,7 +6753,7 @@ variáveis de faixa]]></Text>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -6593,7 +6793,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -6618,7 +6818,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -6643,7 +6843,7 @@ variáveis de faixa]]></Text>
 			<X>0</X>
 			<Y>-10</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D</DrawMode>
@@ -7231,6 +7431,82 @@ variáveis de faixa]]></Text>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>16</Size>
 			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Rectangle>
+		<Id>1791728306393</Id>
+		<Name><![CDATA[rectangle64]]></Name>
+		<X>-567.333</X>
+		<Y>-125.333</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-1434451840</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Width>19.581079291207093</Width>
+		<Height>8.71429237149914</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>1891259859</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Text>
+		<Id>1791728317343</Id>
+		<Name><![CDATA[text18]]></Name>
+		<X>-566.333</X>
+		<Y>-113</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-4565549</Color>
+		<Text><![CDATA[PST]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>10</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1791728332652</Id>
+		<Name><![CDATA[text28]]></Name>
+		<X>-455</X>
+		<Y>-70</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-4565549</Color>
+		<Text><![CDATA[PMC]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>10</Size>
+			<Style>0</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>

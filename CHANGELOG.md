@@ -183,3 +183,117 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 
 ### MoegaoMar
 - [ ] (a definir)
+
+## ALT-005 — tgrao-lotes-e-loco
+- **Nos comentários do código:** `ALT-005`
+- **Data:** 2026-10-10
+- **Status:** aplicada, aguardando validação
+- **O que:** três correções no Tgrao.
+  - **Loco ao gestor:** depois do 2º lote, a loco do trem carregado ia para o `trainDispose1` e sumia. O bloco virou o Exit `paraDevolverLocomotiva` → `main().gestorDeLocomotivas.devolverLocomotiva`.
+  - **Lotes de carregados:** depois da descarga, os vagões saem do lote de carregados. `paraAcoplarAlivioMar` zera `lote_linhaMar`; `parAacoplarAlivioMoega` zera `lote_linhaTerra`.
+  - **Lotes de vazios:** zerados após o alívio, quando o lote é engatado. `paraProximaEtapa` já zerava `loteVazios_linhaMar`; `paraProximaEtapa1` zerava `lote_linhaTerra` e passa a zerar `loteVazios_linhaMoega`. Isso evita que o ◇ `temLoteVzs_linhaMoega` mande o alívio de volta para a moega.
+  - **Overload:** `getOverloadVazios()` passa a contar os vazios (`_getVagoesVazios()` = `loteVazios_linhaMar` + `loteVazios_linhaMoega`). Antes contava os carregados; com os lotes zerados, nunca dispararia o alívio.
+- **Arquivos:** `_alp/Agents/Tgrao/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/Tgrao/Code/Functions.java`
+- **A validar:**
+  - [ ] A loco do trem de teste chega ao GestorDeLocomotivas (contador de locos sobe).
+  - [ ] Com os dois lotes descarregados (40 vazios), o overload do Tgrao vai a 1.1.
+- **Efeito a observar:** o ◇ `aindaCabeNa_linhaMar` olha só `lote_linhaMar`. Com o lote zerado após a descarga, um 2º trem enxerga a linha mar livre mesmo com vazios nela.
+- **Fora do escopo:** `takeAlivio(Trem)` → `iniciar_alivio` sem saída; `paraSairDoTerminal` comentado.
+
+## ALT-006 — gestor-alivio-loco-por-terminal
+- **Nos comentários do código:** sem marcação (nomes novos falam por si)
+- **Data:** 2026-10-11
+- **Status:** aplicada, aguardando compilação e validação
+- **O que:** o tipo e a quantidade de locos do alívio PST passam a vir do terminal. Tgrao usa 2 locos de manobra (FIPS PST) criadas em `pos_locoManobra_PST`; os demais seguem com 1 loco da ferrovia em atendimento.
+  - **Interface `ITerminalMoega`:** `getPrimeiroAlivioFaixas()` → `get_faixas_primeiro_alivio()`; novos `get_tipo_loco_alivio()` (`"manobra"` | `"ferrovia"`) e `get_quantidade_loco_alivio()`. Implementados em Bracell, CoperXI, CoperXXI, CostaLeite, MoegaoTerra, T39 (ferrovia, 1) e Tgrao (manobra, 2).
+  - **Faixa de criação fora de `get_faixas_primeiro_alivio()`:** a lista passa a ter só as faixas seguintes até o terminal. CoperXI, Bracell, CostaLeite e MoegaoTerra (criação em `pos_locoAlivio_PST`, faixa `via1_intermar_d`) retornam lista vazia. Tgrao monta `{ via1_intermar_d }` na hora da chamada — a variável `primeiro_alivio_faixas` era inicializada antes do `gestorDeCirculacao` existir e ficava com `null` (NullPointerException em `Alivio.getConjuntoRecursos_faixas`).
+  - **`Alivio`:** novos `tipo_loco`, `faixa_criacao`, `ehLocoManobra()` e `getConjuntoRecursos_faixa_criacao()`; `getConjuntoRecursos_faixas()` ignora a faixa de criação (já apreendida) e acusa faixa `null` com mensagem clara.
+  - **GestorDeAlivios — funções:** `fazer_procedimento_de_alivio_pst` checa `rp_locoFips_pst.idle() >= qtd` (manobra) ou o wait da ferrovia; `colocar_terminal_em_alivio_pst` define tipo, quantidade, `pos_criar_locomotiva` (`pos_locoManobra_PST` ou `pos_locoAlivio_PST`) e `faixa_criacao`; `chamar_locomotiva_de_alivio_pst` injeta `loco_manobra_alivio_pst` quando é manobra; `get_recurso_locomotiva_pst` devolve `rp_locoFips_pst` para manobra; nova `get_faixa_da_posicao(pos)`.
+  - **GestorDeAlivios — fluxograma:** `loco_alivio_pst` (loco da ferrovia, vinda do wait) / `loco_manobra_alivio_pst` (TrainSource novo, `putInRailYard = false`: cria as locos como agente lógico) → `seize_faixa_criacao_pst` (novo) → `bloquear_faixas_pst` → `usar_recurso_loco_pst` (quantidade = `get_quantidade_loco_alivio`) → `seize_alivio_pst` → `trainEnter1` (coloca na via em `pos_criar_locomotiva`, para os dois tipos) → `para_comecar_alivio_pst`. Licencia antes de entrar na via.
+  - **Pool da loco FIPS pelo pátio:** nova `get_rp_loco_fips(patio)` (`"pst"`/`"pmc"`/`"pcx"`, minúsculo), usada em `get_recurso_locomotiva_pst` e na checagem de `fazer_procedimento_de_alivio_pst`; o TrainSource grava `patio = alivio_em_andamento_pst.patio`. Tgrao: `getPatio()` `"PMC"` → `"pst"`.
+  - **GestorDeCirculacao:** a coleção `faixas` passa a ter todas as 36 faixas do gestor (faltavam marginal_a/b, linha1000_a–c, linha2000_a–e, linha3000_a–e, linha4000_a–c). Necessário para `get_faixa_da_posicao` achar `faixa_marginal_a` (`pos_locoManobra_PST`). Efeito colateral: `liberar_faixas_ocupadas` passa a considerar essas faixas.
+  - **Rota licenciada:** `ir_entrada_terminal_pst` passa de `ROUTE_AUTO` para `ROUTE_LIST_OF_TRACKS` ("A given list of tracks") com `alivio_em_andamento_pst.getRotaLicenciada()` (novo em `Alivio`): faixa de criação + `get_faixas_primeiro_alivio()` + track do destino. A loco segue só o caminho licenciado e vira os AMVs pela lista (antes pegava outro ramo no AMV). `get_faixas_primeiro_alivio()` deve estar em ordem de percurso, do Valongo no sentido PCX.
+  - **Tgrao — caminho da loco de manobra:** `primeiro_alivio_faixas = { faixa_marginal_b, faixa_marginal_c }`; `pos_circ_alivio_tgrao` movida para a `pst_marginal_c` (antes na `pst_silosMuro_a`, linha paralela, sem ligação direta). Rota: `marginal_a → marginal_b → marginal_c`.
+  - **Tgrao:** `get_quantidade_vazios()` retornava 0; passa a retornar `_getVagoesVazios()`.
+- **Arquivos:** `_alp/Classes/Class.{ITerminalMoega,Alivio}.java`, `_alp/Agents/GestorDeAlivios/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeCirculacao/Variables.xml`, `_alp/Agents/{Bracell,CoperXI,CoperXXI,CostaLeite,MoegaoTerra,T39,Tgrao}/Code/Functions.{java,xml}`
+- **A validar:**
+  - [ ] Compila (F7).
+  - [ ] T39 segue OK (linha1000_b/c usam `ocupar(trem)` e agora entram em `liberar_faixas_ocupadas`).
+  - [ ] CoperXI segue aliviando com loco Rumo (fluxo ferrovia).
+  - [ ] Tgrao: 2 locos de manobra aparecem em `pos_locoManobra_PST`, a faixa de criação fica ocupada e o alívio segue para o terminal.
+- **Pendente:** Bracell `get_pos_alivio()` também retorna `pos_circ_alivio_tgrao` (cópia do Tgrao); no Tgrao uma das 2 locos de manobra é devolvida (a analisar); volta das locos de manobra após o alívio; `takeAlivio(Trem)` → `iniciar_alivio` do Tgrao sem saída (ALT-005).
+
+## ALT-007 — tgrao-liberar-loco-b
+- **Nos comentários do código:** `ALT-007`
+- **Data:** 2026-10-11
+- **Status:** aplicada, aguardando validação
+- **Problema:** no alívio do Tgrao, a loco B ficava presa no Hold `aguardaPrimeiraManobra` (inicia bloqueado) e nunca ia acoplar nos vazios.
+- **Causa:** o `aguardaPrimeiraManobra.unblock()` ficava no Exit `paraDevolverLocomotiva_a`, que foi substituído pelo bloco `devolverLocomotiva1` (DevolverLocomotiva). Nenhum bloco desbloqueava mais o Hold.
+- **Alteração:** `paraAcoplarLoco_b.onExit` passa a chamar `aguardaPrimeiraManobra.unblock()` antes de `acoplarLoco_b.take(agent)`. O `trainMoveTo.onEnter` continua bloqueando o Hold de novo.
+- **Arquivos:** `_alp/Agents/Tgrao/EmbeddedObjects.xml`
+- **A validar:**
+  - [ ] Depois do corte da loco A, a loco B vai até `_tgrao_mnb_loco_b` e acopla nos 40 vazios.
+- **Fora do escopo:** `paraSairDoTerminal` com código comentado (o trem do alívio para depois do `trainCouple`).
+
+## ALT-008 — tgrao-faixas-7000-e-saida-do-alivio
+- **Nos comentários do código:** `ALT-008`
+- **Data:** 2026-10-11
+- **Status:** aplicada, aguardando validação
+- **Faixas novas (GestorDeCirculacao):** `faixa_linha7000_a..d`, com pools `rp_pmc_linha7000_a..d` (cópias do `rp_pmc_linha4000_a`) e linhas `pl_pmc_linha7000_a..d` no painel, numa linha nova em y = 40 (**posição provisória**, ajustar). Sem `enter`. Incluídas na coleção `faixas`.
+- **Encoste (Tgrao):**
+  - Seize `ocupar_7000_abcd` antes do `colocarTrem_L7`: ocupa e bloqueia 7000_a, b, c, d.
+  - Release `liberar_7000_d` depois do `encostar_linhaMar`.
+  - Release `liberar_7000_abc` depois do `encostar_Moega`.
+- **Alívio (Tgrao):**
+  - Seize `ocupar_7000_d_alivio` antes do `voltarPosInicial1`.
+  - Release `passar_7000_d_vazios` depois do `trainDecouple` (vazios) e Seize `ocupar_7000_d_locoB` antes do `trainMoveTo`: a 7000_d passa do trem dos vazios para a loco B. Motivo: no `trainCouple` o trem da entrada 2 (vazios) é removido e os recursos dele ficariam presos.
+  - Release `liberar_7000_d_alivio` depois do `voltarPosInicial3`, antes do `paraSairDoTerminal` (take para `gestorDeAlivios.retornar_alivio`).
+- **Erro corrigido:** `voltarPosInicial3.colocarCaudaNoPonto: There is no straight route from pst_marginal_c, offset 97 to railwayTrack197, offset 11`. O trem anda para a silosMuro_a (lado Valongo), mas a cauda era empurrada para a Ponta da Praia. `voltarPosInicial3.sentidoPontaDaPraia = false`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/GestorDeCirculacao/Levels/Level.level.xml`, `_alp/Agents/Tgrao/{EmbeddedObjects,Connectors}.xml`
+- **A validar:**
+  - [ ] Painel: 7000_a..d magenta na chegada; d branca após o encoste na linha mar; a, b, c brancas após o encoste na moega.
+  - [ ] Alívio: 7000_d magenta do `voltarPosInicial1` até a saída; branca antes do retorno ao gestor.
+  - [ ] `voltarPosInicial3` sem "no straight route".
+  - [ ] Posição das linhas `pl_pmc_linha7000_*` no painel.
+
+## ALT-009 — tgrao-faixas-do-alivio
+- **Nos comentários do código:** `ALT-009`
+- **Data:** 2026-10-11
+- **Status:** aplicada, aguardando validação
+- **Alívio usa a 7000_a..d inteira** (antes só a 7000_d). Blocos renomeados:
+  - `ocupar_7000_abcd_alivio` (antes `ocupar_7000_d_alivio`), antes do `voltarPosInicial1`;
+  - `passar_7000_abcd_vazios` / `ocupar_7000_abcd_locoB` (passagem dos vazios para a loco B);
+  - `liberar_7000_abcd_alivio`, antes do `paraSairDoTerminal`.
+- **Saída do alívio:** novo Seize `ocupar_saida_alivio` antes do `voltarPosInicial3`: ocupa `pmc_linha6000_a`, `pst_marginal_c` e `pst_silosMuro_a` com `ocupar()` (estado OCUPADA). Elas são soltas pelo laço do GestorDeCirculacao (`liberar_faixas_ocupadas`) conforme o trem circula para o Valongo.
+- **Faixa nova (GestorDeCirculacao):** `faixa_linha6000_a`, pool `rp_pmc_linha6000_a`, linha `pl_pmc_linha6000_a` no painel (**posição provisória**, perto da marginal). Incluída na coleção `faixas`.
+- **`voltarPosInicial3`:** destino `main().pos_saida_tgrao` (antes `pos_locoAlivio_PMC`).
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/GestorDeCirculacao/Levels/Level.level.xml`, `_alp/Agents/Tgrao/{EmbeddedObjects,Connectors}.xml`
+- **Atenção:** o `liberar_faixas_pst` do GestorDeAlivios (logo no `retornar_alivio`) está com o modo padrão do Release (todos os recursos). Ele devolve os pools da 6000_a, marginal_c e silosMuro_a assim que o trem chega ao gestor; as faixas continuam vermelhas no painel até o laço liberá-las, mas o pool fica livre antes de o trem sair das tracks.
+- **A validar:**
+  - [ ] Painel: 7000_a..d magenta do `voltarPosInicial1` até a saída.
+  - [ ] 6000_a, marginal_c e silosMuro_a vermelhas na saída e brancas conforme o trem anda para o Valongo.
+  - [ ] Posição da `pl_pmc_linha6000_a` no painel.
+
+## ALT-010 — diag-liberar-faixas-usadas
+- **Data:** 2026-10-11
+- **Status:** diagnóstico temporário (remover os traces `[diag_liberar]` depois de achar a causa)
+- **Problema:** `root.gestorDeCirculacao.liberar_faixas_usadas: The agent does not possess the resource(s) it wants to release`. A função `liberar_faixas_ocupadas` escolhe o que liberar pelo estado da `Faixa` (`OCUPADA` + `idTremLicenciado`), sem conferir se o trem possui a unidade do pool.
+- **Hipóteses:** (1) faixas bloqueadas pelo `pst_marginal_bloquear` do CoperXI viram `OCUPADA` no `ocupar()` e são liberadas por dois caminhos; (2) IDs mágicos `9999`/`999999` (`ocupar_agente`, `bloquear(null)`) coincidindo com o ID de um Trem; (3) unidade já liberada num Release de terminal (CoperXI/Tgrao) sem o estado da faixa acompanhar.
+- **O que:** traces em `GestorDeCirculacao.liberar_faixas_ocupadas` — a cada chamada, lista os pools que o trem possui e, para cada faixa candidata, `vazia` e `temUnidade`; marca `<-- VAI DAR ERRO` quando vai liberar sem possuir. Comportamento inalterado.
+- **Arquivo:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`
+
+## ALT-011 — log-em-arquivo
+- **Data:** 2026-10-12
+- **Status:** aplicada, aguardando validação
+- **Problema:** para diagnosticar, o Claude dependia de prints ou de colar o console do AnyLogic.
+- **O que:** o console (`traceln`, `System.out` e `System.err`, inclusive stack traces de exceções) passa a ser espelhado em `logs/sim.log`, sobrescrito a cada execução. O console do AnyLogic continua igual.
+- **Alterações (Main):**
+  - Função nova `configurar_log_em_arquivo()` (void).
+  - `On startup` do Main: `configurar_log_em_arquivo();`
+  - Os streams originais ficam em `System.getProperties()` para não encadear o espelho ao reiniciar a simulação.
+- **Versionamento do log:** `logs/sim.log` vai para o GitHub (não está no `.gitignore`), para o Claude Code na web/celular ler. Commit e push só do log, com a mensagem `log <descrição curta>`, fora da numeração de ALTs.
+- **Limitação:** erros antes do `On startup` do Main (na criação dos agentes) não entram no log.
+- **Arquivos:** `_alp/Agents/Main/AOC.Main.xml`, `_alp/Agents/Main/Code/Functions.{xml,java}`
+- **A validar:**
+  - [ ] Compila e roda; primeira linha do console é `[log] ... gravando em ...\logs\sim.log`.
+  - [ ] Exceção de runtime aparece no `sim.log`.

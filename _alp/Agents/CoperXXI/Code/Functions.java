@@ -195,7 +195,7 @@ PositionOnTrack get_pos_alivio()
 return main().posAlivio_coperXII_a;
 /*ALCODEEND*/}
 
-ArrayList<Faixa> getPrimeiroAlivioFaixas()
+ArrayList<Faixa> get_faixas_primeiro_alivio()
 {/*ALCODESTART::1791650000012*/
 // ALT-003: provisório — sem faixas até integrar com o GestorDeAlivios
 return new ArrayList<Faixa>();
@@ -220,5 +220,16 @@ return _getVagosVazios();
 int _getVagosVazios()
 {/*ALCODESTART::1791650000016*/
 return main().getTamanhoDoTrem(_loteVazios_a) + main().getTamanhoDoTrem(_loteVazios_b);
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1791700000005*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "ferrovia";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000006*/
+return 1;
 /*ALCODEEND*/}
 

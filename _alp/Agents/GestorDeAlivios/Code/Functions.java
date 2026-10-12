@@ -266,17 +266,28 @@ boolean condicao_DVs_eh_compativel_com_terminal = main().gestorDeDVs.condicao_po
 
 if (condicao_DVs_eh_compativel_com_terminal) {
 
-    // ALT-003: só tira o terminal da análise se houver locomotiva da ferrovia para fazer o alívio.
-    // Sem loco, o terminal continua em terminais_pst e o alívio dispara quando ela voltar.
-    String ferroviaTerminal = terminal.getFerrovia();
-    Wait<Agent> waitLocos = null;
-    if      ("rumo".equals(ferroviaTerminal)) waitLocos = main().gestorDeLocomotivas.locomotivasRumo;
-    else if ("mrs".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasMRS;
-    else if ("vli".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasVLI;
+    // só tira o terminal da análise se houver locomotiva para o alívio.
+    // manobra: unidades livres em rp_locoFips_pst | ferrovia: loco no wait da ferrovia em atendimento.
+    // Sem loco, o terminal continua em terminais_pst e o alívio dispara quando ela estiver disponível.
+    String tipoLoco = terminal.get_tipo_loco_alivio();
+    int    qtdLoco  = terminal.get_quantidade_loco_alivio();
+    boolean temLoco;
 
-    if (waitLocos == null || waitLocos.size() == 0) {
+    if ("manobra".equals(tipoLoco)) {
+        temLoco = get_rp_loco_fips(terminal.getPatio()).idle() >= qtdLoco;
+    } else {
+        String ferroviaTerminal = terminal.getFerrovia();
+        Wait<Agent> waitLocos = null;
+        if      ("rumo".equals(ferroviaTerminal)) waitLocos = main().gestorDeLocomotivas.locomotivasRumo;
+        else if ("mrs".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasMRS;
+        else if ("vli".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasVLI;
+        temLoco = (waitLocos != null && waitLocos.size() > 0);
+    }
+
+    if (!temLoco) {
         if (((int) time()) % 60 == 0) {
-            traceln(time() + " | [diag_pst] " + nomeTerminal + " | aguardando loco '" + ferroviaTerminal + "' para aliviar");
+            traceln(time() + " | [diag_pst] " + nomeTerminal + " | aguardando " + qtdLoco + " loco(s) '"
+                + ("manobra".equals(tipoLoco) ? "manobra" : terminal.getFerrovia()) + "' para aliviar");
         }
         return;
     }
@@ -292,7 +303,6 @@ if (condicao_DVs_eh_compativel_com_terminal) {
         chamar_locomotiva_de_alivio_pst();
 		
     } else {
-        // DEBUG ALT-003
         traceln(time() + " | [diag_pst] " + nomeTerminal + " | NAO solicitou loco: lote_alivio_pst != null");
     }
 
@@ -355,9 +365,15 @@ terminais_pst.remove(terminal);
 
 //cria um novo alívio
 alivio_em_andamento_pst = new Alivio();
-alivio_em_andamento_pst.quantidade_locomotivas = 1;
 alivio_em_andamento_pst.iTermalMoegas_aliviar.add(terminal);
-alivio_em_andamento_pst.pos_criar_locomotiva 	= main().pos_locoAlivio_PST;
+
+// tipo e quantidade de locos vêm do terminal
+alivio_em_andamento_pst.tipo_loco 				= terminal.get_tipo_loco_alivio();
+alivio_em_andamento_pst.quantidade_locomotivas 	= terminal.get_quantidade_loco_alivio();
+alivio_em_andamento_pst.pos_criar_locomotiva 	= alivio_em_andamento_pst.ehLocoManobra()
+													? main().pos_locoManobra_PST
+													: main().pos_locoAlivio_PST;
+alivio_em_andamento_pst.faixa_criacao 			= get_faixa_da_posicao(alivio_em_andamento_pst.pos_criar_locomotiva);
 alivio_em_andamento_pst.patio 					= terminal.getPatio();
 alivio_em_andamento_pst.ferrovia 				= terminal.getFerrovia();
 alivio_em_andamento_pst.segmento 				= terminal.getSegmento();
@@ -385,6 +401,11 @@ return quantos_vagoes_cabem;
 
 ResourcePool get_recurso_locomotiva_pst()
 {/*ALCODESTART::1791480425887*/
+// loco FIPS: pool do pátio do terminal (getPatio)
+if (alivio_em_andamento_pst.ehLocoManobra()) {
+    return get_rp_loco_fips(alivio_em_andamento_pst.patio);
+}
+
 String ferrovia = alivio_em_andamento_pst.ferrovia;
 
 switch (ferrovia) {
@@ -435,6 +456,14 @@ return sb.toString();
 
 double chamar_locomotiva_de_alivio_pst()
 {/*ALCODESTART::1791545494501*/
+// loco de manobra: cria as locos FIPS PST em pos_locoManobra_PST (entram direto nos seizes)
+if (alivio_em_andamento_pst.ehLocoManobra()) {
+    traceln(time() + " | [diag_pst] criar " + alivio_em_andamento_pst.quantidade_locomotivas + " loco(s) de manobra em "
+        + alivio_em_andamento_pst.pos_criar_locomotiva.getName());
+    loco_manobra_alivio_pst.inject();
+    return;
+}
+
 String ferrovia = alivio_em_andamento_pst.ferrovia;
 Wait<Agent> wait;
 
@@ -456,6 +485,32 @@ if (wait.size() > 0) {
 } else {
     // DEBUG ALT-003
     traceln(time() + " | [diag_pst] SEM LOCO '" + ferrovia + "' -> alivio NAO iniciado e terminal ficou FORA de terminais_pst");
+}
+/*ALCODEEND*/}
+
+Faixa get_faixa_da_posicao(PositionOnTrack pos)
+{/*ALCODESTART::1791700000015*/
+// faixa do GestorDeCirculacao cuja track contém a posição
+if (pos == null) return null;
+
+for (Faixa f : main().gestorDeCirculacao.faixas) {
+    if (f != null && f.track == pos.getTrack()) return f;
+}
+
+traceln(time() + " | [diag_pst] nenhuma faixa contem a posicao " + pos.getName());
+return null;
+/*ALCODEEND*/}
+
+ResourcePool get_rp_loco_fips(String patio)
+{/*ALCODESTART::1791700000040*/
+// pool de locos FIPS do pátio do terminal (padrão minúsculo)
+switch (patio) {
+    case "pst": return main().gestorDeLocomotivas.rp_locoFips_pst;
+    case "pmc": return main().gestorDeLocomotivas.rp_locoFips_pmc;
+    case "pcx": return main().gestorDeLocomotivas.rp_locoFips_pcx;
+    default:
+        error("Patio desconhecido para loco FIPS: '" + patio + "'");
+        return null;
 }
 /*ALCODEEND*/}
 

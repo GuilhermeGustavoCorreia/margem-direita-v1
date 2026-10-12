@@ -563,4 +563,21 @@ Limitação: só encontra campos declarados diretamente na classe do container �
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1791820000001</Id>
+		<Name><![CDATA[configurar_log_em_arquivo]]></Name>
+		<Description><![CDATA[ALT-011: espelha o console (traceln, System.out e System.err) em logs/sim.log]]></Description>
+		<X>1440</X>
+		<Y>-6610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>

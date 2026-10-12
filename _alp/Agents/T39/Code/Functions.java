@@ -130,7 +130,7 @@ int getNumeroLocomotivasAlivio()
 return 2;
 /*ALCODEEND*/}
 
-ArrayList<Faixa> getPrimeiroAlivioFaixas()
+ArrayList<Faixa> get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790950057452*/
 return primeiro_alivio_faixas;
 /*ALCODEEND*/}
@@ -297,5 +297,16 @@ for (RailwayTrack l : linhas) {
     acum += comp;
 }
 return linhas[linhas.length - 1].length(METER);
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1791700000011*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "ferrovia";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000012*/
+return 1;
 /*ALCODEEND*/}
 

@@ -49,6 +49,15 @@ ResourcePool[] liberar_faixas_ocupadas(Trem trem)
 {/*ALCODESTART::1789317324799*/
 List<ResourcePool> recursosLiberados = new ArrayList<>();
 
+// ALT-010 [diag_liberar]: o que o trem realmente possui entre os pools das faixas
+StringBuilder possui = new StringBuilder();
+for (Faixa f : faixas) {
+    if (!trem.resourceUnitsOfPool(f.recurso).isEmpty())
+        possui.append(f.recurso.getName()).append(" ");
+}
+traceln("[diag_liberar] t=" + time() + " trem " + trem.getId()
+        + " | possui: " + (possui.length() > 0 ? possui.toString() : "nenhum"));
+
 for (Faixa faixa : faixas) {
 
     boolean faixaDoTrem = (faixa.idTremLicenciado == trem.getId());
@@ -57,6 +66,13 @@ for (Faixa faixa : faixas) {
     if (faixaDoTrem && faixaOcupada) {
 
         boolean faixaEstaVazia = faixa.faixaEstaVazia();
+        boolean temUnidade     = !trem.resourceUnitsOfPool(faixa.recurso).isEmpty();
+
+        // ALT-010 [diag_liberar]: cada faixa candidata a liberacao
+        traceln("[diag_liberar]   " + faixa.recurso.getName()
+                + " | vazia=" + faixaEstaVazia
+                + " | temUnidade=" + temUnidade
+                + ((faixaEstaVazia && !temUnidade) ? "  <-- VAI DAR ERRO" : ""));
 
         if (faixaEstaVazia) {
             recursosLiberados.add(faixa.recurso);

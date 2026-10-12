@@ -320,7 +320,8 @@
 			<ValueElementClass>String</ValueElementClass>
 			<CollectionInitializer Class="CodeValue">
 				<Code><![CDATA[{
-	main().gestorDeCirculacao.faixa_via1_intermar_d
+	main().gestorDeCirculacao.faixa_marginal_b,
+	main().gestorDeCirculacao.faixa_marginal_c
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>
