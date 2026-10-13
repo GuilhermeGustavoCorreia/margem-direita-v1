@@ -22,3 +22,5 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-009**: Tgrao — alívio ocupa a 7000_a..d e, na saída, 6000_a/marginal_c/silosMuro_a (faixa nova 6000_a); `voltarPosInicial3` vai até `pos_saida_tgrao`
 - **ALT-010** (diagnóstico): traces `[diag_liberar]` em `liberar_faixas_ocupadas` para achar o pool liberado sem posse
 - **ALT-011**: console espelhado em `logs/sim.log` (função `configurar_log_em_arquivo` no On startup do Main)
+- **ALT-012** (temporária): trace "bom dia Bruno" ao entrar no Tgrao (`colocarLinhaMar`)
+- **ALT-013**: alívio na linha 4000 — com 82 vagões o trem do PCX vai para as DVs pelo circuito do GestorDeCirculacao (intervalo4000_a → marginal c/b/a → via2 → val_via2)

@@ -26,7 +26,7 @@
 		<Id>1784833445630</Id>
 		<Name><![CDATA[tipoDeLote]]></Name>
 		<X>375</X>
-		<Y>510</Y>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -86,7 +86,7 @@
 		<Id>1787579494215</Id>
 		<Name><![CDATA[posicao_atual]]></Name>
 		<X>375</X>
-		<Y>610</Y>
+		<Y>670</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -105,7 +105,7 @@
 		<Id>1787579528994</Id>
 		<Name><![CDATA[posicao_destino]]></Name>
 		<X>375</X>
-		<Y>630</Y>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -247,7 +247,7 @@
 		<Id>1790013720441</Id>
 		<Name><![CDATA[tipo_trem]]></Name>
 		<X>375</X>
-		<Y>650</Y>
+		<Y>710</Y>
 		<Label>
 			<X>11</X>
 			<Y>0</Y>
@@ -284,9 +284,9 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1791575822156</Id>
-		<Name><![CDATA[origem_do_alivio]]></Name>
+		<Name><![CDATA[referencia_alivio]]></Name>
 		<X>380</X>
-		<Y>900</Y>
+		<Y>960</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -301,6 +301,29 @@
 			<Type><![CDATA[String]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[""]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791891886193</Id>
+		<Name><![CDATA[eh_alivio]]></Name>
+		<Description><![CDATA[pra saber se esta indo pras DVS]]></Description>
+		<X>380</X>
+		<Y>480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[false]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

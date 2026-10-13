@@ -297,3 +297,24 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **A validar:**
   - [ ] Compila e roda; primeira linha do console é `[log] ... gravando em ...\logs\sim.log`.
   - [ ] Exceção de runtime aparece no `sim.log`.
+
+## ALT-012 — tgrao-trace-bom-dia
+- **Data:** 2026-10-13
+- **Status:** temporária (demonstração; remover depois)
+- **O que:** `On enter` do `colocarLinhaMar` (Tgrao) imprime `[t][Tgrao][colocarLinhaMar] trem=<id> bom dia Bruno`. Trens de alívio não passam por esse bloco.
+- **Arquivo:** `_alp/Agents/Tgrao/EmbeddedObjects.xml`
+
+## ALT-013 — alivio-na-linha-4000
+- **Data:** 2026-10-13
+- **Status:** aplicada, aguardando compilação e validação
+- **O que:** alívio na linha 4000 — quando o trem do circuito PCX volta do alívio com 82 vagões (`CAPACIDADE_LINHA_4000`), ele sai da linha 4000 e vai para as DVs pelo circuito de saída do GestorDeCirculacao: `pmc_intervalo4000_a → pst_marginal_c → pst_marginal_b → pst_marginal_a → via2_f → via2_e → via2_d → via2_c → via2_b → via2_a → via2_intermar_c → via2_intermar_b → via2_intermar_a → railwayTrack199 → val_via2 → gestorDeDVs.entrarNasDVs`.
+  - **GestorDeAlivios:** depois do `liberar_faixas_ate_terminal`, ◇ `linha_4000_cheia` (`main().getNumeroDeVagoes((Trem) agent) >= CAPACIDADE_LINHA_4000`). Não → `wait_trem_4000` (como antes). Sim → `liberar_linha_4000` (Release das faixas `linha4000_a/b/c` que o trem possui, via nova `get_recursos_linha_4000(Trem)`, + `liberarFaixas`) → `para_alivio_na_linha_4000` (Exit: `eh_alivio = true`, `faixa_atual = faixa_intervalo4000_a`, `proxima_faixa = faixa_marginal_c`, zera `lote_linha_4000`/`ferrovia_na_linha_4000`/`segmento_na_linha_4000`, `gestorDeCirculacao.tentar_usar_faixa.take`).
+  - **GestorDeCirculacao:** `circular_intervalo4000_a` → ◇ `definir_sentido_intervalo4000_a` (`!eh_alivio`): sim → `ir_intervalo_intervalo4000_a` (como antes); não → `recuar_intervalo4000_a` (TrainMoveTo de ré até `pmc_intervalo4000_a`) → `alivio_para_marginal_c` (Exit: `faixa_atual = faixa_marginal_c`, `proxima_faixa = faixa_marginal_b`). Daí segue pelo circuito de saída do alívio que já existia.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Connectors}.xml`
+- **A validar:**
+  - [ ] Compila (F7).
+  - [ ] Com 82 vagões na linha 4000, aparece `[Alivio4000][para_alivio_na_linha_4000]` e o trem sai pela intervalo4000_a até as DVs.
+  - [ ] Sentido do `recuar_intervalo4000_a` (`forward = false`, de ré como o resto do circuito); se o trem precisar andar para frente, trocar.
+  - [ ] Novo ciclo PCX cria loco nova (lote_linha_4000 = null).
+- **Efeito a observar:** `intervalo4000_b/c` continuam marcadas por `ocupar_agente(9999)` do `loco_pcx_starts` (sem recurso apreendido) até o próximo ciclo.
+

@@ -3660,7 +3660,7 @@ aguardaDescarregar.recalculateConditions();]]></Code>
 	<EmbeddedObject>
 		<Id>1790791183687</Id>
 		<Name><![CDATA[iniciar_alivio]]></Name>
-		<X>860</X>
+		<X>880</X>
 		<Y>900</Y>
 		<Label>
 			<X>-5</X>

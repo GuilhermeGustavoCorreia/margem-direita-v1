@@ -665,6 +665,10 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-012: demonstração
+traceln(String.format("[%.1f][Tgrao][colocarLinhaMar] trem=%d bom dia Bruno", time(), agent.getId()));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -6477,7 +6481,7 @@ acoplarLoco_b.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1787918933632</Id>
 		<Name><![CDATA[paraSairDoTerminal]]></Name>
-		<X>3070</X>
+		<X>3150</X>
 		<Y>1690</Y>
 		<Label>
 			<X>-10</X>
@@ -6501,7 +6505,8 @@ acoplarLoco_b.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeAlivios.retornar_alivio.take(agent)]]></Code>
+					<Code><![CDATA[((Trem) agent).referencia_alivio = "tgrao";
+main().gestorDeAlivios.retornar_alivio.take(agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -7911,7 +7916,7 @@ main().gestorDeCirculacao.faixa_linha7000_d.bloquear((Trem) agent);
 	<EmbeddedObject>
 		<Id>1791800000041</Id>
 		<Name><![CDATA[liberar_7000_abcd_alivio]]></Name>
-		<X>2900</X>
+		<X>2960</X>
 		<Y>1680</Y>
 		<Label>
 			<X>-50</X>
@@ -8072,7 +8077,7 @@ main().gestorDeCirculacao.faixa_linha7000_d.liberar();
 	<EmbeddedObject>
 		<Id>1791743850674</Id>
 		<Name><![CDATA[pausar3]]></Name>
-		<X>2990</X>
+		<X>3060</X>
 		<Y>1680</Y>
 		<Label>
 			<X>-5</X>
@@ -8457,8 +8462,9 @@ main().gestorDeCirculacao.faixa_marginal_c.liberar();
 	<EmbeddedObject>
 		<Id>1791754128040</Id>
 		<Name><![CDATA[trainMoveTo1]]></Name>
-		<X>2820</X>
-		<Y>1700</Y>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>2840</X>
+		<Y>1690</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>

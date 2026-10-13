@@ -29,7 +29,7 @@
 		<Id>1787921468769</Id>
 		<Name><![CDATA[text31]]></Name>
 		<X>3580</X>
-		<Y>900</Y>
+		<Y>930</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -54,7 +54,7 @@
 		<Id>1787924628818</Id>
 		<Name><![CDATA[text32]]></Name>
 		<X>3580</X>
-		<Y>370</Y>
+		<Y>190</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -79,7 +79,7 @@
 		<Id>1787924653199</Id>
 		<Name><![CDATA[text33]]></Name>
 		<X>3580</X>
-		<Y>1400</Y>
+		<Y>1430</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -104,7 +104,7 @@
 		<Id>1787926044587</Id>
 		<Name><![CDATA[text34]]></Name>
 		<X>3580</X>
-		<Y>1150</Y>
+		<Y>1180</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -203,7 +203,7 @@
 	<Rectangle>
 		<Id>1788722764824</Id>
 		<Name><![CDATA[rectangle]]></Name>
-		<X>-1280</X>
+		<X>-1420</X>
 		<Y>-260</Y>
 		<Label>
 			<X>10</X>
@@ -220,7 +220,7 @@
 		<LineColor/>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>1285.3020446748335</Width>
+		<Width>1425.302</Width>
 		<Height>244.00018640197587</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-16777216</FillColor>
@@ -255,7 +255,7 @@
 		<Id>1788812578531</Id>
 		<Name><![CDATA[text56]]></Name>
 		<X>3580</X>
-		<Y>450</Y>
+		<Y>480</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -650,7 +650,7 @@
 		<Id>1788985546325</Id>
 		<Name><![CDATA[text38]]></Name>
 		<X>3580</X>
-		<Y>660</Y>
+		<Y>680</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -675,7 +675,7 @@
 		<Id>1789264745568</Id>
 		<Name><![CDATA[text71]]></Name>
 		<X>3580</X>
-		<Y>410</Y>
+		<Y>230</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -700,7 +700,7 @@
 		<Id>1789264764209</Id>
 		<Name><![CDATA[text72]]></Name>
 		<X>3580</X>
-		<Y>1590</Y>
+		<Y>1580</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1517,48 +1517,8 @@
 				<Z>0</Z>
 			</Point>
 			<Point>
-				<X>30</X>
-				<Y>-30</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
-	<Polyline>
-		<Id>1789267334420</Id>
-		<Name><![CDATA[polyline16]]></Name>
-		<X>-943.206</X>
-		<Y>-120.572</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>54.827</X>
-				<Y>0</Y>
+				<X>46.975</X>
+				<Y>-44.428</Y>
 				<Z>0</Z>
 			</Point>
 		</Points>
@@ -1729,46 +1689,6 @@
 		</Points>
 		<Closed>false</Closed>
 	</Polyline>
-	<Polyline>
-		<Id>1789267473374</Id>
-		<Name><![CDATA[polyline20]]></Name>
-		<X>-1248.67</X>
-		<Y>-120.572</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>93.989</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
 	<Text>
 		<Id>1789267473376</Id>
 		<Name><![CDATA[text6]]></Name>
@@ -1794,86 +1714,6 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Polyline>
-		<Id>1789267473378</Id>
-		<Name><![CDATA[polyline21]]></Name>
-		<X>-1142.932</X>
-		<Y>-120.572</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>129.235</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
-	<Polyline>
-		<Id>1789267479124</Id>
-		<Name><![CDATA[polyline22]]></Name>
-		<X>-1005.865</X>
-		<Y>-120.572</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>54.827</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
 	<Polyline>
 		<Id>1789267716231</Id>
 		<Name><![CDATA[pl_pst_via_3_intermar]]></Name>
@@ -2566,46 +2406,6 @@
 		<Dy>43</Dy>
 		<Dz>0</Dz>
 	</Line>
-	<Polyline>
-		<Id>1789270241258</Id>
-		<Name><![CDATA[polyline36]]></Name>
-		<X>-719.981</X>
-		<Y>-164.143</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>-42.667</X>
-				<Y>41.851</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
 	<Oval>
 		<Id>1789270241264</Id>
 		<Name><![CDATA[oval4]]></Name>
@@ -2738,8 +2538,288 @@
 		<Closed>false</Closed>
 	</Polyline>
 	<Polyline>
+		<Id>1791909375619</Id>
+		<Name><![CDATA[pl_pst_via2_b]]></Name>
+		<X>-880</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>50.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375631</Id>
+		<Name><![CDATA[pl_pst_via2_a]]></Name>
+		<X>-940</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>50.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375643</Id>
+		<Name><![CDATA[pl_pst_via2_intermar_c]]></Name>
+		<X>-1010</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>50.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375655</Id>
+		<Name><![CDATA[pl_pst_via2_intermar_b]]></Name>
+		<X>-1145</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>125.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375667</Id>
+		<Name><![CDATA[pl_pst_via2_intermar_a]]></Name>
+		<X>-1250</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>95</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375679</Id>
+		<Name><![CDATA[pl_pst_railwayTrack199]]></Name>
+		<X>-1310</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>50.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
+		<Id>1791909375691</Id>
+		<Name><![CDATA[pl_pst_val_via2]]></Name>
+		<X>-1370</X>
+		<Y>-120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-1</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+			<Point>
+				<X>50.911</X>
+				<Y>0</Y>
+				<Z>0</Z>
+			</Point>
+		</Points>
+		<Closed>false</Closed>
+	</Polyline>
+	<Polyline>
 		<Id>1789270507764</Id>
-		<Name><![CDATA[polyline38]]></Name>
+		<Name><![CDATA[pl_pst_via2_f]]></Name>
 		<X>-641.657</X>
 		<Y>-120.572</Y>
 		<Label>
@@ -3614,46 +3694,6 @@
 		<Closed>false</Closed>
 	</Polyline>
 	<Polyline>
-		<Id>1789272899330</Id>
-		<Name><![CDATA[polyline52]]></Name>
-		<X>-884.462</X>
-		<Y>-120.572</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-1</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-			<Point>
-				<X>54.827</X>
-				<Y>0</Y>
-				<Z>0</Z>
-			</Point>
-		</Points>
-		<Closed>false</Closed>
-	</Polyline>
-	<Polyline>
 		<Id>1789273073208</Id>
 		<Name><![CDATA[polyline53]]></Name>
 		<X>-563.332</X>
@@ -3864,7 +3904,7 @@
 		<Id>1789274243512</Id>
 		<Name><![CDATA[text75]]></Name>
 		<X>1500</X>
-		<Y>510</Y>
+		<Y>480</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -3939,7 +3979,7 @@
 		<Id>1789274693728</Id>
 		<Name><![CDATA[text78]]></Name>
 		<X>800</X>
-		<Y>2080</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -3964,7 +4004,7 @@
 		<Id>1789274801702</Id>
 		<Name><![CDATA[text79]]></Name>
 		<X>810</X>
-		<Y>2110</Y>
+		<Y>1810</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -3989,7 +4029,7 @@
 		<Id>1789274832367</Id>
 		<Name><![CDATA[text80]]></Name>
 		<X>840</X>
-		<Y>2280</Y>
+		<Y>1980</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -4819,84 +4859,6 @@ variáveis de faixa]]></Text>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Oval>
-		<Id>1789390047771</Id>
-		<Name><![CDATA[oval14]]></Name>
-		<X>-1350</X>
-		<Y>750</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Oval>
-		<Id>1789390106559</Id>
-		<Name><![CDATA[oval15]]></Name>
-		<X>-1350</X>
-		<Y>1000</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Oval>
-		<Id>1789391611384</Id>
-		<Name><![CDATA[oval16]]></Name>
-		<X>-1348.8</X>
-		<Y>1250.4</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
 	<Text>
 		<Id>1789392332264</Id>
 		<Name><![CDATA[text111]]></Name>
@@ -4922,84 +4884,6 @@ variáveis de faixa]]></Text>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Oval>
-		<Id>1789392672974</Id>
-		<Name><![CDATA[oval17]]></Name>
-		<X>-1350</X>
-		<Y>1500</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Oval>
-		<Id>1789392677004</Id>
-		<Name><![CDATA[oval18]]></Name>
-		<X>-1350</X>
-		<Y>1750</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Oval>
-		<Id>1789392679872</Id>
-		<Name><![CDATA[oval19]]></Name>
-		<X>-1350</X>
-		<Y>2000</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>15</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-16744320</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
 	<Line>
 		<Id>1789396228227</Id>
 		<Name><![CDATA[line4]]></Name>
@@ -7412,7 +7296,7 @@ variáveis de faixa]]></Text>
 	<Text>
 		<Id>1791460736190</Id>
 		<Name><![CDATA[text27]]></Name>
-		<X>-1260</X>
+		<X>-1250</X>
 		<Y>-250</Y>
 		<Label>
 			<X>0</X>
@@ -7507,6 +7391,56 @@ variáveis de faixa]]></Text>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>10</Size>
 			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1791890730653</Id>
+		<Name><![CDATA[text43]]></Name>
+		<X>-660</X>
+		<Y>2500</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Circulação de Carregados]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>22</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1791890748158</Id>
+		<Name><![CDATA[text44]]></Name>
+		<X>-660</X>
+		<Y>2200</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Ciculação de Vazios]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>22</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>

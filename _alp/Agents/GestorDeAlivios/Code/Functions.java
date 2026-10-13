@@ -514,3 +514,17 @@ switch (patio) {
 }
 /*ALCODEEND*/}
 
+ResourcePool[] get_recursos_linha_4000(Trem trem)
+{/*ALCODESTART::1791950000012*/
+// ALT-013 alívio na linha 4000: pools da linha 4000 que o trem realmente possui
+// (Release em SPECIFIED_RESOURCES dá erro se o agente não tiver a unidade)
+List<ResourcePool> pools = new ArrayList<>();
+for (Faixa f : java.util.List.of(
+        main().gestorDeCirculacao.faixa_linha4000_a,
+        main().gestorDeCirculacao.faixa_linha4000_b,
+        main().gestorDeCirculacao.faixa_linha4000_c)) {
+    if (!trem.resourceUnitsOfPool(f.recurso).isEmpty()) pools.add(f.recurso);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+

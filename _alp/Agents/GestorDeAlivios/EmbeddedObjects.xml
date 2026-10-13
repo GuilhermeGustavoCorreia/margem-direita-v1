@@ -1161,12 +1161,7 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linha_4000 = ((Trem) train);
-
-main().gestorDeCirculacao.faixa_intervalo4000_a.ocupar_agente(9999);
-main().gestorDeCirculacao.faixa_intervalo4000_b.ocupar_agente(9999);
-main().gestorDeCirculacao.faixa_intervalo4000_c.ocupar_agente(9999);
-]]></Code>
+					<Code><![CDATA[lote_linha_4000 = ((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -1463,8 +1458,8 @@ main().gestorDeCirculacao.faixa_intervalo4000_c.ocupar_agente(9999);
 	<EmbeddedObject>
 		<Id>1791230790661</Id>
 		<Name><![CDATA[wait_trem_4000]]></Name>
-		<X>450</X>
-		<Y>780</Y>
+		<X>590</X>
+		<Y>850</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -1670,8 +1665,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1791232846843</Id>
 		<Name><![CDATA[para_comeca_alivio]]></Name>
-		<X>540</X>
-		<Y>790</Y>
+		<X>680</X>
+		<Y>860</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3287,10 +3282,20 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_via1_intermar_d;
-((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_via1_intermar_c;
+					<Code><![CDATA[// ALT-012: tgrao sai em pst_silosMuro_a (pos_saida_tgrao) e segue silosMuro_a > via3_c > via3_b > via3_a > via3_intermar
+if ("tgrao".equals(((Trem) agent).referencia_alivio)) {
 
-]]></Code>
+    ((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_marginal_c;
+    ((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_marginal_b;
+    
+} else {
+
+    ((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_via1_intermar_d;
+    ((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_via1_intermar_c;
+    
+}
+
+((Trem) agent).eh_alivio = true;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4441,6 +4446,259 @@ if (alivio_em_andamento_pst.faixa_criacao != null) alivio_em_andamento_pst.faixa
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1791700000023</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791950000001</Id>
+		<Name><![CDATA[linha_4000_cheia]]></Name>
+		<X>480</X>
+		<Y>790</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().getNumeroDeVagoes((Trem) agent) >= CAPACIDADE_LINHA_4000]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791950000002</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791950000003</Id>
+		<Name><![CDATA[liberar_linha_4000]]></Name>
+		<X>590</X>
+		<Y>780</Y>
+		<Label>
+			<X>-30</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[get_recursos_linha_4000((Trem) agent)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-013 alívio na linha 4000: solta as faixas da linha 4000 (apreendidas no bloquear_4000)
+liberarFaixas(new ArrayList<Faixa>(java.util.List.of(
+    main().gestorDeCirculacao.faixa_linha4000_a,
+    main().gestorDeCirculacao.faixa_linha4000_b,
+    main().gestorDeCirculacao.faixa_linha4000_c
+)));]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791950000004</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791950000005</Id>
+		<Name><![CDATA[para_alivio_na_linha_4000]]></Name>
+		<X>680</X>
+		<Y>790</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-013 alívio na linha 4000: trem com 82 vagões segue para as DVs pelo circuito do GestorDeCirculacao
+// intervalo4000_a -> marginal_c -> marginal_b -> marginal_a -> via2_f ... via2_a -> via2_intermar_c..a -> railwayTrack199 -> val_via2
+Trem trem = (Trem) agent;
+traceln(String.format("[%.1f][Alivio4000][para_alivio_na_linha_4000] trem=%d vagoes=%d -> DVs", time(), trem.getId(), main().getNumeroDeVagoes(trem)));
+
+trem.eh_alivio     = true;
+trem.faixa_atual   = main().gestorDeCirculacao.faixa_intervalo4000_a;
+trem.proxima_faixa = main().gestorDeCirculacao.faixa_marginal_c;
+
+// linha 4000 livre: o próximo ciclo cria uma loco nova
+lote_linha_4000        = null;
+ferrovia_na_linha_4000 = null;
+segmento_na_linha_4000 = null;
+
+main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791950000006</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

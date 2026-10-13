@@ -16,7 +16,7 @@ linhas_e_recursos.put(rp_linha_marginalRetaVelha, 	coll_marginalRetaVelha	);
 linhas_e_recursos.put(rp_linha_via2, 				coll_via2				);
 linhas_e_recursos.put(rp_linha_via2_intermar, 		coll_via2_intermar		); 
 
-traceln("startup -> linhas_e_recursos");
+traceln("🟠➡️ " + "startup -> linhas_e_recursos");
 /*ALCODEEND*/}
 
 double configurar_rota(Trem trem)
@@ -55,7 +55,7 @@ for (Faixa f : faixas) {
     if (!trem.resourceUnitsOfPool(f.recurso).isEmpty())
         possui.append(f.recurso.getName()).append(" ");
 }
-traceln("[diag_liberar] t=" + time() + " trem " + trem.getId()
+traceln("🟠➡️ " + "[diag_liberar] t=" + time() + " trem " + trem.getId()
         + " | possui: " + (possui.length() > 0 ? possui.toString() : "nenhum"));
 
 for (Faixa faixa : faixas) {
@@ -69,14 +69,19 @@ for (Faixa faixa : faixas) {
         boolean temUnidade     = !trem.resourceUnitsOfPool(faixa.recurso).isEmpty();
 
         // ALT-010 [diag_liberar]: cada faixa candidata a liberacao
-        traceln("[diag_liberar]   " + faixa.recurso.getName()
+        traceln("🟠➡️ " + "[diag_liberar]   " + faixa.recurso.getName()
                 + " | vazia=" + faixaEstaVazia
                 + " | temUnidade=" + temUnidade
                 + ((faixaEstaVazia && !temUnidade) ? "  <-- VAI DAR ERRO" : ""));
 
+        // ALT-010.1: a faixa sempre sai de OCUPADA quando o trem já saiu dela.
+        // Só entra na lista de Release o recurso que o trem realmente possui
+        // (Release em SPECIFIED_RESOURCES dá erro se o agente não tiver a unidade).
         if (faixaEstaVazia) {
-            recursosLiberados.add(faixa.recurso);
             faixa.liberar();
+            if (temUnidade) {
+                recursosLiberados.add(faixa.recurso);
+            }
         }
     }
 }
