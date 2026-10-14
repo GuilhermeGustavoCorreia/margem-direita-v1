@@ -141,16 +141,6 @@ String getAssociada()
 return getPrimeiroVagao().ferrovia;
 /*ALCODEEND*/}
 
-String getNameDestinoMoega()
-{/*ALCODESTART::1789386771033*/
-return ITerminalMoega_destino.getName();
-/*ALCODEEND*/}
-
-boolean destinoMoegaEh(String... nomes)
-{/*ALCODESTART::1789389224726*/
-return List.of(nomes).contains(getNameDestinoMoega());
-/*ALCODEEND*/}
-
 String getFerrovia()
 {/*ALCODESTART::1790621845211*/
 Agent primeiro = getFirst();
@@ -246,5 +236,18 @@ for (; i < n; i++) {
     if (getCar(i) instanceof Locomotiva) return n - 1 - i;
 }
 return -1;
+/*ALCODEEND*/}
+
+ITerminalMoega set_terminal(ITerminalMoega terminal)
+{/*ALCODESTART::1791915361118*/
+ITerminalMoega_destino = terminal;
+/*ALCODEEND*/}
+
+String get_terminal_name()
+{/*ALCODESTART::1791915423677*/
+if (ITerminalMoega_destino != null){
+	return ITerminalMoega_destino.getName();
+}
+return "⚠️​ este trem não tem destino em moega";
 /*ALCODEEND*/}
 

@@ -8,6 +8,14 @@
 - Ferrovia e segmento: vêm do primeiro vagão do trem em atendimento (`getFerrovia()`, `getSegmento()`).
 - Função de alívio: usa 2 locomotivas de manobra (`getNumeroLocomotivasAlivio()`), criadas em `pos_locoManobra_PST`.
   Não são locomotivas da ferrovia.
+- Convenção dos documentos: carro de índice 0 aponta para a Ponta da Praia; o último, para o Valongo.
+
+## Regras do alívio
+
+- O alívio do Tgrao é sempre de 40 vagões. Nunca menos.
+- Antes de aliviar, o GestorDeDVs precisa ter mais de 40 vagões de espaço livre para a ferrovia do Tgrao.
+  Sem esse espaço, o alívio não começa.
+- [pendente] As duas regras ainda não estão no código. O GestorDeDVs ainda não foi desenvolvido.
 
 ## Recursos
 
@@ -26,7 +34,7 @@ Trem de carregados (sequência a partir do GestorDeCirculacao):
 4. Moega: `encostar_Moega` → `colocarNaEntradaMoega` → `descarregar_linhaMoega` → `descarrega_loteMoega`.
 5. `acabouLotes` (SelectOutput) decide se o terminal encerrou. Se não, `tirarExcesso2` → `manobrarLote`.
 
-Alívio de vazios (locomotivas de manobra):
+Alívio de vazios (locomotivas de manobra, sempre 40 vagões):
 
 1. `paraAlivioMar` ou `paraAlivioMoega` → `temLoteVzs_linhaMar` / `temLoteVzs_linhaMoega` (SelectOutput).
 2. `alivioMar` / `alivioMoega` (Enter) → `engatarLoteMar` / `engatarLoteMoega` (TrainMoveTo) → `acoplar` / `acoplar1` (TrainCouple).
@@ -44,6 +52,7 @@ Locomotivas no Tgrao:
 
 ## Pendências
 
+- [pendente] Alívio de exatamente 40 vagões e checagem de espaço no GestorDeDVs (> 40 vagões para a ferrovia do Tgrao).
 - [pendente] Após `entrarNaLinhaDoTerminal`, as locomotivas devem liberar as faixas de circulação.
   Hoje o fluxo vai direto para `alivioVazios`, sem nenhum Release de faixa nesse caminho.
   O único `liberar_faixas_circulacao` do Tgrao fica no ramo da linha mar.

@@ -1,95 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Connectors>
 	<Connector>
-		<Id>1788183323794</Id>
-		<Name><![CDATA[connector]]></Name>
-		<X>520</X>
-		<Y>180</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>entrarNoTerminal</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>encoste</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-60</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1788183351166</Id>
-		<Name><![CDATA[connector1]]></Name>
-		<X>610</X>
-		<Y>180</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>paraColocarLocoNaCauda</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>entrarNoTerminal</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-50</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788183375228</Id>
 		<Name><![CDATA[connector4]]></Name>
-		<X>600</X>
+		<X>760</X>
 		<Y>330</Y>
 		<Label>
 			<X>10</X>
@@ -132,7 +46,7 @@
 	<Connector>
 		<Id>1788183399596</Id>
 		<Name><![CDATA[connector6]]></Name>
-		<X>730</X>
+		<X>890</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -175,7 +89,7 @@
 	<Connector>
 		<Id>1788183420496</Id>
 		<Name><![CDATA[connector7]]></Name>
-		<X>800</X>
+		<X>960</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -218,7 +132,7 @@
 	<Connector>
 		<Id>1788183459990</Id>
 		<Name><![CDATA[connector2]]></Name>
-		<X>1050</X>
+		<X>1210</X>
 		<Y>330</Y>
 		<Label>
 			<X>10</X>
@@ -261,7 +175,7 @@
 	<Connector>
 		<Id>1788183468358</Id>
 		<Name><![CDATA[connector9]]></Name>
-		<X>620</X>
+		<X>780</X>
 		<Y>330</Y>
 		<Label>
 			<X>10</X>
@@ -304,7 +218,7 @@
 	<Connector>
 		<Id>1788184358677</Id>
 		<Name><![CDATA[connector19]]></Name>
-		<X>1500</X>
+		<X>1660</X>
 		<Y>220</Y>
 		<Label>
 			<X>10</X>
@@ -347,7 +261,7 @@
 	<Connector>
 		<Id>1788184363694</Id>
 		<Name><![CDATA[connector20]]></Name>
-		<X>1500</X>
+		<X>1660</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -390,7 +304,7 @@
 	<Connector>
 		<Id>1788184366374</Id>
 		<Name><![CDATA[connector21]]></Name>
-		<X>1500</X>
+		<X>1660</X>
 		<Y>620</Y>
 		<Label>
 			<X>10</X>
@@ -433,7 +347,7 @@
 	<Connector>
 		<Id>1788184369128</Id>
 		<Name><![CDATA[connector22]]></Name>
-		<X>1500</X>
+		<X>1660</X>
 		<Y>825</Y>
 		<Label>
 			<X>10</X>
@@ -476,7 +390,7 @@
 	<Connector>
 		<Id>1788184369130</Id>
 		<Name><![CDATA[connector26]]></Name>
-		<X>1350</X>
+		<X>1510</X>
 		<Y>825</Y>
 		<Label>
 			<X>10</X>
@@ -519,7 +433,7 @@
 	<Connector>
 		<Id>1788184796366</Id>
 		<Name><![CDATA[connector43]]></Name>
-		<X>510</X>
+		<X>680</X>
 		<Y>700</Y>
 		<Label>
 			<X>10</X>
@@ -554,7 +468,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-52</X>
+				<X>-62</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -562,7 +476,7 @@
 	<Connector>
 		<Id>1788184796368</Id>
 		<Name><![CDATA[connector44]]></Name>
-		<X>825</X>
+		<X>1075</X>
 		<Y>775</Y>
 		<Label>
 			<X>10</X>
@@ -607,52 +521,9 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788184796370</Id>
-		<Name><![CDATA[connector45]]></Name>
-		<X>630</X>
-		<Y>700</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>deixarLote</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDecouple</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>colocar_L1</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-80</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788185246679</Id>
 		<Name><![CDATA[connector50]]></Name>
-		<X>1770</X>
+		<X>1930</X>
 		<Y>535</Y>
 		<Label>
 			<X>10</X>
@@ -699,7 +570,7 @@
 	<Connector>
 		<Id>1788185272347</Id>
 		<Name><![CDATA[connector54]]></Name>
-		<X>1770</X>
+		<X>1930</X>
 		<Y>735</Y>
 		<Label>
 			<X>10</X>
@@ -746,7 +617,7 @@
 	<Connector>
 		<Id>1788185321196</Id>
 		<Name><![CDATA[connector58]]></Name>
-		<X>1770</X>
+		<X>1930</X>
 		<Y>935</Y>
 		<Label>
 			<X>10</X>
@@ -793,7 +664,7 @@
 	<Connector>
 		<Id>1788185331514</Id>
 		<Name><![CDATA[connector30]]></Name>
-		<X>1945</X>
+		<X>2105</X>
 		<Y>1120</Y>
 		<Label>
 			<X>10</X>
@@ -840,7 +711,7 @@
 	<Connector>
 		<Id>1788185331522</Id>
 		<Name><![CDATA[connector62]]></Name>
-		<X>1769</X>
+		<X>1929</X>
 		<Y>1159</Y>
 		<Label>
 			<X>10</X>
@@ -887,8 +758,8 @@
 	<Connector>
 		<Id>1788186411109</Id>
 		<Name><![CDATA[connector64]]></Name>
-		<X>555</X>
-		<Y>-45</Y>
+		<X>600</X>
+		<Y>-40</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -899,17 +770,17 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Bracell</ClassName>
-			<ItemName>irAtéTerminal</ItemName>
+			<ItemName>para_encoste_linha1000</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
 			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Bracell</ClassName>
-			<ItemName>tremTesteSource</ItemName>
+			<ItemName>trem_celulose_teste</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
@@ -922,50 +793,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-85</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1788186411111</Id>
-		<Name><![CDATA[connector65]]></Name>
-		<X>670</X>
-		<Y>-45</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>paraEncoste</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>irAtéTerminal</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-75</X>
+				<X>-130</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -973,7 +801,7 @@
 	<Connector>
 		<Id>1788196072428</Id>
 		<Name><![CDATA[connector3]]></Name>
-		<X>620</X>
+		<X>780</X>
 		<Y>350</Y>
 		<Label>
 			<X>10</X>
@@ -1020,7 +848,7 @@
 	<Connector>
 		<Id>1788196106650</Id>
 		<Name><![CDATA[connector5]]></Name>
-		<X>970</X>
+		<X>1130</X>
 		<Y>350</Y>
 		<Label>
 			<X>10</X>
@@ -1071,7 +899,7 @@
 	<Connector>
 		<Id>1788198600070</Id>
 		<Name><![CDATA[connector8]]></Name>
-		<X>870</X>
+		<X>1030</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -1114,7 +942,7 @@
 	<Connector>
 		<Id>1788199696068</Id>
 		<Name><![CDATA[connector14]]></Name>
-		<X>825</X>
+		<X>1075</X>
 		<Y>700</Y>
 		<Label>
 			<X>10</X>
@@ -1149,7 +977,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-55</X>
+				<X>-45</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1157,7 +985,7 @@
 	<Connector>
 		<Id>1788199696070</Id>
 		<Name><![CDATA[connector15]]></Name>
-		<X>730</X>
+		<X>980</X>
 		<Y>700</Y>
 		<Label>
 			<X>10</X>
@@ -1188,7 +1016,7 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
+				<X>10</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1200,7 +1028,7 @@
 	<Connector>
 		<Id>1788199778616</Id>
 		<Name><![CDATA[connector46]]></Name>
-		<X>512</X>
+		<X>672</X>
 		<Y>910</Y>
 		<Label>
 			<X>10</X>
@@ -1243,7 +1071,7 @@
 	<Connector>
 		<Id>1788199778618</Id>
 		<Name><![CDATA[connector47]]></Name>
-		<X>827</X>
+		<X>987</X>
 		<Y>985</Y>
 		<Label>
 			<X>10</X>
@@ -1274,7 +1102,7 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
+				<X>-2</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1290,7 +1118,7 @@
 	<Connector>
 		<Id>1788199778620</Id>
 		<Name><![CDATA[connector63]]></Name>
-		<X>632</X>
+		<X>792</X>
 		<Y>910</Y>
 		<Label>
 			<X>10</X>
@@ -1333,7 +1161,7 @@
 	<Connector>
 		<Id>1788199778622</Id>
 		<Name><![CDATA[connector16]]></Name>
-		<X>827</X>
+		<X>987</X>
 		<Y>910</Y>
 		<Label>
 			<X>10</X>
@@ -1368,7 +1196,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-55</X>
+				<X>-45</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1376,7 +1204,7 @@
 	<Connector>
 		<Id>1788199778624</Id>
 		<Name><![CDATA[connector17]]></Name>
-		<X>732</X>
+		<X>892</X>
 		<Y>910</Y>
 		<Label>
 			<X>10</X>
@@ -1407,7 +1235,7 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
+				<X>10</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1419,7 +1247,7 @@
 	<Connector>
 		<Id>1788199827024</Id>
 		<Name><![CDATA[connector66]]></Name>
-		<X>502</X>
+		<X>662</X>
 		<Y>1170</Y>
 		<Label>
 			<X>10</X>
@@ -1462,7 +1290,7 @@
 	<Connector>
 		<Id>1788199827026</Id>
 		<Name><![CDATA[connector67]]></Name>
-		<X>817</X>
+		<X>977</X>
 		<Y>1245</Y>
 		<Label>
 			<X>10</X>
@@ -1493,7 +1321,7 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
+				<X>-2</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1509,7 +1337,7 @@
 	<Connector>
 		<Id>1788199827028</Id>
 		<Name><![CDATA[connector68]]></Name>
-		<X>622</X>
+		<X>782</X>
 		<Y>1170</Y>
 		<Label>
 			<X>10</X>
@@ -1552,7 +1380,7 @@
 	<Connector>
 		<Id>1788199827030</Id>
 		<Name><![CDATA[connector18]]></Name>
-		<X>810</X>
+		<X>970</X>
 		<Y>1170</Y>
 		<Label>
 			<X>10</X>
@@ -1587,7 +1415,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-48</X>
+				<X>-38</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1595,7 +1423,7 @@
 	<Connector>
 		<Id>1788199827032</Id>
 		<Name><![CDATA[connector31]]></Name>
-		<X>722</X>
+		<X>882</X>
 		<Y>1170</Y>
 		<Label>
 			<X>10</X>
@@ -1626,7 +1454,7 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
+				<X>10</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1638,7 +1466,7 @@
 	<Connector>
 		<Id>1788199835658</Id>
 		<Name><![CDATA[connector69]]></Name>
-		<X>502</X>
+		<X>662</X>
 		<Y>1390</Y>
 		<Label>
 			<X>10</X>
@@ -1681,7 +1509,7 @@
 	<Connector>
 		<Id>1788199835662</Id>
 		<Name><![CDATA[connector71]]></Name>
-		<X>622</X>
+		<X>782</X>
 		<Y>1390</Y>
 		<Label>
 			<X>10</X>
@@ -1722,52 +1550,9 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788199835664</Id>
-		<Name><![CDATA[connector32]]></Name>
-		<X>820</X>
-		<Y>1390</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>trainDispose</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDispose</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>recuar3</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port1</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-58</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788199835666</Id>
 		<Name><![CDATA[connector33]]></Name>
-		<X>722</X>
+		<X>892</X>
 		<Y>1390</Y>
 		<Label>
 			<X>10</X>
@@ -1802,7 +1587,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-80</X>
+				<X>-90</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1810,7 +1595,7 @@
 	<Connector>
 		<Id>1788200361870</Id>
 		<Name><![CDATA[connector11]]></Name>
-		<X>1400</X>
+		<X>1560</X>
 		<Y>220</Y>
 		<Label>
 			<X>10</X>
@@ -1853,7 +1638,7 @@
 	<Connector>
 		<Id>1788200361872</Id>
 		<Name><![CDATA[connector12]]></Name>
-		<X>1300</X>
+		<X>1460</X>
 		<Y>220</Y>
 		<Label>
 			<X>10</X>
@@ -1896,7 +1681,7 @@
 	<Connector>
 		<Id>1788200366005</Id>
 		<Name><![CDATA[connector13]]></Name>
-		<X>1400</X>
+		<X>1560</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -1939,7 +1724,7 @@
 	<Connector>
 		<Id>1788200366007</Id>
 		<Name><![CDATA[connector23]]></Name>
-		<X>1300</X>
+		<X>1460</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -1982,7 +1767,7 @@
 	<Connector>
 		<Id>1788200370640</Id>
 		<Name><![CDATA[connector24]]></Name>
-		<X>1400</X>
+		<X>1560</X>
 		<Y>620</Y>
 		<Label>
 			<X>10</X>
@@ -2025,7 +1810,7 @@
 	<Connector>
 		<Id>1788200370642</Id>
 		<Name><![CDATA[connector25]]></Name>
-		<X>1300</X>
+		<X>1460</X>
 		<Y>620</Y>
 		<Label>
 			<X>10</X>
@@ -2068,7 +1853,7 @@
 	<Connector>
 		<Id>1788201351793</Id>
 		<Name><![CDATA[connector34]]></Name>
-		<X>820</X>
+		<X>980</X>
 		<Y>1480</Y>
 		<Label>
 			<X>10</X>
@@ -2113,52 +1898,9 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788211319197</Id>
-		<Name><![CDATA[connector35]]></Name>
-		<X>1860</X>
-		<Y>220</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>irAteTerminal</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>alivioVazios</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-100</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788211837016</Id>
 		<Name><![CDATA[connector27]]></Name>
-		<X>1845</X>
+		<X>2005</X>
 		<Y>460</Y>
 		<Label>
 			<X>10</X>
@@ -2201,7 +1943,7 @@
 	<Connector>
 		<Id>1788211838441</Id>
 		<Name><![CDATA[connector28]]></Name>
-		<X>1840</X>
+		<X>2000</X>
 		<Y>660</Y>
 		<Label>
 			<X>10</X>
@@ -2244,7 +1986,7 @@
 	<Connector>
 		<Id>1788211847430</Id>
 		<Name><![CDATA[connector38]]></Name>
-		<X>1875</X>
+		<X>2035</X>
 		<Y>470</Y>
 		<Label>
 			<X>10</X>
@@ -2291,7 +2033,7 @@
 	<Connector>
 		<Id>1788211856485</Id>
 		<Name><![CDATA[connector39]]></Name>
-		<X>1870</X>
+		<X>2030</X>
 		<Y>670</Y>
 		<Label>
 			<X>10</X>
@@ -2346,7 +2088,7 @@
 	<Connector>
 		<Id>1788211860610</Id>
 		<Name><![CDATA[connector40]]></Name>
-		<X>1845</X>
+		<X>2005</X>
 		<Y>870</Y>
 		<Label>
 			<X>10</X>
@@ -2393,7 +2135,7 @@
 	<Connector>
 		<Id>1788212076738</Id>
 		<Name><![CDATA[connector41]]></Name>
-		<X>2110</X>
+		<X>2190</X>
 		<Y>690</Y>
 		<Label>
 			<X>10</X>
@@ -2428,7 +2170,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-145</X>
+				<X>-65</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2436,7 +2178,7 @@
 	<Connector>
 		<Id>1788212121858</Id>
 		<Name><![CDATA[connector42]]></Name>
-		<X>2110</X>
+		<X>2190</X>
 		<Y>890</Y>
 		<Label>
 			<X>10</X>
@@ -2471,7 +2213,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-145</X>
+				<X>-65</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2479,7 +2221,7 @@
 	<Connector>
 		<Id>1788212153532</Id>
 		<Name><![CDATA[connector48]]></Name>
-		<X>1765</X>
+		<X>1925</X>
 		<Y>1085</Y>
 		<Label>
 			<X>10</X>
@@ -2522,7 +2264,7 @@
 	<Connector>
 		<Id>1788212158950</Id>
 		<Name><![CDATA[connector51]]></Name>
-		<X>1770</X>
+		<X>1930</X>
 		<Y>860</Y>
 		<Label>
 			<X>10</X>
@@ -2565,7 +2307,7 @@
 	<Connector>
 		<Id>1788262605493</Id>
 		<Name><![CDATA[connector29]]></Name>
-		<X>2200</X>
+		<X>2280</X>
 		<Y>890</Y>
 		<Label>
 			<X>10</X>
@@ -2608,7 +2350,7 @@
 	<Connector>
 		<Id>1788262613124</Id>
 		<Name><![CDATA[connector37]]></Name>
-		<X>2200</X>
+		<X>2280</X>
 		<Y>690</Y>
 		<Label>
 			<X>10</X>
@@ -2649,52 +2391,9 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788262793234</Id>
-		<Name><![CDATA[connector52]]></Name>
-		<X>820</X>
-		<Y>1390</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>trainDispose</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDispose</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>recuar3</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port1</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-58</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788263223057</Id>
 		<Name><![CDATA[connector53]]></Name>
-		<X>1310</X>
+		<X>1470</X>
 		<Y>825</Y>
 		<Label>
 			<X>10</X>
@@ -2735,95 +2434,9 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788270239187</Id>
-		<Name><![CDATA[connector55]]></Name>
-		<X>2100</X>
-		<Y>220</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>paraAlivio_L1</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>linha5K</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-50</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1788724782715</Id>
-		<Name><![CDATA[connector36]]></Name>
-		<X>2010</X>
-		<Y>220</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>linha5K</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>pausar1</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Pausar</ClassName>
-			<ItemName>port1</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-30</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788724782717</Id>
 		<Name><![CDATA[connector56]]></Name>
-		<X>0</X>
+		<X>160</X>
 		<Y>0</Y>
 		<Label>
 			<X>10</X>
@@ -2866,7 +2479,7 @@
 	<Connector>
 		<Id>1788725927826</Id>
 		<Name><![CDATA[connector57]]></Name>
-		<X>2200</X>
+		<X>2280</X>
 		<Y>1120</Y>
 		<Label>
 			<X>10</X>
@@ -2909,7 +2522,7 @@
 	<Connector>
 		<Id>1788725927828</Id>
 		<Name><![CDATA[connector59]]></Name>
-		<X>2110</X>
+		<X>2190</X>
 		<Y>1120</Y>
 		<Label>
 			<X>10</X>
@@ -2944,7 +2557,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-145</X>
+				<X>-65</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2952,7 +2565,7 @@
 	<Connector>
 		<Id>1788809046497</Id>
 		<Name><![CDATA[connector10]]></Name>
-		<X>2200</X>
+		<X>2280</X>
 		<Y>490</Y>
 		<Label>
 			<X>10</X>
@@ -2995,7 +2608,7 @@
 	<Connector>
 		<Id>1788809046499</Id>
 		<Name><![CDATA[connector49]]></Name>
-		<X>2110</X>
+		<X>2190</X>
 		<Y>490</Y>
 		<Label>
 			<X>10</X>
@@ -3030,8 +2643,438 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-145</X>
+				<X>-65</X>
 				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000202</Id>
+		<Name><![CDATA[connector_alt014_1]]></Name>
+		<X>620</X>
+		<Y>180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>encoste</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>ocupar_linha5000_6000</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000203</Id>
+		<Name><![CDATA[connector_alt014_2]]></Name>
+		<X>700</X>
+		<Y>180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>ocupar_linha5000_6000</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>entrarNoTerminal</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000206</Id>
+		<Name><![CDATA[connector_alt014_3]]></Name>
+		<X>800</X>
+		<Y>180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>entrarNoTerminal</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_faixas_circulacao</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000207</Id>
+		<Name><![CDATA[connector_alt014_4]]></Name>
+		<X>900</X>
+		<Y>180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_faixas_circulacao</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>paraColocarLocoNaCauda</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000210</Id>
+		<Name><![CDATA[connector_alt014_5]]></Name>
+		<X>720</X>
+		<Y>700</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>colocar_L1</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_faixas_circulacao1</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000211</Id>
+		<Name><![CDATA[connector_alt014_6]]></Name>
+		<X>810</X>
+		<Y>700</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_faixas_circulacao1</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>deixarLote</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>70</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000216</Id>
+		<Name><![CDATA[connector_alt014_7]]></Name>
+		<X>932</X>
+		<Y>1390</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>recuar3</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>MoverTremCompleto_Ponto</ClassName>
+			<ItemName>port1</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_linha5000_6000</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>48</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000217</Id>
+		<Name><![CDATA[connector_alt014_8]]></Name>
+		<X>1020</X>
+		<Y>1390</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>liberar_linha5000_6000</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>devolverLocomotiva</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+			<ItemName>port</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>90</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000218</Id>
+		<Name><![CDATA[connector_alt014_9]]></Name>
+		<X>1920</X>
+		<Y>220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>iniciar_alivio</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>irAteTerminal</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000219</Id>
+		<Name><![CDATA[connector_alt014_10]]></Name>
+		<X>2100</X>
+		<Y>200</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>pausar1</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+			<ItemName>port1</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Bracell</ClassName>
+			<ItemName>paraAlivio_L1</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>160</X>
+				<Y>10</Y>
 			</Point>
 		</Points>
 	</Connector>

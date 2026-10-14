@@ -4,6 +4,8 @@ Cada gestor cuida de um recurso compartilhado. Terminais pedem ao gestor; o gest
 
 > RASCUNHO. GestorDeAlivios e GestorDeChegadas ainda precisam de conferência no código.
 
+Convenção dos documentos: carro de índice 0 aponta para a Ponta da Praia; o último, para o Valongo.
+
 ## GestorDeLocomotivas
 
 Controla as locomotivas por pátio e por ferrovia.
@@ -28,9 +30,17 @@ Controla as faixas de circulação e o licenciamento dos trens.
 - **Regra de licenciamento**: o trem licencia só a faixa à frente (`faixa_atual` / `proxima_faixa`).
   Cada faixa tem `circular_*` → `ir_*` (TrainMoveTo) → Exit, que define o próximo par.
   A decisão de destino fica no fim da última faixa da rota.
+- **Percurso do trem da Bracell** (ALT-014): `val_via2 → via3_intermar → via3_a → via3_b → via3_c → pst_silosMuro_a → pst_marginal_c → pmc_intervalo4000_a → pmc_intervalo4000_b → pmc_intervalo4000_c → bracell.encoste`.
+  Decisões: `para_via3_ate_santa` (bracell começa na val_via2), ◇ `definir_sentido_val_via2`, `para_silosMuro_a` / ◇ `e_tgrao` (tgrao ou bracell → marginal_c),
+  ◇ `e_bracell` no fim da marginal_c, `continuar3/4/5` na intervalo4000 (o `continuar5` entrega à Bracell).
 - **Saída da Margem Direita**: o alívio devolve o trem ao GestorDeCirculacao, que licencia as faixas de saída
   (linha 6000 a, marginal c, silos muro a). Essas faixas são ocupadas com `ocupar()`, não bloqueadas,
   para que `liberar_faixas_ocupadas` as solte conforme o trem anda.
+- **Circuito de saída do alívio até as DVs** (trem com `eh_alivio = true`, de ré): `marginal_c → marginal_b → marginal_a → via2_f … via2_a → via2_intermar_c … a → railwayTrack199 → val_via2 → gestorDeDVs.entrarNasDVs`.
+  Os ◇ `definir_sentido_*` (`!eh_alivio`) separam o trem de alívio da circulação normal. Usado pelo Tgrao e pelo alívio na linha 4000 (entra pela `intervalo4000_a`, ALT-013).
+- **Saída do alívio de celulose** (ALT-014, de ré): `intervalo4000_c → b → a` e daí o circuito de saída acima.
+  ◇ `definir_sentido_intervalo4000_c/_b` separam o alívio. No `recuar_intervalo4000_b`, `liberar_linha5000_6000` solta a linha 5000/6000 (`get_recursos_linha_5000_6000`).
+- Os blocos antigos `alivio_bracell*`, `linha5K*`, `linha_5k_*` e `circulacaoVzs_PCX` não são mais usados pela Bracell.
 - **Liberar**: `liberar_faixas_ocupadas(Trem)` solta as faixas do trem que estão OCUPADA e vazias.
   Devolve os ResourcePools liberados para o Release do terminal.
 - **Bloquear**: `bloquear_faixas(Trem, List<Faixa>)`.
@@ -44,10 +54,29 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - Pega locomotivas da ferrovia em atendimento ou de manobra, conforme `get_tipo_loco_alivio()`.
 - Só tira um terminal de `terminais_pst` se houver loco no wait da ferrovia.
   [verificar: regra completa do alívio]
+- **Celulose PCX** (ALT-014, `analisar_celulose`): Bracell (depois Suzano e Eldorado), lista `terminais_celulose`.
+  Lógica separada: não usa a linha 4000 e não depende das DVs. Só verifica overload > 1 e se há loco da ferrovia no wait.
+  Um alívio por vez (`terminal_alivio_celulose`). A loco ocupa a linha 5000/6000, entra em `circ_pos_inicio_L5K` e vai até `get_pos_alivio()`.
+  O trem sai com todos os vazios do terminal. Ao fim, o terminal volta para `terminais_celulose` (`para_circVzs` da Bracell).
+- **Linha 4000**: só T39, TES e ADMO (TES e ADMO ainda vão ser criados).
+- **Tgrao**: o alívio é sempre de 40 vagões, nunca menos.
+  Só alivia se o GestorDeDVs tiver mais de 40 vagões de espaço livre para a ferrovia do Tgrao. [pendente no código]
+- **Alívio na linha 4000** (circuito PCX, ALT-013): quando o trem volta do alívio com `CAPACIDADE_LINHA_4000` (82) vagões,
+  ◇ `linha_4000_cheia` → `liberar_linha_4000` (solta `linha4000_a/b/c`) → `para_alivio_na_linha_4000`, que marca `eh_alivio`,
+  zera `lote_linha_4000` e entrega o trem ao GestorDeCirculacao com `faixa_atual = intervalo4000_a`, `proxima_faixa = marginal_c`.
+  Com menos de 82, o trem espera em `wait_trem_4000`.
 
-## GestorDeChegadas e GestorDeDVs
+## GestorDeDVs
 
-Ainda não desenvolvidos.
+Ainda não desenvolvido. Requisitos já definidos:
+
+- Recebe o trem de alívio em `entrarNasDVs`.
+- Precisa informar o espaço livre, em vagões, por ferrovia.
+  O GestorDeAlivios usa esse valor antes de aliviar o Tgrao (precisa ser mais de 40).
+
+## GestorDeChegadas
+
+Ainda não desenvolvido.
 
 ## Como os gestores conversam com os terminais
 
@@ -55,5 +84,9 @@ Ainda não desenvolvidos.
 |---|---|---|
 | Terminal → GestorDeLocomotivas | `selecionar_rp_locomotiva_trecho`, `guardar_loco.take` | Locomotiva sobra ou precisa ser devolvida |
 | Terminal → GestorDeCirculacao | `liberar_faixas_ocupadas((Trem) agent)` | Trem sai de uma faixa |
+| Bracell → GestorDeCirculacao | `tentar_usar_faixa.take(agent)` (faixa_atual = intervalo4000_c) | Fim do alívio da Bracell |
+| GestorDeAlivios → Bracell | `takeAlivio(Trem)` via `analisar_celulose` | Overload > 1 |
 | GestorDeAlivios → Terminal | `getOverloadVazios()`, `takeAlivio(Trem)`, `get_pos_alivio()` | Alívio precisa começar |
 | GestorDeAlivios → GestorDeLocomotivas | `pst_colocarLocomotivas_alivioTerminal(moega)` | Criar loco de manobra para o alívio |
+| GestorDeAlivios → GestorDeDVs | espaço livre por ferrovia [a criar] | Antes de aliviar o Tgrao |
+| GestorDeAlivios → GestorDeCirculacao | `tentar_usar_faixa.take(agent)` | Alívio na linha 4000: trem cheio vai para as DVs |

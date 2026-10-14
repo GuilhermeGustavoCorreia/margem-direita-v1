@@ -2330,7 +2330,7 @@ main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1790864520211</Id>
 		<Name><![CDATA[para_atendimento_terminal]]></Name>
-		<X>700</X>
+		<X>800</X>
 		<Y>390</Y>
 		<Label>
 			<X>-10</X>
@@ -8755,7 +8755,7 @@ atualizar_faixa_linha_1000_a((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790965556593</Id>
 		<Name><![CDATA[delay1]]></Name>
-		<X>610</X>
+		<X>710</X>
 		<Y>380</Y>
 		<Label>
 			<X>0</X>
@@ -18013,8 +18013,8 @@ liberar_wait_lote_linha_9_fundo();]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000027</Id>
 		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
-		<X>560</X>
-		<Y>450</Y>
+		<X>610</X>
+		<Y>380</Y>
 		<Label>
 			<X>-65</X>
 			<Y>65</Y>

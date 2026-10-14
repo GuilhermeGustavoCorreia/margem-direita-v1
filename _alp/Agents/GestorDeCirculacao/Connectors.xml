@@ -1514,8 +1514,8 @@
 	<Connector>
 		<Id>1789275836239</Id>
 		<Name><![CDATA[connector73]]></Name>
-		<X>-620</X>
-		<Y>2620</Y>
+		<X>-3370</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2011,8 +2011,8 @@
 	<Connector>
 		<Id>1789277766041</Id>
 		<Name><![CDATA[connector81]]></Name>
-		<X>-310</X>
-		<Y>2620</Y>
+		<X>-3060</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2054,8 +2054,8 @@
 	<Connector>
 		<Id>1789277766043</Id>
 		<Name><![CDATA[connector51]]></Name>
-		<X>-480</X>
-		<Y>2620</Y>
+		<X>-3230</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2097,8 +2097,8 @@
 	<Connector>
 		<Id>1789277861800</Id>
 		<Name><![CDATA[connector52]]></Name>
-		<X>-170</X>
-		<Y>2620</Y>
+		<X>-2920</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2226,8 +2226,8 @@
 	<Connector>
 		<Id>1789277999998</Id>
 		<Name><![CDATA[connector84]]></Name>
-		<X>120</X>
-		<Y>2620</Y>
+		<X>-2630</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2355,8 +2355,8 @@
 	<Connector>
 		<Id>1789323832280</Id>
 		<Name><![CDATA[connector54]]></Name>
-		<X>-90</X>
-		<Y>2620</Y>
+		<X>-2840</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2402,8 +2402,8 @@
 	<Connector>
 		<Id>1791660000015</Id>
 		<Name><![CDATA[connector_alt005_a]]></Name>
-		<X>-100</X>
-		<Y>2630</Y>
+		<X>-2850</X>
+		<Y>4000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2715,8 +2715,8 @@
 	<Connector>
 		<Id>1789335996267</Id>
 		<Name><![CDATA[connector65]]></Name>
-		<X>-1110</X>
-		<Y>2300</Y>
+		<X>-3660</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2758,8 +2758,8 @@
 	<Connector>
 		<Id>1789335996269</Id>
 		<Name><![CDATA[connector66]]></Name>
-		<X>-1040</X>
-		<Y>2300</Y>
+		<X>-3590</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2801,8 +2801,8 @@
 	<Connector>
 		<Id>1789335996271</Id>
 		<Name><![CDATA[connector67]]></Name>
-		<X>-950</X>
-		<Y>2350</Y>
+		<X>-3500</X>
+		<Y>3820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2848,8 +2848,8 @@
 	<Connector>
 		<Id>1789336499527</Id>
 		<Name><![CDATA[connector68]]></Name>
-		<X>-1110</X>
-		<Y>2600</Y>
+		<X>-4200</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2891,8 +2891,8 @@
 	<Connector>
 		<Id>1789336499529</Id>
 		<Name><![CDATA[connector69]]></Name>
-		<X>-1040</X>
-		<Y>2600</Y>
+		<X>-4130</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2934,8 +2934,8 @@
 	<Connector>
 		<Id>1789336499542</Id>
 		<Name><![CDATA[connector70]]></Name>
-		<X>-950</X>
-		<Y>2650</Y>
+		<X>-4040</X>
+		<Y>3820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3067,8 +3067,8 @@
 	<Connector>
 		<Id>1789385773555</Id>
 		<Name><![CDATA[connector92]]></Name>
-		<X>220</X>
-		<Y>2400</Y>
+		<X>-2530</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3110,8 +3110,8 @@
 	<Connector>
 		<Id>1789385773561</Id>
 		<Name><![CDATA[connector93]]></Name>
-		<X>470</X>
-		<Y>2400</Y>
+		<X>-2280</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3153,8 +3153,8 @@
 	<Connector>
 		<Id>1789390106791</Id>
 		<Name><![CDATA[connector94]]></Name>
-		<X>620</X>
-		<Y>2400</Y>
+		<X>-2130</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3196,8 +3196,8 @@
 	<Connector>
 		<Id>1789390106793</Id>
 		<Name><![CDATA[connector95]]></Name>
-		<X>870</X>
-		<Y>2400</Y>
+		<X>-1880</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3239,8 +3239,8 @@
 	<Connector>
 		<Id>1789391033582</Id>
 		<Name><![CDATA[connector99]]></Name>
-		<X>-1291</X>
-		<Y>1401</Y>
+		<X>-691</X>
+		<Y>3771</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3280,53 +3280,10 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1789391414956</Id>
-		<Name><![CDATA[connector100]]></Name>
-		<X>-1540</X>
-		<Y>1650</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>circular_intervalo4000_b</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>ir_intervalo_intervalo4000_b</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>100</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1789391414958</Id>
 		<Name><![CDATA[connector101]]></Name>
-		<X>-1291</X>
-		<Y>1651</Y>
+		<X>-80</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3360,94 +3317,8 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-109</X>
-				<Y>-1</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1789392431336</Id>
-		<Name><![CDATA[connector102]]></Name>
-		<X>-1536</X>
-		<Y>1903</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>circular_intervalo4000_c</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>ir_intervalo_intervalo4000_c</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
+				<X>-100</X>
 				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>100</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1789392431338</Id>
-		<Name><![CDATA[connector103]]></Name>
-		<X>-1287</X>
-		<Y>1904</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>continuar5</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>ir_intervalo_intervalo4000_c</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-109</X>
-				<Y>-1</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -4017,8 +3888,8 @@
 	<Connector>
 		<Id>1791670000032</Id>
 		<Name><![CDATA[connector_alt005_f]]></Name>
-		<X>260</X>
-		<Y>2620</Y>
+		<X>-2490</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4060,8 +3931,8 @@
 	<Connector>
 		<Id>1791670000033</Id>
 		<Name><![CDATA[connector_alt005_via3_c_1]]></Name>
-		<X>490</X>
-		<Y>2610</Y>
+		<X>-2260</X>
+		<Y>3980</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4103,8 +3974,8 @@
 	<Connector>
 		<Id>1791670000034</Id>
 		<Name><![CDATA[connector_alt005_via3_c_2]]></Name>
-		<X>610</X>
-		<Y>2610</Y>
+		<X>-2140</X>
+		<Y>3980</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4146,8 +4017,8 @@
 	<Connector>
 		<Id>1791670000035</Id>
 		<Name><![CDATA[connector_alt005_silosMuro_a_1]]></Name>
-		<X>860</X>
-		<Y>2610</Y>
+		<X>-1890</X>
+		<Y>3980</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4189,8 +4060,8 @@
 	<Connector>
 		<Id>1791670000037</Id>
 		<Name><![CDATA[connector_alt005_silosMuro_b_1]]></Name>
-		<X>1350</X>
-		<Y>2620</Y>
+		<X>-1400</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4232,8 +4103,8 @@
 	<Connector>
 		<Id>1791670000038</Id>
 		<Name><![CDATA[connector_alt005_silosMuro_b_2]]></Name>
-		<X>1490</X>
-		<Y>2620</Y>
+		<X>-1260</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4275,8 +4146,8 @@
 	<Connector>
 		<Id>1791670000039</Id>
 		<Name><![CDATA[connector_alt005_silosMuro_c_1]]></Name>
-		<X>1700</X>
-		<Y>2620</Y>
+		<X>-1050</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4318,8 +4189,8 @@
 	<Connector>
 		<Id>1791670000040</Id>
 		<Name><![CDATA[connector_alt005_c_2]]></Name>
-		<X>1850</X>
-		<Y>2620</Y>
+		<X>-900</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4361,8 +4232,8 @@
 	<Connector>
 		<Id>1791670000041</Id>
 		<Name><![CDATA[connector_alt005_c_3]]></Name>
-		<X>1960</X>
-		<Y>2620</Y>
+		<X>-790</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4404,8 +4275,8 @@
 	<Connector>
 		<Id>1791670000042</Id>
 		<Name><![CDATA[connector_alt005_c_4]]></Name>
-		<X>1950</X>
-		<Y>2630</Y>
+		<X>-800</X>
+		<Y>4000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4451,8 +4322,8 @@
 	<Connector>
 		<Id>1791680000007</Id>
 		<Name><![CDATA[connector_alt007_a]]></Name>
-		<X>1000</X>
-		<Y>2620</Y>
+		<X>-1750</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4494,8 +4365,8 @@
 	<Connector>
 		<Id>1791680000008</Id>
 		<Name><![CDATA[connector_alt007_b]]></Name>
-		<X>1110</X>
-		<Y>2620</Y>
+		<X>-1640</X>
+		<Y>3990</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4537,8 +4408,8 @@
 	<Connector>
 		<Id>1791680000009</Id>
 		<Name><![CDATA[connector_alt007_c]]></Name>
-		<X>1100</X>
-		<Y>2630</Y>
+		<X>-1650</X>
+		<Y>4000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4586,49 +4457,6 @@
 			<Point>
 				<X>100</X>
 				<Y>-10</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1791680000010</Id>
-		<Name><![CDATA[connector_alt007_d]]></Name>
-		<X>1260</X>
-		<Y>2400</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>ir_marginal_c</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>para_tgrao</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>60</X>
-				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -4858,8 +4686,8 @@
 	<Connector>
 		<Id>1791902841893</Id>
 		<Name><![CDATA[connector34]]></Name>
-		<X>1020</X>
-		<Y>2400</Y>
+		<X>-1730</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4901,8 +4729,8 @@
 	<Connector>
 		<Id>1791902841895</Id>
 		<Name><![CDATA[connector35]]></Name>
-		<X>1170</X>
-		<Y>2400</Y>
+		<X>-1580</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4944,8 +4772,8 @@
 	<Connector>
 		<Id>1791902874290</Id>
 		<Name><![CDATA[connector36]]></Name>
-		<X>1160</X>
-		<Y>2410</Y>
+		<X>-1590</X>
+		<Y>3780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4991,8 +4819,8 @@
 	<Connector>
 		<Id>1791902990800</Id>
 		<Name><![CDATA[connector37]]></Name>
-		<X>1310</X>
-		<Y>2460</Y>
+		<X>-1400</X>
+		<Y>3830</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5026,7 +4854,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-90</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5034,8 +4862,8 @@
 	<Connector>
 		<Id>1791903638046</Id>
 		<Name><![CDATA[connector_alt004_a1]]></Name>
-		<X>-590</X>
-		<Y>2400</Y>
+		<X>-3340</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5077,8 +4905,8 @@
 	<Connector>
 		<Id>1791903638048</Id>
 		<Name><![CDATA[connector_alt004_b1]]></Name>
-		<X>-430</X>
-		<Y>2400</Y>
+		<X>-3180</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5120,8 +4948,8 @@
 	<Connector>
 		<Id>1791908313883</Id>
 		<Name><![CDATA[connector_alt004_a2]]></Name>
-		<X>-180</X>
-		<Y>2400</Y>
+		<X>-2930</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5163,8 +4991,8 @@
 	<Connector>
 		<Id>1791908313885</Id>
 		<Name><![CDATA[connector_alt004_b2]]></Name>
-		<X>-20</X>
-		<Y>2400</Y>
+		<X>-2770</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5198,7 +5026,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>120</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5206,8 +5034,8 @@
 	<Connector>
 		<Id>1791909375594</Id>
 		<Name><![CDATA[connector106]]></Name>
-		<X>-1350</X>
-		<Y>2600</Y>
+		<X>-4500</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5241,7 +5069,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>90</X>
+				<X>150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5249,8 +5077,8 @@
 	<Connector>
 		<Id>1791909375595</Id>
 		<Name><![CDATA[connector107]]></Name>
-		<X>-1240</X>
-		<Y>2600</Y>
+		<X>-4330</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5292,8 +5120,8 @@
 	<Connector>
 		<Id>1791909375596</Id>
 		<Name><![CDATA[connector108]]></Name>
-		<X>-1250</X>
-		<Y>2610</Y>
+		<X>-4340</X>
+		<Y>3780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5339,8 +5167,8 @@
 	<Connector>
 		<Id>1791909375597</Id>
 		<Name><![CDATA[connector109]]></Name>
-		<X>-1110</X>
-		<Y>2700</Y>
+		<X>-4200</X>
+		<Y>3870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5382,8 +5210,8 @@
 	<Connector>
 		<Id>1791909375604</Id>
 		<Name><![CDATA[connector110]]></Name>
-		<X>-1380</X>
-		<Y>2300</Y>
+		<X>-3930</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5425,8 +5253,8 @@
 	<Connector>
 		<Id>1791909375605</Id>
 		<Name><![CDATA[connector111]]></Name>
-		<X>-1240</X>
-		<Y>2300</Y>
+		<X>-3790</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5468,8 +5296,8 @@
 	<Connector>
 		<Id>1791909375606</Id>
 		<Name><![CDATA[connector112]]></Name>
-		<X>-1250</X>
-		<Y>2310</Y>
+		<X>-3800</X>
+		<Y>3780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5515,8 +5343,8 @@
 	<Connector>
 		<Id>1791909375607</Id>
 		<Name><![CDATA[connector113]]></Name>
-		<X>-1110</X>
-		<Y>2400</Y>
+		<X>-3660</X>
+		<Y>3870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5558,8 +5386,8 @@
 	<Connector>
 		<Id>1791909375614</Id>
 		<Name><![CDATA[connector114]]></Name>
-		<X>120</X>
-		<Y>3110</Y>
+		<X>-2780</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5601,8 +5429,8 @@
 	<Connector>
 		<Id>1791909375615</Id>
 		<Name><![CDATA[connector115]]></Name>
-		<X>260</X>
-		<Y>3110</Y>
+		<X>-2640</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5644,8 +5472,8 @@
 	<Connector>
 		<Id>1791909375626</Id>
 		<Name><![CDATA[connector116]]></Name>
-		<X>120</X>
-		<Y>3190</Y>
+		<X>-3300</X>
+		<Y>3450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5687,8 +5515,8 @@
 	<Connector>
 		<Id>1791909375627</Id>
 		<Name><![CDATA[connector117]]></Name>
-		<X>260</X>
-		<Y>3190</Y>
+		<X>-3160</X>
+		<Y>3450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5730,8 +5558,8 @@
 	<Connector>
 		<Id>1791909375638</Id>
 		<Name><![CDATA[connector118]]></Name>
-		<X>120</X>
-		<Y>3270</Y>
+		<X>-1500</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5773,8 +5601,8 @@
 	<Connector>
 		<Id>1791909375639</Id>
 		<Name><![CDATA[connector119]]></Name>
-		<X>260</X>
-		<Y>3270</Y>
+		<X>-1360</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5816,8 +5644,8 @@
 	<Connector>
 		<Id>1791909375650</Id>
 		<Name><![CDATA[connector120]]></Name>
-		<X>120</X>
-		<Y>3350</Y>
+		<X>-1900</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5859,8 +5687,8 @@
 	<Connector>
 		<Id>1791909375651</Id>
 		<Name><![CDATA[connector121]]></Name>
-		<X>260</X>
-		<Y>3350</Y>
+		<X>-1760</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5902,8 +5730,8 @@
 	<Connector>
 		<Id>1791909375662</Id>
 		<Name><![CDATA[connector122]]></Name>
-		<X>120</X>
-		<Y>3430</Y>
+		<X>-2340</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5945,8 +5773,8 @@
 	<Connector>
 		<Id>1791909375663</Id>
 		<Name><![CDATA[connector123]]></Name>
-		<X>260</X>
-		<Y>3430</Y>
+		<X>-2200</X>
+		<Y>3440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5988,8 +5816,8 @@
 	<Connector>
 		<Id>1791909375674</Id>
 		<Name><![CDATA[connector124]]></Name>
-		<X>120</X>
-		<Y>3510</Y>
+		<X>330</X>
+		<Y>3560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6031,8 +5859,8 @@
 	<Connector>
 		<Id>1791909375675</Id>
 		<Name><![CDATA[connector125]]></Name>
-		<X>260</X>
-		<Y>3510</Y>
+		<X>470</X>
+		<Y>3560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6072,53 +5900,10 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1791909375686</Id>
-		<Name><![CDATA[connector126]]></Name>
-		<X>120</X>
-		<Y>3590</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>circular_val_via2</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>recuar_val_via2</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>100</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1791909375687</Id>
 		<Name><![CDATA[connector127]]></Name>
-		<X>260</X>
-		<Y>3590</Y>
+		<X>290</X>
+		<Y>3450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6152,7 +5937,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -6160,8 +5945,8 @@
 	<Connector>
 		<Id>1791950000019</Id>
 		<Name><![CDATA[connector_alt013_a]]></Name>
-		<X>-1540</X>
-		<Y>1400</Y>
+		<X>-1150</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6195,7 +5980,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -6203,8 +5988,8 @@
 	<Connector>
 		<Id>1791950000020</Id>
 		<Name><![CDATA[connector_alt013_b]]></Name>
-		<X>-1470</X>
-		<Y>1400</Y>
+		<X>-980</X>
+		<Y>3770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6238,7 +6023,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>30</X>
+				<X>140</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -6246,8 +6031,8 @@
 	<Connector>
 		<Id>1791950000021</Id>
 		<Name><![CDATA[connector_alt013_c]]></Name>
-		<X>-1480</X>
-		<Y>1410</Y>
+		<X>-990</X>
+		<Y>3780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6285,7 +6070,7 @@
 				<Y>70</Y>
 			</Point>
 			<Point>
-				<X>40</X>
+				<X>150</X>
 				<Y>70</Y>
 			</Point>
 		</Points>
@@ -6293,8 +6078,8 @@
 	<Connector>
 		<Id>1791950000022</Id>
 		<Name><![CDATA[connector_alt013_d]]></Name>
-		<X>-1400</X>
-		<Y>1480</Y>
+		<X>-800</X>
+		<Y>3850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6329,7 +6114,762 @@
 			</Point>
 			<Point>
 				<X>109</X>
+				<Y>1</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000007</Id>
+		<Name><![CDATA[connector_alt014_1]]></Name>
+		<X>-20</X>
+		<Y>3370</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>circular_val_via2</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_val_via2</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
 				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>130</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000008</Id>
+		<Name><![CDATA[connector_alt014_2]]></Name>
+		<X>130</X>
+		<Y>3370</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_val_via2</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_val_via2</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>120</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000009</Id>
+		<Name><![CDATA[connector_alt014_3]]></Name>
+		<X>120</X>
+		<Y>3380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_val_via2</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>recuar_val_via2</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>70</Y>
+			</Point>
+			<Point>
+				<X>130</X>
+				<Y>70</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000010</Id>
+		<Name><![CDATA[connector_alt014_4]]></Name>
+		<X>290</X>
+		<Y>3370</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_val_via2</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>para_via3_intermar</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000015</Id>
+		<Name><![CDATA[connector_alt014_5]]></Name>
+		<X>-1490</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_marginal_c</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>e_bracell</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>70</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000016</Id>
+		<Name><![CDATA[connector_alt014_6]]></Name>
+		<X>-1400</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>e_bracell</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>para_intervalo4000_a</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>90</X>
+				<Y>-70</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000017</Id>
+		<Name><![CDATA[connector_alt014_7]]></Name>
+		<X>-1410</X>
+		<Y>3780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>e_bracell</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>para_tgrao</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>10</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>10</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>-10</Y>
+			</Point>
+			<Point>
+				<X>150</X>
+				<Y>-10</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000024</Id>
+		<Name><![CDATA[connector_alt014_8]]></Name>
+		<X>80</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>circular_intervalo4000_c</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_c</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>160</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000025</Id>
+		<Name><![CDATA[connector_alt014_9]]></Name>
+		<X>260</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_c</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_intervalo_intervalo4000_c</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>140</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000026</Id>
+		<Name><![CDATA[connector_alt014_10]]></Name>
+		<X>250</X>
+		<Y>3780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_c</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>recuar_intervalo4000_c</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>150</X>
+				<Y>80</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000033</Id>
+		<Name><![CDATA[connector_alt014_11]]></Name>
+		<X>-540</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>circular_intervalo4000_b</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>160</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000034</Id>
+		<Name><![CDATA[connector_alt014_12]]></Name>
+		<X>-360</X>
+		<Y>3770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_b</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_intervalo_intervalo4000_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>140</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000035</Id>
+		<Name><![CDATA[connector_alt014_13]]></Name>
+		<X>-370</X>
+		<Y>3780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>definir_sentido_intervalo4000_b</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>recuar_intervalo4000_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>150</X>
+				<Y>80</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000038</Id>
+		<Name><![CDATA[connector_alt014_14]]></Name>
+		<X>440</X>
+		<Y>3860</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>recuar_intervalo4000_c</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>alivio_para_intervalo4000_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792014000039</Id>
+		<Name><![CDATA[connector_alt014_15]]></Name>
+		<X>-180</X>
+		<Y>3860</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>recuar_intervalo4000_b</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>alivio_para_intervalo4000_a</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1791992469928</Id>
+		<Name><![CDATA[connector56]]></Name>
+		<X>0</X>
+		<Y>0</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>continuar5</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>delay</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>out</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>540</X>
+				<Y>3770</Y>
+			</Point>
+			<Point>
+				<X>510</X>
+				<Y>3770</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1791992469931</Id>
+		<Name><![CDATA[connector62]]></Name>
+		<X>0</X>
+		<Y>0</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>delay</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>ir_intervalo_intervalo4000_c</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>470</X>
+				<Y>3770</Y>
+			</Point>
+			<Point>
+				<X>440</X>
+				<Y>3770</Y>
 			</Point>
 		</Points>
 	</Connector>

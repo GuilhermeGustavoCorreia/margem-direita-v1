@@ -1,309 +1,352 @@
-[log] 2026-10-13T14:33:09.703379700 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
-🟠➡️ [1294,0][Circ][enter chegada_carregados] trem=15434
-🟠➡️ [1294,0][Circ][exit para_via3_ate_santa] trem=15434 faixa_atual=rp_via3_intermar proxima_faixa=rp_pst_via3_a
-🟠➡️ [1294,0][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [1294,0][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [1294,0][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [1294,0][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [1294,0][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=1294.0 trem 15434 | possui: rp_via3_intermar rp_pst_via3_a 
-🟠➡️ [1294,0][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [1294,0][Circ][enter circular_via3_intermar] trem=15434
-🟠➡️ [2097,2][Circ][exit para_via3_a] trem=15434 faixa_atual=rp_pst_via3_a proxima_faixa=rp_pst_via3_b
-🟠➡️ [2097,2][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2097,2][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2097,2][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [2097,2][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [2097,2][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2097.20217326982 trem 15434 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b 
+[log] 2026-10-14T12:50:50.043572700 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
+🟠➡️ [1173,0][Circ][enter chegada_carregados] trem=15721
+🟠➡️ [1173,0][Circ][exit para_via3_ate_santa] trem=15721 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
+🟠➡️ [1173,0][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [1173,0][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [1173,0][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [1173,0][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [1173,0][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=1173.0 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar 
+🟠➡️ [1173,0][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [1173,0][Circ][enter circular_val_via2] trem=15721
+🟠➡️ [1645,8][Circ][exit para_via3_intermar] trem=15721 faixa_atual=rp_via3_intermar proxima_faixa=rp_pst_via3_a
+🟠➡️ [1645,8][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [1645,8][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [1645,8][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [1645,8][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [1645,8][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=1645.80869747205 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar rp_pst_via3_a 
+🟠➡️ [diag_liberar]   rp_pst_val_via2 | vazia=false | temUnidade=true
+🟠➡️ [1645,8][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [1645,8][Circ][enter circular_via3_intermar] trem=15721
+🟠➡️ [1976,2][Circ][exit para_via3_a] trem=15721 faixa_atual=rp_pst_via3_a proxima_faixa=rp_pst_via3_b
+🟠➡️ [1976,2][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [1976,2][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [1976,2][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [1976,2][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [1976,2][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=1976.20217326982 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar rp_pst_via3_a rp_pst_via3_b 
+🟠➡️ [diag_liberar]   rp_pst_val_via2 | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
-🟠➡️ [2097,2][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2097,2][Circ][enter circular_via3_a] trem=15434
-🟠➡️ [2100,8][Circ][exit para_via3_b] trem=15434 faixa_atual=rp_pst_via3_b proxima_faixa=rp_via3_c
-🟠➡️ [2100,8][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2100,8][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2100,8][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [2100,8][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [2100,8][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2100.8264499495376 trem 15434 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c 
+🟠➡️ [1976,2][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [1976,2][Circ][enter circular_via3_a] trem=15721
+🟠➡️ [1979,8][Circ][exit para_via3_b] trem=15721 faixa_atual=rp_pst_via3_b proxima_faixa=rp_via3_c
+🟠➡️ [1979,8][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [1979,8][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [1979,8][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [1979,8][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [1979,8][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=1979.8264499495376 trem 15721 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c 
 🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via3_a | vazia=false | temUnidade=true
-🟠➡️ [2100,8][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2100,8][Circ][enter circular_via3_b] trem=15434
-🟠➡️ [2313,2][Circ][exit para_via3_c] trem=15434 faixa_atual=rp_via3_c proxima_faixa=rp_silosMuro_a
-🟠➡️ [2313,2][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2313,2][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2313,2][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [2313,2][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [2313,2][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2313.1646485786205 trem 15434 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c rp_silosMuro_a 
-🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via3_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
-🟠➡️ [2313,2][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2313,2][Circ][enter circular_via3_c] trem=15434
-🟠➡️ [2404,6][Circ][exit para_silosMuro_a] trem=15434 faixa_atual=rp_silosMuro_a proxima_faixa=rp_silosMuro_b
-🟠➡️ [2404,6][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2404,6][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2404,6][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [2404,6][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [2404,6][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2404.599148796274 trem 15434 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_silosMuro_b 
+🟠➡️ [1979,8][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [1979,8][Circ][enter circular_via3_b] trem=15721
+🟠➡️ [2192,2][Circ][exit para_via3_c] trem=15721 faixa_atual=rp_via3_c proxima_faixa=rp_silosMuro_a
+🟠➡️ [2192,2][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2192,2][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2192,2][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [2192,2][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [2192,2][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2192.1646485786205 trem 15721 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c rp_silosMuro_a 
 🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via3_a | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
+🟠➡️ [2192,2][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2192,2][Circ][enter circular_via3_c] trem=15721
+🟠➡️ [2283,6][Circ][exit para_silosMuro_a] trem=15721 faixa_atual=rp_silosMuro_a proxima_faixa=rp_pmc_marginal_c
+🟠➡️ [2283,6][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2283,6][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2283,6][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [2283,6][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [2283,6][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2283.599148796274 trem 15721 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [2404,6][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2404,6][Circ][enter circular_silosMuro_a] trem=15434
-🟠➡️ [2483,0][Circ][exit para_silosMuro_b] trem=15434 faixa_atual=rp_silosMuro_b proxima_faixa=rp_silosMuro_c
-🟠➡️ [2483,0][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2483,0][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2483,0][Circ][enter tentar_usar_proxima] trem=15434
-🟠➡️ [2483,0][Circ][exit para_libera_faixas] trem=15434
-🟠➡️ [2483,0][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2482.956033411432 trem 15434 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_silosMuro_b rp_silosMuro_c 
+🟠➡️ [2283,6][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2283,6][Circ][enter circular_silosMuro_a] trem=15721
+🟠➡️ [2362,0][Circ][exit para_marginal_c] trem=15721 faixa_atual=rp_pmc_marginal_c proxima_faixa=rp_pmc_intervalo4000_a
+🟠➡️ [2362,0][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2362,0][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2362,0][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [2362,0][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [2362,0][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2361.956033411432 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
 🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [2483,0][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2483,0][Circ][enter circular_silosMuro_b] trem=15434
-🟠➡️ [2512,6][Circ][exit para_silosMuro_c] trem=15434 faixa_atual=rp_silosMuro_c proxima_faixa=null
-🟠➡️ [2512,6][Circ][enter tentar_usar_faixa] trem=15434
-🟠➡️ [2512,6][Circ][exit para_tentar_usar_proxima] trem=15434
-🟠➡️ [2512,6][Circ][enter liberar_faixas] trem=15434
-🟠➡️ [diag_liberar] t=2512.588870638637 trem 15434 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_silosMuro_b rp_silosMuro_c 
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_b | vazia=false | temUnidade=true
-🟠➡️ [2512,6][Circ][exit continuar_circulacao] trem=15434
-🟠➡️ [2512,6][Circ][enter circular_silosMuro_c] trem=15434
-🟠➡️ [2546,1][Circ][exit para_t39] trem=15434
-🟠➡️ [diag_liberar] t=2788.2746672477197 trem 15434 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_silosMuro_b rp_silosMuro_c 
+🟠➡️ [2362,0][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2362,0][Circ][enter circular_marginal_c] trem=15721
+🟠➡️ [2381,7][Circ][exit para_intervalo4000_a] trem=15721 faixa_atual=rp_pmc_intervalo4000_a proxima_faixa=rp_pmc_intervalo4000_b
+🟠➡️ [2381,7][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2381,7][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2381,7][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [2381,7][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [2381,7][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2381.732930213322 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
 🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
+🟠➡️ [2381,7][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2381,7][Circ][enter circular_intervalo4000_a] trem=15721
+🟠➡️ [2388,3][Circ][exit continuar3] trem=15721 faixa_atual=rp_pmc_intervalo4000_b proxima_faixa=rp_pmc_intervalo4000_c
+🟠➡️ [2388,3][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2388,3][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2388,3][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [2388,3][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [2388,3][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2388.256945626205 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
+🟠➡️ [2388,3][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2388,3][Circ][enter circular_intervalo4000_b] trem=15721
+🟠➡️ [2447,0][Circ][exit continuar4] trem=15721 faixa_atual=rp_pmc_intervalo4000_c proxima_faixa=null
+🟠➡️ [2447,0][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [2447,0][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [2447,0][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=2447.0134223274968 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
+🟠➡️ [2447,0][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [2447,0][Circ][enter circular_intervalo4000_c] trem=15721
+🟠➡️ [2455,7][Circ][exit continuar5] trem=15721 destino=bracell
+🟠➡️ [diag_liberar] t=2602.6446668721555 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_via3_c | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_linha1000_a | vazia=false | temUnidade=false
-4185.0 | [qtd_alivio] t39 | vazios no terminal: 39 | cabem na 4000: 82 | definido: 39
-4185.0 | 253 pediu 2 locos | livres: 6 | fila: 1
-4185.0 | 253 apreendeu 21 | livres: 5/8
-4185.0 | 253 apreendeu 22 | livres: 4/8
-erro: trem não tem nenhum vagão
- [rp_locoFips_pcx] 253 devolveu 1 unidade | idle=4 busy=4 cap=8
- [rp_locoFips_pcx] 253 devolveu 1 unidade | idle=4 busy=4 cap=8
-5790.36982629332 a. trem na faixa: 123
-5790.36982629332 a. trem na faixa: 288
-5790.36982629332 [trainExit2] removido: 123 | id=15434
-5790.36982629332 trem na faixa: 288
- [rp_locoFips_pcx] 123 devolveu 1 unidade | idle=6 busy=2 cap=8
- [rp_locoFips_pcx] 123 devolveu 1 unidade | idle=6 busy=2 cap=8
-5791.0 | [qtd_alivio] t39 | vazios no terminal: 32 | cabem na 4000: 43 | definido: 32
-6305.0 | [qtd_alivio] t39 | vazios no terminal: 11 | cabem na 4000: 11 | definido: 11
-[6503,6][Alivio4000][para_alivio_na_linha_4000] trem=15565 vagoes=82 -> DVs
-🟠➡️ [6503,6][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6503,6][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6503,6][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6503,6][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6503,6][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6503.612946115485 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pmc_marginal_c 
-🟠➡️ [6503,6][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6503,6][Circ][enter circular_intervalo4000_a] trem=15565
-🟠➡️ [6506,9][Circ][exit alivio_para_marginal_c] trem=15565 faixa_atual=rp_pmc_marginal_c proxima_faixa=rp_pmc_marginal_b
-🟠➡️ [6506,9][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6506,9][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6506,9][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6506,9][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6506,9][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6506.905740897126 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pmc_marginal_c rp_pmc_marginal_b 
+🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar] t=2687.5777312321197 trem 15721 | possui: rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=true | temUnidade=true
+[2911,0][AlivioCelulose] bracell | vazios=64 | loco=15721 (rumo)
+2940.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
+3000.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
+[3049,8][AlivioCelulose][para_alivio_terminal_celulose] loco=15721 -> bracell
+3060.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
+[3282,9][Bracell][para_circVzs] trem=15721 vagoes=64 -> circulacao
+🟠➡️ [3282,9][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3282,9][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3282,9][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3282,9][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3282,9][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3282.917508237606 trem 15721 | possui: rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
+🟠➡️ [3282,9][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3282,9][Circ][enter circular_intervalo4000_c] trem=15721
+🟠➡️ [3329,4][Circ][exit alivio_para_intervalo4000_b] trem=15721 faixa_atual=rp_pmc_intervalo4000_b proxima_faixa=rp_pmc_intervalo4000_a
+🟠➡️ [3329,4][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3329,4][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3329,4][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3329,4][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3329,4][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3329.391372755163 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
+🟠➡️ [3329,4][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3329,4][Circ][enter circular_intervalo4000_b] trem=15721
+🟠➡️ [3388,1][Circ][exit alivio_para_intervalo4000_a] trem=15721 faixa_atual=rp_pmc_intervalo4000_a proxima_faixa=rp_pmc_marginal_c
+🟠➡️ [3388,1][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3388,1][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3388,1][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3388,1][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3388,1][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3388.147849456455 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
+🟠➡️ [3388,1][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3388,1][Circ][enter circular_intervalo4000_a] trem=15721
+🟠➡️ [3394,7][Circ][exit alivio_para_marginal_c] trem=15721 faixa_atual=rp_pmc_marginal_c proxima_faixa=rp_pmc_marginal_b
+🟠➡️ [3394,7][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3394,7][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3394,7][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3394,7][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3394,7][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3394.6718648693377 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [6506,9][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6506,9][Circ][enter circular_marginal_c] trem=15565
-🟠➡️ [6512,4][Circ][exit para_pst_marginal_b] trem=15565 faixa_atual=rp_pmc_marginal_b proxima_faixa=rp_pmc_marginal_a
-🟠➡️ [6512,4][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6512,4][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6512,4][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6512,4][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6512,4][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6512.395138965873 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
+🟠➡️ [3394,7][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3394,7][Circ][enter circular_marginal_c] trem=15721
+🟠➡️ [3411,1][Circ][exit para_pst_marginal_b] trem=15721 faixa_atual=rp_pmc_marginal_b proxima_faixa=rp_pmc_marginal_a
+🟠➡️ [3411,1][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3411,1][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3411,1][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3411,1][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3411,1][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3411.1400590755816 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [6512,4][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6512,4][Circ][enter circular_marginal_b] trem=15565
-🟠➡️ [6540,6][Circ][exit continuar1] trem=15565 faixa_atual=rp_pmc_marginal_a proxima_faixa=rp_pst_via2_f
-🟠➡️ [6540,6][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6540,6][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6540,6][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6540,6][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6540,6][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6540.60876582735 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pst_via2_f rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
+🟠➡️ [3411,1][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3411,1][Circ][enter circular_marginal_b] trem=15721
+🟠➡️ [3495,8][Circ][exit continuar1] trem=15721 faixa_atual=rp_pmc_marginal_a proxima_faixa=rp_pst_via2_f
+🟠➡️ [3495,8][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3495,8][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3495,8][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3495,8][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3495,8][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3495.780939660013 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pst_via2_f rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [6540,6][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6540,6][Circ][enter circular_marginal_a] trem=15565
-🟠➡️ [6547,5][Circ][exit continuar] trem=15565 faixa_atual=rp_pst_via2_f proxima_faixa=rp_pst_via2_e
-🟠➡️ [6547,5][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6547,5][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6547,5][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6547,5][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6547,5][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6547.490927856425 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
+🟠➡️ [3495,8][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3495,8][Circ][enter circular_marginal_a] trem=15721
+🟠➡️ [3516,4][Circ][exit continuar] trem=15721 faixa_atual=rp_pst_via2_f proxima_faixa=rp_pst_via2_e
+🟠➡️ [3516,4][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3516,4][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3516,4][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3516,4][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3516,4][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3516.427425747237 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [6547,5][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6547,5][Circ][enter circular_entrada_pera] trem=15565
-🟠➡️ [6569,0][Circ][exit alivio_para_via2_e] trem=15565 faixa_atual=rp_pst_via2_e proxima_faixa=rp_pst_via2_d
-🟠➡️ [6569,0][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6569,0][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6569,0][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6569,0][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6569,0][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6568.987256189347 trem 15565 | possui: rp_pmc_intervalo4000_a rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [6569,0][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6569,0][Circ][enter circular_entrada_pera] trem=15565
-🟠➡️ [6576,7][Circ][exit alivio_para_via2_d] trem=15565 faixa_atual=rp_pst_via2_d proxima_faixa=rp_via2_c
-🟠➡️ [6576,7][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6576,7][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6576,7][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6576,7][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6576,7][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6576.701000652666 trem 15565 | possui: rp_pmc_intervalo4000_a rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [6576,7][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6576,7][Circ][enter circular_via2_d] trem=15565
-🟠➡️ [6633,1][Circ][exit alivio_para_via2_c] trem=15565 faixa_atual=rp_via2_c proxima_faixa=rp_pst_via2_b
-🟠➡️ [6633,1][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6633,1][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6633,1][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6633,1][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6633,1][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6633.133503681118 trem 15565 | possui: rp_pmc_intervalo4000_a rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
+🟠➡️ [3516,4][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3516,4][Circ][enter circular_entrada_pera] trem=15721
+🟠➡️ [3580,9][Circ][exit alivio_para_via2_e] trem=15721 faixa_atual=rp_pst_via2_e proxima_faixa=rp_pst_via2_d
+🟠➡️ [3580,9][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3580,9][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3580,9][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3580,9][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3580,9][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3580.916410746006 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
+🟠➡️ [3580,9][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3580,9][Circ][enter circular_entrada_pera] trem=15721
+🟠➡️ [3604,1][Circ][exit alivio_para_via2_d] trem=15721 faixa_atual=rp_pst_via2_d proxima_faixa=rp_via2_c
+🟠➡️ [3604,1][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3604,1][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3604,1][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3604,1][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3604,1][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3604.0576441359644 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=true | temUnidade=true
-🟠➡️ [6633,1][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6633,1][Circ][enter circular_via2_c] trem=15565
-🟠➡️ [6639,7][Circ][exit alivio_para_via2_b] trem=15565 faixa_atual=rp_pst_via2_b proxima_faixa=rp_pst_via2_a
-🟠➡️ [6639,7][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6639,7][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6639,7][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6639,7][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6639,7][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6639.7090213607125 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [6639,7][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6639,7][Circ][enter circular_via2_b] trem=15565
-🟠➡️ [6641,6][Circ][exit alivio_para_via2_a] trem=15565 faixa_atual=rp_pst_via2_a proxima_faixa=rp_pst_via2_intermar_c
-🟠➡️ [6641,6][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6641,6][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6641,6][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6641,6][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6641,6][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6641.595247304472 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
-🟠➡️ [6641,6][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6641,6][Circ][enter circular_via2_a] trem=15565
-🟠➡️ [6643,5][Circ][exit alivio_para_via2_intermar_c] trem=15565 faixa_atual=rp_pst_via2_intermar_c proxima_faixa=rp_pst_via2_intermar_b
-🟠➡️ [6643,5][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6643,5][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6643,5][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6643,5][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6643,5][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6643.482293557927 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=false | temUnidade=true
-🟠➡️ [6643,5][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6643,5][Circ][enter circular_via2_intermar_c] trem=15565
-🟠➡️ [6684,6][Circ][exit alivio_para_via2_intermar_b] trem=15565 faixa_atual=rp_pst_via2_intermar_b proxima_faixa=rp_pst_via2_intermar_a
-🟠➡️ [6684,6][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6684,6][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6684,6][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6684,6][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6684,6][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6684.59806634978 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
+🟠➡️ [3604,1][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3604,1][Circ][enter circular_via2_d] trem=15721
+🟠➡️ [3773,4][Circ][exit alivio_para_via2_c] trem=15721 faixa_atual=rp_via2_c proxima_faixa=rp_pst_via2_b
+🟠➡️ [3773,4][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3773,4][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3773,4][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3773,4][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3773,4][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3773.355153221319 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pmc_marginal_a rp_pmc_marginal_b 
 🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=true | temUnidade=true
+🟠➡️ [3773,4][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3773,4][Circ][enter circular_via2_c] trem=15721
+🟠➡️ [3793,1][Circ][exit alivio_para_via2_b] trem=15721 faixa_atual=rp_pst_via2_b proxima_faixa=rp_pst_via2_a
+🟠➡️ [3793,1][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3793,1][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3793,1][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3793,1][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3793,1][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3793.0817062601027 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a 
+🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=true | temUnidade=true
+🟠➡️ [3793,1][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3793,1][Circ][enter circular_via2_b] trem=15721
+🟠➡️ [3798,7][Circ][exit alivio_para_via2_a] trem=15721 faixa_atual=rp_pst_via2_a proxima_faixa=rp_pst_via2_intermar_c
+🟠➡️ [3798,7][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3798,7][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3798,7][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3798,7][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3798,7][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3798.740384091381 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c 
+🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
+🟠➡️ [3798,7][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3798,7][Circ][enter circular_via2_a] trem=15721
+🟠➡️ [3804,4][Circ][exit alivio_para_via2_intermar_c] trem=15721 faixa_atual=rp_pst_via2_intermar_c proxima_faixa=rp_pst_via2_intermar_b
+🟠➡️ [3804,4][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3804,4][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3804,4][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3804,4][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3804,4][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3804.4015228517464 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b 
+🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
-🟠➡️ [6684,6][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6684,6][Circ][enter circular_via2_intermar_b] trem=15565
-🟠➡️ [6704,9][Circ][exit alivio_para_via2_intermar_a] trem=15565 faixa_atual=rp_pst_via2_intermar_a proxima_faixa=rp_pst_railwayTrack199
-🟠➡️ [6704,9][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6704,9][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6704,9][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6704,9][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6704,9][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6704.867106524403 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 
+🟠➡️ [3804,4][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3804,4][Circ][enter circular_via2_intermar_c] trem=15721
+🟠➡️ [3927,7][Circ][exit alivio_para_via2_intermar_b] trem=15721 faixa_atual=rp_pst_via2_intermar_b proxima_faixa=rp_pst_via2_intermar_a
+🟠➡️ [3927,7][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3927,7][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3927,7][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3927,7][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3927,7][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3927.748841227307 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a 
 🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
-🟠➡️ [6704,9][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6704,9][Circ][enter circular_via2_intermar_a] trem=15565
-🟠➡️ [6751,1][Circ][exit alivio_para_railwayTrack199] trem=15565 faixa_atual=rp_pst_railwayTrack199 proxima_faixa=rp_pst_val_via2
-🟠➡️ [6751,1][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6751,1][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6751,1][Circ][enter tentar_usar_proxima] trem=15565
-🟠➡️ [6751,1][Circ][exit para_libera_faixas] trem=15565
-🟠➡️ [6751,1][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6751.116447665372 trem 15565 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
+🟠➡️ [3927,7][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3927,7][Circ][enter circular_via2_intermar_b] trem=15721
+🟠➡️ [3988,6][Circ][exit alivio_para_via2_intermar_a] trem=15721 faixa_atual=rp_pst_via2_intermar_a proxima_faixa=rp_pst_railwayTrack199
+🟠➡️ [3988,6][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [3988,6][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [3988,6][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [3988,6][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [3988,6][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=3988.5559617511753 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 
 🟠➡️ [diag_liberar]   rp_via2_c | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
+🟠➡️ [3988,6][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [3988,6][Circ][enter circular_via2_intermar_a] trem=15721
+🟠➡️ [4127,3][Circ][exit alivio_para_railwayTrack199] trem=15721 faixa_atual=rp_pst_railwayTrack199 proxima_faixa=rp_pst_val_via2
+🟠➡️ [4127,3][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [4127,3][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [4127,3][Circ][enter tentar_usar_proxima] trem=15721
+🟠➡️ [4127,3][Circ][exit para_libera_faixas] trem=15721
+🟠➡️ [4127,3][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=4127.303985174081 trem 15721 | possui: rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
+🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=true | temUnidade=true
+🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=false | temUnidade=true
-🟠➡️ [6751,1][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6751,1][Circ][enter circular_railwayTrack199] trem=15565
-🟠➡️ [6752,3][Circ][exit alivio_para_val_via2] trem=15565 faixa_atual=rp_pst_val_via2 proxima_faixa=null
-🟠➡️ [6752,3][Circ][enter tentar_usar_faixa] trem=15565
-🟠➡️ [6752,3][Circ][exit para_tentar_usar_proxima] trem=15565
-🟠➡️ [6752,3][Circ][enter liberar_faixas] trem=15565
-🟠➡️ [diag_liberar] t=6752.331860139707 trem 15565 | possui: rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
+🟠➡️ [4127,3][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [4127,3][Circ][enter circular_railwayTrack199] trem=15721
+🟠➡️ [4131,0][Circ][exit alivio_para_val_via2] trem=15721 faixa_atual=rp_pst_val_via2 proxima_faixa=null
+🟠➡️ [4131,0][Circ][enter tentar_usar_faixa] trem=15721
+🟠➡️ [4131,0][Circ][exit para_tentar_usar_proxima] trem=15721
+🟠➡️ [4131,0][Circ][enter liberar_faixas] trem=15721
+🟠➡️ [diag_liberar] t=4130.950222597085 trem 15721 | possui: rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=false | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_railwayTrack199 | vazia=false | temUnidade=true
-🟠➡️ [6752,3][Circ][exit continuar_circulacao] trem=15565
-🟠➡️ [6752,3][Circ][enter circular_val_via2] trem=15565
-🟠➡️ [6765,2][Circ][exit alivio_para_DVs] trem=15565
-🟠➡️ [diag_liberar] t=6765.229747559562 trem 15565 | possui: rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=true | temUnidade=true
+🟠➡️ [4131,0][Circ][exit continuar_circulacao] trem=15721
+🟠➡️ [4131,0][Circ][enter circular_val_via2] trem=15721
+🟠➡️ [4169,6][Circ][exit alivio_para_DVs] trem=15721
+🟠➡️ [diag_liberar] t=4169.64388485665 trem 15721 | possui: rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=true | temUnidade=true
 🟠➡️ [diag_liberar]   rp_pst_railwayTrack199 | vazia=true | temUnidade=true

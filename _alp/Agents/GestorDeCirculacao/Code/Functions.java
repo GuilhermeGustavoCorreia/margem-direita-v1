@@ -96,3 +96,14 @@ for (Faixa f : faixas) {
 }
 /*ALCODEEND*/}
 
+ResourcePool[] get_recursos_linha_5000_6000(Trem trem)
+{/*ALCODESTART::1792014000500*/
+// ALT-014: pools da linha 5000/6000 que o trem realmente possui
+// (Release em SPECIFIED_RESOURCES dá erro se o agente não tiver a unidade)
+List<ResourcePool> pools = new ArrayList<>();
+for (ResourcePool rp : java.util.List.of(rp_linha5000, rp_linha6000)) {
+    if (!trem.resourceUnitsOfPool(rp).isEmpty()) pools.add(rp);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+

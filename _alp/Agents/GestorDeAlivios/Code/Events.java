@@ -13,5 +13,6 @@ void atualizar_analises()
 {/*ALCODESTART::1791469801983*/
 analisar_pst();
 analisar_pcx();
+analisar_celulose(); // ALT-014
 /*ALCODEEND*/}
 

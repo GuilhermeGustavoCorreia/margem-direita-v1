@@ -8238,8 +8238,8 @@ configurar_rota((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789273477331</Id>
 		<Name><![CDATA[para_via3_a]]></Name>
-		<X>-400</X>
-		<Y>2610</Y>
+		<X>-3150</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -8263,7 +8263,12 @@ configurar_rota((Trem) agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.3: fim da via3_intermar -> via3_a; reserva a seguinte conforme o destino
-boolean coperXI_ou_pera = ("coperXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) || "coperXXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) || "moegaoMar".equals(((Trem) agent).ITerminalMoega_destino.getName()) || "moegaoTerra".equals(((Trem) agent).ITerminalMoega_destino.getName()));
+boolean coperXI_ou_pera = (
+	"coperXI".equals(((Trem) agent).get_terminal_name()) || 
+	"coperXXI".equals(((Trem) agent).get_terminal_name()) || 
+	"moegaoMar".equals(((Trem) agent).get_terminal_name()) || 
+	"moegaoTerra".equals(((Trem) agent).get_terminal_name())
+);
 ((Trem) agent).faixa_atual   = faixa_via3_a;
 ((Trem) agent).proxima_faixa = coperXI_ou_pera ? faixa_via2_c : faixa_via3_b;
 
@@ -8298,8 +8303,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789274034140</Id>
 		<Name><![CDATA[ir_via3_intermar]]></Name>
-		<X>-520</X>
-		<Y>2610</Y>
+		<X>-3270</X>
+		<Y>3980</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -8453,8 +8458,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789274034201</Id>
 		<Name><![CDATA[rp_via3_intermar]]></Name>
-		<X>-630</X>
-		<Y>2650</Y>
+		<X>-3380</X>
+		<Y>4020</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -8846,8 +8851,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via3_intermar;
-((Trem) agent).proxima_faixa = faixa_via3_a;
+					<Code><![CDATA[// ALT-014: bracell começa a licenciar pela val_via2; os outros pela via3_intermar
+boolean bracell = "bracell".equals(((Trem) agent).get_terminal_name());
+((Trem) agent).faixa_atual   = bracell ? faixa_val_via2      : faixa_via3_intermar;
+((Trem) agent).proxima_faixa = bracell ? faixa_via3_intermar : faixa_via3_a;
 
 if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_ate_santa] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
@@ -10088,8 +10095,8 @@ liberar_faixas.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789277120223</Id>
 		<Name><![CDATA[circular_via3_intermar]]></Name>
-		<X>-640</X>
-		<Y>2610</Y>
+		<X>-3390</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -10208,8 +10215,8 @@ liberar_faixas.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765805</Id>
 		<Name><![CDATA[ir_via3_a]]></Name>
-		<X>-210</X>
-		<Y>2610</Y>
+		<X>-2960</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -10363,8 +10370,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765871</Id>
 		<Name><![CDATA[rp_pst_via3_a]]></Name>
-		<X>-320</X>
-		<Y>2650</Y>
+		<X>-3070</X>
+		<Y>4020</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -10612,8 +10619,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765958</Id>
 		<Name><![CDATA[circular_via3_a]]></Name>
-		<X>-330</X>
-		<Y>2610</Y>
+		<X>-3080</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -10732,8 +10739,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277861630</Id>
 		<Name><![CDATA[rp_via2_c]]></Name>
-		<X>-1380</X>
-		<Y>2360</Y>
+		<X>-3930</X>
+		<Y>3830</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -10981,8 +10988,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277861719</Id>
 		<Name><![CDATA[circular_via2_c]]></Name>
-		<X>-1400</X>
-		<Y>2290</Y>
+		<X>-3950</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -11672,8 +11679,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999770</Id>
 		<Name><![CDATA[ir_via3_b]]></Name>
-		<X>220</X>
-		<Y>2610</Y>
+		<X>-2530</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -11827,8 +11834,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999833</Id>
 		<Name><![CDATA[rp_pst_via3_b]]></Name>
-		<X>120</X>
-		<Y>2652</Y>
+		<X>-2630</X>
+		<Y>4022</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -12076,8 +12083,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999917</Id>
 		<Name><![CDATA[circular_via3_b]]></Name>
-		<X>100</X>
-		<Y>2610</Y>
+		<X>-2650</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -12767,8 +12774,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789323832171</Id>
 		<Name><![CDATA[para_via2_c]]></Name>
-		<X>-10</X>
-		<Y>2530</Y>
+		<X>-2760</X>
+		<Y>3900</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -12792,7 +12799,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.3: coperXI ou pera -> via2_c; reserva a seguinte (pera: entrada da pera; coperXI: via2_d)
-boolean pera = ("coperXXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) || "moegaoMar".equals(((Trem) agent).ITerminalMoega_destino.getName()) || "moegaoTerra".equals(((Trem) agent).ITerminalMoega_destino.getName()));
+boolean pera = (
+"coperXXI".equals(((Trem) agent).get_terminal_name()) || 
+"moegaoMar".equals(((Trem) agent).get_terminal_name()) || 
+"moegaoTerra".equals(((Trem) agent).get_terminal_name()));
 ((Trem) agent).faixa_atual   = faixa_via2_c;
 ((Trem) agent).proxima_faixa = pera ? faixa_entrada_pera : faixa_via2_d;
 
@@ -12827,8 +12837,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789323832209</Id>
 		<Name><![CDATA[e_coperXI_ou_pera]]></Name>
-		<X>-120</X>
-		<Y>2610</Y>
+		<X>-2870</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -12858,10 +12868,10 @@ tentar_usar_faixa.take(agent);]]></Code>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.3: e coperXI ou pera?
-"coperXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) ||
-"coperXXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) ||
-"moegaoMar".equals(((Trem) agent).ITerminalMoega_destino.getName()) ||
-"moegaoTerra".equals(((Trem) agent).ITerminalMoega_destino.getName())]]></Code>
+"coperXI".equals(((Trem) agent).get_terminal_name()) ||
+"coperXXI".equals(((Trem) agent).get_terminal_name()) ||
+"moegaoMar".equals(((Trem) agent).get_terminal_name()) ||
+"moegaoTerra".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -13875,8 +13885,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789335995999</Id>
 		<Name><![CDATA[ir_via2_c]]></Name>
-		<X>-1150</X>
-		<Y>2290</Y>
+		<X>-3700</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -14030,8 +14040,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789335996046</Id>
 		<Name><![CDATA[rp_pst_via2_d]]></Name>
-		<X>-1380</X>
-		<Y>2730</Y>
+		<X>-4510</X>
+		<Y>3820</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -14279,8 +14289,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789335996172</Id>
 		<Name><![CDATA[para_entrada_pera]]></Name>
-		<X>-950</X>
-		<Y>2290</Y>
+		<X>-3500</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -14338,8 +14348,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789335996204</Id>
 		<Name><![CDATA[e_pera]]></Name>
-		<X>-1070</X>
-		<Y>2290</Y>
+		<X>-3620</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -14369,9 +14379,9 @@ tentar_usar_faixa.take(agent);]]></Code>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.3: e pera?
-"coperXXI".equals(((Trem) agent).ITerminalMoega_destino.getName()) ||
-"moegaoMar".equals(((Trem) agent).ITerminalMoega_destino.getName()) ||
-"moegaoTerra".equals(((Trem) agent).ITerminalMoega_destino.getName())]]></Code>
+"coperXXI".equals(((Trem) agent).get_terminal_name()) ||
+"moegaoMar".equals(((Trem) agent).get_terminal_name()) ||
+"moegaoTerra".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -14419,8 +14429,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789335996235</Id>
 		<Name><![CDATA[continuar_via2_d]]></Name>
-		<X>-950</X>
-		<Y>2340</Y>
+		<X>-3500</X>
+		<Y>3810</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -14477,8 +14487,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789336499243</Id>
 		<Name><![CDATA[ir_via2_d]]></Name>
-		<X>-1150</X>
-		<Y>2590</Y>
+		<X>-4240</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -14632,8 +14642,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789336499381</Id>
 		<Name><![CDATA[circular_via2_d]]></Name>
-		<X>-1370</X>
-		<Y>2590</Y>
+		<X>-4520</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -14752,8 +14762,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789336499430</Id>
 		<Name><![CDATA[para_encostar_coperXI]]></Name>
-		<X>-950</X>
-		<Y>2590</Y>
+		<X>-4040</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -14807,8 +14817,8 @@ encoste_coperXI.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789336499462</Id>
 		<Name><![CDATA[encostar_coperXI1]]></Name>
-		<X>-1070</X>
-		<Y>2590</Y>
+		<X>-4160</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -14838,7 +14848,7 @@ encoste_coperXI.take(agent)]]></Code>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[//Terminais da pêra
-((Trem) agent).ITerminalMoega_destino.getName() == "coperXI"]]></Code>
+((Trem) agent).get_terminal_name() == "coperXI"]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -14886,8 +14896,8 @@ encoste_coperXI.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789336499497</Id>
 		<Name><![CDATA[continuar_via2_e]]></Name>
-		<X>-950</X>
-		<Y>2640</Y>
+		<X>-4040</X>
+		<Y>3810</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -15271,8 +15281,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789385773221</Id>
 		<Name><![CDATA[rp_pmc_marginal_a]]></Name>
-		<X>201</X>
-		<Y>2429</Y>
+		<X>-2549</X>
+		<Y>3799</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -15520,8 +15530,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789385773312</Id>
 		<Name><![CDATA[ir_marginal_a]]></Name>
-		<X>320</X>
-		<Y>2390</Y>
+		<X>-2430</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -15678,8 +15688,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789385773378</Id>
 		<Name><![CDATA[circular_marginal_a]]></Name>
-		<X>200</X>
-		<Y>2390</Y>
+		<X>-2550</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -15798,8 +15808,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789385773521</Id>
 		<Name><![CDATA[continuar]]></Name>
-		<X>470</X>
-		<Y>2390</Y>
+		<X>-2280</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -15857,8 +15867,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390106566</Id>
 		<Name><![CDATA[rp_pmc_marginal_b]]></Name>
-		<X>600</X>
-		<Y>2430</Y>
+		<X>-2150</X>
+		<Y>3800</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -16106,8 +16116,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390106651</Id>
 		<Name><![CDATA[ir_marginal_b]]></Name>
-		<X>710</X>
-		<Y>2390</Y>
+		<X>-2040</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -16264,8 +16274,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390106712</Id>
 		<Name><![CDATA[circular_marginal_b]]></Name>
-		<X>600</X>
-		<Y>2390</Y>
+		<X>-2150</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -16384,8 +16394,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390106760</Id>
 		<Name><![CDATA[continuar1]]></Name>
-		<X>870</X>
-		<Y>2390</Y>
+		<X>-1880</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -16443,8 +16453,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390286735</Id>
 		<Name><![CDATA[rp_pmc_marginal_c]]></Name>
-		<X>960</X>
-		<Y>2470</Y>
+		<X>-1790</X>
+		<Y>3840</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -16692,8 +16702,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390286820</Id>
 		<Name><![CDATA[ir_marginal_c]]></Name>
-		<X>1220</X>
-		<Y>2390</Y>
+		<X>-1530</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -16847,8 +16857,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789390286873</Id>
 		<Name><![CDATA[circular_marginal_c]]></Name>
-		<X>1000</X>
-		<Y>2390</Y>
+		<X>-1750</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -16967,8 +16977,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033353</Id>
 		<Name><![CDATA[rp_pmc_intervalo4000_a]]></Name>
-		<X>-1560</X>
-		<Y>1440</Y>
+		<X>-1180</X>
+		<Y>3810</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -17216,8 +17226,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033438</Id>
 		<Name><![CDATA[ir_intervalo_intervalo4000_a]]></Name>
-		<X>-1440</X>
-		<Y>1390</Y>
+		<X>-840</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -17368,8 +17378,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033498</Id>
 		<Name><![CDATA[circular_intervalo4000_a]]></Name>
-		<X>-1560</X>
-		<Y>1390</Y>
+		<X>-1170</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -17488,8 +17498,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033546</Id>
 		<Name><![CDATA[continuar3]]></Name>
-		<X>-1291</X>
-		<Y>1391</Y>
+		<X>-691</X>
+		<Y>3761</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -17512,7 +17522,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar3] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[// ALT-014: fim da intervalo4000_a -> intervalo4000_b
+((Trem) agent).faixa_atual   = faixa_intervalo4000_b;
+((Trem) agent).proxima_faixa = faixa_intervalo4000_c;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar3] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -17543,8 +17557,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414684</Id>
 		<Name><![CDATA[rp_pmc_intervalo4000_b]]></Name>
-		<X>-1560</X>
-		<Y>1690</Y>
+		<X>-560</X>
+		<Y>3810</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -17792,8 +17806,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414799</Id>
 		<Name><![CDATA[ir_intervalo_intervalo4000_b]]></Name>
-		<X>-1440</X>
-		<Y>1640</Y>
+		<X>-220</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -17846,7 +17860,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().pst_marginal_c]]></Code>
+					<Code><![CDATA[main().pmc_intervalo4000_b]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -17944,8 +17958,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414869</Id>
 		<Name><![CDATA[circular_intervalo4000_b]]></Name>
-		<X>-1560</X>
-		<Y>1640</Y>
+		<X>-560</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -18064,8 +18078,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414922</Id>
 		<Name><![CDATA[continuar4]]></Name>
-		<X>-1291</X>
-		<Y>1641</Y>
+		<X>-80</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -18088,7 +18102,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar4] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[// ALT-014: fim da intervalo4000_b -> intervalo4000_c (ultima faixa)
+((Trem) agent).faixa_atual   = faixa_intervalo4000_c;
+((Trem) agent).proxima_faixa = null;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar4] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -18119,8 +18137,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789392431057</Id>
 		<Name><![CDATA[rp_pmc_intervalo4000_c]]></Name>
-		<X>-1556</X>
-		<Y>1943</Y>
+		<X>60</X>
+		<Y>3810</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -18368,8 +18386,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789392431161</Id>
 		<Name><![CDATA[ir_intervalo_intervalo4000_c]]></Name>
-		<X>-1436</X>
-		<Y>1893</Y>
+		<X>400</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -18422,7 +18440,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().pst_marginal_c]]></Code>
+					<Code><![CDATA[main().pmc_intervalo4000_c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -18520,8 +18538,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789392431236</Id>
 		<Name><![CDATA[circular_intervalo4000_c]]></Name>
-		<X>-1556</X>
-		<Y>1893</Y>
+		<X>60</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -18640,8 +18658,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789392431300</Id>
 		<Name><![CDATA[continuar5]]></Name>
-		<X>-1287</X>
-		<Y>1894</Y>
+		<X>540</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -18664,8 +18682,13 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar5] trem=%d", time(), agent.getId()));
-tentar_usar_faixa.take(agent);]]></Code>
+					<Code><![CDATA[// ALT-014: fim da intervalo4000_c -> entrega ao terminal (linha 5000)
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar5] trem=%d destino=%s", time(), agent.getId(), ((Trem) agent).get_terminal_name()));
+if ("bracell".equals(((Trem) agent).get_terminal_name())) {
+    main().bracell.encoste.take(agent);
+} else {
+    error("GestorDeCirculacao: sem rota apos pmc_intervalo4000_c para " + ((Trem) agent).get_terminal_name());
+}]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -27416,8 +27439,8 @@ main().coperXXI.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000001</Id>
 		<Name><![CDATA[rp_via3_c]]></Name>
-		<X>500</X>
-		<Y>2660</Y>
+		<X>-2250</X>
+		<Y>4030</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -27665,8 +27688,8 @@ main().coperXXI.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000003</Id>
 		<Name><![CDATA[rp_silosMuro_a]]></Name>
-		<X>860</X>
-		<Y>2700</Y>
+		<X>-1890</X>
+		<Y>4070</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -27914,8 +27937,8 @@ main().coperXXI.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000005</Id>
 		<Name><![CDATA[rp_silosMuro_b]]></Name>
-		<X>1350</X>
-		<Y>2660</Y>
+		<X>-1400</X>
+		<Y>4030</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -28163,8 +28186,8 @@ main().coperXXI.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000007</Id>
 		<Name><![CDATA[rp_silosMuro_c]]></Name>
-		<X>1710</X>
-		<Y>2680</Y>
+		<X>-1040</X>
+		<Y>4050</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -28412,8 +28435,8 @@ main().coperXXI.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791660000013</Id>
 		<Name><![CDATA[para_t39]]></Name>
-		<X>2050</X>
-		<Y>2610</Y>
+		<X>-700</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28468,8 +28491,8 @@ main().t39.encoste_linha1000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000001</Id>
 		<Name><![CDATA[para_via3_b]]></Name>
-		<X>30</X>
-		<Y>2610</Y>
+		<X>-2720</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28527,8 +28550,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000003</Id>
 		<Name><![CDATA[para_via3_c]]></Name>
-		<X>410</X>
-		<Y>2610</Y>
+		<X>-2340</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28586,8 +28609,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000005</Id>
 		<Name><![CDATA[circular_via3_c]]></Name>
-		<X>470</X>
-		<Y>2610</Y>
+		<X>-2280</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -28706,8 +28729,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000007</Id>
 		<Name><![CDATA[ir_via3_c]]></Name>
-		<X>590</X>
-		<Y>2610</Y>
+		<X>-2160</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -28861,8 +28884,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000009</Id>
 		<Name><![CDATA[para_silosMuro_a]]></Name>
-		<X>750</X>
-		<Y>2610</Y>
+		<X>-2000</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28885,8 +28908,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2 / ALT-003.4: a seguinte depende do destino (tgrao sai pela marginal_c)
-boolean tgrao = "tgrao".equals(((Trem) agent).ITerminalMoega_destino.getName());
+					<Code><![CDATA[// ALT-003.2 / ALT-003.4 / ALT-014: a seguinte depende do destino (tgrao e bracell saem pela marginal_c)
+boolean tgrao = "tgrao".equals(((Trem) agent).get_terminal_name())
+             || "bracell".equals(((Trem) agent).get_terminal_name());
 ((Trem) agent).faixa_atual   = faixa_silosMuro_a;
 ((Trem) agent).proxima_faixa = tgrao ? faixa_marginal_c : faixa_silosMuro_b;
 
@@ -28921,8 +28945,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000011</Id>
 		<Name><![CDATA[circular_silosMuro_a]]></Name>
-		<X>840</X>
-		<Y>2610</Y>
+		<X>-1910</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -29041,8 +29065,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000013</Id>
 		<Name><![CDATA[ir_silosMuro_a]]></Name>
-		<X>960</X>
-		<Y>2610</Y>
+		<X>-1790</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -29196,8 +29220,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000015</Id>
 		<Name><![CDATA[para_silosMuro_b]]></Name>
-		<X>1200</X>
-		<Y>2610</Y>
+		<X>-1550</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -29255,8 +29279,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000017</Id>
 		<Name><![CDATA[circular_silosMuro_b]]></Name>
-		<X>1330</X>
-		<Y>2610</Y>
+		<X>-1420</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -29375,8 +29399,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000019</Id>
 		<Name><![CDATA[ir_silosMuro_b]]></Name>
-		<X>1450</X>
-		<Y>2610</Y>
+		<X>-1300</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -29530,8 +29554,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000021</Id>
 		<Name><![CDATA[para_silosMuro_c]]></Name>
-		<X>1550</X>
-		<Y>2610</Y>
+		<X>-1200</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -29589,8 +29613,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000023</Id>
 		<Name><![CDATA[circular_silosMuro_c]]></Name>
-		<X>1680</X>
-		<Y>2610</Y>
+		<X>-1070</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -29709,8 +29733,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000025</Id>
 		<Name><![CDATA[ir_silosMuro_c]]></Name>
-		<X>1810</X>
-		<Y>2610</Y>
+		<X>-940</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -29864,8 +29888,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000027</Id>
 		<Name><![CDATA[destino_t39]]></Name>
-		<X>1930</X>
-		<Y>2610</Y>
+		<X>-820</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -29895,7 +29919,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.2: fim da pst_silosMuro_c
-"t39".equals(((Trem) agent).ITerminalMoega_destino.getName())]]></Code>
+"t39".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -29946,8 +29970,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000029</Id>
 		<Name><![CDATA[sem_rota_silosMuro_c]]></Name>
-		<X>2050</X>
-		<Y>2710</Y>
+		<X>-700</X>
+		<Y>4080</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -29972,7 +29996,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit sem_rota_silosMuro_c] trem=%d", time(), agent.getId()));
 // ALT-003.2: nenhum outro terminal segue depois da pst_silosMuro_c
-error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent).ITerminalMoega_destino.getName());]]></Code>
+error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent).get_terminal_name());]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -30002,8 +30026,8 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 	<EmbeddedObject>
 		<Id>1791680000001</Id>
 		<Name><![CDATA[e_tgrao]]></Name>
-		<X>1080</X>
-		<Y>2610</Y>
+		<X>-1670</X>
+		<Y>3980</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -30032,8 +30056,9 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.4: fim da pst_silosMuro_a
-"tgrao".equals(((Trem) agent).ITerminalMoega_destino.getName())]]></Code>
+					<Code><![CDATA[// ALT-003.4 / ALT-014: fim da pst_silosMuro_a (tgrao ou bracell seguem para a marginal_c)
+"tgrao".equals(((Trem) agent).get_terminal_name()) ||
+"bracell".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -30084,8 +30109,8 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 	<EmbeddedObject>
 		<Id>1791680000003</Id>
 		<Name><![CDATA[para_marginal_c]]></Name>
-		<X>1180</X>
-		<Y>2560</Y>
+		<X>-1570</X>
+		<Y>3930</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -30110,7 +30135,8 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-003.4: tgrao -> pst_marginal_c (passa pela railwayTrack114)
 ((Trem) agent).faixa_atual   = faixa_marginal_c;
-((Trem) agent).proxima_faixa = null;
+// ALT-014: bracell segue para a intervalo4000_a
+((Trem) agent).proxima_faixa = "bracell".equals(((Trem) agent).get_terminal_name()) ? faixa_intervalo4000_a : null;
 
 if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_marginal_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
@@ -30143,8 +30169,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791680000005</Id>
 		<Name><![CDATA[para_tgrao]]></Name>
-		<X>1320</X>
-		<Y>2390</Y>
+		<X>-1260</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -30625,8 +30651,8 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902784205</Id>
 		<Name><![CDATA[recuar_marginal_c]]></Name>
-		<X>1220</X>
-		<Y>2450</Y>
+		<X>-1530</X>
+		<Y>3820</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -30786,8 +30812,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902839410</Id>
 		<Name><![CDATA[definir_sentido]]></Name>
-		<X>1140</X>
-		<Y>2390</Y>
+		<X>-1610</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -30864,8 +30890,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902988260</Id>
 		<Name><![CDATA[para_pst_marginal_b]]></Name>
-		<X>1310</X>
-		<Y>2450</Y>
+		<X>-1400</X>
+		<Y>3820</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -30923,8 +30949,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791903637649</Id>
 		<Name><![CDATA[rp_pst_via2_e]]></Name>
-		<X>-590</X>
-		<Y>2440</Y>
+		<X>-3340</X>
+		<Y>3810</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -31172,8 +31198,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791903637804</Id>
 		<Name><![CDATA[circular_via2_e]]></Name>
-		<X>-610</X>
-		<Y>2390</Y>
+		<X>-3360</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -31292,8 +31318,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791903637901</Id>
 		<Name><![CDATA[recurar_via2_e]]></Name>
-		<X>-470</X>
-		<Y>2390</Y>
+		<X>-3220</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -31453,8 +31479,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791903637993</Id>
 		<Name><![CDATA[alivio_para_via2_d]]></Name>
-		<X>-330</X>
-		<Y>2390</Y>
+		<X>-3080</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -31512,8 +31538,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791908313401</Id>
 		<Name><![CDATA[rp_pst_via2_f]]></Name>
-		<X>-180</X>
-		<Y>2440</Y>
+		<X>-2930</X>
+		<Y>3810</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -31761,8 +31787,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791908313556</Id>
 		<Name><![CDATA[circular_via2_f]]></Name>
-		<X>-200</X>
-		<Y>2390</Y>
+		<X>-2950</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -31881,8 +31907,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791908313744</Id>
 		<Name><![CDATA[recurar_via2_f]]></Name>
-		<X>-60</X>
-		<Y>2390</Y>
+		<X>-2810</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -32042,8 +32068,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791908313838</Id>
 		<Name><![CDATA[alivio_para_via2_e]]></Name>
-		<X>80</X>
-		<Y>2390</Y>
+		<X>-2650</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -32101,8 +32127,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375588</Id>
 		<Name><![CDATA[definir_sentido_via2_d]]></Name>
-		<X>-1270</X>
-		<Y>2590</Y>
+		<X>-4360</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -32179,8 +32205,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375590</Id>
 		<Name><![CDATA[recuar_via2_d]]></Name>
-		<X>-1150</X>
-		<Y>2690</Y>
+		<X>-4240</X>
+		<Y>3860</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -32340,8 +32366,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375592</Id>
 		<Name><![CDATA[alivio_para_via2_c]]></Name>
-		<X>-950</X>
-		<Y>2690</Y>
+		<X>-4040</X>
+		<Y>3860</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -32399,8 +32425,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375598</Id>
 		<Name><![CDATA[definir_sentido_via2_c]]></Name>
-		<X>-1270</X>
-		<Y>2290</Y>
+		<X>-3820</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -32477,8 +32503,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375600</Id>
 		<Name><![CDATA[recuar_via2_c]]></Name>
-		<X>-1150</X>
-		<Y>2390</Y>
+		<X>-3700</X>
+		<Y>3860</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -32638,8 +32664,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375602</Id>
 		<Name><![CDATA[alivio_para_via2_b]]></Name>
-		<X>-950</X>
-		<Y>2390</Y>
+		<X>-3500</X>
+		<Y>3860</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -32697,8 +32723,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375608</Id>
 		<Name><![CDATA[circular_via2_b]]></Name>
-		<X>100</X>
-		<Y>3100</Y>
+		<X>-2800</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -32817,8 +32843,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375610</Id>
 		<Name><![CDATA[recuar_via2_b]]></Name>
-		<X>220</X>
-		<Y>3100</Y>
+		<X>-2680</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -32978,8 +33004,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375612</Id>
 		<Name><![CDATA[alivio_para_via2_a]]></Name>
-		<X>310</X>
-		<Y>3100</Y>
+		<X>-2590</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -33037,8 +33063,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375616</Id>
 		<Name><![CDATA[rp_pst_via2_b]]></Name>
-		<X>100</X>
-		<Y>3135</Y>
+		<X>-2810</X>
+		<Y>3470</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -33286,8 +33312,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375620</Id>
 		<Name><![CDATA[circular_via2_a]]></Name>
-		<X>100</X>
-		<Y>3180</Y>
+		<X>-3320</X>
+		<Y>3440</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -33406,8 +33432,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375622</Id>
 		<Name><![CDATA[recuar_via2_a]]></Name>
-		<X>220</X>
-		<Y>3180</Y>
+		<X>-3200</X>
+		<Y>3440</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -33567,8 +33593,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375624</Id>
 		<Name><![CDATA[alivio_para_via2_intermar_c]]></Name>
-		<X>310</X>
-		<Y>3180</Y>
+		<X>-3110</X>
+		<Y>3440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -33626,8 +33652,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375628</Id>
 		<Name><![CDATA[rp_pst_via2_a]]></Name>
-		<X>100</X>
-		<Y>3215</Y>
+		<X>-3320</X>
+		<Y>3475</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -33875,8 +33901,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375632</Id>
 		<Name><![CDATA[circular_via2_intermar_c]]></Name>
-		<X>100</X>
-		<Y>3260</Y>
+		<X>-1520</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -33995,8 +34021,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375634</Id>
 		<Name><![CDATA[recuar_via2_intermar_c]]></Name>
-		<X>220</X>
-		<Y>3260</Y>
+		<X>-1400</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -34156,8 +34182,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375636</Id>
 		<Name><![CDATA[alivio_para_via2_intermar_b]]></Name>
-		<X>310</X>
-		<Y>3260</Y>
+		<X>-1310</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -34215,8 +34241,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375640</Id>
 		<Name><![CDATA[rp_pst_via2_intermar_c]]></Name>
-		<X>100</X>
-		<Y>3295</Y>
+		<X>-1520</X>
+		<Y>3465</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -34464,8 +34490,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375644</Id>
 		<Name><![CDATA[circular_via2_intermar_b]]></Name>
-		<X>100</X>
-		<Y>3340</Y>
+		<X>-1920</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -34584,8 +34610,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375646</Id>
 		<Name><![CDATA[recuar_via2_intermar_b]]></Name>
-		<X>220</X>
-		<Y>3340</Y>
+		<X>-1800</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -34745,8 +34771,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375648</Id>
 		<Name><![CDATA[alivio_para_via2_intermar_a]]></Name>
-		<X>310</X>
-		<Y>3340</Y>
+		<X>-1710</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -34804,8 +34830,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375652</Id>
 		<Name><![CDATA[rp_pst_via2_intermar_b]]></Name>
-		<X>100</X>
-		<Y>3375</Y>
+		<X>-1920</X>
+		<Y>3465</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -35053,8 +35079,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375656</Id>
 		<Name><![CDATA[circular_via2_intermar_a]]></Name>
-		<X>100</X>
-		<Y>3420</Y>
+		<X>-2360</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -35173,8 +35199,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375658</Id>
 		<Name><![CDATA[recuar_via2_intermar_a]]></Name>
-		<X>220</X>
-		<Y>3420</Y>
+		<X>-2240</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -35334,8 +35360,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375660</Id>
 		<Name><![CDATA[alivio_para_railwayTrack199]]></Name>
-		<X>310</X>
-		<Y>3420</Y>
+		<X>-2150</X>
+		<Y>3430</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -35393,8 +35419,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375664</Id>
 		<Name><![CDATA[rp_pst_via2_intermar_a]]></Name>
-		<X>100</X>
-		<Y>3455</Y>
+		<X>-2360</X>
+		<Y>3465</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -35642,8 +35668,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375668</Id>
 		<Name><![CDATA[circular_railwayTrack199]]></Name>
-		<X>100</X>
-		<Y>3500</Y>
+		<X>310</X>
+		<Y>3550</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -35762,8 +35788,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375670</Id>
 		<Name><![CDATA[recuar_railwayTrack199]]></Name>
-		<X>220</X>
-		<Y>3500</Y>
+		<X>430</X>
+		<Y>3550</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -35923,8 +35949,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375672</Id>
 		<Name><![CDATA[alivio_para_val_via2]]></Name>
-		<X>310</X>
-		<Y>3500</Y>
+		<X>520</X>
+		<Y>3550</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -35982,8 +36008,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375676</Id>
 		<Name><![CDATA[rp_pst_railwayTrack199]]></Name>
-		<X>100</X>
-		<Y>3535</Y>
+		<X>310</X>
+		<Y>3585</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -36231,8 +36257,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375680</Id>
 		<Name><![CDATA[circular_val_via2]]></Name>
-		<X>100</X>
-		<Y>3580</Y>
+		<X>-40</X>
+		<Y>3360</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -36351,8 +36377,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375682</Id>
 		<Name><![CDATA[recuar_val_via2]]></Name>
-		<X>220</X>
-		<Y>3580</Y>
+		<X>250</X>
+		<Y>3440</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -36512,8 +36538,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375684</Id>
 		<Name><![CDATA[alivio_para_DVs]]></Name>
-		<X>310</X>
-		<Y>3580</Y>
+		<X>350</X>
+		<Y>3440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -36568,8 +36594,8 @@ main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375688</Id>
 		<Name><![CDATA[rp_pst_val_via2]]></Name>
-		<X>100</X>
-		<Y>3615</Y>
+		<X>-20</X>
+		<Y>3420</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -36817,8 +36843,8 @@ main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000013</Id>
 		<Name><![CDATA[definir_sentido_intervalo4000_a]]></Name>
-		<X>-1500</X>
-		<Y>1390</Y>
+		<X>-1010</X>
+		<Y>3760</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -36895,8 +36921,8 @@ main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000015</Id>
 		<Name><![CDATA[recuar_intervalo4000_a]]></Name>
-		<X>-1440</X>
-		<Y>1470</Y>
+		<X>-840</X>
+		<Y>3840</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -37056,8 +37082,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000017</Id>
 		<Name><![CDATA[alivio_para_marginal_c]]></Name>
-		<X>-1291</X>
-		<Y>1471</Y>
+		<X>-691</X>
+		<Y>3841</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -37107,6 +37133,1120 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1791950000018</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000001</Id>
+		<Name><![CDATA[definir_sentido_val_via2]]></Name>
+		<X>100</X>
+		<Y>3360</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[!((Trem) agent).eh_alivio]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000002</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000003</Id>
+		<Name><![CDATA[ir_val_via2]]></Name>
+		<X>250</X>
+		<Y>3360</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().val_via2]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().val_via2]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+faixa_atual.ocupar((Trem) train);]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[//]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000004</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000005</Id>
+		<Name><![CDATA[para_via3_intermar]]></Name>
+		<X>350</X>
+		<Y>3360</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-014: bracell: fim da val_via2 -> via3_intermar
+((Trem) agent).faixa_atual   = faixa_via3_intermar;
+((Trem) agent).proxima_faixa = faixa_via3_a;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_intermar] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000006</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000011</Id>
+		<Name><![CDATA[e_bracell]]></Name>
+		<X>-1430</X>
+		<Y>3760</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-014: fim da pst_marginal_c
+"bracell".equals(((Trem) agent).get_terminal_name())]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000012</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000013</Id>
+		<Name><![CDATA[para_intervalo4000_a]]></Name>
+		<X>-1310</X>
+		<Y>3690</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-014: bracell: fim da marginal_c -> intervalo4000_a
+((Trem) agent).faixa_atual   = faixa_intervalo4000_a;
+((Trem) agent).proxima_faixa = faixa_intervalo4000_b;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_intervalo4000_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000014</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000018</Id>
+		<Name><![CDATA[definir_sentido_intervalo4000_c]]></Name>
+		<X>230</X>
+		<Y>3760</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[!((Trem) agent).eh_alivio]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000019</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000020</Id>
+		<Name><![CDATA[recuar_intervalo4000_c]]></Name>
+		<X>400</X>
+		<Y>3850</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+			<GenericParameterSubstituteValue Class="CodeValue">
+				<Code><![CDATA[Trem]]></Code>
+			</GenericParameterSubstituteValue>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().via3_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().pmc_intervalo4000_c]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+faixa_atual.ocupar((Trem) train);]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000021</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000022</Id>
+		<Name><![CDATA[alivio_para_intervalo4000_b]]></Name>
+		<X>540</X>
+		<Y>3850</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-014: alivio celulose (de re): intervalo4000_c -> intervalo4000_b
+((Trem) agent).faixa_atual   = faixa_intervalo4000_b;
+((Trem) agent).proxima_faixa = faixa_intervalo4000_a;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_intervalo4000_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000023</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000027</Id>
+		<Name><![CDATA[definir_sentido_intervalo4000_b]]></Name>
+		<X>-390</X>
+		<Y>3760</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[!((Trem) agent).eh_alivio]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000028</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000029</Id>
+		<Name><![CDATA[recuar_intervalo4000_b]]></Name>
+		<X>-220</X>
+		<Y>3850</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+			<GenericParameterSubstituteValue Class="CodeValue">
+				<Code><![CDATA[Trem]]></Code>
+			</GenericParameterSubstituteValue>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().via3_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().pmc_intervalo4000_b]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+faixa_atual.ocupar((Trem) train);]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000030</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792014000031</Id>
+		<Name><![CDATA[alivio_para_intervalo4000_a]]></Name>
+		<X>-80</X>
+		<Y>3850</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-014: alivio celulose (de re): intervalo4000_b -> intervalo4000_a
+((Trem) agent).faixa_atual   = faixa_intervalo4000_a;
+((Trem) agent).proxima_faixa = faixa_marginal_c;
+
+if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_intervalo4000_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792014000032</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1791992468069</Id>
+		<Name><![CDATA[delay]]></Name>
+		<X>470</X>
+		<Y>3750</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Delay</ClassName>
+				<ItemName>1412336242930</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[type]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[delayTime]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[3]]></Code>
+					<Unit Class="TimeUnits">SECOND</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791992468067</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

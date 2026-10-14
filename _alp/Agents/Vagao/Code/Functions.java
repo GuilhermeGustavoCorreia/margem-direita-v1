@@ -45,6 +45,10 @@ switch (segmento) {
     	retangulo_grao.setVisible(true);  
     	break;
   
+	case "celulose":  	
+    	
+    	retangulo_grao.setVisible(true);  
+    	break;
     
     default:
         error("Segmento desconhecido: '" + segmento + "'");

@@ -212,6 +212,23 @@
 				<ClassName>Tgrao</ClassName>
 			</ActiveObjectClass>
 		</ContainerLink>
+		<ContainerLink>
+			<Id>1791993018455</Id>
+			<Name><![CDATA[bracell]]></Name>
+			<X>550</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>Bracell</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
 	</ContainerLinks>
 	<EmbeddedObjects xmlns:al="http://anylogic.com"/>
 	<Presentation>

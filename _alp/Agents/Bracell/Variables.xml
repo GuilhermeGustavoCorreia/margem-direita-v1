@@ -3,7 +3,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788196636115</Id>
 		<Name><![CDATA[_trackAparecerLocoMnb]]></Name>
-		<X>450</X>
+		<X>610</X>
 		<Y>470</Y>
 		<Label>
 			<X>10</X>
@@ -25,7 +25,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788197683834</Id>
 		<Name><![CDATA[_offsetAparecerLocoMnb]]></Name>
-		<X>450</X>
+		<X>610</X>
 		<Y>490</Y>
 		<Label>
 			<X>10</X>
@@ -47,7 +47,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788263600232</Id>
 		<Name><![CDATA[loteVazios_L1]]></Name>
-		<X>1200</X>
+		<X>1360</X>
 		<Y>250</Y>
 		<Label>
 			<X>10</X>
@@ -69,7 +69,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788263644998</Id>
 		<Name><![CDATA[loteVazios_L2]]></Name>
-		<X>1200</X>
+		<X>1360</X>
 		<Y>450</Y>
 		<Label>
 			<X>10</X>
@@ -91,7 +91,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788263657435</Id>
 		<Name><![CDATA[loteVazios_L3]]></Name>
-		<X>1200</X>
+		<X>1360</X>
 		<Y>650</Y>
 		<Label>
 			<X>10</X>
@@ -113,7 +113,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1788263658086</Id>
 		<Name><![CDATA[loteVazios_L4]]></Name>
-		<X>1200</X>
+		<X>1360</X>
 		<Y>850</Y>
 		<Label>
 			<X>10</X>
@@ -135,8 +135,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1790777451765</Id>
 		<Name><![CDATA[ferrovia_em_atendimento]]></Name>
-		<X>360</X>
-		<Y>-630</Y>
+		<X>60</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -154,8 +154,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1790777451767</Id>
 		<Name><![CDATA[segmento_em_atendimento]]></Name>
-		<X>360</X>
-		<Y>-610</Y>
+		<X>60</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -173,8 +173,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1791222944598</Id>
 		<Name><![CDATA[quantidade_alivio]]></Name>
-		<X>230</X>
-		<Y>-290</Y>
+		<X>-170</X>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -192,11 +192,99 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791913764335</Id>
+		<Name><![CDATA[lote_carregados_L1]]></Name>
+		<X>580</X>
+		<Y>780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791913764341</Id>
+		<Name><![CDATA[lote_carregados_L2]]></Name>
+		<X>580</X>
+		<Y>980</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791913764344</Id>
+		<Name><![CDATA[lote_carregados_L3]]></Name>
+		<X>580</X>
+		<Y>1240</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1791913764346</Id>
+		<Name><![CDATA[lote_carregados_L4]]></Name>
+		<X>580</X>
+		<Y>1440</Y>
+		<Label>
+			<X>10</X>
+			<Y>2</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1790638028217</Id>
 		<Name><![CDATA[primeiro_alivio_faixas]]></Name>
-		<X>80</X>
-		<Y>-330</Y>
+		<X>-170</X>
+		<Y>440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

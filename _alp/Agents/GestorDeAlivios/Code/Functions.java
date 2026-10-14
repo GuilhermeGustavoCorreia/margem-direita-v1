@@ -528,3 +528,64 @@ for (Faixa f : java.util.List.of(
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 
+double analisar_celulose()
+{/*ALCODESTART::1792014000316*/
+// ALT-014: alívio dos terminais de celulose do PCX (Bracell; depois Suzano e Eldorado).
+// Lógica separada: não usa a linha 4000 nem depende das DVs. Só olha o overload.
+// O trem sai com todos os vazios do terminal (Bracell: 64).
+if (terminais_celulose.isEmpty()) {
+    return;
+}
+
+for (ITerminalMoega terminal : new ArrayList<>(terminais_celulose)) {
+
+    if (terminal.getOverloadVazios() > 1) {
+
+        fazer_procedimento_de_alivio_celulose(terminal);
+    }
+}
+/*ALCODEEND*/}
+
+double fazer_procedimento_de_alivio_celulose(ITerminalMoega terminal)
+{/*ALCODESTART::1792014000317*/
+// ALT-014: um alívio de celulose por vez
+if (terminal_alivio_celulose != null) {
+    return;
+}
+
+String ferrovia = terminal.getFerrovia();
+Wait<Agent> waitLocos = get_wait_locos_ferrovia(ferrovia);
+
+if (waitLocos == null || waitLocos.size() == 0) {
+    if (((int) time()) % 60 == 0) {
+        traceln(time() + " | [AlivioCelulose] " + ((Agent) terminal).getName()
+            + " | aguardando loco '" + ferrovia + "' para aliviar");
+    }
+    return;
+}
+
+terminais_celulose.remove(terminal);
+terminal_alivio_celulose = terminal;
+terminal.set_quantidade_alivio(terminal.get_quantidade_vazios());
+
+Agent loco = waitLocos.remove(waitLocos.get(0));
+((Trem) loco).set_terminal(terminal);
+
+traceln(String.format("[%.1f][AlivioCelulose] %s | vazios=%d | loco=%d (%s)",
+    time(), ((Agent) terminal).getName(), terminal.get_quantidade_vazios(), loco.getId(), ferrovia));
+
+loco_alivio_celulose.take(loco);
+/*ALCODEEND*/}
+
+Wait<Agent> get_wait_locos_ferrovia(String ferrovia)
+{/*ALCODESTART::1792014000318*/
+// ALT-014: wait de locos da ferrovia no GestorDeLocomotivas
+if (ferrovia == null) return null;
+switch (ferrovia) {
+    case "rumo": return main().gestorDeLocomotivas.locomotivasRumo;
+    case "mrs":  return main().gestorDeLocomotivas.locomotivasMRS;
+    case "vli":  return main().gestorDeLocomotivas.locomotivasVLI;
+    default:     return null;
+}
+/*ALCODEEND*/}
+

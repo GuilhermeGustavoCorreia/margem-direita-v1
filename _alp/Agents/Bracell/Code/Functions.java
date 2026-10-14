@@ -25,14 +25,10 @@ if (tamanhoVazios >= capacidadeVazios) {
 }
 /*ALCODEEND*/}
 
-double takeAlivio(Agent agent)
-{/*ALCODESTART::1788185597919*/
-alivioVazios.take(agent);
-/*ALCODEEND*/}
-
 PositionOnTrack get_pos_alivio()
 {/*ALCODESTART::1788185597921*/
-return main().pos_circ_alivio_tgrao;
+// ALT-014: ponto de chegada da loco de alívio (linha 5000_b)
+return main()._bracell_alivio;
 /*ALCODEEND*/}
 
 int getNumeroLocomotivasAlivio()
@@ -42,7 +38,8 @@ return 1;
 
 String getPatio()
 {/*ALCODESTART::1788185597925*/
-return "PMC";
+// ALT-014: Bracell é do pátio PCX (celulose)
+return "pcx";
 /*ALCODEEND*/}
 
 boolean podeReceberNovoLote()
@@ -107,7 +104,8 @@ quantidade_alivio = qt_quantidade;
 
 int get_quantidade_vazios()
 {/*ALCODESTART::1791224579471*/
-return 0;
+// ALT-014: vazios reais nas linhas L1..L4
+return _getVagoesVazios();
 /*ALCODEEND*/}
 
 String get_tipo_loco_alivio()
@@ -119,5 +117,56 @@ return "ferrovia";
 int get_quantidade_loco_alivio()
 {/*ALCODESTART::1791700000002*/
 return 1;
+/*ALCODEEND*/}
+
+double atualizarFerroviaEProdutoEmAtendimento(Trem trem)
+{/*ALCODESTART::1791913618779*/
+for (int i = 0; i < trem.size(); i++) {
+        Agent carro = trem.getCar(i); // confere o nome exato do método com Ctrl+Espaço
+
+        if (carro instanceof Vagao) {
+            Vagao vagao = (Vagao) carro;
+            ferrovia_em_atendimento = vagao.ferrovia;
+            segmento_em_atendimento = vagao.segmento;
+            return; // achou o primeiro vagão, encerra
+        }
+    }
+
+    traceln("erro: trem não tem nenhum vagão");
+/*ALCODEEND*/}
+
+int _getVagoesVazios()
+{/*ALCODESTART::1791913696307*/
+int vazios_linha_L1 = main().getTamanhoDoTrem(loteVazios_L1);
+int vazios_linha_L2 = main().getTamanhoDoTrem(loteVazios_L2);
+int vazios_linha_L3 = main().getTamanhoDoTrem(loteVazios_L3);
+int vazios_linha_L4 = main().getTamanhoDoTrem(loteVazios_L4);
+
+
+
+return (
+	vazios_linha_L1 + 
+	vazios_linha_L2 + 
+	vazios_linha_L3 +
+	vazios_linha_L4
+);
+
+/*ALCODEEND*/}
+
+int _getVagoesCarregados()
+{/*ALCODESTART::1791913696313*/
+int carregados_linha_L1 = main().getTamanhoDoTrem(lote_carregados_L1);
+int carregados_linha_L2 = main().getTamanhoDoTrem(lote_carregados_L2);
+int carregados_linha_L3 = main().getTamanhoDoTrem(lote_carregados_L3);
+int carregados_linha_L4 = main().getTamanhoDoTrem(lote_carregados_L4);
+
+
+
+return (
+	carregados_linha_L1 + 
+	carregados_linha_L2 + 
+	carregados_linha_L3 +
+	carregados_linha_L4
+);
 /*ALCODEEND*/}
 

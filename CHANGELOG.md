@@ -318,3 +318,31 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - [ ] Novo ciclo PCX cria loco nova (lote_linha_4000 = null).
 - **Efeito a observar:** `intervalo4000_b/c` continuam marcadas por `ocupar_agente(9999)` do `loco_pcx_starts` (sem recurso apreendido) até o próximo ciclo.
 
+## ALT-014 — bracell-circulacao-e-alivio-celulose
+- **Data:** 2026-10-13
+- **Status:** aplicada, aguardando compilação e validação
+- **Regras (Guilherme):** linha 4000 só para T39, TES e ADMO. Celulose PCX (Bracell, Suzano, Eldorado) não alivia pela 4000: o trem sai com todos os vagões que chegaram (Bracell: 64) e o alívio não depende das DVs, só de overload > 1.
+- **Bracell:**
+  - `getPatio()` = "pcx"; `get_pos_alivio()` = `_bracell_alivio`; `get_quantidade_vazios()` = vazios reais.
+  - `encoste` chama `atualizarFerroviaEProdutoEmAtendimento`.
+  - Carregados: novo Seize `ocupar_linha5000_6000` (5000 e 6000 juntas) antes do `entrarNoTerminal`; Releases `liberar_faixas_circulacao` (depois do `entrarNoTerminal`) e `liberar_faixas_circulacao1` (depois do `colocar_L1`).
+  - `recuar3` → `liberar_linha5000_6000` → `para_guardar_loco` (`gestorDeLocomotivas.guardar_loco`). Removido o `trainDispose`.
+  - `iniciar_alivio` ligado ao `irAteTerminal`. Removido o Seize `linha5K` do alívio (ele pegava 5000 OU 6000; a loco agora ocupa no GestorDeAlivios).
+  - `recuar4..7` zeram `loteVazios_L1..L4`.
+  - `para_circVzs`: `eh_alivio = true`, `faixa_atual = intervalo4000_c`, `proxima_faixa = intervalo4000_b`, devolve a Bracell para `terminais_celulose` → `gestorDeCirculacao.tentar_usar_faixa`.
+  - Trem de teste: locos e vagões com ferrovia "rumo" (o `guardar_loco` precisa da ferrovia da loco).
+- **GestorDeCirculacao:**
+  - Chegada da Bracell: `val_via2 → via3_intermar → via3_a → via3_b → via3_c → silosMuro_a → marginal_c → intervalo4000_a → b → c → bracell.encoste`.
+    Novos: ◇ `definir_sentido_val_via2`, `ir_val_via2`, `para_via3_intermar`, ◇ `e_bracell`, `para_intervalo4000_a`. Ajustados: `para_via3_ate_santa`, `para_silosMuro_a`, `e_tgrao`, `para_marginal_c`, `continuar3/4/5`.
+  - Corrigido: `ir_intervalo_intervalo4000_b/_c` apontavam para a `pst_marginal_c`.
+  - Saída do alívio de celulose, de ré: ◇ `definir_sentido_intervalo4000_c/_b`, `recuar_intervalo4000_c/_b`, `alivio_para_intervalo4000_b/_a`, `liberar_linha5000_6000` (função nova `get_recursos_linha_5000_6000`). Daí segue o circuito de saída da ALT-013 até as DVs.
+- **GestorDeAlivios:** lógica separada `analisar_celulose` / `fazer_procedimento_de_alivio_celulose` / `get_wait_locos_ferrovia`, chamada no evento `atualizar_analises`. Variáveis `terminais_celulose` ({bracell}) e `terminal_alivio_celulose`. Fluxo: `loco_alivio_celulose` → `ocupar_linha5000_6000` → `trainEnter_celulose` (`circ_pos_inicio_L5K`) → `ir_alivio_celulose` → `para_alivio_terminal_celulose` (`takeAlivio`).
+- **Arquivos:** `_alp/Agents/Bracell/{EmbeddedObjects,Connectors}.xml`, `Bracell/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Connectors}.xml`, `GestorDeCirculacao/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeAlivios/{EmbeddedObjects,Connectors,Variables}.xml`, `GestorDeAlivios/Code/{Functions.java,Functions.xml,Events.java}`, docs.
+- **A validar:**
+  - [ ] Compila (F7).
+  - [ ] Trem de teste licencia val_via2 → … → intervalo4000_c e entra na Bracell.
+  - [ ] Faixas da intervalo4000 ficam brancas depois do encoste.
+  - [ ] Loco do carregados vai para o `locomotivasRumo` e a linha 5000/6000 fica livre.
+  - [ ] Com 64 vazios aparece `[AlivioCelulose]`, a loco entra em `circ_pos_inicio_L5K` e chega em `_bracell_alivio` (se der "no straight route", ajustar o sentido).
+  - [ ] Trem de alívio sai de ré pela intervalo4000_c/b/a até a val_via2 e as DVs; `loteVazios_L*` = null.
+- **Pendente:** `pode_receber_novo_lote()` para não despachar outro trem para a Bracell durante o alívio (risco de travar na intervalo4000).

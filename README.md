@@ -24,3 +24,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-011**: console espelhado em `logs/sim.log` (função `configurar_log_em_arquivo` no On startup do Main)
 - **ALT-012** (temporária): trace "bom dia Bruno" ao entrar no Tgrao (`colocarLinhaMar`)
 - **ALT-013**: alívio na linha 4000 — com 82 vagões o trem do PCX vai para as DVs pelo circuito do GestorDeCirculacao (intervalo4000_a → marginal c/b/a → via2 → val_via2)
+- **ALT-014**: Bracell — chegada pela circulação (val_via2 → … → intervalo4000_c), loco volta ao GestorDeLocomotivas, alívio de celulose separado (sem linha 4000 e sem DVs), saída de ré pela intervalo4000 até as DVs
