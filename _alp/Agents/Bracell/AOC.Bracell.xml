@@ -113,8 +113,8 @@
 			<Id>1788186499669</Id>
 			<Name><![CDATA[main]]></Name>
 			<ExcludeFromBuild>true</ExcludeFromBuild>
-			<X>90</X>
-			<Y>-480</Y>
+			<X>-80</X>
+			<Y>40</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>

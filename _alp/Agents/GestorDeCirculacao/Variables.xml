@@ -155,6 +155,35 @@ faixa_via3_c.linhaTMDS = pl_via3_c;]]></Code>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+		<Id>1792080000027</Id>
+		<Name><![CDATA[faixa_via3_d]]></Name>
+		<X>-2240</X>
+		<Y>4250</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[// ALT-015: antiga via3_c (renomeada para via3_d)
+faixa_via3_d           = new Faixa();
+faixa_via3_d.ordem     = 5;
+faixa_via3_d.recurso   = rp_via3_d;
+faixa_via3_d.track     = main().via3_d;
+faixa_via3_d.estado    = Faixa.EstadoFaixa.LIVRE;
+faixa_via3_d.enter     = circular_via3_d;
+faixa_via3_d.linhaTMDS = pl_via3_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
 		<Id>1791660000020</Id>
 		<Name><![CDATA[faixa_silosMuro_a]]></Name>
 		<X>-1880</X>
@@ -215,10 +244,10 @@ faixa_silosMuro_b.linhaTMDS = pl_silosMuro_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791660000022</Id>
 		<Name><![CDATA[faixa_silosMuro_c]]></Name>
-		<X>-1030</X>
+		<X>-1010</X>
 		<Y>4090</Y>
 		<Label>
-			<X>10</X>
+			<X>20</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -469,7 +498,7 @@ faixa_via2_intermar_a.linhaTMDS			= pl_pst_via2_intermar_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791909375678</Id>
 		<Name><![CDATA[faixa_railwayTrack199]]></Name>
-		<X>330</X>
+		<X>320</X>
 		<Y>3620</Y>
 		<Label>
 			<X>15</X>
@@ -612,8 +641,8 @@ faixa_marginal_c.linhaTMDS			= pl_pmc_marginal_c;]]></Code>
 		<X>-1155</X>
 		<Y>3855</Y>
 		<Label>
-			<X>9</X>
-			<Y>1</Y>
+			<X>25</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -665,8 +694,8 @@ faixa_intervalo4000_b.linhaTMDS			= pl_pmc_intervalo4000_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1789392431052</Id>
 		<Name><![CDATA[faixa_intervalo4000_c]]></Name>
-		<X>85</X>
-		<Y>3855</Y>
+		<X>100</X>
+		<Y>3860</Y>
 		<Label>
 			<X>9</X>
 			<Y>1</Y>
@@ -805,7 +834,7 @@ faixa_via1_intermar_a.linhaTMDS	= pl_pst_via_1_intermar_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790963989351</Id>
 		<Name><![CDATA[faixa_linha1000_a]]></Name>
-		<X>-900</X>
+		<X>-920</X>
 		<Y>1180</Y>
 		<Label>
 			<X>10</X>
@@ -833,7 +862,7 @@ faixa_linha1000_a.linhaTMDS			= pl_pmc_linha1000_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790964019767</Id>
 		<Name><![CDATA[faixa_linha1000_b]]></Name>
-		<X>-900</X>
+		<X>-920</X>
 		<Y>1330</Y>
 		<Label>
 			<X>10</X>
@@ -861,7 +890,7 @@ faixa_linha1000_b.linhaTMDS			= pl_pmc_linha1000_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790964020800</Id>
 		<Name><![CDATA[faixa_linha1000_c]]></Name>
-		<X>-900</X>
+		<X>-920</X>
 		<Y>1480</Y>
 		<Label>
 			<X>10</X>
@@ -889,7 +918,7 @@ faixa_linha1000_c.linhaTMDS			= pl_pmc_linha1000_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970452933</Id>
 		<Name><![CDATA[faixa_linha2000_a]]></Name>
-		<X>-650</X>
+		<X>-670</X>
 		<Y>1180</Y>
 		<Label>
 			<X>10</X>
@@ -917,7 +946,7 @@ faixa_linha2000_a.linhaTMDS			= pl_pmc_linha2000_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970705748</Id>
 		<Name><![CDATA[faixa_linha2000_b]]></Name>
-		<X>-650</X>
+		<X>-670</X>
 		<Y>1330</Y>
 		<Label>
 			<X>10</X>
@@ -945,7 +974,7 @@ faixa_linha2000_b.linhaTMDS			= pl_pmc_linha2000_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970717745</Id>
 		<Name><![CDATA[faixa_linha2000_c]]></Name>
-		<X>-650</X>
+		<X>-670</X>
 		<Y>1480</Y>
 		<Label>
 			<X>10</X>
@@ -973,7 +1002,7 @@ faixa_linha2000_c.linhaTMDS			= pl_pmc_linha2000_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970725019</Id>
 		<Name><![CDATA[faixa_linha2000_d]]></Name>
-		<X>-650</X>
+		<X>-670</X>
 		<Y>1630</Y>
 		<Label>
 			<X>10</X>
@@ -1001,7 +1030,7 @@ faixa_linha2000_d.linhaTMDS			= pl_pmc_linha2000_d;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970730306</Id>
 		<Name><![CDATA[faixa_linha2000_e]]></Name>
-		<X>-650</X>
+		<X>-670</X>
 		<Y>1770</Y>
 		<Label>
 			<X>10</X>
@@ -1029,7 +1058,7 @@ faixa_linha2000_e.linhaTMDS			= pl_pmc_linha2000_e;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970744515</Id>
 		<Name><![CDATA[faixa_linha3000_a]]></Name>
-		<X>-400</X>
+		<X>-420</X>
 		<Y>1180</Y>
 		<Label>
 			<X>10</X>
@@ -1057,7 +1086,7 @@ faixa_linha3000_a.linhaTMDS			= pl_pmc_linha3000_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970744517</Id>
 		<Name><![CDATA[faixa_linha3000_b]]></Name>
-		<X>-400</X>
+		<X>-420</X>
 		<Y>1330</Y>
 		<Label>
 			<X>10</X>
@@ -1085,7 +1114,7 @@ faixa_linha3000_b.linhaTMDS			= pl_pmc_linha3000_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970744519</Id>
 		<Name><![CDATA[faixa_linha3000_c]]></Name>
-		<X>-400</X>
+		<X>-420</X>
 		<Y>1480</Y>
 		<Label>
 			<X>10</X>
@@ -1113,7 +1142,7 @@ faixa_linha3000_c.linhaTMDS			= pl_pmc_linha3000_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970744521</Id>
 		<Name><![CDATA[faixa_linha3000_d]]></Name>
-		<X>-400</X>
+		<X>-420</X>
 		<Y>1630</Y>
 		<Label>
 			<X>10</X>
@@ -1141,7 +1170,7 @@ faixa_linha3000_d.linhaTMDS			= pl_pmc_linha3000_d;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790970744523</Id>
 		<Name><![CDATA[faixa_linha3000_e]]></Name>
-		<X>-400</X>
+		<X>-420</X>
 		<Y>1770</Y>
 		<Label>
 			<X>10</X>
@@ -1169,7 +1198,7 @@ faixa_linha3000_e.linhaTMDS			= pl_pmc_linha3000_e;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791313655659</Id>
 		<Name><![CDATA[faixa_linha4000_a]]></Name>
-		<X>-150</X>
+		<X>-170</X>
 		<Y>1180</Y>
 		<Label>
 			<X>10</X>
@@ -1329,7 +1358,8 @@ faixa_linha6000_a.ordem          	= 4;
 faixa_linha6000_a.recurso        	= rp_pmc_linha6000_a;
 faixa_linha6000_a.track          	= main().pmc_linha6000_a;
 faixa_linha6000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-009: sem enter (faixa usada so pelas manobras do Tgrao)
+// ALT-023: enter para a chegada da Suzano (antes sem enter, so manobras do Tgrao)
+faixa_linha6000_a.enter            = circular_linha6000_a;
 faixa_linha6000_a.linhaTMDS			= pl_pmc_linha6000_a;]]></Code>
 			</InitialValue>
 		</Properties>
@@ -1337,7 +1367,7 @@ faixa_linha6000_a.linhaTMDS			= pl_pmc_linha6000_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791313655661</Id>
 		<Name><![CDATA[faixa_linha4000_b]]></Name>
-		<X>-150</X>
+		<X>-170</X>
 		<Y>1330</Y>
 		<Label>
 			<X>10</X>
@@ -1393,7 +1423,7 @@ faixa_linha4000_c.linhaTMDS			= pl_pmc_linha4000_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791888371249</Id>
 		<Name><![CDATA[trace_circulacao]]></Name>
-		<X>50</X>
+		<X>160</X>
 		<Y>350</Y>
 		<Label>
 			<X>10</X>
@@ -1408,7 +1438,7 @@ faixa_linha4000_c.linhaTMDS			= pl_pmc_linha4000_c;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[boolean]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[true]]></Code>
+				<Code><![CDATA[false]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -1702,7 +1732,7 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 			<ElementClass>Faixa</ElementClass>
 			<ValueElementClass>String</ValueElementClass>
 			<CollectionInitializer Class="CodeValue">
-				<Code><![CDATA[{ faixa_intervalo4000_a, faixa_intervalo4000_b, faixa_intervalo4000_c, faixa_via2_c, faixa_via2_d, faixa_via2_f, faixa_via2_e, faixa_via2_b, faixa_via2_a, faixa_via2_intermar_c, faixa_via2_intermar_b, faixa_via2_intermar_a, faixa_railwayTrack199, faixa_val_via2, faixa_via3_intermar, faixa_via3_a, faixa_via3_b, faixa_via1_intermar_a, faixa_via1_intermar_b, faixa_via1_intermar_c, faixa_via1_intermar_d, faixa_entrada_pera, faixa_via3_c, faixa_silosMuro_a, faixa_silosMuro_b, faixa_silosMuro_c, faixa_marginal_c,
+				<Code><![CDATA[{ faixa_intervalo4000_a, faixa_intervalo4000_b, faixa_intervalo4000_c, faixa_via2_c, faixa_via2_d, faixa_via2_f, faixa_via2_e, faixa_via2_b, faixa_via2_a, faixa_via2_intermar_c, faixa_via2_intermar_b, faixa_via2_intermar_a, faixa_railwayTrack199, faixa_val_via2, faixa_via3_intermar, faixa_via3_a, faixa_via3_b, faixa_via1_intermar_a, faixa_via1_intermar_b, faixa_via1_intermar_c, faixa_via1_intermar_d, faixa_entrada_pera, faixa_via3_c, faixa_via3_d, faixa_silosMuro_a, faixa_silosMuro_b, faixa_silosMuro_c, faixa_marginal_c,
   faixa_marginal_a, faixa_marginal_b, faixa_linha1000_a, faixa_linha1000_b, faixa_linha1000_c, faixa_linha2000_a, faixa_linha2000_b, faixa_linha2000_c, faixa_linha2000_d, faixa_linha2000_e, faixa_linha3000_a, faixa_linha3000_b, faixa_linha3000_c, faixa_linha3000_d, faixa_linha3000_e, faixa_linha4000_a, faixa_linha4000_b, faixa_linha4000_c,
   faixa_linha7000_a, faixa_linha7000_b, faixa_linha7000_c, faixa_linha7000_d, faixa_linha6000_a }]]></Code>
 			</CollectionInitializer>

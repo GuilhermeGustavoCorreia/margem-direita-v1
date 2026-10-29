@@ -79,7 +79,7 @@ Se um doc divergir do código, avisar e não alterar o modelo com base só no do
 - Na saída do alívio, o trem volta ao GestorDeCirculacao para sair da Margem Direita.
 - Lotes `lote_*` ficam null após a descarga. `loteVazios_*` ficam null após o alívio.
 - Tgrao: alívio sempre de 40 vagões, nunca menos. Só alivia se o GestorDeDVs tiver mais de 40 vagões de espaço para a ferrovia do Tgrao.
-- Linha 4000: só T39, TES e ADMO. Celulose PCX (Bracell, Suzano, Eldorado) não alivia pela linha 4000:
+- Linha 4000: só T39, TES e ADMO. Celulose do PMC (Bracell, Suzano, Eldorado) não alivia pela linha 4000:
   sai com todos os vagões que chegaram e não depende das DVs.
 - Alívio dispara com `getOverloadVazios() > 1`. Esse comportamento é intencional.
   [a confirmar: regra do overload]

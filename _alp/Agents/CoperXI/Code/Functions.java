@@ -402,7 +402,10 @@ boolean atualiza_precisa_de_rechego()
 boolean precisa_de_rechego = (_getVagosLinhaMoega() <= 27);
 boolean tem_lote_rechego   = (_loteDeCarregados_linhaVerde != null);
 
-if (precisa_de_rechego && tem_lote_rechego) {
+traceln("precisa_de_rechego " + precisa_de_rechego);
+traceln("tem_lote_rechego " + tem_lote_rechego);
+
+if (precisa_de_rechego && tem_lote_rechego && !rechego_em_andamento) {
 	
 	traceln("vamos fazer rechego");
 	locoFips_pst_mnb_coperXI.inject();

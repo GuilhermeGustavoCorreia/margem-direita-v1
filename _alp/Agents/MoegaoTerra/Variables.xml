@@ -3,6 +3,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029287438</Id>
 		<Name><![CDATA[lote_rechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>390</X>
 		<Y>60</Y>
 		<Label>
@@ -25,6 +26,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029299700</Id>
 		<Name><![CDATA[lote_moega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>840</X>
 		<Y>60</Y>
 		<Label>
@@ -47,6 +49,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029307338</Id>
 		<Name><![CDATA[lote_vazios_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1370</X>
 		<Y>70</Y>
 		<Label>
@@ -66,6 +69,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029321811</Id>
 		<Name><![CDATA[lote_vazios_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1480</X>
 		<Y>70</Y>
 		<Label>
@@ -85,6 +89,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029325514</Id>
 		<Name><![CDATA[lote_vazios_terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1580</X>
 		<Y>70</Y>
 		<Label>
@@ -104,6 +109,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029341570</Id>
 		<Name><![CDATA[lote_alivioVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1950</X>
 		<Y>60</Y>
 		<Label>
@@ -123,6 +129,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029466589</Id>
 		<Name><![CDATA[executando_rechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>390</X>
 		<Y>80</Y>
 		<Label>
@@ -142,6 +149,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029478281</Id>
 		<Name><![CDATA[executando_descarga]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>840</X>
 		<Y>80</Y>
 		<Label>
@@ -161,6 +169,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029493390</Id>
 		<Name><![CDATA[executando_alivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1370</X>
 		<Y>90</Y>
 		<Label>
@@ -180,6 +189,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786029509192</Id>
 		<Name><![CDATA[executando_alivioVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1950</X>
 		<Y>80</Y>
 		<Label>
@@ -199,6 +209,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786046777017</Id>
 		<Name><![CDATA[tamanho_loteOriginal]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>410</X>
 		<Y>600</Y>
 		<Label>
@@ -216,31 +227,9 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1786464211632</Id>
-		<Name><![CDATA[entrada_alivio]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>320</X>
-		<Y>760</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[PositionOnTrack]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[main().entradaAlivio_moegaoTerra]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
 		<Id>1786628920910</Id>
 		<Name><![CDATA[lotePronto_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2000</X>
 		<Y>1030</Y>
 		<Label>
@@ -260,6 +249,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786628975364</Id>
 		<Name><![CDATA[lotePronto_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2280</X>
 		<Y>1030</Y>
 		<Label>
@@ -279,6 +269,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786628977938</Id>
 		<Name><![CDATA[lotePronto_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2145</X>
 		<Y>1030</Y>
 		<Label>
@@ -298,6 +289,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786634854340</Id>
 		<Name><![CDATA[_vaiAliviar_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>810</Y>
 		<Label>
@@ -320,6 +312,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786635943252</Id>
 		<Name><![CDATA[_vaiAliviar_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>1430</Y>
 		<Label>
@@ -342,6 +335,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1786636364194</Id>
 		<Name><![CDATA[_vaiAliviar_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1410</X>
 		<Y>2040</Y>
 		<Label>
@@ -362,48 +356,10 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1790777524072</Id>
-		<Name><![CDATA[ferrovia_em_atendimento]]></Name>
-		<X>360</X>
-		<Y>-480</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[String]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1790777524074</Id>
-		<Name><![CDATA[segmento_em_atendimento]]></Name>
-		<X>360</X>
-		<Y>-460</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[String]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
 		<Id>1791223029309</Id>
 		<Name><![CDATA[quantidade_alivio]]></Name>
-		<X>220</X>
-		<Y>-180</Y>
+		<X>-160</X>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -421,9 +377,48 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1793121180087</Id>
+		<Name><![CDATA[ferrovia_em_atendimento]]></Name>
+		<X>-315</X>
+		<Y>630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[String]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1793121180089</Id>
+		<Name><![CDATA[segmento_em_atendimento]]></Name>
+		<X>-315</X>
+		<Y>650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[String]]></Type>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1786042307907</Id>
 		<Name><![CDATA[_CAPACIDADE_LOTE_MOEGA]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>860</X>
 		<Y>450</Y>
 		<Label>
@@ -452,6 +447,7 @@
 	<Variable Class="Parameter">
 		<Id>1786043155115</Id>
 		<Name><![CDATA[CAPACIDADE_ALIVIO_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1390</X>
 		<Y>510</Y>
 		<Label>
@@ -480,6 +476,7 @@
 	<Variable Class="Parameter">
 		<Id>1786115734278</Id>
 		<Name><![CDATA[CAPACIDADE_ALIVIO_TERRA]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1390</X>
 		<Y>1755</Y>
 		<Label>
@@ -508,6 +505,7 @@
 	<Variable Class="Parameter">
 		<Id>1786043953548</Id>
 		<Name><![CDATA[CAPACIDADE_ALIVIO_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1390</X>
 		<Y>1140</Y>
 		<Label>
@@ -536,6 +534,7 @@
 	<Variable Class="Parameter">
 		<Id>1786122257600</Id>
 		<Name><![CDATA[RECOMENDACAO_ALIVIO_VAZIOS]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1950</X>
 		<Y>105</Y>
 		<Label>
@@ -562,10 +561,10 @@
 		</Properties>
 	</Variable>
 	<Variable Class="CollectionVariable">
-		<Id>1790638014111</Id>
+		<Id>1793120927471</Id>
 		<Name><![CDATA[primeiro_alivio_faixas]]></Name>
-		<X>70</X>
-		<Y>-260</Y>
+		<X>-160</X>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

@@ -113,7 +113,7 @@ int descarregarVagoes_LoteCompleto()
 {/*ALCODESTART::1781892219143*/
 for(int i = 0; i < this.size(); i++){
     if(this.getCar(i).getClass() == Vagao.class && ((Vagao)getCar(i)).carregado){
-          ((Vagao)getCar(i)).descarregarGrao();
+          ((Vagao)getCar(i)).descarregar();
     }
 }
 /*ALCODEEND*/}
@@ -169,7 +169,7 @@ for (int k = 0; k < n && descarregados < qtd; k++) {
     Agent carro = getCar(i);
 
     if (carro instanceof Vagao && ((Vagao) carro).carregado) {
-        ((Vagao) carro).descarregarGrao();
+        ((Vagao) carro).descarregar();
         descarregados++;
     }
 }
@@ -190,32 +190,40 @@ int fracionar(int qtd,boolean ateFimOuLoco,boolean locoNaCabeca,boolean doInicio
 int n = this.size();
 int inicio = 0;
 
+traceln(String.format("[%.1f][Trem][corte] trem=%d n=%d qtd=%d doInicio=%b locoNaCabeca=%b ateFimOuLoco=%b",
+	time(), getId(), n, qtd, doInicio, locoNaCabeca, ateFimOuLoco));
+
 // Locos na cabeça (início ou fim, conforme a direção)
 if (locoNaCabeca) {
-    while (inicio < n && getCar(doInicio ? inicio : n - 1 - inicio) instanceof Locomotiva)
-        inicio++;
-
+	while (inicio < n && getCar(doInicio ? inicio : n - 1 - inicio) instanceof Locomotiva)
+		inicio++;
+	traceln(String.format("[%.1f][Trem][corte] trem=%d locos na ponta=%d", time(), getId(), inicio));
 }
 
 // Limite: fim do trem ou próxima locomotiva
 int limite = n;
 if (ateFimOuLoco) {
-    for (int k = inicio; k < n; k++) {
-        if (getCar(doInicio ? k : n - 1 - k) instanceof Locomotiva) {
-            limite = k;
-
-            break;
-        }
-    }
-
+	for (int k = inicio; k < n; k++) {
+		int idx = doInicio ? k : n - 1 - k;
+		if (getCar(idx) instanceof Locomotiva) {
+			limite = k;
+			traceln(String.format("[%.1f][Trem][corte] trem=%d proxima loco em k=%d (indice real=%d)", time(), getId(), k, idx));
+			break;
+		}
+	}
+	if (limite == n)
+		traceln(String.format("[%.1f][Trem][corte] trem=%d sem outra loco, limite=n=%d", time(), getId(), n));
 }
 
 int resultado = Math.min(inicio + qtd, limite);
+if (inicio + qtd > limite)
+	traceln(String.format("[%.1f][Trem][corte] trem=%d qtd cortada pelo limite: pedido=%d limite=%d", time(), getId(), inicio + qtd, limite));
 
 // TrainDecouple conta sempre a partir do início do trem
 if (!doInicio)
-    resultado = n - resultado;
+	resultado = n - resultado;
 
+traceln(String.format("[%.1f][Trem][corte] trem=%d resultado=%d", time(), getId(), resultado));
 return resultado;
 /*ALCODEEND*/}
 
@@ -249,5 +257,48 @@ if (ITerminalMoega_destino != null){
 	return ITerminalMoega_destino.getName();
 }
 return "⚠️​ este trem não tem destino em moega";
+/*ALCODEEND*/}
+
+boolean tem_locomotiva_mnb()
+{/*ALCODESTART::1792428470083*/
+for (int i = 0; i < size(); i++) {
+	
+	Agent car = getCar(i);
+	
+	if (car instanceof Locomotiva
+		&& "fips".equalsIgnoreCase(((Locomotiva) car).ferrovia)) {
+		return true;
+	}
+}
+return false;
+/*ALCODEEND*/}
+
+double descarregar_vagoes(boolean eh_frente,int qt_vagoes)
+{/*ALCODESTART::1792526183276*/
+int n 			  = size();
+int descarregados = 0;
+
+for (int i = 0; i < n && descarregados < qt_vagoes; i++) {
+
+    int idx = eh_frente ? i : (n - 1 - i);
+    Agent carro = getCar(idx);
+
+    if (carro instanceof Vagao) {
+        
+        Vagao vagao = (Vagao) carro;
+
+        if (vagao.carregado) {
+            
+            vagao.descarregar();
+            descarregados++;
+            
+        }
+    }
+}
+
+if (descarregados < qt_vagoes) {
+    traceln(String.format("[%.1f][Trem][descarregar_vagoes] trem=%d pediu %d, descarregou %d",
+        time(), getId(), qt_vagoes, descarregados));
+}
 /*ALCODEEND*/}
 

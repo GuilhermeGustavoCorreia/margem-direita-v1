@@ -3,8 +3,8 @@
 	<Connector>
 		<Id>1790969716693</Id>
 		<Name><![CDATA[connector24]]></Name>
-		<X>350</X>
-		<Y>400</Y>
+		<X>2230</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -46,8 +46,8 @@
 	<Connector>
 		<Id>1790972417062</Id>
 		<Name><![CDATA[connector18]]></Name>
-		<X>140</X>
-		<Y>400</Y>
+		<X>2020</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -89,8 +89,8 @@
 	<Connector>
 		<Id>1790972417064</Id>
 		<Name><![CDATA[connector19]]></Name>
-		<X>390</X>
-		<Y>400</Y>
+		<X>2270</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -132,8 +132,8 @@
 	<Connector>
 		<Id>1791230745937</Id>
 		<Name><![CDATA[connector27]]></Name>
-		<X>240</X>
-		<Y>800</Y>
+		<X>2120</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -175,8 +175,8 @@
 	<Connector>
 		<Id>1791231833131</Id>
 		<Name><![CDATA[connector28]]></Name>
-		<X>340</X>
-		<Y>800</Y>
+		<X>2220</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -218,8 +218,8 @@
 	<Connector>
 		<Id>1791317605601</Id>
 		<Name><![CDATA[connector25]]></Name>
-		<X>490</X>
-		<Y>400</Y>
+		<X>2370</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -261,8 +261,8 @@
 	<Connector>
 		<Id>1791411209423</Id>
 		<Name><![CDATA[connector22]]></Name>
-		<X>140</X>
-		<Y>600</Y>
+		<X>2020</X>
+		<Y>800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -304,8 +304,8 @@
 	<Connector>
 		<Id>1791411227639</Id>
 		<Name><![CDATA[connector23]]></Name>
-		<X>280</X>
-		<Y>600</Y>
+		<X>2160</X>
+		<Y>800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -347,8 +347,8 @@
 	<Connector>
 		<Id>1791411230776</Id>
 		<Name><![CDATA[connector26]]></Name>
-		<X>490</X>
-		<Y>600</Y>
+		<X>2370</X>
+		<Y>800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -390,8 +390,8 @@
 	<Connector>
 		<Id>1791480992368</Id>
 		<Name><![CDATA[connector31]]></Name>
-		<X>950</X>
-		<Y>650</Y>
+		<X>210</X>
+		<Y>850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -433,8 +433,8 @@
 	<Connector>
 		<Id>1791480992372</Id>
 		<Name><![CDATA[connector34]]></Name>
-		<X>1200</X>
-		<Y>650</Y>
+		<X>460</X>
+		<Y>850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -476,8 +476,8 @@
 	<Connector>
 		<Id>1791481199162</Id>
 		<Name><![CDATA[connector33]]></Name>
-		<X>1060</X>
-		<Y>850</Y>
+		<X>320</X>
+		<Y>1050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -519,8 +519,8 @@
 	<Connector>
 		<Id>1791545212879</Id>
 		<Name><![CDATA[connector6]]></Name>
-		<X>1370</X>
-		<Y>850</Y>
+		<X>630</X>
+		<Y>1050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -562,8 +562,8 @@
 	<Connector>
 		<Id>1791577165021</Id>
 		<Name><![CDATA[connector20]]></Name>
-		<X>1260</X>
-		<Y>850</Y>
+		<X>520</X>
+		<Y>1050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -605,8 +605,8 @@
 	<Connector>
 		<Id>1791577165023</Id>
 		<Name><![CDATA[connector36]]></Name>
-		<X>1180</X>
-		<Y>850</Y>
+		<X>440</X>
+		<Y>1050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -648,8 +648,8 @@
 	<Connector>
 		<Id>1791700000026</Id>
 		<Name><![CDATA[connector37]]></Name>
-		<X>900</X>
-		<Y>400</Y>
+		<X>160</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -691,8 +691,8 @@
 	<Connector>
 		<Id>1791700000027</Id>
 		<Name><![CDATA[connector38]]></Name>
-		<X>910</X>
-		<Y>470</Y>
+		<X>170</X>
+		<Y>670</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -742,8 +742,8 @@
 	<Connector>
 		<Id>1791700000028</Id>
 		<Name><![CDATA[connector39]]></Name>
-		<X>1050</X>
-		<Y>400</Y>
+		<X>310</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -785,8 +785,8 @@
 	<Connector>
 		<Id>1791700000051</Id>
 		<Name><![CDATA[connector40]]></Name>
-		<X>1150</X>
-		<Y>400</Y>
+		<X>410</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -828,8 +828,8 @@
 	<Connector>
 		<Id>1791700000052</Id>
 		<Name><![CDATA[connector41]]></Name>
-		<X>1210</X>
-		<Y>400</Y>
+		<X>470</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -871,8 +871,8 @@
 	<Connector>
 		<Id>1791700000053</Id>
 		<Name><![CDATA[connector42]]></Name>
-		<X>1290</X>
-		<Y>400</Y>
+		<X>550</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -914,8 +914,8 @@
 	<Connector>
 		<Id>1791700000054</Id>
 		<Name><![CDATA[connector43]]></Name>
-		<X>1370</X>
-		<Y>400</Y>
+		<X>630</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -957,8 +957,8 @@
 	<Connector>
 		<Id>1791950000007</Id>
 		<Name><![CDATA[connector_alt013_a]]></Name>
-		<X>380</X>
-		<Y>800</Y>
+		<X>2260</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1000,8 +1000,8 @@
 	<Connector>
 		<Id>1791950000008</Id>
 		<Name><![CDATA[connector_alt013_b]]></Name>
-		<X>500</X>
-		<Y>810</Y>
+		<X>2380</X>
+		<Y>1010</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1047,8 +1047,8 @@
 	<Connector>
 		<Id>1791950000009</Id>
 		<Name><![CDATA[connector_alt013_c]]></Name>
-		<X>630</X>
-		<Y>870</Y>
+		<X>2510</X>
+		<Y>1070</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1090,8 +1090,8 @@
 	<Connector>
 		<Id>1791950000010</Id>
 		<Name><![CDATA[connector_alt013_d]]></Name>
-		<X>510</X>
-		<Y>800</Y>
+		<X>2390</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1137,8 +1137,8 @@
 	<Connector>
 		<Id>1791950000011</Id>
 		<Name><![CDATA[connector_alt013_e]]></Name>
-		<X>630</X>
-		<Y>800</Y>
+		<X>2510</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1178,96 +1178,10 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1792014000310</Id>
-		<Name><![CDATA[connector_alt014_1]]></Name>
-		<X>930</X>
-		<Y>1100</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>loco_alivio_celulose</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Enter</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>ocupar_linha5000_6000</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1792014000311</Id>
-		<Name><![CDATA[connector_alt014_2]]></Name>
-		<X>1040</X>
-		<Y>1100</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>ocupar_linha5000_6000</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>trainEnter_celulose</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainEnter</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1792014000312</Id>
 		<Name><![CDATA[connector_alt014_3]]></Name>
-		<X>1150</X>
-		<Y>1100</Y>
+		<X>1450</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1278,7 +1192,7 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>trainEnter_celulose</ItemName>
+			<ItemName>trainEnter_pmc</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
@@ -1288,7 +1202,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>ir_alivio_celulose</ItemName>
+			<ItemName>ir_alivio_pmc</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
@@ -1301,7 +1215,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1309,8 +1223,8 @@
 	<Connector>
 		<Id>1792014000313</Id>
 		<Name><![CDATA[connector_alt014_4]]></Name>
-		<X>1260</X>
-		<Y>1100</Y>
+		<X>1560</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1321,7 +1235,7 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>ir_alivio_celulose</ItemName>
+			<ItemName>ir_alivio_pmc</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
@@ -1331,7 +1245,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
-			<ItemName>para_alivio_terminal_celulose</ItemName>
+			<ItemName>para_alivio_terminal_pmc</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -1344,8 +1258,192 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>70</X>
 				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792795000004</Id>
+		<Name><![CDATA[connector_a2_5]]></Name>
+		<X>1350</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>bloquear_faixas_pmc</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>trainEnter_pmc</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainEnter</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792782404668</Id>
+		<Name><![CDATA[connector]]></Name>
+		<X>1050</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>loco_alivio_pmc</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>pausar</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+			<ItemName>port</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>80</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792782404670</Id>
+		<Name><![CDATA[connector1]]></Name>
+		<X>1170</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>pausar</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+			<ItemName>port1</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>bloquear_faixas_pmc</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>69</X>
+				<Y>46</Y>
+			</Point>
+			<Point>
+				<X>140</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792782582569</Id>
+		<Name><![CDATA[connector2]]></Name>
+		<X>1050</X>
+		<Y>680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>loco_manobra_alivio_pmc</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainSource</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>pausar</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>Pausar</ClassName>
+			<ItemName>port</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>-80</Y>
+			</Point>
+			<Point>
+				<X>80</X>
+				<Y>-80</Y>
 			</Point>
 		</Points>
 	</Connector>

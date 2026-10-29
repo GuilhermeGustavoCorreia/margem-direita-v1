@@ -160,9 +160,9 @@ switch (patio) {
 
     case "pst":
         if (tipo.equals("manobra-coperXI-rechego")) {
-            //locoFips_pst_mnb_coperXI.inject();
             
             traceln("dkfnALIEFNÃPIN");
+            
         } else {
             error("Tipo de manobra desconhecido no PST: [" + tipo + "]");
         }

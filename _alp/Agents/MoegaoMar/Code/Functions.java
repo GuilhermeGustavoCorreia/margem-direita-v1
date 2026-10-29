@@ -3,153 +3,6 @@ Main main()
 return (Main) getEngine().getRoot();
 /*ALCODEEND*/}
 
-double _estaDisponivelMoega()
-{/*ALCODESTART::1785778694182*/
-boolean criteriosParaDescarga = (!movendoParaMoega && !fazendoAlivio && !fazendoRechego);
-
-
-if(lote_descarga == null && criteriosParaDescarga){// && !fazendoRechego){
-	aguardaDescarga.unblock();
-}else{
-	aguardaDescarga.block();
-}
-/*ALCODEEND*/}
-
-boolean _terminouManobra_L3(Trem trem)
-{/*ALCODESTART::1785853302370*/
-int vgsDesacoplar = (main().getTamanhoDoTrem((Trem) trem) - _CAPACIDADE_ALIVIO_L3);
-
-if (vgsDesacoplar > 0){
-	return false;
-}else{
-	return true;
-}
-
-
-
-
-/*ALCODEEND*/}
-
-boolean _terminouManobra_L4(Trem trem)
-{/*ALCODESTART::1785857693405*/
-int vgsDesacoplar = (main().getTamanhoDoTrem((Trem) trem) - _CAPACIDADE_ALIVIO_L4);
-
-if (vgsDesacoplar > 0){
-	return false;
-}else{
-	return true;
-}
-
-
-
-
-/*ALCODEEND*/}
-
-boolean _terminouManobra_meio(Trem trem)
-{/*ALCODESTART::1785858265243*/
-int vgsDesacoplar = (main().getTamanhoDoTrem((Trem) trem) - _CAPACIDADE_ALIVIO_MEIO);
-
-if (vgsDesacoplar > 0){
-	return false;
-}else{
-	return true;
-}
-
-
-
-
-/*ALCODEEND*/}
-
-double _atualizaLiberarAlivio()
-{/*ALCODESTART::1785860546999*/
-boolean criteriosParaAliviar = (!fazendoAlivioVazios && !movendoParaMoega);
-
-int tamanhoLote_L3 	 = main().getTamanhoDoTrem(_loteVazios_L3);
-int tamanhoLote_L4 	 = main().getTamanhoDoTrem(_loteVazios_L4);
-int tamanhoLote_MEIO = main().getTamanhoDoTrem(_loteVazios_meio);
-
-int capacidadeVazios = (_CAPACIDADE_ALIVIO_L3 + _CAPACIDADE_ALIVIO_L4 + _CAPACIDADE_ALIVIO_MEIO);
-
-int totaisDeVazios   = (tamanhoLote_L3 + tamanhoLote_L4 + tamanhoLote_MEIO);
-
-if (totaisDeVazios >= capacidadeVazios){
-
-	liberarAlivio.block();
-
-}else{
-
-	if (criteriosParaAliviar == true){
-
-		liberarAlivio.unblock();
-		
-	}else{
-
-		liberarAlivio.block();
-	}
-
-}
-/*ALCODEEND*/}
-
-int _selecionarTamanhoDoLote(Trem trem)
-{/*ALCODESTART::1785868637521*/
-Agent primeiroVagao = trem.getFirst();
-
-int tamanhoVazios   	= (main().getTamanhoDoTrem(_loteVazios_L3) + main().getTamanhoDoTrem(_loteVazios_L4) + main().getTamanhoDoTrem(_loteVazios_meio));
-int capacidadeVazios 	= (_CAPACIDADE_ALIVIO_L3 + _CAPACIDADE_ALIVIO_L4 + _CAPACIDADE_ALIVIO_MEIO);
-int tamanhoDesejado 	= (primeiroVagao instanceof Locomotiva) ? 7 : 6;
-int tamanhoTrem 		= trem.size();
-
-int vaziosNecessarios 	= (capacidadeVazios - tamanhoVazios);
-
-if (vaziosNecessarios < Math.min(tamanhoDesejado, tamanhoTrem)){
-
-	return vaziosNecessarios;
-
-}else{
-
-	return  Math.min(tamanhoDesejado, tamanhoTrem);
-
-}
-/*ALCODEEND*/}
-
-double _espacoRechegoDisponivel()
-{/*ALCODESTART::1785883803706*/
-boolean criteriosParaRechego = (!movendoParaMoega && !fazendoAlivio && !fazendoAlivioVazios);
-
-
-if(_tamanhoLotePera > 0){
-
-	if (_tamanhoLotePera <= valorNecessarioParaRechego && criteriosParaRechego){
-	
-		fazendoRechego = true;
-		aguardaRechego.unblock();
-	}
-	else{
-	
-		fazendoRechego = false;
-		aguardaRechego.block();
-	}
-
-}
-
-
-
-/*ALCODEEND*/}
-
-boolean _precisaDeRechego()
-{/*ALCODESTART::1785883803708*/
-if (_tamanhoLotePera <= valorNecessarioParaRechego ){
-
-	return true;
-	
-}
-else{
-
-	return false;
-}
-
-/*ALCODEEND*/}
-
 int _contarVagoes(Trem trem)
 {/*ALCODESTART::1785893121641*/
 int contador = 0;
@@ -166,188 +19,284 @@ for (int i = 0; i < trem.size(); i++) {
 return contador;
 /*ALCODEEND*/}
 
-double necessitaDeAlivio()
-{/*ALCODESTART::1785893828681*/
-boolean criteriosAlivioVazios = (!fazendoAlivio && !fazendoAlivioVazios);
-
-if (criteriosAlivioVazios){
-	
-	if (formouLoteMinimoDeAlivio() || _acabouOsVagoesCarregados() ){
-		
-		fazendoAlivioVazios = true;
-		locoMnb.inject();
-		
-	}
-	
-}
+Main main1()
+{/*ALCODESTART::1793298470490*/
+return (Main) getEngine().getRoot();
 /*ALCODEEND*/}
 
-boolean formouLoteMinimoDeAlivio()
-{/*ALCODESTART::1785937194055*/
-int vazios_Linha03 	 = main().getTamanhoDoTrem(_loteVazios_L3);
-int vazios_Linha04 	 = main().getTamanhoDoTrem(_loteVazios_L4);
-int vazios_LinhaMeio = main().getTamanhoDoTrem(_loteVazios_meio);
-
-int totaisDeVazios = (vazios_Linha03 + vazios_Linha04 + vazios_LinhaMeio);
-
-if (totaisDeVazios >= _LOTE_MINIMO_ALIVIO && fazendoAlivioVazios == false) {
-	
-	return true;
-}
-else {
-	
-	return false;
-}
+boolean podeReceberNovoLote()
+{/*ALCODESTART::1793298470492*/
+// ALT-003: CoperXXI ainda não usa esse critério; só não recebe durante alívio
+return !fazendoAlivio;
 /*ALCODEEND*/}
 
-boolean precisaAlivio(Trem trem)
-{/*ALCODESTART::1785938897566*/
-int totalVazios = (main().getTamanhoDoTrem(_loteVazios_L3) + main().getTamanhoDoTrem(_loteVazios_L4) + main().getTamanhoDoTrem(_loteVazios_meio));
-
-int vazios_linhaMar_MEIO = main().getTamanhoDoTrem(_loteVazios_meio);
-int vazios_linhaMar_L4 	 = main().getTamanhoDoTrem(_loteVazios_L4);
-int vazios_linhaMar_L3 	 = main().getTamanhoDoTrem(_loteVazios_L3);
-
-boolean lote_completo_L4   = ( vazios_linhaMar_MEIO >= _CAPACIDADE_ALIVIO_L4   );
-boolean lote_completo_L3   = ( vazios_linhaMar_L4   >= _CAPACIDADE_ALIVIO_L4   );
-boolean lote_completo_MEIO = ( vazios_linhaMar_L3   >= _CAPACIDADE_ALIVIO_MEIO );
-
-//Começando um alivio novo
-if (!fazendoAlivioVazios){
-	
-	//chegou no lote minimo
-	if (totalVazios >= _LOTE_MINIMO_ALIVIO){
-	
-		return true;
-	
-	//chegou no ultimo lote	
-	}else if(_éUltimoLote(trem)){
-	
-		return true;
-	
-	}else{
-		
-		return false;
-	
-	}
-	
-}else{
-	//aqui é para o caso de CONTINUAR O ALIVIO QUE ESTA ACONTECENDO fazendoAlivioVazios = TRUE
-	//SE NAO ELE PARA O ALIVIO NO MEIO
-	if (lote_completo_L4 || lote_completo_L3 || lote_completo_MEIO ){
-	
-		return true;
-		
-	}else if(_éUltimoLote(trem) && totalVazios > 0){
-	
-		return true;
-	
-	}else{
-		
-		return false;
-	
-	}
-}
-
-
-/*ALCODEEND*/}
-
-boolean verificarVgsLinha03()
-{/*ALCODESTART::1785939159984*/
-int vazios_linhaMar_L3 = main().getTamanhoDoTrem(_loteVazios_L3);
-int vazios_linhaMar_L4 = main().getTamanhoDoTrem(_loteVazios_L4);
-
-if (
-	(vazios_linhaMar_L3 > vazios_linhaMar_L4) || 
-	(vazios_linhaMar_L3 == _CAPACIDADE_ALIVIO_L3)
-){
-
-	return true;
-	
-}else{
-
-	return false;
-	
-}
-
-/*ALCODEEND*/}
-
-boolean verificarVgsLinha04()
-{/*ALCODESTART::1785945695510*/
-int vazios_linhaMar_MEIO = main().getTamanhoDoTrem(_loteVazios_meio);
-int vazios_linhaMar_L4 	 = main().getTamanhoDoTrem(_loteVazios_L4);
-
-if (
-	(vazios_linhaMar_MEIO < vazios_linhaMar_L4) || 
-	(vazios_linhaMar_L4 == _CAPACIDADE_ALIVIO_L4)
-){
-
-	return true;
-	
-}else{
-
-	return false;
-	
-}
-
-/*ALCODEEND*/}
-
-boolean _éUltimoLote(Trem trem)
-{/*ALCODESTART::1785972407335*/
-Boolean temVagoesNaMoega 		=  main().getTamanhoDoTrem(lote_descarga) > 0 ? true : false;
-Boolean temCarregadosNaPera		= main().getTamanhoDoTrem(lote_pera) > 0 ? true : false;
-
-if (temVagoesNaMoega || temCarregadosNaPera){
-
- 	return false;
- 	
-}else{
-
-	return true;
-	
-}
-/*ALCODEEND*/}
-
-boolean _acabouOsVagoesCarregados()
-{/*ALCODESTART::1785973265350*/
-int vazios_Linha03 	 = main().getTamanhoDoTrem(_loteVazios_L3);
-int vazios_Linha04 	 = main().getTamanhoDoTrem(_loteVazios_L4);
-int vazios_LinhaMeio = main().getTamanhoDoTrem(_loteVazios_meio);
-
-int totaisDeVazios   = (vazios_Linha03 + vazios_Linha04 + vazios_LinhaMeio);
-
-int carregadosMoega  = main().getTamanhoDoTrem(lote_descarga);
-int carregadosPera   = _tamanhoLotePera;
-
-int totaisCarregados = (carregadosMoega + carregadosPera);
-
-if (totaisCarregados == 0 && totaisDeVazios > 0){
-
-	return true;
-}
-else{
-
-	return false;
-}
+float getOverloadVazios()
+{/*ALCODESTART::1793298470494*/
+// ALT-066: alívio do CoperXII quando lote_a e lote_b estão cheios e o resto do lote já descarregou na moega
+// ALT-071: pede alívio no fim de todo lote (aguardando_alivio)
+if (aguardando_alivio) return 2;
+int capacidade = CAPACIDADE_LOTE_A + CAPACIDADE_LOTE_B;
+if (capacidade <= 0) return 0;
+return Math.min(1f, (float) _getVagosVazios() / capacidade);
 /*ALCODEEND*/}
 
 String getPatio()
-{/*ALCODESTART::1787663122659*/
-return "PST";
+{/*ALCODESTART::1793298470496*/
+return "pst";
 /*ALCODEEND*/}
 
-List<Faixa>  getPrimeiroAlivioFaixas()
-{/*ALCODESTART::1790637996004*/
-return primeiro_alivio_faixas;
+String getSegmento()
+{/*ALCODESTART::1793298470498*/
+return produto_em_atendimento;
+/*ALCODEEND*/}
+
+String getFerrovia()
+{/*ALCODESTART::1793298470500*/
+return ferrovia_em_atendimento;
 /*ALCODEEND*/}
 
 double takeAlivio(Trem trem)
-{/*ALCODESTART::1790791109466*/
+{/*ALCODESTART::1793298470502*/
+// ALT-069
+fazendoAlivio = true;
 iniciar_alivio.take(trem);
 /*ALCODEEND*/}
 
+int getNumeroLocomotivasAlivio()
+{/*ALCODESTART::1793298470504*/
+return 2;
+/*ALCODEEND*/}
+
+PositionOnTrack get_pos_alivio()
+{/*ALCODESTART::1793298470506*/
+// ALT-079: loco do alívio para no lote_b do MoegaoMar (pstLinha04)
+return main()._moegaoMar_lote_b;
+/*ALCODEEND*/}
+
+ArrayList<Faixa> get_faixas_primeiro_alivio()
+{/*ALCODESTART::1793298470508*/
+// ALT-079: linhas físicas entre a faixa de criação (via1_intermar_d) e a pstLinha04 (lote_b do MoegaoMar).
+// Não são faixas da circulação: só entram na rota da loco (TrainMoveTo por lista de linhas).
+// Sem recurso (não licencia nada) e com desenho invisível (o gestor pinta a faixa ao ocupar).
+ArrayList<Faixa> faixas = new ArrayList<Faixa>();
+for (RailwayTrack t : new RailwayTrack[] { main().linhaPaqueta_a, main().psnSaidaCopexXXI_a, main().pstSaidaMoegao }) { // ALT-079
+	Faixa f     = new Faixa();
+	f.track     = t;
+	f.recurso   = null;
+	f.estado    = Faixa.EstadoFaixa.LIVRE;
+	f.linhaTMDS = new ShapePolyLine();
+	faixas.add(f);
+}
+return faixas;
+/*ALCODEEND*/}
+
+ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios()
+{/*ALCODESTART::1793298470510*/
+// ALT-003: provisório — sem faixas até integrar com o GestorDeAlivios
+return new ArrayList<Faixa>();
+/*ALCODEEND*/}
+
+double set_quantidade_alivio(int qt_quantidade)
+{/*ALCODESTART::1793298470512*/
+// ALT-003: provisório — alívio do CoperXXI ainda é próprio (leva tudo das linhas a e b)
+/*ALCODEEND*/}
+
 int get_quantidade_vazios()
-{/*ALCODESTART::1791224441707*/
+{/*ALCODESTART::1793298470514*/
+// ALT-066: lote_b + lote_a + lote da moega
+return _getVagosVazios() + ((lote_vazios_moega == null) ? 0 : lote_vazios_moega.getNumeroDeVagoes());
+/*ALCODEEND*/}
+
+int _getVagosVazios()
+{/*ALCODESTART::1793298470516*/
+// ALT-077: vagões parados em lote_b + lote_a (contagem direta; a conta pelo espaço dava -6 com a moega no espaço)
+return ((lote_vazios_b == null) ? 0 : lote_vazios_b.getNumeroDeVagoes())
+     + ((lote_vazios_a == null) ? 0 : lote_vazios_a.getNumeroDeVagoes());
+/*ALCODEEND*/}
+
+String get_tipo_loco_alivio()
+{/*ALCODESTART::1793298470518*/
+// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
+return "ferrovia";
+/*ALCODEEND*/}
+
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1793298470520*/
+return 1;
+/*ALCODEEND*/}
+
+int get_carros_ate_segunda_loco(Trem trem)
+{/*ALCODESTART::1793298470522*/
+// ALT-065: quantos carros vêm antes da 2ª loco (pula as locos da cabeça). 0 = não tem 2ª loco
+int n = trem.size();
+int i = 0;
+while (i < n && trem.getCar(i) instanceof Locomotiva) i++;
+for (; i < n; i++) {
+	if (trem.getCar(i) instanceof Locomotiva) return i;
+}
 return 0;
+/*ALCODEEND*/}
+
+int get_espaco_linha(String linha)
+{/*ALCODESTART::1793298470524*/
+// ALT-065/076: vagões que ainda cabem em lote_b, lote_a ou no lote da moega
+Trem lote; int cap;
+if ("b".equals(linha))          { lote = lote_vazios_b;     cap = CAPACIDADE_LOTE_B; }
+else if ("a".equals(linha))     { lote = lote_vazios_a;     cap = CAPACIDADE_LOTE_A; }
+else                            { lote = lote_vazios_moega; cap = get_capacidade_moega(); }
+int ocup = (lote == null) ? 0 : lote.getNumeroDeVagoes();
+return Math.max(0, cap - ocup);
+/*ALCODEEND*/}
+
+int get_espaco_vazios()
+{/*ALCODESTART::1793298470526*/
+// ALT-076: espaço até fechar o alívio de QTD_ALIVIO (lote_b + lote_a + lote da moega)
+return get_espaco_linha("b") + get_espaco_linha("a") + get_espaco_linha("moega");
+/*ALCODEEND*/}
+
+double definir_grupo(Trem lote)
+{/*ALCODESTART::1793298470528*/
+// ALT-065: linha de destino (b antes de a) e tamanho do grupo que passa pela moega
+// ALT-076: b, depois a, depois o lote da moega
+if (get_espaco_linha("b") > 0)      _grupo_linha = "b";
+else if (get_espaco_linha("a") > 0) _grupo_linha = "a";
+else                                _grupo_linha = "moega";
+
+int espaco     = get_espaco_linha(_grupo_linha);
+int carregados = lote.getNumeroDeVagoesCarregados();
+_grupo_vagoes  = Math.min(QTD_VAGOES_GRUPO, Math.min(espaco, carregados));
+
+int locos = 0;
+while (locos < lote.size() && lote.getCar(locos) instanceof Locomotiva) locos++;
+_grupo_carros = locos + _grupo_vagoes;
+// ALT-073: se o grupo leva todos os carregados, leva o lote inteiro (inclui a loco que empurra na cauda)
+if (_grupo_vagoes >= carregados) _grupo_carros = lote.size();
+
+traceln(String.format("[%.1f][CoperXII][grupo] trem=%d linha=%s vagoes=%d carros=%d (lote tem %d carros, espaco b=%d a=%d)",
+	time(), lote.getId(), _grupo_linha, _grupo_vagoes, _grupo_carros, lote.size(), get_espaco_linha("b"), get_espaco_linha("a")));
+/*ALCODEEND*/}
+
+double registrar_vazios(Trem trem)
+{/*ALCODESTART::1793298470530*/
+// ALT-065: marca a linha do grupo no próprio trem e atualiza o lote de vazios
+// (feito antes de liberar a moega, porque o próximo lote recalcula _grupo_linha)
+trem.tipoDeLote = "coperXII_vazios_" + _grupo_linha;
+if ("b".equals(_grupo_linha)) lote_vazios_b = trem;
+else                          lote_vazios_a = trem;
+
+if (trem.getNumeroDeLocomotivas() > 0)
+	traceln(String.format("[%.1f][CoperXII][vazios] ⚠️ trem=%d ficou com %d loco(s) no meio do lote de vazios",
+		time(), trem.getId(), trem.getNumeroDeLocomotivas()));
+/*ALCODEEND*/}
+
+double guardar_vazios(Trem trem)
+{/*ALCODESTART::1793298470532*/
+// ALT-065: guarda o lote na linha (Hold bloqueado) e solta o resto do lote que espera na moega
+if ("coperXII_vazios_b".equals(trem.tipoDeLote)) {
+	estoque_b.block();
+	entrar_estoque_b.take(trem);
+} else {
+	estoque_a.block();
+	entrar_estoque_a.take(trem);
+}
+
+traceln(String.format("[%.1f][CoperXII][vazios] trem=%d guardado (%s) | lote_b=%d/%d lote_a=%d/%d",
+	time(), trem.getId(), trem.tipoDeLote,
+	CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_B,
+	CAPACIDADE_LOTE_A - get_espaco_linha("a"), CAPACIDADE_LOTE_A));
+
+verificar_alivio(); // ALT-076
+aguarda_grupo.unblock();
+/*ALCODEEND*/}
+
+double liberar_espaco_vazios()
+{/*ALCODESTART::1793298470534*/
+// ALT-065: chamar depois do alívio das linhas de vazios (GestorDeAlivios, a integrar)
+aguarda_espaco_vazios.unblock();
+/*ALCODEEND*/}
+
+double alivio_seguir(Trem trem)
+{/*ALCODESTART::1793298470536*/
+// ALT-069: próximo engate do alívio, na ordem lote_b -> lote_a -> moega (do lado da saída para dentro)
+if (lote_vazios_b != null) {
+	etapa_alivio = "b";
+	entrar_engate_b.take(trem);
+} else if (lote_vazios_a != null) {
+	etapa_alivio = "a";
+	entrar_engate_a.take(trem);
+} else if (lote_vazios_moega != null) {
+	etapa_alivio = "moega";
+	entrar_engate_moega.take(trem);
+} else {
+	etapa_alivio = "";
+	fim_alivio.take(trem);
+}
+/*ALCODEEND*/}
+
+double iniciar_proximo_lote()
+{/*ALCODESTART::1793298470538*/
+// ALT-073: solta o lote_em_descarga (antiga segunda parte, parada no Wait espera_segunda_parte)
+if (lote_em_descarga != null && lote_em_descarga.getNumeroDeVagoesCarregados() > 0 && esta_na_espera(lote_em_descarga)) {
+	traceln(String.format("[%.1f][CoperXII][segunda_parte] trem=%d começa a descarga (%d vgs carregados, locos=%d)",
+		time(), lote_em_descarga.getId(), lote_em_descarga.getNumeroDeVagoesCarregados(), lote_em_descarga.getNumeroDeLocomotivas()));
+	destino_segunda_parte = "descarga";
+	espera_segunda_parte.free(lote_em_descarga);
+}
+/*ALCODEEND*/}
+
+ResourcePool[] recursos_do_lote(Trem trem)
+{/*ALCODESTART::1793298470540*/
+// ALT-073: recursos que o lote segura no fim da descarga: rp_moega e, se pediu, a unidade da loco FIPS PST
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+if (!trem.resourceUnitsOfPool(rp_moega).isEmpty()) pools.add(rp_moega);
+ResourcePool fips = main().gestorDeLocomotivas.rp_locoFips_pst;
+if (!trem.resourceUnitsOfPool(fips).isEmpty()) pools.add(fips);
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+
+double trocar_lote_em_descarga()
+{/*ALCODESTART::1793298470542*/
+// ALT-073: o lote em descarga acabou; a segunda parte passa a ser o lote em descarga
+traceln(String.format("[%.1f][CoperXII][segunda_parte] lote_em_descarga=%s -> %s",
+	time(), lote_em_descarga == null ? "-" : String.valueOf(lote_em_descarga.getId()),
+	lote_segunda_parte == null ? "-" : String.valueOf(lote_segunda_parte.getId())));
+lote_em_descarga   = lote_segunda_parte;
+lote_segunda_parte = null;
+/*ALCODEEND*/}
+
+double pedir_loco_segunda_parte()
+{/*ALCODESTART::1793298470544*/
+// ALT-073: solta a segunda parte do Wait para cortar a loco da cabeça dela (ela volta ao Wait sem a loco)
+if (lote_segunda_parte != null && esta_na_espera(lote_segunda_parte)) {
+	destino_segunda_parte = "loco";
+	espera_segunda_parte.free(lote_segunda_parte);
+} else {
+	error("CoperXII: pedir_loco_segunda_parte sem segunda parte no Wait");
+}
+/*ALCODEEND*/}
+
+boolean esta_na_espera(Trem trem)
+{/*ALCODESTART::1793298470546*/
+// ALT-073: o trem está parado no Wait espera_segunda_parte?
+for (int i = 0; i < espera_segunda_parte.size(); i++) {
+	if (espera_segunda_parte.get(i) == trem) return true;
+}
+return false;
+/*ALCODEEND*/}
+
+int get_capacidade_moega()
+{/*ALCODESTART::1793298470548*/
+// ALT-076: o lote da moega completa o alívio: QTD_ALIVIO - lote_b - lote_a (hoje 41 - 22 - 13 = 6)
+return Math.max(0, QTD_ALIVIO - CAPACIDADE_LOTE_B - CAPACIDADE_LOTE_A);
+/*ALCODEEND*/}
+
+double verificar_alivio()
+{/*ALCODESTART::1793298470550*/
+// ALT-076: pede alívio quando lote_b, lote_a e o lote da moega somam QTD_ALIVIO
+if (!aguardando_alivio && get_espaco_vazios() == 0) {
+	aguardando_alivio = true;
+	traceln(String.format("[%.1f][CoperXII][alivio] %d vazios prontos (b=%d a=%d moega=%d): pedindo alívio",
+		time(), QTD_ALIVIO, CAPACIDADE_LOTE_B, CAPACIDADE_LOTE_A, get_capacidade_moega()));
+}
 /*ALCODEEND*/}
 

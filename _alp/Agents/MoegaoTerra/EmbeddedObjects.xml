@@ -3,6 +3,7 @@
 	<EmbeddedObject>
 		<Id>1786029765399</Id>
 		<Name><![CDATA[aguardaRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>530</X>
 		<Y>205</Y>
 		<Label>
@@ -66,6 +67,7 @@
 	<EmbeddedObject>
 		<Id>1786029787631</Id>
 		<Name><![CDATA[aguardarRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>400</X>
 		<Y>205</Y>
 		<Label>
@@ -186,6 +188,7 @@
 	<EmbeddedObject>
 		<Id>1786029794458</Id>
 		<Name><![CDATA[paraPrecisaFazerRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>205</Y>
 		<Label>
@@ -240,6 +243,7 @@
 	<EmbeddedObject>
 		<Id>1786029822587</Id>
 		<Name><![CDATA[aguardaMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>960</X>
 		<Y>210</Y>
 		<Label>
@@ -306,6 +310,7 @@
 	<EmbeddedObject>
 		<Id>1786029822605</Id>
 		<Name><![CDATA[podeIrMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>850</X>
 		<Y>210</Y>
 		<Label>
@@ -426,6 +431,7 @@
 	<EmbeddedObject>
 		<Id>1786029822633</Id>
 		<Name><![CDATA[paraDescarga]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1070</X>
 		<Y>210</Y>
 		<Label>
@@ -481,6 +487,7 @@ aguardaMoega.block();]]></Code>
 	<EmbeddedObject>
 		<Id>1786029852015</Id>
 		<Name><![CDATA[aguardaAlivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>230</Y>
 		<Label>
@@ -547,6 +554,7 @@ aguardaMoega.block();]]></Code>
 	<EmbeddedObject>
 		<Id>1786029852033</Id>
 		<Name><![CDATA[podeAliviarMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1390</X>
 		<Y>230</Y>
 		<Label>
@@ -667,6 +675,7 @@ aguardaMoega.block();]]></Code>
 	<EmbeddedObject>
 		<Id>1786029852061</Id>
 		<Name><![CDATA[paraSelecionarOndeAliviar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>230</Y>
 		<Label>
@@ -724,6 +733,7 @@ selecionarOndeAliviar.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786029920564</Id>
 		<Name><![CDATA[aguardaAlivioVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2160</X>
 		<Y>185</Y>
 		<Label>
@@ -907,6 +917,7 @@ selecionarOndeAliviar.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786029920610</Id>
 		<Name><![CDATA[paraSelecionarLinhaVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>185</Y>
 		<Label>
@@ -962,6 +973,7 @@ selecionarLinhaVazios.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786031501566</Id>
 		<Name><![CDATA[atendimento]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>400</X>
 		<Y>490</Y>
 		<Label>
@@ -1082,6 +1094,7 @@ selecionarLinhaVazios.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786031512829</Id>
 		<Name><![CDATA[encostaNaPN]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>500</X>
 		<Y>490</Y>
 		<Label>
@@ -1233,6 +1246,7 @@ executando_rechego = true;]]></Code>
 	<EmbeddedObject>
 		<Id>1786031543541</Id>
 		<Name><![CDATA[paraPodeIrMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>490</Y>
 		<Label>
@@ -1287,6 +1301,7 @@ executando_rechego = true;]]></Code>
 	<EmbeddedObject>
 		<Id>1786031978832</Id>
 		<Name><![CDATA[descarga]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>850</X>
 		<Y>330</Y>
 		<Label>
@@ -1404,6 +1419,7 @@ executando_rechego = true;]]></Code>
 	<EmbeddedObject>
 		<Id>1786031978862</Id>
 		<Name><![CDATA[entrarMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1025</X>
 		<Y>400</Y>
 		<Label>
@@ -1549,6 +1565,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786035850525</Id>
 		<Name><![CDATA[tiraLote]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>960</X>
 		<Y>340</Y>
 		<Label>
@@ -1677,6 +1694,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036232783</Id>
 		<Name><![CDATA[precisaFazerRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>400</X>
 		<Y>340</Y>
 		<Label>
@@ -1794,6 +1812,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036239607</Id>
 		<Name><![CDATA[selectOutput]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>530</X>
 		<Y>340</Y>
 		<Label>
@@ -1872,6 +1891,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036244098</Id>
 		<Name><![CDATA[exit5]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>340</Y>
 		<Label>
@@ -1923,6 +1943,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036249026</Id>
 		<Name><![CDATA[paraPodeIrMoegaa]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>390</Y>
 		<Label>
@@ -1977,6 +1998,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036544268</Id>
 		<Name><![CDATA[descarregaLote]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1120</X>
 		<Y>390</Y>
 		<Label>
@@ -2024,6 +2046,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036583370</Id>
 		<Name><![CDATA[paraAguardarRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1190</X>
 		<Y>330</Y>
 		<Label>
@@ -2078,6 +2101,7 @@ lote_moega = ((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036589314</Id>
 		<Name><![CDATA[paraPodeAliviarMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1200</X>
 		<Y>400</Y>
 		<Label>
@@ -2133,6 +2157,7 @@ podeAliviarMoega.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036896685</Id>
 		<Name><![CDATA[selecionarOndeAliviar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1390</X>
 		<Y>360</Y>
 		<Label>
@@ -2250,6 +2275,7 @@ podeAliviarMoega.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036901956</Id>
 		<Name><![CDATA[cabeMais_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1530</X>
 		<Y>360</Y>
 		<Label>
@@ -2331,6 +2357,7 @@ podeAliviarMoega.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036908708</Id>
 		<Name><![CDATA[cabeMais_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1590</X>
 		<Y>410</Y>
 		<Label>
@@ -2412,6 +2439,7 @@ podeAliviarMoega.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1786036919164</Id>
 		<Name><![CDATA[paraAlivio_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>410</Y>
 		<Label>
@@ -2467,6 +2495,7 @@ alvio_L2.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786036924794</Id>
 		<Name><![CDATA[paraAlivio_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>360</Y>
 		<Label>
@@ -2522,6 +2551,7 @@ alivio_L1.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786036931614</Id>
 		<Name><![CDATA[paraAlivio_terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>460</Y>
 		<Label>
@@ -2577,6 +2607,7 @@ alivioTerra.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786037033170</Id>
 		<Name><![CDATA[alivio_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>560</Y>
 		<Label>
@@ -2694,6 +2725,7 @@ alivioTerra.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786037041474</Id>
 		<Name><![CDATA[irPara_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>560</Y>
 		<Label>
@@ -2842,6 +2874,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037077956</Id>
 		<Name><![CDATA[paraAcoplar_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>610</Y>
 		<Label>
@@ -2896,6 +2929,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037120477</Id>
 		<Name><![CDATA[precisaAcumular_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>710</Y>
 		<Label>
@@ -3013,6 +3047,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037135939</Id>
 		<Name><![CDATA[formouLoteCompleto_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1530</X>
 		<Y>710</Y>
 		<Label>
@@ -3094,6 +3129,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037208806</Id>
 		<Name><![CDATA[paraAcumular_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1725</X>
 		<Y>835</Y>
 		<Label>
@@ -3148,6 +3184,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037216570</Id>
 		<Name><![CDATA[paraEsperarAlivioVazios_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1745</X>
 		<Y>710</Y>
 		<Label>
@@ -3202,6 +3239,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037256816</Id>
 		<Name><![CDATA[acumular_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>920</Y>
 		<Label>
@@ -3319,6 +3357,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037263162</Id>
 		<Name><![CDATA[acumulaLote]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1470</X>
 		<Y>930</Y>
 		<Label>
@@ -3383,6 +3422,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037270124</Id>
 		<Name><![CDATA[tiraExcesso]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>930</Y>
 		<Label>
@@ -3521,6 +3561,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037299909</Id>
 		<Name><![CDATA[paraPrecisaAcumula_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>920</Y>
 		<Label>
@@ -3575,6 +3616,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037303150</Id>
 		<Name><![CDATA[acoplar_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>970</Y>
 		<Label>
@@ -3692,6 +3734,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037345229</Id>
 		<Name><![CDATA[paraManobarAlivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>970</Y>
 		<Label>
@@ -3746,6 +3789,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411209</Id>
 		<Name><![CDATA[alvio_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1190</Y>
 		<Label>
@@ -3863,6 +3907,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411242</Id>
 		<Name><![CDATA[irPara_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>1190</Y>
 		<Label>
@@ -4011,6 +4056,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411276</Id>
 		<Name><![CDATA[paraPrecisaAcumular_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1190</Y>
 		<Label>
@@ -4065,6 +4111,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411295</Id>
 		<Name><![CDATA[paraAcoplar_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1240</Y>
 		<Label>
@@ -4119,6 +4166,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411314</Id>
 		<Name><![CDATA[precisaAcumular_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1315</Y>
 		<Label>
@@ -4236,6 +4284,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411342</Id>
 		<Name><![CDATA[formouLoteCompleto_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1530</X>
 		<Y>1315</Y>
 		<Label>
@@ -4317,6 +4366,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411355</Id>
 		<Name><![CDATA[paraAcumular_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1720</X>
 		<Y>1460</Y>
 		<Label>
@@ -4371,6 +4421,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411369</Id>
 		<Name><![CDATA[paraEsperarAlivioVazios_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1750</X>
 		<Y>1315</Y>
 		<Label>
@@ -4425,6 +4476,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411383</Id>
 		<Name><![CDATA[acumular_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1560</Y>
 		<Label>
@@ -4542,6 +4594,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411412</Id>
 		<Name><![CDATA[acumulaLote1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1480</X>
 		<Y>1570</Y>
 		<Label>
@@ -4606,6 +4659,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411431</Id>
 		<Name><![CDATA[tiraExcesso1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>1570</Y>
 		<Label>
@@ -4744,6 +4798,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411453</Id>
 		<Name><![CDATA[paraPrecisaAcumula_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1560</Y>
 		<Label>
@@ -4798,6 +4853,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411467</Id>
 		<Name><![CDATA[acoplar_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1610</Y>
 		<Label>
@@ -4915,6 +4971,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037411495</Id>
 		<Name><![CDATA[paraMnobarAlivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1610</Y>
 		<Label>
@@ -4969,6 +5026,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539240</Id>
 		<Name><![CDATA[alivioTerra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1810</Y>
 		<Label>
@@ -5086,6 +5144,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539276</Id>
 		<Name><![CDATA[irPara_Meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>1810</Y>
 		<Label>
@@ -5234,6 +5293,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539313</Id>
 		<Name><![CDATA[paraPrecisaAcumular_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1810</Y>
 		<Label>
@@ -5288,6 +5348,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539334</Id>
 		<Name><![CDATA[paraAcoplar_Meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1860</Y>
 		<Label>
@@ -5342,6 +5403,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539356</Id>
 		<Name><![CDATA[precisaAcumular_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>1935</Y>
 		<Label>
@@ -5459,6 +5521,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539393</Id>
 		<Name><![CDATA[vaiAcumularMaisVagoes_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1530</X>
 		<Y>1935</Y>
 		<Label>
@@ -5540,6 +5603,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539418</Id>
 		<Name><![CDATA[paraAcumular_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1750</X>
 		<Y>2085</Y>
 		<Label>
@@ -5594,6 +5658,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539436</Id>
 		<Name><![CDATA[paraEsperarAlivioVazios_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1805</X>
 		<Y>1935</Y>
 		<Label>
@@ -5648,6 +5713,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539459</Id>
 		<Name><![CDATA[acumular_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>2220</Y>
 		<Label>
@@ -5765,6 +5831,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539495</Id>
 		<Name><![CDATA[acumulaLote2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1490</X>
 		<Y>2230</Y>
 		<Label>
@@ -5829,6 +5896,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539523</Id>
 		<Name><![CDATA[tiraExcesso2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1580</X>
 		<Y>2230</Y>
 		<Label>
@@ -5964,6 +6032,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539549</Id>
 		<Name><![CDATA[paraPrecisaAcumula_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2220</Y>
 		<Label>
@@ -6018,6 +6087,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539573</Id>
 		<Name><![CDATA[acoplar_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>2270</Y>
 		<Label>
@@ -6135,6 +6205,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037539607</Id>
 		<Name><![CDATA[paraManobaAlivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2270</Y>
 		<Label>
@@ -6189,6 +6260,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037629338</Id>
 		<Name><![CDATA[recuar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>2390</Y>
 		<Label>
@@ -6228,7 +6300,7 @@ executando_alivioMoega = false;]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().auxMnb_MoegaTerra]]></Code>
+					<Code><![CDATA[//main().auxMnb_MoegaTerra]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6273,6 +6345,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037639693</Id>
 		<Name><![CDATA[manobarAlivioMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>2400</Y>
 		<Label>
@@ -6390,6 +6463,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786037644787</Id>
 		<Name><![CDATA[paraSelecionaOndeAliviar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2400</Y>
 		<Label>
@@ -6444,6 +6518,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786046662471</Id>
 		<Name><![CDATA[fazerRechego]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>400</X>
 		<Y>555</Y>
 		<Label>
@@ -6561,6 +6636,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786117931951</Id>
 		<Name><![CDATA[temLocomotiva]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1490</X>
 		<Y>2570</Y>
 		<Label>
@@ -6639,6 +6715,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786117940468</Id>
 		<Name><![CDATA[tiraLocomotiva]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1670</X>
 		<Y>2630</Y>
 		<Label>
@@ -6780,6 +6857,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786117947227</Id>
 		<Name><![CDATA[trainDispose]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1760</X>
 		<Y>2640</Y>
 		<Label>
@@ -6831,6 +6909,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786117962685</Id>
 		<Name><![CDATA[paraPrecisaAcumular_L3]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1880</X>
 		<Y>2570</Y>
 		<Label>
@@ -6885,6 +6964,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786117976372</Id>
 		<Name><![CDATA[precisaTirarLoco]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1380</X>
 		<Y>2570</Y>
 		<Label>
@@ -7002,6 +7082,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786118030198</Id>
 		<Name><![CDATA[paraPrecisaTirarLoco]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>560</Y>
 		<Label>
@@ -7056,6 +7137,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786120862665</Id>
 		<Name><![CDATA[trainDecouple]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1600</X>
 		<Y>2580</Y>
 		<Label>
@@ -7181,6 +7263,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149865</Id>
 		<Name><![CDATA[selecionarLinhaVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1990</X>
 		<Y>506</Y>
 		<Label>
@@ -7298,6 +7381,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149897</Id>
 		<Name><![CDATA[L1_temVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2150</X>
 		<Y>506</Y>
 		<Label>
@@ -7379,6 +7463,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149923</Id>
 		<Name><![CDATA[L2_temVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2200</X>
 		<Y>556</Y>
 		<Label>
@@ -7460,6 +7545,7 @@ executando_alivioMoega = false;]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149950</Id>
 		<Name><![CDATA[paraAlivioVazios_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>556</Y>
 		<Label>
@@ -7515,6 +7601,7 @@ AlivioVazios_L2.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149969</Id>
 		<Name><![CDATA[paraAlivioVazios_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>506</Y>
 		<Label>
@@ -7570,6 +7657,7 @@ AlivioVazios_L1.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467149991</Id>
 		<Name><![CDATA[paraAlivioVazios_Terra]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2309</X>
 		<Y>605</Y>
 		<Label>
@@ -7625,6 +7713,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467349496</Id>
 		<Name><![CDATA[AlivioVazios_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1980</X>
 		<Y>680</Y>
 		<Label>
@@ -7742,6 +7831,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467349527</Id>
 		<Name><![CDATA[irPara__L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>680</Y>
 		<Label>
@@ -7890,6 +7980,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467349587</Id>
 		<Name><![CDATA[paraAcoplar_L3]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>730</Y>
 		<Label>
@@ -7944,6 +8035,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467544278</Id>
 		<Name><![CDATA[AlivioVazios_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1980</X>
 		<Y>885</Y>
 		<Label>
@@ -8061,6 +8153,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467544314</Id>
 		<Name><![CDATA[irPara__L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>885</Y>
 		<Label>
@@ -8209,6 +8302,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467544359</Id>
 		<Name><![CDATA[paraAcoplar_L4]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>940</Y>
 		<Label>
@@ -8263,6 +8357,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467783238</Id>
 		<Name><![CDATA[AlivioVazios_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1980</X>
 		<Y>1105</Y>
 		<Label>
@@ -8380,6 +8475,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467783269</Id>
 		<Name><![CDATA[irPara__meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>1105</Y>
 		<Label>
@@ -8524,6 +8620,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467783305</Id>
 		<Name><![CDATA[paraAcoplar_L5]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>1160</Y>
 		<Label>
@@ -8578,6 +8675,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467859627</Id>
 		<Name><![CDATA[acoplar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>740</Y>
 		<Label>
@@ -8642,6 +8740,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786467894713</Id>
 		<Name><![CDATA[esperarAlivioVazios_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2010</X>
 		<Y>780</Y>
 		<Label>
@@ -8759,6 +8858,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786478113237</Id>
 		<Name><![CDATA[manobarAlivioMoega1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1990</X>
 		<Y>1320</Y>
 		<Label>
@@ -8876,6 +8976,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786478113267</Id>
 		<Name><![CDATA[paraVerificaSeAcabouAlivio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2270</X>
 		<Y>1320</Y>
 		<Label>
@@ -8930,6 +9031,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786478201229</Id>
 		<Name><![CDATA[moverTremCompleto]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>1310</Y>
 		<Label>
@@ -9002,6 +9104,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786587245094</Id>
 		<Name><![CDATA[pausar]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2070</X>
 		<Y>175</Y>
 		<Label>
@@ -9053,6 +9156,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786587806343</Id>
 		<Name><![CDATA[acoplar1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>950</Y>
 		<Label>
@@ -9117,6 +9221,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786587877831</Id>
 		<Name><![CDATA[esperarAlivioVazios_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2010</X>
 		<Y>990</Y>
 		<Label>
@@ -9234,6 +9339,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786587973354</Id>
 		<Name><![CDATA[acoplar2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>1170</Y>
 		<Label>
@@ -9298,6 +9404,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786588000048</Id>
 		<Name><![CDATA[esperarAlivioVazios_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2000</X>
 		<Y>1210</Y>
 		<Label>
@@ -9415,6 +9522,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786626811918</Id>
 		<Name><![CDATA[verificaSeAcabouAlivio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1980</X>
 		<Y>360</Y>
 		<Label>
@@ -9532,6 +9640,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786626948211</Id>
 		<Name><![CDATA[acabouVazios]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2160</X>
 		<Y>360</Y>
 		<Label>
@@ -9610,6 +9719,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786626956105</Id>
 		<Name><![CDATA[paraSairDaMoega]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>360</Y>
 		<Label>
@@ -9665,6 +9775,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786626961883</Id>
 		<Name><![CDATA[paraSelecionaLinhaVazio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>420</Y>
 		<Label>
@@ -9719,6 +9830,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786634476167</Id>
 		<Name><![CDATA[esperar_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1580</X>
 		<Y>775</Y>
 		<Label>
@@ -9818,6 +9930,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786634894913</Id>
 		<Name><![CDATA[vaiAliviar_L1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1660</X>
 		<Y>785</Y>
 		<Label>
@@ -9896,6 +10009,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786636204399</Id>
 		<Name><![CDATA[esperar_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>1400</Y>
 		<Label>
@@ -9995,6 +10109,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786636204429</Id>
 		<Name><![CDATA[vaiAliviar_L2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1650</X>
 		<Y>1410</Y>
 		<Label>
@@ -10073,6 +10188,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786636879201</Id>
 		<Name><![CDATA[esperar_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1590</X>
 		<Y>2030</Y>
 		<Label>
@@ -10172,6 +10288,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1786636879239</Id>
 		<Name><![CDATA[vaiAliviar_meio]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1675</X>
 		<Y>2040</Y>
 		<Label>
@@ -10250,7 +10367,7 @@ AlivioVazios_meio.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1790791151631</Id>
 		<Name><![CDATA[iniciar_alivio]]></Name>
-		<X>210</X>
+		<X>380</X>
 		<Y>-200</Y>
 		<Label>
 			<X>-5</X>

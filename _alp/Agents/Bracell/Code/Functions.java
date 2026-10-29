@@ -38,8 +38,8 @@ return 1;
 
 String getPatio()
 {/*ALCODESTART::1788185597925*/
-// ALT-014: Bracell é do pátio PCX (celulose)
-return "pcx";
+// ALT-061: Bracell é do pátio PMC (celulose)
+return "pmc";
 /*ALCODEEND*/}
 
 boolean podeReceberNovoLote()

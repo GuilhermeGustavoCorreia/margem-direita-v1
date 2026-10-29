@@ -113,6 +113,9 @@ if (condicao_4000_pode_aliviar()) {
 
     for (ITerminalMoega terminal : new ArrayList<>(terminais_pcx)) {
 
+        // ALT-025: um alívio por vez na linha 4000 (T39 e ADM no mesmo ciclo criavam 2 locos)
+        if (aux_esta_ocorrendo_alivio_pcx) break;
+
         float overload = terminal.getOverloadVazios();
         boolean precisa_aliviar = (overload > 1);
 
@@ -274,22 +277,29 @@ if (condicao_DVs_eh_compativel_com_terminal) {
     boolean temLoco;
 
     if ("manobra".equals(tipoLoco)) {
+    
         temLoco = get_rp_loco_fips(terminal.getPatio()).idle() >= qtdLoco;
+        
     } else {
+    
         String ferroviaTerminal = terminal.getFerrovia();
         Wait<Agent> waitLocos = null;
         if      ("rumo".equals(ferroviaTerminal)) waitLocos = main().gestorDeLocomotivas.locomotivasRumo;
         else if ("mrs".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasMRS;
         else if ("vli".equals(ferroviaTerminal))  waitLocos = main().gestorDeLocomotivas.locomotivasVLI;
         temLoco = (waitLocos != null && waitLocos.size() > 0);
+        
     }
 
     if (!temLoco) {
+    
         if (((int) time()) % 60 == 0) {
             traceln(time() + " | [diag_pst] " + nomeTerminal + " | aguardando " + qtdLoco + " loco(s) '"
                 + ("manobra".equals(tipoLoco) ? "manobra" : terminal.getFerrovia()) + "' para aliviar");
         }
+        
         return;
+        
     }
 
     colocar_terminal_em_alivio_pst(terminal);
@@ -311,7 +321,8 @@ if (condicao_DVs_eh_compativel_com_terminal) {
 
 boolean condicao_4000_pode_aliviar()
 {/*ALCODESTART::1791470655489*/
-int quantos_vagoes_faltam_linha_4000 = (CAPACIDADE_LINHA_4000 - main().getTamanhoDoTrem(lote_linha_4000));
+// ALT-056: conta so vagoes (o trem na 4000 tem as locos do alivio); igual ao quantos_vagoes_pegar_do_terminal
+int quantos_vagoes_faltam_linha_4000 = (CAPACIDADE_LINHA_4000 - main().getNumeroDeVagoes(lote_linha_4000));
 boolean trem_esta_parado_na_4000 	 = !aux_esta_ocorrendo_alivio_pcx;
 boolean precisa_de_vagoes_na_4000	 = quantos_vagoes_faltam_linha_4000 > 0;
 
@@ -380,7 +391,7 @@ alivio_em_andamento_pst.segmento 				= terminal.getSegmento();
 
 //define quantos vagões pegar do terminal
 int vazios_no_terminal = terminal.get_quantidade_vazios();
-int cabem_na_dv = 25; //main().gestorDeDVs.quantos_vagoes_cabem(terminal);
+int cabem_na_dv = 12; //main().gestorDeDVs.quantos_vagoes_cabem(terminal);
 int quantidade = Math.min(vazios_no_terminal, cabem_na_dv);
 
 traceln(time() + " | [qtd_alivio] " + ((Agent) terminal).getName()
@@ -528,28 +539,27 @@ for (Faixa f : java.util.List.of(
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 
-double analisar_celulose()
+double analisar_pmc()
 {/*ALCODESTART::1792014000316*/
-// ALT-014: alívio dos terminais de celulose do PCX (Bracell; depois Suzano e Eldorado).
-// Lógica separada: não usa a linha 4000 nem depende das DVs. Só olha o overload.
-// O trem sai com todos os vazios do terminal (Bracell: 64).
-if (terminais_celulose.isEmpty()) {
+if (terminais_pmc.isEmpty()) {
     return;
 }
 
-for (ITerminalMoega terminal : new ArrayList<>(terminais_celulose)) {
+for (ITerminalMoega terminal : new ArrayList<>(terminais_pmc)) {
+
+    if (terminal_alivio_pmc != null) break;
 
     if (terminal.getOverloadVazios() > 1) {
 
-        fazer_procedimento_de_alivio_celulose(terminal);
+        fazer_procedimento_de_alivio_pmc(terminal);
     }
 }
 /*ALCODEEND*/}
 
-double fazer_procedimento_de_alivio_celulose(ITerminalMoega terminal)
+double fazer_procedimento_de_alivio_pmc(ITerminalMoega terminal)
 {/*ALCODESTART::1792014000317*/
-// ALT-014: um alívio de celulose por vez
-if (terminal_alivio_celulose != null) {
+// ALT-061: um alívio do PMC por vez
+if (terminal_alivio_pmc != null) {
     return;
 }
 
@@ -558,23 +568,23 @@ Wait<Agent> waitLocos = get_wait_locos_ferrovia(ferrovia);
 
 if (waitLocos == null || waitLocos.size() == 0) {
     if (((int) time()) % 60 == 0) {
-        traceln(time() + " | [AlivioCelulose] " + ((Agent) terminal).getName()
+        traceln(time() + " | [AlivioPMC] " + ((Agent) terminal).getName()
             + " | aguardando loco '" + ferrovia + "' para aliviar");
     }
     return;
 }
 
-terminais_celulose.remove(terminal);
-terminal_alivio_celulose = terminal;
+terminais_pmc.remove(terminal);
+terminal_alivio_pmc = terminal;
 terminal.set_quantidade_alivio(terminal.get_quantidade_vazios());
 
 Agent loco = waitLocos.remove(waitLocos.get(0));
 ((Trem) loco).set_terminal(terminal);
 
-traceln(String.format("[%.1f][AlivioCelulose] %s | vazios=%d | loco=%d (%s)",
+traceln(String.format("[%.1f][AlivioPMC] %s | vazios=%d | loco=%d (%s)",
     time(), ((Agent) terminal).getName(), terminal.get_quantidade_vazios(), loco.getId(), ferrovia));
 
-loco_alivio_celulose.take(loco);
+loco_alivio_pmc.take(loco);
 /*ALCODEEND*/}
 
 Wait<Agent> get_wait_locos_ferrovia(String ferrovia)
@@ -587,5 +597,44 @@ switch (ferrovia) {
     case "vli":  return main().gestorDeLocomotivas.locomotivasVLI;
     default:     return null;
 }
+/*ALCODEEND*/}
+
+double retornar_alivio_pmc(Trem trem)
+{/*ALCODESTART::1792780000101*/
+// ALT-061: fim do alívio de um terminal do PMC. Chamado pelo terminal quando o trem sai com os vazios.
+// O terminal define trem.faixa_atual / trem.proxima_faixa antes de chamar (cada um tem sua saída).
+// Solta a trava, devolve o terminal à análise e entrega o trem ao GestorDeCirculacao.
+ITerminalMoega terminal = terminal_alivio_pmc;
+terminal_alivio_pmc = null;
+
+if (terminal != null && !terminais_pmc.contains(terminal)) {
+    terminais_pmc.add(terminal);
+}
+
+trem.eh_alivio = true;
+
+traceln(String.format("[%.1f][AlivioPMC][retornar_alivio_pmc] trem=%d vagoes=%d | %s volta para terminais_pmc",
+    time(), trem.getId(), main().getNumeroDeVagoes(trem),
+    terminal == null ? "-" : ((Agent) terminal).getName()));
+
+main().gestorDeCirculacao.tentar_usar_faixa.take(trem);
+/*ALCODEEND*/}
+
+ResourcePool[][] get_conjunto_faixas_pmc()
+{/*ALCODESTART::1792795000006*/
+// ALT-063: recursos das faixas que a loco do alívio PMC licencia até o terminal.
+// Lista vazia: só avisa no log (o Seize passa sem recurso).
+ArrayList<Faixa> faixas = terminal_alivio_pmc.get_faixas_primeiro_alivio();
+List<ResourcePool> recursos = new ArrayList<ResourcePool>();
+if (faixas != null) {
+	for (Faixa f : faixas) {
+		if (f != null && f.recurso != null && !recursos.contains(f.recurso)) recursos.add(f.recurso);
+	}
+}
+if (recursos.isEmpty()) {
+	traceln(String.format("[%.1f][AlivioPMC][bloquear_faixas_pmc] %s sem faixas de alívio (get_faixas_primeiro_alivio vazio)",
+		time(), ((Agent) terminal_alivio_pmc).getName()));
+}
+return new ResourcePool[][] { recursos.toArray(new ResourcePool[0]) };
 /*ALCODEEND*/}
 

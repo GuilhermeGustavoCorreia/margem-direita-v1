@@ -33,7 +33,7 @@
 			<Parameter>
 				<Name><![CDATA[delayTime]]></Name>
 				<Value Class="CodeUnitValue">
-					<Code><![CDATA[2]]></Code>
+					<Code><![CDATA[45]]></Code>
 					<Unit Class="TimeUnits">SECOND</Unit>
 				</Value>
 			</Parameter>

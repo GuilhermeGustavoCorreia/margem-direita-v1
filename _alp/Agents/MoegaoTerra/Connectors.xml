@@ -3,6 +3,7 @@
 	<Connector>
 		<Id>1786029789260</Id>
 		<Name><![CDATA[connector1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>420</X>
 		<Y>215</Y>
 		<Label>
@@ -46,6 +47,7 @@
 	<Connector>
 		<Id>1786029796228</Id>
 		<Name><![CDATA[connector2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>215</Y>
 		<Label>
@@ -89,6 +91,7 @@
 	<Connector>
 		<Id>1786029822643</Id>
 		<Name><![CDATA[connector3]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>870</X>
 		<Y>220</Y>
 		<Label>
@@ -132,6 +135,7 @@
 	<Connector>
 		<Id>1786029822645</Id>
 		<Name><![CDATA[connector4]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1070</X>
 		<Y>220</Y>
 		<Label>
@@ -175,6 +179,7 @@
 	<Connector>
 		<Id>1786029852068</Id>
 		<Name><![CDATA[connector5]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1410</X>
 		<Y>240</Y>
 		<Label>
@@ -218,6 +223,7 @@
 	<Connector>
 		<Id>1786029852070</Id>
 		<Name><![CDATA[connector6]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>240</Y>
 		<Label>
@@ -261,6 +267,7 @@
 	<Connector>
 		<Id>1786029920617</Id>
 		<Name><![CDATA[connector7]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1990</X>
 		<Y>195</Y>
 		<Label>
@@ -304,6 +311,7 @@
 	<Connector>
 		<Id>1786029920619</Id>
 		<Name><![CDATA[connector8]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>195</Y>
 		<Label>
@@ -347,6 +355,7 @@
 	<Connector>
 		<Id>1786031518408</Id>
 		<Name><![CDATA[connector]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>500</X>
 		<Y>500</Y>
 		<Label>
@@ -390,6 +399,7 @@
 	<Connector>
 		<Id>1786031545964</Id>
 		<Name><![CDATA[connector9]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>500</Y>
 		<Label>
@@ -433,6 +443,7 @@
 	<Connector>
 		<Id>1786031978914</Id>
 		<Name><![CDATA[connector11]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1120</X>
 		<Y>410</Y>
 		<Label>
@@ -476,6 +487,7 @@
 	<Connector>
 		<Id>1786036241118</Id>
 		<Name><![CDATA[connector15]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>540</X>
 		<Y>350</Y>
 		<Label>
@@ -519,6 +531,7 @@
 	<Connector>
 		<Id>1786036245864</Id>
 		<Name><![CDATA[connector16]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>350</Y>
 		<Label>
@@ -562,6 +575,7 @@
 	<Connector>
 		<Id>1786036250223</Id>
 		<Name><![CDATA[connector17]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>620</X>
 		<Y>400</Y>
 		<Label>
@@ -609,6 +623,7 @@
 	<Connector>
 		<Id>1786036526797</Id>
 		<Name><![CDATA[connector10]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1025</X>
 		<Y>410</Y>
 		<Label>
@@ -656,6 +671,7 @@
 	<Connector>
 		<Id>1786036526799</Id>
 		<Name><![CDATA[connector12]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>960</X>
 		<Y>340</Y>
 		<Label>
@@ -699,6 +715,7 @@
 	<Connector>
 		<Id>1786036545750</Id>
 		<Name><![CDATA[connector13]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1120</X>
 		<Y>410</Y>
 		<Label>
@@ -742,6 +759,7 @@
 	<Connector>
 		<Id>1786036584312</Id>
 		<Name><![CDATA[connector14]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1190</X>
 		<Y>340</Y>
 		<Label>
@@ -785,6 +803,7 @@
 	<Connector>
 		<Id>1786036592865</Id>
 		<Name><![CDATA[connector18]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1200</X>
 		<Y>410</Y>
 		<Label>
@@ -828,6 +847,7 @@
 	<Connector>
 		<Id>1786036903421</Id>
 		<Name><![CDATA[connector19]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>370</Y>
 		<Label>
@@ -871,6 +891,7 @@
 	<Connector>
 		<Id>1786036910254</Id>
 		<Name><![CDATA[connector20]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1600</X>
 		<Y>420</Y>
 		<Label>
@@ -918,6 +939,7 @@
 	<Connector>
 		<Id>1786036921713</Id>
 		<Name><![CDATA[connector21]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>420</Y>
 		<Label>
@@ -961,6 +983,7 @@
 	<Connector>
 		<Id>1786036926941</Id>
 		<Name><![CDATA[connector22]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>370</Y>
 		<Label>
@@ -1004,6 +1027,7 @@
 	<Connector>
 		<Id>1786036933920</Id>
 		<Name><![CDATA[connector23]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>470</Y>
 		<Label>
@@ -1051,6 +1075,7 @@
 	<Connector>
 		<Id>1786037043596</Id>
 		<Name><![CDATA[connector24]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>570</Y>
 		<Label>
@@ -1094,6 +1119,7 @@
 	<Connector>
 		<Id>1786037078970</Id>
 		<Name><![CDATA[connector26]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>620</Y>
 		<Label>
@@ -1141,6 +1167,7 @@
 	<Connector>
 		<Id>1786037137808</Id>
 		<Name><![CDATA[connector27]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>720</Y>
 		<Label>
@@ -1184,6 +1211,7 @@
 	<Connector>
 		<Id>1786037210346</Id>
 		<Name><![CDATA[connector29]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1580</X>
 		<Y>795</Y>
 		<Label>
@@ -1231,6 +1259,7 @@
 	<Connector>
 		<Id>1786037217402</Id>
 		<Name><![CDATA[connector28]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1745</X>
 		<Y>720</Y>
 		<Label>
@@ -1274,6 +1303,7 @@
 	<Connector>
 		<Id>1786037265132</Id>
 		<Name><![CDATA[connector30]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1480</X>
 		<Y>930</Y>
 		<Label>
@@ -1317,6 +1347,7 @@
 	<Connector>
 		<Id>1786037271618</Id>
 		<Name><![CDATA[connector31]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>930</Y>
 		<Label>
@@ -1360,6 +1391,7 @@
 	<Connector>
 		<Id>1786037301461</Id>
 		<Name><![CDATA[connector32]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>930</Y>
 		<Label>
@@ -1403,6 +1435,7 @@
 	<Connector>
 		<Id>1786037305603</Id>
 		<Name><![CDATA[connector33]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>980</Y>
 		<Label>
@@ -1450,6 +1483,7 @@
 	<Connector>
 		<Id>1786037346765</Id>
 		<Name><![CDATA[connector34]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>980</Y>
 		<Label>
@@ -1497,6 +1531,7 @@
 	<Connector>
 		<Id>1786037411501</Id>
 		<Name><![CDATA[connector35]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>1200</Y>
 		<Label>
@@ -1540,6 +1575,7 @@
 	<Connector>
 		<Id>1786037411503</Id>
 		<Name><![CDATA[connector36]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1200</Y>
 		<Label>
@@ -1583,6 +1619,7 @@
 	<Connector>
 		<Id>1786037411505</Id>
 		<Name><![CDATA[connector37]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1250</Y>
 		<Label>
@@ -1630,6 +1667,7 @@
 	<Connector>
 		<Id>1786037411511</Id>
 		<Name><![CDATA[connector40]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1750</X>
 		<Y>1325</Y>
 		<Label>
@@ -1673,6 +1711,7 @@
 	<Connector>
 		<Id>1786037411513</Id>
 		<Name><![CDATA[connector41]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1490</X>
 		<Y>1570</Y>
 		<Label>
@@ -1716,6 +1755,7 @@
 	<Connector>
 		<Id>1786037411515</Id>
 		<Name><![CDATA[connector42]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>1570</Y>
 		<Label>
@@ -1759,6 +1799,7 @@
 	<Connector>
 		<Id>1786037411517</Id>
 		<Name><![CDATA[connector43]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1570</Y>
 		<Label>
@@ -1802,6 +1843,7 @@
 	<Connector>
 		<Id>1786037411519</Id>
 		<Name><![CDATA[connector44]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>1620</Y>
 		<Label>
@@ -1849,6 +1891,7 @@
 	<Connector>
 		<Id>1786037411521</Id>
 		<Name><![CDATA[connector45]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1620</Y>
 		<Label>
@@ -1896,6 +1939,7 @@
 	<Connector>
 		<Id>1786037539624</Id>
 		<Name><![CDATA[connector46]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1460</X>
 		<Y>1820</Y>
 		<Label>
@@ -1939,6 +1983,7 @@
 	<Connector>
 		<Id>1786037539626</Id>
 		<Name><![CDATA[connector47]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1820</Y>
 		<Label>
@@ -1982,6 +2027,7 @@
 	<Connector>
 		<Id>1786037539628</Id>
 		<Name><![CDATA[connector48]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1870</Y>
 		<Label>
@@ -2029,6 +2075,7 @@
 	<Connector>
 		<Id>1786037539630</Id>
 		<Name><![CDATA[connector49]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>1945</Y>
 		<Label>
@@ -2072,6 +2119,7 @@
 	<Connector>
 		<Id>1786037539632</Id>
 		<Name><![CDATA[connector50]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1590</X>
 		<Y>2050</Y>
 		<Label>
@@ -2119,6 +2167,7 @@
 	<Connector>
 		<Id>1786037539634</Id>
 		<Name><![CDATA[connector51]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1805</X>
 		<Y>1945</Y>
 		<Label>
@@ -2162,6 +2211,7 @@
 	<Connector>
 		<Id>1786037539636</Id>
 		<Name><![CDATA[connector52]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1500</X>
 		<Y>2230</Y>
 		<Label>
@@ -2205,6 +2255,7 @@
 	<Connector>
 		<Id>1786037539638</Id>
 		<Name><![CDATA[connector53]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1580</X>
 		<Y>2230</Y>
 		<Label>
@@ -2248,6 +2299,7 @@
 	<Connector>
 		<Id>1786037539640</Id>
 		<Name><![CDATA[connector54]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2230</Y>
 		<Label>
@@ -2291,6 +2343,7 @@
 	<Connector>
 		<Id>1786037539642</Id>
 		<Name><![CDATA[connector55]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>2280</Y>
 		<Label>
@@ -2338,6 +2391,7 @@
 	<Connector>
 		<Id>1786037539644</Id>
 		<Name><![CDATA[connector56]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2280</Y>
 		<Label>
@@ -2385,6 +2439,7 @@
 	<Connector>
 		<Id>1786037641320</Id>
 		<Name><![CDATA[connector57]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>2410</Y>
 		<Label>
@@ -2428,6 +2483,7 @@
 	<Connector>
 		<Id>1786037646255</Id>
 		<Name><![CDATA[connector58]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>2410</Y>
 		<Label>
@@ -2471,6 +2527,7 @@
 	<Connector>
 		<Id>1786046663783</Id>
 		<Name><![CDATA[connector59]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>420</X>
 		<Y>565</Y>
 		<Label>
@@ -2522,6 +2579,7 @@
 	<Connector>
 		<Id>1786037411509</Id>
 		<Name><![CDATA[connector39]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1570</X>
 		<Y>1420</Y>
 		<Label>
@@ -2569,6 +2627,7 @@
 	<Connector>
 		<Id>1786117948531</Id>
 		<Name><![CDATA[connector61]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1760</X>
 		<Y>2640</Y>
 		<Label>
@@ -2612,6 +2671,7 @@
 	<Connector>
 		<Id>1786117964314</Id>
 		<Name><![CDATA[connector62]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1880</X>
 		<Y>2580</Y>
 		<Label>
@@ -2667,6 +2727,7 @@
 	<Connector>
 		<Id>1786117978556</Id>
 		<Name><![CDATA[connector63]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1400</X>
 		<Y>2580</Y>
 		<Label>
@@ -2710,6 +2771,7 @@
 	<Connector>
 		<Id>1786118031259</Id>
 		<Name><![CDATA[connector64]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>570</Y>
 		<Label>
@@ -2753,6 +2815,7 @@
 	<Connector>
 		<Id>1786120864287</Id>
 		<Name><![CDATA[connector25]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1670</X>
 		<Y>2640</Y>
 		<Label>
@@ -2800,6 +2863,7 @@
 	<Connector>
 		<Id>1786120864289</Id>
 		<Name><![CDATA[connector60]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1600</X>
 		<Y>2580</Y>
 		<Label>
@@ -2843,6 +2907,7 @@
 	<Connector>
 		<Id>1786120869526</Id>
 		<Name><![CDATA[connector65]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1620</X>
 		<Y>2580</Y>
 		<Label>
@@ -2886,6 +2951,7 @@
 	<Connector>
 		<Id>1786467150019</Id>
 		<Name><![CDATA[connector66]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2160</X>
 		<Y>516</Y>
 		<Label>
@@ -2929,6 +2995,7 @@
 	<Connector>
 		<Id>1786467150021</Id>
 		<Name><![CDATA[connector67]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2210</X>
 		<Y>566</Y>
 		<Label>
@@ -2976,6 +3043,7 @@
 	<Connector>
 		<Id>1786467150023</Id>
 		<Name><![CDATA[connector68]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>566</Y>
 		<Label>
@@ -3019,6 +3087,7 @@
 	<Connector>
 		<Id>1786467150025</Id>
 		<Name><![CDATA[connector69]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>516</Y>
 		<Label>
@@ -3062,6 +3131,7 @@
 	<Connector>
 		<Id>1786467183397</Id>
 		<Name><![CDATA[connector70]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2220</X>
 		<Y>576</Y>
 		<Label>
@@ -3109,6 +3179,7 @@
 	<Connector>
 		<Id>1786467349602</Id>
 		<Name><![CDATA[connector71]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>690</Y>
 		<Label>
@@ -3152,6 +3223,7 @@
 	<Connector>
 		<Id>1786467544374</Id>
 		<Name><![CDATA[connector72]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>895</Y>
 		<Label>
@@ -3195,6 +3267,7 @@
 	<Connector>
 		<Id>1786467783322</Id>
 		<Name><![CDATA[connector75]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2100</X>
 		<Y>1115</Y>
 		<Label>
@@ -3238,6 +3311,7 @@
 	<Connector>
 		<Id>1786467861466</Id>
 		<Name><![CDATA[connector73]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>740</Y>
 		<Label>
@@ -3281,6 +3355,7 @@
 	<Connector>
 		<Id>1786467861468</Id>
 		<Name><![CDATA[connector77]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2180</X>
 		<Y>740</Y>
 		<Label>
@@ -3328,6 +3403,7 @@
 	<Connector>
 		<Id>1786467896413</Id>
 		<Name><![CDATA[connector78]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2030</X>
 		<Y>790</Y>
 		<Label>
@@ -3375,6 +3451,7 @@
 	<Connector>
 		<Id>1786478213988</Id>
 		<Name><![CDATA[connector79]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2210</X>
 		<Y>1330</Y>
 		<Label>
@@ -3418,6 +3495,7 @@
 	<Connector>
 		<Id>1786478217752</Id>
 		<Name><![CDATA[connector80]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>1330</Y>
 		<Label>
@@ -3461,6 +3539,7 @@
 	<Connector>
 		<Id>1786587250510</Id>
 		<Name><![CDATA[connector81]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2110</X>
 		<Y>195</Y>
 		<Label>
@@ -3504,6 +3583,7 @@
 	<Connector>
 		<Id>1786587813711</Id>
 		<Name><![CDATA[connector74]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>950</Y>
 		<Label>
@@ -3547,6 +3627,7 @@
 	<Connector>
 		<Id>1786587813713</Id>
 		<Name><![CDATA[connector82]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2180</X>
 		<Y>950</Y>
 		<Label>
@@ -3594,6 +3675,7 @@
 	<Connector>
 		<Id>1786587880129</Id>
 		<Name><![CDATA[connector83]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2030</X>
 		<Y>1000</Y>
 		<Label>
@@ -3641,6 +3723,7 @@
 	<Connector>
 		<Id>1786587976627</Id>
 		<Name><![CDATA[connector76]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>1170</Y>
 		<Label>
@@ -3684,6 +3767,7 @@
 	<Connector>
 		<Id>1786587976629</Id>
 		<Name><![CDATA[connector84]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2180</X>
 		<Y>1170</Y>
 		<Label>
@@ -3731,6 +3815,7 @@
 	<Connector>
 		<Id>1786588002723</Id>
 		<Name><![CDATA[connector85]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2020</X>
 		<Y>1220</Y>
 		<Label>
@@ -3778,6 +3863,7 @@
 	<Connector>
 		<Id>1786626949285</Id>
 		<Name><![CDATA[connector86]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2170</X>
 		<Y>370</Y>
 		<Label>
@@ -3821,6 +3907,7 @@
 	<Connector>
 		<Id>1786626957386</Id>
 		<Name><![CDATA[connector87]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>370</Y>
 		<Label>
@@ -3864,6 +3951,7 @@
 	<Connector>
 		<Id>1786626963157</Id>
 		<Name><![CDATA[connector88]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2310</X>
 		<Y>430</Y>
 		<Label>
@@ -3911,6 +3999,7 @@
 	<Connector>
 		<Id>1786631910069</Id>
 		<Name><![CDATA[connector89]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1540</X>
 		<Y>1325</Y>
 		<Label>
@@ -3954,6 +4043,7 @@
 	<Connector>
 		<Id>1786634478020</Id>
 		<Name><![CDATA[connector38]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1690</X>
 		<Y>795</Y>
 		<Label>
@@ -4005,6 +4095,7 @@
 	<Connector>
 		<Id>1786634896637</Id>
 		<Name><![CDATA[connector90]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1670</X>
 		<Y>795</Y>
 		<Label>
@@ -4048,6 +4139,7 @@
 	<Connector>
 		<Id>1786634913243</Id>
 		<Name><![CDATA[connector91]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1725</X>
 		<Y>845</Y>
 		<Label>
@@ -4095,6 +4187,7 @@
 	<Connector>
 		<Id>1786636230053</Id>
 		<Name><![CDATA[connector92]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1610</X>
 		<Y>1420</Y>
 		<Label>
@@ -4138,6 +4231,7 @@
 	<Connector>
 		<Id>1786636245813</Id>
 		<Name><![CDATA[connector93]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1680</X>
 		<Y>1420</Y>
 		<Label>
@@ -4189,6 +4283,7 @@
 	<Connector>
 		<Id>1786636251242</Id>
 		<Name><![CDATA[connector94]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1720</X>
 		<Y>1470</Y>
 		<Label>
@@ -4236,6 +4331,7 @@
 	<Connector>
 		<Id>1786636974473</Id>
 		<Name><![CDATA[connector95]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1705</X>
 		<Y>2050</Y>
 		<Label>
@@ -4287,6 +4383,7 @@
 	<Connector>
 		<Id>1786636982702</Id>
 		<Name><![CDATA[connector96]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1695</X>
 		<Y>2060</Y>
 		<Label>
@@ -4334,6 +4431,7 @@
 	<Connector>
 		<Id>1786636986248</Id>
 		<Name><![CDATA[connector97]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1630</X>
 		<Y>2050</Y>
 		<Label>

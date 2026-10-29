@@ -162,23 +162,6 @@
 			</ActiveObjectClass>
 		</ContainerLink>
 		<ContainerLink>
-			<Id>1783953812483</Id>
-			<Name><![CDATA[costaLeite]]></Name>
-			<X>420</X>
-			<Y>-130</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ActiveObjectClass>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>CostaLeite</ClassName>
-			</ActiveObjectClass>
-		</ContainerLink>
-		<ContainerLink>
 			<Id>1784661062489</Id>
 			<Name><![CDATA[coperXI]]></Name>
 			<X>520</X>
@@ -193,40 +176,6 @@
 			<ActiveObjectClass>
 				<PackageName>margemdireitamodel</PackageName>
 				<ClassName>CoperXI</ClassName>
-			</ActiveObjectClass>
-		</ContainerLink>
-		<ContainerLink>
-			<Id>1785467857552</Id>
-			<Name><![CDATA[coperXXI]]></Name>
-			<X>620</X>
-			<Y>-130</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ActiveObjectClass>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>CoperXXI</ClassName>
-			</ActiveObjectClass>
-		</ContainerLink>
-		<ContainerLink>
-			<Id>1785939872614</Id>
-			<Name><![CDATA[moegaoMar]]></Name>
-			<X>720</X>
-			<Y>-130</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ActiveObjectClass>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>MoegaoMar</ClassName>
 			</ActiveObjectClass>
 		</ContainerLink>
 		<ContainerLink>
@@ -261,6 +210,23 @@
 			<ActiveObjectClass>
 				<PackageName>margemdireitamodel</PackageName>
 				<ClassName>Tgrao</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
+		<ContainerLink>
+			<Id>1792430044061</Id>
+			<Name><![CDATA[aDM]]></Name>
+			<X>1020</X>
+			<Y>-130</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>ADM</ClassName>
 			</ActiveObjectClass>
 		</ContainerLink>
 	</ContainerLinks>

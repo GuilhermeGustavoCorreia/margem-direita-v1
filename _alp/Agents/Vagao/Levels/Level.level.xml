@@ -228,60 +228,6 @@
 		<InternalLighting>OFF</InternalLighting>
 		<IgnoreSceneLights>false</IgnoreSceneLights>
 	</Figure3D>
-	<Rectangle>
-		<Id>1782082445965</Id>
-		<Name><![CDATA[rectangle]]></Name>
-		<X>299.134</X>
-		<Y>-300.5</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<VisibleCode>isFirst() &amp;&amp; !isLast()</VisibleCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>4</LineWidth>
-		<LineColor>-16711936</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>DASHED</LineStyle>
-		<Width>200</Width>
-		<Height>80</Height>
-		<Rotation>90.0</Rotation>
-		<FillColor>1057029888</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1782083052506</Id>
-		<Name><![CDATA[rectangle1]]></Name>
-		<X>299.134</X>
-		<Y>-300.5</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<VisibleCode>isLast() &amp;&amp; !isFirst()</VisibleCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>4</LineWidth>
-		<LineColor>-65536</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>DASHED</LineStyle>
-		<Width>200</Width>
-		<Height>80</Height>
-		<Rotation>90.0</Rotation>
-		<FillColor>1073676288</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Polyline>
 		<Id>1787579800296</Id>
 		<Name><![CDATA[polyline]]></Name>

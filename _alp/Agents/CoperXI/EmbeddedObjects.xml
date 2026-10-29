@@ -8466,7 +8466,7 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 	<EmbeddedObject>
 		<Id>1788997082908</Id>
 		<Name><![CDATA[tremTeste_rumo]]></Name>
-		<X>80</X>
+		<X>-350</X>
 		<Y>-150</Y>
 		<Label>
 			<X>-20</X>
@@ -8720,11 +8720,11 @@ liberar_wait_lote_linhaTerra_b();]]></Code>
 	<EmbeddedObject>
 		<Id>1788997082989</Id>
 		<Name><![CDATA[paraGestorCirculacao_chegadaCarregados]]></Name>
-		<X>310</X>
+		<X>-105</X>
 		<Y>-110</Y>
 		<Label>
-			<X>-130</X>
-			<Y>55</Y>
+			<X>-160</X>
+			<Y>70</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -8893,99 +8893,6 @@ main().railwaySwitch73.connectTracks(
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1789129284426</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1789130948261</Id>
-		<Name><![CDATA[irLinhaVerde]]></Name>
-		<X>310</X>
-		<Y>590</Y>
-		<Label>
-			<X>-5</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>MoverTremCompleto_Ponto</ClassName>
-				<ItemName>1784731674754</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[estaSobreOPonto_condition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[irParaPonto_positionOnTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[trainMoveTo_maxDistance]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[trainMoveTo_positionOnTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[vaiRecuar]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[posicaoNaVia]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[main()._coperXI_encoste_linha_verde]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[sentidoPontaDaPraia]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[verificarUltimo]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[moverDistanciaExtraa]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[distanciaExtraa]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[mostrarLogs]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1789130948259</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
@@ -9168,99 +9075,6 @@ main().railwaySwitch73.connectTracks(
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1789131399021</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1789133980558</Id>
-		<Name><![CDATA[vaiMarginal2]]></Name>
-		<X>200</X>
-		<Y>780</Y>
-		<Label>
-			<X>-7</X>
-			<Y>-12</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>MoverTremCompleto_Ponto</ClassName>
-				<ItemName>1784731674754</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[estaSobreOPonto_condition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[irParaPonto_positionOnTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[trainMoveTo_maxDistance]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[trainMoveTo_positionOnTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[vaiRecuar]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[posicaoNaVia]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[main()._coperXI_irMarginal]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[sentidoPontaDaPraia]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[verificarUltimo]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[moverDistanciaExtraa]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[distanciaExtraa]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[mostrarLogs]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1789133980556</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
@@ -9818,7 +9632,12 @@ main().gestorDeCirculacao.faixa_marginal_b.bloquear((Trem) agent);
 main().gestorDeCirculacao.faixa_marginal_c.bloquear((Trem) agent);
 main().gestorDeCirculacao.faixa_intervalo4000_a.bloquear((Trem) agent);
 main().gestorDeCirculacao.faixa_intervalo4000_b.bloquear((Trem) agent);
-]]></Code>
+
+
+main().railwaySwitch73.connectTracks(
+	main().pst_marginal_a,
+	main().pst_marginal_b
+);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15762,6 +15581,9 @@ Math.min(3, ((Trem) train).getNumeroDeVagoes())]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[rechego_em_andamento = false]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -21777,7 +21599,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791553985356</Id>
 		<Name><![CDATA[tremTeste_mrs]]></Name>
-		<X>80</X>
+		<X>-350</X>
 		<Y>-100</Y>
 		<Label>
 			<X>-20</X>
@@ -22031,7 +21853,7 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1791553994486</Id>
 		<Name><![CDATA[tremTeste_vli]]></Name>
-		<X>80</X>
+		<X>-350</X>
 		<Y>-50</Y>
 		<Label>
 			<X>-20</X>
@@ -22717,7 +22539,8 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) train).tipo_trem = "manobra-coperXI-rechego";]]></Code>
+					<Code><![CDATA[((Trem) train).tipo_trem = "manobra-coperXI-rechego";
+rechego_em_andamento=true;]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -23847,6 +23670,300 @@ _loteDeVazios_LinhaTerra_b = (Trem) agent;]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1791640000220</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792071379524</Id>
+		<Name><![CDATA[ir_marginal]]></Name>
+		<X>210</X>
+		<Y>790</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[/*{ 
+	main().pst_silosMuro_a, 
+	main().pst_silosMuro_b 
+}*/]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._coperXI_irMarginal]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792071379522</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792072061498</Id>
+		<Name><![CDATA[ir_linha_verde]]></Name>
+		<X>320</X>
+		<Y>600</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[{ 
+	main().pst_silosMuro_a, 
+	main().pst_silosMuro_b 
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._coperXI_colocar_cauda_linhaVerde]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792072061496</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

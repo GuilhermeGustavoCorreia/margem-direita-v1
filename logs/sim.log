@@ -1,353 +1,320 @@
-[log] 2026-10-14T12:50:50.043572700 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
-🟠➡️ [1173,0][Circ][enter chegada_carregados] trem=15721
-🟠➡️ [1173,0][Circ][exit para_via3_ate_santa] trem=15721 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
-🟠➡️ [1173,0][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [1173,0][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [1173,0][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [1173,0][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [1173,0][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=1173.0 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar 
-🟠➡️ [1173,0][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [1173,0][Circ][enter circular_val_via2] trem=15721
-🟠➡️ [1645,8][Circ][exit para_via3_intermar] trem=15721 faixa_atual=rp_via3_intermar proxima_faixa=rp_pst_via3_a
-🟠➡️ [1645,8][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [1645,8][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [1645,8][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [1645,8][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [1645,8][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=1645.80869747205 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar rp_pst_via3_a 
-🟠➡️ [diag_liberar]   rp_pst_val_via2 | vazia=false | temUnidade=true
-🟠➡️ [1645,8][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [1645,8][Circ][enter circular_via3_intermar] trem=15721
-🟠➡️ [1976,2][Circ][exit para_via3_a] trem=15721 faixa_atual=rp_pst_via3_a proxima_faixa=rp_pst_via3_b
-🟠➡️ [1976,2][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [1976,2][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [1976,2][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [1976,2][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [1976,2][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=1976.20217326982 trem 15721 | possui: rp_pst_val_via2 rp_via3_intermar rp_pst_via3_a rp_pst_via3_b 
-🟠➡️ [diag_liberar]   rp_pst_val_via2 | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
-🟠➡️ [1976,2][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [1976,2][Circ][enter circular_via3_a] trem=15721
-🟠➡️ [1979,8][Circ][exit para_via3_b] trem=15721 faixa_atual=rp_pst_via3_b proxima_faixa=rp_via3_c
-🟠➡️ [1979,8][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [1979,8][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [1979,8][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [1979,8][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [1979,8][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=1979.8264499495376 trem 15721 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c 
-🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via3_a | vazia=false | temUnidade=true
-🟠➡️ [1979,8][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [1979,8][Circ][enter circular_via3_b] trem=15721
-🟠➡️ [2192,2][Circ][exit para_via3_c] trem=15721 faixa_atual=rp_via3_c proxima_faixa=rp_silosMuro_a
-🟠➡️ [2192,2][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2192,2][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2192,2][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [2192,2][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [2192,2][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2192.1646485786205 trem 15721 | possui: rp_via3_intermar rp_pst_via3_a rp_pst_via3_b rp_via3_c rp_silosMuro_a 
-🟠➡️ [diag_liberar]   rp_via3_intermar | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via3_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
-🟠➡️ [2192,2][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2192,2][Circ][enter circular_via3_c] trem=15721
-🟠➡️ [2283,6][Circ][exit para_silosMuro_a] trem=15721 faixa_atual=rp_silosMuro_a proxima_faixa=rp_pmc_marginal_c
-🟠➡️ [2283,6][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2283,6][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2283,6][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [2283,6][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [2283,6][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2283.599148796274 trem 15721 | possui: rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [2283,6][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2283,6][Circ][enter circular_silosMuro_a] trem=15721
-🟠➡️ [2362,0][Circ][exit para_marginal_c] trem=15721 faixa_atual=rp_pmc_marginal_c proxima_faixa=rp_pmc_intervalo4000_a
-🟠➡️ [2362,0][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2362,0][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2362,0][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [2362,0][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [2362,0][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2361.956033411432 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [2362,0][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2362,0][Circ][enter circular_marginal_c] trem=15721
-🟠➡️ [2381,7][Circ][exit para_intervalo4000_a] trem=15721 faixa_atual=rp_pmc_intervalo4000_a proxima_faixa=rp_pmc_intervalo4000_b
-🟠➡️ [2381,7][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2381,7][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2381,7][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [2381,7][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [2381,7][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2381.732930213322 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pst_via3_b rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pst_via3_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [2381,7][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2381,7][Circ][enter circular_intervalo4000_a] trem=15721
-🟠➡️ [2388,3][Circ][exit continuar3] trem=15721 faixa_atual=rp_pmc_intervalo4000_b proxima_faixa=rp_pmc_intervalo4000_c
-🟠➡️ [2388,3][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2388,3][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2388,3][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [2388,3][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [2388,3][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2388.256945626205 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [2388,3][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2388,3][Circ][enter circular_intervalo4000_b] trem=15721
-🟠➡️ [2447,0][Circ][exit continuar4] trem=15721 faixa_atual=rp_pmc_intervalo4000_c proxima_faixa=null
-🟠➡️ [2447,0][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [2447,0][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [2447,0][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=2447.0134223274968 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [2447,0][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [2447,0][Circ][enter circular_intervalo4000_c] trem=15721
-🟠➡️ [2455,7][Circ][exit continuar5] trem=15721 destino=bracell
-🟠➡️ [diag_liberar] t=2602.6446668721555 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_via3_c rp_silosMuro_a rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_via3_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_silosMuro_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar] t=2687.5777312321197 trem 15721 | possui: rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=true | temUnidade=true
-[2911,0][AlivioCelulose] bracell | vazios=64 | loco=15721 (rumo)
-2940.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
-3000.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
-[3049,8][AlivioCelulose][para_alivio_terminal_celulose] loco=15721 -> bracell
-3060.0 | [diag_pst] bracell | overload=1,10 | em terminais_pst=false | podeReceber(DVs)=true | rp_alivio_pst livre=1/1 | ferrovia=rumo
-[3282,9][Bracell][para_circVzs] trem=15721 vagoes=64 -> circulacao
-🟠➡️ [3282,9][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3282,9][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3282,9][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3282,9][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3282,9][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3282.917508237606 trem 15721 | possui: rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
-🟠➡️ [3282,9][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3282,9][Circ][enter circular_intervalo4000_c] trem=15721
-🟠➡️ [3329,4][Circ][exit alivio_para_intervalo4000_b] trem=15721 faixa_atual=rp_pmc_intervalo4000_b proxima_faixa=rp_pmc_intervalo4000_a
-🟠➡️ [3329,4][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3329,4][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3329,4][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3329,4][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3329,4][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3329.391372755163 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [3329,4][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3329,4][Circ][enter circular_intervalo4000_b] trem=15721
-🟠➡️ [3388,1][Circ][exit alivio_para_intervalo4000_a] trem=15721 faixa_atual=rp_pmc_intervalo4000_a proxima_faixa=rp_pmc_marginal_c
-🟠➡️ [3388,1][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3388,1][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3388,1][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3388,1][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3388,1][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3388.147849456455 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [3388,1][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3388,1][Circ][enter circular_intervalo4000_a] trem=15721
-🟠➡️ [3394,7][Circ][exit alivio_para_marginal_c] trem=15721 faixa_atual=rp_pmc_marginal_c proxima_faixa=rp_pmc_marginal_b
-🟠➡️ [3394,7][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3394,7][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3394,7][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3394,7][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3394,7][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3394.6718648693377 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [3394,7][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3394,7][Circ][enter circular_marginal_c] trem=15721
-🟠➡️ [3411,1][Circ][exit para_pst_marginal_b] trem=15721 faixa_atual=rp_pmc_marginal_b proxima_faixa=rp_pmc_marginal_a
-🟠➡️ [3411,1][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3411,1][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3411,1][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3411,1][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3411,1][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3411.1400590755816 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [3411,1][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3411,1][Circ][enter circular_marginal_b] trem=15721
-🟠➡️ [3495,8][Circ][exit continuar1] trem=15721 faixa_atual=rp_pmc_marginal_a proxima_faixa=rp_pst_via2_f
-🟠➡️ [3495,8][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3495,8][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3495,8][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3495,8][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3495,8][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3495.780939660013 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pst_via2_f rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [3495,8][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3495,8][Circ][enter circular_marginal_a] trem=15721
-🟠➡️ [3516,4][Circ][exit continuar] trem=15721 faixa_atual=rp_pst_via2_f proxima_faixa=rp_pst_via2_e
-🟠➡️ [3516,4][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3516,4][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3516,4][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3516,4][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3516,4][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3516.427425747237 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pmc_intervalo4000_c rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [3516,4][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3516,4][Circ][enter circular_entrada_pera] trem=15721
-🟠➡️ [3580,9][Circ][exit alivio_para_via2_e] trem=15721 faixa_atual=rp_pst_via2_e proxima_faixa=rp_pst_via2_d
-🟠➡️ [3580,9][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3580,9][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3580,9][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3580,9][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3580,9][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3580.916410746006 trem 15721 | possui: rp_pmc_intervalo4000_a rp_pmc_intervalo4000_b rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_intervalo4000_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [3580,9][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3580,9][Circ][enter circular_entrada_pera] trem=15721
-🟠➡️ [3604,1][Circ][exit alivio_para_via2_d] trem=15721 faixa_atual=rp_pst_via2_d proxima_faixa=rp_via2_c
-🟠➡️ [3604,1][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3604,1][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3604,1][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3604,1][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3604,1][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3604.0576441359644 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pmc_marginal_c rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=false | temUnidade=true
-🟠➡️ [3604,1][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3604,1][Circ][enter circular_via2_d] trem=15721
-🟠➡️ [3773,4][Circ][exit alivio_para_via2_c] trem=15721 faixa_atual=rp_via2_c proxima_faixa=rp_pst_via2_b
-🟠➡️ [3773,4][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3773,4][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3773,4][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3773,4][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3773,4][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3773.355153221319 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_f rp_pst_via2_e rp_pst_via2_b rp_pmc_marginal_a rp_pmc_marginal_b 
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_f | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pmc_marginal_b | vazia=true | temUnidade=true
-🟠➡️ [3773,4][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3773,4][Circ][enter circular_via2_c] trem=15721
-🟠➡️ [3793,1][Circ][exit alivio_para_via2_b] trem=15721 faixa_atual=rp_pst_via2_b proxima_faixa=rp_pst_via2_a
-🟠➡️ [3793,1][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3793,1][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3793,1][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3793,1][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3793,1][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3793.0817062601027 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_e rp_pst_via2_b rp_pst_via2_a 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_e | vazia=true | temUnidade=true
-🟠➡️ [3793,1][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3793,1][Circ][enter circular_via2_b] trem=15721
-🟠➡️ [3798,7][Circ][exit alivio_para_via2_a] trem=15721 faixa_atual=rp_pst_via2_a proxima_faixa=rp_pst_via2_intermar_c
-🟠➡️ [3798,7][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3798,7][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3798,7][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3798,7][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3798,7][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3798.740384091381 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
-🟠➡️ [3798,7][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3798,7][Circ][enter circular_via2_a] trem=15721
-🟠➡️ [3804,4][Circ][exit alivio_para_via2_intermar_c] trem=15721 faixa_atual=rp_pst_via2_intermar_c proxima_faixa=rp_pst_via2_intermar_b
-🟠➡️ [3804,4][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3804,4][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3804,4][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3804,4][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3804,4][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3804.4015228517464 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=false | temUnidade=true
-🟠➡️ [3804,4][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3804,4][Circ][enter circular_via2_intermar_c] trem=15721
-🟠➡️ [3927,7][Circ][exit alivio_para_via2_intermar_b] trem=15721 faixa_atual=rp_pst_via2_intermar_b proxima_faixa=rp_pst_via2_intermar_a
-🟠➡️ [3927,7][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3927,7][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3927,7][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3927,7][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3927,7][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3927.748841227307 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
-🟠➡️ [3927,7][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3927,7][Circ][enter circular_via2_intermar_b] trem=15721
-🟠➡️ [3988,6][Circ][exit alivio_para_via2_intermar_a] trem=15721 faixa_atual=rp_pst_via2_intermar_a proxima_faixa=rp_pst_railwayTrack199
-🟠➡️ [3988,6][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [3988,6][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [3988,6][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [3988,6][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [3988,6][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=3988.5559617511753 trem 15721 | possui: rp_via2_c rp_pst_via2_d rp_pst_via2_b rp_pst_via2_a rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 
-🟠➡️ [diag_liberar]   rp_via2_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_d | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
-🟠➡️ [3988,6][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [3988,6][Circ][enter circular_via2_intermar_a] trem=15721
-🟠➡️ [4127,3][Circ][exit alivio_para_railwayTrack199] trem=15721 faixa_atual=rp_pst_railwayTrack199 proxima_faixa=rp_pst_val_via2
-🟠➡️ [4127,3][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [4127,3][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [4127,3][Circ][enter tentar_usar_proxima] trem=15721
-🟠➡️ [4127,3][Circ][exit para_libera_faixas] trem=15721
-🟠➡️ [4127,3][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=4127.303985174081 trem 15721 | possui: rp_pst_via2_intermar_c rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_c | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=false | temUnidade=true
-🟠➡️ [4127,3][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [4127,3][Circ][enter circular_railwayTrack199] trem=15721
-🟠➡️ [4131,0][Circ][exit alivio_para_val_via2] trem=15721 faixa_atual=rp_pst_val_via2 proxima_faixa=null
-🟠➡️ [4131,0][Circ][enter tentar_usar_faixa] trem=15721
-🟠➡️ [4131,0][Circ][exit para_tentar_usar_proxima] trem=15721
-🟠➡️ [4131,0][Circ][enter liberar_faixas] trem=15721
-🟠➡️ [diag_liberar] t=4130.950222597085 trem 15721 | possui: rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=false | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_railwayTrack199 | vazia=false | temUnidade=true
-🟠➡️ [4131,0][Circ][exit continuar_circulacao] trem=15721
-🟠➡️ [4131,0][Circ][enter circular_val_via2] trem=15721
-🟠➡️ [4169,6][Circ][exit alivio_para_DVs] trem=15721
-🟠➡️ [diag_liberar] t=4169.64388485665 trem 15721 | possui: rp_pst_via2_intermar_b rp_pst_via2_intermar_a rp_pst_railwayTrack199 rp_pst_val_via2 
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_b | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_via2_intermar_a | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_railwayTrack199 | vazia=true | temUnidade=true
-🟠➡️ [diag_liberar]   rp_pst_val_via2 | vazia=true | temUnidade=true
+[log] 2026-10-29T15:50:49.409433700 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
+[2807,1][CoperXII][chegada] trem=24400 carros=84
+[3032,0][CoperXII][ir_encoste] trem=24400 chegou no _coperXII_encoste
+[3032,0][CoperXII][corte_lotes] trem=24400 lote1=42 carros
+[3032,0][CoperXII][entrar_moega] trem=24486 lote com 42 carros na fila da moega
+[3032,0][CoperXII][segunda_parte] trem=24400 segunda parte esperando (42 carros, locos=1)
+[3032,0][CoperXII][grupo] trem=24486 linha=b vagoes=6 carros=7 (lote tem 42 carros, espaco b=22 a=13)
+[3116,0][CoperXII][corte] trem=24486 corta 7 carros da frente
+[3218,7][CoperXII][vazios] trem=24487 chegou na linha com 7 carros
+[3218,7][CoperXII][vazios] trem=24487 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[3218,7][CoperXII][loco] trem=24486 lote sem loco: buscando loco
+[3218,7][CoperXII][loco] trem=24400 tirando a loco da segunda parte
+[3218,7][CoperXII][loco] trem=24489 loco da segunda parte indo para a cauda do lote
+[3218,7][CoperXII][segunda_parte] trem=24400 segunda parte esperando (41 carros, locos=0)
+[3257,7][CoperXII][loco] trem=24486 loco acoplada na cauda do lote (36 carros)
+[3257,7][CoperXII][grupo] trem=24486 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
+[3321,8][CoperXII][corte] trem=24486 corta 6 carros da frente
+[3405,4][CoperXII][vazios] trem=24490 chegou na linha com 12 carros
+[3405,4][CoperXII][vazios] trem=24490 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[3405,4][CoperXII][grupo] trem=24486 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
+[3466,2][CoperXII][corte] trem=24486 corta 6 carros da frente
+[3534,0][CoperXII][vazios] trem=24491 chegou na linha com 18 carros
+[3534,0][CoperXII][vazios] trem=24491 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[3534,0][CoperXII][grupo] trem=24486 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
+[3594,7][CoperXII][corte] trem=24486 corta 4 carros da frente
+[3646,8][CoperXII][vazios] trem=24492 chegou na linha com 22 carros
+[3646,8][CoperXII][vazios] trem=24492 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[3646,8][CoperXII][grupo] trem=24486 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
+[3702,3][CoperXII][corte] trem=24486 corta 6 carros da frente
+[3741,9][CoperXII][vazios] trem=24493 chegou na linha com 6 carros
+[3741,9][CoperXII][vazios] trem=24493 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[3741,9][CoperXII][grupo] trem=24486 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
+[3802,6][CoperXII][corte] trem=24486 corta 6 carros da frente
+[3826,5][CoperXII][vazios] trem=24494 chegou na linha com 12 carros
+[3826,5][CoperXII][vazios] trem=24494 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[3826,5][CoperXII][grupo] trem=24486 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
+[3887,2][CoperXII][corte] trem=24486 corta 1 carros da frente
+[3895,4][CoperXII][vazios] trem=24495 chegou na linha com 13 carros
+[3895,4][CoperXII][vazios] trem=24495 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[3895,4][CoperXII][grupo] trem=24486 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
+[3943,0][CoperXII][corte] trem=24486 último grupo do lote
+[3943,0][CoperXII][moega] trem=24486 grupo de 7 carros fica na moega
+[3943,0][CoperXII][moega] trem=24486 lote da moega com 6 vgs (capacidade 6)
+[3943,0][CoperXII][segunda_parte] lote_em_descarga=24486 -> 24400
+[3943,0][CoperXII][resto] trem=24486 lote terminou na moega: moega liberada
+[3943,0][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+3943.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+3943.0 | [diag_pst] chamar loco | ferrovia=rumo | locos no wait=2
+WARNING [             3,943] root.gestorDeAlivios.bloquear_faixas_pst: Agent 226 passed the block immediately due to empty resource set(s) defined.
+[3965,2][CoperXII][alivio] trem=24488 loco do alívio chegou (1 carros)
+[3965,2][CoperXII][alivio] trem=24488 engatando lote_b
+[3968,6][CoperXII][alivio] trem=24488 engatando lote_a
+[3970,6][CoperXII][alivio] trem=24488 engatando lote da moega
+[3976,0][CoperXII][alivio] trem=24488 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+[3976,0][CoperXII][segunda_parte] trem=24400 começa a descarga (41 vgs carregados, locos=0)
+3976.039720342238 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst
+[3976,0][CoperXII][entrar_moega] trem=24400 lote com 41 carros na fila da moega
+[3976,0][CoperXII][loco] trem=24400 lote sem loco: buscando loco
+[3976,0][CoperXII][loco] trem=24400 sem segunda parte: pedindo loco FIPS PST
+[3976,0][CoperXII][loco] trem=24497 loco FIPS PST criada (entra em pos_loco_pera)
+[3976,0][CoperXII][loco] trem=24497 loco FIPS PST indo para a cauda do lote
+[3984,4][CoperXII][loco] trem=24497 loco FIPS encostou e soltou as faixas
+[3984,4][CoperXII][loco] trem=24400 loco acoplada na cauda do lote (42 carros)
+[3984,4][CoperXII][grupo] trem=24400 linha=b vagoes=6 carros=6 (lote tem 42 carros, espaco b=22 a=13)
+[4182,8][CoperXII][corte] trem=24400 corta 6 carros da frente
+[4285,5][CoperXII][vazios] trem=24499 chegou na linha com 6 carros
+[4285,5][CoperXII][vazios] trem=24499 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[4285,5][CoperXII][grupo] trem=24400 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
+[4346,3][CoperXII][corte] trem=24400 corta 6 carros da frente
+[4433,2][CoperXII][vazios] trem=24501 chegou na linha com 12 carros
+[4433,2][CoperXII][vazios] trem=24501 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[4433,2][CoperXII][grupo] trem=24400 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
+[4493,9][CoperXII][corte] trem=24400 corta 6 carros da frente
+[4565,1][CoperXII][vazios] trem=24502 chegou na linha com 18 carros
+[4565,1][CoperXII][vazios] trem=24502 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[4565,1][CoperXII][grupo] trem=24400 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
+[4625,9][CoperXII][corte] trem=24400 corta 4 carros da frente
+[4681,3][CoperXII][vazios] trem=24503 chegou na linha com 22 carros
+[4681,3][CoperXII][vazios] trem=24503 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[4681,3][CoperXII][grupo] trem=24400 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
+[4736,8][CoperXII][corte] trem=24400 corta 6 carros da frente
+[4776,4][CoperXII][vazios] trem=24504 chegou na linha com 6 carros
+[4776,4][CoperXII][vazios] trem=24504 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[4776,4][CoperXII][grupo] trem=24400 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
+[4837,2][CoperXII][corte] trem=24400 corta 6 carros da frente
+[4861,0][CoperXII][vazios] trem=24505 chegou na linha com 12 carros
+[4861,0][CoperXII][vazios] trem=24505 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[4861,0][CoperXII][grupo] trem=24400 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
+[4921,8][CoperXII][corte] trem=24400 corta 1 carros da frente
+[4929,9][CoperXII][vazios] trem=24506 chegou na linha com 13 carros
+[4929,9][CoperXII][vazios] trem=24506 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[4929,9][CoperXII][grupo] trem=24400 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
+[4977,5][CoperXII][corte] trem=24400 último grupo do lote
+[4977,5][CoperXII][moega] trem=24400 grupo de 7 carros fica na moega
+[4977,5][CoperXII][moega] trem=24400 lote da moega com 6 vgs (capacidade 6)
+[4977,5][CoperXII][segunda_parte] lote_em_descarga=24400 -> -
+[4977,5][CoperXII][resto] trem=24400 lote terminou na moega: moega liberada
+[4977,5][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+4978.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+4978.0 | [diag_pst] chamar loco | ferrovia=rumo | locos no wait=2
+[5000,2][CoperXII][alivio] trem=24496 loco do alívio chegou (1 carros)
+[5000,2][CoperXII][alivio] trem=24496 engatando lote_b
+[5000,2][CoperXII][alivio] trem=24496 engatando lote_a
+[5005,6][CoperXII][alivio] trem=24496 engatando lote da moega
+[5011,0][CoperXII][alivio] trem=24496 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+5011.039720342237 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst
+[6368,6][CoperXII][chegada] trem=24509 carros=84
+[6593,5][CoperXII][ir_encoste] trem=24509 chegou no _coperXII_encoste
+[6593,5][CoperXII][corte_lotes] trem=24509 lote1=27 carros
+[6593,5][CoperXII][entrar_moega] trem=24594 lote com 27 carros na fila da moega
+[6593,5][CoperXII][segunda_parte] trem=24509 segunda parte esperando (57 carros, locos=1)
+[6593,5][CoperXII][grupo] trem=24594 linha=b vagoes=6 carros=7 (lote tem 27 carros, espaco b=22 a=13)
+[6677,5][CoperXII][corte] trem=24594 corta 7 carros da frente
+[6780,2][CoperXII][vazios] trem=24595 chegou na linha com 7 carros
+[6780,2][CoperXII][vazios] trem=24595 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[6780,2][CoperXII][loco] trem=24594 lote sem loco: buscando loco
+[6780,2][CoperXII][loco] trem=24509 tirando a loco da segunda parte
+[6780,2][CoperXII][loco] trem=24597 loco da segunda parte indo para a cauda do lote
+[6780,2][CoperXII][segunda_parte] trem=24509 segunda parte esperando (56 carros, locos=0)
+[6819,2][CoperXII][loco] trem=24594 loco acoplada na cauda do lote (21 carros)
+[6819,2][CoperXII][grupo] trem=24594 linha=b vagoes=6 carros=6 (lote tem 21 carros, espaco b=16 a=13)
+[6883,3][CoperXII][corte] trem=24594 corta 6 carros da frente
+[6966,9][CoperXII][vazios] trem=24598 chegou na linha com 12 carros
+[6966,9][CoperXII][vazios] trem=24598 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[6966,9][CoperXII][grupo] trem=24594 linha=b vagoes=6 carros=6 (lote tem 15 carros, espaco b=10 a=13)
+[7027,7][CoperXII][corte] trem=24594 corta 6 carros da frente
+[7095,5][CoperXII][vazios] trem=24599 chegou na linha com 18 carros
+[7095,5][CoperXII][vazios] trem=24599 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[7095,5][CoperXII][grupo] trem=24594 linha=b vagoes=4 carros=4 (lote tem 9 carros, espaco b=4 a=13)
+[7156,2][CoperXII][corte] trem=24594 corta 4 carros da frente
+[7208,3][CoperXII][vazios] trem=24600 chegou na linha com 22 carros
+[7208,3][CoperXII][vazios] trem=24600 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[7208,3][CoperXII][grupo] trem=24594 linha=a vagoes=4 carros=5 (lote tem 5 carros, espaco b=0 a=13)
+[7263,8][CoperXII][corte] trem=24594 último grupo do lote
+[7303,4][CoperXII][vazios] trem=24594 chegou na linha com 5 carros
+[7303,4][CoperXII][segunda_parte] lote_em_descarga=24594 -> 24509
+[7303,4][CoperXII][segunda_parte] trem=24509 começa a descarga (56 vgs carregados, locos=0)
+[7303,4][CoperXII][vazios] trem=24594 lote terminou: moega liberada
+[7303,4][CoperXII][vazios] trem=24594 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=4/13
+[7303,4][CoperXII][entrar_moega] trem=24509 lote com 56 carros na fila da moega
+[7303,4][CoperXII][loco] trem=24509 lote sem loco: buscando loco
+[7303,4][CoperXII][loco] trem=24509 sem segunda parte: pedindo loco FIPS PST
+[7303,4][CoperXII][loco] trem=24602 loco FIPS PST criada (entra em pos_loco_pera)
+[7303,4][CoperXII][loco] trem=24602 loco FIPS PST indo para a cauda do lote
+[7311,8][CoperXII][loco] trem=24602 loco FIPS encostou e soltou as faixas
+[7311,8][CoperXII][loco] trem=24509 loco acoplada na cauda do lote (57 carros)
+[7311,8][CoperXII][grupo] trem=24509 linha=a vagoes=6 carros=6 (lote tem 57 carros, espaco b=0 a=9)
+[7470,8][CoperXII][corte] trem=24509 corta 6 carros da frente
+[7499,9][CoperXII][vazios] trem=24604 chegou na linha com 10 carros
+[7499,9][CoperXII][vazios] trem=24604 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=10/13
+[7499,9][CoperXII][grupo] trem=24509 linha=a vagoes=3 carros=3 (lote tem 51 carros, espaco b=0 a=3)
+[7560,7][CoperXII][corte] trem=24509 corta 3 carros da frente
+[7574,0][CoperXII][vazios] trem=24605 chegou na linha com 13 carros
+[7574,0][CoperXII][vazios] trem=24605 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[7574,0][CoperXII][grupo] trem=24509 linha=moega vagoes=6 carros=6 (lote tem 48 carros, espaco b=0 a=0)
+[7626,9][CoperXII][corte] trem=24509 corta 6 carros da frente
+[7626,9][CoperXII][moega] trem=24606 grupo de 6 carros fica na moega
+[7626,9][CoperXII][moega] trem=24606 lote da moega com 6 vgs (capacidade 6)
+[7626,9][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+[7626,9][CoperXII][espaco] trem=24509 41 vazios prontos: lote espera o alívio onde está
+7627.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+7627.0 | [diag_pst] chamar loco | ferrovia=mrs | locos no wait=2
+[7649,2][CoperXII][alivio] trem=24596 loco do alívio chegou (1 carros)
+[7649,2][CoperXII][alivio] trem=24596 engatando lote_b
+[7652,6][CoperXII][alivio] trem=24596 engatando lote_a
+[7654,6][CoperXII][alivio] trem=24596 engatando lote da moega
+[7660,0][CoperXII][alivio] trem=24596 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+7660.039720342238 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst
+[7660,0][CoperXII][grupo] trem=24509 linha=b vagoes=6 carros=6 (lote tem 42 carros, espaco b=22 a=13)
+[7705,0][CoperXII][corte] trem=24509 corta 6 carros da frente
+[7823,5][CoperXII][vazios] trem=24607 chegou na linha com 6 carros
+[7823,5][CoperXII][vazios] trem=24607 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[7823,5][CoperXII][grupo] trem=24509 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
+[7900,0][CoperXII][corte] trem=24509 corta 6 carros da frente
+[7986,9][CoperXII][vazios] trem=24608 chegou na linha com 12 carros
+[7986,9][CoperXII][vazios] trem=24608 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[7986,9][CoperXII][grupo] trem=24509 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
+[8047,7][CoperXII][corte] trem=24509 corta 6 carros da frente
+[8118,8][CoperXII][vazios] trem=24610 chegou na linha com 18 carros
+[8118,8][CoperXII][vazios] trem=24610 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[8118,8][CoperXII][grupo] trem=24509 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
+[8179,6][CoperXII][corte] trem=24509 corta 4 carros da frente
+[8235,0][CoperXII][vazios] trem=24611 chegou na linha com 22 carros
+[8235,0][CoperXII][vazios] trem=24611 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[8235,0][CoperXII][grupo] trem=24509 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
+[8290,5][CoperXII][corte] trem=24509 corta 6 carros da frente
+[8330,1][CoperXII][vazios] trem=24612 chegou na linha com 6 carros
+[8330,1][CoperXII][vazios] trem=24612 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[8330,1][CoperXII][grupo] trem=24509 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
+[8390,9][CoperXII][corte] trem=24509 corta 6 carros da frente
+[8414,7][CoperXII][vazios] trem=24613 chegou na linha com 12 carros
+[8414,7][CoperXII][vazios] trem=24613 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[8414,7][CoperXII][grupo] trem=24509 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
+[8475,5][CoperXII][corte] trem=24509 corta 1 carros da frente
+[8483,6][CoperXII][vazios] trem=24614 chegou na linha com 13 carros
+[8483,6][CoperXII][vazios] trem=24614 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[8483,6][CoperXII][grupo] trem=24509 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
+[8531,2][CoperXII][corte] trem=24509 último grupo do lote
+[8531,2][CoperXII][moega] trem=24509 grupo de 7 carros fica na moega
+[8531,2][CoperXII][moega] trem=24509 lote da moega com 6 vgs (capacidade 6)
+[8531,2][CoperXII][segunda_parte] lote_em_descarga=24509 -> -
+[8531,2][CoperXII][resto] trem=24509 lote terminou na moega: moega liberada
+[8531,2][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+8532.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+8532.0 | [diag_pst] chamar loco | ferrovia=mrs | locos no wait=2
+[8554,2][CoperXII][alivio] trem=24601 loco do alívio chegou (1 carros)
+[8554,2][CoperXII][alivio] trem=24601 engatando lote_b
+[8554,2][CoperXII][alivio] trem=24601 engatando lote_a
+[8559,6][CoperXII][alivio] trem=24601 engatando lote da moega
+[8565,0][CoperXII][alivio] trem=24601 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+8565.039720342238 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst
+[10208,1][CoperXII][chegada] trem=24617 carros=84
+[10433,0][CoperXII][ir_encoste] trem=24617 chegou no _coperXII_encoste
+[10433,0][CoperXII][corte_lotes] trem=24617 lote1=39 carros
+[10433,0][CoperXII][entrar_moega] trem=24702 lote com 39 carros na fila da moega
+[10433,0][CoperXII][segunda_parte] trem=24617 segunda parte esperando (45 carros, locos=1)
+[10433,0][CoperXII][grupo] trem=24702 linha=b vagoes=6 carros=7 (lote tem 39 carros, espaco b=22 a=13)
+[10517,0][CoperXII][corte] trem=24702 corta 7 carros da frente
+[10619,7][CoperXII][vazios] trem=24703 chegou na linha com 7 carros
+[10619,7][CoperXII][vazios] trem=24703 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[10619,7][CoperXII][loco] trem=24702 lote sem loco: buscando loco
+[10619,7][CoperXII][loco] trem=24617 tirando a loco da segunda parte
+[10619,7][CoperXII][loco] trem=24705 loco da segunda parte indo para a cauda do lote
+[10619,7][CoperXII][segunda_parte] trem=24617 segunda parte esperando (44 carros, locos=0)
+[10658,7][CoperXII][loco] trem=24702 loco acoplada na cauda do lote (33 carros)
+[10658,7][CoperXII][grupo] trem=24702 linha=b vagoes=6 carros=6 (lote tem 33 carros, espaco b=16 a=13)
+[10722,8][CoperXII][corte] trem=24702 corta 6 carros da frente
+[10806,4][CoperXII][vazios] trem=24706 chegou na linha com 12 carros
+[10806,4][CoperXII][vazios] trem=24706 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[10806,4][CoperXII][grupo] trem=24702 linha=b vagoes=6 carros=6 (lote tem 27 carros, espaco b=10 a=13)
+[10867,2][CoperXII][corte] trem=24702 corta 6 carros da frente
+[10935,0][CoperXII][vazios] trem=24707 chegou na linha com 18 carros
+[10935,0][CoperXII][vazios] trem=24707 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[10935,0][CoperXII][grupo] trem=24702 linha=b vagoes=4 carros=4 (lote tem 21 carros, espaco b=4 a=13)
+[10995,7][CoperXII][corte] trem=24702 corta 4 carros da frente
+[11047,8][CoperXII][vazios] trem=24708 chegou na linha com 22 carros
+[11047,8][CoperXII][vazios] trem=24708 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[11047,8][CoperXII][grupo] trem=24702 linha=a vagoes=6 carros=6 (lote tem 17 carros, espaco b=0 a=13)
+[11103,3][CoperXII][corte] trem=24702 corta 6 carros da frente
+[11142,9][CoperXII][vazios] trem=24709 chegou na linha com 6 carros
+[11142,9][CoperXII][vazios] trem=24709 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[11142,9][CoperXII][grupo] trem=24702 linha=a vagoes=6 carros=6 (lote tem 11 carros, espaco b=0 a=7)
+[11203,6][CoperXII][corte] trem=24702 corta 6 carros da frente
+[11227,5][CoperXII][vazios] trem=24710 chegou na linha com 12 carros
+[11227,5][CoperXII][vazios] trem=24710 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[11227,5][CoperXII][grupo] trem=24702 linha=a vagoes=1 carros=1 (lote tem 5 carros, espaco b=0 a=1)
+[11288,2][CoperXII][corte] trem=24702 corta 1 carros da frente
+[11296,4][CoperXII][vazios] trem=24711 chegou na linha com 13 carros
+[11296,4][CoperXII][vazios] trem=24711 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[11296,4][CoperXII][grupo] trem=24702 linha=moega vagoes=3 carros=4 (lote tem 4 carros, espaco b=0 a=0)
+[11344,0][CoperXII][corte] trem=24702 último grupo do lote
+[11344,0][CoperXII][moega] trem=24702 grupo de 4 carros fica na moega
+[11344,0][CoperXII][moega] trem=24702 lote da moega com 3 vgs (capacidade 6)
+[11344,0][CoperXII][segunda_parte] lote_em_descarga=24702 -> 24617
+[11344,0][CoperXII][segunda_parte] trem=24617 começa a descarga (44 vgs carregados, locos=0)
+[11344,0][CoperXII][resto] trem=24702 lote terminou na moega: moega liberada
+[11344,0][CoperXII][entrar_moega] trem=24617 lote com 44 carros na fila da moega
+[11344,0][CoperXII][loco] trem=24617 lote sem loco: buscando loco
+[11344,0][CoperXII][loco] trem=24617 sem segunda parte: pedindo loco FIPS PST
+[11344,0][CoperXII][loco] trem=24713 loco FIPS PST criada (entra em pos_loco_pera)
+[11344,0][CoperXII][loco] trem=24713 loco FIPS PST indo para a cauda do lote
+[11352,4][CoperXII][loco] trem=24713 loco FIPS encostou e soltou as faixas
+[11352,4][CoperXII][loco] trem=24617 loco acoplada na cauda do lote (45 carros)
+[11352,4][CoperXII][grupo] trem=24617 linha=moega vagoes=3 carros=3 (lote tem 45 carros, espaco b=0 a=0)
+[11535,0][CoperXII][corte] trem=24617 corta 3 carros da frente
+[11535,0][CoperXII][moega] trem=24715 grupo de 3 carros fica na moega
+[11535,0][CoperXII][moega] trem=24715 lote da moega com 6 vgs (capacidade 6)
+[11535,0][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+[11535,0][CoperXII][espaco] trem=24617 41 vazios prontos: lote espera o alívio onde está
+11536.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+11536.0 | [diag_pst] chamar loco | ferrovia=vli | locos no wait=2
+[11558,2][CoperXII][alivio] trem=24704 loco do alívio chegou (1 carros)
+[11558,2][CoperXII][alivio] trem=24704 engatando lote_b
+[11561,6][CoperXII][alivio] trem=24704 engatando lote_a
+[11563,6][CoperXII][alivio] trem=24704 engatando lote da moega
+[11569,0][CoperXII][alivio] trem=24704 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+11569.039720342238 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst
+[11569,0][CoperXII][grupo] trem=24617 linha=b vagoes=6 carros=6 (lote tem 42 carros, espaco b=22 a=13)
+[11614,0][CoperXII][corte] trem=24617 corta 6 carros da frente
+[11732,5][CoperXII][vazios] trem=24716 chegou na linha com 6 carros
+[11732,5][CoperXII][vazios] trem=24716 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[11732,5][CoperXII][grupo] trem=24617 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
+[11809,0][CoperXII][corte] trem=24617 corta 6 carros da frente
+[11895,9][CoperXII][vazios] trem=24717 chegou na linha com 12 carros
+[11895,9][CoperXII][vazios] trem=24717 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[11895,9][CoperXII][grupo] trem=24617 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
+[11956,7][CoperXII][corte] trem=24617 corta 6 carros da frente
+[12027,8][CoperXII][vazios] trem=24719 chegou na linha com 18 carros
+[12027,8][CoperXII][vazios] trem=24719 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[12027,8][CoperXII][grupo] trem=24617 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
+[12088,6][CoperXII][corte] trem=24617 corta 4 carros da frente
+[12144,0][CoperXII][vazios] trem=24720 chegou na linha com 22 carros
+[12144,0][CoperXII][vazios] trem=24720 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[12144,0][CoperXII][grupo] trem=24617 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
+[12199,5][CoperXII][corte] trem=24617 corta 6 carros da frente
+[12239,1][CoperXII][vazios] trem=24721 chegou na linha com 6 carros
+[12239,1][CoperXII][vazios] trem=24721 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[12239,1][CoperXII][grupo] trem=24617 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
+[12299,9][CoperXII][corte] trem=24617 corta 6 carros da frente
+[12323,7][CoperXII][vazios] trem=24722 chegou na linha com 12 carros
+[12323,7][CoperXII][vazios] trem=24722 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[12323,7][CoperXII][grupo] trem=24617 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
+[12384,5][CoperXII][corte] trem=24617 corta 1 carros da frente
+[12392,6][CoperXII][vazios] trem=24723 chegou na linha com 13 carros
+[12392,6][CoperXII][vazios] trem=24723 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[12392,6][CoperXII][grupo] trem=24617 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
+[12440,2][CoperXII][corte] trem=24617 último grupo do lote
+[12440,2][CoperXII][moega] trem=24617 grupo de 7 carros fica na moega
+[12440,2][CoperXII][moega] trem=24617 lote da moega com 6 vgs (capacidade 6)
+[12440,2][CoperXII][segunda_parte] lote_em_descarga=24617 -> -
+[12440,2][CoperXII][resto] trem=24617 lote terminou na moega: moega liberada
+[12440,2][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+12441.0 | [qtd_alivio] moegaoMar | vazios no terminal: 41 | cabem_na_dv0: 12 | definido: 12 (limitado pela 4000)
+12441.0 | [diag_pst] chamar loco | ferrovia=vli | locos no wait=2
+[12463,2][CoperXII][alivio] trem=24712 loco do alívio chegou (1 carros)
+[12463,2][CoperXII][alivio] trem=24712 engatando lote_b
+[12463,2][CoperXII][alivio] trem=24712 engatando lote_a
+[12468,6][CoperXII][alivio] trem=24712 engatando lote da moega
+[12474,0][CoperXII][alivio] trem=24712 alívio engatado: 41 vgs, voltando ao GestorDeAlivios
+12474.039720342238 | [diag_pst] alivio terminou | moegaoMar voltou para terminais_pst

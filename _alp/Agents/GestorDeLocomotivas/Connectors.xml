@@ -48,8 +48,8 @@
 		<Id>1787855153177</Id>
 		<Name><![CDATA[connector1]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>510</X>
-		<Y>1020</Y>
+		<X>470</X>
+		<Y>1050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -311,7 +311,7 @@
 		<Id>1789648803998</Id>
 		<Name><![CDATA[connector2]]></Name>
 		<X>700</X>
-		<Y>670</Y>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -440,7 +440,7 @@
 		<Id>1789649065388</Id>
 		<Name><![CDATA[connector27]]></Name>
 		<X>890</X>
-		<Y>380</Y>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -483,7 +483,7 @@
 		<Id>1789649068946</Id>
 		<Name><![CDATA[connector28]]></Name>
 		<X>940</X>
-		<Y>430</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -530,7 +530,7 @@
 		<Id>1789649096665</Id>
 		<Name><![CDATA[connector29]]></Name>
 		<X>1050</X>
-		<Y>380</Y>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -573,7 +573,7 @@
 		<Id>1789649102865</Id>
 		<Name><![CDATA[connector30]]></Name>
 		<X>1050</X>
-		<Y>430</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -616,7 +616,7 @@
 		<Id>1789649708554</Id>
 		<Name><![CDATA[connector4]]></Name>
 		<X>800</X>
-		<Y>380</Y>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -659,7 +659,7 @@
 		<Id>1790088620395</Id>
 		<Name><![CDATA[connector5]]></Name>
 		<X>1050</X>
-		<Y>480</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -702,7 +702,7 @@
 		<Id>1790088620397</Id>
 		<Name><![CDATA[connector8]]></Name>
 		<X>990</X>
-		<Y>480</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -749,7 +749,7 @@
 		<Id>1790088724032</Id>
 		<Name><![CDATA[connector9]]></Name>
 		<X>1050</X>
-		<Y>530</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

@@ -2336,17 +2336,12 @@ aguardarAliviar_L1.take(agent);]]></Code>
 Trem trem = (Trem) agent;
 traceln(String.format("[%.1f][Bracell][para_circVzs] trem=%d vagoes=%d -> circulacao", time(), trem.getId(), main().getNumeroDeVagoes(trem)));
 
-trem.eh_alivio     = true;
+// ALT-061: a Bracell só informa a saída; o GestorDeAlivios solta a trava,
+// devolve a Bracell para terminais_pmc e entrega o trem ao GestorDeCirculacao
 trem.faixa_atual   = main().gestorDeCirculacao.faixa_intervalo4000_c;
 trem.proxima_faixa = main().gestorDeCirculacao.faixa_intervalo4000_b;
 
-// terminal volta para a análise de alívio de celulose
-main().gestorDeAlivios.terminal_alivio_celulose = null;
-if (!main().gestorDeAlivios.terminais_celulose.contains(this)) {
-    main().gestorDeAlivios.terminais_celulose.add(this);
-}
-
-main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
+main().gestorDeAlivios.retornar_alivio_pmc(trem);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

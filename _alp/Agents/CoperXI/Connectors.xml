@@ -2582,7 +2582,7 @@
 	<Connector>
 		<Id>1788997082992</Id>
 		<Name><![CDATA[connector68]]></Name>
-		<X>310</X>
+		<X>-105</X>
 		<Y>-100</Y>
 		<Label>
 			<X>10</X>
@@ -2617,15 +2617,15 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-115</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-150</X>
+				<X>-165</X>
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>-200</X>
+				<X>-215</X>
 				<Y>-50</Y>
 			</Point>
 		</Points>
@@ -2698,12 +2698,12 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>vaiMarginal2</ItemName>
+			<ItemName>ir_marginal</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port</ItemName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
@@ -2917,12 +2917,12 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>irLinhaVerde</ItemName>
+			<ItemName>ir_linha_verde</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port1</ItemName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
@@ -2960,12 +2960,12 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>irLinhaVerde</ItemName>
+			<ItemName>ir_linha_verde</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port</ItemName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
@@ -3103,49 +3103,6 @@
 			</Point>
 			<Point>
 				<X>-140</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1789669109846</Id>
-		<Name><![CDATA[connector115]]></Name>
-		<X>250</X>
-		<Y>800</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>vaiMarginal2</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>MoverTremCompleto_Ponto</ClassName>
-			<ItemName>port1</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>para_encostarLinhaMoega</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>100</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -6349,8 +6306,8 @@
 	<Connector>
 		<Id>1791465417959</Id>
 		<Name><![CDATA[connector57]]></Name>
-		<X>0</X>
-		<Y>420</Y>
+		<X>2250</X>
+		<Y>1820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6380,12 +6337,12 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>2250</X>
-				<Y>1400</Y>
+				<X>0</X>
+				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>2290</X>
-				<Y>1400</Y>
+				<X>40</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -6615,8 +6572,8 @@
 	<Connector>
 		<Id>1791466086109</Id>
 		<Name><![CDATA[connector58]]></Name>
-		<X>0</X>
-		<Y>420</Y>
+		<X>2330</X>
+		<Y>1820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6646,12 +6603,12 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>2330</X>
-				<Y>1400</Y>
+				<X>0</X>
+				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>2370</X>
-				<Y>1400</Y>
+				<X>40</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -8943,7 +8900,7 @@
 	<Connector>
 		<Id>1791553988678</Id>
 		<Name><![CDATA[connector209]]></Name>
-		<X>110</X>
+		<X>-320</X>
 		<Y>-100</Y>
 		<Label>
 			<X>10</X>
@@ -8978,7 +8935,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>200</X>
+				<X>215</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -8986,7 +8943,7 @@
 	<Connector>
 		<Id>1791554014391</Id>
 		<Name><![CDATA[connector210]]></Name>
-		<X>110</X>
+		<X>-320</X>
 		<Y>-50</Y>
 		<Label>
 			<X>10</X>
@@ -9029,7 +8986,7 @@
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>200</X>
+				<X>215</X>
 				<Y>-50</Y>
 			</Point>
 		</Points>
@@ -9767,6 +9724,49 @@
 			<Point>
 				<X>-30</X>
 				<Y>210</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792071381496</Id>
+		<Name><![CDATA[connector111]]></Name>
+		<X>250</X>
+		<Y>800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>ir_marginal</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>para_encostarLinhaMoega</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>

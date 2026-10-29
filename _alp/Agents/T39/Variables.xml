@@ -360,8 +360,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1791222717183</Id>
 		<Name><![CDATA[quantidade_alivio]]></Name>
-		<X>-640</X>
-		<Y>490</Y>
+		<X>-610</X>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -666,8 +666,8 @@
 	<Variable Class="CollectionVariable">
 		<Id>1790950057429</Id>
 		<Name><![CDATA[primeiro_alivio_faixas]]></Name>
-		<X>-640</X>
-		<Y>470</Y>
+		<X>-610</X>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

@@ -1,4 +1,4 @@
-double descarregarGrao()
+double descarregar()
 {/*ALCODESTART::1781892511343*/
 switch (ferrovia) {
     

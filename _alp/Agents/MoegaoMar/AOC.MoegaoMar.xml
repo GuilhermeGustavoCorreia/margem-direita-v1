@@ -3,6 +3,7 @@
 	<Id>1785762667375</Id>
 	<Name><![CDATA[MoegaoMar]]></Name>
 	<Folder>1782841100114</Folder>
+	<Implements>ITerminalMoega</Implements>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1785762667380</Id>
@@ -90,8 +91,8 @@
 	<ScaleRuler>
 		<Id>1785762667378</Id>
 		<Name><![CDATA[scale]]></Name>
-		<X>0</X>
-		<Y>-150</Y>
+		<X>-120</X>
+		<Y>560</Y>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
@@ -106,12 +107,12 @@
 	</ScaleRuler>
 	<CurrentLevel>1785762667381</CurrentLevel>
 	<Variables xmlns:al="http://anylogic.com"/>
-	<Events xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1785762841398</Id>
+			<Id>1793299544447</Id>
 			<Name><![CDATA[main]]></Name>
+			<ExcludeFromBuild>true</ExcludeFromBuild>
 			<X>50</X>
 			<Y>-100</Y>
 			<Label>

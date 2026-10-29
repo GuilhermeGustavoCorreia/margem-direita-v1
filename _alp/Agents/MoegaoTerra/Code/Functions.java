@@ -1,8 +1,3 @@
-Main main()
-{/*ALCODESTART::1786037742464*/
-return (Main) getEngine().getRoot();
-/*ALCODEEND*/}
-
 int _getTamanhoDoLote(Trem trem)
 {/*ALCODESTART::1786042418713*/
 Agent primeiroVagao = trem.getFirst();
@@ -108,69 +103,6 @@ int tamanhoVazios = (main().getTamanhoDoTrem(lote_vazios_L1) + main().getTamanho
 return tamanhoVazios;
 /*ALCODEEND*/}
 
-float getOverloadVazios()
-{/*ALCODESTART::1786384110372*/
-int tamanhoVazios = (
-	main().getTamanhoDoTrem(lote_vazios_L1) + 
-	main().getTamanhoDoTrem(lote_vazios_L2) + 
-	main().getTamanhoDoTrem(lote_vazios_terra)
-);
-
-return ( (float) tamanhoVazios / RECOMENDACAO_ALIVIO_VAZIOS );
-/*ALCODEEND*/}
-
-boolean podeReceberNovoLote()
-{/*ALCODESTART::1786384321896*/
-return true;
-/*ALCODEEND*/}
-
-String getAssociadaVazios()
-{/*ALCODESTART::1786392550905*/
-if (lote_vazios_terra != null) {
-
-    return lote_vazios_terra.getAssociada();
-    
-} else if (lote_vazios_L2 != null) {
-
-    return lote_vazios_L2.getAssociada();
-    
-} else if (lote_vazios_L1 != null) {
-
-    return lote_vazios_L1.getAssociada();
-    
-} else {
-
-    return null;
-
-}
-/*ALCODEEND*/}
-
-String getSegmentoVazios()
-{/*ALCODESTART::1786392899580*/
-if (lote_vazios_terra != null) {
-
-    return lote_vazios_terra.getSegmento();
-    
-} else if (lote_vazios_L2 != null) {
-
-    return lote_vazios_L2.getSegmento();
-    
-} else if (lote_vazios_L1 != null) {
-
-    return lote_vazios_L1.getSegmento();
-    
-} else {
-
-    return null;
-
-}
-/*ALCODEEND*/}
-
-double takeAlivio(Agent agent)
-{/*ALCODESTART::1786469051530*/
-aliviarMoega.take(agent);
-/*ALCODEEND*/}
-
 boolean _podeAguardaAlivio()
 {/*ALCODESTART::1786632752330*/
 if ( getOverloadVazios() >= 1){
@@ -222,66 +154,101 @@ _vaiAliviar_meio = true;
 if(esperar_meio.size() > 0) esperar_meio.free(esperar_meio.get(0));
 /*ALCODEEND*/}
 
+int get_quantidade_loco_alivio()
+{/*ALCODESTART::1791700000010*/
+return 1;
+/*ALCODEEND*/}
+
+Main main()
+{/*ALCODESTART::1793120927488*/
+return (Main) getEngine().getRoot();
+/*ALCODEEND*/}
+
+boolean podeReceberNovoLote()
+{/*ALCODESTART::1793120927490*/
+return true;
+/*ALCODEEND*/}
+
+float getOverloadVazios()
+{/*ALCODESTART::1793120927492*/
+return (float) 0.0;
+/*ALCODEEND*/}
+
 PositionOnTrack get_pos_alivio()
-{/*ALCODESTART::1787599595927*/
-return main().pos_locoAlivio_PMC;
+{/*ALCODESTART::1793120927494*/
+return main().pos_alivio_coperXI;
 /*ALCODEEND*/}
 
 int getNumeroLocomotivasAlivio()
-{/*ALCODESTART::1787599595931*/
+{/*ALCODESTART::1793120927496*/
 return 2;
 /*ALCODEEND*/}
 
 String getPatio()
-{/*ALCODESTART::1787663149667*/
-return "PST";
+{/*ALCODESTART::1793120927498*/
+return "pst";
 /*ALCODEEND*/}
 
-ArrayList<Faixa>  get_faixas_primeiro_alivio()
-{/*ALCODESTART::1790638014122*/
+ArrayList<Faixa> get_faixas_primeiro_alivio()
+{/*ALCODESTART::1793120927500*/
 // a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
 // é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
 return new ArrayList<Faixa>();
 /*ALCODEEND*/}
 
 String getSegmento()
-{/*ALCODESTART::1790777524068*/
+{/*ALCODESTART::1793120927502*/
 return segmento_em_atendimento;
 /*ALCODEEND*/}
 
 String getFerrovia()
-{/*ALCODESTART::1790777524070*/
+{/*ALCODESTART::1793120927504*/
 return ferrovia_em_atendimento;
 /*ALCODEEND*/}
 
 double takeAlivio(Trem trem)
-{/*ALCODESTART::1790791116856*/
+{/*ALCODESTART::1793120927506*/
+
 iniciar_alivio.take(trem);
 /*ALCODEEND*/}
 
 ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios()
-{/*ALCODESTART::1790791459146*/
-return null;
+{/*ALCODESTART::1793120927508*/
+return new ArrayList<>(Arrays.asList(
+	main().gestorDeCirculacao.faixa_via1_intermar_d, 
+	main().gestorDeCirculacao.faixa_via1_intermar_c
+));
 /*ALCODEEND*/}
 
 double set_quantidade_alivio(int qt_quantidade)
-{/*ALCODESTART::1791223029307*/
-quantidade_alivio = qt_quantidade;
+{/*ALCODESTART::1793120927510*/
+//quantidade_alivio = qt_quantidade;
 /*ALCODEEND*/}
 
 int get_quantidade_vazios()
-{/*ALCODESTART::1791224520511*/
-return 0;
+{/*ALCODESTART::1793120927512*/
+return 0;//_getVagosVazios();
 /*ALCODEEND*/}
 
 String get_tipo_loco_alivio()
-{/*ALCODESTART::1791700000009*/
+{/*ALCODESTART::1793120927514*/
 // "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
 return "ferrovia";
 /*ALCODEEND*/}
 
-int get_quantidade_loco_alivio()
-{/*ALCODESTART::1791700000010*/
-return 1;
+double atualizarFerroviaEProdutoEmAtendimento(Trem trem)
+{/*ALCODESTART::1793121165917*/
+for (int i = 0; i < trem.size(); i++) {
+        Agent carro = trem.getCar(i); // confere o nome exato do método com Ctrl+Espaço
+
+        if (carro instanceof Vagao) {
+            Vagao vagao = (Vagao) carro;
+            ferrovia_em_atendimento = vagao.ferrovia;
+            segmento_em_atendimento = vagao.segmento;
+            return; // achou o primeiro vagão, encerra
+        }
+    }
+
+    traceln("erro: trem não tem nenhum vagão");
 /*ALCODEEND*/}
 

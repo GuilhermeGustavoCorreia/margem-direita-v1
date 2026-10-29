@@ -75,8 +75,8 @@
 	<Event>
 		<Id>1791469801983</Id>
 		<Name><![CDATA[atualizar_analises]]></Name>
-		<X>60</X>
-		<Y>40</Y>
+		<X>120</X>
+		<Y>150</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

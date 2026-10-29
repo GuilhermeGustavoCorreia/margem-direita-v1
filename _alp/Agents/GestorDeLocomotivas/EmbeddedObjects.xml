@@ -308,8 +308,8 @@
 	<EmbeddedObject>
 		<Id>1787855133103</Id>
 		<Name><![CDATA[devolverLocomotiva]]></Name>
-		<X>370</X>
-		<Y>1010</Y>
+		<X>330</X>
+		<Y>1040</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -426,8 +426,8 @@
 		<Id>1787855150450</Id>
 		<Name><![CDATA[trainDispose]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>510</X>
-		<Y>1020</Y>
+		<X>470</X>
+		<Y>1050</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-30</Y>
@@ -481,7 +481,7 @@
 		<Id>1789645081244</Id>
 		<Name><![CDATA[guardar_locoRumo]]></Name>
 		<X>680</X>
-		<Y>660</Y>
+		<Y>690</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -2649,7 +2649,7 @@
 		<Id>1789649031676</Id>
 		<Name><![CDATA[guardar_loco]]></Name>
 		<X>680</X>
-		<Y>370</Y>
+		<Y>390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -2766,7 +2766,7 @@
 		<Id>1789649037082</Id>
 		<Name><![CDATA[sairDaTrack]]></Name>
 		<X>800</X>
-		<Y>370</Y>
+		<Y>390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-25</Y>
@@ -2820,7 +2820,7 @@
 		<Id>1789649064514</Id>
 		<Name><![CDATA[ehRumo]]></Name>
 		<X>880</X>
-		<Y>370</Y>
+		<Y>390</Y>
 		<Label>
 			<X>-6</X>
 			<Y>-20</Y>
@@ -2898,7 +2898,7 @@
 		<Id>1789649066467</Id>
 		<Name><![CDATA[ehMRS]]></Name>
 		<X>930</X>
-		<Y>420</Y>
+		<Y>440</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -2976,7 +2976,7 @@
 		<Id>1789649095557</Id>
 		<Name><![CDATA[para_guarda_LocoRumo]]></Name>
 		<X>1050</X>
-		<Y>370</Y>
+		<Y>390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3030,7 +3030,7 @@
 		<Id>1789649101005</Id>
 		<Name><![CDATA[para_guarda_LocoMRS]]></Name>
 		<X>1050</X>
-		<Y>420</Y>
+		<Y>440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3084,7 +3084,7 @@
 		<Id>1789649105390</Id>
 		<Name><![CDATA[para_guarda_LocoVLI]]></Name>
 		<X>1050</X>
-		<Y>470</Y>
+		<Y>490</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3138,7 +3138,7 @@
 		<Id>1790088617760</Id>
 		<Name><![CDATA[ehVLI]]></Name>
 		<X>980</X>
-		<Y>470</Y>
+		<Y>490</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-20</Y>
@@ -3216,7 +3216,7 @@
 		<Id>1790088704291</Id>
 		<Name><![CDATA[para_guarda_LocoFIPS]]></Name>
 		<X>1050</X>
-		<Y>520</Y>
+		<Y>540</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3705,7 +3705,7 @@
 		<Id>1790688198569</Id>
 		<Name><![CDATA[locomotivasRumo]]></Name>
 		<X>860</X>
-		<Y>650</Y>
+		<Y>680</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>

@@ -54,11 +54,15 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - Pega locomotivas da ferrovia em atendimento ou de manobra, conforme `get_tipo_loco_alivio()`.
 - Só tira um terminal de `terminais_pst` se houver loco no wait da ferrovia.
   [verificar: regra completa do alívio]
-- **Celulose PCX** (ALT-014, `analisar_celulose`): Bracell (depois Suzano e Eldorado), lista `terminais_celulose`.
+- **Celulose PMC** (ALT-014, ALT-061, `analisar_pmc`): Bracell, Suzano e Eldorado, lista `terminais_pmc`.
+  Hoje a lista só tem a Bracell: a Suzano entra quando tiver o fluxo de coleta dos vazios; o Eldorado, quando o agente existir.
   Lógica separada: não usa a linha 4000 e não depende das DVs. Só verifica overload > 1 e se há loco da ferrovia no wait.
-  Um alívio por vez (`terminal_alivio_celulose`). A loco ocupa a linha 5000/6000, entra em `circ_pos_inicio_L5K` e vai até `get_pos_alivio()`.
-  O trem sai com todos os vazios do terminal. Ao fim, o terminal volta para `terminais_celulose` (`para_circVzs` da Bracell).
-- **Linha 4000**: só T39, TES e ADMO (TES e ADMO ainda vão ser criados).
+  Um alívio do PMC por vez (`terminal_alivio_pmc`). Ida: `loco_alivio_pmc → ocupar_linha5000_6000 → trainEnter_pmc` (`circ_pos_inicio_L5K`) `→ ir_alivio_pmc` (`get_pos_alivio()`) `→ para_alivio_terminal_pmc` (`takeAlivio`).
+  O trem sai com todos os vazios do terminal. Volta: o terminal define `faixa_atual`/`proxima_faixa` e chama `retornar_alivio_pmc(trem)`,
+  que solta a trava, devolve o terminal para `terminais_pmc`, marca `eh_alivio` e entrega o trem ao GestorDeCirculacao.
+- **Linha 4000** (`terminais_pcx`): T39 e ADM (ALT-025); TES ainda vai ser criado.
+  Um alívio da 4000 por vez: `analisar_pcx` para o laço quando `aux_esta_ocorrendo_alivio_pcx` fica true.
+  ADM: alivia com 30 vazios exatos na linha 7 (`QUANTIDADE_PARA_ALIVIAR`); a loco chega em `_adm_alivio_comeco` (linha2000_e).
 - **Tgrao**: o alívio é sempre de 40 vagões, nunca menos.
   Só alivia se o GestorDeDVs tiver mais de 40 vagões de espaço livre para a ferrovia do Tgrao. [pendente no código]
 - **Alívio na linha 4000** (circuito PCX, ALT-013): quando o trem volta do alívio com `CAPACIDADE_LINHA_4000` (82) vagões,
@@ -84,8 +88,8 @@ Ainda não desenvolvido.
 |---|---|---|
 | Terminal → GestorDeLocomotivas | `selecionar_rp_locomotiva_trecho`, `guardar_loco.take` | Locomotiva sobra ou precisa ser devolvida |
 | Terminal → GestorDeCirculacao | `liberar_faixas_ocupadas((Trem) agent)` | Trem sai de uma faixa |
-| Bracell → GestorDeCirculacao | `tentar_usar_faixa.take(agent)` (faixa_atual = intervalo4000_c) | Fim do alívio da Bracell |
-| GestorDeAlivios → Bracell | `takeAlivio(Trem)` via `analisar_celulose` | Overload > 1 |
+| Terminal PMC → GestorDeAlivios | `retornar_alivio_pmc(trem)` (Bracell: faixa_atual = intervalo4000_c) | Fim do alívio de celulose |
+| GestorDeAlivios → Terminal PMC | `takeAlivio(Trem)` via `analisar_pmc` | Overload > 1 |
 | GestorDeAlivios → Terminal | `getOverloadVazios()`, `takeAlivio(Trem)`, `get_pos_alivio()` | Alívio precisa começar |
 | GestorDeAlivios → GestorDeLocomotivas | `pst_colocarLocomotivas_alivioTerminal(moega)` | Criar loco de manobra para o alívio |
 | GestorDeAlivios → GestorDeDVs | espaço livre por ferrovia [a criar] | Antes de aliviar o Tgrao |

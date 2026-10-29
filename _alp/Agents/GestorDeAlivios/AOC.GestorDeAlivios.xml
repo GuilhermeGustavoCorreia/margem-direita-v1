@@ -90,8 +90,8 @@
 	<ScaleRuler>
 		<Id>1784053207768</Id>
 		<Name><![CDATA[scale]]></Name>
-		<X>440</X>
-		<Y>-70</Y>
+		<X>-120</X>
+		<Y>610</Y>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
