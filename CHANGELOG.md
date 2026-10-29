@@ -1106,3 +1106,38 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeCirculacao `para_coperXXI`: a pera manda para `moegaoMar.comecar_encoste` quando `get_terminal_name()` é "moegaoMar"; senão, CoperXXI.
   - GestorDeAlivios: `main().moegaoMar` incluído em `terminais_pst`.
 - **Arquivos:** `_alp/Agents/MoegaoMar/{AOC.MoegaoMar,EmbeddedObjects}.xml`, `_alp/Agents/MoegaoMar/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Variables.xml`
+## ALT-080 — moegaoterra-logica-pera
+- **Data:** 2026-10-29
+- **Status:** aplicada, aguardando validação
+- **O que:** o MoegaoTerra recebeu a lógica de terminal da pera (cópia do MoegaoMar). Ajustes:
+  - Destinos: `_moegaoMar_*` → `_moegaoTerra_*` (encoste na pstL7; moega e lote_a na railwayTrack36; lote_b na railwayTrack15).
+  - Trens de teste do agente apontam para `main().moegaoTerra`.
+  - Rota da loco FIPS: via2_c → track_entrada_pera → pstL7 → railwayTrack36.
+  - Alívio: `get_pos_alivio()` = `_moegaoTerra_lote_b`; faixas do 1º alívio iguais às do MoegaoMar (linhaPaqueta_a, psnSaidaCopexXXI_a, pstSaidaMoegao).
+  - Removida a função duplicada `main2()`; traces com prefixo `[MoegaoTerra]`.
+  - GestorDeCirculacao `para_coperXXI`: a pera manda para `moegaoTerra.comecar_encoste` quando `get_terminal_name()` é "moegaoTerra".
+- **Arquivos:** `_alp/Agents/MoegaoTerra/EmbeddedObjects.xml`, `_alp/Agents/MoegaoTerra/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`
+## ALT-081 — linha4000-saida-trem-cheio
+- **Data:** 2026-10-29
+- **Status:** aplicada, aguardando validação
+- **Problema:** `The car being added on the track 'pmc_intervalo4000_b' intersects with another car` no `loco_pcx_starts`. O trem cheio (82 vagões) saiu às 7339 s; às 7408 s o ADM entrou em overload e o gestor criou as 2 locos FIPS em `pos_linha_4000_criar_loco` (intervalo4000_b) com a cauda do trem ainda lá.
+- **Causa raiz:** o trem sai com `faixa_atual = intervalo4000_a`; a intervalo4000_b/c e a linha 4000 ficavam sem licença. O `liberar_linha_4000` liberava as faixas da 4000 e o `para_alivio_na_linha_4000` zerava `lote_linha_4000`, então o `analisar_pcx` via a 4000 livre. O `bloquear_4000` só pega a linha 4000, não a intervalo4000_b.
+- **Alterações (GestorDeAlivios):**
+  - Novas funções `get_faixas_saida_4000()` (intervalo4000_b/c + linha4000_a/b/c), `saida_4000_livre()` e `ocupar_faixas_saida_4000(Trem)`.
+  - `para_alivio_na_linha_4000.onExit`: chama `ocupar_faixas_saida_4000(trem)`; as faixas em que o trem está ficam `OCUPADA` com o id dele, as outras `LIVRE`. O `liberar_faixas_ocupadas` do GestorDeCirculacao solta cada uma quando a track esvazia.
+  - `liberar_linha_4000.onExit`: deixa de liberar as faixas da linha 4000 (o Release dos recursos continua).
+  - `condicao_4000_pode_aliviar()`: sem trem na 4000 (`lote_linha_4000 == null`), só alivia se `saida_4000_livre()`.
+- **Traces:** `[Alivio4000][ocupar_faixas_saida_4000]` e `[Alivio4000][saida_4000_livre]` (a cada 60 s enquanto espera).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Code/{Functions.java,Functions.xml}`
+## ALT-082 — linha4000-compatibilidade-ferrovia
+- **Data:** 2026-10-29
+- **Status:** aplicada, aguardando validação
+- **Regra:** o trem da linha 4000 junta vazios de TES, ADM e T39 desde que sejam da mesma ferrovia e do mesmo segmento.
+- **Problema:** `condicao_4000_eh_compativel_com_terminal` existia, mas `ferrovia_na_linha_4000` e `segmento_na_linha_4000` nunca recebiam valor (só eram zeradas). A condição devolvia sempre `true`. Além disso, as Strings eram comparadas com `==`.
+- **Alterações (GestorDeAlivios):**
+  - `colocar_terminal_em_alivio`: se `ferrovia_na_linha_4000 == null`, grava `getFerrovia()` e `getSegmento()` do 1º terminal do trem.
+  - `condicao_4000_eh_compativel_com_terminal`: `java.util.Objects.equals` no lugar de `==`.
+  - Terminal incompatível continua em `terminais_pcx` e espera o trem atual sair cheio (o `para_alivio_na_linha_4000` zera as variáveis).
+- **Traces:** `[Alivio4000][compatibilidade]` quando o trem é definido e a cada 60 s para terminal em espera.
+- **Riscos conhecidos:** trem incompleto fica na 4000 até um terminal da mesma ferrovia entrar em overload; `getFerrovia()` dos terminais devolve a ferrovia em atendimento, não necessariamente a dos vazios.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`

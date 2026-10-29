@@ -3,11 +3,10 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>int</ReturnType>
-		<Id>1786042418713</Id>
-		<Name><![CDATA[_getTamanhoDoLote]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>860</X>
-		<Y>470</Y>
+		<Id>1793300679212</Id>
+		<Name><![CDATA[_contarVagoes]]></Name>
+		<X>290</X>
+		<Y>-80</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -21,273 +20,13 @@
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786046375231</Id>
-		<Name><![CDATA[atualizar_aguardaRechego]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>410</X>
-		<Y>240</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786046404095</Id>
-		<Name><![CDATA[atualizar_aguardaMoega]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>850</X>
-		<Y>260</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786046421421</Id>
-		<Name><![CDATA[atualizar_aguardaAlivioMoega]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1400</X>
-		<Y>270</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786046434662</Id>
-		<Name><![CDATA[atualizar_aguardaAlivioVazios]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1980</X>
-		<Y>240</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>boolean</ReturnType>
-		<Id>1786106237483</Id>
-		<Name><![CDATA[_precisaAcumularMaisVagoes]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1370</X>
-		<Y>130</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[capacidade_linha]]></Name>
-			<Type><![CDATA[int]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[lote_naLinha]]></Name>
-			<Type><![CDATA[Trem]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>int</ReturnType>
-		<Id>1786123767687</Id>
-		<Name><![CDATA[getTotalDeVazios]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1950</X>
-		<Y>130</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>boolean</ReturnType>
-		<Id>1786632752330</Id>
-		<Name><![CDATA[_podeAguardaAlivio]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1370</X>
-		<Y>150</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786634743574</Id>
-		<Name><![CDATA[_setAcumular_L1]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1400</X>
-		<Y>830</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786635407992</Id>
-		<Name><![CDATA[_setAliviar_L1]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1400</X>
-		<Y>850</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786635943248</Id>
-		<Name><![CDATA[_setAcumular_L2]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1400</X>
-		<Y>1450</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786635943250</Id>
-		<Name><![CDATA[_setAliviar_L2]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1400</X>
-		<Y>1470</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786636364190</Id>
-		<Name><![CDATA[_setAcumular_terra]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1410</X>
-		<Y>2060</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1786636364192</Id>
-		<Name><![CDATA[_setAliviar_terra]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1410</X>
-		<Y>2080</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>int</ReturnType>
-		<Id>1791700000010</Id>
-		<Name><![CDATA[get_quantidade_loco_alivio]]></Name>
-		<X>-330</X>
-		<Y>490</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>Main</ReturnType>
-		<Id>1793120927488</Id>
-		<Name><![CDATA[main]]></Name>
-		<X>-170</X>
-		<Y>40</Y>
-		<Label>
-			<X>15</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>boolean</ReturnType>
-		<Id>1793120927490</Id>
+		<Id>1793300679216</Id>
 		<Name><![CDATA[podeReceberNovoLote]]></Name>
-		<X>-330</X>
-		<Y>230</Y>
+		<X>4560</X>
+		<Y>1630</Y>
 		<Label>
 			<X>15</X>
 			<Y>0</Y>
@@ -300,44 +39,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>float</ReturnType>
-		<Id>1793120927492</Id>
+		<Id>1793300679218</Id>
 		<Name><![CDATA[getOverloadVazios]]></Name>
-		<X>-330</X>
-		<Y>330</Y>
+		<X>4560</X>
+		<Y>1660</Y>
 		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>PositionOnTrack</ReturnType>
-		<Id>1793120927494</Id>
-		<Name><![CDATA[get_pos_alivio]]></Name>
-		<X>-330</X>
-		<Y>350</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>int</ReturnType>
-		<Id>1793120927496</Id>
-		<Name><![CDATA[getNumeroLocomotivasAlivio]]></Name>
-		<X>-330</X>
-		<Y>370</Y>
-		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -348,28 +55,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
-		<Id>1793120927498</Id>
+		<Id>1793300679220</Id>
 		<Name><![CDATA[getPatio]]></Name>
-		<X>-330</X>
-		<Y>120</Y>
+		<X>4560</X>
+		<Y>1690</Y>
 		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>ArrayList&lt;Faixa&gt;</ReturnType>
-		<Id>1793120927500</Id>
-		<Name><![CDATA[get_faixas_primeiro_alivio]]></Name>
-		<X>-330</X>
-		<Y>430</Y>
-		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -380,12 +71,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
-		<Id>1793120927502</Id>
+		<Id>1793300679222</Id>
 		<Name><![CDATA[getSegmento]]></Name>
-		<X>-330</X>
-		<Y>140</Y>
+		<X>4560</X>
+		<Y>1720</Y>
 		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -396,12 +87,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
-		<Id>1793120927504</Id>
+		<Id>1793300679224</Id>
 		<Name><![CDATA[getFerrovia]]></Name>
-		<X>-330</X>
-		<Y>160</Y>
+		<X>4560</X>
+		<Y>1750</Y>
 		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -412,12 +103,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1793120927506</Id>
+		<Id>1793300679226</Id>
 		<Name><![CDATA[takeAlivio]]></Name>
-		<X>-330</X>
-		<Y>390</Y>
+		<X>4560</X>
+		<Y>1780</Y>
 		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -431,13 +122,61 @@
 	</Function>
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>ArrayList&lt;Faixa&gt;</ReturnType>
-		<Id>1793120927508</Id>
-		<Name><![CDATA[get_primeiras_linhas_de_circulacao_vazios]]></Name>
-		<X>-330</X>
-		<Y>410</Y>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679228</Id>
+		<Name><![CDATA[getNumeroLocomotivasAlivio]]></Name>
+		<X>4560</X>
+		<Y>1810</Y>
 		<Label>
-			<X>10</X>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>PositionOnTrack</ReturnType>
+		<Id>1793300679230</Id>
+		<Name><![CDATA[get_pos_alivio]]></Name>
+		<X>4560</X>
+		<Y>1840</Y>
+		<Label>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ArrayList&lt;Faixa&gt;</ReturnType>
+		<Id>1793300679232</Id>
+		<Name><![CDATA[get_faixas_primeiro_alivio]]></Name>
+		<X>4560</X>
+		<Y>1870</Y>
+		<Label>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ArrayList&lt;Faixa&gt;</ReturnType>
+		<Id>1793300679234</Id>
+		<Name><![CDATA[get_primeiras_linhas_de_circulacao_vazios]]></Name>
+		<X>4560</X>
+		<Y>1900</Y>
+		<Label>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -448,12 +187,12 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1793120927510</Id>
+		<Id>1793300679236</Id>
 		<Name><![CDATA[set_quantidade_alivio]]></Name>
-		<X>-330</X>
-		<Y>450</Y>
+		<X>4560</X>
+		<Y>1930</Y>
 		<Label>
-			<X>10</X>
+			<X>15</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -468,10 +207,42 @@
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>int</ReturnType>
-		<Id>1793120927512</Id>
+		<Id>1793300679238</Id>
 		<Name><![CDATA[get_quantidade_vazios]]></Name>
-		<X>-330</X>
-		<Y>470</Y>
+		<X>4560</X>
+		<Y>1960</Y>
+		<Label>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679240</Id>
+		<Name><![CDATA[_getVagosVazios]]></Name>
+		<X>4560</X>
+		<Y>1990</Y>
+		<Label>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1793300679242</Id>
+		<Name><![CDATA[get_tipo_loco_alivio]]></Name>
+		<X>4560</X>
+		<Y>2020</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -483,11 +254,67 @@
 	</Function>
 	<Function AccessType="public" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>String</ReturnType>
-		<Id>1793120927514</Id>
-		<Name><![CDATA[get_tipo_loco_alivio]]></Name>
-		<X>-330</X>
-		<Y>510</Y>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679244</Id>
+		<Name><![CDATA[get_quantidade_loco_alivio]]></Name>
+		<X>4560</X>
+		<Y>2050</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679246</Id>
+		<Name><![CDATA[get_carros_ate_segunda_loco]]></Name>
+		<X>3210</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679248</Id>
+		<Name><![CDATA[get_espaco_linha]]></Name>
+		<X>3210</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[linha]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679250</Id>
+		<Name><![CDATA[get_espaco_vazios]]></Name>
+		<X>3210</X>
+		<Y>1660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -500,10 +327,30 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1793121165917</Id>
-		<Name><![CDATA[atualizarFerroviaEProdutoEmAtendimento]]></Name>
-		<X>-315</X>
-		<Y>610</Y>
+		<Id>1793300679252</Id>
+		<Name><![CDATA[definir_grupo]]></Name>
+		<X>3210</X>
+		<Y>1720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[lote]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679254</Id>
+		<Name><![CDATA[registrar_vazios]]></Name>
+		<X>3210</X>
+		<Y>1750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -515,6 +362,198 @@
 			<Name><![CDATA[trem]]></Name>
 			<Type><![CDATA[Trem]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679256</Id>
+		<Name><![CDATA[guardar_vazios]]></Name>
+		<X>3210</X>
+		<Y>1780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679258</Id>
+		<Name><![CDATA[liberar_espaco_vazios]]></Name>
+		<X>4110</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679260</Id>
+		<Name><![CDATA[alivio_seguir]]></Name>
+		<X>4110</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679262</Id>
+		<Name><![CDATA[iniciar_proximo_lote]]></Name>
+		<X>3660</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ResourcePool[]</ReturnType>
+		<Id>1793300679264</Id>
+		<Name><![CDATA[recursos_do_lote]]></Name>
+		<X>3660</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679266</Id>
+		<Name><![CDATA[trocar_lote_em_descarga]]></Name>
+		<X>3660</X>
+		<Y>1660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679268</Id>
+		<Name><![CDATA[pedir_loco_segunda_parte]]></Name>
+		<X>3660</X>
+		<Y>1690</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>boolean</ReturnType>
+		<Id>1793300679270</Id>
+		<Name><![CDATA[esta_na_espera]]></Name>
+		<X>3660</X>
+		<Y>1720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>int</ReturnType>
+		<Id>1793300679272</Id>
+		<Name><![CDATA[get_capacidade_moega]]></Name>
+		<X>3210</X>
+		<Y>1690</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1793300679274</Id>
+		<Name><![CDATA[verificar_alivio]]></Name>
+		<X>4110</X>
+		<Y>1660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Main</ReturnType>
+		<Id>1793301192443</Id>
+		<Name><![CDATA[main]]></Name>
+		<X>-160</X>
+		<Y>40</Y>
+		<Label>
+			<X>15</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

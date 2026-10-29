@@ -83,3 +83,9 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-078**: CoperXII — fluxograma reorganizado em 5 colunas com pares Exit/Enter e painel de variáveis/funções (sem mudar a lógica)
 
 - **ALT-079**: MoegaoMar — lógica do CoperXII com posições, rota FIPS e alívio próprios; pera decide entre CoperXXI e MoegaoMar; entra em terminais_pst
+
+- **ALT-080**: MoegaoTerra — lógica de terminal da pera (cópia do MoegaoMar) com posições, rota FIPS e alívio próprios; pera decide também pelo MoegaoTerra
+
+- **ALT-081**: GestorDeAlivios — trem cheio da linha 4000 ocupa as faixas da saída até a cauda sair; nova loco PCX só nasce com a intervalo4000_b livre
+
+- **ALT-082**: GestorDeAlivios — trem da linha 4000 só junta vazios de terminais da mesma ferrovia e segmento (variáveis gravadas no 1º terminal; equals)

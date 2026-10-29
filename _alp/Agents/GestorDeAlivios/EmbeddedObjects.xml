@@ -4601,12 +4601,9 @@ if (alivio_em_andamento_pst.faixa_criacao != null) alivio_em_andamento_pst.faixa
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-013 alívio na linha 4000: solta as faixas da linha 4000 (apreendidas no bloquear_4000)
-liberarFaixas(new ArrayList<Faixa>(java.util.List.of(
-    main().gestorDeCirculacao.faixa_linha4000_a,
-    main().gestorDeCirculacao.faixa_linha4000_b,
-    main().gestorDeCirculacao.faixa_linha4000_c
-)));]]></Code>
+					<Code><![CDATA[// ALT-013 alívio na linha 4000: solta os recursos da linha 4000 (apreendidos no bloquear_4000)
+// ALT-081: as faixas da linha 4000 não são mais liberadas aqui. O para_alivio_na_linha_4000 marca como OCUPADA
+// as que o trem ainda ocupa, e o GestorDeCirculacao solta quando a cauda sai.]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4679,6 +4676,9 @@ segmento_na_linha_4000 = null;
 
 // ALT-034: o trem cheio saiu; sem isso aux ficava true e analisar_pcx não aliviava mais nenhum terminal da 4000
 aux_esta_ocorrendo_alivio_pcx = false;
+
+// ALT-081: faixas da 4000 onde o trem ainda está ficam OCUPADA até a cauda sair (evita criar loco em cima dele)
+ocupar_faixas_saida_4000(trem);
 
 main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
 				</Value>

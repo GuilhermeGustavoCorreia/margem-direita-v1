@@ -27396,8 +27396,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_coperXXI] trem=%d", time(), agent.getId()));
 // ALT-003.1: entrega o trem ao CoperXXI
-// ALT-079: a pera atende CoperXXI e MoegaoMar; decide pelo terminal do trem
+// ALT-079/080: a pera atende CoperXXI, MoegaoMar e MoegaoTerra; decide pelo terminal do trem
 if ("moegaoMar".equals(((Trem) agent).get_terminal_name())) main().moegaoMar.comecar_encoste.take(agent);
+else if ("moegaoTerra".equals(((Trem) agent).get_terminal_name())) main().moegaoTerra.comecar_encoste.take(agent); // ALT-080
 else main().coperXXI.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>

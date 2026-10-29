@@ -140,6 +140,15 @@ alivio_em_andamento_pcx.patio 					= terminal.getPatio();
 alivio_em_andamento_pcx.ferrovia 				= terminal.getFerrovia();
 alivio_em_andamento_pcx.segmento 				= terminal.getSegmento();
 
+// ALT-082: o 1º terminal do trem da 4000 define a ferrovia e o segmento; os seguintes têm que bater
+// (zeradas no para_alivio_na_linha_4000 quando o trem cheio sai)
+if (ferrovia_na_linha_4000 == null) {
+    ferrovia_na_linha_4000 = terminal.getFerrovia();
+    segmento_na_linha_4000 = terminal.getSegmento();
+    traceln(String.format("[%.1f][Alivio4000][compatibilidade] trem da 4000 definido por %s | ferrovia=%s segmento=%s",
+        time(), ((Agent) terminal).getName(), ferrovia_na_linha_4000, segmento_na_linha_4000));
+}
+
 int vazios_no_terminal 				= terminal.get_quantidade_vazios();
 int quantos_vagoes_cabem_na_4000 	= quantos_vagoes_pegar_do_terminal();
 
@@ -326,7 +335,10 @@ int quantos_vagoes_faltam_linha_4000 = (CAPACIDADE_LINHA_4000 - main().getNumero
 boolean trem_esta_parado_na_4000 	 = !aux_esta_ocorrendo_alivio_pcx;
 boolean precisa_de_vagoes_na_4000	 = quantos_vagoes_faltam_linha_4000 > 0;
 
-if (trem_esta_parado_na_4000 && precisa_de_vagoes_na_4000){
+// ALT-081: sem trem na 4000, a loco nova nasce na intervalo4000_b. Espera o trem cheio anterior sair dela.
+boolean saida_4000_livre 			 = (lote_linha_4000 != null) || saida_4000_livre();
+
+if (trem_esta_parado_na_4000 && precisa_de_vagoes_na_4000 && saida_4000_livre){
 	
 	return true;
 	
@@ -343,14 +355,21 @@ boolean condicao_4000_eh_compativel_com_terminal(ITerminalMoega terminal)
 String segmento_terminal = terminal.getSegmento();
 String ferrovia_terminal = terminal.getFerrovia();
 
-boolean mesma_ferrovia = (ferrovia_terminal == ferrovia_na_linha_4000);
-boolean mesmo_segmento = (segmento_terminal == segmento_na_linha_4000);
+// ALT-082: String comparada com equals (== compara referência)
+boolean mesma_ferrovia = java.util.Objects.equals(ferrovia_terminal, ferrovia_na_linha_4000);
+boolean mesmo_segmento = java.util.Objects.equals(segmento_terminal, segmento_na_linha_4000);
 
 boolean existe_tem_na_4000 		      = ferrovia_na_linha_4000 != null;
 boolean produto_e_ferrovia_incompativel = !(mesma_ferrovia && mesmo_segmento);
 
 if (existe_tem_na_4000 && produto_e_ferrovia_incompativel){
-  
+
+    // ALT-082: terminal continua em terminais_pcx e espera o trem atual sair cheio
+    if (((int) time()) % 60 == 0) {
+        traceln(String.format("[%.1f][Alivio4000][compatibilidade] %s espera | terminal: %s/%s | trem da 4000: %s/%s",
+            time(), ((Agent) terminal).getName(), ferrovia_terminal, segmento_terminal,
+            ferrovia_na_linha_4000, segmento_na_linha_4000));
+    }
     return false;
     	
 }
@@ -636,5 +655,59 @@ if (recursos.isEmpty()) {
 		time(), ((Agent) terminal_alivio_pmc).getName()));
 }
 return new ResourcePool[][] { recursos.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}
+
+ArrayList<Faixa> get_faixas_saida_4000()
+{/*ALCODESTART::1793310000001*/
+// ALT-081: faixas onde fica o trem da linha 4000 (pos_linha_4000_criar_loco fica na intervalo4000_b)
+GestorDeCirculacao gc = main().gestorDeCirculacao;
+
+return new ArrayList<Faixa>(java.util.List.of(
+    gc.faixa_intervalo4000_b,
+    gc.faixa_intervalo4000_c,
+    gc.faixa_linha4000_a,
+    gc.faixa_linha4000_b,
+    gc.faixa_linha4000_c
+));
+/*ALCODEEND*/}
+
+boolean saida_4000_livre()
+{/*ALCODESTART::1793310000002*/
+// ALT-081: true só se todas as faixas da saída da 4000 estiverem LIVRE.
+// O GestorDeCirculacao solta cada uma (liberar_faixas_ocupadas) quando a cauda do trem cheio sai da track.
+for (Faixa f : get_faixas_saida_4000()) {
+
+    if (f.estado != Faixa.EstadoFaixa.LIVRE) {
+
+        if (((int) time()) % 60 == 0) {
+            traceln(String.format("[%.1f][Alivio4000][saida_4000_livre] aguardando %s",
+                time(), f.getStatusTexto()));
+        }
+        return false;
+    }
+}
+
+return true;
+/*ALCODEEND*/}
+
+double ocupar_faixas_saida_4000(Trem trem)
+{/*ALCODESTART::1793310000003*/
+// ALT-081: na saída do trem cheio, as faixas da 4000 onde ele ainda está ficam OCUPADA com o id dele.
+// As outras ficam LIVRE (as da linha 4000 estavam com 9999 desde o bloquear_4000).
+List<RailwayTrack> tracksDoTrem = trem.getAllOccupiedTracks();
+
+for (Faixa f : get_faixas_saida_4000()) {
+
+    if (tracksDoTrem.contains(f.track)) {
+
+        f.ocupar(trem);
+        traceln(String.format("[%.1f][Alivio4000][ocupar_faixas_saida_4000] trem=%d ocupa %s",
+            time(), trem.getId(), f.recurso.getName()));
+
+    } else {
+
+        f.liberar();
+    }
+}
 /*ALCODEEND*/}
 

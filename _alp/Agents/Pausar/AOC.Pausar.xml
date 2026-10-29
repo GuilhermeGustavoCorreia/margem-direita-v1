@@ -160,23 +160,6 @@
 			</ActiveObjectClass>
 		</ContainerLink>
 		<ContainerLink>
-			<Id>1786587250507</Id>
-			<Name><![CDATA[moegaoTerra]]></Name>
-			<X>550</X>
-			<Y>-100</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ActiveObjectClass>
-				<PackageName>margemdireitamodel</PackageName>
-				<ClassName>MoegaoTerra</ClassName>
-			</ActiveObjectClass>
-		</ContainerLink>
-		<ContainerLink>
 			<Id>1786710569802</Id>
 			<Name><![CDATA[tgrao]]></Name>
 			<X>650</X>

@@ -19,11 +19,6 @@ for (int i = 0; i < trem.size(); i++) {
 return contador;
 /*ALCODEEND*/}
 
-Main main1()
-{/*ALCODESTART::1793298470490*/
-return (Main) getEngine().getRoot();
-/*ALCODEEND*/}
-
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1793298470492*/
 // ALT-003: CoperXXI ainda não usa esse critério; só não recebe durante alívio
