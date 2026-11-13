@@ -7,8 +7,10 @@ boolean podeReceberNovoLote()
 {/*ALCODESTART::1791650000004*/
 // trem entrando: do comecar_encoste até o lote 1 entrar no ciclo da moega
 if (_trem_chegando != null) return false;
-// loco do alívio manobrando no terminal
-if (fazendoAlivio) return false;
+// alívio pedido ou em andamento: os vazios do trem anterior saem antes, com a loco da ferrovia dele.
+// Ferrovia e segmento do terminal são lidos na chegada do carregado (comecar_encoste); com vazios de
+// uma ferrovia ainda no terminal, um trem de outra ferrovia trocaria a loco pedida pelo alívio.
+if (aguardando_alivio || fazendoAlivio) return false;
 // ainda há carregados no terminal (lote em descarga ou segunda parte esperando)
 return get_vagoes_carregados() == 0;
 /*ALCODEEND*/}

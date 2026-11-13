@@ -1673,3 +1673,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que:** descarga e alívio nunca ao mesmo tempo. Função nova `pode_descarregar_grupo()` = `get_espaco_vazios() > 0 && !aguardando_alivio && !fazendoAlivio`, usada na `condition` e no `onEnter` do `tem_espaco_vazios`. O lote espera no `aguarda_espaco_vazios` até o fim do alívio (`liberar_espaco_vazios()` no `retornar_gestorDeAlivios`).
 - **Validar:** trem que chega com alívio pedido encosta e espera; a descarga começa só depois de `alivio terminou`.
 - **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`
+## ALT-130 — coperxxi-recebe-so-vazio
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **Problema:** com alívio pedido pela ALT-127 (vazios MRS), o ISN liberou um trem VLI. Na chegada ele trocou a ferrovia em atendimento para VLI e o alívio passou a pedir loco VLI para os vazios MRS. Sem loco VLI livre (estavam nos lotes do trem novo), o lote esperava o alívio e o alívio esperava a loco: travou (`aguardando 1 loco(s) 'vli' para aliviar`).
+- **O que:** terminal só recebe trem depois de esvaziar. `podeReceberNovoLote()` recusa enquanto `aguardando_alivio || fazendoAlivio` (antes só `fazendoAlivio`).
+- **Motivo:** a ferrovia e o segmento do terminal são analisados na chegada do carregado; se houver vazio VLI e chegar MRS, o alívio pede a loco errada e o modelo trava.
+- **Doc:** `docs/terminais/coperxxi.md` criado (regras de recebimento e alívio das ALT-127 a 130).
+- **Validar:** trem seguinte fica no ISN até `pedir_alivio` parar e os vazios zerarem; alívios do trem anterior usam a loco da ferrovia dele.
+- **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `docs/terminais/coperxxi.md`
