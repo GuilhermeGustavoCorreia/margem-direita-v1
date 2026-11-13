@@ -7,6 +7,8 @@ boolean podeReceberNovoLote()
 {/*ALCODESTART::1791650000004*/
 // trem entrando: do comecar_encoste até o lote 1 entrar no ciclo da moega
 if (_trem_chegando != null) return false;
+// loco do alívio manobrando no terminal
+if (fazendoAlivio) return false;
 // ainda há carregados no terminal (lote em descarga ou segunda parte esperando)
 return get_vagoes_carregados() == 0;
 /*ALCODEEND*/}
@@ -283,11 +285,22 @@ return Math.max(0, QTD_ALIVIO - CAPACIDADE_LOTE_B - CAPACIDADE_LOTE_A);
 
 double verificar_alivio()
 {/*ALCODESTART::1793280200002*/
-// ALT-076: pede alívio quando lote_b, lote_a e o lote da moega somam QTD_ALIVIO
-if (!aguardando_alivio && get_espaco_vazios() == 0) {
+// pede alívio quando lote_b, lote_a e o lote da moega somam QTD_ALIVIO (terminal cheio)
+// ou quando não há mais carregados no terminal e sobrou ao menos 1 vazio
+if (aguardando_alivio || fazendoAlivio) return;
+
+boolean terminalCheio = get_espaco_vazios() == 0;
+boolean semCarga      = get_vagoes_carregados() == 0 && get_quantidade_vazios() >= 1;
+
+if (terminalCheio) {
 	aguardando_alivio = true;
 	traceln(String.format("[%.1f][CoperXII][alivio] %d vazios prontos (b=%d a=%d moega=%d): pedindo alívio",
 		time(), QTD_ALIVIO, CAPACIDADE_LOTE_B, CAPACIDADE_LOTE_A, get_capacidade_moega()));
+} else if (semCarga) {
+	aguardando_alivio = true;
+	Log.info("CoperXXI", "pedir_alivio", String.format("sem carregados no terminal | vazios=%d (b=%d a=%d moega=%d)",
+		get_quantidade_vazios(),
+		CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_A - get_espaco_linha("a"), get_capacidade_moega() - get_espaco_linha("moega")));
 }
 /*ALCODEEND*/}
 

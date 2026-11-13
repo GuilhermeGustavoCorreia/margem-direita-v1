@@ -1646,3 +1646,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Correção (teste com pedido 4, travou no 4º alívio): a peça da moega era cortada no lugar, no rabo do trem, e o lote 2 completava do lado do encoste; o lote da moega andava +70 m por ciclo até passar do encoste e o `engatar_moega` não batia nele. Agora `mover_peca_moega` (TrainMoveTo de ré, `maxDistance = distancia_peca_moega()`) leva a cauda até `_coperXII_moega` + peça antes do corte: a peça começa no ponto da moega e a cauda já fica no `a_aux` e no `b_aux` para os cortes seguintes.
 - **Validar:** sentido do `MoverTremCompleto_Ponto` (`vaiRecuar = false`, `sentidoPontaDaPraia = false`); a frente do trem entra até ~340 m na `linhaCostaLeita_a` / `linhaPaqueta_a` sem licença (pendência); pedidos 41, 38, 32, 20, 6, 4 e 1.
 - **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`, `_alp/Agents/Main/Levels/Level.level.xml`
+## ALT-127 — coperxxi-alivio-sem-carga
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **Problema:** com alívio de 6, o último grupo do lote deixou a moega com 5/6 e o terminal com 40 vazios (b=22, a=13, moega=5). O alívio só era pedido com o terminal cheio (41), então ninguém pedia o último e o terminal ficava parado. Um trem novo que chegasse ficaria preso no `aguarda_espaco_vazios` (deadlock).
+- **O que:**
+  - `verificar_alivio()`: além do terminal cheio, pede alívio quando não há carregados no terminal (`get_vagoes_carregados() == 0`) e há ao menos 1 vazio. Não pede de novo com `aguardando_alivio` ou `fazendoAlivio`. Log novo `CoperXXI pedir_alivio`.
+  - `retornar_gestorDeAlivios.onExit`: chama `verificar_alivio()` no fim, para encadear os alívios até zerar os vazios.
+  - `podeReceberNovoLote()`: recusa trem enquanto `fazendoAlivio` (loco do alívio manobrando no terminal).
+  - O gatilho do GestorDeAlivios continua `getOverloadVazios() > 1` (vale 2 com `aguardando_alivio`).
+- **Validar:** com qtd 6, após o último grupo, alívios encadeados até b, a e moega ficarem vazios; trem novo não entra durante a manobra do alívio.
+- **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`

@@ -5997,7 +5997,9 @@ traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (
 aguardando_alivio = false;
 fazendoAlivio = false;
 liberar_espaco_vazios();
-iniciar_proximo_lote();]]></Code>
+iniciar_proximo_lote();
+// terminal sem carga e ainda com vazios: pede o próximo alívio
+verificar_alivio();]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
