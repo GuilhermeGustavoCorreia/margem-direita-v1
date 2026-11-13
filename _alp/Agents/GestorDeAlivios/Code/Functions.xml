@@ -390,6 +390,10 @@
 			<Name><![CDATA[terminal]]></Name>
 			<Type><![CDATA[ITerminalMoega]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[cabem_na_dv]]></Name>
+			<Type><![CDATA[int]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">

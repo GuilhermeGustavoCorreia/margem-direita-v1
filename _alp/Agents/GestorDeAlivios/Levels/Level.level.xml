@@ -1485,7 +1485,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>300</Width>
-		<Height>250</Height>
+		<Height>300</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
 		<FillMaterial>null</FillMaterial>

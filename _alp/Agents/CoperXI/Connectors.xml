@@ -3,7 +3,7 @@
 	<Connector>
 		<Id>1784661062541</Id>
 		<Name><![CDATA[connector33]]></Name>
-		<X>420</X>
+		<X>460</X>
 		<Y>1050</Y>
 		<Label>
 			<X>10</X>
@@ -34,11 +34,11 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>10</X>
+				<X>0</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -46,7 +46,7 @@
 	<Connector>
 		<Id>1784661939300</Id>
 		<Name><![CDATA[connector2]]></Name>
-		<X>540</X>
+		<X>550</X>
 		<Y>1050</Y>
 		<Label>
 			<X>10</X>
@@ -81,7 +81,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -124,7 +124,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>130</X>
+				<X>150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -132,7 +132,7 @@
 	<Connector>
 		<Id>1784666547205</Id>
 		<Name><![CDATA[connector]]></Name>
-		<X>540</X>
+		<X>550</X>
 		<Y>1070</Y>
 		<Label>
 			<X>10</X>
@@ -168,19 +168,19 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>80</Y>
 			</Point>
 			<Point>
-				<X>240</X>
-				<Y>60</Y>
+				<X>250</X>
+				<Y>80</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1784720267356</Id>
 		<Name><![CDATA[connector6]]></Name>
-		<X>380</X>
-		<Y>1290</Y>
+		<X>420</X>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,11 +210,11 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>10</X>
+				<X>0</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-60</X>
+				<X>-70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -222,8 +222,8 @@
 	<Connector>
 		<Id>1784720550886</Id>
 		<Name><![CDATA[connector8]]></Name>
-		<X>600</X>
-		<Y>1290</Y>
+		<X>610</X>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -253,11 +253,11 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>10</X>
+				<X>0</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-80</X>
+				<X>-60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -266,7 +266,7 @@
 		<Id>1784720565761</Id>
 		<Name><![CDATA[connector9]]></Name>
 		<X>800</X>
-		<Y>1290</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -309,7 +309,7 @@
 		<Id>1784720569465</Id>
 		<Name><![CDATA[connector10]]></Name>
 		<X>800</X>
-		<Y>1360</Y>
+		<Y>1350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -343,12 +343,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-280</X>
+				<X>-250</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-280</X>
-				<Y>-50</Y>
+				<X>-250</X>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -398,7 +398,7 @@
 	<Connector>
 		<Id>1784721094660</Id>
 		<Name><![CDATA[connector14]]></Name>
-		<X>400</X>
+		<X>430</X>
 		<Y>1550</Y>
 		<Label>
 			<X>10</X>
@@ -433,7 +433,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -485,7 +485,7 @@
 		<Id>1784737151320</Id>
 		<Name><![CDATA[connector5]]></Name>
 		<X>800</X>
-		<Y>1630</Y>
+		<Y>1600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -519,19 +519,19 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-380</X>
+				<X>-350</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-380</X>
-				<Y>-60</Y>
+				<X>-350</X>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1784810716242</Id>
 		<Name><![CDATA[connector1]]></Name>
-		<X>420</X>
+		<X>450</X>
 		<Y>1550</Y>
 		<Label>
 			<X>10</X>
@@ -566,7 +566,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>90</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -575,7 +575,7 @@
 		<Id>1784813964600</Id>
 		<Name><![CDATA[connector16]]></Name>
 		<X>430</X>
-		<Y>1790</Y>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -609,7 +609,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-40</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -617,7 +617,7 @@
 	<Connector>
 		<Id>1784813964602</Id>
 		<Name><![CDATA[connector17]]></Name>
-		<X>610</X>
+		<X>630</X>
 		<Y>1550</Y>
 		<Label>
 			<X>10</X>
@@ -652,7 +652,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-60</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -660,7 +660,7 @@
 	<Connector>
 		<Id>1784813979581</Id>
 		<Name><![CDATA[connector18]]></Name>
-		<X>630</X>
+		<X>650</X>
 		<Y>1570</Y>
 		<Label>
 			<X>10</X>
@@ -696,11 +696,11 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>30</Y>
 			</Point>
 			<Point>
-				<X>170</X>
-				<Y>60</Y>
+				<X>150</X>
+				<Y>30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -708,7 +708,7 @@
 		<Id>1784814043906</Id>
 		<Name><![CDATA[connector21]]></Name>
 		<X>450</X>
-		<Y>1790</Y>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -742,7 +742,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -750,8 +750,8 @@
 	<Connector>
 		<Id>1784814093132</Id>
 		<Name><![CDATA[connector24]]></Name>
-		<X>620</X>
-		<Y>1790</Y>
+		<X>630</X>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -785,7 +785,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -828,7 +828,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-170</X>
+				<X>-150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -836,8 +836,8 @@
 	<Connector>
 		<Id>1784818464821</Id>
 		<Name><![CDATA[connector28]]></Name>
-		<X>640</X>
-		<Y>1810</Y>
+		<X>650</X>
+		<Y>1820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -872,11 +872,11 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>30</Y>
 			</Point>
 			<Point>
-				<X>160</X>
-				<Y>60</Y>
+				<X>150</X>
+				<Y>30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -918,7 +918,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -926,7 +926,7 @@
 	<Connector>
 		<Id>1784819158706</Id>
 		<Name><![CDATA[connector29]]></Name>
-		<X>320</X>
+		<X>350</X>
 		<Y>1050</Y>
 		<Label>
 			<X>10</X>
@@ -969,7 +969,7 @@
 	<Connector>
 		<Id>1784819164226</Id>
 		<Name><![CDATA[connector30]]></Name>
-		<X>320</X>
+		<X>350</X>
 		<Y>1070</Y>
 		<Label>
 			<X>10</X>
@@ -1005,11 +1005,11 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>80</Y>
 			</Point>
 			<Point>
-				<X>460</X>
-				<Y>60</Y>
+				<X>450</X>
+				<Y>80</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -1017,7 +1017,7 @@
 		<Id>1784824387316</Id>
 		<Name><![CDATA[connector31]]></Name>
 		<X>250</X>
-		<Y>1290</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1051,7 +1051,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1060,7 +1060,7 @@
 		<Id>1784824399345</Id>
 		<Name><![CDATA[connector34]]></Name>
 		<X>210</X>
-		<Y>1290</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1102,8 +1102,8 @@
 	<Connector>
 		<Id>1784824429543</Id>
 		<Name><![CDATA[connector35]]></Name>
-		<X>320</X>
-		<Y>1310</Y>
+		<X>350</X>
+		<Y>1320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1138,19 +1138,19 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>50</Y>
+				<Y>30</Y>
 			</Point>
 			<Point>
-				<X>480</X>
-				<Y>50</Y>
+				<X>450</X>
+				<Y>30</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1784824437911</Id>
 		<Name><![CDATA[connector7]]></Name>
-		<X>420</X>
-		<Y>1290</Y>
+		<X>460</X>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1180,11 +1180,11 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>10</X>
+				<X>0</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1193,7 +1193,7 @@
 		<Id>1784835642775</Id>
 		<Name><![CDATA[connector12]]></Name>
 		<X>450</X>
-		<Y>1810</Y>
+		<Y>1820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1228,11 +1228,11 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>30</Y>
 			</Point>
 			<Point>
 				<X>350</X>
-				<Y>60</Y>
+				<Y>30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -2634,7 +2634,7 @@
 		<Id>1789129358738</Id>
 		<Name><![CDATA[connector104]]></Name>
 		<X>210</X>
-		<Y>610</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2645,11 +2645,11 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>pst_marginal_bloquear</ItemName>
+			<ItemName>ir_linha_verde</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
 			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -2711,7 +2711,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>160</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2719,7 +2719,7 @@
 	<Connector>
 		<Id>1789134065400</Id>
 		<Name><![CDATA[connector108]]></Name>
-		<X>400</X>
+		<X>800</X>
 		<Y>950</Y>
 		<Label>
 			<X>10</X>
@@ -2754,7 +2754,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-120</X>
+				<X>-500</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2762,8 +2762,8 @@
 	<Connector>
 		<Id>1789135183970</Id>
 		<Name><![CDATA[connector106]]></Name>
-		<X>660</X>
-		<Y>610</Y>
+		<X>800</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2797,7 +2797,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-200</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2805,8 +2805,8 @@
 	<Connector>
 		<Id>1789135189179</Id>
 		<Name><![CDATA[connector107]]></Name>
-		<X>660</X>
-		<Y>680</Y>
+		<X>800</X>
+		<Y>650</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2840,12 +2840,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-200</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
-				<Y>-50</Y>
+				<X>-200</X>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -2853,7 +2853,7 @@
 		<Id>1789147895141</Id>
 		<Name><![CDATA[connector38]]></Name>
 		<X>1410</X>
-		<Y>770</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2896,7 +2896,7 @@
 		<Id>1789339384950</Id>
 		<Name><![CDATA[connector105]]></Name>
 		<X>420</X>
-		<Y>610</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2930,50 +2930,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-60</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1789340530343</Id>
-		<Name><![CDATA[connector110]]></Name>
-		<X>250</X>
-		<Y>610</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>pst_marginal_bloquear</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>ir_linha_verde</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>70</X>
+				<X>-70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2982,7 +2939,7 @@
 		<Id>1789599942396</Id>
 		<Name><![CDATA[connector27]]></Name>
 		<X>100</X>
-		<Y>1790</Y>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3016,7 +2973,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>250</X>
+				<X>210</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3067,7 +3024,7 @@
 	<Connector>
 		<Id>1789669105565</Id>
 		<Name><![CDATA[connector109]]></Name>
-		<X>240</X>
+		<X>260</X>
 		<Y>950</Y>
 		<Label>
 			<X>10</X>
@@ -3102,7 +3059,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-140</X>
+				<X>-160</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3111,7 +3068,7 @@
 		<Id>1789669163529</Id>
 		<Name><![CDATA[connector116]]></Name>
 		<X>1110</X>
-		<Y>510</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3153,8 +3110,8 @@
 	<Connector>
 		<Id>1789669945670</Id>
 		<Name><![CDATA[connector41]]></Name>
-		<X>850</X>
-		<Y>1790</Y>
+		<X>900</X>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3175,6 +3132,49 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
+			<ItemName>finalizar_manobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>out</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>-70</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1795850000405</Id>
+		<Name><![CDATA[connector_finalizar_manobra]]></Name>
+		<X>790</X>
+		<Y>1800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>finalizar_manobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
 			<ItemName>mnbCarregados_liberar</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -3188,7 +3188,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-40</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3197,7 +3197,7 @@
 		<Id>1789669945672</Id>
 		<Name><![CDATA[connector117]]></Name>
 		<X>710</X>
-		<Y>1790</Y>
+		<Y>1800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3231,7 +3231,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
+				<X>-60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3239,8 +3239,8 @@
 	<Connector>
 		<Id>1789672197920</Id>
 		<Name><![CDATA[connector4]]></Name>
-		<X>1260</X>
-		<Y>510</Y>
+		<X>1290</X>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3274,7 +3274,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-110</X>
+				<X>-140</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3283,7 +3283,7 @@
 		<Id>1789672287602</Id>
 		<Name><![CDATA[connector37]]></Name>
 		<X>1630</X>
-		<Y>770</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3326,7 +3326,7 @@
 		<Id>1789672287604</Id>
 		<Name><![CDATA[connector118]]></Name>
 		<X>1520</X>
-		<Y>770</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3716,7 +3716,7 @@
 	<Connector>
 		<Id>1789751429507</Id>
 		<Name><![CDATA[connector48]]></Name>
-		<X>2225</X>
+		<X>2300</X>
 		<Y>800</Y>
 		<Label>
 			<X>10</X>
@@ -3728,12 +3728,12 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>acumular2</ItemName>
+			<ItemName>wait_blocoMar_a</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainCouple</ClassName>
-			<ItemName>in1</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
@@ -3751,7 +3751,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-55</X>
+				<X>-64</X>
+				<Y>58</Y>
+			</Point>
+			<Point>
+				<X>-130</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3896,7 +3900,7 @@
 	<Connector>
 		<Id>1789751618169</Id>
 		<Name><![CDATA[connector51]]></Name>
-		<X>2250</X>
+		<X>2350</X>
 		<Y>1300</Y>
 		<Label>
 			<X>10</X>
@@ -3908,12 +3912,12 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>acumular1</ItemName>
+			<ItemName>wait_blocoMar_b</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainCouple</ClassName>
-			<ItemName>in1</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
@@ -3931,7 +3935,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-90</X>
+				<X>-117</X>
+				<Y>30</Y>
+			</Point>
+			<Point>
+				<X>-190</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4076,7 +4084,7 @@
 	<Connector>
 		<Id>1789751627617</Id>
 		<Name><![CDATA[connector70]]></Name>
-		<X>2230</X>
+		<X>2290</X>
 		<Y>1820</Y>
 		<Label>
 			<X>10</X>
@@ -4088,12 +4096,12 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>acumular</ItemName>
+			<ItemName>wait_blocoTerra_a</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainCouple</ClassName>
-			<ItemName>in1</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
@@ -4111,7 +4119,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
+				<X>-60</X>
+				<Y>40</Y>
+			</Point>
+			<Point>
+				<X>-130</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4256,7 +4268,7 @@
 	<Connector>
 		<Id>1789751637633</Id>
 		<Name><![CDATA[connector72]]></Name>
-		<X>2215</X>
+		<X>2280</X>
 		<Y>2235</Y>
 		<Label>
 			<X>10</X>
@@ -4268,12 +4280,12 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>acumular3</ItemName>
+			<ItemName>wait_blocoTerra_b</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainCouple</ClassName>
-			<ItemName>in1</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
@@ -4292,6 +4304,10 @@
 			</Point>
 			<Point>
 				<X>-50</X>
+				<Y>45</Y>
+			</Point>
+			<Point>
+				<X>-115</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4480,7 +4496,7 @@
 		<Id>1789760827071</Id>
 		<Name><![CDATA[connector26]]></Name>
 		<X>1320</X>
-		<Y>770</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4523,7 +4539,7 @@
 		<Id>1789760827073</Id>
 		<Name><![CDATA[connector36]]></Name>
 		<X>1200</X>
-		<Y>770</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4562,7 +4578,7 @@
 			</Point>
 			<Point>
 				<X>-50</X>
-				<Y>-50</Y>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -4570,7 +4586,7 @@
 		<Id>1789838431242</Id>
 		<Name><![CDATA[connector89]]></Name>
 		<X>1110</X>
-		<Y>510</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4604,19 +4620,19 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-80</X>
+				<X>-60</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-80</X>
+				<X>-60</X>
 				<Y>100</Y>
 			</Point>
 			<Point>
-				<X>160</X>
+				<X>190</X>
 				<Y>100</Y>
 			</Point>
 			<Point>
-				<X>160</X>
+				<X>190</X>
 				<Y>10</Y>
 			</Point>
 		</Points>
@@ -4625,7 +4641,7 @@
 		<Id>1789838454589</Id>
 		<Name><![CDATA[connector130]]></Name>
 		<X>1340</X>
-		<Y>510</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4659,7 +4675,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-60</X>
+				<X>-30</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4710,8 +4726,8 @@
 	<Connector>
 		<Id>1790081687743</Id>
 		<Name><![CDATA[connector135]]></Name>
-		<X>1160</X>
-		<Y>1450</Y>
+		<X>1170</X>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4745,7 +4761,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-110</X>
+				<X>-120</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4753,8 +4769,8 @@
 	<Connector>
 		<Id>1790081699567</Id>
 		<Name><![CDATA[connector136]]></Name>
-		<X>1260</X>
-		<Y>1490</Y>
+		<X>1250</X>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4788,12 +4804,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
+				<X>-50</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
-				<Y>-30</Y>
+				<X>-50</X>
+				<Y>-40</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -4801,7 +4817,7 @@
 		<Id>1790081736390</Id>
 		<Name><![CDATA[connector137]]></Name>
 		<X>1150</X>
-		<Y>1550</Y>
+		<Y>1350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4835,12 +4851,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>100</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
-				<Y>-40</Y>
+				<X>100</X>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -4848,7 +4864,7 @@
 		<Id>1790081762286</Id>
 		<Name><![CDATA[connector138]]></Name>
 		<X>1320</X>
-		<Y>1490</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4882,7 +4898,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-40</X>
+				<X>-50</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4891,7 +4907,7 @@
 		<Id>1790084745342</Id>
 		<Name><![CDATA[connector133]]></Name>
 		<X>1520</X>
-		<Y>1490</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4934,7 +4950,7 @@
 		<Id>1790084745344</Id>
 		<Name><![CDATA[connector134]]></Name>
 		<X>1420</X>
-		<Y>1490</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4976,8 +4992,8 @@
 	<Connector>
 		<Id>1790084802309</Id>
 		<Name><![CDATA[connector139]]></Name>
-		<X>1255</X>
-		<Y>1790</Y>
+		<X>1280</X>
+		<Y>1600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5011,7 +5027,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-55</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5020,7 +5036,7 @@
 		<Id>1790084862709</Id>
 		<Name><![CDATA[connector141]]></Name>
 		<X>1255</X>
-		<Y>1980</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5063,7 +5079,7 @@
 		<Id>1790084862711</Id>
 		<Name><![CDATA[connector142]]></Name>
 		<X>1350</X>
-		<Y>1980</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5106,7 +5122,7 @@
 		<Id>1790084950524</Id>
 		<Name><![CDATA[connector143]]></Name>
 		<X>1040</X>
-		<Y>1790</Y>
+		<Y>1600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5149,7 +5165,7 @@
 		<Id>1790084955949</Id>
 		<Name><![CDATA[connector144]]></Name>
 		<X>1040</X>
-		<Y>1980</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5192,7 +5208,7 @@
 		<Id>1790087081259</Id>
 		<Name><![CDATA[connector147]]></Name>
 		<X>1390</X>
-		<Y>1980</Y>
+		<Y>1780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5226,7 +5242,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5234,8 +5250,8 @@
 	<Connector>
 		<Id>1790087091159</Id>
 		<Name><![CDATA[connector140]]></Name>
-		<X>0</X>
-		<Y>120</Y>
+		<X>1500</X>
+		<Y>1600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5265,20 +5281,20 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>1440</X>
-				<Y>1670</Y>
+				<X>0</X>
+				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>1390</X>
-				<Y>1670</Y>
+				<X>-110</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1790087091161</Id>
 		<Name><![CDATA[connector148]]></Name>
-		<X>0</X>
-		<Y>120</Y>
+		<X>1350</X>
+		<Y>1600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5308,12 +5324,12 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>1350</X>
-				<Y>1670</Y>
+				<X>0</X>
+				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>1275</X>
-				<Y>1670</Y>
+				<X>-50</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -5321,7 +5337,7 @@
 		<Id>1790087425696</Id>
 		<Name><![CDATA[connector150]]></Name>
 		<X>1190</X>
-		<Y>2210</Y>
+		<Y>2000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5364,7 +5380,7 @@
 		<Id>1790087425698</Id>
 		<Name><![CDATA[connector151]]></Name>
 		<X>1360</X>
-		<Y>2210</Y>
+		<Y>2000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5407,7 +5423,7 @@
 		<Id>1790087425700</Id>
 		<Name><![CDATA[connector152]]></Name>
 		<X>1040</X>
-		<Y>2210</Y>
+		<Y>2000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5450,7 +5466,7 @@
 		<Id>1790087425704</Id>
 		<Name><![CDATA[connector154]]></Name>
 		<X>1450</X>
-		<Y>2210</Y>
+		<Y>2000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5493,7 +5509,7 @@
 		<Id>1790087442313</Id>
 		<Name><![CDATA[connector155]]></Name>
 		<X>1190</X>
-		<Y>2230</Y>
+		<Y>2020</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5540,7 +5556,7 @@
 		<Id>1790087445451</Id>
 		<Name><![CDATA[connector156]]></Name>
 		<X>1380</X>
-		<Y>2230</Y>
+		<Y>2020</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5587,7 +5603,7 @@
 		<Id>1790099009079</Id>
 		<Name><![CDATA[connector157]]></Name>
 		<X>1350</X>
-		<Y>2070</Y>
+		<Y>1870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5634,7 +5650,7 @@
 		<Id>1790099011632</Id>
 		<Name><![CDATA[connector158]]></Name>
 		<X>1350</X>
-		<Y>1870</Y>
+		<Y>1650</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -5668,12 +5684,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-75</X>
+				<X>-50</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-75</X>
-				<Y>-60</Y>
+				<X>-50</X>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -5681,7 +5697,7 @@
 		<Id>1790689163310</Id>
 		<Name><![CDATA[connector153]]></Name>
 		<X>1595</X>
-		<Y>2210</Y>
+		<Y>2000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6748,7 +6764,7 @@
 	<Connector>
 		<Id>1791486819619</Id>
 		<Name><![CDATA[connector166]]></Name>
-		<X>3250</X>
+		<X>3300</X>
 		<Y>1150</Y>
 		<Label>
 			<X>10</X>
@@ -6783,7 +6799,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-90</X>
+				<X>-140</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -6791,7 +6807,7 @@
 	<Connector>
 		<Id>1791486832218</Id>
 		<Name><![CDATA[connector167]]></Name>
-		<X>3250</X>
+		<X>3300</X>
 		<Y>1200</Y>
 		<Label>
 			<X>10</X>
@@ -6826,11 +6842,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-150</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-150</X>
 				<Y>-40</Y>
 			</Point>
 		</Points>
@@ -7225,7 +7241,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>100</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -7902,7 +7918,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>90</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -7910,7 +7926,7 @@
 	<Connector>
 		<Id>1791551163906</Id>
 		<Name><![CDATA[connector187]]></Name>
-		<X>3160</X>
+		<X>3140</X>
 		<Y>1650</Y>
 		<Label>
 			<X>10</X>
@@ -7945,7 +7961,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-90</X>
+				<X>-70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -7953,7 +7969,7 @@
 	<Connector>
 		<Id>1791551163908</Id>
 		<Name><![CDATA[connector188]]></Name>
-		<X>3270</X>
+		<X>3300</X>
 		<Y>1650</Y>
 		<Label>
 			<X>10</X>
@@ -7988,7 +8004,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-90</X>
+				<X>-140</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -7996,7 +8012,7 @@
 	<Connector>
 		<Id>1791551163910</Id>
 		<Name><![CDATA[connector189]]></Name>
-		<X>3270</X>
+		<X>3300</X>
 		<Y>1700</Y>
 		<Label>
 			<X>10</X>
@@ -8031,11 +8047,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-150</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-100</X>
+				<X>-150</X>
 				<Y>-40</Y>
 			</Point>
 		</Points>
@@ -8168,7 +8184,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -8395,8 +8411,8 @@
 	<Connector>
 		<Id>1791551443618</Id>
 		<Name><![CDATA[connector197]]></Name>
-		<X>1860</X>
-		<Y>2370</Y>
+		<X>1870</X>
+		<Y>2380</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -8430,7 +8446,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -8669,8 +8685,8 @@
 	<Connector>
 		<Id>1791551714888</Id>
 		<Name><![CDATA[connector204]]></Name>
-		<X>2010</X>
-		<Y>2370</Y>
+		<X>1990</X>
+		<Y>2380</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -8704,8 +8720,8 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>20</X>
-				<Y>10</Y>
+				<X>40</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -8995,7 +9011,7 @@
 		<Id>1791567297018</Id>
 		<Name><![CDATA[connector211]]></Name>
 		<X>1100</X>
-		<Y>1300</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9038,7 +9054,7 @@
 		<Id>1791567673915</Id>
 		<Name><![CDATA[connector212]]></Name>
 		<X>1410</X>
-		<Y>1300</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9081,7 +9097,7 @@
 		<Id>1791568209650</Id>
 		<Name><![CDATA[connector213]]></Name>
 		<X>1310</X>
-		<Y>1300</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9124,7 +9140,7 @@
 		<Id>1791568287416</Id>
 		<Name><![CDATA[connector214]]></Name>
 		<X>1520</X>
-		<Y>1300</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9210,7 +9226,7 @@
 		<Id>1791640000221</Id>
 		<Name><![CDATA[connector_alt005_1791640000221]]></Name>
 		<X>460</X>
-		<Y>610</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9244,7 +9260,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>20</X>
+				<X>30</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9252,8 +9268,8 @@
 	<Connector>
 		<Id>1791640000222</Id>
 		<Name><![CDATA[connector_alt005_1791640000222]]></Name>
-		<X>500</X>
-		<Y>610</Y>
+		<X>510</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9287,7 +9303,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>40</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9295,8 +9311,8 @@
 	<Connector>
 		<Id>1791640000223</Id>
 		<Name><![CDATA[connector_alt005_1791640000223]]></Name>
-		<X>490</X>
-		<Y>620</Y>
+		<X>500</X>
+		<Y>610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -9331,18 +9347,18 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>110</Y>
+				<Y>90</Y>
 			</Point>
 			<Point>
-				<X>180</X>
-				<Y>110</Y>
+				<X>300</X>
+				<Y>90</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1791640000224</Id>
 		<Name><![CDATA[connector_alt005_1791640000224]]></Name>
-		<X>90</X>
+		<X>100</X>
 		<Y>400</Y>
 		<Label>
 			<X>10</X>
@@ -9377,7 +9393,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>90</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9420,7 +9436,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>90</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9464,57 +9480,14 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>90</Y>
+				<Y>80</Y>
 			</Point>
 			<Point>
 				<X>350</X>
-				<Y>90</Y>
+				<Y>80</Y>
 			</Point>
 			<Point>
 				<X>350</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1791640000227</Id>
-		<Name><![CDATA[connector_alt005_1791640000227]]></Name>
-		<X>310</X>
-		<Y>400</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>tirarHelper</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDecouple</ClassName>
-			<ItemName>out</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>CoperXI</ClassName>
-			<ItemName>reencostarTraseira</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>in</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>90</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9522,7 +9495,7 @@
 	<Connector>
 		<Id>1791640000228</Id>
 		<Name><![CDATA[connector_alt005_1791640000228]]></Name>
-		<X>310</X>
+		<X>300</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -9558,18 +9531,18 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>60</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>60</X>
-				<Y>60</Y>
+				<X>50</X>
+				<Y>40</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1791640000229</Id>
 		<Name><![CDATA[connector_alt005_1791640000229]]></Name>
-		<X>430</X>
+		<X>440</X>
 		<Y>410</Y>
 		<Label>
 			<X>10</X>
@@ -9605,18 +9578,18 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>30</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>70</X>
-				<Y>30</Y>
+				<X>60</X>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>60</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
-				<X>120</X>
+				<X>110</X>
 				<Y>-10</Y>
 			</Point>
 		</Points>
@@ -9624,7 +9597,7 @@
 	<Connector>
 		<Id>1791640000230</Id>
 		<Name><![CDATA[connector_alt005_1791640000230]]></Name>
-		<X>440</X>
+		<X>450</X>
 		<Y>400</Y>
 		<Label>
 			<X>10</X>
@@ -9659,11 +9632,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>57</X>
+				<X>47</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>100</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9706,31 +9679,31 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>30</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>30</X>
+				<X>80</X>
 				<Y>150</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-20</X>
 				<Y>150</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
-				<Y>210</Y>
+				<X>-20</X>
+				<Y>200</Y>
 			</Point>
 			<Point>
-				<X>-30</X>
-				<Y>210</Y>
+				<X>10</X>
+				<Y>200</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1792071381496</Id>
 		<Name><![CDATA[connector111]]></Name>
-		<X>250</X>
+		<X>300</X>
 		<Y>800</Y>
 		<Label>
 			<X>10</X>
@@ -9765,8 +9738,196 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>500</X>
 				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1793964552964</Id>
+		<Name><![CDATA[connector69]]></Name>
+		<X>0</X>
+		<Y>0</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>tirarHelper</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>delay</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>300</X>
+				<Y>400</Y>
+			</Point>
+			<Point>
+				<X>330</X>
+				<Y>400</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1793964552966</Id>
+		<Name><![CDATA[connector112]]></Name>
+		<X>370</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>delay</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>reencostarTraseira</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794251454150</Id>
+		<Name><![CDATA[connector113]]></Name>
+		<X>2910</X>
+		<Y>1100</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>pega_linhaMar_a</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>para_linhaMar_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>290</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>340</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
+				<X>390</X>
+				<Y>50</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794251479994</Id>
+		<Name><![CDATA[connector114]]></Name>
+		<X>2910</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>pega_linhaTerra_a</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>para_alivioTerra_b</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>290</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>340</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
+				<X>390</X>
+				<Y>50</Y>
 			</Point>
 		</Points>
 	</Connector>

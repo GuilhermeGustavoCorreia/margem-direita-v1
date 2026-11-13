@@ -16,8 +16,10 @@ return contador;
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1793300679216*/
-// ALT-003: CoperXXI ainda não usa esse critério; só não recebe durante alívio
-return !fazendoAlivio;
+// trem entrando: do comecar_encoste até o lote 1 entrar no ciclo da moega
+if (_trem_chegando != null) return false;
+// ainda há carregados no terminal (lote em descarga ou segunda parte esperando)
+return get_vagoes_carregados() == 0;
 /*ALCODEEND*/}
 
 float getOverloadVazios()
@@ -293,5 +295,15 @@ if (!aguardando_alivio && get_espaco_vazios() == 0) {
 Main main()
 {/*ALCODESTART::1793301192443*/
 return (Main) getEngine().getRoot();
+/*ALCODEEND*/}
+
+double get_vagoes_carregados()
+{/*ALCODESTART::1794506396694*/
+return (
+ 
+	main().getTamanhoDoTrem(lote_segunda_parte) + 
+	main().getTamanhoDoTrem(lote_em_descarga)
+
+);
 /*ALCODEEND*/}
 

@@ -70,7 +70,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_rumo.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTeste_rumo);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -277,7 +277,7 @@
 		<Rotation>0.0</Rotation>
 		<Color>-12566464</Color>
 		<Text><![CDATA[0]]></Text>
-		<TextCode>(lote_segunda_parte == null) ? 0 : lote_segunda_parte.getNumeroDeVagoesCarregados()</TextCode>
+		<TextCode>get_vagoes_carregados()</TextCode>
 		<Font>
 			<Name><![CDATA[Saira Thin]]></Name>
 			<Size>14</Size>
@@ -431,7 +431,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_vli.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "vli", tremTeste_vli);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -456,7 +456,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_mrs.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", tremTeste_mrs);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -987,6 +987,31 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
+	<Text>
+		<Id>1794506038077</Id>
+		<Name><![CDATA[text38078]]></Name>
+		<X>5010</X>
+		<Y>60</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[6. Excesso do alívio]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
 	<Line>
 		<Id>1793291000010</Id>
 		<Name><![CDATA[line109]]></Name>
@@ -1344,7 +1369,7 @@
 		<Id>1793291000024</Id>
 		<Name><![CDATA[text123]]></Name>
 		<X>3200</X>
-		<Y>1060</Y>
+		<Y>1180</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1483,6 +1508,31 @@
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
 		<Text><![CDATA[Fim do alívio]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>18</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1794506038079</Id>
+		<Name><![CDATA[text38080]]></Name>
+		<X>5000</X>
+		<Y>180</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Cortar excesso (quantidade_alivio)]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>18</Size>
@@ -1824,8 +1874,8 @@
 	<Text>
 		<Id>1793291000043</Id>
 		<Name><![CDATA[text142]]></Name>
-		<X>4550</X>
-		<Y>1540</Y>
+		<X>-640</X>
+		<Y>0</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>

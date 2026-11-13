@@ -356,7 +356,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -386,7 +386,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -569,7 +569,8 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.chegada_carregados.take(agent)]]></Code>
+					<Code><![CDATA[// ALT-084: o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -664,7 +665,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -694,7 +695,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -918,7 +919,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -948,7 +949,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1202,7 +1203,9 @@ if (agent instanceof Trem) {
 		produto_em_atendimento  = v.segmento;
 	}
 }
-traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));
+// terminal não recebe outro trem até este entrar no ciclo da moega
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1379,7 +1382,8 @@ traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), age
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_em_descarga = (Trem) agent; // ALT-073
+					<Code><![CDATA[lote_em_descarga = (Trem) agent;
+_trem_chegando = null;
 traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros na fila da moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
@@ -9546,7 +9550,7 @@ lote_vazios_moega != null]]></Code>
 	<EmbeddedObject>
 		<Id>1793298472512</Id>
 		<Name><![CDATA[moega_tem_rp]]></Name>
-		<X>3770</X>
+		<X>3780</X>
 		<Y>1040</Y>
 		<Label>
 			<X>0</X>
@@ -10087,7 +10091,7 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 		<Id>1793298472605</Id>
 		<Name><![CDATA[lote_com_loco]]></Name>
 		<X>2530</X>
-		<Y>240</Y>
+		<Y>190</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>

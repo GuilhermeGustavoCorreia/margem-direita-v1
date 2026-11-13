@@ -89,3 +89,51 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-081**: GestorDeAlivios — trem cheio da linha 4000 ocupa as faixas da saída até a cauda sair; nova loco PCX só nasce com a intervalo4000_b livre
 
 - **ALT-082**: GestorDeAlivios — trem da linha 4000 só junta vazios de terminais da mesma ferrovia e segmento (variáveis gravadas no 1º terminal; equals)
+
+- **ALT-083**: Main — lê os arquivos da interface HTML (`simulacao/config` e `simulacao/input`) no startup e valida terminais e tempos entre chegadas; só log, sem efeito na simulação
+
+- **ALT-084**: GestorDeISN — pátio ISN com faixas próprias (linha 01 a..e e porteira), estacionamento na linha 02 com `estacionarISN` e entrega à circulação na val_via2; GestorDeChegadas decide o destino; terminais entram por `receber_trem`
+
+- **ALT-085**: GestorDeChegadas — prefixo do trem (letra + 2 dígitos pares) sorteado por ferrovia × segmento na criação; traces `[chegadas]` e `[ISN]` mostram `id/prefixo`
+
+- **ALT-086**: GestorDeCirculacao — log `[ges-circulacao][tempo] - [prefixo: segmento destino] [status]` na entrada do gestor, em cada TrainMoveTo de faixa e na saída para terminal/DV
+
+- **ALT-087**: classe `Log` padrão (`[tempo em h] NÍVEL Origem evento mensagem`); gestores (Circulacao, ISN, Chegadas, Alivios, Locomotivas) e terminais ADM, TES e T39 convertidos (demais pendentes); referências ALT removidas dos comentários desses oito
+
+- **ALT-088**: CoperXI — vagão separado pelo `pega1vagao` passa a ser contado (`_vagao_aguardando_descarga`) em `_getVagosLinhaMoega()`; `get_vagoes_carregados()` soma o vagão em descarga; só um vagão fracionado por vez
+- **ALT-090**: GestorDeCirculacao — log da circulação mostra `(prefixo - id)`
+- **ALT-091**: GestorDeAlivios — log do id da loco do alívio PST `(prefixo - id)`
+- **ALT-092**: GestorDeAlivios — faixa de criação da loco PST OCUPADA com o id da loco e liberada pela circulação; prefixo MNB ímpar nos trens de alívio
+- **ALT-093**: GestorDeCirculacao/Chegadas/ISN — collection `trens_em_circulacao`: um trem a caminho de cada terminal por vez
+- **ALT-094**: CoperXI — `_trem_chegando` + Delay `finalizar_manobra` (não recebe outro trem durante a manobra de chegada); Chegadas respeita o trem da linha 02
+- **ALT-095**: GestorDeDVs — `quantos_vagoes_cabem` pela regra falta/vazios/livre (0 quando não pode); GestorDeAlivios não alivia com 0
+- **ALT-096**: GestorDeDVs — logs `comecou_manobra`, `colocou_lote`, `terminou_manobra` com dados do trem; função `colocar_lote(linha, lote)`
+- **ALT-097**: GestorDeDVs — estacionar lotes, formar o trem de 82 e sair por `circ_pos_fim_placa_2` (log `saida_82`); slot da via 2 fora (livre 108)
+- **ALT-098**: MoverTremCompleto_Ponto — `_distanciaResidual` acha o carro também pela traseira (switch); trem parado sem alvo não dá mais erro
+- **ALT-099**: GestorDeDVs — condição do `sel_acao` usa a função pura `calcular_linha`; `escolher_linha` roda uma vez no `onEnter` do `sel_acao` (fim do `proxima_linha` duplicado)
+- **ALT-100**: CoperXI — primeiro vagão de linha de vazios vazia passa pelo `wait_bloco*` e já conta em `_loteDeVazios_*` (último vagão do trem não fica mais parado)
+- **ALT-101**: GestorDeCirculacao — alívio pela via 2 entrega às DVs em `via2_intermar_a` (sem `railwayTrack199`/`val_via2`)
+- **ALT-102**: GestorDeDVs — livre por tipo (por linha) e reserva para o tipo líder fechar os 82 (fim do travamento por mistura)
+- **ALT-103**: CoperXI/CostaLeite — via2_e e marginais pegas juntas no GestorDeCirculacao (`bloquear_encoste_marginal`); CostaLeite passa a soltar as marginais antes de devolver a loco
+- **ALT-104**: CostaLeite — rota da loco de alívio inclui `linhaPaqueta_a` e `linhaCostaLeita_a` até `_costaLeite_inicio_alivio`
+- **ALT-105**: GestorDeAlivios — um alívio PST por vez (`analisar_pst` para após iniciar um alívio)
+- **ALT-106**: GestorDeCirculacao — `rp_pst_switch36` (AMV da linha verde) pego no `bloquear_encoste_marginal` e liberado no fim do encoste (CoperXI/CostaLeite)
+- **ALT-107**: CoperXI/CostaLeite — `log_mov` em todos os TrainMoveTo (ini/fim), Enter (etapa) e nos Release do encoste
+- **ALT-108**: CoperXI — rota da loco de alívio volta a `via1_intermar_d → pstSaidaCoperXI` (removidas as linhas da CostaLeite)
+- **ALT-109**: GestorDeDVs — loco sozinha é devolvida direto da linha depois de colocar o lote (`sel_loco_sozinha`)
+- **ALT-110**: CostaLeite — fim do alívio solta os vazios presos no `wait` (descarga não trava com as linhas de vazios cheias)
+- **ALT-111**: CostaLeite — logs dos Seize/Release/Wait do recurso de manobra, `linhas_cheias`, `soltou_wait` e `vai_descarga`/`nao_descarrega` com `_loteEmDescarga`
+- **ALT-112**: CostaLeite — `_trem_chegando` bloqueia novo lote durante a manobra de chegada; corrigido sinal do `podeReceberNovoLote()`
+
+- **ALT-113**: GestorDeChegadas — botões dos terminais viram pedidos na fila (`pedir_trem`), com as mesmas condições de entrada; logs `aguardando`/`decisao`; prefixo sem vagão vira aviso
+
+- **ALT-114**: GestorDeDVs — fila na entrada (`chegar_nas_dvs`, `fila_dvs`): um trem manobra por vez; `get_capacidade(null)` vira aviso
+- **ALT-115**: GestorDeAlivios — alívio PST licencia a `via1_intermar_c` junto com a faixa de criação; retorno entra pela faixa onde o trem está; `liberar_faixas_pst` não solta mais as faixas debaixo do trem
+- **ALT-116**: CoperXXI — podeReceberNovoLote recusa trem entrando (_trem_chegando) ou com carregados no terminal
+- **ALT-117**: MoegaoMar e MoegaoTerra — podeReceberNovoLote recusa trem entrando (_trem_chegando) ou com carregados no terminal
+- **ALT-118**: Alívio PST — a faixa de criação (via1_intermar_d) fica com o trem até ele passar por ela na volta; evita outro alívio entrar no corredor
+- **ALT-119**: CostaLeite — não recebe trem enquanto houver vazios na linha Terra (_loteDeVazios_LinhaTerra)
+- **ALT-120**: CoperXXI — alívio leva só a quantidade pedida pelo GestorDeAlivios; o excesso fica na linha (rmv_excesso / precisa_mais_vgs)
+- **ALT-121**: GestorDeAlivios — loco do alívio PST que encosta no lote na linha de destino conta como chegada (outHit ligado)
+- **ALT-123**: CoperXI e CoperXXI — log de análise por bloco (variável `log_de_analise`)
+- **ALT-124**: CoperXXI — alívio parcial: estoques viram Wait, alívio engata tudo e a sobra volta para b → a → moega

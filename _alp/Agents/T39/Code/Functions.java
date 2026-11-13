@@ -97,7 +97,7 @@ for (int i = 0; i < trem.size(); i++) {
         }
     }
 
-    traceln("erro: trem não tem nenhum vagão");
+    Log.erro("T39", "trem_sem_vagao", "trem não tem nenhum vagão");
 /*ALCODEEND*/}
 
 String getPatio()

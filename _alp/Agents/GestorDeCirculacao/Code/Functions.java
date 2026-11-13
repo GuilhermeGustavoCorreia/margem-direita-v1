@@ -5,6 +5,7 @@ return (Main) getEngine().getRoot();
 
 double inicializar()
 {/*ALCODESTART::1787603378110*/
+Log.iniciar(this);
 
 //coordenadas_ferroviarias.put(main().pos_locoAlivio_PMC,    9);
 //coordenadas_ferroviarias.put(main().pos_circ_alivio_tgrao, 10); 
@@ -16,7 +17,7 @@ linhas_e_recursos.put(rp_linha_marginalRetaVelha, 	coll_marginalRetaVelha	);
 linhas_e_recursos.put(rp_linha_via2, 				coll_via2				);
 linhas_e_recursos.put(rp_linha_via2_intermar, 		coll_via2_intermar		); 
 
-traceln("🟠➡️ " + "startup -> linhas_e_recursos");
+Log.info("GesCirculacao", "startup", "linhas_e_recursos");
 /*ALCODEEND*/}
 
 double configurar_rota(Trem trem)
@@ -24,32 +25,11 @@ double configurar_rota(Trem trem)
 destino = trem.posicao_destino;
 /*ALCODEEND*/}
 
-double atualizar_licenciamento(Trem trem)
-{/*ALCODESTART::1788901087606*/
-List<RailwayTrack> tracksOcupados = trem.getAllOccupiedTracks();
-
-trem._linhas_para_liberar.clear();
-
-for (Map.Entry<ResourcePool, Collection<RailwayTrack>> entry : linhas_e_recursos.entrySet()) {
-    
-    ResourcePool pool = entry.getKey();
-    Collection<RailwayTrack> tracksDaLinha = entry.getValue();
-
-    boolean temRecurso = !trem.resourceUnitsOfPool(pool).isEmpty();
-    boolean saiuDaLinha = Collections.disjoint(tracksOcupados, tracksDaLinha);
-
-    if (temRecurso && saiuDaLinha) {
-
-        trem._linhas_para_liberar.add(pool);   // ← isso que faltava
-    }
-}
-/*ALCODEEND*/}
-
 ResourcePool[] liberar_faixas_ocupadas(Trem trem)
 {/*ALCODESTART::1789317324799*/
 List<ResourcePool> recursosLiberados = new ArrayList<>();
 
-// ALT-010 [diag_liberar]: o que o trem realmente possui entre os pools das faixas
+// [diag_liberar]: o que o trem realmente possui entre os pools das faixas
 StringBuilder possui = new StringBuilder();
 
 for (Faixa f : faixas) {
@@ -69,8 +49,8 @@ for (Faixa faixa : faixas) {
         boolean faixaEstaVazia = faixa.faixaEstaVazia();
         boolean temUnidade     = !trem.resourceUnitsOfPool(faixa.recurso).isEmpty();
 
-        // ALT-010 [diag_liberar]: cada faixa candidata a liberacao
-        // ALT-010.1: a faixa sempre sai de OCUPADA quando o trem já saiu dela.
+        // [diag_liberar]: cada faixa candidata a liberacao
+        // a faixa sempre sai de OCUPADA quando o trem já saiu dela.
         // Só entra na lista de Release o recurso que o trem realmente possui
         // (Release em SPECIFIED_RESOURCES dá erro se o agente não tiver a unidade).
    
@@ -96,12 +76,35 @@ for (Faixa f : faixas) {
 
 ResourcePool[] get_recursos_linha_5000_6000(Trem trem)
 {/*ALCODESTART::1792014000500*/
-// ALT-014: pools da linha 5000/6000 que o trem realmente possui
+// pools da linha 5000/6000 que o trem realmente possui
 // (Release em SPECIFIED_RESOURCES dá erro se o agente não tiver a unidade)
 List<ResourcePool> pools = new ArrayList<>();
 for (ResourcePool rp : java.util.List.of(rp_linha5000, rp_linha6000)) {
     if (!trem.resourceUnitsOfPool(rp).isEmpty()) pools.add(rp);
 }
 return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+
+double log_circulacao(Agent trem,String status)
+{/*ALCODESTART::1793910000002*/
+// Log padrao: origem GesCirculacao, texto [(prefixo - id): segmento destino] [status]
+Trem t = (Trem) trem;
+String destino = t.ITerminalMoega_destino == null ? "sem destino" : t.ITerminalMoega_destino.getName();
+Log.info("GesCirculacao", "circulacao", String.format("[(%s - %d): %s %s] [%s]", t.prefixo, t.getId(), t.getSegmento(), destino, status));
+/*ALCODEEND*/}
+
+double log_entrada(Agent trem)
+{/*ALCODESTART::1793910000003*/
+// loga só a primeira entrada do trem no gestor (tentar_usar_faixa recebe o trem a cada faixa)
+if (trens_no_gestor.add(trem.getId())) log_circulacao(trem, "comecou circulacao");
+/*ALCODEEND*/}
+
+double log_saida(Agent trem,String status)
+{/*ALCODESTART::1793910000004*/
+// trem deixa o gestor (terminal ou DV)
+trens_no_gestor.remove(trem.getId());
+// chegou ao terminal: deixa de ser trem a caminho dele (Chegadas e ISN consultam esta lista)
+trens_em_circulacao.remove((Trem) trem);
+log_circulacao(trem, status);
 /*ALCODEEND*/}
 

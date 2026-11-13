@@ -1,938 +1,381 @@
-[log] 2026-10-29T17:56:22.145865200 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1\logs\sim.log
-[4397,6][Trem][corte] trem=25348 n=84 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[4397,6][Trem][corte] trem=25348 locos na ponta=1
-[4397,6][Trem][corte] trem=25348 proxima loco em k=42 (indice real=42)
-[4397,6][Trem][corte] trem=25348 resultado=16
-[4461,9][Trem][corte] trem=25348 n=70 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[4461,9][Trem][corte] trem=25348 locos na ponta=0
-[4461,9][Trem][corte] trem=25348 proxima loco em k=26 (indice real=26)
-[4461,9][Trem][corte] trem=25348 resultado=15
-[5462,5][Trem][corte] trem=25348 n=55 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[5462,5][Trem][corte] trem=25348 locos na ponta=0
-[5462,5][Trem][corte] trem=25348 proxima loco em k=11 (indice real=11)
-[5462,5][Trem][corte] trem=25348 qtd cortada pelo limite: pedido=15 limite=11
-[5462,5][Trem][corte] trem=25348 resultado=11
-[5508,9][ADM][decidir_moega] trem=25434 carros=84 vagoes=82 lote_X=0 lote_V=0
-[5668,7][Trem][corte] trem=25434 n=84 qtd=28 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[5668,7][Trem][corte] trem=25434 locos na ponta=0
-[5668,7][Trem][corte] trem=25434 proxima loco em k=82 (indice real=82)
-[5668,7][Trem][corte] trem=25434 resultado=28
-[5677,4][ADM][decidir_moega] trem=25434 carros=56 vagoes=54 lote_X=28 lote_V=0
-[5759,2][Trem][corte] trem=25434 n=56 qtd=27 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[5759,2][Trem][corte] trem=25434 locos na ponta=0
-[5759,2][Trem][corte] trem=25434 proxima loco em k=54 (indice real=54)
-[5759,2][Trem][corte] trem=25434 resultado=27
-[5770,9][ADM][decidir_moega] trem=25434 carros=29 vagoes=27 lote_X=28 lote_V=27
-[5836,6][ADM][fim_manobra] trem=25434 volta para a linha 2000 com 27 vagoes
-[5839,2][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=0 pendentes=0 em_descarga=2 alivio=false
-[5839,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=0 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[5982,3][ADM][linha7] trem=25635 vagoes=1
-[5982,3][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[5985,0][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=1 alivio=false
-[6080,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6080,5][ADM][linha7] trem=25635 vagoes=2
-[6083,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=2 pendentes=1 em_descarga=1 alivio=false
-[6176,0][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=2 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6176,0][ADM][linha7] trem=25635 vagoes=3
-[6178,6][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=3 pendentes=1 em_descarga=1 alivio=false
-[6268,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=3 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6268,9][ADM][linha7] trem=25635 vagoes=4
-[6271,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=4 pendentes=1 em_descarga=1 alivio=false
-[6359,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=4 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6359,2][ADM][linha7] trem=25635 vagoes=5
-[6361,8][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=5 pendentes=1 em_descarga=1 alivio=false
-[6446,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=5 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6446,9][ADM][linha7] trem=25635 vagoes=6
-[6449,5][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=6 pendentes=1 em_descarga=1 alivio=false
-[6531,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=6 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6531,9][ADM][linha7] trem=25635 vagoes=7
-[6534,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=7 pendentes=1 em_descarga=1 alivio=false
-[6614,3][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=7 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6614,3][ADM][linha7] trem=25635 vagoes=8
-[6616,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=8 pendentes=1 em_descarga=1 alivio=false
-[6694,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=8 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6694,1][ADM][linha7] trem=25635 vagoes=9
-[6696,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=9 pendentes=1 em_descarga=1 alivio=false
-[6771,2][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=9 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6771,2][ADM][linha7] trem=25635 vagoes=10
-[6773,8][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=10 pendentes=1 em_descarga=1 alivio=false
-[6787,8][Trem][corte] trem=25348 n=44 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[6787,8][Trem][corte] trem=25348 locos na ponta=1
-[6787,8][Trem][corte] trem=25348 proxima loco em k=42 (indice real=42)
-[6787,8][Trem][corte] trem=25348 resultado=16
-[6796,6][TES][linha03] lote=25660 com 24 vagoes
-[6845,7][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=10 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6845,7][ADM][linha7] trem=25635 vagoes=11
-[6848,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=11 pendentes=1 em_descarga=1 alivio=false
-[6917,6][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=11 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6917,6][ADM][linha7] trem=25635 vagoes=12
-[6920,3][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=12 pendentes=1 em_descarga=1 alivio=false
-[6968,1][TES][linha04] lote=25665 com 12 vagoes
-[6986,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=12 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[6986,9][ADM][linha7] trem=25635 vagoes=13
-[6989,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=13 pendentes=1 em_descarga=1 alivio=false
-[7053,6][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=13 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7053,6][ADM][linha7] trem=25635 vagoes=14
-[7056,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=14 pendentes=1 em_descarga=1 alivio=false
-[7103,6][TES][linha05] lote=25671 com 5 vagoes
-[7103,6][TES][acoplar_locos_3000] lote=25519 com 41 vagoes espera 2 locos FIPS
-[7103,7][TES][iniciar_descarga_moegas] lote_linha_5=5 lote_linha_4=12
-[7103,7][TES][descarga_04e5] vagao=25675 para a moega 04, fundo 5
-[7117,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=14 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7117,6][ADM][linha7] trem=25635 vagoes=15
-[7120,2][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=15 pendentes=1 em_descarga=1 alivio=false
-[7153,7][TES][descarga_04e5] vagao=25675 descarregado, vai p/ fundo 5
-[7179,0][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=15 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7179,0][ADM][linha7] trem=25635 vagoes=16
-[7181,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=16 pendentes=1 em_descarga=1 alivio=false
-[7214,2][TES][fundo_05] lote=25675 com 1 vazios
-[7214,2][TES][descarga_04e5] vagao=25680 para a moega 04, fundo 5
-[7228,8][TES][resto_3000] lote=25519 com 43 carros pronto para o encoste
-[7228,8][TES][resto_3000] espera: linha03=24 linha04=12 fundo04=0 linha05=3
-[7237,8][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=16 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7237,8][ADM][linha7] trem=25635 vagoes=17
-[7240,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=17 pendentes=1 em_descarga=1 alivio=false
-[7264,2][TES][descarga_04e5] vagao=25680 descarregado, vai p/ fundo 5
-[7293,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=17 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7293,9][ADM][linha7] trem=25635 vagoes=18
-[7296,5][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=18 pendentes=1 em_descarga=1 alivio=false
-[7322,0][TES][fundo_05] lote=25675 com 2 vazios
-[7322,0][TES][descarga_04e5] vagao=25685 para a moega 04, fundo 5
-[7343,1][TES][descarga_linha03] lote=25660 parou, 6 vagoes carregados
-[7347,5][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=18 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7347,5][ADM][linha7] trem=25635 vagoes=19
-[7350,1][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=19 pendentes=1 em_descarga=1 alivio=false
-[7372,0][TES][descarga_04e5] vagao=25685 descarregado, vai p/ fundo 5
-[7398,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=19 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7398,4][ADM][linha7] trem=25635 vagoes=20
-[7399,0][Alivio4000][compatibilidade] trem da 4000 definido por t39 | ferrovia=rumo segmento=grao
-7399.0 | [qtd_alivio] t39 | vazios no terminal: 39 | cabem na 4000: 82 | definido: 39
-7399.0 | 480 pediu 2 locos | livres: 2 | fila: 1
-7399.0 | 480 apreendeu 25 | livres: 1/8
-7399.0 | 480 apreendeu 26 | livres: 0/8
-[7401,0][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=20 pendentes=1 em_descarga=1 alivio=false
-[7427,3][TES][fundo_05] lote=25675 com 3 vazios
-[7427,3][TES][descarga_04e5] vagao=25692 para a moega 04, fundo 5
-[7446,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=20 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7446,6][ADM][linha7] trem=25635 vagoes=21
-[7449,3][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=21 pendentes=1 em_descarga=1 alivio=false
-[7477,3][TES][descarga_04e5] vagao=25692 descarregado, vai p/ fundo 5
-[7492,3][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=21 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7492,3][ADM][linha7] trem=25635 vagoes=22
-[7494,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=22 pendentes=1 em_descarga=1 alivio=false
-erro: trem não tem nenhum vagão
-[7529,9][TES][fundo_05] lote=25675 com 4 vazios
-[7529,9][TES][descarga_04e5] ultimo vagao da linha 05 vai para a moega
-[7529,9][TES][descarga_04e5] vagao=25671 para a moega 04, fundo 5
-[7535,3][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=22 pendentes=0 em_descarga=1 alivio=false
-[7535,3][ADM][linha7] trem=25635 vagoes=23
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7537,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=23 pendentes=1 em_descarga=1 alivio=false
-[7577,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=23 pendentes=0 em_descarga=1 alivio=false
-[7577,7][ADM][linha7] trem=25635 vagoes=24
-[7579,9][TES][descarga_04e5] vagao=25671 descarregado, vai p/ fundo 5
-[7579,9][TES][descarga_04e5] linha 05 descarregada
-[7580,3][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=24 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7618,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=24 pendentes=0 em_descarga=1 alivio=false
-[7618,1][ADM][linha7] trem=25635 vagoes=25
-[7620,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=25 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7629,9][TES][fundo_05] lote=25675 com 5 vazios
-[7629,9][TES][descarga_04e5] vagao=25698 para a moega 04, fundo 5
-[7657,8][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=25 pendentes=0 em_descarga=1 alivio=false
-[7657,8][ADM][linha7] trem=25635 vagoes=26
-[7660,5][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=26 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7679,9][TES][descarga_04e5] vagao=25698 descarregado, vai p/ fundo 5
-[7695,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=26 pendentes=0 em_descarga=1 alivio=false
-[7695,6][ADM][linha7] trem=25635 vagoes=27
-[7698,2][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=27 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7727,2][TES][fundo_05] lote=25675 com 6 vazios
-[7727,2][TES][descarga_04e5] vagao=25701 para a moega 04, fundo 5
-[7732,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=27 pendentes=0 em_descarga=1 alivio=false
-[7732,7][ADM][linha7] trem=25635 vagoes=28
-[7735,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=28 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7767,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=28 pendentes=0 em_descarga=1 alivio=false
-[7767,9][ADM][linha7] trem=25635 vagoes=29
-[7770,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=29 pendentes=0 em_descarga=2 alivio=false
-[7777,2][TES][descarga_04e5] vagao=25701 descarregado, vai p/ fundo 5
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7802,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=29 pendentes=0 em_descarga=1 alivio=false
-[7802,4][ADM][linha7] trem=25635 vagoes=30
-[7805,0][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=30 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7822,0][TES][fundo_05] lote=25675 com 7 vazios
-[7822,0][TES][descarga_04e5] vagao=25706 para a moega 04, fundo 5
- [rp_locoFips_pcx] 480 devolveu 1 unidade | idle=0 busy=8 cap=8
- [rp_locoFips_pcx] 480 devolveu 1 unidade | idle=0 busy=8 cap=8
-7830.0 | [qtd_alivio] tes | vazios no terminal: 25 | cabem na 4000: 43 | definido: 25
-[7834,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=30 pendentes=0 em_descarga=1 alivio=false
-[7834,9][ADM][linha7] trem=25635 vagoes=31
-[7837,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=31 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7866,8][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=31 pendentes=0 em_descarga=1 alivio=false
-[7866,8][ADM][linha7] trem=25635 vagoes=32
-[7869,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=32 pendentes=0 em_descarga=2 alivio=false
-[7871,3][Trem][corte] trem=25348 n=28 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[7871,3][Trem][corte] trem=25348 locos na ponta=0
-[7871,3][Trem][corte] trem=25348 proxima loco em k=26 (indice real=26)
-[7871,3][Trem][corte] trem=25348 resultado=15
-[7872,0][TES][descarga_04e5] vagao=25706 descarregado, vai p/ fundo 5
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7896,7][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=32 pendentes=0 em_descarga=1 alivio=false
-[7896,7][ADM][linha7] trem=25635 vagoes=33
-[7899,3][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=33 pendentes=0 em_descarga=2 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7914,1][TES][alivio] analisar: pegos=0/25 linha03=true fundo05=7 (wait 0) fundo04=0 (wait 0)
-[7914,1][TES][alivio] pega lote=25660 (24 vagoes, 18 vazios)
-[7914,1][TES][fundo_05] lote=25675 com 8 vazios
-[7914,1][TES][descarga_04e5] vagao=25712 para a moega 04, fundo 5
-[7924,2][TES][alivio] falta=25 leva=18 deixa=6
-[7924,2][TES][alivio] linha 03 fica com 6 vagoes (6 carregados)
-[7925,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=33 pendentes=0 em_descarga=1 alivio=false
-[7925,9][ADM][linha7] trem=25635 vagoes=34
-[7928,6][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=34 pendentes=0 em_descarga=2 alivio=false
-[7941,0][TES][alivio] analisar: pegos=18/25 linha03=false fundo05=8 (wait 1) fundo04=0 (wait 0)
-[7941,0][TES][alivio] pega lote=25675 (8 vagoes, 8 vazios)
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7953,2][ADM][descarga_X] lote=25631 espera | moega ocupada=false | linha7: lote=34 pendentes=0 em_descarga=1 alivio=false
-[7953,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=34 pendentes=0 em_descarga=1 alivio=false
-[7953,2][ADM][linha7] trem=25635 vagoes=35
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[7972,7][TES][alivio] falta=7 leva=7 deixa=1
-[7972,7][TES][fundo_05] lote=25716 com 1 vazios
-[7979,8][ADM][descarga_X] lote=25631 espera | moega ocupada=false | linha7: lote=35 pendentes=0 em_descarga=0 alivio=false
-[7979,8][ADM][descarga_V] lote=25633 espera | moega ocupada=false | linha7: lote=35 pendentes=0 em_descarga=0 alivio=false
-[7979,8][ADM][linha7] trem=25635 vagoes=36
-[8010,5][TES][alivio] analisar: pegos=25/25 linha03=false fundo05=1 (wait 1) fundo04=0 (wait 0)
-[8010,5][TES][retomar_descargas] linha 03 lote=25714 com 6 carregados
-[8010,5][TES][resto_3000] espera: linha03=6 linha04=8 fundo04=0 linha05=0
-[8010,5][TES][alivio] fim trem=25689 levou 25 vazios (pedido 25)
-[8060,5][TES][descarga_04e5] vagao=25712 descarregado, vai p/ fundo 5
-[8100,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8118,4][TES][fundo_05] lote=25716 com 2 vazios
-[8118,4][TES][descarga_04e5] vagao=25719 para a moega 04, fundo 5
-[8160,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8168,4][TES][descarga_04e5] vagao=25719 descarregado, vai p/ fundo 5
-[8217,5][Trem][descarregar_vagoes] trem=25714 pediu 2, descarregou 0
-[8217,5][TES][descarga_linha03] lote=25714 parou, 0 vagoes carregados
-[8220,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8223,6][TES][fundo_05] lote=25716 com 3 vazios
-[8223,6][TES][descarga_04e5] vagao=25721 para a moega 04, fundo 5
-[8273,6][TES][descarga_04e5] vagao=25721 descarregado, vai p/ fundo 5
-[8280,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8326,2][TES][fundo_05] lote=25716 com 4 vazios
-[8326,2][TES][descarga_04e5] vagao=25724 para a moega 04, fundo 5
-[8340,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8376,2][TES][descarga_04e5] vagao=25724 descarregado, vai p/ fundo 5
-[8400,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8426,2][TES][fundo_05] lote=25716 com 5 vazios
-[8426,2][TES][descarga_04e5] vagao=25726 para a moega 04, fundo 5
-[8460,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8476,2][TES][descarga_04e5] vagao=25726 descarregado, vai p/ fundo 5
-[8520,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8523,5][TES][fundo_05] lote=25716 com 6 vazios
-[8523,5][TES][descarga_04e5] vagao=25729 para a moega 04, fundo 5
-[8573,5][TES][descarga_04e5] vagao=25729 descarregado, vai p/ fundo 5
-[8580,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8618,3][TES][fundo_05] lote=25716 com 7 vazios
-[8618,3][TES][descarga_04e5] vagao=25732 para a moega 04, fundo 5
-[8640,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8668,3][TES][descarga_04e5] vagao=25732 descarregado, vai p/ fundo 5
-[8700,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8710,4][TES][fundo_05] lote=25716 com 8 vazios
-[8710,4][TES][descarga_04e5] vagao=25734 para a moega 04, fundo 5
-[8760,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8760,4][TES][descarga_04e5] vagao=25734 descarregado, vai p/ fundo 5
-[8799,9][TES][fundo_05] lote=25716 com 9 vazios
-[8799,9][TES][descarga_04e5] ultimo vagao da linha 04 vai para a moega
-[8799,9][TES][descarga_04e5] vagao=25665 para a moega 04, fundo 5
-[8820,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8849,9][TES][descarga_04e5] vagao=25665 descarregado, vai p/ fundo 5
-[8849,9][TES][descarga_04e5] linha 04 descarregada
-[8880,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[8886,7][TES][fundo_05] lote=25716 com 10 vazios
-8887.0 | [qtd_alivio] tes | vazios no terminal: 16 | cabem na 4000: 18 | definido: 16
-[8918,3][Trem][corte] trem=25348 n=13 qtd=15 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[8918,3][Trem][corte] trem=25348 locos na ponta=0
-[8918,3][Trem][corte] trem=25348 proxima loco em k=11 (indice real=11)
-[8918,3][Trem][corte] trem=25348 qtd cortada pelo limite: pedido=15 limite=11
-[8918,3][Trem][corte] trem=25348 resultado=11
-[8933,1][TES][alivio] analisar: pegos=0/16 linha03=true fundo05=10 (wait 1) fundo04=0 (wait 0)
-[8933,1][TES][alivio] pega lote=25714 (6 vagoes, 6 vazios)
-[8951,9][TES][alivio] falta=16 leva=6 deixa=0
-[8967,0][TES][alivio] analisar: pegos=6/16 linha03=false fundo05=10 (wait 1) fundo04=0 (wait 0)
-[8967,0][TES][alivio] pega lote=25716 (10 vagoes, 10 vazios)
-[8996,9][TES][alivio] falta=10 leva=10 deixa=0
-[9035,6][TES][alivio] analisar: pegos=16/16 linha03=false fundo05=0 (wait 0) fundo04=0 (wait 0)
-[9035,6][TES][resto_3000] lote=25519 sai da 3000 para o encoste
-[9035,6][TES][alivio] fim trem=25689 levou 16 vazios (pedido 16)
-[9120,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9180,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9240,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9261,5][TES][linha03] lote=25741 com 24 vagoes
-[9300,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9360,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9420,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9433,0][TES][linha04] lote=25744 com 12 vagoes
-[9480,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9540,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9568,5][TES][linha05] lote=25747 com 5 vagoes
- [rp_locoFips_pcx] 310 devolveu 1 unidade | idle=2 busy=6 cap=8
- [rp_locoFips_pcx] 310 devolveu 1 unidade | idle=2 busy=6 cap=8
-[9568,6][TES][iniciar_descarga_moegas] lote_linha_5=5 lote_linha_4=12
-[9568,6][TES][descarga_04e5] vagao=25748 para a moega 04, fundo 5
-[9600,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9618,6][TES][descarga_04e5] vagao=25748 descarregado, vai p/ fundo 5
-[9660,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9679,1][TES][fundo_05] lote=25748 com 1 vazios
-[9679,1][TES][descarga_04e5] vagao=25750 para a moega 04, fundo 5
-[9720,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9729,1][TES][descarga_04e5] vagao=25750 descarregado, vai p/ fundo 5
-[9780,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9786,9][TES][fundo_05] lote=25748 com 2 vazios
-[9786,9][TES][descarga_04e5] vagao=25752 para a moega 04, fundo 5
-[9808,0][TES][descarga_linha03] lote=25741 parou, 6 vagoes carregados
-[9836,9][TES][descarga_04e5] vagao=25752 descarregado, vai p/ fundo 5
-[9840,0][Alivio4000][compatibilidade] adm espera | terminal: mrs/grao | trem da 4000: rumo/grao
-[9892,2][TES][fundo_05] lote=25748 com 3 vazios
-[9892,2][TES][descarga_04e5] vagao=25755 para a moega 04, fundo 5
-9893.0 | [qtd_alivio] tes | vazios no terminal: 21 | cabem na 4000: 2 | definido: 2 (limitado pela 4000)
-[9942,2][TES][descarga_04e5] vagao=25755 descarregado, vai p/ fundo 5
-[9994,8][TES][alivio] analisar: pegos=0/2 linha03=true fundo05=3 (wait 0) fundo04=0 (wait 0)
-[9994,8][TES][alivio] pega lote=25741 (24 vagoes, 18 vazios)
-[9994,8][TES][fundo_05] lote=25748 com 4 vazios
-[9994,8][TES][descarga_04e5] ultimo vagao da linha 05 vai para a moega
-[9994,8][TES][descarga_04e5] vagao=25747 para a moega 04, fundo 5
-[10004,9][TES][alivio] falta=2 leva=2 deixa=22
-[10004,9][TES][alivio] linha 03 fica com 22 vagoes (6 carregados)
-[10007,7][TES][alivio] analisar: pegos=2/2 linha03=true fundo05=4 (wait 1) fundo04=0 (wait 0)
-[10007,7][TES][retomar_descargas] linha 03 lote=25757 com 6 carregados
-[10007,7][TES][alivio] fim trem=25689 levou 2 vazios (pedido 2)
-[10047,0][Alivio4000][para_alivio_na_linha_4000] trem=25689 vagoes=82 -> DVs
-[10047,0][Alivio4000][ocupar_faixas_saida_4000] trem=25689 ocupa rp_pmc_intervalo4000_b
-[10047,0][Alivio4000][ocupar_faixas_saida_4000] trem=25689 ocupa rp_pmc_intervalo4000_c
-[10047,0][Alivio4000][ocupar_faixas_saida_4000] trem=25689 ocupa rp_pmc_linha4000_a
-[10047,0][Alivio4000][ocupar_faixas_saida_4000] trem=25689 ocupa rp_pmc_linha4000_b
-[10047,0][Alivio4000][ocupar_faixas_saida_4000] trem=25689 ocupa rp_pmc_linha4000_c
-[10057,7][TES][descarga_04e5] vagao=25747 descarregado, vai p/ fundo 5
-[10057,7][TES][descarga_04e5] linha 05 descarregada
-[10059,4][TES][descarga_linha03] lote=25757 parou, 4 vagoes carregados
-[10080,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25689
-[10107,7][TES][fundo_05] lote=25748 com 5 vazios
-[10107,7][TES][descarga_04e5] vagao=25760 para a moega 04, fundo 5
-[10140,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25689
-[10157,7][TES][descarga_04e5] vagao=25760 descarregado, vai p/ fundo 5
-[10180,0][Alivio4000][compatibilidade] trem da 4000 definido por adm | ferrovia=mrs segmento=grao
-10180.0 | [qtd_alivio] adm | vazios no terminal: 36 | cabem na 4000: 82 | definido: 36
-10180.0 | 552 pediu 2 locos | livres: 4 | fila: 1
-10180.0 | 552 apreendeu 25 | livres: 3/8
-10180.0 | 552 apreendeu 26 | livres: 2/8
-10204.173239230848 a. trem na faixa: 140
-10204.173239230848 a. trem na faixa: 555
-10204.173239230848 [trainExit2] removido: 140 | id=25348
-10204.173239230848 trem na faixa: 555
- [rp_locoFips_pcx] 140 devolveu 1 unidade | idle=2 busy=6 cap=8
- [rp_locoFips_pcx] 140 devolveu 1 unidade | idle=2 busy=6 cap=8
-[10205,0][TES][fundo_05] lote=25748 com 6 vazios
-[10205,0][TES][descarga_04e5] vagao=25765 para a moega 04, fundo 5
-[10255,0][TES][descarga_04e5] vagao=25765 descarregado, vai p/ fundo 5
-[10295,4][ADM][alivio] loco=25761 chegou com 0 vagoes | lote_linha_7=36 | quantidade_alivio=36
-[10299,8][TES][fundo_05] lote=25748 com 7 vazios
-[10299,8][TES][descarga_04e5] vagao=25767 para a moega 04, fundo 5
-[10307,1][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10311,5][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10315,9][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10320,2][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10324,6][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10329,0][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10333,4][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=true
-[10337,7][ADM][sair_linha7] trem=25761 carros=38 ainda_na_linha7=false
-[10340,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=0 pendentes=0 em_descarga=2 alivio=false
-[10340,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=0 pendentes=0 em_descarga=2 alivio=false
-[10349,8][TES][descarga_04e5] vagao=25767 descarregado, vai p/ fundo 5
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10391,9][TES][fundo_05] lote=25748 com 8 vazios
-[10391,9][TES][descarga_04e5] vagao=25773 para a moega 04, fundo 5
- [rp_locoFips_pcx] 552 devolveu 1 unidade | idle=4 busy=4 cap=8
- [rp_locoFips_pcx] 552 devolveu 1 unidade | idle=4 busy=4 cap=8
-[10440,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10441,9][TES][descarga_04e5] vagao=25773 descarregado, vai p/ fundo 5
-[10481,3][TES][fundo_05] lote=25748 com 9 vazios
-[10481,3][TES][descarga_04e5] vagao=25775 para a moega 04, fundo 5
-[10483,5][ADM][linha7] trem=25771 vagoes=1
-[10483,5][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10486,1][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=1 alivio=false
-[10500,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10531,3][TES][descarga_04e5] vagao=25775 descarregado, vai p/ fundo 5
-[10560,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10568,2][TES][fundo_05] lote=25748 com 10 vazios
-[10568,2][TES][descarga_04e5] vagao=25779 para a moega 04, fundo 5
-[10581,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10581,7][ADM][linha7] trem=25771 vagoes=2
-[10584,3][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=2 pendentes=1 em_descarga=1 alivio=false
-[10618,2][TES][descarga_04e5] vagao=25779 descarregado, vai p/ fundo 5
-[10620,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10652,4][TES][fundo_05] lote=25748 com 11 vazios
-[10652,4][TES][descarga_04e5] vagao=25783 para a moega 04, fundo 5
-[10677,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=2 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10677,2][ADM][linha7] trem=25771 vagoes=3
-[10679,8][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=3 pendentes=1 em_descarga=1 alivio=false
-[10680,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10680,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10702,4][TES][descarga_04e5] vagao=25783 descarregado, vai p/ fundo 5
-[10734,0][TES][fundo_05] lote=25748 com 12 vazios
-[10734,0][TES][descarga_04e5] vagao=25785 para a moega 04, fundo 5
-[10740,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10740,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10770,1][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=3 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10770,1][ADM][linha7] trem=25771 vagoes=4
-[10772,7][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=4 pendentes=1 em_descarga=1 alivio=false
-[10784,0][TES][descarga_04e5] vagao=25785 descarregado, vai p/ fundo 5
-[10800,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10800,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10813,0][TES][fundo_05] lote=25748 com 13 vazios
-[10813,0][TES][descarga_04e5] vagao=25788 para a moega 04, fundo 5
-[10860,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10860,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10860,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=4 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10860,4][ADM][linha7] trem=25771 vagoes=5
-[10863,0][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=5 pendentes=1 em_descarga=1 alivio=false
-[10863,0][TES][descarga_04e5] vagao=25788 descarregado, vai p/ fundo 5
-[10889,4][TES][fundo_05] lote=25748 com 14 vazios
-[10889,4][TES][descarga_04e5] vagao=25791 para a moega 04, fundo 5
-[10920,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10920,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10939,4][TES][descarga_04e5] vagao=25791 descarregado, vai p/ fundo 5
-[10948,0][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=5 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[10948,0][ADM][linha7] trem=25771 vagoes=6
-[10950,7][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=6 pendentes=1 em_descarga=1 alivio=false
-[10963,1][TES][fundo_05] lote=25748 com 15 vazios
-[10963,1][TES][descarga_04e5] vagao=25793 para a moega 04, fundo 5
-[10980,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[10980,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11013,1][TES][descarga_04e5] vagao=25793 descarregado, vai p/ fundo 5
-[11033,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=6 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11033,1][ADM][linha7] trem=25771 vagoes=7
-[11034,2][TES][fundo_05] lote=25748 com 16 vazios
-[11034,2][TES][descarga_04e5] ultimo vagao da linha 04 vai para a moega
-[11034,2][TES][descarga_04e5] vagao=25744 para a moega 04, fundo 5
-[11035,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=7 pendentes=1 em_descarga=1 alivio=false
-[11040,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11040,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11084,2][TES][descarga_04e5] vagao=25744 descarregado, vai p/ fundo 5
-[11084,2][TES][descarga_04e5] linha 04 descarregada
-[11100,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11100,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11102,7][TES][fundo_05] lote=25748 com 17 vazios
-[11115,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=7 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11115,5][ADM][linha7] trem=25771 vagoes=8
-[11118,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=8 pendentes=1 em_descarga=1 alivio=false
-[11160,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11160,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11195,2][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=8 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11195,2][ADM][linha7] trem=25771 vagoes=9
-[11197,9][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=9 pendentes=1 em_descarga=1 alivio=false
-[11220,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11220,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11272,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=9 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11272,4][ADM][linha7] trem=25771 vagoes=10
-[11275,0][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=10 pendentes=1 em_descarga=1 alivio=false
-[11280,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11280,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11340,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11340,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11346,9][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=10 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11346,9][ADM][linha7] trem=25771 vagoes=11
-[11349,5][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=11 pendentes=1 em_descarga=1 alivio=false
-[11400,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11400,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11418,8][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=11 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11418,8][ADM][linha7] trem=25771 vagoes=12
-[11421,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=12 pendentes=1 em_descarga=1 alivio=false
-[11460,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11460,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11488,1][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=12 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11488,1][ADM][linha7] trem=25771 vagoes=13
-[11490,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=13 pendentes=1 em_descarga=1 alivio=false
-[11520,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11520,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11554,7][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=13 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11554,7][ADM][linha7] trem=25771 vagoes=14
-[11557,4][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=14 pendentes=1 em_descarga=1 alivio=false
-[11580,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11580,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11618,8][ADM][descarga_V] lote=25633 espera | moega ocupada=true | linha7: lote=14 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11618,8][ADM][linha7] trem=25771 vagoes=15
-[11621,4][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=15 pendentes=1 em_descarga=1 alivio=false
-[11640,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11640,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11680,2][ADM][descarga_X] lote=25631 espera | moega ocupada=true | linha7: lote=15 pendentes=1 em_descarga=0 alivio=false
-[11680,2][ADM][descarga] moega V vazia
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11680,2][ADM][decidir_moega] trem=25434 carros=29 vagoes=27 lote_X=1 lote_V=0
-[11680,2][ADM][linha7] trem=25771 vagoes=16
-[11700,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11700,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11738,9][ADM][descarga] moega X vazia
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11738,9][ADM][linha7] trem=25771 vagoes=17
-[11760,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11760,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11795,1][ADM][linha7] trem=25771 vagoes=18
-[11820,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11820,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11828,4][Trem][corte] trem=25434 n=29 qtd=27 doInicio=true locoNaCabeca=true ateFimOuLoco=true
-[11828,4][Trem][corte] trem=25434 locos na ponta=0
-[11828,4][Trem][corte] trem=25434 proxima loco em k=27 (indice real=27)
-[11828,4][Trem][corte] trem=25434 resultado=27
-[11840,1][ADM][decidir_moega] trem=25434 carros=2 vagoes=0 lote_X=0 lote_V=27
-[11840,1][ADM][fim_manobra] trem=25434 so com 2 loco(s) -> devolve locos e comeca a descarga
-[11842,8][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=18 pendentes=1 em_descarga=1 alivio=false
-[11848,6][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=18 pendentes=0 em_descarga=1 alivio=false
-[11848,6][ADM][linha7] trem=25771 vagoes=19
-[11880,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11880,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[11936,0][ADM][linha7] trem=25771 vagoes=20
-[11938,7][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=20 pendentes=0 em_descarga=1 alivio=false
-[11940,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[11940,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12000,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12000,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12029,3][ADM][linha7] trem=25771 vagoes=21
-[12031,9][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=21 pendentes=0 em_descarga=1 alivio=false
-[12060,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12060,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12120,0][ADM][linha7] trem=25771 vagoes=22
-[12120,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12120,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12122,6][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=22 pendentes=0 em_descarga=1 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12180,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12180,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12208,0][ADM][linha7] trem=25771 vagoes=23
-[12210,6][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=23 pendentes=0 em_descarga=1 alivio=false
-[12240,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12240,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12293,4][ADM][linha7] trem=25771 vagoes=24
-[12296,0][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=24 pendentes=0 em_descarga=1 alivio=false
-[12300,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12300,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12360,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12360,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12376,2][ADM][linha7] trem=25771 vagoes=25
-[12378,8][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=25 pendentes=0 em_descarga=1 alivio=false
-[12420,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12420,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12456,3][ADM][linha7] trem=25771 vagoes=26
-[12459,0][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=26 pendentes=0 em_descarga=1 alivio=false
-[12480,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12480,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12533,9][ADM][linha7] trem=25771 vagoes=27
-[12536,5][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=27 pendentes=0 em_descarga=1 alivio=false
-[12540,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12540,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12600,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12600,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12608,8][ADM][linha7] trem=25771 vagoes=28
-[12611,4][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=28 pendentes=0 em_descarga=1 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12660,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12660,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12681,0][ADM][linha7] trem=25771 vagoes=29
-[12683,7][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=29 pendentes=0 em_descarga=1 alivio=false
-[12720,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12720,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12750,7][ADM][linha7] trem=25771 vagoes=30
-[12753,3][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=30 pendentes=0 em_descarga=1 alivio=false
-[12780,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[12780,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12817,7][ADM][linha7] trem=25771 vagoes=31
-12818.0 | [qtd_alivio] adm | vazios no terminal: 31 | cabem na 4000: 46 | definido: 31
-[12820,3][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=31 pendentes=0 em_descarga=1 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[12882,1][ADM][linha7] trem=25771 vagoes=32
-[12884,7][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=32 pendentes=0 em_descarga=1 alivio=false
-[12897,1][ADM][alivio] loco=25761 chegou com 36 vagoes | lote_linha_7=32 | quantidade_alivio=31
-[12908,0][ADM][alivio] trem=25761 vagoes=68 (trazia 36) -> excesso=1 volta para a linha 7
-[12912,4][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12916,7][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12921,1][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12925,5][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12929,9][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12934,2][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12938,6][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=true
-[12943,0][ADM][sair_linha7] trem=25761 carros=69 ainda_na_linha7=false
-[12943,0][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=0 pendentes=1 em_descarga=0 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13020,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13020,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13043,8][ADM][linha7] trem=25817 vagoes=1
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13046,4][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=1 pendentes=1 em_descarga=1 alivio=false
-[13076,5][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=1 pendentes=0 em_descarga=1 alivio=false
-[13076,5][ADM][linha7] trem=25817 vagoes=2
-[13080,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13080,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13140,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13140,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13184,3][ADM][linha7] trem=25817 vagoes=3
-[13186,9][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=3 pendentes=0 em_descarga=1 alivio=false
-[13200,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13200,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13260,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13260,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13320,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13320,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13322,2][ADM][linha7] trem=25817 vagoes=4
-[13324,8][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=4 pendentes=0 em_descarga=1 alivio=false
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13380,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13380,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13440,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13440,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13457,5][ADM][linha7] trem=25817 vagoes=5
-[13460,1][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=5 pendentes=0 em_descarga=1 alivio=false
-[13500,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13500,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13560,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13560,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13590,1][ADM][linha7] trem=25817 vagoes=6
-[13592,7][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=6 pendentes=0 em_descarga=1 alivio=false
-[13620,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13620,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13680,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13680,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13720,2][ADM][linha7] trem=25817 vagoes=7
-[13722,8][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=7 pendentes=0 em_descarga=1 alivio=false
-[13740,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13740,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13800,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13800,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13847,6][ADM][linha7] trem=25817 vagoes=8
-[13850,2][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=8 pendentes=0 em_descarga=1 alivio=false
-[13860,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13860,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[13920,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13920,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13972,3][ADM][linha7] trem=25817 vagoes=9
-[13975,0][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=9 pendentes=0 em_descarga=1 alivio=false
-[13980,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[13980,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14040,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14040,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14094,5][ADM][linha7] trem=25817 vagoes=10
-[14097,1][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=10 pendentes=0 em_descarga=1 alivio=false
-[14100,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14100,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14160,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14160,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14214,0][ADM][linha7] trem=25817 vagoes=11
-[14216,6][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=11 pendentes=0 em_descarga=1 alivio=false
-[14220,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14220,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14280,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14280,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14330,9][ADM][linha7] trem=25817 vagoes=12
-[14333,5][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=12 pendentes=0 em_descarga=1 alivio=false
-[14340,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14340,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14400,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14400,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14445,2][ADM][linha7] trem=25817 vagoes=13
-[14447,8][ADM][descarga_V] lote=25803 espera | moega ocupada=true | linha7: lote=13 pendentes=0 em_descarga=1 alivio=false
-[14460,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14460,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14520,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14520,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14556,8][ADM][descarga] moega V vazia
-[14556,8][ADM][linha7] trem=25817 vagoes=14
-[14580,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14580,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-vagoes_entrando_linha7 1
-get_distancia_entrada_linha7: 22.006472491909385
-get_distancia_entrada_linha7: 22.006472491909385
-[14640,0][Alivio4000][compatibilidade] t39 espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14640,0][Alivio4000][compatibilidade] tes espera | terminal: rumo/grao | trem da 4000: mrs/grao
-[14665,9][ADM][linha7] trem=25817 vagoes=15
-14666.0 | [qtd_alivio] adm | vazios no terminal: 15 | cabem na 4000: 15 | definido: 15
-[14718,0][ADM][alivio] loco=25761 chegou com 67 vagoes | lote_linha_7=15 | quantidade_alivio=15
-[14748,1][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14752,5][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14756,9][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14761,2][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14765,6][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14770,0][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14774,4][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=true
-[14778,7][ADM][sair_linha7] trem=25761 carros=84 ainda_na_linha7=false
-[14821,5][Alivio4000][para_alivio_na_linha_4000] trem=25761 vagoes=82 -> DVs
-[14821,5][Alivio4000][ocupar_faixas_saida_4000] trem=25761 ocupa rp_pmc_intervalo4000_b
-[14821,5][Alivio4000][ocupar_faixas_saida_4000] trem=25761 ocupa rp_pmc_intervalo4000_c
-[14821,5][Alivio4000][ocupar_faixas_saida_4000] trem=25761 ocupa rp_pmc_linha4000_a
-[14821,5][Alivio4000][ocupar_faixas_saida_4000] trem=25761 ocupa rp_pmc_linha4000_b
-[14821,5][Alivio4000][ocupar_faixas_saida_4000] trem=25761 ocupa rp_pmc_linha4000_c
-[14880,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25761
-[14940,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25761
-[14954,0][Alivio4000][compatibilidade] trem da 4000 definido por t39 | ferrovia=rumo segmento=grao
-14954.0 | [qtd_alivio] t39 | vazios no terminal: 43 | cabem na 4000: 82 | definido: 43
-14954.0 | 622 pediu 2 locos | livres: 6 | fila: 1
-14954.0 | 622 apreendeu 23 | livres: 5/8
-14954.0 | 622 apreendeu 24 | livres: 4/8
-erro: trem não tem nenhum vagão
- [rp_locoFips_pcx] 622 devolveu 1 unidade | idle=4 busy=4 cap=8
- [rp_locoFips_pcx] 622 devolveu 1 unidade | idle=4 busy=4 cap=8
-15384.0 | [qtd_alivio] tes | vazios no terminal: 35 | cabem na 4000: 39 | definido: 35
-[15448,5][TES][alivio] analisar: pegos=0/35 linha03=true fundo05=17 (wait 1) fundo04=0 (wait 0)
-[15448,5][TES][alivio] pega lote=25757 (22 vagoes, 18 vazios)
-[15458,6][TES][alivio] falta=35 leva=18 deixa=4
-[15458,6][TES][alivio] linha 03 fica com 4 vagoes (4 carregados)
-[15475,4][TES][alivio] analisar: pegos=18/35 linha03=false fundo05=17 (wait 1) fundo04=0 (wait 0)
-[15475,4][TES][alivio] pega lote=25748 (17 vagoes, 17 vazios)
-[15499,2][TES][alivio] falta=17 leva=17 deixa=0
-[15537,9][TES][alivio] analisar: pegos=35/35 linha03=false fundo05=0 (wait 0) fundo04=0 (wait 0)
-[15537,9][TES][retomar_descargas] linha 03 lote=25835 com 4 carregados
-[15537,9][TES][alivio] fim trem=25831 levou 35 vazios (pedido 35)
-15642.0 | [qtd_alivio] tes | vazios no terminal: 4 | cabem na 4000: 4 | definido: 4
-[15693,1][Trem][descarregar_vagoes] trem=25835 pediu 2, descarregou 0
-[15693,1][TES][descarga_linha03] lote=25835 parou, 0 vagoes carregados
-[15693,1][TES][alivio] analisar: pegos=0/4 linha03=true fundo05=0 (wait 0) fundo04=0 (wait 0)
-[15693,1][TES][alivio] pega lote=25835 (4 vagoes, 4 vazios)
-[15713,7][TES][alivio] falta=4 leva=4 deixa=0
-[15728,8][TES][alivio] analisar: pegos=4/4 linha03=false fundo05=0 (wait 0) fundo04=0 (wait 0)
-[15728,8][TES][alivio] fim trem=25831 levou 4 vazios (pedido 4)
-[15768,1][Alivio4000][para_alivio_na_linha_4000] trem=25831 vagoes=82 -> DVs
-[15768,1][Alivio4000][ocupar_faixas_saida_4000] trem=25831 ocupa rp_pmc_intervalo4000_b
-[15768,1][Alivio4000][ocupar_faixas_saida_4000] trem=25831 ocupa rp_pmc_intervalo4000_c
-[15768,1][Alivio4000][ocupar_faixas_saida_4000] trem=25831 ocupa rp_pmc_linha4000_a
-[15768,1][Alivio4000][ocupar_faixas_saida_4000] trem=25831 ocupa rp_pmc_linha4000_b
-[15768,1][Alivio4000][ocupar_faixas_saida_4000] trem=25831 ocupa rp_pmc_linha4000_c
-[15780,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25831
-[15840,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25831
-[15900,0][Alivio4000][saida_4000_livre] aguardando rp_pmc_intervalo4000_b: OCUPADA | trem 25831
+[log] 2026-11-13T10:07:59.274316400 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop\logs\sim.log
+[config] pasta: C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop\simulacao
+[config] simulacao.csv: duracao=720,0h warmup=48,0h replicacoes=5 | OK
+[config] terminais_moega.csv: 12 terminais
+[config]   coperXI      -> CoperXI      | acucar   | rumo mrs vli | OK
+[config]   moegaoTerra  -> MoegaoTerra  | acucar   | rumo mrs vli | OK
+[config]   costaLeite   -> CostaLeite   | grao     | rumo         | OK
+[config]   tgrao        -> Tgrao        | grao     | rumo         | OK
+[config]   coperXXI     -> CoperXXI     | acucar   | rumo mrs vli | OK
+[config]   moegaoMar    -> MoegaoMar    | acucar   | rumo mrs vli | OK
+[config]   bracell      -> Bracell      | celulose | rumo         | OK
+[config]   suzano       -> Suzano       | celulose | rumo         | OK
+[config]   eldorado     -> Eldorado     | celulose | rumo         | OK
+[config]   t39          -> T39          | grao     | rumo         | OK
+[config]   adm          -> ADM          | grao     | rumo mrs vli | OK
+[config]   tes          -> TES          | grao     | rumo mrs vli | OK
+[config] tempo_entre_chegadas.csv: 0 combinações
+[config] leitura concluída sem erros
+[sim] simulação até 720,0 h
+[    0.000h] INFO  Chegadas        fluxos                       0 fluxos de chegada
+[    0.306h] INFO  Chegadas        pedido_manual                P1 coperXXI/rumo pedido pelo botão (fila=1)
+[    0.306h] INFO  Chegadas        decisao                      P1 coperXXI/rumo -> circulacao (terminal pode receber, nenhum trem a caminho)
+[    0.306h] INFO  Chegadas        inject                       P1 coperXXI/rumo -> inject (destino=circulacao, espera=0,00h)
+[    0.306h] INFO  Chegadas        entrou_trilho                P1 coperXXI/rumo trem=26039/R72 entrou no trilho -> circulacao
+[    0.306h] INFO  ISN             chegou                       trem=26039/R72 chegou -> direto para a circulação
+[    0.306h] INFO  ISN             nascimento                   trem=26039/R72 faixa_atual=rp_isn_a proxima_faixa=rp_isn_b
+[    0.306h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [comecou circulacao]
+[    0.306h] INFO  ISN             circular_isn_a               trem=26039/R72
+[    0.306h] INFO  ISN             fim_isn_linha01_a            trem=26039/R72 faixa_atual=rp_isn_b proxima_faixa=rp_isn_c
+[    0.306h] INFO  ISN             circular_isn_b               trem=26039/R72
+[    0.309h] INFO  ISN             fim_isn_linha01_b            trem=26039/R72 faixa_atual=rp_isn_c proxima_faixa=rp_isn_d
+[    0.309h] INFO  ISN             circular_isn_c               trem=26039/R72
+[    0.313h] INFO  ISN             fim_isn_linha01_c            trem=26039/R72 faixa_atual=rp_isn_d proxima_faixa=rp_isn_e
+[    0.313h] INFO  ISN             circular_isn_d               trem=26039/R72
+[    0.366h] INFO  ISN             fim_isn_linha01_d            trem=26039/R72 faixa_atual=rp_isn_e proxima_faixa=rp_isn_porteira
+[    0.366h] INFO  ISN             circular_isn_e               trem=26039/R72
+[    0.435h] INFO  ISN             fim_isn_linha01_e            trem=26039/R72 faixa_atual=rp_isn_porteira proxima_faixa=rp_pst_val_via2
+[    0.435h] INFO  ISN             circular_isn_porteira        trem=26039/R72
+[    0.439h] INFO  ISN             entrega_à_circulação         trem=26039/R72 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
+[    0.439h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa val_via2]
+[    0.449h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via3_intermar]
+[    0.541h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via3_a]
+[    0.542h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via2_c]
+[    0.546h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa track_entrada_pera]
+[    0.547h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [saiu para terminal coperXXI]
+[1968,1][CoperXII][chegada] trem=26039 carros=84
+[    0.547h] INFO  CoperXXI        ir_encoste                   trem=26039 carros=84 vgs=82 locos=2 | inicio
+[2197,7][CoperXII][ir_encoste] trem=26039 chegou no _coperXII_encoste
+[    0.610h] INFO  CoperXXI        ir_encoste                   trem=26039 carros=84 vgs=82 locos=2 | chegou
+[    0.610h] INFO  CoperXXI        liberar_faixas_circulacao1   trem=26039 carros=84 vgs=82 locos=2 | soltou
+[2197,7][CoperXII][corte_lotes] trem=26039 lote1=42 carros
+[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26039 carros=84 vgs=82 locos=2 | vai cortar
+[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26125 carros=42 vgs=41 locos=1 | parte cortada
+[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26039 carros=42 vgs=41 locos=1 | parte que segue
+[2197,7][CoperXII][entrar_moega] trem=26125 lote com 42 carros na fila da moega
+[    0.610h] INFO  CoperXXI        seize_moega                  trem=26125 carros=42 vgs=41 locos=1 | na fila
+[2197,7][CoperXII][segunda_parte] trem=26039 segunda parte esperando (42 carros, locos=1)
+[    0.610h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=42 vgs=41 locos=1 | esperando
+[    0.610h] INFO  CoperXXI        seize_moega                  trem=26125 carros=42 vgs=41 locos=1 | pegou
+[    0.610h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=42 vgs=41 locos=1 | true
+[    0.610h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=42 vgs=41 locos=1 | true
+[2197,7][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=7 (lote tem 42 carros, espaco b=22 a=13)
+[    0.610h] INFO  CoperXXI        ir_moega                     trem=26125 carros=42 vgs=41 locos=1 | inicio
+[    0.621h] INFO  CoperXXI        ir_moega                     trem=26125 carros=42 vgs=41 locos=1 | chegou
+[    0.621h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=42 vgs=41 locos=1 | soltou
+[    0.621h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=42 vgs=41 locos=1 | inicio
+[    0.634h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=42 vgs=41 locos=1 | fim
+[    0.634h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=42 vgs=41 locos=1 | false
+[2281,6][CoperXII][corte] trem=26125 corta 7 carros da frente
+[    0.634h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=42 vgs=41 locos=1 | vai cortar
+[    0.634h] INFO  CoperXXI        cortar_grupo                 trem=26126 carros=7 vgs=6 locos=1 | parte cortada
+[    0.634h] INFO  CoperXXI        linha_b                      trem=26126 carros=7 vgs=6 locos=1 | true
+[    0.634h] INFO  CoperXXI        ir_lote_b                    trem=26126 carros=7 vgs=6 locos=1 | inicio
+[    0.665h] INFO  CoperXXI        ir_lote_b                    trem=26126 carros=7 vgs=6 locos=1 | chegou
+[2394,2][CoperXII][vazios] trem=26126 chegou na linha com 7 carros
+[    0.665h] INFO  CoperXXI        tem_loco_frente              trem=26126 carros=7 vgs=6 locos=1 | true
+[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26126 carros=7 vgs=6 locos=1 | vai cortar
+[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26127 carros=1 vgs=0 locos=1 | parte cortada
+[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26126 carros=6 vgs=6 locos=0 | parte que segue
+[    0.665h] INFO  CoperXXI        tem_moega                    trem=26126 carros=6 vgs=6 locos=0 | false
+[2394,2][CoperXII][vazios] trem=26126 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
+[    0.665h] INFO  CoperXXI        estoque_b                    trem=26126 carros=6 vgs=6 locos=0 | esperando
+[    0.665h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=35 vgs=35 locos=0 | parte que segue
+[    0.665h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=35 vgs=35 locos=0 | passou
+[2394,2][CoperXII][loco] trem=26125 lote sem loco: buscando loco
+[    0.665h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=35 vgs=35 locos=0 | false
+[    0.665h] INFO  CoperXXI        tem_segunda_parte            trem=26125 carros=35 vgs=35 locos=0 | true
+[    0.665h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=42 vgs=41 locos=1 | liberado
+[2394,2][CoperXII][loco] trem=26039 tirando a loco da segunda parte
+[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26039 carros=42 vgs=41 locos=1 | vai cortar
+[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26128 carros=1 vgs=0 locos=1 | parte cortada
+[2394,2][CoperXII][loco] trem=26128 loco da segunda parte indo para a cauda do lote
+[    0.665h] INFO  CoperXXI        levar_loco                   trem=26128 carros=1 vgs=0 locos=1 | inicio
+[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26039 carros=41 vgs=41 locos=0 | parte que segue
+[2394,2][CoperXII][segunda_parte] trem=26039 segunda parte esperando (41 carros, locos=0)
+[    0.665h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=41 vgs=41 locos=0 | esperando
+[    0.676h] INFO  CoperXXI        levar_loco                   trem=26128 carros=1 vgs=0 locos=1 | bateu (outHit)
+[2433,1][CoperXII][loco] trem=26125 loco acoplada na cauda do lote (36 carros)
+[    0.676h] INFO  CoperXXI        acoplar_loco                 trem=26125 carros=36 vgs=35 locos=1 | acoplou
+[    0.676h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=36 vgs=35 locos=1 | true
+[2433,1][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
+[    0.676h] INFO  CoperXXI        ir_moega                     trem=26125 carros=36 vgs=35 locos=1 | inicio
+[    0.681h] INFO  CoperXXI        ir_moega                     trem=26125 carros=36 vgs=35 locos=1 | chegou
+[    0.681h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=36 vgs=35 locos=1 | soltou
+[    0.681h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=36 vgs=35 locos=1 | inicio
+[    0.694h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=36 vgs=35 locos=1 | fim
+[    0.694h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=36 vgs=35 locos=1 | false
+[2497,2][CoperXII][corte] trem=26125 corta 6 carros da frente
+[    0.694h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=36 vgs=35 locos=1 | vai cortar
+[    0.694h] INFO  CoperXXI        cortar_grupo                 trem=26129 carros=6 vgs=6 locos=0 | parte cortada
+[    0.694h] INFO  CoperXXI        linha_b                      trem=26129 carros=6 vgs=6 locos=0 | true
+[    0.694h] INFO  CoperXXI        ir_lote_b                    trem=26129 carros=6 vgs=6 locos=0 | inicio
+[    0.720h] INFO  CoperXXI        ir_lote_b                    trem=26129 carros=6 vgs=6 locos=0 | bateu (outHit)
+[    0.720h] INFO  CoperXXI        estoque_b                    trem=26126 carros=6 vgs=6 locos=0 | liberado
+[    0.720h] INFO  CoperXXI        acoplar_b                    trem=26129 carros=12 vgs=12 locos=0 | acoplou
+[2590,7][CoperXII][vazios] trem=26129 chegou na linha com 12 carros
+[    0.720h] INFO  CoperXXI        tem_loco_frente              trem=26129 carros=12 vgs=12 locos=0 | false
+[    0.720h] INFO  CoperXXI        tem_loco_tras                trem=26129 carros=12 vgs=12 locos=0 | false
+[    0.720h] INFO  CoperXXI        tem_moega                    trem=26129 carros=12 vgs=12 locos=0 | false
+[2590,7][CoperXII][vazios] trem=26129 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
+[    0.720h] INFO  CoperXXI        estoque_b                    trem=26129 carros=12 vgs=12 locos=0 | esperando
+[    0.720h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=30 vgs=29 locos=1 | parte que segue
+[    0.720h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=30 vgs=29 locos=1 | passou
+[    0.720h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=30 vgs=29 locos=1 | true
+[    0.720h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=30 vgs=29 locos=1 | true
+[2590,7][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
+[    0.720h] INFO  CoperXXI        ir_moega                     trem=26125 carros=30 vgs=29 locos=1 | inicio
+[    0.724h] INFO  CoperXXI        ir_moega                     trem=26125 carros=30 vgs=29 locos=1 | chegou
+[    0.724h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=30 vgs=29 locos=1 | soltou
+[    0.724h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=30 vgs=29 locos=1 | inicio
+[    0.737h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=30 vgs=29 locos=1 | fim
+[    0.737h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=30 vgs=29 locos=1 | false
+[2651,5][CoperXII][corte] trem=26125 corta 6 carros da frente
+[    0.737h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=30 vgs=29 locos=1 | vai cortar
+[    0.737h] INFO  CoperXXI        cortar_grupo                 trem=26130 carros=6 vgs=6 locos=0 | parte cortada
+[    0.737h] INFO  CoperXXI        linha_b                      trem=26130 carros=6 vgs=6 locos=0 | true
+[    0.737h] INFO  CoperXXI        ir_lote_b                    trem=26130 carros=6 vgs=6 locos=0 | inicio
+[    0.758h] INFO  CoperXXI        ir_lote_b                    trem=26130 carros=6 vgs=6 locos=0 | bateu (outHit)
+[    0.758h] INFO  CoperXXI        estoque_b                    trem=26129 carros=12 vgs=12 locos=0 | liberado
+[    0.758h] INFO  CoperXXI        acoplar_b                    trem=26130 carros=18 vgs=18 locos=0 | acoplou
+[2729,3][CoperXII][vazios] trem=26130 chegou na linha com 18 carros
+[    0.758h] INFO  CoperXXI        tem_loco_frente              trem=26130 carros=18 vgs=18 locos=0 | false
+[    0.758h] INFO  CoperXXI        tem_loco_tras                trem=26130 carros=18 vgs=18 locos=0 | false
+[    0.758h] INFO  CoperXXI        tem_moega                    trem=26130 carros=18 vgs=18 locos=0 | false
+[2729,3][CoperXII][vazios] trem=26130 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
+[    0.758h] INFO  CoperXXI        estoque_b                    trem=26130 carros=18 vgs=18 locos=0 | esperando
+[    0.758h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=24 vgs=23 locos=1 | parte que segue
+[    0.758h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=24 vgs=23 locos=1 | passou
+[    0.758h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=24 vgs=23 locos=1 | true
+[    0.758h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=24 vgs=23 locos=1 | true
+[2729,3][CoperXII][grupo] trem=26125 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
+[    0.758h] INFO  CoperXXI        ir_moega                     trem=26125 carros=24 vgs=23 locos=1 | inicio
+[    0.763h] INFO  CoperXXI        ir_moega                     trem=26125 carros=24 vgs=23 locos=1 | chegou
+[    0.763h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=24 vgs=23 locos=1 | soltou
+[    0.763h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=24 vgs=23 locos=1 | inicio
+[    0.775h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=24 vgs=23 locos=1 | fim
+[    0.775h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=24 vgs=23 locos=1 | false
+[2790,0][CoperXII][corte] trem=26125 corta 4 carros da frente
+[    0.775h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=24 vgs=23 locos=1 | vai cortar
+[    0.775h] INFO  CoperXXI        cortar_grupo                 trem=26131 carros=4 vgs=4 locos=0 | parte cortada
+[    0.775h] INFO  CoperXXI        linha_b                      trem=26131 carros=4 vgs=4 locos=0 | true
+[    0.775h] INFO  CoperXXI        ir_lote_b                    trem=26131 carros=4 vgs=4 locos=0 | inicio
+[    0.792h] INFO  CoperXXI        ir_lote_b                    trem=26131 carros=4 vgs=4 locos=0 | bateu (outHit)
+[    0.792h] INFO  CoperXXI        estoque_b                    trem=26130 carros=18 vgs=18 locos=0 | liberado
+[    0.792h] INFO  CoperXXI        acoplar_b                    trem=26131 carros=22 vgs=22 locos=0 | acoplou
+[2852,1][CoperXII][vazios] trem=26131 chegou na linha com 22 carros
+[    0.792h] INFO  CoperXXI        tem_loco_frente              trem=26131 carros=22 vgs=22 locos=0 | false
+[    0.792h] INFO  CoperXXI        tem_loco_tras                trem=26131 carros=22 vgs=22 locos=0 | false
+[    0.792h] INFO  CoperXXI        tem_moega                    trem=26131 carros=22 vgs=22 locos=0 | false
+[2852,1][CoperXII][vazios] trem=26131 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
+[    0.792h] INFO  CoperXXI        estoque_b                    trem=26131 carros=22 vgs=22 locos=0 | esperando
+[    0.792h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=20 vgs=19 locos=1 | parte que segue
+[    0.792h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=20 vgs=19 locos=1 | passou
+[    0.792h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=20 vgs=19 locos=1 | true
+[    0.792h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=20 vgs=19 locos=1 | true
+[2852,1][CoperXII][grupo] trem=26125 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
+[    0.792h] INFO  CoperXXI        ir_moega                     trem=26125 carros=20 vgs=19 locos=1 | inicio
+[    0.795h] INFO  CoperXXI        ir_moega                     trem=26125 carros=20 vgs=19 locos=1 | chegou
+[    0.795h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=20 vgs=19 locos=1 | soltou
+[    0.795h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=20 vgs=19 locos=1 | inicio
+[    0.808h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=20 vgs=19 locos=1 | fim
+[    0.808h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=20 vgs=19 locos=1 | false
+[2907,6][CoperXII][corte] trem=26125 corta 6 carros da frente
+[    0.808h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=20 vgs=19 locos=1 | vai cortar
+[    0.808h] INFO  CoperXXI        cortar_grupo                 trem=26132 carros=6 vgs=6 locos=0 | parte cortada
+[    0.808h] INFO  CoperXXI        linha_b                      trem=26132 carros=6 vgs=6 locos=0 | false
+[    0.808h] INFO  CoperXXI        ir_lote_a                    trem=26132 carros=6 vgs=6 locos=0 | inicio
+[    0.819h] INFO  CoperXXI        ir_lote_a                    trem=26132 carros=6 vgs=6 locos=0 | chegou
+[2947,4][CoperXII][vazios] trem=26132 chegou na linha com 6 carros
+[    0.819h] INFO  CoperXXI        tem_loco_frente              trem=26132 carros=6 vgs=6 locos=0 | false
+[    0.819h] INFO  CoperXXI        tem_loco_tras                trem=26132 carros=6 vgs=6 locos=0 | false
+[    0.819h] INFO  CoperXXI        tem_moega                    trem=26132 carros=6 vgs=6 locos=0 | false
+[2947,4][CoperXII][vazios] trem=26132 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
+[    0.819h] INFO  CoperXXI        estoque_a                    trem=26132 carros=6 vgs=6 locos=0 | esperando
+[    0.819h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=14 vgs=13 locos=1 | parte que segue
+[    0.819h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=14 vgs=13 locos=1 | passou
+[    0.819h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=14 vgs=13 locos=1 | true
+[    0.819h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=14 vgs=13 locos=1 | true
+[2947,4][CoperXII][grupo] trem=26125 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
+[    0.819h] INFO  CoperXXI        ir_moega                     trem=26125 carros=14 vgs=13 locos=1 | inicio
+[    0.823h] INFO  CoperXXI        ir_moega                     trem=26125 carros=14 vgs=13 locos=1 | chegou
+[    0.823h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=14 vgs=13 locos=1 | soltou
+[    0.823h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=14 vgs=13 locos=1 | inicio
+[    0.836h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=14 vgs=13 locos=1 | fim
+[    0.836h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=14 vgs=13 locos=1 | false
+[3008,1][CoperXII][corte] trem=26125 corta 6 carros da frente
+[    0.836h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=14 vgs=13 locos=1 | vai cortar
+[    0.836h] INFO  CoperXXI        cortar_grupo                 trem=26133 carros=6 vgs=6 locos=0 | parte cortada
+[    0.836h] INFO  CoperXXI        linha_b                      trem=26133 carros=6 vgs=6 locos=0 | false
+[    0.836h] INFO  CoperXXI        ir_lote_a                    trem=26133 carros=6 vgs=6 locos=0 | inicio
+[    0.842h] INFO  CoperXXI        ir_lote_a                    trem=26133 carros=6 vgs=6 locos=0 | bateu (outHit)
+[    0.842h] INFO  CoperXXI        estoque_a                    trem=26132 carros=6 vgs=6 locos=0 | liberado
+[    0.842h] INFO  CoperXXI        acoplar_a                    trem=26133 carros=12 vgs=12 locos=0 | acoplou
+[3032,2][CoperXII][vazios] trem=26133 chegou na linha com 12 carros
+[    0.842h] INFO  CoperXXI        tem_loco_frente              trem=26133 carros=12 vgs=12 locos=0 | false
+[    0.842h] INFO  CoperXXI        tem_loco_tras                trem=26133 carros=12 vgs=12 locos=0 | false
+[    0.842h] INFO  CoperXXI        tem_moega                    trem=26133 carros=12 vgs=12 locos=0 | false
+[3032,2][CoperXII][vazios] trem=26133 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
+[    0.842h] INFO  CoperXXI        estoque_a                    trem=26133 carros=12 vgs=12 locos=0 | esperando
+[    0.842h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=8 vgs=7 locos=1 | parte que segue
+[    0.842h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=8 vgs=7 locos=1 | passou
+[    0.842h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=8 vgs=7 locos=1 | true
+[    0.842h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=8 vgs=7 locos=1 | true
+[3032,2][CoperXII][grupo] trem=26125 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
+[    0.842h] INFO  CoperXXI        ir_moega                     trem=26125 carros=8 vgs=7 locos=1 | inicio
+[    0.847h] INFO  CoperXXI        ir_moega                     trem=26125 carros=8 vgs=7 locos=1 | chegou
+[    0.847h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=8 vgs=7 locos=1 | soltou
+[    0.847h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=8 vgs=7 locos=1 | inicio
+[    0.859h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=8 vgs=7 locos=1 | fim
+[    0.859h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=8 vgs=7 locos=1 | false
+[3092,9][CoperXII][corte] trem=26125 corta 1 carros da frente
+[    0.859h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=8 vgs=7 locos=1 | vai cortar
+[    0.859h] INFO  CoperXXI        cortar_grupo                 trem=26134 carros=1 vgs=1 locos=0 | parte cortada
+[    0.859h] INFO  CoperXXI        linha_b                      trem=26134 carros=1 vgs=1 locos=0 | false
+[    0.859h] INFO  CoperXXI        ir_lote_a                    trem=26134 carros=1 vgs=1 locos=0 | inicio
+[    0.861h] INFO  CoperXXI        ir_lote_a                    trem=26134 carros=1 vgs=1 locos=0 | bateu (outHit)
+[    0.861h] INFO  CoperXXI        estoque_a                    trem=26133 carros=12 vgs=12 locos=0 | liberado
+[    0.861h] INFO  CoperXXI        acoplar_a                    trem=26134 carros=13 vgs=13 locos=0 | acoplou
+[3101,2][CoperXII][vazios] trem=26134 chegou na linha com 13 carros
+[    0.861h] INFO  CoperXXI        tem_loco_frente              trem=26134 carros=13 vgs=13 locos=0 | false
+[    0.861h] INFO  CoperXXI        tem_loco_tras                trem=26134 carros=13 vgs=13 locos=0 | false
+[    0.861h] INFO  CoperXXI        tem_moega                    trem=26134 carros=13 vgs=13 locos=0 | false
+[3101,2][CoperXII][vazios] trem=26134 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
+[    0.861h] INFO  CoperXXI        estoque_a                    trem=26134 carros=13 vgs=13 locos=0 | esperando
+[    0.861h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=7 vgs=6 locos=1 | parte que segue
+[    0.861h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=7 vgs=6 locos=1 | passou
+[    0.861h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=7 vgs=6 locos=1 | true
+[    0.861h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=7 vgs=6 locos=1 | true
+[3101,2][CoperXII][grupo] trem=26125 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
+[    0.861h] INFO  CoperXXI        ir_moega                     trem=26125 carros=7 vgs=6 locos=1 | inicio
+[    0.862h] INFO  CoperXXI        ir_moega                     trem=26125 carros=7 vgs=6 locos=1 | chegou
+[    0.862h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=7 vgs=6 locos=1 | soltou
+[    0.862h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=7 vgs=6 locos=1 | inicio
+[    0.875h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=7 vgs=6 locos=1 | fim
+[3148,9][CoperXII][corte] trem=26125 último grupo do lote
+[    0.875h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=7 vgs=6 locos=1 | true
+[3148,9][CoperXII][moega] trem=26125 grupo de 7 carros fica na moega
+[    0.875h] INFO  CoperXXI        tem_loco_resto               trem=26125 carros=7 vgs=6 locos=1 | true
+[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26125 carros=7 vgs=6 locos=1 | vai cortar
+[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26135 carros=1 vgs=0 locos=1 | parte cortada
+[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26125 carros=6 vgs=6 locos=0 | parte que segue
+[    0.875h] INFO  CoperXXI        moega_tem_lote               trem=26125 carros=6 vgs=6 locos=0 | false
+[3148,9][CoperXII][moega] trem=26125 lote da moega com 6 vgs (capacidade 6)
+[    0.875h] INFO  CoperXXI        moega_tem_rp                 trem=26125 carros=6 vgs=6 locos=0 | true
+[3148,9][CoperXII][segunda_parte] lote_em_descarga=26125 -> 26039
+[3148,9][CoperXII][resto] trem=26125 lote terminou na moega: moega liberada
+[    0.875h] INFO  CoperXXI        liberar_moega_resto          trem=26125 carros=6 vgs=6 locos=0 | soltou
+[3148,9][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
+[    0.875h] INFO  CoperXXI        estoque_moega                trem=26125 carros=6 vgs=6 locos=0 | esperando
+[    0.875h] INFO  GesDVs          consulta_cabem               coperXXI | tipo=rumo/acucar | acumulado=0 | falta=82 | vazios=41 | livre=108 | livre_tipo=108 | lider=- | retorno=41
+[    0.875h] INFO  GesDVs          estado                       DIR 0/41 | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=108
+[    0.875h] INFO  GesAlivios      qtd_alivio                   coperXXI | vazios no terminal: 41 | cabem_na_dv0: 4 | definido: 4 (limitado pelas DVs)
+[    0.875h] INFO  GesAlivios      diag_pst                     chamar loco | ferrovia=rumo | locos no wait=2
+[    0.875h] INFO  GesAlivios      diag_pst                     loco do alivio (null - 26127)
+[    0.875h] INFO  GesAlivios      diag_pst                     loco do alivio (MNB01 - 26127) ocupa rp_via1_intermar_d
+WARNING [             3,149] root.gestorDeAlivios.bloquear_faixas_pst: Agent 234 passed the block immediately due to empty resource set(s) defined.
+[3160,8][CoperXII][alivio] trem=26127 loco do alívio chegou (1 carros)
+[3160,8][CoperXII][alivio] trem=26127 engatando lote_b
+[    0.878h] INFO  CoperXXI        engatar_b                    trem=26127 carros=1 vgs=0 locos=1 | inicio
+[    0.879h] INFO  CoperXXI        engatar_b                    trem=26127 carros=1 vgs=0 locos=1 | bateu (outHit)
+[    0.879h] INFO  CoperXXI        estoque_b                    trem=26131 carros=22 vgs=22 locos=0 | liberado
+[    0.879h] INFO  CoperXXI        acoplar_b                    trem=26127 carros=23 vgs=22 locos=1 | acoplou
+[    0.879h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=23 vgs=22 locos=1 | vai cortar
+[    0.879h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=23 vgs=22 locos=1 | parte que segue
+[    0.879h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=23 vgs=22 locos=1 | true
+[3164,2][CoperXII][alivio] trem=26127 engatando lote_a
+[    0.879h] INFO  CoperXXI        engatar_a                    trem=26127 carros=23 vgs=22 locos=1 | inicio
+[    0.882h] INFO  CoperXXI        engatar_a                    trem=26127 carros=23 vgs=22 locos=1 | bateu (outHit)
+[    0.882h] INFO  CoperXXI        estoque_a                    trem=26134 carros=13 vgs=13 locos=0 | liberado
+[    0.882h] INFO  CoperXXI        acoplar_a                    trem=26127 carros=36 vgs=35 locos=1 | acoplou
+[    0.882h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=36 vgs=35 locos=1 | vai cortar
+[    0.882h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=36 vgs=35 locos=1 | parte que segue
+[    0.882h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=36 vgs=35 locos=1 | true
+[3175,9][CoperXII][alivio] trem=26127 engatando lote da moega
+[    0.882h] INFO  CoperXXI        engatar_moega                trem=26127 carros=36 vgs=35 locos=1 | inicio
+[    0.884h] INFO  CoperXXI        engatar_moega                trem=26127 carros=36 vgs=35 locos=1 | chegou
+[    0.884h] INFO  CoperXXI        estoque_moega                trem=26125 carros=6 vgs=6 locos=0 | liberado
+[    0.884h] INFO  CoperXXI        acoplar_moega                trem=26127 carros=42 vgs=41 locos=1 | acoplou
+[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=42 vgs=41 locos=1 | vai cortar
+[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26136 carros=37 vgs=37 locos=0 | parte cortada
+[    0.884h] INFO  CoperXXI        alivio_sobra                 trem=26136 sobra de 37 vgs (pedido=4)
+[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=5 vgs=4 locos=1 | parte que segue
+[    0.884h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=5 vgs=4 locos=1 | false
+[    0.884h] INFO  CoperXXI        entrar_sobra                 trem=26136 carros=37 vgs=37 locos=0 | sobra do alívio
+[    0.884h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | false
+[    0.884h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | inicio
+[3181,6][CoperXII][alivio] trem=26127 alívio engatado: 4 vgs, voltando ao GestorDeAlivios
+[    0.884h] INFO  GesAlivios      diag_pst                     alivio terminou | coperXXI voltou para terminais_pst
+[    0.884h] INFO  GesAlivios      retorno_alivio               (MNB01 - 26127) entra na circulacao por rp_via1_intermar_d (proxima rp_via1_intermar_c)
+[    0.884h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [comecou circulacao]
+[    0.884h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_d]
+[    0.892h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | fim
+[    0.892h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | false
+[    0.892h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | inicio
+[    0.900h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | fim
+[    0.900h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | true
+[    0.900h] INFO  CoperXXI        ir_sobra                     trem=26136 carros=37 vgs=37 locos=0 | inicio
+[    0.909h] INFO  CoperXXI        ir_sobra                     trem=26136 carros=37 vgs=37 locos=0 | chegou
+[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=37 vgs=37 locos=0 | false
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=37 vgs=37 locos=0 | vai cortar
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26137 carros=22 vgs=22 locos=0 | parte cortada
+[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26137 22 vgs em coperXII_vazios_b | b=22 a=0 moega=0
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=15 vgs=15 locos=0 | parte que segue
+[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=15 vgs=15 locos=0 | false
+[    0.909h] INFO  CoperXXI        estoque_b                    trem=26137 carros=22 vgs=22 locos=0 | esperando
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=15 vgs=15 locos=0 | vai cortar
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26138 carros=13 vgs=13 locos=0 | parte cortada
+[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26138 13 vgs em coperXII_vazios_a | b=22 a=13 moega=0
+[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=2 vgs=2 locos=0 | parte que segue
+[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=2 vgs=2 locos=0 | true
+[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26136 2 vgs em coperXII_vazios_moega | b=22 a=13 moega=2
+[3272,9][CoperXII][segunda_parte] trem=26039 começa a descarga (41 vgs carregados, locos=0)
+[    0.909h] INFO  CoperXXI        estoque_a                    trem=26138 carros=13 vgs=13 locos=0 | esperando
+[    0.909h] INFO  CoperXXI        estoque_moega                trem=26136 carros=2 vgs=2 locos=0 | esperando
+[    0.909h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=41 vgs=41 locos=0 | liberado
+[3272,9][CoperXII][entrar_moega] trem=26039 lote com 41 carros na fila da moega
+[    0.909h] INFO  CoperXXI        seize_moega                  trem=26039 carros=41 vgs=41 locos=0 | na fila
+[    0.909h] INFO  CoperXXI        seize_moega                  trem=26039 carros=41 vgs=41 locos=0 | pegou
+[3272,9][CoperXII][loco] trem=26039 lote sem loco: buscando loco
+[    0.909h] INFO  CoperXXI        tem_loco_lote                trem=26039 carros=41 vgs=41 locos=0 | false
+[3272,9][CoperXII][loco] trem=26039 sem segunda parte: pedindo loco FIPS PST
+[    0.909h] INFO  CoperXXI        tem_segunda_parte            trem=26039 carros=41 vgs=41 locos=0 | false
+[    0.909h] INFO  CoperXXI        seize_loco_fips              trem=26039 carros=41 vgs=41 locos=0 | na fila
+[    0.909h] INFO  CoperXXI        seize_loco_fips              trem=26039 carros=41 vgs=41 locos=0 | pegou
+[3272,9][CoperXII][loco] trem=26139 loco FIPS PST criada (entra em pos_loco_pera)
+[    0.909h] INFO  CoperXXI        caminho_pera_bloquear        trem=26139 carros=1 vgs=0 locos=1 | na fila
+[    0.909h] INFO  CoperXXI        caminho_pera_bloquear        trem=26139 carros=1 vgs=0 locos=1 | pegou
+[    0.909h] INFO  CoperXXI        trainEnter                   trem=26139 carros=1 vgs=0 locos=1 | entrou na via
+[3272,9][CoperXII][loco] trem=26139 loco FIPS PST indo para a cauda do lote
+[    0.909h] INFO  CoperXXI        levar_loco_fips              trem=26139 carros=1 vgs=0 locos=1 | inicio
+[    0.912h] INFO  CoperXXI        levar_loco_fips              trem=26139 carros=1 vgs=0 locos=1 | bateu (outHit)
+[3283,0][CoperXII][loco] trem=26139 loco FIPS encostou e soltou as faixas
+[    0.912h] INFO  CoperXXI        liberar_caminho_pera         trem=26139 carros=1 vgs=0 locos=1 | soltou
+[3283,0][CoperXII][loco] trem=26039 loco acoplada na cauda do lote (42 carros)
+[    0.912h] INFO  CoperXXI        acoplar_loco                 trem=26039 carros=42 vgs=41 locos=1 | acoplou
+[    0.912h] INFO  CoperXXI        tem_espaco_vazios            trem=26039 carros=42 vgs=41 locos=1 | true
+[3283,0][CoperXII][grupo] trem=26039 linha=moega vagoes=4 carros=4 (lote tem 42 carros, espaco b=0 a=0)
+[    0.912h] INFO  CoperXXI        ir_moega                     trem=26039 carros=42 vgs=41 locos=1 | inicio
+[    0.925h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_c]
+[    0.940h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_b]
+[    0.945h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_a]
+[    0.954h] INFO  CoperXXI        ir_moega                     trem=26039 carros=42 vgs=41 locos=1 | chegou
+[    0.954h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26039 carros=42 vgs=41 locos=1 | soltou
+[    0.954h] INFO  CoperXXI        descarga_grupo               trem=26039 carros=42 vgs=41 locos=1 | inicio
+[    0.967h] INFO  CoperXXI        descarga_grupo               trem=26039 carros=42 vgs=41 locos=1 | fim
+[    0.967h] INFO  CoperXXI        e_ultimo_grupo               trem=26039 carros=42 vgs=41 locos=1 | false
+[3481,2][CoperXII][corte] trem=26039 corta 4 carros da frente
+[    0.967h] INFO  CoperXXI        cortar_grupo                 trem=26039 carros=42 vgs=41 locos=1 | vai cortar
+[    0.967h] INFO  CoperXXI        cortar_grupo                 trem=26141 carros=4 vgs=4 locos=0 | parte cortada
+[3481,2][CoperXII][moega] trem=26141 grupo de 4 carros fica na moega
+[    0.967h] INFO  CoperXXI        tem_loco_resto               trem=26141 carros=4 vgs=4 locos=0 | false
+[    0.967h] INFO  CoperXXI        moega_tem_lote               trem=26141 carros=4 vgs=4 locos=0 | true
+[    0.967h] INFO  CoperXXI        estoque_moega                trem=26136 carros=2 vgs=2 locos=0 | liberado
+[    0.980h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [saiu para DV]
+[    0.980h] INFO  GesDVs          comecou_manobra              (MNB01 - 26127) | 4 vgs + 1 loco | rumo/acucar | livre=108 | acumulado do tipo=0 | estaciona
+[    1.033h] INFO  GesDVs          proxima_linha                (MNB01 - 26127) | 4 vgs + 1 loco | rumo/acucar -> DIR
+[    1.067h] INFO  GesDVs          colocou_lote                 DIR 4/41 | (LOTE_DIR - 26142) | 4 vgs + 0 loco | rumo/acucar
+[    1.067h] INFO  GesDVs          estado                       DIR 4/41 rumo/acucar | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=104
+[    1.067h] INFO  GesDVs          devolveu_loco                (MNB01 - 26127) | 0 vgs + 1 loco | - | na linha DIR
+[    1.067h] INFO  GesDVs          terminou_manobra             (MNB01 - 26127) | 0 vgs + 1 loco | -
+[    1.067h] INFO  GesDVs          estado                       DIR 4/41 rumo/acucar | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=104

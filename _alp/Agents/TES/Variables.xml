@@ -192,8 +192,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792671400064</Id>
 		<Name><![CDATA[fundo_destino_04e5]]></Name>
-		<X>2280</X>
-		<Y>960</Y>
+		<X>2200</X>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -214,8 +214,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792671400065</Id>
 		<Name><![CDATA[ciclo_04e5_ativo]]></Name>
-		<X>2280</X>
-		<Y>1010</Y>
+		<X>2200</X>
+		<Y>620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -236,8 +236,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792680500031</Id>
 		<Name><![CDATA[condicao_ficar_fundo05]]></Name>
-		<X>2280</X>
-		<Y>1000</Y>
+		<X>3000</X>
+		<Y>780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -258,8 +258,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792680500032</Id>
 		<Name><![CDATA[condicao_ficar_fundo04]]></Name>
-		<X>2280</X>
-		<Y>1020</Y>
+		<X>3000</X>
+		<Y>1080</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -280,8 +280,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792680500033</Id>
 		<Name><![CDATA[voltando_do_alivio]]></Name>
-		<X>2280</X>
-		<Y>1040</Y>
+		<X>2200</X>
+		<Y>640</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -302,8 +302,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792680500034</Id>
 		<Name><![CDATA[vgs_lote_alivio]]></Name>
-		<X>2150</X>
-		<Y>1060</Y>
+		<X>2200</X>
+		<Y>660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -324,8 +324,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792680500035</Id>
 		<Name><![CDATA[vazios_lote_alivio]]></Name>
-		<X>2150</X>
-		<Y>1080</Y>
+		<X>2200</X>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -384,8 +384,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792667079149</Id>
 		<Name><![CDATA[lote_linha_03_fundo]]></Name>
-		<X>2280</X>
-		<Y>900</Y>
+		<X>2150</X>
+		<Y>370</Y>
 		<Label>
 			<X>11</X>
 			<Y>0</Y>
@@ -403,8 +403,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792667089734</Id>
 		<Name><![CDATA[lote_linha_04_fundo]]></Name>
-		<X>2280</X>
-		<Y>920</Y>
+		<X>3000</X>
+		<Y>1060</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -422,8 +422,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792667141731</Id>
 		<Name><![CDATA[lote_linha_05_fundo]]></Name>
-		<X>2280</X>
-		<Y>940</Y>
+		<X>3000</X>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -463,8 +463,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792691300026</Id>
 		<Name><![CDATA[qt_loco]]></Name>
-		<X>600</X>
-		<Y>-170</Y>
+		<X>40</X>
+		<Y>1500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -485,8 +485,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1792710500007</Id>
 		<Name><![CDATA[resto_com_fips]]></Name>
-		<X>2150</X>
-		<Y>330</Y>
+		<X>2560</X>
+		<Y>380</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -507,8 +507,8 @@
 	<Variable Class="Parameter">
 		<Id>1792667156675</Id>
 		<Name><![CDATA[CAPACIDADE_LINHA_03_FUNDO]]></Name>
-		<X>2440</X>
-		<Y>900</Y>
+		<X>2150</X>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -535,8 +535,8 @@
 	<Variable Class="Parameter">
 		<Id>1792667173389</Id>
 		<Name><![CDATA[CAPACIDADE_LINHA_04_FUNDO]]></Name>
-		<X>2440</X>
-		<Y>920</Y>
+		<X>3000</X>
+		<Y>1040</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -563,8 +563,8 @@
 	<Variable Class="Parameter">
 		<Id>1792667184698</Id>
 		<Name><![CDATA[CAPACIDADE_LINHA_05_FUNDO]]></Name>
-		<X>2440</X>
-		<Y>940</Y>
+		<X>3000</X>
+		<Y>740</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -591,8 +591,8 @@
 	<Variable Class="Parameter">
 		<Id>1792680500036</Id>
 		<Name><![CDATA[QUANTIDADE_PARA_ALIVIAR]]></Name>
-		<X>2440</X>
-		<Y>1100</Y>
+		<X>2200</X>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

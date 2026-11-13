@@ -98,7 +98,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -228,7 +228,7 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2: destino era coperXI
+					<Code><![CDATA[// destino era coperXI
 ((Trem) train).ITerminalMoega_destino = main().t39]]></Code>
 				</Value>
 			</Parameter>
@@ -1549,7 +1549,7 @@ liberar_wait_lote_linha_9_fundo();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2: trem de teste entra pela circulacao
+					<Code><![CDATA[// trem de teste entra pela circulacao
 main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -7405,7 +7405,7 @@ atualizar_faixa_linha_1000_a((Trem) train);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[for (Object t : main().gestorDeCirculacao.faixa_linha1000_a.track.getTrains()) {
-    traceln(time() + " a. trem na faixa: " + t);
+    Log.debug("T39", "trem_na_faixa_a", String.valueOf(t));
 }]]></Code>
 				</Value>
 			</Parameter>
@@ -7944,7 +7944,7 @@ atualizar_faixa_linha_1000_a((Trem) train);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[for (Object t : main().gestorDeCirculacao.faixa_linha1000_a.track.getTrains()) {
-    traceln(time() + " trem na faixa: " + t);
+    Log.debug("T39", "trem_na_faixa", String.valueOf(t));
 }]]></Code>
 				</Value>
 			</Parameter>
@@ -16273,7 +16273,7 @@ liberar_wait_lote_linha_9_fundo();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(time() + " [trainExit2] removido: " + train + " | id=" + train.getId());]]></Code>
+					<Code><![CDATA[Log.info("T39", "train_exit2", "removido: " + train + " | id=" + train.getId());]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

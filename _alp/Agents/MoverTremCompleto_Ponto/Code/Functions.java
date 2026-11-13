@@ -108,6 +108,7 @@ try {
 
     int idxMelhor = -1;
     double melhorResiduo = Double.MAX_VALUE;
+    boolean melhorPelaTraseira = false;
 
     for (int i = 0; i < n; i++) {
 
@@ -126,6 +127,21 @@ try {
             if (residuo < melhorResiduo) {
                 melhorResiduo = residuo;
                 idxMelhor = i; // guarda a posicao NA ORDEM DE PERCURSO (i), nao o idx real ainda
+                melhorPelaTraseira = false;
+            }
+        }
+
+        // carro atravessando um switch: a frente pode estar em outra track e so a traseira na do ponto
+        // (mesmo criterio do _jaEstaNoDestino)
+        RailwayTrack trackTras = (RailwayTrack) metodoGetTrack.invoke(vagao, false);
+        double offsetTras = (double) metodoGetOffset.invoke(vagao, false);
+
+        if (trackTras == trackPonto && trackTras != trackVagao) {
+            double residuo = Math.abs(offsetTras - offsetPonto);
+            if (residuo < melhorResiduo) {
+                melhorResiduo = residuo;
+                idxMelhor = i;
+                melhorPelaTraseira = true;
             }
         }
     }
@@ -142,6 +158,9 @@ try {
 
         int idxReal = avancar ? (n - 1 - idxMelhor) : idxMelhor;
 
+        // achado pela traseira: o ponto de referencia e o fim do carro, entao soma o comprimento dele tambem
+        if (melhorPelaTraseira) somaComprimentos += trem.getCar(idxReal).getLength();
+
         if (mostrarLogs) {
             traceln("vagao mais proximo do ponto, indice: \t" + idxReal);
             traceln("residuoOffset: \t" + String.format(java.util.Locale.US, "%.2f", melhorResiduo));
@@ -153,7 +172,14 @@ try {
 
     // nenhum vagao esta no track do ponto -> trem ainda nao chegou la
     if (mostrarLogs) traceln("nenhum vagao encontrado no track do ponto");
-    return trem.getDistanceToTarget();
+    try {
+        return trem.getDistanceToTarget();
+    } catch (Exception semAlvo) {
+        // trem parado: nao ha alvo; move o comprimento do trem
+        Log.warn("MoverTremPonto", "distancia_residual", String.format("(%s - %d) nenhum carro na track %s; trem parado -> move o comprimento do trem",
+            trem.prefixo, trem.getId(), trackPonto.getName()));
+        return trem.getLength(METER);
+    }
 
 } catch (Exception e) {
     error("Erro ao calcular distância residual: " + e.getMessage());

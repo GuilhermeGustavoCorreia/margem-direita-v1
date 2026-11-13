@@ -45,7 +45,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_rumo.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTeste_rumo);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -354,7 +354,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_vli.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "vli", tremTeste_vli);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -379,7 +379,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_mrs.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", tremTeste_mrs);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -1028,7 +1028,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Tirar Lote para atender Terminal]]></Text>
+		<Text><![CDATA[Funções de analise de lotes]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>18</Size>

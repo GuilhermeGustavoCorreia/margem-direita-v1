@@ -868,7 +868,7 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(time() + " | " + agent + " pediu 2 locos | livres: "
+					<Code><![CDATA[Log.info("GesAlivios", "pediu_2_locos", agent + " pediu 2 locos | livres: "
     + main().gestorDeLocomotivas.rp_locoFips_pcx.idle()
     + " | fila: " + self.size());]]></Code>
 				</Value>
@@ -882,7 +882,7 @@
 			<Parameter>
 				<Name><![CDATA[onSeizeUnit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(time() + " | " + agent + " apreendeu " + unit
+					<Code><![CDATA[Log.info("GesAlivios", "apreendeu_loco", agent + " apreendeu " + unit
     + " | livres: " + main().gestorDeLocomotivas.rp_locoFips_pcx.idle()
     + "/" + main().gestorDeLocomotivas.rp_locoFips_pcx.size());]]></Code>
 				</Value>
@@ -1161,7 +1161,9 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linha_4000 = ((Trem) train);]]></Code>
+					<Code><![CDATA[lote_linha_4000 = ((Trem) train);
+contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
+((Trem) train).prefixo = String.format("MNB%02d", contador_mnb);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -2820,6 +2822,71 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
+		<Id>1792795100003</Id>
+		<Name><![CDATA[bateu_entrada_terminal_pst]]></Name>
+		<X>630</X>
+		<Y>890</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Trem t = (Trem) agent;
+ITerminalMoega terminal = alivio_em_andamento_pst.get_moega_atual();
+RailwayTrack destino = terminal.get_pos_alivio().getTrack();
+if (destino.getTrains().contains(t)) {
+	// encostou no lote antes do ponto de alívio: é a chegada
+	Log.warn("GesAlivios", "chegada_por_batida", String.format("(%s - %d) encostou no lote de %s antes do ponto de alívio",
+		t.prefixo, t.getId(), ((Agent) terminal).getName()));
+	terminal.takeAlivio(t);
+} else {
+	error(String.format("GestorDeAlivios: loco do alívio (%s - %d) bateu fora da linha de destino de %s",
+		t.prefixo, t.getId(), ((Agent) terminal).getName()));
+}]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1792795100004</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
 		<Id>1791480992294</Id>
 		<Name><![CDATA[ir_entrada_terminal_pst]]></Name>
 		<X>420</X>
@@ -3106,6 +3173,9 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 		<Parameters>
 			<Parameter>
 				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ALL_FROM_SEIZES]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resourcePool]]></Name>
@@ -3115,6 +3185,108 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[{ bloquear_faixas_pst, usar_recurso_loco_pst, seize_alivio_pst }]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1791481199101</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1792795100001</Id>
+		<Name><![CDATA[liberar_faixas_fora_do_trem_pst]]></Name>
+		<X>380</X>
+		<Y>1030</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[alivio_em_andamento_pst.liberar_faixas_fora_do_trem((Trem) agent, main().gestorDeCirculacao.faixas)]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[seizeBlocks]]></Name>
@@ -3175,7 +3347,7 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1791481244732</Id>
-		<Name><![CDATA[para_alivio_terminal_pst1]]></Name>
+		<Name><![CDATA[para_circulacao]]></Name>
 		<X>630</X>
 		<Y>1040</Y>
 		<Label>
@@ -3282,20 +3454,44 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-012: tgrao sai em pst_silosMuro_a (pos_saida_tgrao) e segue silosMuro_a > via3_c > via3_b > via3_a > via3_intermar
-if ("tgrao".equals(((Trem) agent).referencia_alivio)) {
+					<Code><![CDATA[Trem t = (Trem) agent;
+GestorDeCirculacao gc = main().gestorDeCirculacao;
 
-    ((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_marginal_c;
-    ((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_marginal_b;
+// tgrao sai em pst_silosMuro_a (pos_saida_tgrao) e segue silosMuro_a > via3_c > via3_b > via3_a > via3_intermar
+if ("tgrao".equals(t.referencia_alivio)) {
+
+    t.faixa_atual   = gc.faixa_marginal_c;
+    t.proxima_faixa = gc.faixa_marginal_b;
+    
+} else if (gc.faixa_via1_intermar_c.track.getTrains().contains(t)) {
+
+    // trem longo: no avanço do alívio a ponta passou da via1_intermar_d para a c
+    t.faixa_atual   = gc.faixa_via1_intermar_c;
+    t.proxima_faixa = gc.faixa_via1_intermar_b;
     
 } else {
 
-    ((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_via1_intermar_d;
-    ((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_via1_intermar_c;
+    t.faixa_atual   = gc.faixa_via1_intermar_d;
+    t.proxima_faixa = gc.faixa_via1_intermar_c;
     
 }
 
-((Trem) agent).eh_alivio = true;]]></Code>
+if (gc.faixa_via1_intermar_b.track.getTrains().contains(t)) {
+    Log.warn("GesAlivios", "retorno_alivio", String.format("(%s - %d) chegou na via1_intermar_b sem licenca", t.prefixo, t.getId()));
+}
+
+// faixa que o trem já possui desde o alívio: fica LICENCIADA para a circulação não apreender de novo
+for (Faixa f : new Faixa[] { t.faixa_atual, t.proxima_faixa }) {
+    if (f != null && f.recurso != null && !t.resourceUnitsOfPool(f.recurso).isEmpty()) {
+        f.licenciar(t);
+    }
+}
+
+Log.info("GesAlivios", "retorno_alivio", String.format("(%s - %d) entra na circulacao por %s (proxima %s)",
+    t.prefixo, t.getId(), t.faixa_atual.recurso.getName(),
+    t.proxima_faixa == null ? "-" : t.proxima_faixa.recurso.getName()));
+
+t.eh_alivio = true;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3956,8 +4152,8 @@ if ("tgrao".equals(((Trem) agent).referencia_alivio)) {
 alivio_em_andamento_pst.atualizar_moegas();
 terminais_pst.add(terminal_atual);
 
-// DEBUG ALT-003
-traceln(time() + " | [diag_pst] alivio terminou | " + ((Agent) terminal_atual).getName() + " voltou para terminais_pst");]]></Code>
+// DEBUG
+Log.info("GesAlivios", "diag_pst", "alivio terminou | " + ((Agent) terminal_atual).getName() + " voltou para terminais_pst");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4152,8 +4348,22 @@ traceln(time() + " | [diag_pst] alivio terminou | " + ((Agent) terminal_atual).g
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// licencia a faixa onde a loco de alívio é criada/injetada
-if (alivio_em_andamento_pst.faixa_criacao != null) alivio_em_andamento_pst.faixa_criacao.ocupar_agente(9999);]]></Code>
+					<Code><![CDATA[// loco de alívio: prefixo MNB + número ímpar
+contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
+((Trem) agent).prefixo = String.format("MNB%02d", contador_mnb);
+
+// ocupa a faixa onde a loco é criada com o id dela; a circulação libera quando o trem de volta sair
+Faixa fc = alivio_em_andamento_pst.faixa_criacao;
+if (fc != null) {
+    fc.ocupar((Trem) agent);
+    Log.info("GesAlivios", "diag_pst", String.format("loco do alivio (%s - %d) ocupa %s", ((Trem) agent).prefixo, agent.getId(), fc.recurso.getName()));
+}
+
+// faixas de circulação em que o trem pode entrar durante o alívio (apreendidas no mesmo conjunto)
+for (Faixa f : alivio_em_andamento_pst.get_faixas_saida()) {
+    f.ocupar((Trem) agent);
+    Log.info("GesAlivios", "diag_pst", String.format("loco do alivio (%s - %d) ocupa %s (saida do alivio)", ((Trem) agent).prefixo, agent.getId(), f.recurso.getName()));
+}]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4601,8 +4811,8 @@ if (alivio_em_andamento_pst.faixa_criacao != null) alivio_em_andamento_pst.faixa
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-013 alívio na linha 4000: solta os recursos da linha 4000 (apreendidos no bloquear_4000)
-// ALT-081: as faixas da linha 4000 não são mais liberadas aqui. O para_alivio_na_linha_4000 marca como OCUPADA
+					<Code><![CDATA[// alívio na linha 4000: solta os recursos da linha 4000 (apreendidos no bloquear_4000)
+// as faixas da linha 4000 não são mais liberadas aqui. O para_alivio_na_linha_4000 marca como OCUPADA
 // as que o trem ainda ocupa, e o GestorDeCirculacao solta quando a cauda sai.]]></Code>
 				</Value>
 			</Parameter>
@@ -4660,10 +4870,10 @@ if (alivio_em_andamento_pst.faixa_criacao != null) alivio_em_andamento_pst.faixa
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-013 alívio na linha 4000: trem com 82 vagões segue para as DVs pelo circuito do GestorDeCirculacao
+					<Code><![CDATA[// alívio na linha 4000: trem com 82 vagões segue para as DVs pelo circuito do GestorDeCirculacao
 // intervalo4000_a -> marginal_c -> marginal_b -> marginal_a -> via2_f ... via2_a -> via2_intermar_c..a -> railwayTrack199 -> val_via2
 Trem trem = (Trem) agent;
-traceln(String.format("[%.1f][Alivio4000][para_alivio_na_linha_4000] trem=%d vagoes=%d -> DVs", time(), trem.getId(), main().getNumeroDeVagoes(trem)));
+Log.info("GesAlivios", "para_alivio_na_linha_4000", String.format("trem=%d vagoes=%d -> DVs", trem.getId(), main().getNumeroDeVagoes(trem)));
 
 trem.eh_alivio     = true;
 trem.faixa_atual   = main().gestorDeCirculacao.faixa_intervalo4000_a;
@@ -4674,10 +4884,10 @@ lote_linha_4000        = null;
 ferrovia_na_linha_4000 = null;
 segmento_na_linha_4000 = null;
 
-// ALT-034: o trem cheio saiu; sem isso aux ficava true e analisar_pcx não aliviava mais nenhum terminal da 4000
+// o trem cheio saiu; sem isso aux ficava true e analisar_pcx não aliviava mais nenhum terminal da 4000
 aux_esta_ocorrendo_alivio_pcx = false;
 
-// ALT-081: faixas da 4000 onde o trem ainda está ficam OCUPADA até a cauda sair (evita criar loco em cima dele)
+// faixas da 4000 onde o trem ainda está ficam OCUPADA até a cauda sair (evita criar loco em cima dele)
 ocupar_faixas_saida_4000(trem);
 
 main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
@@ -4825,212 +5035,6 @@ main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1792014000302</Id>
-		<Name><![CDATA[ocupar_linha5000_6000]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1200</X>
-		<Y>580</Y>
-		<Label>
-			<X>-25</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Seize</ClassName>
-				<ItemName>1412336243147</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[seizeFromOnePool]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceSets]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: a loco de alívio da Bracell ocupa a linha 5000/6000 antes de entrar (solta no GestorDeCirculacao, recuar_intervalo4000_b)
-{ {
-	main().gestorDeCirculacao.rp_linha5000,
-	main().gestorDeCirculacao.rp_linha6000
-} }]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourcePool]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceQuantity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[seizePolicy]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[capacity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[maximumCapacity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[sendResources]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationType]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationNode]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationAttractor]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationResource]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationX]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationY]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationZ]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[attachResources]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[entityLocationQueue]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[priority]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskPreemptionPolicy]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[terminatedTaskProcessing]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[terminatedTasksEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[suspendResumeEntities]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[customizeResourceChoice]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceChoiceCondition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceSelectionMode]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceRating]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceComparison]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskStartBlocks]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[enableTimeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[timeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[enablePreemption]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[canceledUnitsBehavior]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[canceledUnitsRelease]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[pushProtocol]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[forceStatisticsCollection]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitTimeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitPreempted]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onSeizeUnit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onPrepareUnit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onRemove]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskTerminated]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[comparison]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskSuspended]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskResumed]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1792014000303</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
 		<Id>1792014000304</Id>
 		<Name><![CDATA[trainEnter_pmc]]></Name>
 		<X>1410</X>
@@ -5060,7 +5064,7 @@ main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[positionOnTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-063: a loco de todos os terminais do PMC nasce em pos_locoAlivio_PMC (pst_silosMuro_a)
+					<Code><![CDATA[// a loco de todos os terminais do PMC nasce em pos_locoAlivio_PMC (pst_silosMuro_a)
 main().pos_locoAlivio_PMC]]></Code>
 				</Value>
 			</Parameter>
@@ -5274,8 +5278,8 @@ main().pos_locoAlivio_PMC]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-061: entrega a loco ao terminal do PMC em alívio
-traceln(String.format("[%.1f][AlivioPMC][para_alivio_terminal_pmc] loco=%d -> %s", time(), agent.getId(), ((Agent) terminal_alivio_pmc).getName()));
+					<Code><![CDATA[// entrega a loco ao terminal do PMC em alívio
+Log.info("GesAlivios", "para_alivio_terminal_pmc", String.format("loco=%d -> %s", agent.getId(), ((Agent) terminal_alivio_pmc).getName()));
 terminal_alivio_pmc.takeAlivio((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -5333,7 +5337,7 @@ terminal_alivio_pmc.takeAlivio((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-063: faixas do caminho da loco até o terminal (get_faixas_primeiro_alivio)
+					<Code><![CDATA[// faixas do caminho da loco até o terminal (get_faixas_primeiro_alivio)
 get_conjunto_faixas_pmc()]]></Code>
 				</Value>
 			</Parameter>
@@ -5785,7 +5789,9 @@ get_conjunto_faixas_pmc()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// locos de manobra do alívio PST: seguem para os seizes (faixa de criação, faixas, loco, alívio)]]></Code>
+					<Code><![CDATA[// locos de manobra do alívio PST: seguem para os seizes (faixa de criação, faixas, loco, alívio)
+contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
+((Trem) train).prefixo = String.format("MNB%02d", contador_mnb);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

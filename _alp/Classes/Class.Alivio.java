@@ -79,7 +79,63 @@ public class Alivio implements Serializable {
 			throw new IllegalStateException("Alivio.getConjuntoRecursos_faixa_criacao(): nenhuma faixa contem a posicao de criacao da loco ("
 				+ (pos_criar_locomotiva == null ? "null" : pos_criar_locomotiva.getName()) + ")");
 		
-		return new ResourcePool[][] { { faixa_criacao.recurso } };
+		List<ResourcePool> recursos = new ArrayList<ResourcePool>();
+		recursos.add(faixa_criacao.recurso);
+		
+		// faixas de circulação em que o trem pode entrar durante o alívio (ex.: via1_intermar_c no
+		// avanço do CoperXI): apreendidas junto com a faixa de criação, no mesmo conjunto
+		for (Faixa f : get_faixas_saida())
+			if (!recursos.contains(f.recurso)) recursos.add(f.recurso);
+		
+		return new ResourcePool[][] { recursos.toArray(new ResourcePool[0]) };
+	}
+	
+	// faixas de get_primeiras_linhas_de_circulacao_vazios() do terminal, sem a faixa de criação
+	// e sem faixas sem recurso. Lista vazia quando o terminal devolve null.
+	public ArrayList<Faixa> get_faixas_saida() {
+		
+		ArrayList<Faixa> saida = new ArrayList<Faixa>();
+		if (finalizou_moegas()) return saida;
+		
+		ArrayList<Faixa> faixas = get_moega_atual().get_primeiras_linhas_de_circulacao_vazios();
+		if (faixas == null) return saida;
+		
+		for (Faixa f : faixas) {
+			if (f == null || f.recurso == null) continue;
+			if (faixa_criacao != null && f.recurso == faixa_criacao.recurso) continue;
+			if (!saida.contains(f)) saida.add(f);
+		}
+		return saida;
+	}
+	
+	// no retorno do alívio: devolve as faixas que o trem ainda possui mas onde ele não está mais.
+	// As faixas debaixo do trem continuam com ele e são liberadas pela circulação
+	// (liberar_faixas_ocupadas) quando ele sair delas.
+	public ResourcePool[] liberar_faixas_fora_do_trem(Trem trem, List<Faixa> faixas) {
+		
+		List<ResourcePool> liberar = new ArrayList<ResourcePool>();
+		
+		for (Faixa f : faixas) {
+			
+			if (f == null || f.track == null) continue;
+			if (f.track.getTrains().contains(trem)) continue;
+			// a faixa de criação fica com o trem: ele passa por ela na volta
+			// e a circulação libera quando ele sair (liberar_faixas_ocupadas).
+			// Tgrao sai pela marginal_c e não passa por ela.
+			if (f == faixa_criacao && !"tgrao".equals(trem.referencia_alivio)) continue;
+			
+			boolean temUnidade = (f.recurso != null && !trem.resourceUnitsOfPool(f.recurso).isEmpty());
+			boolean marcadaParaOTrem = (f.idTremLicenciado == trem.getId());
+			
+			if (temUnidade && !liberar.contains(f.recurso)) liberar.add(f.recurso);
+			if (temUnidade || marcadaParaOTrem) {
+				f.liberar();
+				Log.info("GesAlivios", "retorno_alivio", String.format("(%s - %d) liberou %s (fora do trem)",
+					trem.prefixo, trem.getId(), f.recurso == null ? f.track.getName() : f.recurso.getName()));
+			}
+		}
+		
+		return liberar.toArray(new ResourcePool[0]);
 	}
 	
 	// rota da loco = faixa de criação + faixas do primeiro alívio + track do destino.

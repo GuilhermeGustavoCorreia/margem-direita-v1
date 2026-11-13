@@ -1,16 +1,15 @@
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1783947241534*/
-return true;
+
+if (_trem_chegando != null) 			return false;
+if (_loteDeVazios_LinhaTerra != null) 	return false;
+
+return _getVagoesCarregados() <= 0;
 /*ALCODEEND*/}
 
 Main main()
 {/*ALCODESTART::1783960203072*/
 return (Main) getEngine().getRoot();
-/*ALCODEEND*/}
-
-GestorDeAlivios formacaoVazios()
-{/*ALCODESTART::1784059840311*/
-return main().gestorDeAlivios;
 /*ALCODEEND*/}
 
 float getOverloadVazios()
@@ -39,14 +38,25 @@ return "pst";
 
 PositionOnTrack get_pos_alivio()
 {/*ALCODESTART::1787666908403*/
-return main().pos_locoAlivio_PST;
+return main()._costaLeite_inicio_alivio;
 /*ALCODEEND*/}
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790637952305*/
-// a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
-// é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
-return new ArrayList<Faixa>();
+// linhas físicas entre a faixa de criação (via1_intermar_d) e a psnSaidaCopexXXI_b1,
+// onde fica _costaLeite_inicio_alivio. A faixa de criação é apreendida no seize_faixa_criacao_pst do gestor.
+// Não são faixas da circulação: só entram na rota da loco (TrainMoveTo por lista de linhas).
+// Sem recurso (não licencia nada) e com desenho invisível.
+ArrayList<Faixa> faixas = new ArrayList<Faixa>();
+for (RailwayTrack t : new RailwayTrack[] { main().linhaPaqueta_a, main().linhaCostaLeita_a }) {
+	Faixa f     = new Faixa();
+	f.track     = t;
+	f.recurso   = null;
+	f.estado    = Faixa.EstadoFaixa.LIVRE;
+	f.linhaTMDS = new ShapePolyLine();
+	faixas.add(f);
+}
+return faixas;
 /*ALCODEEND*/}
 
 String getSegmento()
@@ -141,7 +151,7 @@ if (!aguardandoRechego && podeDescarregar) {
 	
 }
 
-
+Log.info("CostaLeite", (!aguardandoRechego && podeDescarregar) ? "vai_descarga" : "nao_descarrega", texto_estado());
 /*ALCODEEND*/}
 
 double pegar_um_lote_para_descarga()
@@ -189,26 +199,6 @@ if (wait_blocoTerra.size() > 0) {
 }
 /*ALCODEEND*/}
 
-boolean __existeTremComDestino(String moegaDestino)
-{/*ALCODESTART::1792151887908*/
-if (main().wait.size() > 0 ) {
-
-	for (int i = 0; i < main().wait.size(); i++) {
-		
-	    Trem train = (Trem) main().wait.get(i);
-	    String moegaDestinoDoTrem = main().getDestinoDoTrem(train);
-	
-	    if (moegaDestino.equals(moegaDestinoDoTrem)) {
-	        traceln("return true");
-	        return true;
-	    }
-	}
-}
-
-return false;
-
-/*ALCODEEND*/}
-
 boolean precisaAlivio()
 {/*ALCODESTART::1792152033194*/
 // ALT-022: linhas mar, meio e terra da CostaLeite
@@ -219,5 +209,47 @@ boolean verificarVgsLinhaMar()
 {/*ALCODESTART::1792152191803*/
 // ALT-022: true quando a linha mar tem vazios (ordem fixa mar -> meio -> terra)
 return main().getTamanhoDoTrem(_loteDeVazios_LinhaMar) > 0;
+/*ALCODEEND*/}
+
+double log_mov(String  evento,Agent  a)
+{/*ALCODESTART::1795900000401*/
+// acompanhamento dos movimentos no terminal: bloco, trem e linhas ocupadas
+if (!(a instanceof Trem)) {
+	Log.info("CostaLeite", evento, "agente=" + a);
+	return;
+}
+Trem t = (Trem) a;
+StringBuilder linhas = new StringBuilder();
+try {
+	for (Object o : t.getAllOccupiedTracks()) {
+		if (linhas.length() > 0) linhas.append(",");
+		linhas.append(((RailwayTrack) o).getName());
+	}
+} catch (Exception e) {
+	linhas.append("?");
+}
+Log.info("CostaLeite", evento, String.format("(%s - %d) | %d vgs + %d loco | linhas=%s",
+	t.prefixo, t.getId(), t.getNumeroDeVagoes(), t.getNumeroDeLocomotivas(), linhas));
+/*ALCODEEND*/}
+
+String texto_trem(Trem t)
+{/*ALCODESTART::1798110000001*/
+if (t == null) return "null";
+return "(" + t.prefixo + " - " + t.getId() + ")";
+/*ALCODEEND*/}
+
+String texto_estado()
+{/*ALCODESTART::1798110000002*/
+// recurso de manobra, vazios presos no wait, lotes esperando descarga e o vagao na moega
+return String.format("rp=%d/%d | wait=%d | waitLotes=%d | emDescarga=%s",
+	rp_manobrando_carregados.busy(), rp_manobrando_carregados.size(),
+	wait.size(), waitLotesParaDescarga.size(), texto_trem(_loteEmDescarga));
+/*ALCODEEND*/}
+
+double log_rp(String evento,Agent a)
+{/*ALCODESTART::1798110000003*/
+// log de Seize/Release/Wait: trem + estado do recurso de manobra
+String trem = (a instanceof Trem) ? texto_trem((Trem) a) + " | " + ((Trem) a).getNumeroDeVagoes() + " vgs + " + ((Trem) a).getNumeroDeLocomotivas() + " loco" : "agente=" + a;
+Log.info("CostaLeite", evento, trem + " | " + texto_estado());
 /*ALCODEEND*/}
 

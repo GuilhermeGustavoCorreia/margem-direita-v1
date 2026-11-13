@@ -96,7 +96,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_b", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_b", time(), train.getId()));
+log_analise("engatar_b", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -113,9 +114,15 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_b", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_b", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -240,7 +247,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_a", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_a", time(), train.getId()));
+log_analise("engatar_a", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -257,9 +265,15 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -356,7 +370,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -386,7 +400,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -569,7 +583,8 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.chegada_carregados.take(agent)]]></Code>
+					<Code><![CDATA[// ALT-084: o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -664,7 +679,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -694,7 +709,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -918,7 +933,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -948,7 +963,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1202,7 +1217,9 @@ if (agent instanceof Trem) {
 		produto_em_atendimento  = v.segmento;
 	}
 }
-traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));
+// terminal não recebe outro trem até este entrar no ciclo da moega
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1379,7 +1396,8 @@ traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), age
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_em_descarga = (Trem) agent; // ALT-073
+					<Code><![CDATA[lote_em_descarga = (Trem) agent;
+_trem_chegando = null;
 traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros na fila da moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
@@ -1565,6 +1583,9 @@ traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_encoste", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -1581,11 +1602,15 @@ traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][ir_encoste] trem=%d chegou no _coperXII_encoste", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][ir_encoste] trem=%d chegou no _coperXII_encoste", time(), train.getId()));
+log_analise("ir_encoste", train, "chegou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_encoste", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1710,7 +1735,8 @@ traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[definir_grupo((Trem) train);]]></Code>
+					<Code><![CDATA[definir_grupo((Trem) train);
+log_analise("ir_moega", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1727,9 +1753,15 @@ traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_moega", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_moega", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -2030,14 +2062,21 @@ else                              ir_vazios.take(agent);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[aguarda_grupo.block();
-traceln(String.format("[%.1f][CoperXII][corte] trem=%d corta %d carros da frente", time(), train.getId(), _grupo_carros));]]></Code>
+traceln(String.format("[%.1f][CoperXII][corte] trem=%d corta %d carros da frente", time(), train.getId(), _grupo_carros));
+log_analise("cortar_grupo", train, "vai cortar");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_grupo", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_grupo", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -2459,10 +2498,10 @@ traceln(String.format("[%.1f][CoperXII][corte] trem=%d corta %d carros da frente
 					<Code><![CDATA[// ALT-069: no alívio, o acoplar_b/a devolve a loco do alívio já engatada no lote
 if ("b".equals(etapa_alivio)) {
 	lote_vazios_b = null;
-	alivio_seguir((Trem) agent);
+	entrar_rmv_excesso.take(agent);
 } else if ("a".equals(etapa_alivio)) {
 	lote_vazios_a = null;
-	alivio_seguir((Trem) agent);
+	entrar_rmv_excesso.take(agent);
 } else {
 	chegou_vazios.take(agent);
 }]]></Code>
@@ -2496,7 +2535,7 @@ if ("b".equals(etapa_alivio)) {
 		<Id>1793106617637</Id>
 		<Name><![CDATA[chegou_vazios]]></Name>
 		<X>3230</X>
-		<Y>1140</Y>
+		<Y>1240</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -2619,7 +2658,7 @@ if ("b".equals(etapa_alivio)) {
 		<Id>1793106617760</Id>
 		<Name><![CDATA[para_estoque]]></Name>
 		<X>4000</X>
-		<Y>1140</Y>
+		<Y>1240</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -2794,6 +2833,9 @@ if ("b".equals(etapa_alivio)) {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("liberar_faixas_circulacao1", agent, "soltou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -2920,14 +2962,21 @@ get_carros_ate_segunda_loco((Trem) train)]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-073: o lote 2 é o trem original (sai pelo out) e espera no Wait espera_segunda_parte
 lote_segunda_parte = (Trem) train;
-traceln(String.format("[%.1f][CoperXII][corte_lotes] trem=%d lote1=%d carros", time(), train.getId(), get_carros_ate_segunda_loco((Trem) train)));]]></Code>
+traceln(String.format("[%.1f][CoperXII][corte_lotes] trem=%d lote1=%d carros", time(), train.getId(), get_carros_ate_segunda_loco((Trem) train)));
+log_analise("cortar_lotes", train, "vai cortar");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_lotes", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_lotes", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3099,6 +3148,9 @@ traceln(String.format("[%.1f][CoperXII][corte_lotes] trem=%d lote1=%d carros", t
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("seize_moega", agent, "na fila");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -3114,6 +3166,9 @@ traceln(String.format("[%.1f][CoperXII][corte_lotes] trem=%d lote1=%d carros", t
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("seize_moega", agent, "pegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -3332,11 +3387,15 @@ if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_espaco_vazios", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][espaco] trem=%d 41 vazios prontos: lote espera o alívio onde está", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][espaco] trem=%d 41 vazios prontos: lote espera o alívio onde está", time(), agent.getId()));
+log_analise("tem_espaco_vazios", agent, "false");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3401,6 +3460,9 @@ if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aguarda_espaco_vazios", agent, "passou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3480,6 +3542,9 @@ if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("descarga_grupo", agent, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtExit]]></Name>
@@ -3487,7 +3552,8 @@ if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) agent).descarregar_vagoes(true, _grupo_vagoes);]]></Code>
+					<Code><![CDATA[((Trem) agent).descarregar_vagoes(true, _grupo_vagoes);
+log_analise("descarga_grupo", agent, "fim");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3569,11 +3635,15 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][corte] trem=%d último grupo do lote", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][corte] trem=%d último grupo do lote", time(), agent.getId()));
+log_analise("e_ultimo_grupo", agent, "true");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("e_ultimo_grupo", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3637,6 +3707,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aguarda_grupo", agent, "passou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3665,7 +3738,7 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 	<EmbeddedObject>
 		<Id>1793200000025</Id>
 		<Name><![CDATA[linha_b]]></Name>
-		<X>3350</X>
+		<X>3380</X>
 		<Y>290</Y>
 		<Label>
 			<X>0</X>
@@ -3713,9 +3786,15 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("linha_b", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("linha_b", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3839,6 +3918,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_b", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -3854,9 +3936,15 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_b", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_b", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -3891,8 +3979,8 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 		<X>3350</X>
 		<Y>690</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-20</Y>
+			<X>-5</X>
+			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3983,6 +4071,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_a", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -3998,9 +4089,15 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_lote_a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4273,7 +4370,7 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 		<Id>1793200000035</Id>
 		<Name><![CDATA[estoque_b]]></Name>
 		<X>3560</X>
-		<Y>590</Y>
+		<Y>580</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -4283,33 +4380,72 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 		<ShowLabel>true</ShowLabel>
 		<ActiveObjectClass>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Hold</ClassName>
-				<ItemName>1412336242940</ItemName>
+				<ClassName>Wait</ClassName>
+				<ItemName>1412336243169</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
-				<Name><![CDATA[mode]]></Name>
+				<Name><![CDATA[capacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[nEntitiesForSelfBlock]]></Name>
+				<Name><![CDATA[maximumCapacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[condition]]></Name>
+				<Name><![CDATA[entityLocation]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[initiallyBlocked]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[queuing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparisonForPreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_b", agent, "esperando");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_b", agent, "liberado");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4339,7 +4475,7 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 		<Id>1793200000037</Id>
 		<Name><![CDATA[estoque_a]]></Name>
 		<X>3550</X>
-		<Y>790</Y>
+		<Y>780</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-15</Y>
@@ -4349,33 +4485,72 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 		<ShowLabel>true</ShowLabel>
 		<ActiveObjectClass>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Hold</ClassName>
-				<ItemName>1412336242940</ItemName>
+				<ClassName>Wait</ClassName>
+				<ItemName>1412336243169</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
-				<Name><![CDATA[mode]]></Name>
+				<Name><![CDATA[capacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[nEntitiesForSelfBlock]]></Name>
+				<Name><![CDATA[maximumCapacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[condition]]></Name>
+				<Name><![CDATA[entityLocation]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[initiallyBlocked]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[queuing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparisonForPreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_a", agent, "esperando");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_a", agent, "liberado");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4436,7 +4611,7 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 				<Name><![CDATA[onEnter1]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-065: grupo bateu nos vazios da linha: solta o estoque para acoplar
-estoque_b.unblock();]]></Code>
+liberar_estoque("b");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4444,6 +4619,9 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar_b", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4503,7 +4681,7 @@ estoque_b.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter1]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[estoque_a.unblock();]]></Code>
+					<Code><![CDATA[liberar_estoque("a");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4511,6 +4689,9 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar_a", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4540,7 +4721,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000043</Id>
 		<Name><![CDATA[tem_loco_frente]]></Name>
 		<X>3330</X>
-		<Y>1140</Y>
+		<Y>1240</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -4586,9 +4767,15 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_frente", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_frente", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4618,7 +4805,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000045</Id>
 		<Name><![CDATA[tirar_loco_frente]]></Name>
 		<X>3530</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>-9</X>
 			<Y>-25</Y>
@@ -4708,12 +4895,21 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_frente", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_frente", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_frente", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4743,7 +4939,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000049</Id>
 		<Name><![CDATA[tem_loco_tras]]></Name>
 		<X>3380</X>
-		<Y>1190</Y>
+		<Y>1290</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -4789,9 +4985,15 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_tras", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_tras", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4821,7 +5023,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000051</Id>
 		<Name><![CDATA[tirar_loco_tras]]></Name>
 		<X>3480</X>
-		<Y>1200</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-35</Y>
@@ -4917,12 +5119,21 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_tras", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_tras", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_tras", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4952,7 +5163,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000055</Id>
 		<Name><![CDATA[devolver_loco]]></Name>
 		<X>3640</X>
-		<Y>1280</Y>
+		<Y>1380</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-15</Y>
@@ -5000,7 +5211,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000057</Id>
 		<Name><![CDATA[tem_moega]]></Name>
 		<X>3630</X>
-		<Y>1140</Y>
+		<Y>1240</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -5049,9 +5260,15 @@ estoque_b.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_moega", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_moega", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5081,7 +5298,7 @@ estoque_b.unblock();]]></Code>
 		<Id>1793200000059</Id>
 		<Name><![CDATA[liberar_moega]]></Name>
 		<X>3750</X>
-		<Y>1130</Y>
+		<Y>1230</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -5152,7 +5369,8 @@ estoque_b.unblock();]]></Code>
 					<Code><![CDATA[// ALT-076: fim do lote; a segunda parte vira lote_em_descarga e começa já se ainda faltam vazios para o alívio de 41
 trocar_lote_em_descarga();
 if (get_espaco_vazios() > 0) iniciar_proximo_lote();
-traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega liberada", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega liberada", time(), agent.getId()));
+log_analise("liberar_moega", agent, "soltou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5188,8 +5406,8 @@ traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega lib
 		<X>3870</X>
 		<Y>1030</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-10</Y>
+			<X>-40</X>
+			<Y>50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -5257,7 +5475,8 @@ traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega lib
 					<Code><![CDATA[// ALT-076: lote terminou na moega
 trocar_lote_em_descarga();
 if (get_espaco_vazios() > 0) iniciar_proximo_lote();
-traceln(String.format("[%.1f][CoperXII][resto] trem=%d lote terminou na moega: moega liberada", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][CoperXII][resto] trem=%d lote terminou na moega: moega liberada", time(), agent.getId()));
+log_analise("liberar_moega_resto", agent, "soltou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5315,7 +5534,6 @@ traceln(String.format("[%.1f][CoperXII][resto] trem=%d lote terminou na moega: m
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-076: guarda o lote da moega, confere se fechou 41 e solta o resto do lote
-estoque_moega.block();
 entrar_estoque_moega.take(agent);
 verificar_alivio();
 aguarda_grupo.unblock();]]></Code>
@@ -5348,8 +5566,8 @@ aguarda_grupo.unblock();]]></Code>
 	<EmbeddedObject>
 		<Id>1793210000011</Id>
 		<Name><![CDATA[entrar_estoque_moega]]></Name>
-		<X>3550</X>
-		<Y>1000</Y>
+		<X>3580</X>
+		<Y>990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -5468,8 +5686,8 @@ aguarda_grupo.unblock();]]></Code>
 	<EmbeddedObject>
 		<Id>1793210000013</Id>
 		<Name><![CDATA[estoque_moega]]></Name>
-		<X>3620</X>
-		<Y>1000</Y>
+		<X>3670</X>
+		<Y>980</Y>
 		<Label>
 			<X>-30</X>
 			<Y>40</Y>
@@ -5479,33 +5697,72 @@ aguarda_grupo.unblock();]]></Code>
 		<ShowLabel>true</ShowLabel>
 		<ActiveObjectClass>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Hold</ClassName>
-				<ItemName>1412336242940</ItemName>
+				<ClassName>Wait</ClassName>
+				<ItemName>1412336243169</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
-				<Name><![CDATA[mode]]></Name>
+				<Name><![CDATA[capacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[nEntitiesForSelfBlock]]></Name>
+				<Name><![CDATA[maximumCapacity]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[condition]]></Name>
+				<Name><![CDATA[entityLocation]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[initiallyBlocked]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[queuing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparisonForPreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_moega", agent, "esperando");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("estoque_moega", agent, "liberado");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5674,6 +5931,8 @@ proximo_grupo.take(agent);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[fazendoAlivio = true;
+qt_vgs_inicio_alivio = ((Trem) agent).getNumeroDeVagoes();
+trem_alivio = (Trem) agent;
 traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (%d carros)", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
@@ -5738,8 +5997,11 @@ traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (
 // ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
 aguardando_alivio = false;
 fazendoAlivio = false;
-liberar_espaco_vazios();
-iniciar_proximo_lote();]]></Code>
+// com sobra, a descarga só volta quando a sobra for guardada (guardar_sobra)
+if (trem_sobra == null) {
+	liberar_espaco_vazios();
+	iniciar_proximo_lote();
+}]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6213,7 +6475,8 @@ iniciar_proximo_lote();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote da moega", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote da moega", time(), train.getId()));
+log_analise("engatar_moega", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6230,9 +6493,15 @@ iniciar_proximo_lote();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_moega", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("engatar_moega", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -6264,7 +6533,7 @@ iniciar_proximo_lote();]]></Code>
 	<EmbeddedObject>
 		<Id>1793230000009</Id>
 		<Name><![CDATA[acoplar_moega]]></Name>
-		<X>3670</X>
+		<X>3740</X>
 		<Y>950</Y>
 		<Label>
 			<X>-25</X>
@@ -6296,7 +6565,7 @@ iniciar_proximo_lote();]]></Code>
 				<Name><![CDATA[onEnter1]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-069: solta o lote parado na moega para acoplar na loco do alívio
-estoque_moega.unblock();]]></Code>
+liberar_estoque("moega");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6304,6 +6573,9 @@ estoque_moega.unblock();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar_moega", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -6386,7 +6658,7 @@ estoque_moega.unblock();]]></Code>
 	<EmbeddedObject>
 		<Id>1793230000013</Id>
 		<Name><![CDATA[para_moega_engatada]]></Name>
-		<X>3750</X>
+		<X>3820</X>
 		<Y>940</Y>
 		<Label>
 			<X>-10</X>
@@ -6413,7 +6685,7 @@ estoque_moega.unblock();]]></Code>
 					<Code><![CDATA[// ALT-076: o acoplar_moega serve ao alívio e ao grupo que completa o lote da moega
 if ("moega".equals(etapa_alivio)) {
 	lote_vazios_moega = null;
-	alivio_seguir((Trem) agent);
+	entrar_rmv_excesso.take(agent);
 } else {
 	moega_guardar.take(agent);
 }]]></Code>
@@ -6593,10 +6865,10 @@ if ("moega".equals(etapa_alivio)) {
 					<Code><![CDATA[// ALT-069: no alívio, o acoplar_b/a devolve a loco do alívio já engatada no lote
 if ("b".equals(etapa_alivio)) {
 	lote_vazios_b = null;
-	alivio_seguir((Trem) agent);
+	entrar_rmv_excesso.take(agent);
 } else if ("a".equals(etapa_alivio)) {
 	lote_vazios_a = null;
-	alivio_seguir((Trem) agent);
+	entrar_rmv_excesso.take(agent);
 } else {
 	chegou_vazios.take(agent);
 }]]></Code>
@@ -6684,7 +6956,7 @@ if ("b".equals(etapa_alivio)) {
 		<Id>1793274272655</Id>
 		<Name><![CDATA[para_ponto_a]]></Name>
 		<X>3850</X>
-		<Y>350</Y>
+		<Y>340</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -7039,6 +7311,9 @@ if ("b".equals(etapa_alivio)) {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("liberar_faixas_circulacao2", agent, "soltou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -7130,11 +7405,15 @@ if ("b".equals(etapa_alivio)) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][segunda_parte] trem=%d segunda parte esperando (%d carros, locos=%d)", time(), agent.getId(), ((Trem) agent).size(), ((Trem) agent).getNumeroDeLocomotivas()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][segunda_parte] trem=%d segunda parte esperando (%d carros, locos=%d)", time(), agent.getId(), ((Trem) agent).size(), ((Trem) agent).getNumeroDeLocomotivas()));
+log_analise("espera_segunda_parte", agent, "esperando");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("espera_segunda_parte", agent, "liberado");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -7401,11 +7680,15 @@ if ("loco".equals(destino_segunda_parte)) {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_lote", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d lote sem loco: buscando loco", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d lote sem loco: buscando loco", time(), agent.getId()));
+log_analise("tem_loco_lote", agent, "false");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -7484,13 +7767,15 @@ lote_segunda_parte != null && lote_segunda_parte.temLocomotiva(true)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[pedir_loco_segunda_parte();]]></Code>
+					<Code><![CDATA[pedir_loco_segunda_parte();
+log_analise("tem_segunda_parte", agent, "true");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d sem segunda parte: pedindo loco FIPS PST", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d sem segunda parte: pedindo loco FIPS PST", time(), agent.getId()));
+log_analise("tem_segunda_parte", agent, "false");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -7663,6 +7948,9 @@ lote_segunda_parte != null && lote_segunda_parte.temLocomotiva(true)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("seize_loco_fips", agent, "na fila");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -7680,7 +7968,8 @@ lote_segunda_parte != null && lote_segunda_parte.temLocomotiva(true)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-073: a unidade fica com o lote (a loco é absorvida no acoplamento)
-loco_fips.inject();]]></Code>
+loco_fips.inject();
+log_analise("seize_loco_fips", agent, "pegou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -7765,7 +8054,8 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco acoplada na cauda do lote (%d carros)", time(), train1.getId(), ((Trem) train1).size()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco acoplada na cauda do lote (%d carros)", time(), train1.getId(), ((Trem) train1).size()));
+log_analise("acoplar_loco", train1, "acoplou");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8007,14 +8297,21 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d tirando a loco da segunda parte", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d tirando a loco da segunda parte", time(), train.getId()));
+log_analise("tirar_loco_segunda", train, "vai cortar");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_segunda", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_segunda", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -8190,7 +8487,8 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco da segunda parte indo para a cauda do lote", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco da segunda parte indo para a cauda do lote", time(), train.getId()));
+log_analise("levar_loco", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8207,9 +8505,15 @@ loco_fips.inject();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("levar_loco", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("levar_loco", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8242,7 +8546,7 @@ loco_fips.inject();]]></Code>
 		<Id>1793260000025</Id>
 		<Name><![CDATA[loco_fips]]></Name>
 		<X>1430</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-30</Y>
@@ -8475,7 +8779,7 @@ traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS PST criada (entr
 		<Id>1793260000029</Id>
 		<Name><![CDATA[levar_loco_fips]]></Name>
 		<X>1800</X>
-		<Y>730</Y>
+		<Y>740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -8577,7 +8881,8 @@ new RailwayTrack[] {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS PST indo para a cauda do lote", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS PST indo para a cauda do lote", time(), train.getId()));
+log_analise("levar_loco_fips", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8594,9 +8899,15 @@ new RailwayTrack[] {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("levar_loco_fips", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("levar_loco_fips", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8675,9 +8986,15 @@ new RailwayTrack[] {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_resto", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tem_loco_resto", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -8803,12 +9120,21 @@ new RailwayTrack[] {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_resto", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_resto", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco_resto", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -8838,7 +9164,7 @@ new RailwayTrack[] {
 		<Id>1793283009528</Id>
 		<Name><![CDATA[trainEnter]]></Name>
 		<X>1680</X>
-		<Y>730</Y>
+		<Y>740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-25</Y>
@@ -8881,6 +9207,9 @@ new RailwayTrack[] {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("trainEnter", train, "entrou na via");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -8910,7 +9239,7 @@ new RailwayTrack[] {
 		<Id>1793283168309</Id>
 		<Name><![CDATA[caminho_pera_bloquear]]></Name>
 		<X>1550</X>
-		<Y>720</Y>
+		<Y>730</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>
@@ -9053,6 +9382,9 @@ new ResourcePool[][] { {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("caminho_pera_bloquear", agent, "na fila");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -9070,7 +9402,8 @@ new ResourcePool[][] { {
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[main().gestorDeCirculacao.faixa_via2_c.bloquear((Trem) agent);
-main().gestorDeCirculacao.faixa_entrada_pera.bloquear((Trem) agent);]]></Code>
+main().gestorDeCirculacao.faixa_entrada_pera.bloquear((Trem) agent);
+log_analise("caminho_pera_bloquear", agent, "pegou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9119,7 +9452,7 @@ main().gestorDeCirculacao.faixa_entrada_pera.bloquear((Trem) agent);]]></Code>
 		<Id>1793270000001</Id>
 		<Name><![CDATA[liberar_caminho_pera]]></Name>
 		<X>1920</X>
-		<Y>720</Y>
+		<Y>730</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -9190,7 +9523,8 @@ main().gestorDeCirculacao.faixa_entrada_pera.bloquear((Trem) agent);]]></Code>
 					<Code><![CDATA[// ALT-075: loco FIPS encostou no lote: solta só as faixas que ela bloqueou, antes de acoplar
 main().gestorDeCirculacao.faixa_via2_c.liberar();
 main().gestorDeCirculacao.faixa_entrada_pera.liberar();
-traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS encostou e soltou as faixas", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS encostou e soltou as faixas", time(), agent.getId()));
+log_analise("liberar_caminho_pera", agent, "soltou");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9394,9 +9728,15 @@ lote_vazios_moega != null]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("moega_tem_lote", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("moega_tem_lote", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -9545,7 +9885,7 @@ lote_vazios_moega != null]]></Code>
 	<EmbeddedObject>
 		<Id>1793280000007</Id>
 		<Name><![CDATA[moega_tem_rp]]></Name>
-		<X>3770</X>
+		<X>3780</X>
 		<Y>1040</Y>
 		<Label>
 			<X>0</X>
@@ -9598,9 +9938,15 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("moega_tem_rp", agent, "true");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("moega_tem_rp", agent, "false");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -10086,7 +10432,7 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 		<Id>1793290000013</Id>
 		<Name><![CDATA[lote_com_loco]]></Name>
 		<X>2530</X>
-		<Y>240</Y>
+		<Y>190</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -10205,8 +10551,8 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 	<EmbeddedObject>
 		<Id>1793290000015</Id>
 		<Name><![CDATA[para_acoplar_loco_segunda]]></Name>
-		<X>1910</X>
-		<Y>570</Y>
+		<X>1900</X>
+		<Y>590</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -10260,7 +10606,7 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 		<Id>1793290000017</Id>
 		<Name><![CDATA[para_acoplar_loco_fips]]></Name>
 		<X>2050</X>
-		<Y>730</Y>
+		<Y>740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -10781,7 +11127,7 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 	<EmbeddedObject>
 		<Id>1793290000029</Id>
 		<Name><![CDATA[para_acoplar_a]]></Name>
-		<X>4750</X>
+		<X>4620</X>
 		<Y>690</Y>
 		<Label>
 			<X>-10</X>
@@ -11169,6 +11515,1291 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1793290000038</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038054</Id>
+		<Name><![CDATA[entrar_rmv_excesso]]></Name>
+		<X>5030</X>
+		<Y>290</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038055</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038056</Id>
+		<Name><![CDATA[rmv_excesso]]></Name>
+		<X>5150</X>
+		<Y>300</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642016</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[decoupleFirstCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[nCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[ainda_tem_lote_vazios() ? 0 : Math.max(0, get_vgs_trazidos_alivio((Trem) train) - quantidade_alivio)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1794506038057</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1794506038058</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("rmv_excesso", train, "vai cortar");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("rmv_excesso", train, "parte que segue");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("rmv_excesso", train2, "parte cortada");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038059</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038060</Id>
+		<Name><![CDATA[precisa_mais_vgs]]></Name>
+		<X>5300</X>
+		<Y>290</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// engata todos os lotes (b -> a -> moega) antes de cortar a sobra
+ainda_tem_lote_vazios()]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("precisa_mais_vgs", agent, "true");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("precisa_mais_vgs", agent, "false");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038061</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038062</Id>
+		<Name><![CDATA[para_alivio_seguir2]]></Name>
+		<X>5650</X>
+		<Y>290</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ainda tem lote de vazios: engata o próximo
+alivio_seguir((Trem) agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038063</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038064</Id>
+		<Name><![CDATA[para_fim_alivio]]></Name>
+		<X>5650</X>
+		<Y>350</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// engatou tudo; o rmv_excesso já cortou a sobra
+etapa_alivio = "";
+fim_alivio.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038065</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794506038066</Id>
+		<Name><![CDATA[para_guardar_excesso]]></Name>
+		<X>5650</X>
+		<Y>400</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[guardar_excesso_alivio((Trem) agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794506038067</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000001</Id>
+		<Name><![CDATA[entrar_sobra]]></Name>
+		<X>4600</X>
+		<Y>560</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("entrar_sobra", agent, "sobra do alívio");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000002</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000003</Id>
+		<Name><![CDATA[linha_livre_sobra]]></Name>
+		<X>4750</X>
+		<Y>560</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// a loco do alívio já saiu da psnSaidaCopexXXI_b?
+linha_livre_para_sobra()]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("linha_livre_sobra", agent, "true");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("linha_livre_sobra", agent, "false");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000004</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000005</Id>
+		<Name><![CDATA[espera_linha_sobra]]></Name>
+		<X>4850</X>
+		<Y>630</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Delay</ClassName>
+				<ItemName>1412336242930</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[type]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[delayTime]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[30]]></Code>
+					<Unit Class="TimeUnits">SECOND</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("espera_linha_sobra", agent, "inicio");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("espera_linha_sobra", agent, "fim");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000006</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000007</Id>
+		<Name><![CDATA[ir_sobra]]></Name>
+		<X>4900</X>
+		<Y>560</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+			<GenericParameterSubstituteValue Class="CodeValue">
+				<Code><![CDATA[Trem]]></Code>
+			</GenericParameterSubstituteValue>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._coperXXI_lote_b]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_sobra", train, "inicio");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_sobra", train, "chegou");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_sobra", train, "bateu (outHit)");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000008</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000009</Id>
+		<Name><![CDATA[sobra_cabe]]></Name>
+		<X>5050</X>
+		<Y>560</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// o que resta da sobra cabe inteiro na próxima linha (b -> a -> moega)?
+((Trem) agent).getNumeroDeVagoes() <= get_capacidade_linha(sobra_linha_alvo())]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("sobra_cabe", agent, "true");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("sobra_cabe", agent, "false");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000010</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000011</Id>
+		<Name><![CDATA[cortar_sobra]]></Name>
+		<X>5150</X>
+		<Y>660</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642016</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[decoupleFirstCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[nCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[get_capacidade_linha(sobra_linha_alvo())]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1794600000012</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1794600000013</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_sobra", train, "vai cortar");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("cortar_sobra", train, "parte que segue");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// a parte cortada (rabo da sobra, que andou de ré: lado do lote_b) fica com a linha alvo antes de o resto voltar ao sobra_cabe
+registrar_sobra((Trem) train2);
+log_analise("cortar_sobra", train2, "parte cortada");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000014</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000015</Id>
+		<Name><![CDATA[para_guardar_sobra]]></Name>
+		<X>5350</X>
+		<Y>560</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[guardar_sobra((Trem) agent, true);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000016</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794600000017</Id>
+		<Name><![CDATA[para_guardar_sobra_parte]]></Name>
+		<X>5350</X>
+		<Y>660</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[guardar_sobra((Trem) agent, false);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794600000018</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

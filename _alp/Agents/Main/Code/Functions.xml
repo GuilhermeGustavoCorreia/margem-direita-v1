@@ -40,23 +40,6 @@
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>RailwayTrack</ReturnType>
-		<Id>1782412019217</Id>
-		<Name><![CDATA[getLinhaCirculacao]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1520</X>
-		<Y>-7440</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
 		<Id>1782498772574</Id>
 		<Name><![CDATA[getDestinoDoTrem]]></Name>
@@ -199,23 +182,6 @@
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>int</ReturnType>
-		<Id>1782932707570</Id>
-		<Name><![CDATA[getVagoesLinhaAtendimento]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1450</X>
-		<Y>-7190</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>String</ReturnType>
 		<Id>1782992207626</Id>
@@ -236,48 +202,6 @@
 		<Parameter>
 			<Name><![CDATA[agent]]></Name>
 			<Type><![CDATA[Agent]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>ITerminalMoega</ReturnType>
-		<Id>1783018617194</Id>
-		<Name><![CDATA[getTerminalAgent]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1450</X>
-		<Y>-7170</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[moega]]></Name>
-			<Type><![CDATA[String]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>PositionOnTrack</ReturnType>
-		<Id>1783520667992</Id>
-		<Name><![CDATA[getLinhaCirculacao_v2]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1520</X>
-		<Y>-7480</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[trem]]></Name>
-			<Type><![CDATA[Trem]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -569,8 +493,46 @@ Limitação: só encontra campos declarados diretamente na classe do container �
 		<Id>1791820000001</Id>
 		<Name><![CDATA[configurar_log_em_arquivo]]></Name>
 		<Description><![CDATA[ALT-011: espelha o console (traceln, System.out e System.err) em logs/sim.log]]></Description>
-		<X>1440</X>
-		<Y>-6610</Y>
+		<X>2040</X>
+		<Y>-6640</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ArrayList&lt;String[]&gt;</ReturnType>
+		<Id>1795830000001</Id>
+		<Name><![CDATA[ler_csv]]></Name>
+		<Description><![CDATA[ALT-083: lê um CSV da interface (separador ;, 1ª linha = cabeçalho). Para a simulação se o arquivo não existir]]></Description>
+		<X>2040</X>
+		<Y>-6600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[caminho]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1795830000002</Id>
+		<Name><![CDATA[carregar_configuracao]]></Name>
+		<Description><![CDATA[ALT-083: lê simulacao.csv, terminais_moega.csv e tempo_entre_chegadas.csv da pasta_simulacao e mostra no log o que entendeu]]></Description>
+		<X>2040</X>
+		<Y>-6620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

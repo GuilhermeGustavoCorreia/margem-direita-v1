@@ -5,7 +5,9 @@ return (Main) getEngine().getRoot();
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1784663408134*/
-if (__existeTremManobrando() || __getVagoes27Carregados() > 0) return false;
+// trem entrando: da saída da circulação até o fim da manobra de chegada (finalizar_manobra)
+if (_trem_chegando != null) return false;
+if (get_vagoes_carregados() > 0) return false;
 else return true;
 /*ALCODEEND*/}
 
@@ -61,6 +63,18 @@ int capacidadeTotal = (_CAPACIDADE_LINHA_MAR_A + _CAPACIDADE_LINHA_MAR_B + _CAPA
 if (capacidadeTotal > totaisVazios && !fazendoAlivio) 	aguardaAlivio.unblock();
 else													aguardaAlivio.block();
 
+/*ALCODEEND*/}
+
+double log_analise(String evento,Agent a,String msg)
+{/*ALCODESTART::1795900000404*/
+// log de análise: só escreve com log_de_analise = true
+if (!log_de_analise) return;
+String t = (a == null) ? "-" : String.valueOf(a.getId());
+if (a instanceof Trem) {
+	Trem tr = (Trem) a;
+	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
+}
+Log.info("CoperXI", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
 boolean precisaAlivio()
@@ -202,6 +216,9 @@ int vagoes_HidroviasTerra		= main().getTamanhoDoTrem(_loteDeCarregados_Hidrovias
 int vagoes_linhaBomba 			= main().getTamanhoDoTrem(_loteDeCarregados_linhaBomba);
 int vagoes_linhaBomba1			= main().getTamanhoDoTrem(_loteDeCarregados_linhaBomba1);
 
+// vagão já separado do lote pelo pega1vagao, ainda na linha esperando a descarga
+int vagoes_aguardando_descarga	= main().getTamanhoDoTrem(_vagao_aguardando_descarga);
+
 
 
 int vagoesMar 	= (vagoes_MoegaMar 		+ vagoes_HidroviasMar);
@@ -209,7 +226,7 @@ int vagoesMeio 	= (vagoes_MoegaMeio 	+ vagoes_MoegaHidroviasMeio);
 int vagoesTerra = (vagoes_BarracaoTerra + vagoes_HidroviasTerra);
 int vagoesBomba = (vagoes_linhaBomba 	+ vagoes_linhaBomba1);
 
-int total = vagoesMar + vagoesMeio + vagoesTerra + vagoesBomba;
+int total = vagoesMar + vagoesMeio + vagoesTerra + vagoesBomba + vagoes_aguardando_descarga;
 
 
 return total;
@@ -366,15 +383,15 @@ return sb.toString();
 double atualiza_vaiDescarga()
 {/*ALCODESTART::1789838899548*/
 boolean aguardandoRechego = mnbCarregados_ocupar3.size() > 0;
-boolean podeDescarregar   = (waitLotesParaDescarga.size() > 0 && _loteEmDescarga == null);
 
-if (!aguardandoRechego && podeDescarregar) {
+boolean podeDescarregar   = (waitLotesParaDescarga.size() > 0 && _loteEmDescarga == null && _vagao_aguardando_descarga == null);
+
+if (!aguardandoRechego && !fazendoAlivio && podeDescarregar) {
 
 	condicao_vaiDescarga = true;
 	pegar_um_lote_para_descarga();
 	
 }
-
 
 /*ALCODEEND*/}
 
@@ -394,7 +411,6 @@ for (String tipo : _prioridadeDeLotesDescarga) {
         }
     }
 }
-
 /*ALCODEEND*/}
 
 boolean atualiza_precisa_de_rechego()
@@ -402,12 +418,10 @@ boolean atualiza_precisa_de_rechego()
 boolean precisa_de_rechego = (_getVagosLinhaMoega() <= 27);
 boolean tem_lote_rechego   = (_loteDeCarregados_linhaVerde != null);
 
-traceln("precisa_de_rechego " + precisa_de_rechego);
-traceln("tem_lote_rechego " + tem_lote_rechego);
 
 if (precisa_de_rechego && tem_lote_rechego && !rechego_em_andamento) {
 	
-	traceln("vamos fazer rechego");
+	log_contagem("rechego");
 	locoFips_pst_mnb_coperXI.inject();
 	
 }
@@ -432,8 +446,8 @@ return result.isEmpty() ? "Vazio" : result;
 
 ArrayList<Faixa> get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790637769491*/
-// a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
-// é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
+// a pstSaidaCoperXI sai direto da via1_intermar_d (faixa de criação da loco):
+// não há linhas intermediárias na rota do alívio
 return new ArrayList<Faixa>();
 /*ALCODEEND*/}
 
@@ -515,5 +529,51 @@ return "ferrovia";
 int get_quantidade_loco_alivio()
 {/*ALCODESTART::1791700000004*/
 return 1;
+/*ALCODEEND*/}
+
+int get_vagoes_carregados()
+{/*ALCODESTART::1793965994785*/
+return (
+	_getVagosLinhaMoega() + 
+	main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde) + 
+	main().getTamanhoDoTrem(_loteEmDescarga)	// vagão na moega ainda conta como carregado
+);
+/*ALCODEEND*/}
+
+double log_contagem(String  evento)
+{/*ALCODESTART::1795850000303*/
+int mar   = main().getTamanhoDoTrem(_loteDeCarregados_MoegaMar)      + main().getTamanhoDoTrem(_loteDeCarregados_HidroviasMar);
+int meio  = main().getTamanhoDoTrem(_loteDeCarregados_MoegaMeio)     + main().getTamanhoDoTrem(_loteDeCarregados_HidroviasMeio);
+int terra = main().getTamanhoDoTrem(_loteDeCarregados_BarracaoTerra) + main().getTamanhoDoTrem(_loteDeCarregados_HidroviasTerra);
+int bomba = main().getTamanhoDoTrem(_loteDeCarregados_linhaBomba)    + main().getTamanhoDoTrem(_loteDeCarregados_linhaBomba1);
+
+int aguardando = main().getTamanhoDoTrem(_vagao_aguardando_descarga);
+int descarga   = main().getTamanhoDoTrem(_loteEmDescarga);
+int verde      = main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde);
+
+Log.info("CoperXI", evento, String.format(
+	"mar=%d meio=%d terra=%d bomba=%d | aguardando=%d descarga=%d | verde=%d | linhaMoega=%d carregados=%d",
+	mar, meio, terra, bomba, aguardando, descarga, verde, _getVagosLinhaMoega(), get_vagoes_carregados()));
+/*ALCODEEND*/}
+
+double log_mov(String  evento,Agent  a)
+{/*ALCODESTART::1795900000402*/
+// acompanhamento dos movimentos no terminal: bloco, trem e linhas ocupadas
+if (!(a instanceof Trem)) {
+	Log.info("CoperXI", evento, "agente=" + a);
+	return;
+}
+Trem t = (Trem) a;
+StringBuilder linhas = new StringBuilder();
+try {
+	for (Object o : t.getAllOccupiedTracks()) {
+		if (linhas.length() > 0) linhas.append(",");
+		linhas.append(((RailwayTrack) o).getName());
+	}
+} catch (Exception e) {
+	linhas.append("?");
+}
+Log.info("CoperXI", evento, String.format("(%s - %d) | %d vgs + %d loco | linhas=%s",
+	t.prefixo, t.getId(), t.getNumeroDeVagoes(), t.getNumeroDeLocomotivas(), linhas));
 /*ALCODEEND*/}
 

@@ -3,7 +3,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1773066591690</Id>
 		<Name><![CDATA[posicaoDeCorte]]></Name>
-		<X>70</X>
+		<X>100</X>
 		<Y>390</Y>
 		<Label>
 			<X>10</X>
@@ -44,7 +44,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1784839320435</Id>
 		<Name><![CDATA[status]]></Name>
-		<X>70</X>
+		<X>100</X>
 		<Y>410</Y>
 		<Label>
 			<X>10</X>
@@ -63,7 +63,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1785178776696</Id>
 		<Name><![CDATA[aguardandoDescarga]]></Name>
-		<X>70</X>
+		<X>100</X>
 		<Y>430</Y>
 		<Label>
 			<X>10</X>
@@ -325,6 +325,48 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[false]]></Code>
 			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000206</Id>
+		<Name><![CDATA[estacionarISN]]></Name>
+		<Description><![CDATA[ALT-084: true quando o GestorDeChegadas destina o trem à linha 02 do ISN; volta a false quando ele sai da linha 02]]></Description>
+		<X>380</X>
+		<Y>520</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[false]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1793904621541</Id>
+		<Name><![CDATA[prefixo]]></Name>
+		<X>50</X>
+		<Y>640</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[String]]></Type>
 		</Properties>
 	</Variable>
 </Variables>

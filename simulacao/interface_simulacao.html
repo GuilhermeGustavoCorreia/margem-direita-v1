@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulação Margem Direita</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{--azul-esc:#002A68;--azul:#004B9B;--linha:#C0CCD2;--claro:#D3E3F4;--bg:#F5F7FA;--ok:#1E8E3E;--warn:#C77700;--err:#C62828}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Open Sans',sans-serif;background:var(--bg);color:#1c2633;font-size:14px}
+h1,h2,h3{font-family:'Saira',sans-serif;color:var(--azul-esc);margin:0 0 10px}
+header{background:var(--azul-esc);color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+header h1{color:#fff;font-size:20px;margin:0}
+.pasta{display:flex;gap:10px;align-items:center;font-size:13px}
+.pasta b{color:#fff}
+button{font-family:'Open Sans',sans-serif;font-size:13px;border:1px solid var(--azul);background:#fff;color:var(--azul);padding:7px 12px;border-radius:4px;cursor:pointer}
+button.prim{background:var(--azul);color:#fff}
+button:hover{filter:brightness(.95)}
+button:disabled{opacity:.5;cursor:default}
+header button{border-color:#fff}
+nav{display:flex;gap:4px;padding:0 20px;background:#fff;border-bottom:1px solid var(--linha)}
+nav button{border:none;border-bottom:3px solid transparent;border-radius:0;padding:12px 16px;font-family:'Saira',sans-serif;font-size:15px;color:#556}
+nav button.ativo{border-bottom-color:var(--azul);color:var(--azul-esc)}
+main{padding:20px;max-width:1300px;margin:0 auto}
+.aba{display:none}.aba.ativa{display:block}
+.card{background:#fff;border:1px solid var(--linha);border-radius:6px;padding:16px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:#445}
+input,select{font-family:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--linha);border-radius:4px}
+.drop{border:2px dashed var(--linha);border-radius:6px;padding:26px;text-align:center;color:#667;cursor:pointer}
+.drop.over{border-color:var(--azul);background:var(--claro)}
+.acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tabwrap{overflow:auto;max-height:420px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:var(--azul);color:#fff;text-align:left;padding:6px 8px;position:sticky;top:0;font-weight:600}
+td{border-bottom:1px solid var(--linha);padding:3px 8px}
+td input,td select{width:100%;border:1px solid transparent;padding:4px;background:transparent}
+td input:focus,td select:focus{border-color:var(--azul);background:#fff}
+td.x{width:28px;text-align:center;color:var(--err);cursor:pointer}
+.msg{font-size:13px;margin-top:8px}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.err{color:var(--err)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:#fff;border:1px solid var(--linha);border-left:4px solid var(--azul);border-radius:6px;padding:12px}
+.kpi span{font-size:12px;color:#667}.kpi b{display:block;font-family:'Saira';font-size:24px;color:var(--azul-esc)}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600;color:#fff}
+.bars .row{display:grid;grid-template-columns:120px 1fr 80px;gap:8px;align-items:center;margin:6px 0;font-size:13px}
+.bars .trk{background:#eef2f6;height:18px;border-radius:3px;position:relative}
+.bars .dem{position:absolute;inset:0 auto 0 0;background:var(--claro);border-radius:3px}
+.bars .real{position:absolute;top:4px;bottom:4px;left:0;background:var(--azul);border-radius:2px}
+.legenda{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;margin-top:6px}
+.legenda i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:4px;vertical-align:-2px}
+svg text{font-family:'Open Sans';font-size:11px}
+.atalho{padding:3px 8px;font-size:12px}
+.atalho.ativo{background:var(--azul);color:#fff}
+.dois{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.dois{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Simulação Margem Direita · Demanda → Trens</h1>
+  <div class="pasta">
+    <span>Pasta: <b id="nomePasta">não selecionada</b></span>
+    <button id="btnPasta">Selecionar pasta</button>
+  </div>
+</header>
+
+<div id="avisoFS" style="display:none;background:#FDECEA;color:#8A1C1C;border-bottom:1px solid #F5C2C0;padding:10px 20px;font-size:13px">
+  <b>Este navegador não consegue gravar na pasta.</b> Os arquivos serão <b>baixados</b> em vez de sobrescritos.
+  Abra o <code>interface_simulacao.html</code> direto no <b>Chrome ou Edge</b> (arraste o arquivo para uma aba ou clique com o botão direito → Abrir com), e não pela pré-visualização do Claude ou pelo Firefox.
+</div>
+<nav>
+  <button data-aba="demanda" class="ativo">1 · Demanda</button>
+  <button data-aba="programacao">2 · Programação</button>
+  <button data-aba="resultados">3 · Resultados</button>
+  <button data-aba="logs">4 · Logs</button>
+  <button data-aba="configuracoes">5 · Configurações</button>
+</nav>
+
+<main>
+<!-- ===================== 1. DEMANDA ===================== -->
+<section id="demanda" class="aba ativa">
+  <div class="card">
+    <h2>Parâmetros do cenário</h2>
+    <div class="grid">
+      <label>Início do período<input type="datetime-local" id="pInicio"></label>
+      <label>Fim do período<input type="datetime-local" id="pFim"></label>
+      <label>Vagões por trem<input type="number" id="pVagoes" value="82"></label>
+      <label>Toneladas por vagão<input type="number" id="pTVag" value="100"></label>
+      <label>Nome do cenário<input type="text" id="pNome" placeholder="ex.: base nov/26"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Demanda (Excel)</h2>
+    <div class="drop" id="drop">Arraste o Excel aqui ou clique para escolher<br>
+      <small>Colunas: Terminal · Ferrovia · Produto · Toneladas · Inicio (opcional) · Fim (opcional)</small>
+    </div>
+    <input type="file" id="fileExcel" accept=".xlsx,.xls,.csv" hidden>
+    <div class="msg" id="msgDemanda"></div>
+    <div class="tabwrap" style="margin-top:12px"><table id="tabDemanda"></table></div>
+    <div class="acoes">
+      <button id="btnModelo">Baixar modelo Excel</button>
+      <button id="btnAddDem">+ Linha</button>
+      <button class="prim" id="btnGerar">Gerar programação de trens →</button>
+    </div>
+    <div class="msg" id="msgGerar"></div>
+  </div>
+</section>
+
+<!-- ===================== 2. PROGRAMAÇÃO ===================== -->
+<section id="programacao" class="aba">
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Tempo entre chegadas</h2>
+        <div class="msg" id="msgTec">Horas entre trens de cada ferrovia em cada terminal. Vazio = a ferrovia não manda trem para o terminal.</div></div>
+      <div class="acoes" style="margin:0">
+        <button id="btnTecLer">Recarregar de input/</button>
+        <button class="prim" id="btnTecSalvar">Salvar em input/</button>
+      </div>
+    </div>
+    <div class="tabwrap" style="max-height:none;margin-top:12px"><table id="tabTec"></table></div>
+    <div class="msg">— = o terminal não opera essa ferrovia (Configurações). Arquivo: <code>input/tempo_entre_chegadas.csv</code>.</div>
+  </div>
+</section>
+
+<!-- ===================== 3. RESULTADOS ===================== -->
+<section id="resultados" class="aba">
+  <div class="card"><h2>Resultados</h2><div class="msg">Em construção.</div></div>
+</section>
+
+<!-- ===================== 4. LOGS ===================== -->
+<section id="logs" class="aba">
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Log da simulação</h2>
+        <div class="msg" id="msgLog">Arquivo: <code>MargemDireitaModel1\logs\sim.log</code> (sobrescrito a cada rodada).</div></div>
+      <div class="acoes" style="margin:0">
+        <label style="flex-direction:row;align-items:center;gap:6px;font-size:13px"><input type="checkbox" id="logAuto"> Atualizar a cada 5 s</label>
+        <button id="btnLogAbrir">Escolher sim.log</button>
+        <button class="prim" id="btnLogLer">Recarregar</button>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:12px;grid-template-columns:2fr 1fr 1fr 1fr">
+      <label>Filtro (texto, ou /regex/)<input id="logFiltro" placeholder="ex.: coperXI, ERRO, /\[chegadas\].*rumo/"></label>
+      <label>Tag<select id="logTag"><option value="">todas</option></select></label>
+      <label>Nível<select id="logNivel"><option value="">tudo</option><option value="erro">só erros</option><option value="aviso">erros e avisos</option></select></label>
+      <label>Mostrar<select id="logMax"><option value="500">últimas 500</option><option value="2000" selected>últimas 2000</option><option value="0">todas</option></select></label>
+    </div>
+    <div class="msg" id="logResumo"></div>
+    <pre id="logTexto" style="background:#0F1B2D;color:#D6E2F0;border-radius:4px;padding:12px;font-size:12px;line-height:1.5;max-height:60vh;overflow:auto;margin:10px 0 0;white-space:pre-wrap;word-break:break-word"></pre>
+  </div>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Linha do tempo por agente</h2>
+        <div class="msg" id="ganttResumo">Cada traço é uma linha do log. Segue os mesmos filtros do log acima.</div></div>
+      <div class="acoes" style="margin:0">
+        <span id="ganttIntervalo" class="msg" style="margin:0"></span>
+        <button id="btnGanttTudo">Ver tudo</button>
+      </div>
+    </div>
+    <div id="ganttWrap" style="position:relative;margin-top:10px;user-select:none">
+      <canvas id="ganttCanvas" style="width:100%;display:block;cursor:crosshair"></canvas>
+      <div id="ganttTip" style="position:absolute;display:none;pointer-events:none;background:#0F1B2D;color:#D6E2F0;font:12px/1.4 Consolas,monospace;padding:6px 8px;border-radius:4px;max-width:520px;white-space:pre-wrap;z-index:5"></div>
+    </div>
+    <div class="legenda" style="margin-top:8px">
+      <span><i style="background:#004B9B"></i>INFO</span><span><i style="background:#C77700"></i>AVISO / WARN</span><span><i style="background:#C62828"></i>ERRO</span>
+      <span style="color:#667">Arraste para selecionar um intervalo (filtra o log) · clique num traço para ver a linha · clique no nome do agente para filtrar por ele</span>
+    </div>
+    <pre id="ganttDetalhe" style="display:none;background:#0F1B2D;color:#D6E2F0;border-radius:4px;padding:10px 12px;font-size:12px;line-height:1.5;margin:10px 0 0;white-space:pre-wrap;word-break:break-word"></pre>
+  </div>
+</section>
+
+<!-- ===================== 5. CONFIGURAÇÕES ===================== -->
+<section id="configuracoes" class="aba">
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Parâmetros da simulação</h2>
+        <div class="msg" id="msgSim">Salvos em <b>config/simulacao.csv</b>.</div></div>
+      <div class="acoes" style="margin:0"><button class="prim" id="btnSimSalvar">Salvar</button></div>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <label>Tempo de simulação (h)<input type="number" id="sDuracao" min="1" step="1">
+        <span style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">
+          <button type="button" class="atalho" data-h="24">1 dia</button>
+          <button type="button" class="atalho" data-h="168">1 semana</button>
+          <button type="button" class="atalho" data-h="720">mês 30 dias</button>
+          <button type="button" class="atalho" data-h="744">mês 31 dias</button>
+        </span></label>
+      <label>Warm-up (h)<input type="number" id="sWarmup" min="0" step="1"></label>
+      <label>Número de replicações<input type="number" id="sReplic" min="1" step="1"></label>
+    </div>
+    <div class="msg" id="sResumo"></div>
+  </div>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Terminais (ITerminalMoega)</h2>
+        <div class="msg" id="msgTerm">Salvos em <b>config/terminais_moega.csv</b> na pasta da simulação.</div></div>
+      <div class="acoes" style="margin:0">
+        <button id="btnTermPadrao" title="Volta para os 12 terminais lidos do modelo">Restaurar do modelo</button>
+        <button id="btnTermLer">Recarregar da pasta</button>
+        <button class="prim" id="btnTermSalvar">Salvar CSV</button>
+      </div>
+    </div>
+    <div class="tabwrap" style="max-height:none;margin-top:12px"><table id="tabTerm"></table></div>
+    <div class="acoes"><button id="btnTermAdd">+ Terminal</button></div>
+    <div class="msg"><b>agente</b>: classe no AnyLogic · <b>instancia</b>: nome no Main (<code>main().&lt;instancia&gt;</code>) · <b>segmento</b>: o que o terminal descarrega, na grafia do modelo (<code>acucar</code>, <code>grao</code>, <code>celulose</code>…) · <b>Rumo/MRS/VLI</b>: ferrovias que o terminal opera (até 3). No CSV ficam como <code>true</code>/<code>false</code>.</div>
+  </div>
+  <div class="card">
+    <h2>Arquivos da pasta simulacao</h2>
+    <pre style="background:var(--bg);border:1px solid var(--linha);border-radius:4px;padding:12px;font-size:13px;overflow:auto;margin:0 0 12px">MargemDireitaModel1\
+└─ simulacao\
+   ├─ interface_simulacao.html
+   ├─ config\
+   │  ├─ terminais_moega.csv
+   │  └─ simulacao.csv
+   └─ input\
+      └─ tempo_entre_chegadas.csv
+└─ logs\
+   └─ sim.log                        (gerado pelo AnyLogic)</pre>
+    <div class="tabwrap" style="max-height:none"><table>
+      <tr><th>Arquivo</th><th>Aba</th><th>Conteúdo</th></tr>
+      <tr><td><code>config/terminais_moega.csv</code></td><td>Configurações</td><td>agente, instância, segmento, Rumo/MRS/VLI</td></tr>
+      <tr><td><code>config/simulacao.csv</code></td><td>Configurações</td><td>duração, warm-up, replicações</td></tr>
+      <tr><td><code>input/tempo_entre_chegadas.csv</code></td><td>Programação</td><td>intervalo (h) por terminal × ferrovia</td></tr>
+      <tr><td><code>..\logs\sim.log</code></td><td>Logs</td><td>console da última rodada (só leitura)</td></tr>
+    </table></div>
+  </div>
+</section>
+</main>
+
+<input type="file" id="fileFallback" multiple hidden>
+
+<script>
+/* =========================================================
+   ESTADO
+   ========================================================= */
+const S = {
+  dir: null,          // handle da pasta simulacao/
+  demanda: [],        // {terminal, ferrovia, produto, toneladas, inicio, fim}
+  injects: [],        // {id_trem, hora_chegada, t_h, ferrovia, terminal, produto, n_vagoes, n_locos, pos_helper}
+  cenario: null,      // conteúdo de cenario.json
+  out: null           // {meta, resumo, eventos, ocupacao}
+};
+const temFS = 'showDirectoryPicker' in window;
+const $ = id => document.getElementById(id);
+
+/* =========================================================
+   CONFIGURAÇÃO (valores padrão; a aba 4 vai editar isto)
+   ========================================================= */
+const CFG_PADRAO = {
+  versao: 1,
+  csv_separador: ';',
+  pastas: {input:'input', output:'output'},
+  ocupacao: {alerta:70, critico:85},
+  ferrovias: [
+    {nome:'Rumo', vagoes_por_trem:82, n_locos:2, pos_helper:'',  cor:'#004B9B'},
+    {nome:'MRS',  vagoes_por_trem:82, n_locos:2, pos_helper:'',  cor:'#C77700'},
+    {nome:'VLI',  vagoes_por_trem:82, n_locos:1, pos_helper:'36', cor:'#1E8E3E'}
+  ],
+  produtos: [{nome:'Açúcar', t_por_vagao:100}, {nome:'Soja', t_por_vagao:95}, {nome:'Milho', t_por_vagao:95}],
+  etapas: [
+    {nome:'circulacao', cor:'#7FA7D9'}, {nome:'espera', cor:'#C0CCD2'}, {nome:'encoste', cor:'#004B9B'},
+    {nome:'descarga', cor:'#002A68'}, {nome:'alivio', cor:'#C77700'}
+  ]
+};
+const clone = o => JSON.parse(JSON.stringify(o));
+let CFG = clone(CFG_PADRAO);
+let TERMINAIS, FERROVIAS, SEP, COR_ETAPA, COR_FERROVIA;
+function aplicarCFG(){
+  TERMINAIS = (S.terminais || []).map(t => t.agente).filter(Boolean);
+  FERROVIAS = CFG.ferrovias.map(f => f.nome).filter(Boolean);
+  SEP = CFG.csv_separador || ';';
+  COR_ETAPA = Object.fromEntries(CFG.etapas.map(e => [e.nome, e.cor]));
+  COR_FERROVIA = Object.fromEntries(CFG.ferrovias.map(f => [f.nome, f.cor]));
+}
+aplicarCFG();
+
+/* =========================================================
+   TERMINAIS MOEGA (aba 4) — padrão lido do MargemDireitaModel1 em 03/11/2026
+   ========================================================= */
+const FERROVIAS_TERM = ['rumo','mrs','vli'];
+const COLS_TERM = ['agente','instancia','segmento', ...FERROVIAS_TERM];
+const SEGMENTOS = ['acucar','grao','celulose'];   // grafia usada no modelo
+const normTxt = v => String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+const TERMINAIS_MODELO = [
+  // ferrovias: as citadas no código de cada agente (conferir)
+  ['CoperXI','coperXI','acucar','rumo mrs vli'], ['MoegaoTerra','moegaoTerra','acucar','rumo mrs vli'], ['CostaLeite','costaLeite','grao','rumo'],
+  ['Tgrao','tgrao','grao','rumo'], ['CoperXXI','coperXXI','acucar','rumo mrs vli'], ['MoegaoMar','moegaoMar','acucar','rumo mrs vli'],
+  ['Bracell','bracell','celulose','rumo'], ['Suzano','suzano','celulose','rumo'], ['Eldorado','eldorado','celulose','rumo'],
+  ['T39','t39','grao','rumo'], ['ADM','adm','grao','rumo mrs vli'], ['TES','tes','grao','rumo mrs vli']
+].map(([agente, instancia, segmento, f]) => ({agente, instancia, segmento, ...Object.fromEntries(FERROVIAS_TERM.map(x => [x, f.split(' ').includes(x)]))}));
+const segmentoDoTerminal = ag => S.terminais.find(x => x.agente===ag)?.segmento || null;
+// ferrovias que um terminal opera (nomes como na demanda: Rumo, MRS, VLI)
+const ferroviasDoTerminal = ag => { const t = S.terminais.find(x => x.agente===ag); return t ? FERROVIAS_TERM.filter(f => t[f]) : null; };
+S.terminais = clone(TERMINAIS_MODELO);
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+const pad = n => String(n).padStart(2,'0');
+const fmtDT = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const toLocalInput = d => fmtDT(d).replace(' ','T');
+const parseDT = s => { if(!s) return null; if(s instanceof Date) return s; const d = new Date(String(s).replace(' ','T')); return isNaN(d)?null:d; };
+const num = v => { const n = parseFloat(String(v).replace(',','.')); return isNaN(n)?0:n; };
+const fmt = (n,c=0) => Number(n).toLocaleString('pt-BR',{maximumFractionDigits:c,minimumFractionDigits:c});
+
+function toCSV(rows, cols){
+  return [cols.join(SEP), ...rows.map(r => cols.map(c => r[c] ?? '').join(SEP))].join('\n');
+}
+function parseCSV(txt){
+  const linhas = txt.replace(/\r/g,'').split('\n').filter(l => l.trim());
+  if(!linhas.length) return [];
+  const sep = linhas[0].includes(';') ? ';' : ',';
+  const cab = linhas[0].split(sep).map(s => s.trim());
+  return linhas.slice(1).map(l => { const v = l.split(sep); const o = {}; cab.forEach((c,i) => o[c] = (v[i] ?? '').trim()); return o; });
+}
+function msg(el, texto, cls=''){ $(el).innerHTML = `<span class="${cls}">${texto}</span>`; }
+
+/* =========================================================
+   PASTA (File System Access API, com fallback)
+   ========================================================= */
+/* A pasta escolhida fica guardada no navegador (IndexedDB), para não se perder ao recarregar a página.
+   Sem pasta conectada, salvar/ler pede a pasta — só baixa arquivos se o navegador não tiver a API. */
+const IDB = {
+  abrir: () => new Promise((ok, erro) => { const r = indexedDB.open('sim_md', 1); r.onupgradeneeded = () => r.result.createObjectStore('h'); r.onsuccess = () => ok(r.result); r.onerror = () => erro(r.error); }),
+  async get(k){ try{ const db = await this.abrir(); return await new Promise(ok => { const q = db.transaction('h').objectStore('h').get(k); q.onsuccess = () => ok(q.result); q.onerror = () => ok(null); }); }catch(e){ return null; } },
+  async set(k, v){ try{ const db = await this.abrir(); db.transaction('h','readwrite').objectStore('h').put(v, k); }catch(e){} }
+};
+let handleSalvo = null;
+
+async function usarPasta(h){
+  // aceita a pasta "simulacao" ou a pasta do modelo que contém "simulacao"
+  try{ await h.getDirectoryHandle('logs'); await IDB.set('raiz', h); }catch(e){}
+  try{ const sub = await h.getDirectoryHandle('simulacao'); let temConfig = true;
+       try{ await h.getDirectoryHandle('config'); }catch(e){ temConfig = false; }
+       if(!temConfig) h = sub; }catch(e){}
+  let temConfig = true; try{ await h.getDirectoryHandle('config'); }catch(e){ temConfig = false; }
+  if(!temConfig && !confirm(`A pasta "${h.name}" não tem a subpasta config/.\nUsar mesmo assim? (os arquivos serão criados nela)`)) return false;
+  S.dir = h; handleSalvo = h; await IDB.set('pasta', h);
+  $('nomePasta').textContent = h.name; $('btnPasta').textContent = 'Trocar pasta';
+  await lerTerminais(true); await lerTec(true); await lerSim();
+  return true;
+}
+async function escolherPasta(){
+  try{ return await usarPasta(await window.showDirectoryPicker({mode:'readwrite', id:'sim_md'})); }
+  catch(e){ return false; }   // cancelado
+}
+// garante pasta conectada antes de ler/escrever (precisa vir de um clique)
+async function garantirPasta(){
+  if(S.dir || !temFS) return true;
+  if(handleSalvo){
+    try{ if(await handleSalvo.requestPermission({mode:'readwrite'}) === 'granted') return await usarPasta(handleSalvo); }catch(e){}
+  }
+  alert('Escolha a pasta "simulacao" para salvar e ler os arquivos.');
+  return await escolherPasta();
+}
+$('btnPasta').onclick = async () => {
+  if(!temFS){ alert('Este navegador não permite acesso direto à pasta. Use Chrome ou Edge.'); return; }
+  if(!S.dir && handleSalvo){
+    try{ if(await handleSalvo.requestPermission({mode:'readwrite'}) === 'granted'){ await usarPasta(handleSalvo); return; } }catch(e){}
+  }
+  await escolherPasta();
+};
+(async function reconectar(){
+  if(!temFS){ $('avisoFS').style.display = 'block'; $('nomePasta').textContent = 'indisponível neste navegador'; return; }
+  handleSalvo = await IDB.get('pasta');
+  if(!handleSalvo) return;
+  try{
+    if(await handleSalvo.queryPermission({mode:'readwrite'}) === 'granted'){ await usarPasta(handleSalvo); return; }
+  }catch(e){}
+  $('nomePasta').textContent = handleSalvo.name + ' (desconectada)';
+  $('btnPasta').textContent = 'Reconectar pasta';
+})();
+async function subdir(nome){ return S.dir.getDirectoryHandle(CFG.pastas[nome] || nome, {create:true}); }
+
+async function escrever(pasta, nome, texto){
+  if(!(await garantirPasta())) throw new Error('nenhuma pasta selecionada — nada foi salvo');
+  if(S.dir){
+    const fh = await (await subdir(pasta)).getFileHandle(nome,{create:true});
+    const w = await fh.createWritable(); await w.write(texto); await w.close();
+  }else{
+    if(!confirm(`Este navegador não grava direto na pasta.\n"${nome}" será BAIXADO e você terá que copiá-lo para ${pasta}/.\n\nContinuar?`)) throw new Error('cancelado — nada foi salvo');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([texto],{type:'text/plain'}));
+    a.download = nome; a.click(); URL.revokeObjectURL(a.href);
+  }
+}
+async function lerVarios(pasta, nomes){
+  // retorna {nome: texto|null}
+  const r = {};
+  if(temFS && !(await garantirPasta())){ nomes.forEach(n => r[n] = null); return r; }
+  if(S.dir){
+    const d = await subdir(pasta);
+    for(const n of nomes){
+      try{ r[n] = await (await (await d.getFileHandle(n)).getFile()).text(); }catch(e){ r[n] = null; }
+    }
+    return r;
+  }
+  return new Promise(res => {
+    const inp = $('fileFallback');
+    inp.value = '';
+    inp.onchange = async () => {
+      nomes.forEach(n => r[n] = null);
+      for(const f of inp.files){ if(nomes.includes(f.name)) r[f.name] = await f.text(); }
+      res(r);
+    };
+    alert(`Selecione os arquivos de ${pasta}/: ${nomes.join(', ')}`);
+    inp.click();
+  });
+}
+
+/* =========================================================
+   ABAS
+   ========================================================= */
+document.querySelectorAll('nav button').forEach(b => b.onclick = () => irAba(b.dataset.aba));
+function irAba(id){
+  document.querySelectorAll('nav button').forEach(b => b.classList.toggle('ativo', b.dataset.aba===id));
+  document.querySelectorAll('.aba').forEach(s => s.classList.toggle('ativa', s.id===id));
+}
+
+/* =========================================================
+   1. DEMANDA
+   ========================================================= */
+(function initPeriodo(){
+  const ini = new Date(); ini.setHours(0,0,0,0); ini.setDate(ini.getDate()+1);
+  const fim = new Date(ini); fim.setDate(fim.getDate()+7);
+  $('pInicio').value = toLocalInput(ini); $('pFim').value = toLocalInput(fim);
+})();
+
+const drop = $('drop');
+drop.onclick = () => $('fileExcel').click();
+drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
+drop.ondragleave = () => drop.classList.remove('over');
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); if(e.dataTransfer.files[0]) lerExcel(e.dataTransfer.files[0]); };
+$('fileExcel').onchange = e => e.target.files[0] && lerExcel(e.target.files[0]);
+
+function normCol(o, ...nomes){
+  const k = Object.keys(o).find(k => nomes.includes(k.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim()));
+  return k ? o[k] : '';
+}
+async function lerExcel(file){
+  const wb = XLSX.read(await file.arrayBuffer(), {cellDates:true});
+  const rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {defval:''});
+  S.demanda = rows.map(r => ({
+    terminal: String(normCol(r,'terminal')).trim(),
+    ferrovia: String(normCol(r,'ferrovia')).trim(),
+    produto:  String(normCol(r,'produto')).trim(),
+    toneladas: num(normCol(r,'toneladas','ton','t')),
+    inicio: normCol(r,'inicio') ? fmtDT(parseDT(normCol(r,'inicio'))) : '',
+    fim:    normCol(r,'fim')    ? fmtDT(parseDT(normCol(r,'fim')))    : ''
+  })).filter(r => r.terminal || r.toneladas);
+  renderDemanda();
+}
+
+function validarDemanda(){
+  const avisos = [];
+  S.demanda.forEach((d,i) => {
+    if(!TERMINAIS.includes(d.terminal)) avisos.push(`Linha ${i+1}: terminal "${d.terminal}" desconhecido`);
+    if(!FERROVIAS.includes(d.ferrovia)) avisos.push(`Linha ${i+1}: ferrovia "${d.ferrovia}" desconhecida`);
+    else { const fs = ferroviasDoTerminal(d.terminal); if(fs && !fs.includes(d.ferrovia.toLowerCase())) avisos.push(`Linha ${i+1}: ${d.terminal} não opera ${d.ferrovia}`); }
+    const seg = segmentoDoTerminal(d.terminal);
+    if(seg && d.produto && normTxt(d.produto) !== seg) avisos.push(`Linha ${i+1}: ${d.terminal} é do segmento "${seg}", produto "${d.produto}"`);
+    if(d.toneladas <= 0) avisos.push(`Linha ${i+1}: toneladas inválidas`);
+  });
+  return avisos;
+}
+
+function renderDemanda(){
+  const t = $('tabDemanda');
+  t.innerHTML = `<tr><th>Terminal</th><th>Ferrovia</th><th>Produto</th><th>Toneladas</th><th>Início (opc.)</th><th>Fim (opc.)</th><th></th></tr>` +
+    S.demanda.map((d,i) => `<tr>
+      <td>${sel('terminal',TERMINAIS,d.terminal,i,'dem')}</td>
+      <td>${sel('ferrovia',FERROVIAS,d.ferrovia,i,'dem')}</td>
+      <td><input data-t="dem" data-i="${i}" data-c="produto" value="${d.produto}"></td>
+      <td><input data-t="dem" data-i="${i}" data-c="toneladas" type="number" value="${d.toneladas}"></td>
+      <td><input data-t="dem" data-i="${i}" data-c="inicio" value="${d.inicio}" placeholder="aaaa-mm-dd hh:mm"></td>
+      <td><input data-t="dem" data-i="${i}" data-c="fim" value="${d.fim}" placeholder="aaaa-mm-dd hh:mm"></td>
+      <td class="x" data-del="dem" data-i="${i}">✕</td></tr>`).join('');
+  const av = validarDemanda();
+  const tot = S.demanda.reduce((s,d) => s+d.toneladas, 0);
+  $('msgDemanda').innerHTML = S.demanda.length
+    ? `<span class="ok">✓ ${S.demanda.length} linhas · ${fmt(tot)} t</span>` + (av.length ? `<br><span class="warn">⚠ ${av.join('<br>⚠ ')}</span>` : '')
+    : '';
+}
+function sel(c, ops, v, i, t){
+  const lista = ops.includes(v) || !v ? ops : [v, ...ops];
+  return `<select data-t="${t}" data-i="${i}" data-c="${c}">${lista.map(o => `<option ${o===v?'selected':''}>${o}</option>`).join('')}</select>`;
+}
+
+// edição inline da demanda
+document.addEventListener('change', e => {
+  const el = e.target; if(!el.dataset.t) return;
+  const c = el.dataset.c;
+  S.demanda[+el.dataset.i][c] = c==='toneladas' ? num(el.value) : el.value;
+  renderDemanda();
+});
+document.addEventListener('click', e => {
+  const el = e.target; if(!el.dataset.del) return;
+  S.demanda.splice(+el.dataset.i,1); renderDemanda();
+});
+
+$('btnAddDem').onclick = () => { S.demanda.push({terminal:TERMINAIS[0],ferrovia:FERROVIAS[0],produto:'',toneladas:0,inicio:'',fim:''}); renderDemanda(); };
+
+$('btnModelo').onclick = () => {
+  const ws = XLSX.utils.json_to_sheet([
+    {Terminal:'CoperXI',Ferrovia:'Rumo',Produto:'Açúcar',Toneladas:120000,Inicio:'',Fim:''},
+    {Terminal:'CoperXI',Ferrovia:'VLI',Produto:'Açúcar',Toneladas:40000,Inicio:'',Fim:''},
+    {Terminal:'T39',Ferrovia:'MRS',Produto:'Soja',Toneladas:60000,Inicio:'',Fim:''}
+  ]);
+  const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Demanda');
+  XLSX.writeFile(wb, 'modelo_demanda.xlsx');
+};
+
+/* ---------- conversão demanda → trens ---------- */
+function locosDaFerrovia(nome){
+  const f = CFG.ferrovias.find(x => x.nome===nome);
+  return {n_locos: num(f?.n_locos) || 1, pos_helper: f?.pos_helper ?? ''};
+}
+const vagoesDaFerrovia = (nome, padrao) => num(CFG.ferrovias.find(x => x.nome===nome)?.vagoes_por_trem) || padrao;
+const tonDoProduto = (nome, padrao) => num(CFG.produtos.find(x => x.nome.toLowerCase()===String(nome).toLowerCase())?.t_por_vagao) || padrao;
+
+$('btnGerar').onclick = () => {
+  const av = validarDemanda();
+  if(av.length && !confirm(`Há avisos na demanda:\n${av.join('\n')}\n\nGerar mesmo assim?`)) return;
+  const pIni = parseDT($('pInicio').value), pFim = parseDT($('pFim').value);
+  const vag = num($('pVagoes').value), tVag = num($('pTVag').value);
+  if(!pIni || !pFim || pFim<=pIni || vag<=0 || tVag<=0){ alert('Confira período, vagões/trem e t/vagão.'); return; }
+
+  const lista = [];
+  for(const d of S.demanda){
+    const ini = parseDT(d.inicio) || pIni, fim = parseDT(d.fim) || pFim;
+    const vagF = vagoesDaFerrovia(d.ferrovia, vag), tVagP = tonDoProduto(d.produto, tVag);
+    const cap = vagF*tVagP, n = Math.ceil(d.toneladas/cap);
+    const passo = (fim-ini)/n;
+    let resta = d.toneladas;
+    for(let k=0;k<n;k++){
+      const hora = new Date(ini.getTime() + passo*(k+0.5));
+      const nv = Math.min(vagF, Math.ceil(resta/tVagP)); resta -= nv*tVagP;
+      lista.push({hora_chegada:fmtDT(hora), ferrovia:d.ferrovia, terminal:d.terminal, produto:d.produto, n_vagoes:nv, ...locosDaFerrovia(d.ferrovia)});
+    }
+  }
+  lista.sort((a,b) => a.hora_chegada.localeCompare(b.hora_chegada));
+  S.injects = lista.map((t,i) => ({id_trem:`T${String(i+1).padStart(3,'0')}`, ...t}));
+  recalcTh();
+  novoCenario();
+  msg('msgGerar', `✓ ${S.injects.length} trens gerados — cenário ${S.cenario.id_cenario}`, 'ok');
+};
+
+function novoCenario(){
+  const agora = new Date();
+  S.cenario = {
+    id_cenario: `CEN-${agora.getFullYear()}${pad(agora.getMonth()+1)}${pad(agora.getDate())}-${pad(agora.getHours())}${pad(agora.getMinutes())}${pad(agora.getSeconds())}`,
+    nome: $('pNome').value || '',
+    criado_em: fmtDT(agora),
+    inicio: fmtDT(parseDT($('pInicio').value)),
+    fim: fmtDT(parseDT($('pFim').value)),
+    vagoes_por_trem: num($('pVagoes').value),
+    t_por_vagao: num($('pTVag').value),
+    config: {ferrovias: CFG.ferrovias, produtos: CFG.produtos}   // snapshot: o cenário fica reprodutível
+  };
+}
+function inicioCenario(){ return parseDT(S.cenario?.inicio || $('pInicio').value); }
+function recalcTh(){ const i0 = inicioCenario(); S.injects.forEach(t => { const h = parseDT(t.hora_chegada); t.t_h = h ? +((h-i0)/36e5).toFixed(2) : 0; }); }
+
+/* =========================================================
+   4. CONFIGURAÇÕES — cadastro de terminais (ITerminalMoega)
+   ========================================================= */
+function renderTerminais(){
+  $('tabTerm').innerHTML = `<tr>${COLS_TERM.map(c => `<th${FERROVIAS_TERM.includes(c)?' style="text-align:center"':''}>${FERROVIAS_TERM.includes(c) ? {rumo:'Rumo',mrs:'MRS',vli:'VLI'}[c] : c}</th>`).join('')}<th></th></tr>` +
+    S.terminais.map((t,i) => `<tr>${COLS_TERM.map(c => {
+      if(c==='segmento') return `<td><input list="lstSeg" data-term="${i}" data-c="${c}" value="${t[c] ?? ''}"></td>`;
+      if(FERROVIAS_TERM.includes(c)) return `<td style="text-align:center"><input type="checkbox" style="width:auto" data-term="${i}" data-c="${c}" ${t[c]?'checked':''}></td>`;
+      return `<td><input data-term="${i}" data-c="${c}" value="${t[c] ?? ''}"></td>`;
+    }).join('')}<td class="x" data-termdel="${i}">✕</td></tr>`).join('') +
+    `<datalist id="lstSeg">${[...new Set([...SEGMENTOS, ...S.terminais.map(t => t.segmento).filter(Boolean)])].map(v => `<option value="${v}">`).join('')}</datalist>`;
+}
+function terminaisMudaram(aviso=true){
+  aplicarCFG(); renderTerminais(); renderDemanda(); renderTec();
+  if(aviso) msg('msgTerm', 'Alterações não salvas — clique em <b>Salvar CSV</b>.', 'warn');
+}
+document.addEventListener('change', e => {
+  const el = e.target; if(el.dataset.term === undefined) return;
+  const c = el.dataset.c;
+  S.terminais[+el.dataset.term][c] = el.type==='checkbox' ? el.checked : c==='segmento' ? normTxt(el.value) : el.value.trim();
+  // instância sugerida a partir do agente (CoperXI → coperXI)
+  if(c==='agente' && !S.terminais[+el.dataset.term].instancia)
+    S.terminais[+el.dataset.term].instancia = el.value.trim().charAt(0).toLowerCase() + el.value.trim().slice(1);
+  terminaisMudaram();
+});
+document.addEventListener('click', e => {
+  const i = e.target.dataset.termdel; if(i === undefined) return;
+  if(!confirm(`Remover ${S.terminais[+i].agente || 'este terminal'}?`)) return;
+  S.terminais.splice(+i,1); terminaisMudaram();
+});
+$('btnTermAdd').onclick = () => {
+  S.terminais.push({agente:'', instancia:'', segmento:'', rumo:true, mrs:true, vli:true});
+  renderTerminais();
+};
+
+function validarTerminais(){
+  const erros = [];
+  S.terminais.forEach((t,i) => {
+    const n = t.agente || `linha ${i+1}`;
+    if(!t.agente) erros.push(`Linha ${i+1}: agente vazio`);
+    else if(!/^[A-Za-z_]\w*$/.test(t.agente)) erros.push(`${n}: agente não é um nome Java válido`);
+    if(!t.instancia) erros.push(`${n}: instância vazia`);
+    else if(!/^[A-Za-z_]\w*$/.test(t.instancia)) erros.push(`${n}: instância não é um nome Java válido`);
+    if(!FERROVIAS_TERM.some(f => t[f])) erros.push(`${n}: marque ao menos uma ferrovia`);
+    if(!t.segmento) erros.push(`${n}: segmento vazio`);
+  });
+  ['agente','instancia'].forEach(c => {
+    const v = S.terminais.map(t => t[c]).filter(Boolean);
+    const rep = v.filter((x,i) => v.indexOf(x) !== i);
+    if(rep.length) erros.push(`${c} repetido: ${[...new Set(rep)].join(', ')}`);
+  });
+  return erros;
+}
+
+$('btnTermSalvar').onclick = async () => {
+  const erros = validarTerminais();
+  if(erros.length){ msg('msgTerm', '✕ ' + erros.join('<br>✕ '), 'err'); return; }
+  try{
+    await escrever('config', 'terminais_moega.csv', toCSV(S.terminais, COLS_TERM));
+    msg('msgTerm', `✓ ${S.terminais.length} terminais salvos em ${S.dir ? S.dir.name + '/config/terminais_moega.csv' : 'downloads (terminais_moega.csv)'}`, 'ok');
+  }catch(e){ msg('msgTerm', 'Erro ao salvar: ' + e.message, 'err'); }
+};
+
+async function lerTerminais(silencioso=false){
+  const r = await lerVarios('config', ['terminais_moega.csv']);
+  const txt = r['terminais_moega.csv'];
+  if(!txt){
+    if(!silencioso) msg('msgTerm', 'config/terminais_moega.csv não encontrado — usando o cadastro atual. Salve para criar o arquivo.', 'warn');
+    else msg('msgTerm', 'Pasta sem config/terminais_moega.csv — mostrando os terminais do modelo. Salve para criar o arquivo.', 'warn');
+    return;
+  }
+  S.terminais = parseCSV(txt).map(t => ({agente: t.agente || '', instancia: t.instancia || '', segmento: normTxt(t.segmento), ...Object.fromEntries(FERROVIAS_TERM.map(f => [f, String(t[f]).toLowerCase()==='true']))}));
+  terminaisMudaram(false);
+  msg('msgTerm', `✓ ${S.terminais.length} terminais carregados de config/terminais_moega.csv`, 'ok');
+}
+$('btnTermLer').onclick = () => lerTerminais(false);
+$('btnTermPadrao').onclick = () => {
+  if(!confirm('Substituir o cadastro pelos 12 terminais do modelo? (só grava ao salvar)')) return;
+  S.terminais = clone(TERMINAIS_MODELO); terminaisMudaram();
+};
+
+/* =========================================================
+   2. PROGRAMAÇÃO — tempo entre chegadas (h) por terminal × ferrovia
+   ========================================================= */
+const NOME_FERROVIA = {rumo:'Rumo', mrs:'MRS', vli:'VLI'};
+const COLS_TEC = ['agente','instancia','ferrovia','intervalo_h'];
+S.tec = {};   // { agente: { rumo: 12, mrs: '', vli: 8 } }
+
+function renderTec(){
+  $('tabTec').innerHTML = `<tr><th>Terminal</th><th>Segmento</th>${FERROVIAS_TERM.map(f => `<th style="text-align:center">${NOME_FERROVIA[f]} (h)</th>`).join('')}</tr>` +
+    S.terminais.filter(t => t.agente).map(t => `<tr><td><b>${t.agente}</b></td><td>${t.segmento || ''}</td>${FERROVIAS_TERM.map(f => {
+      if(!t[f]) return `<td style="text-align:center;color:#99a">—</td>`;
+      const v = S.tec[t.agente]?.[f] ?? '';
+      return `<td><input type="number" min="0" step="0.5" style="text-align:center" data-tec="${t.agente}" data-f="${f}" value="${v}" placeholder="—"></td>`;
+    }).join('')}</tr>`).join('');
+}
+document.addEventListener('change', e => {
+  const el = e.target; if(el.dataset.tec === undefined) return;
+  const v = el.value.trim();
+  (S.tec[el.dataset.tec] ||= {})[el.dataset.f] = v === '' ? '' : num(v);
+  msg('msgTec', 'Alterações não salvas — clique em <b>Salvar em input/</b>.', 'warn');
+});
+
+function linhasTec(){
+  const linhas = [];
+  for(const t of S.terminais){
+    for(const f of FERROVIAS_TERM){
+      const v = S.tec[t.agente]?.[f];
+      if(t[f] && v !== '' && v !== undefined) linhas.push({agente:t.agente, instancia:t.instancia, ferrovia:NOME_FERROVIA[f], intervalo_h:v});
+    }
+  }
+  return linhas;
+}
+$('btnTecSalvar').onclick = async () => {
+  const linhas = linhasTec();
+  const ruins = linhas.filter(l => !(num(l.intervalo_h) > 0));
+  if(ruins.length){ msg('msgTec', '✕ Intervalo deve ser maior que 0: ' + ruins.map(l => `${l.agente}/${l.ferrovia}`).join(', '), 'err'); return; }
+  if(!linhas.length){ msg('msgTec', 'Nenhum intervalo preenchido.', 'warn'); return; }
+  try{
+    await escrever('input', 'tempo_entre_chegadas.csv', toCSV(linhas, COLS_TEC));
+    msg('msgTec', `✓ ${linhas.length} combinações salvas em ${S.dir ? S.dir.name + '/input/tempo_entre_chegadas.csv' : 'downloads'}`, 'ok');
+  }catch(e){ msg('msgTec', 'Erro ao salvar: ' + e.message, 'err'); }
+};
+async function lerTec(silencioso=false){
+  const r = await lerVarios('input', ['tempo_entre_chegadas.csv']);
+  const txt = r['tempo_entre_chegadas.csv'];
+  if(!txt){ if(!silencioso) msg('msgTec', 'input/tempo_entre_chegadas.csv não encontrado.', 'warn'); return; }
+  S.tec = {};
+  const ignoradas = [];
+  for(const l of parseCSV(txt)){
+    const f = normTxt(l.ferrovia);
+    const t = S.terminais.find(x => x.agente === l.agente);
+    if(!t || !FERROVIAS_TERM.includes(f) || !t[f]){ ignoradas.push(`${l.agente}/${l.ferrovia}`); continue; }
+    (S.tec[l.agente] ||= {})[f] = num(l.intervalo_h);
+  }
+  renderTec();
+  msg('msgTec', `✓ Carregado de input/tempo_entre_chegadas.csv` + (ignoradas.length ? `<br><span class="warn">⚠ Ignoradas (terminal/ferrovia não cadastrado): ${ignoradas.join(', ')}</span>` : ''), 'ok');
+}
+$('btnTecLer').onclick = () => lerTec(false);
+
+/* =========================================================
+   4. CONFIGURAÇÕES — parâmetros da simulação
+   ========================================================= */
+const COLS_SIM = ['duracao_h','warmup_h','replicacoes'];
+S.sim = {duracao_h:720, warmup_h:48, replicacoes:5};
+
+function renderSim(){
+  $('sDuracao').value = S.sim.duracao_h; $('sWarmup').value = S.sim.warmup_h; $('sReplic').value = S.sim.replicacoes;
+  document.querySelectorAll('.atalho').forEach(b => b.classList.toggle('ativo', +b.dataset.h === S.sim.duracao_h));
+  const util = S.sim.duracao_h - S.sim.warmup_h;
+  $('sResumo').innerHTML = util > 0
+    ? `Período medido: <b>${fmt(util)} h</b> (${fmt(util/24,1)} dias) por replicação · ${S.sim.replicacoes} replicação(ões) · ${fmt(S.sim.duracao_h*S.sim.replicacoes)} h simuladas no total.`
+    : '';
+}
+function validarSim(){
+  const e = [], v = S.sim;
+  if(!(v.duracao_h > 0)) e.push('tempo de simulação deve ser maior que 0');
+  if(v.warmup_h < 0) e.push('warm-up não pode ser negativo');
+  if(v.warmup_h >= v.duracao_h) e.push('warm-up deve ser menor que o tempo de simulação');
+  if(!(v.replicacoes >= 1) || !Number.isInteger(v.replicacoes)) e.push('replicações deve ser inteiro ≥ 1');
+  return e;
+}
+[['sDuracao','duracao_h'],['sWarmup','warmup_h'],['sReplic','replicacoes']].forEach(([id,k]) =>
+  $(id).addEventListener('change', e => {
+    S.sim[k] = k==='replicacoes' ? Math.round(num(e.target.value)) : num(e.target.value);
+    renderSim();
+    const erros = validarSim();
+    msg('msgSim', erros.length ? '✕ ' + erros.join('<br>✕ ') : 'Alterações não salvas — clique em <b>Salvar</b>.', erros.length ? 'err' : 'warn');
+  }));
+document.querySelectorAll('.atalho').forEach(b => b.onclick = () => {
+  $('sDuracao').value = b.dataset.h;
+  $('sDuracao').dispatchEvent(new Event('change'));
+});
+$('btnSimSalvar').onclick = async () => {
+  const erros = validarSim();
+  if(erros.length){ msg('msgSim', '✕ ' + erros.join('<br>✕ '), 'err'); return; }
+  try{
+    await escrever('config', 'simulacao.csv', toCSV([S.sim], COLS_SIM));
+    msg('msgSim', `✓ Salvo em ${S.dir ? S.dir.name + '/config/simulacao.csv' : 'downloads (simulacao.csv)'}`, 'ok');
+  }catch(e){ msg('msgSim', 'Erro ao salvar: ' + e.message, 'err'); }
+};
+async function lerSim(){
+  const txt = (await lerVarios('config', ['simulacao.csv']))['simulacao.csv'];
+  if(!txt){ msg('msgSim', 'Pasta sem config/simulacao.csv — mostrando valores padrão. Salve para criar o arquivo.', 'warn'); return; }
+  const l = parseCSV(txt)[0] || {};
+  S.sim = {duracao_h: num(l.duracao_h) || S.sim.duracao_h, warmup_h: num(l.warmup_h), replicacoes: Math.max(1, Math.round(num(l.replicacoes)) || 1)};
+  renderSim();
+  msg('msgSim', '✓ Carregado de config/simulacao.csv', 'ok');
+}
+
+/* =========================================================
+   4. LOGS — lê logs/sim.log (fica fora da pasta simulacao, por isso tem handle próprio)
+   ========================================================= */
+S.log = {handle:null, linhas:[], info:[], timer:null, faixa:null};
+/* Formato novo do logger:  [    1.228h] INFO  CoperXI         evento   mensagem
+   Formato antigo:          [config] ...  /  [%.1f][Tag][...] ...  (tempo em segundos) */
+const RX_NOVO = /^\[\s*(-?[\d.,]+)h\]\s+([A-Z]+)\s+(\S+)\s+(\S+)?\s*(.*)$/;
+function parseLinha(l, tAnterior){
+  let m = l.match(RX_NOVO);
+  if(m) return {t: parseFloat(m[1].replace(',','.')), nivel: m[2], agente: m[3], evento: m[4] || ''};
+  m = l.match(/\[(-?\d+(?:[.,]\d+)?)\]\[([^\]]+)\]/);               // [123.4][Tag] (segundos)
+  if(m) return {t: parseFloat(m[1].replace(',','.'))/3600, nivel: RX_ERRO.test(l)?'ERRO':RX_AVISO.test(l)?'AVISO':'INFO', agente: m[2], evento: ''};
+  m = l.match(/^\[([^\]\d][^\]]*)\]/);                                   // [config] ... (sem tempo)
+  if(m) return {t: tAnterior ?? 0, nivel: RX_ERRO.test(l)?'ERRO':RX_AVISO.test(l)?'AVISO':'INFO', agente: m[1], evento: '', semTempo: true};
+  return {t: tAnterior ?? 0, nivel: RX_ERRO.test(l)?'ERRO':'INFO', agente: '(outros)', evento: '', semTempo: true};
+}
+function nivelDe(i){ const n = S.log.info[i]?.nivel || ''; return /^(ERRO|ERROR|FATAL)$/.test(n) ? 'erro' : /^(AVISO|WARN|WARNING)$/.test(n) ? 'aviso' : 'info'; }
+const escHtml = t => t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const RX_ERRO = /\b(ERRO|ERROR|Exception|Erro)\b|at com\.|at margemdireitamodel|Caused by/;
+const RX_AVISO = /\b(AVISO|WARN|Aviso)\b/;
+
+async function obterHandleLog(pedir){
+  if(S.log.handle) return S.log.handle;
+  // 1) a pasta do modelo é a mãe de "simulacao": tenta pelo handle salvo dela
+  const raiz = await IDB.get('raiz');
+  if(raiz){ try{ if(await raiz.requestPermission({mode:'read'}) === 'granted'){
+      S.log.handle = await (await raiz.getDirectoryHandle('logs')).getFileHandle('sim.log'); return S.log.handle; } }catch(e){} }
+  // 2) o arquivo escolhido antes
+  const h = await IDB.get('simlog');
+  if(h){ try{ if(await h.requestPermission({mode:'read'}) === 'granted'){ S.log.handle = h; return h; } }catch(e){} }
+  if(!pedir) return null;
+  return await escolherLog();
+}
+async function escolherLog(){
+  if(!('showOpenFilePicker' in window)){ alert('Este navegador não abre arquivos por caminho. Use Chrome ou Edge.'); return null; }
+  try{
+    const [h] = await window.showOpenFilePicker({id:'simlog', multiple:false, types:[{description:'Log', accept:{'text/plain':['.log','.txt']}}]});
+    S.log.handle = h; await IDB.set('simlog', h); return h;
+  }catch(e){ return null; }
+}
+async function lerLog(pedir=true){
+  const h = await obterHandleLog(pedir);
+  if(!h){ msg('msgLog', 'Escolha o arquivo <code>MargemDireitaModel1\\logs\\sim.log</code>.', 'warn'); return; }
+  try{
+    const f = await h.getFile();
+    S.log.linhas = (await f.text()).replace(/\r/g,'').split('\n');
+    if(S.log.linhas[S.log.linhas.length-1] === '') S.log.linhas.pop();
+    let tAnt = 0; S.log.info = S.log.linhas.map(l => { const p = parseLinha(l, tAnt); if(!p.semTempo) tAnt = p.t; return p; });
+    const quando = new Date(f.lastModified).toLocaleString('pt-BR');
+    msg('msgLog', `<b>${h.name}</b> · ${S.log.linhas.length} linhas · modificado em ${quando}`, 'ok');
+    atualizarTags(); renderLog();
+  }catch(e){ msg('msgLog', 'Erro ao ler o log: ' + e.message, 'err'); }
+}
+function atualizarTags(){
+  const atual = $('logTag').value, cont = {};
+  for(const p of S.log.info) cont[p.agente] = (cont[p.agente]||0) + 1;
+  $('logTag').innerHTML = '<option value="">todas</option>' +
+    Object.keys(cont).sort().map(t => `<option value="${escHtml(t)}" ${t===atual?'selected':''}>${escHtml(t)} (${cont[t]})</option>`).join('');
+}
+function renderLog(){
+  const txt = $('logFiltro').value.trim(), tag = $('logTag').value, nivel = $('logNivel').value, max = +$('logMax').value;
+  let rx = null, erroRx = '';
+  if(txt){
+    const m = txt.match(/^\/(.+)\/([gimsuy]*)$/);
+    try{ rx = m ? new RegExp(m[1], m[2].includes('i') ? m[2] : m[2] + 'i') : new RegExp(txt.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'i'); }
+    catch(e){ erroRx = ' · regex inválida'; }
+  }
+  const sel = [];
+  S.log.linhas.forEach((l,i) => {
+    const p = S.log.info[i] || {};
+    if(tag && p.agente !== tag) return;
+    const nv = nivelDe(i);
+    if(nivel === 'erro' && nv !== 'erro' && !RX_ERRO.test(l)) return;
+    if(nivel === 'aviso' && nv === 'info' && !RX_ERRO.test(l) && !RX_AVISO.test(l)) return;
+    if(S.log.faixa && (p.t < S.log.faixa[0] || p.t > S.log.faixa[1])) return;
+    if(rx && !rx.test(l)) return;
+    sel.push(i);
+  });
+  const mostra = max ? sel.slice(-max) : sel;
+  const larg = String(S.log.linhas.length).length;
+  $('logTexto').innerHTML = mostra.map(i => {
+    const l = S.log.linhas[i];
+    let h = escHtml(l);
+    if(rx){   // destaca no texto original e escapa cada pedaço
+      const g = new RegExp(rx.source, 'gi'); let out = '', ult = 0, m;
+      while((m = g.exec(l)) !== null){
+        if(m[0] === ''){ g.lastIndex++; continue; }
+        out += escHtml(l.slice(ult, m.index)) + `<mark style="background:#F2C94C;color:#000">${escHtml(m[0])}</mark>`;
+        ult = m.index + m[0].length;
+      }
+      h = out + escHtml(l.slice(ult));
+    }
+    const nv = nivelDe(i);
+    const cor = nv==='erro' || RX_ERRO.test(l) ? '#FF8A80' : nv==='aviso' || RX_AVISO.test(l) ? '#FFD180' : '';
+    return `<span id="ll${i}" style="color:#6B7F99">${String(i+1).padStart(larg,' ')}</span>  ${cor ? `<span style="color:${cor}">${h}</span>` : h}`;
+  }).join('\n') || '<span style="color:#6B7F99">(nenhuma linha)</span>';
+  $('logResumo').textContent = S.log.linhas.length
+    ? `${sel.length} de ${S.log.linhas.length} linhas` + (mostra.length < sel.length ? ` · mostrando as últimas ${mostra.length}` : '') + erroRx
+    : '';
+  const pre = $('logTexto'); pre.scrollTop = pre.scrollHeight;
+  renderGantt(sel);
+}
+/* ---------- Linha do tempo por agente (canvas) ---------- */
+const G = {sel:[], linhas:[], x0:0, x1:1, L:130, RH:22, TOP:22, marcas:[], arrasto:null};
+const COR_NIVEL = {info:'#004B9B', aviso:'#C77700', erro:'#C62828'};
+function renderGantt(sel){
+  G.sel = sel || G.sel;
+  const cv = $('ganttCanvas'), wrap = $('ganttWrap');
+  const comTempo = G.sel.filter(i => S.log.info[i]);
+  const agentes = []; const ix = {};
+  for(const i of comTempo){ const a = S.log.info[i].agente; if(!(a in ix)){ ix[a] = agentes.length; agentes.push(a); } }
+  G.linhas = agentes;
+  const ts = comTempo.map(i => S.log.info[i].t);
+  const tMin = ts.length ? Math.min(...ts) : 0, tMax = ts.length ? Math.max(...ts) : 1;
+  if(S.log.faixa){ G.x0 = S.log.faixa[0]; G.x1 = S.log.faixa[1]; }
+  else { G.x0 = tMin; G.x1 = tMax > tMin ? tMax : tMin + 1; }
+  const W = wrap.clientWidth || 800, H = G.TOP + Math.max(1, agentes.length) * G.RH + 6, dpr = window.devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; cv.style.height = H + 'px';
+  const c = cv.getContext('2d'); c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,W,H);
+  const X = t => G.L + (t - G.x0) / (G.x1 - G.x0) * (W - G.L - 10);
+  c.font = '11px "Open Sans", sans-serif'; c.textBaseline = 'middle';
+  // grade de tempo
+  const span = G.x1 - G.x0, passos = [0.01,0.02,0.05,0.1,0.25,0.5,1,2,6,12,24,48,168];
+  const passo = passos.find(p => span / p <= 10) || 336;
+  c.strokeStyle = '#E3E9EF'; c.fillStyle = '#667'; c.textAlign = 'center';
+  for(let t = Math.ceil(G.x0 / passo) * passo; t <= G.x1 + 1e-9; t += passo){
+    const x = X(t); c.beginPath(); c.moveTo(x, G.TOP - 4); c.lineTo(x, H - 4); c.stroke();
+    c.fillText((passo < 1 ? t.toFixed(2) : t.toFixed(passo < 6 ? 1 : 0)) + ' h', x, 10);
+  }
+  // linhas dos agentes
+  c.textAlign = 'left';
+  agentes.forEach((a, j) => {
+    const y = G.TOP + j * G.RH;
+    if(j % 2) { c.fillStyle = '#F5F7FA'; c.fillRect(0, y, W, G.RH); }
+    c.fillStyle = a === $('logTag').value ? '#004B9B' : '#1c2633';
+    c.font = (a === $('logTag').value ? '600 ' : '') + '12px "Open Sans", sans-serif';
+    c.fillText(a.length > 18 ? a.slice(0,17) + '…' : a, 6, y + G.RH / 2);
+  });
+  // marcas (erros por cima)
+  G.marcas = [];
+  const ordem = {info:0, aviso:1, erro:2};
+  comTempo.slice().sort((a,b) => ordem[nivelDe(a)] - ordem[nivelDe(b)]).forEach(i => {
+    const p = S.log.info[i]; if(p.t < G.x0 || p.t > G.x1) return;
+    const x = X(p.t), y = G.TOP + ix[p.agente] * G.RH, nv = nivelDe(i);
+    c.fillStyle = COR_NIVEL[nv]; c.globalAlpha = nv === 'info' ? 0.7 : 1;
+    c.fillRect(Math.round(x) - (nv==='info'?1:1.5), y + 4, nv==='info'?2:3, G.RH - 8);
+    G.marcas.push({x, y, i});
+  });
+  c.globalAlpha = 1;
+  // seleção em andamento
+  if(G.arrasto && Math.abs(G.arrasto.x1 - G.arrasto.x0) > 3){
+    c.fillStyle = 'rgba(0,75,155,0.12)'; c.strokeStyle = '#004B9B';
+    const a = Math.min(G.arrasto.x0, G.arrasto.x1), b = Math.max(G.arrasto.x0, G.arrasto.x1);
+    c.fillRect(a, G.TOP, b - a, H - G.TOP - 4); c.strokeRect(a, G.TOP, b - a, H - G.TOP - 4);
+  }
+  G.X = X; G.W = W; G.H = H;
+  $('ganttResumo').textContent = comTempo.length
+    ? `${agentes.length} agentes · ${comTempo.length} linhas · ${fmt(tMin,2)} h a ${fmt(tMax,2)} h`
+    : 'Nenhuma linha com os filtros atuais.';
+  $('ganttIntervalo').textContent = S.log.faixa ? `Intervalo: ${fmt(S.log.faixa[0],3)} h – ${fmt(S.log.faixa[1],3)} h` : '';
+}
+const tDoX = x => G.x0 + (x - G.L) / (G.W - G.L - 10) * (G.x1 - G.x0);
+function marcaPerto(x, y){
+  let melhor = null, d = 6;
+  for(const m of G.marcas){ if(y < m.y || y > m.y + G.RH) continue; const dd = Math.abs(m.x - x); if(dd <= d){ d = dd; melhor = m; } }
+  return melhor;
+}
+function posMouse(e){ const r = $('ganttCanvas').getBoundingClientRect(); return {x: e.clientX - r.left, y: e.clientY - r.top}; }
+$('ganttCanvas').addEventListener('mousedown', e => {
+  const p = posMouse(e); if(p.x < G.L) return;
+  G.arrasto = {x0: p.x, x1: p.x};
+});
+window.addEventListener('mousemove', e => {
+  const cv = $('ganttCanvas'), p = posMouse(e), tip = $('ganttTip');
+  if(G.arrasto){ G.arrasto.x1 = Math.max(G.L, Math.min(G.W - 10, p.x)); renderGantt(); tip.style.display = 'none'; return; }
+  if(e.target !== cv){ tip.style.display = 'none'; return; }
+  const m = p.x >= G.L ? marcaPerto(p.x, p.y) : null;
+  cv.style.cursor = p.x < G.L ? 'pointer' : m ? 'pointer' : 'crosshair';
+  if(!m){ tip.style.display = 'none'; return; }
+  tip.textContent = `${m.i+1}: ${S.log.linhas[m.i]}`;
+  tip.style.display = 'block';
+  const larg = $('ganttWrap').clientWidth;
+  tip.style.left = Math.min(p.x + 12, larg - 360) + 'px'; tip.style.top = (p.y + 14) + 'px';
+});
+window.addEventListener('mouseup', e => {
+  if(!G.arrasto) return;
+  const a = Math.min(G.arrasto.x0, G.arrasto.x1), b = Math.max(G.arrasto.x0, G.arrasto.x1);
+  G.arrasto = null;
+  if(b - a > 3){ S.log.faixa = [tDoX(a), tDoX(b)]; renderLog(); }
+  else renderGantt();
+});
+$('ganttCanvas').addEventListener('click', e => {
+  const p = posMouse(e);
+  if(p.x < G.L){   // nome do agente: filtra por ele (clique de novo para limpar)
+    const j = Math.floor((p.y - G.TOP) / G.RH), a = G.linhas[j]; if(!a) return;
+    $('logTag').value = $('logTag').value === a ? '' : a; renderLog(); return;
+  }
+  const m = marcaPerto(p.x, p.y); if(!m) return;
+  const larg = String(S.log.linhas.length).length, ini = Math.max(0, m.i - 3), fim = Math.min(S.log.linhas.length - 1, m.i + 3);
+  const det = $('ganttDetalhe');
+  det.innerHTML = '';
+  for(let k = ini; k <= fim; k++){
+    const sp = document.createElement('div');
+    sp.textContent = `${String(k+1).padStart(larg,' ')}  ${S.log.linhas[k]}`;
+    if(k === m.i){ sp.style.background = 'rgba(242,201,76,0.25)'; sp.style.color = '#fff'; }
+    det.appendChild(sp);
+  }
+  det.style.display = 'block';
+  const alvo = document.getElementById('ll' + m.i);
+  if(alvo){ const pre = $('logTexto'); pre.scrollTop = alvo.offsetTop - pre.offsetTop - 40; }
+});
+$('btnGanttTudo').onclick = () => { S.log.faixa = null; $('ganttDetalhe').style.display = 'none'; renderLog(); };
+window.addEventListener('resize', () => { if(S.log.linhas.length) renderGantt(); });
+
+['logFiltro','logTag','logNivel','logMax'].forEach(id => $(id).addEventListener(id==='logFiltro' ? 'input' : 'change', renderLog));
+$('btnLogLer').onclick = () => lerLog(true);
+$('btnLogAbrir').onclick = async () => { S.log.handle = null; if(await escolherLog()) lerLog(false); };
+$('logAuto').onchange = e => {
+  clearInterval(S.log.timer);
+  if(e.target.checked) S.log.timer = setInterval(() => S.log.handle && lerLog(false), 5000);
+};
+// ao abrir a aba, lê o log se já tiver acesso
+document.querySelector('nav button[data-aba="logs"]').addEventListener('click', () => { if(!S.log.linhas.length) lerLog(false); });
+
+aplicarCFG(); renderTerminais(); renderDemanda(); renderTec(); renderSim();
+</script>
+</body>
+</html>

@@ -212,6 +212,28 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+		<Id>1795850000401</Id>
+		<Name><![CDATA[contador_mnb]]></Name>
+		<X>350</X>
+		<Y>360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[-1]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
 		<Id>1791479119430</Id>
 		<Name><![CDATA[lote_alivio_pst]]></Name>
 		<X>120</X>
@@ -237,7 +259,7 @@
 		<Id>1791479810863</Id>
 		<Name><![CDATA[alivio_em_andamento_pst]]></Name>
 		<X>350</X>
-		<Y>360</Y>
+		<Y>380</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

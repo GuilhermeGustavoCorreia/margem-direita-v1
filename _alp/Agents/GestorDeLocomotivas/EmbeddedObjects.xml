@@ -2237,7 +2237,7 @@
 			<Parameter>
 				<Name><![CDATA[onRelease]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(" [rp_locoFips_pcx] " + agent + " devolveu 1 unidade"
+					<Code><![CDATA[Log.info("GesLocomotivas", "rp_locoFips_pcx", agent + " devolveu 1 unidade"
     + " | idle=" + rp_locoFips_pcx.idle()
     + " busy=" + rp_locoFips_pcx.busy()
     + " cap=" + rp_locoFips_pcx.size());]]></Code>
@@ -3770,7 +3770,7 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-004: contador de locos = locomotivasRumo.size(); não mexer mais na capacidade do pool
+					<Code><![CDATA[// contador de locos = locomotivasRumo.size(); não mexer mais na capacidade do pool
 //rp_locoRumo.set_capacity(rp_locoRumo.size() + 1);]]></Code>
 				</Value>
 			</Parameter>

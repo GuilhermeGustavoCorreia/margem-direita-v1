@@ -21,28 +21,6 @@ for( Agent a : linha.getTrains() ){
 return totalVagoes;
 /*ALCODEEND*/}
 
-RailwayTrack getLinhaCirculacao()
-{/*ALCODESTART::1782412019217*/
-if (_getTotalCarrosNasTracks(new RailwayTrack[] { pstL7 }) == 0) {
-	return pstL7;
-}
-
-if (_getTotalCarrosNasTracks(new RailwayTrack[] { pstL5 }) == 0) {
-	return pstL5;
-}
-
-if (_getTotalCarrosNasTracks(new RailwayTrack[] { pstL3 }) == 0) {
-	return pstL3;
-}
-
-if (_getTotalCarrosNasTracks(new RailwayTrack[] { via3_a }) == 0) {
-	return pstL1;
-}
-
-return null;
-
-/*ALCODEEND*/}
-
 String getDestinoDoTrem(Trem train)
 {/*ALCODESTART::1782498772574*/
 if (train == null) return null;
@@ -162,13 +140,6 @@ if (valores.isEmpty()) {
 return valores.get(0).intValue();
 /*ALCODEEND*/}
 
-int getVagoesLinhaAtendimento()
-{/*ALCODESTART::1782932707570*/
-int loteEmVagoes = getVagosNaLinha(pst_marginal_a);
-
-return loteEmVagoes;
-/*ALCODEEND*/}
-
 String getDestinoLogica(String moega,Agent agent)
 {/*ALCODESTART::1782992207626*/
 try {
@@ -211,74 +182,6 @@ try {
     error("Erro ao rotear atendimento para moega '" + moega + "': " + e.getMessage());
 }
 
-/*ALCODEEND*/}
-
-ITerminalMoega getTerminalAgent(String moega)
-{/*ALCODESTART::1783018617194*/
-try {
-
-    List<String> agentes = selectValues(
-        String.class,
-        "SELECT agente FROM parametros_terminais WHERE moega = ?",
-        moega
-    );
-
-    if (agentes.isEmpty()) {
-        error("Moega não encontrada em parametros_terminais: " + moega);
-        return null;
-    }
-
-    String nomeAgente = agentes.get(0);
-
-    // 1. Busca o campo do agente (ex: CliMar) dentro de Main
-    java.lang.reflect.Field campoAgente = Main.class.getDeclaredField(nomeAgente);
-    campoAgente.setAccessible(true);
-    Object blocoAgente = campoAgente.get(this);
-
-    if (blocoAgente instanceof ITerminalMoega) {
-        return (ITerminalMoega) blocoAgente;
-    } else {
-        error("Agente '" + nomeAgente + "' não implementa ITerminalMoega");
-        return null;
-    }
-
-} catch (Exception e) {
-
-    Throwable causa = e.getCause();
-    error("Erro ao rotear atendimento para moega '" + moega + "': " 
-        + e.getMessage() 
-        + (causa != null ? " | Causa: " + causa.getMessage() : " | Sem causa detalhada")
-        + " | Tipo da exceção: " + e.getClass().getName());
-
-    return null;
-}
-/*ALCODEEND*/}
-
-PositionOnTrack getLinhaCirculacao_v2(Trem trem)
-{/*ALCODESTART::1783520667992*/
-Vagao primeiroVagao = trem.getPrimeiroVagao();
-String moegaDestino = primeiroVagao.moegaDestino;
-
-switch (moegaDestino) {
-			
-	case "coper-XXI":
-	
-		return posAtend_coperXXI;
-		
-	case "moegao-mar":
-	
-		return posAtend_moegaoMar;
-	
-			
-	case "moegao-terra":
-	
-		return posAtend_moegaoTerra;
-	
-	
-    default:
-    
-        return posAtend_Santa;
-}
 /*ALCODEEND*/}
 
 String getAgenteMoega(String moega)
@@ -517,5 +420,116 @@ try {
 } catch (Exception e) {
 	e.printStackTrace();
 }
+/*ALCODEEND*/}
+
+ArrayList<String[]> ler_csv(String caminho)
+{/*ALCODESTART::1795830000001*/
+// ALT-083: lê um CSV da interface (separador ;, 1ª linha = cabeçalho)
+ArrayList<String[]> linhas = new ArrayList<>();
+java.io.File arquivo = new java.io.File(caminho).getAbsoluteFile();
+if (!arquivo.exists())
+	error("[config] arquivo não encontrado: " + arquivo.getPath());
+
+try (java.io.BufferedReader br = new java.io.BufferedReader(
+		new java.io.InputStreamReader(new java.io.FileInputStream(arquivo), "UTF-8"))) {
+	String l = br.readLine();                       // cabeçalho
+	while ((l = br.readLine()) != null) {
+		if (l.trim().isEmpty()) continue;
+		String[] c = l.split(";", -1);
+		for (int i = 0; i < c.length; i++) c[i] = c[i].trim();
+		linhas.add(c);
+	}
+} catch (java.io.IOException ex) {
+	error("[config] erro ao ler " + arquivo.getPath() + ": " + ex.getMessage());
+}
+return linhas;
+/*ALCODEEND*/}
+
+double carregar_configuracao()
+{/*ALCODESTART::1795830000002*/
+// ALT-083: lê os arquivos da interface HTML e mostra no log o que entendeu.
+// Nesta etapa só lê e valida; nada muda no comportamento da simulação.
+String pasta = pasta_simulacao;
+int erros = 0;
+traceln("[config] pasta: " + new java.io.File(pasta).getAbsolutePath());
+
+// ---- config/simulacao.csv: duracao_h;warmup_h;replicacoes ----
+ArrayList<String[]> sim = ler_csv(pasta + "/config/simulacao.csv");
+if (sim.isEmpty() || sim.get(0).length < 3)
+	error("[config] simulacao.csv: esperado uma linha com duracao_h;warmup_h;replicacoes");
+try {
+	duracao_h   = Double.parseDouble(sim.get(0)[0].replace(',', '.'));
+	warmup_h    = Double.parseDouble(sim.get(0)[1].replace(',', '.'));
+	replicacoes = Integer.parseInt(sim.get(0)[2]);
+} catch (NumberFormatException ex) {
+	error("[config] simulacao.csv: valor não numérico (" + ex.getMessage() + ")");
+}
+String st_sim = "OK";
+if (duracao_h <= 0)          { st_sim = "ERRO: duração deve ser > 0"; erros++; }
+else if (warmup_h < 0)       { st_sim = "ERRO: warm-up negativo"; erros++; }
+else if (warmup_h >= duracao_h) { st_sim = "ERRO: warm-up >= duração"; erros++; }
+else if (replicacoes < 1)    { st_sim = "ERRO: replicações < 1"; erros++; }
+traceln(String.format("[config] simulacao.csv: duracao=%.1fh warmup=%.1fh replicacoes=%d | %s",
+	duracao_h, warmup_h, replicacoes, st_sim));
+
+// ---- config/terminais_moega.csv: agente;instancia;segmento;rumo;mrs;vli ----
+ArrayList<String[]> terms = ler_csv(pasta + "/config/terminais_moega.csv");
+java.util.Map<String, String[]> por_agente = new java.util.HashMap<>();
+traceln("[config] terminais_moega.csv: " + terms.size() + " terminais");
+for (String[] t : terms) {
+	if (t.length < 6) {
+		traceln("[config]   ERRO: linha incompleta: " + String.join(";", t)); erros++; continue;
+	}
+	String agente = t[0], instancia = t[1], segmento = t[2];
+	String ferrovias = ((Boolean.parseBoolean(t[3]) ? "rumo " : "")
+	                  + (Boolean.parseBoolean(t[4]) ? "mrs "  : "")
+	                  + (Boolean.parseBoolean(t[5]) ? "vli"   : "")).trim();
+
+	// main().<instancia> por reflexão
+	Object obj = null;
+	try {
+		java.lang.reflect.Field f;
+		try { f = getClass().getField(instancia); }
+		catch (NoSuchFieldException nf) { f = getClass().getDeclaredField(instancia); f.setAccessible(true); }
+		obj = f.get(this);
+	} catch (Exception ex) { obj = null; }
+
+	String st;
+	if (obj == null)                          { st = "ERRO: main()." + instancia + " não existe"; erros++; }
+	else if (!(obj instanceof ITerminalMoega)) { st = "ERRO: não implementa ITerminalMoega"; erros++; }
+	else if (!obj.getClass().getSimpleName().equals(agente))
+		st = "AVISO: a classe é " + obj.getClass().getSimpleName();
+	else st = "OK";
+	if (segmento.isEmpty())  { st += " | ERRO: sem segmento"; erros++; }
+	if (ferrovias.isEmpty()) { st += " | ERRO: sem ferrovia"; erros++; }
+	if (por_agente.containsKey(agente)) { st += " | ERRO: agente repetido"; erros++; }
+	por_agente.put(agente, t);
+	traceln(String.format("[config]   %-12s -> %-12s | %-8s | %-12s | %s", instancia, agente, segmento, ferrovias, st));
+}
+
+// ---- input/tempo_entre_chegadas.csv: agente;instancia;ferrovia;intervalo_h ----
+ArrayList<String[]> tec = ler_csv(pasta + "/input/tempo_entre_chegadas.csv");
+traceln("[config] tempo_entre_chegadas.csv: " + tec.size() + " combinações");
+for (String[] c : tec) {
+	if (c.length < 4) {
+		traceln("[config]   ERRO: linha incompleta: " + String.join(";", c)); erros++; continue;
+	}
+	String agente = c[0], ferrovia = c[2].toLowerCase();
+	String[] t = por_agente.get(agente);
+	int col = ferrovia.equals("rumo") ? 3 : ferrovia.equals("mrs") ? 4 : ferrovia.equals("vli") ? 5 : -1;
+	double intervalo = -1;
+	try { intervalo = Double.parseDouble(c[3].replace(',', '.')); } catch (NumberFormatException ex) { }
+	String st;
+	if (t == null)                             { st = "ERRO: terminal não cadastrado"; erros++; }
+	else if (col < 0)                          { st = "ERRO: ferrovia desconhecida"; erros++; }
+	else if (!Boolean.parseBoolean(t[col]))    { st = "ERRO: terminal não opera " + ferrovia; erros++; }
+	else if (intervalo <= 0)                   { st = "ERRO: intervalo inválido (" + c[3] + ")"; erros++; }
+	else st = "OK";
+	traceln(String.format("[config]   %-12s %-5s a cada %6.1f h | %s", agente, ferrovia, intervalo, st));
+}
+
+if (erros > 0)
+	error("[config] " + erros + " erro(s) nos arquivos da interface. Ver as linhas [config] no log");
+traceln("[config] leitura concluída sem erros");
 /*ALCODEEND*/}
 

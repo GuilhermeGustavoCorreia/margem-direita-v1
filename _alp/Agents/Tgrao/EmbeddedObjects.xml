@@ -6560,8 +6560,8 @@ main().gestorDeAlivios.retornar_alivio.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.4
-main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
+					<Code><![CDATA[// ALT-084: o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

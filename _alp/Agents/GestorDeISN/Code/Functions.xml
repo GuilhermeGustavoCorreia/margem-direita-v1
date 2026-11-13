@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Functions>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>boolean</ReturnType>
+		<Id>1793876837451</Id>
+		<Name><![CDATA[pode_estacionar]]></Name>
+		<X>50</X>
+		<Y>340</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1795840000218</Id>
+		<Name><![CDATA[verificar_saida]]></Name>
+		<Description><![CDATA[libera o trem da linha 02 quando o terminal puder receber; solta a vaga quando ele sai da linha. Chamada pelo evento ev_verificar_saida]]></Description>
+		<X>300</X>
+		<Y>340</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>boolean</ReturnType>
+		<Id>1795840000219</Id>
+		<Name><![CDATA[esta_na_linha02]]></Name>
+		<Description><![CDATA[true se o trem ainda ocupa algum trecho isn_linha02_*]]></Description>
+		<X>300</X>
+		<Y>360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[t]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1795850000201</Id>
+		<Name><![CDATA[seguir_para_faixa]]></Name>
+		<Description><![CDATA[define faixa_atual/proxima_faixa e entrega ao GestorDeCirculacao.tentar_usar_faixa]]></Description>
+		<X>300</X>
+		<Y>380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[atual]]></Name>
+			<Type><![CDATA[Faixa]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[proxima]]></Name>
+			<Type><![CDATA[Faixa]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[bloco]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1795850000202</Id>
+		<Name><![CDATA[registrar_faixas]]></Name>
+		<Description><![CDATA[adiciona as faixas do ISN em gestorDeCirculacao.faixas (On startup)]]></Description>
+		<X>300</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Main</ReturnType>
+		<Id>1793905848556</Id>
+		<Name><![CDATA[main]]></Name>
+		<X>60</X>
+		<Y>430</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+</Functions>

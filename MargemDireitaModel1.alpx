@@ -100,6 +100,21 @@
 				<Name><![CDATA[Alivio]]></Name>
 				<Folder>1789278685762</Folder>
 			</JavaClass>
+			<JavaClass>
+				<Id>1795840000001</Id>
+				<Name><![CDATA[Pedido]]></Name>
+				<Folder>1789278685762</Folder>
+			</JavaClass>
+			<JavaClass>
+				<Id>1795840000002</Id>
+				<Name><![CDATA[FluxoChegada]]></Name>
+				<Folder>1789278685762</Folder>
+			</JavaClass>
+			<JavaClass>
+				<Id>1795840000003</Id>
+				<Name><![CDATA[Log]]></Name>
+				<Folder>1789278685762</Folder>
+			</JavaClass>
 		</JavaClasses>
 		<RequiredLibraryReference>
 			<LibraryName>com.anylogic.libraries.modules.markup_descriptors</LibraryName>

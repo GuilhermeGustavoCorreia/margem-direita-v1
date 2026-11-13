@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Variables>
+	<Variable Class="PlainVariable">
+		<Id>1793876812343</Id>
+		<Name><![CDATA[lote_linha02]]></Name>
+		<X>50</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1793876812950</Id>
+		<Name><![CDATA[lote_linha04]]></Name>
+		<X>50</X>
+		<Y>320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795840000216</Id>
+		<Name><![CDATA[saindo_linha02]]></Name>
+		<X>50</X>
+		<Y>360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795840000217</Id>
+		<Name><![CDATA[parado_linha02]]></Name>
+		<X>50</X>
+		<Y>380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[false]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000178</Id>
+		<Name><![CDATA[faixa_isn_a]]></Name>
+		<X>-100</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_a          			= new Faixa();
+faixa_isn_a.ordem          	= 1;
+faixa_isn_a.recurso        	= rp_isn_a;
+faixa_isn_a.track          	= main().isn_linha01_a;
+faixa_isn_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_a.enter          	= circular_isn_a;
+faixa_isn_a.linhaTMDS			= pl_isn_linha01_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000179</Id>
+		<Name><![CDATA[faixa_isn_b]]></Name>
+		<X>-100</X>
+		<Y>620</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_b          			= new Faixa();
+faixa_isn_b.ordem          	= 2;
+faixa_isn_b.recurso        	= rp_isn_b;
+faixa_isn_b.track          	= main().isn_linha01_b;
+faixa_isn_b.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_b.enter          	= circular_isn_b;
+faixa_isn_b.linhaTMDS			= isn_linha01_b;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000180</Id>
+		<Name><![CDATA[faixa_isn_c]]></Name>
+		<X>-100</X>
+		<Y>680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_c          			= new Faixa();
+faixa_isn_c.ordem          	= 3;
+faixa_isn_c.recurso        	= rp_isn_c;
+faixa_isn_c.track          	= main().isn_linha01_c;
+faixa_isn_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_c.enter          	= circular_isn_c;
+faixa_isn_c.linhaTMDS			= isn_linha01_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000181</Id>
+		<Name><![CDATA[faixa_isn_d]]></Name>
+		<X>-100</X>
+		<Y>740</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_d          			= new Faixa();
+faixa_isn_d.ordem          	= 4;
+faixa_isn_d.recurso        	= rp_isn_d;
+faixa_isn_d.track          	= main().isn_linha01_d;
+faixa_isn_d.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_d.enter          	= circular_isn_d;
+faixa_isn_d.linhaTMDS			= isn_linha01_d;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000182</Id>
+		<Name><![CDATA[faixa_isn_e]]></Name>
+		<X>-100</X>
+		<Y>800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_e          			= new Faixa();
+faixa_isn_e.ordem          	= 5;
+faixa_isn_e.recurso        	= rp_isn_e;
+faixa_isn_e.track          	= main().isn_linha01_e;
+faixa_isn_e.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_e.enter          	= circular_isn_e;
+faixa_isn_e.linhaTMDS			= isn_linha01_e;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1795850000183</Id>
+		<Name><![CDATA[faixa_isn_porteira]]></Name>
+		<X>-100</X>
+		<Y>860</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_porteira          			= new Faixa();
+faixa_isn_porteira.ordem          	= 6;
+faixa_isn_porteira.recurso        	= rp_isn_porteira;
+faixa_isn_porteira.track          	= main().psn_linha_porteira;
+faixa_isn_porteira.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_porteira.enter          	= circular_isn_porteira;
+faixa_isn_porteira.linhaTMDS			= pl_isn_porteira;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+</Variables>

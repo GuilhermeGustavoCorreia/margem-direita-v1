@@ -5,8 +5,10 @@ return (Main) getEngine().getRoot();
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1791650000004*/
-// ALT-003: CoperXXI ainda não usa esse critério; só não recebe durante alívio
-return !fazendoAlivio;
+// trem entrando: do comecar_encoste até o lote 1 entrar no ciclo da moega
+if (_trem_chegando != null) return false;
+// ainda há carregados no terminal (lote em descarga ou segunda parte esperando)
+return get_vagoes_carregados() == 0;
 /*ALCODEEND*/}
 
 float getOverloadVazios()
@@ -77,7 +79,7 @@ return new ArrayList<Faixa>();
 
 double set_quantidade_alivio(int qt_quantidade)
 {/*ALCODESTART::1791650000014*/
-// ALT-003: provisório — alívio do CoperXXI ainda é próprio (leva tudo das linhas a e b)
+quantidade_alivio = qt_quantidade;
 /*ALCODEEND*/}
 
 int get_quantidade_vazios()
@@ -155,6 +157,18 @@ traceln(String.format("[%.1f][CoperXII][grupo] trem=%d linha=%s vagoes=%d carros
 	time(), lote.getId(), _grupo_linha, _grupo_vagoes, _grupo_carros, lote.size(), get_espaco_linha("b"), get_espaco_linha("a")));
 /*ALCODEEND*/}
 
+double log_analise(String evento,Agent a,String msg)
+{/*ALCODESTART::1794506038078*/
+// log de análise: só escreve com log_de_analise = true
+if (!log_de_analise) return;
+String t = (a == null) ? "-" : String.valueOf(a.getId());
+if (a instanceof Trem) {
+	Trem tr = (Trem) a;
+	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
+}
+Log.info("CoperXXI", evento, t + " | " + msg);
+/*ALCODEEND*/}
+
 double registrar_vazios(Trem trem)
 {/*ALCODESTART::1793200200005*/
 // ALT-065: marca a linha do grupo no próprio trem e atualiza o lote de vazios
@@ -170,12 +184,10 @@ if (trem.getNumeroDeLocomotivas() > 0)
 
 double guardar_vazios(Trem trem)
 {/*ALCODESTART::1793200200006*/
-// ALT-065: guarda o lote na linha (Hold bloqueado) e solta o resto do lote que espera na moega
+// ALT-065: guarda o lote na linha (Wait do estoque) e solta o resto do lote que espera na moega
 if ("coperXII_vazios_b".equals(trem.tipoDeLote)) {
-	estoque_b.block();
 	entrar_estoque_b.take(trem);
 } else {
-	estoque_a.block();
 	entrar_estoque_a.take(trem);
 }
 
@@ -277,5 +289,104 @@ if (!aguardando_alivio && get_espaco_vazios() == 0) {
 	traceln(String.format("[%.1f][CoperXII][alivio] %d vazios prontos (b=%d a=%d moega=%d): pedindo alívio",
 		time(), QTD_ALIVIO, CAPACIDADE_LOTE_B, CAPACIDADE_LOTE_A, get_capacidade_moega()));
 }
+/*ALCODEEND*/}
+
+double get_vagoes_carregados()
+{/*ALCODESTART::1794506038053*/
+return (
+ 
+	main().getTamanhoDoTrem(lote_segunda_parte) + 
+	main().getTamanhoDoTrem(lote_em_descarga)
+
+);
+/*ALCODEEND*/}
+
+int get_vgs_trazidos_alivio(Trem trem)
+{/*ALCODESTART::1794506038075*/
+// vagões que a loco já engatou neste alívio
+return trem.getNumeroDeVagoes() - qt_vgs_inicio_alivio;
+/*ALCODEEND*/}
+
+double guardar_excesso_alivio(Trem lote)
+{/*ALCODESTART::1794506038076*/
+// sobra do alívio (rabo do trem, lado da moega): espera a loco sair da linha,
+// anda até o lote_b e é repartida em b -> a -> moega (sobra_cabe / cortar_sobra / guardar_sobra)
+trem_sobra = lote;
+lote.tipoDeLote = "coperXII_sobra";
+Log.info("CoperXXI", "alivio_sobra", String.format("trem=%d sobra de %d vgs (pedido=%d)",
+	lote.getId(), lote.getNumeroDeVagoes(), quantidade_alivio));
+entrar_sobra.take(lote);
+/*ALCODEEND*/}
+
+boolean ainda_tem_lote_vazios()
+{/*ALCODESTART::1794600000031*/
+// ainda há lote de vazios parado em b, a ou moega? O alívio engata todos antes de cortar a sobra
+return lote_vazios_b != null || lote_vazios_a != null || lote_vazios_moega != null;
+/*ALCODEEND*/}
+
+boolean linha_livre_para_sobra()
+{/*ALCODESTART::1794600000032*/
+// a sobra só anda depois que o trem do alívio saiu da psnSaidaCopexXXI_b (as duas pontas fora da linha)
+if (fazendoAlivio) return false;
+if (trem_alivio == null) return true;
+try {
+	RailwayTrack linha = main().psnSaidaCopexXXI_b;
+	return trem_alivio.getTrack(true) != linha && trem_alivio.getTrack(false) != linha;
+} catch (Exception e) {
+	// o trem do alívio já não existe (acoplado nas DVs ou removido)
+	return true;
+}
+/*ALCODEEND*/}
+
+int get_capacidade_linha(String linha)
+{/*ALCODESTART::1794600000033*/
+// capacidade de vazios de cada posição da linha
+if ("b".equals(linha)) return CAPACIDADE_LOTE_B;
+if ("a".equals(linha)) return CAPACIDADE_LOTE_A;
+return get_capacidade_moega();
+/*ALCODEEND*/}
+
+String sobra_linha_alvo()
+{/*ALCODESTART::1794600000034*/
+// a sobra enche b, depois a, depois o lote da moega
+if (lote_vazios_b == null) return "b";
+if (lote_vazios_a == null) return "a";
+return "moega";
+/*ALCODEEND*/}
+
+double registrar_sobra(Trem trem)
+{/*ALCODESTART::1794600000035*/
+// marca o pedaço da sobra com a linha alvo e grava o lote de vazios dela
+String linha = sobra_linha_alvo();
+trem.tipoDeLote = "coperXII_vazios_" + linha;
+if ("b".equals(linha))      lote_vazios_b = trem;
+else if ("a".equals(linha)) lote_vazios_a = trem;
+else                        lote_vazios_moega = trem;
+/*ALCODEEND*/}
+
+double guardar_sobra(Trem trem,boolean ultima)
+{/*ALCODESTART::1794600000036*/
+// guarda um pedaço da sobra no estoque da linha dele; o último pedaço retoma a descarga
+if (trem != lote_vazios_b && trem != lote_vazios_a && trem != lote_vazios_moega) registrar_sobra(trem);
+if (trem == lote_vazios_b)      entrar_estoque_b.take(trem);
+else if (trem == lote_vazios_a) entrar_estoque_a.take(trem);
+else                            entrar_estoque_moega.take(trem);
+Log.info("CoperXXI", "sobra_guardada", String.format("trem=%d %d vgs em %s | b=%d a=%d moega=%d",
+	trem.getId(), trem.getNumeroDeVagoes(), trem.tipoDeLote,
+	CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_A - get_espaco_linha("a"), get_capacidade_moega() - get_espaco_linha("moega")));
+if (ultima) {
+	trem_sobra = null;
+	verificar_alivio();
+	liberar_espaco_vazios();
+	iniciar_proximo_lote();
+}
+/*ALCODEEND*/}
+
+double liberar_estoque(String linha)
+{/*ALCODESTART::1794600000037*/
+// solta o lote de vazios parado no Wait da linha para o TrainCouple
+if ("b".equals(linha))      { if (estoque_b.size() > 0)     estoque_b.free(estoque_b.get(0)); }
+else if ("a".equals(linha)) { if (estoque_a.size() > 0)     estoque_a.free(estoque_a.get(0)); }
+else                        { if (estoque_moega.size() > 0) estoque_moega.free(estoque_moega.get(0)); }
 /*ALCODEEND*/}
 

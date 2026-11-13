@@ -27,7 +27,8 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).ITerminalMoega_destino.getName() + " (alivio)");
 ((Trem) agent).ITerminalMoega_destino.takeAlivio((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -142,7 +143,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacao] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacao", String.format("trem=%d", agent.getId()));
+log_entrada(agent);
 configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -344,7 +346,7 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit paraCirculacaoAteTEC] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_paraCirculacaoAteTEC", String.format("trem=%d", agent.getId()));
 circulacaoAteTEC.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -459,7 +461,7 @@ circulacaoAteTEC.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacaoCruzPST] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacaoCruzPST", String.format("trem=%d", agent.getId()));
 configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -670,7 +672,7 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit paraCirculacaoAteDVs] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_paraCirculacaoAteDVs", String.format("trem=%d", agent.getId()));
 circulacaoAteDVs.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -785,7 +787,7 @@ circulacaoAteDVs.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacaoAteTEC] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacaoAteTEC", String.format("trem=%d", agent.getId()));
 configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -990,7 +992,8 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit3] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit3", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para DV");
 main().gestorDeDVs.posicionarMnbDvs.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -1105,7 +1108,7 @@ main().gestorDeDVs.posicionarMnbDvs.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacaoAteDVs] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacaoAteDVs", String.format("trem=%d", agent.getId()));
 configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -1556,7 +1559,7 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit paraCirculacaoAtendCli] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_paraCirculacaoAtendCli", String.format("trem=%d", agent.getId()));
 circulacaoAtendCli.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -1671,7 +1674,7 @@ circulacaoAtendCli.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacaoVzs_PCX] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacaoVzs_PCX", String.format("trem=%d", agent.getId()));
 //configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -1936,7 +1939,7 @@ circulacaoAtendCli.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter alivio_bracell] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_alivio_bracell", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2726,7 +2729,7 @@ circulacaoAtendCli.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit4] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit4", String.format("trem=%d", agent.getId()));
 circulacaoVzs_PCX.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -3630,7 +3633,7 @@ circulacaoVzs_PCX.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter alivio_bracell1] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_alivio_bracell1", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3967,7 +3970,7 @@ circulacaoVzs_PCX.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit5] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit5", String.format("trem=%d", agent.getId()));
 circulacaoVzs_PCX.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -4871,7 +4874,7 @@ circulacaoVzs_PCX.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter alivio_bracell2] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_alivio_bracell2", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5208,7 +5211,7 @@ circulacaoVzs_PCX.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit6] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit6", String.format("trem=%d", agent.getId()));
 circulacaoVzs_PCX.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -6457,7 +6460,7 @@ circulacaoVzs_PCX.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit paraCirculacaoAteCruzPST] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_paraCirculacaoAteCruzPST", String.format("trem=%d", agent.getId()));
 circulacaoCruzPST.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -6572,7 +6575,7 @@ circulacaoCruzPST.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacaoAtendCli] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacaoAtendCli", String.format("trem=%d", agent.getId()));
 configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -7947,7 +7950,7 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter enter] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_enter", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8007,7 +8010,7 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit1] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit1", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8262,11 +8265,11 @@ configurar_rota((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: fim da via3_intermar -> via3_a; a seguinte e a via2_c se pera, senao a via3_b
+					<Code><![CDATA[// fim da via3_intermar -> via3_a; a seguinte e a via2_c se pera, senao a via3_b
 boolean pera = ("coperXXI".equals(((Trem) agent).get_terminal_name()) || "moegaoMar".equals(((Trem) agent).get_terminal_name()) || "moegaoTerra".equals(((Trem) agent).get_terminal_name()));
 ((Trem) agent).faixa_atual   = faixa_via3_a;
 ((Trem) agent).proxima_faixa = pera ? faixa_via2_c : faixa_via3_b;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -8398,7 +8401,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -8786,7 +8790,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter chegada_carregados] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_chegada_carregados", String.format("trem=%d", agent.getId()));
+log_entrada(agent);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8846,12 +8851,12 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: bracell começa a licenciar pela val_via2; os outros pela via3_intermar
+					<Code><![CDATA[// bracell começa a licenciar pela val_via2; os outros pela via3_intermar
 boolean bracell = "bracell".equals(((Trem) agent).get_terminal_name());
 ((Trem) agent).faixa_atual   = bracell ? faixa_val_via2      : faixa_via3_intermar;
 ((Trem) agent).proxima_faixa = bracell ? faixa_via3_intermar : faixa_via3_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_ate_santa] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_ate_santa", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -8966,8 +8971,9 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter tentar_usar_faixa] trem=%d", time(), agent.getId()));
-//configurar_rota((Trem) agent)]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_tentar_usar_faixa", String.format("trem=%d", agent.getId()));
+//configurar_rota((Trem) agent)
+log_entrada(agent);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9316,7 +9322,7 @@ faixa.licenciar((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_tentar_usar_proxima] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_tentar_usar_proxima", String.format("trem=%d", agent.getId()));
 if (((Trem) agent).proxima_faixa == null) {
     liberar_faixas.take(agent);
 } else {
@@ -9723,7 +9729,7 @@ faixa.licenciar((Trem) agent);
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter tentar_usar_proxima] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_tentar_usar_proxima", String.format("trem=%d", agent.getId()));
 //configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -9784,7 +9790,7 @@ faixa.licenciar((Trem) agent);
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_libera_faixas] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_libera_faixas", String.format("trem=%d", agent.getId()));
 liberar_faixas.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -9839,7 +9845,7 @@ liberar_faixas.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar_circulacao] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar_circulacao", String.format("trem=%d", agent.getId()));
 ((Trem) agent).faixa_atual.enter.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -10053,7 +10059,7 @@ liberar_faixas.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter liberar_faixas] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_liberar_faixas", String.format("trem=%d", agent.getId()));
 //configurar_rota((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -10174,7 +10180,7 @@ liberar_faixas.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via3_intermar] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via3_intermar", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -10210,8 +10216,8 @@ liberar_faixas.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765805</Id>
 		<Name><![CDATA[ir_via3_a]]></Name>
-		<X>-2960</X>
-		<Y>3980</Y>
+		<X>-2950</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -10310,7 +10316,8 @@ liberar_faixas.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -10614,8 +10621,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765958</Id>
 		<Name><![CDATA[circular_via3_a]]></Name>
-		<X>-3080</X>
-		<Y>3980</Y>
+		<X>-3060</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -10698,7 +10705,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via3_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via3_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -11067,7 +11074,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -11196,7 +11203,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -11584,7 +11592,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter enter6] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_enter6", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -11644,7 +11652,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit11] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit11", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -11674,8 +11682,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999770</Id>
 		<Name><![CDATA[ir_via3_b]]></Name>
-		<X>-2530</X>
-		<Y>3980</Y>
+		<X>-2500</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -11774,7 +11782,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -12079,7 +12088,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<Id>1789277999917</Id>
 		<Name><![CDATA[circular_via3_b]]></Name>
 		<X>-2650</X>
-		<Y>3980</Y>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -12162,7 +12171,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via3_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via3_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -12291,7 +12300,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -12679,7 +12689,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter enter8] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_enter8", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -12739,7 +12749,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit13] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit13", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -12769,8 +12779,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789323832171</Id>
 		<Name><![CDATA[para_via2_c]]></Name>
-		<X>-2760</X>
-		<Y>3900</Y>
+		<X>-2800</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -12793,10 +12803,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: pera -> via2_c; a seguinte e a entrada da pera
+					<Code><![CDATA[// pera -> via2_c; a seguinte e a entrada da pera
 ((Trem) agent).faixa_atual   = faixa_via2_c;
 ((Trem) agent).proxima_faixa = faixa_entrada_pera;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via2_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via2_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -12829,7 +12839,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1789323832209</Id>
 		<Name><![CDATA[e_pera_via3_a]]></Name>
 		<X>-2870</X>
-		<Y>3980</Y>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -12858,7 +12868,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: fim da via3_a - e pera? (coperXI agora segue pela via3_b)
+					<Code><![CDATA[// fim da via3_a - e pera? (coperXI agora segue pela via3_b)
 "coperXXI".equals(((Trem) agent).get_terminal_name()) ||
 "moegaoMar".equals(((Trem) agent).get_terminal_name()) ||
 "moegaoTerra".equals(((Trem) agent).get_terminal_name())]]></Code>
@@ -13002,7 +13012,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -13141,7 +13152,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter encosta_coperXI] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_encosta_coperXI", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -13201,7 +13212,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit12] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit12", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -13324,7 +13335,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -13463,7 +13475,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter enter9] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_enter9", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -13523,7 +13535,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit14] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit14", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -13646,7 +13658,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -13785,7 +13798,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter enter10] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_enter10", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -13845,7 +13858,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit15] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit15", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -13975,7 +13988,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -14303,11 +14317,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.3: pera -> track_entrada_pera
+					<Code><![CDATA[// pera -> track_entrada_pera
 ((Trem) agent).faixa_atual   = faixa_entrada_pera;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_entrada_pera] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_entrada_pera", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -14368,7 +14382,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.3: e pera?
+					<Code><![CDATA[// e pera?
 "coperXXI".equals(((Trem) agent).get_terminal_name()) ||
 "moegaoMar".equals(((Trem) agent).get_terminal_name()) ||
 "moegaoTerra".equals(((Trem) agent).get_terminal_name())]]></Code>
@@ -14446,7 +14460,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via2_d;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar_via2_d] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar_via2_d", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -14577,7 +14591,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -14716,7 +14731,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_d] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_d", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -14776,7 +14791,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_encostar_coperXI] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_encostar_coperXI", String.format("trem=%d", agent.getId()));
 encoste_coperXI.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -14913,7 +14928,7 @@ encoste_coperXI.take(agent)]]></Code>
 					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via2_c;
 ((Trem) agent).proxima_faixa = faixa_via2_d;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar_via2_e] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar_via2_e", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -15028,7 +15043,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter encoste_coperXI] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_encoste_coperXI", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15088,7 +15103,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_coperXI] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_coperXI", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().coperXI.encostarLinhaVerde.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -15216,7 +15232,8 @@ main().coperXI.encostarLinhaVerde.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -15515,6 +15532,255 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
+		<Id>1795900000301</Id>
+		<Name><![CDATA[rp_pst_switch36]]></Name>
+		<X>-2549</X>
+		<Y>3700</Y>
+		<Label>
+			<X>47</X>
+			<Y>9</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>ResourcePool</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>ResourcePool</ClassName>
+				<ItemName>1412336243135</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[type]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.RESOURCE_STATIC]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacityDefinitionType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacityBasedOnAttractors]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacitySchedule]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacityScheduleOnOff]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacityOnValue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[shiftGroupSchedules]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[shiftGroupSizes]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[shiftGroupsPlan]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destroyExcessUnits]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[homeLocationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[homeNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[homeNodes]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[showDefaultAnimationStatic]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[downtimeSource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceProfile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[downtimeList]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableMaintenance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[initialTimeToMaintenance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeBetweenMaintenances]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceTime]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceTaskStart]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maintenanceUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableFailuresRepairs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[initialTimeToFailure]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeBetweenFailures]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[countBusyOnlyTimeToFailure]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[repairType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[repairTime]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[repairTaskStart]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[repairUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableBreaks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[breaksSchedule]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[breakTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[breakTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[breakTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[breakUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableCustomTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[endOfShiftTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[endOfShiftTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[endOfShiftTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeRequestChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[requestChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onNewUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onDestroyUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeize]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUp]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitStateChange]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onMaintenanceStart]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onMaintenanceEnd]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onFailure]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRepair]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onBreakStart]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onBreakEnd]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onBreakTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1795900000302</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
 		<Id>1789385773312</Id>
 		<Name><![CDATA[ir_marginal_a]]></Name>
 		<X>-2430</X>
@@ -15623,7 +15889,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -15759,7 +16026,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_marginal_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_marginal_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15823,7 +16090,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_f;
 ((Trem) agent).proxima_faixa = faixa_via2_e;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -16209,7 +16476,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -16345,7 +16613,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_marginal_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_marginal_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -16409,7 +16677,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_marginal_a;
 ((Trem) agent).proxima_faixa = faixa_via2_f;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar1] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar1", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -16792,7 +17060,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -16928,7 +17197,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_marginal_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_marginal_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -17313,7 +17582,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -17449,7 +17719,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_intervalo4000_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_intervalo4000_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -17509,11 +17779,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: fim da intervalo4000_a -> intervalo4000_b
+					<Code><![CDATA[// fim da intervalo4000_a -> intervalo4000_b
 ((Trem) agent).faixa_atual   = faixa_intervalo4000_b;
 ((Trem) agent).proxima_faixa = faixa_intervalo4000_c;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar3] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar3", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -17893,7 +18163,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -18029,7 +18300,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_intervalo4000_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_intervalo4000_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -18089,11 +18360,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: fim da intervalo4000_b -> intervalo4000_c (ultima faixa)
+					<Code><![CDATA[// fim da intervalo4000_b -> intervalo4000_c (ultima faixa)
 ((Trem) agent).faixa_atual   = faixa_intervalo4000_c;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar4] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar4", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -18473,7 +18744,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -18609,7 +18881,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_intervalo4000_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_intervalo4000_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -18669,8 +18941,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: fim da intervalo4000_c -> entrega ao terminal (linha 5000)
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit continuar5] trem=%d destino=%s", time(), agent.getId(), ((Trem) agent).get_terminal_name()));
+					<Code><![CDATA[// fim da intervalo4000_c -> entrega ao terminal (linha 5000)
+if (trace_circulacao) Log.info("GesCirculacao", "exit_continuar5", String.format("trem=%d destino=%s", agent.getId(), ((Trem) agent).get_terminal_name()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 if ("bracell".equals(((Trem) agent).get_terminal_name())) {
     main().bracell.encoste.take(agent);
 } else {
@@ -18789,7 +19062,7 @@ if ("bracell".equals(((Trem) agent).get_terminal_name())) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter comecar_manobra] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_comecar_manobra", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -18921,8 +19194,9 @@ if ("bracell".equals(((Trem) agent).get_terminal_name())) {
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_manobra_coperXI] trem=%d", time(), agent.getId()));
-//main().coperXI.locoMnb_chamar.take(agent)]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_manobra_coperXI", String.format("trem=%d", agent.getId()));
+//main().coperXI.locoMnb_chamar.take(agent)
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -18976,7 +19250,7 @@ if ("bracell".equals(((Trem) agent).get_terminal_name())) {
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit8] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit8", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -19033,7 +19307,7 @@ if ("bracell".equals(((Trem) agent).get_terminal_name())) {
 					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via1_intermar_c;
 ((Trem) agent).proxima_faixa = faixa_via1_intermar_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via4] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via4", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -19170,7 +19444,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -19558,7 +19833,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via1_intermar_d] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via1_intermar_d", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -19621,7 +19896,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via1_intermar_b;
 ((Trem) agent).proxima_faixa = faixa_via1_intermar_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via5] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via5", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -19758,7 +20033,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -20146,7 +20422,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via1_intermar_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via1_intermar_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -20209,7 +20485,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 					<Code><![CDATA[((Trem) agent).faixa_atual   = faixa_via1_intermar_a;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via6] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via6", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -20346,7 +20622,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -20734,7 +21011,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via1_intermar_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via1_intermar_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -20794,8 +21071,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_DVS] trem=%d", time(), agent.getId()));
-main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_DVS", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para DV");
+main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -20931,7 +21209,8 @@ main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -21319,7 +21598,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via1_intermar_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via1_intermar_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -26092,7 +26371,7 @@ faixa_linha1000_c.liberar()]]></Code>
 		<Id>1791800000044</Id>
 		<Name><![CDATA[rp_pmc_linha6000_a]]></Name>
 		<X>80</X>
-		<Y>1770</Y>
+		<Y>1790</Y>
 		<Label>
 			<X>45</X>
 			<Y>10</Y>
@@ -27179,7 +27458,7 @@ faixa_linha1000_c.liberar()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_entrada_pera] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_entrada_pera", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -27315,7 +27594,8 @@ faixa_linha1000_c.liberar()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -27394,11 +27674,12 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_coperXXI] trem=%d", time(), agent.getId()));
-// ALT-003.1: entrega o trem ao CoperXXI
-// ALT-079/080: a pera atende CoperXXI, MoegaoMar e MoegaoTerra; decide pelo terminal do trem
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_coperXXI", String.format("trem=%d", agent.getId()));
+// entrega o trem ao CoperXXI
+// a pera atende CoperXXI, MoegaoMar e MoegaoTerra; decide pelo terminal do trem
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 if ("moegaoMar".equals(((Trem) agent).get_terminal_name())) main().moegaoMar.comecar_encoste.take(agent);
-else if ("moegaoTerra".equals(((Trem) agent).get_terminal_name())) main().moegaoTerra.comecar_encoste.take(agent); // ALT-080
+else if ("moegaoTerra".equals(((Trem) agent).get_terminal_name())) main().moegaoTerra.comecar_encoste.take(agent);
 else main().coperXXI.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -28449,8 +28730,9 @@ else main().coperXXI.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_t39] trem=%d", time(), agent.getId()));
-// ALT-003.2: entrega o trem ao T39
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_t39", String.format("trem=%d", agent.getId()));
+// entrega o trem ao T39
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().t39.encoste_linha1000.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -28481,8 +28763,8 @@ main().t39.encoste_linha1000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000001</Id>
 		<Name><![CDATA[para_via3_b]]></Name>
-		<X>-2720</X>
-		<Y>3980</Y>
+		<X>-2800</X>
+		<Y>4040</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28505,11 +28787,11 @@ main().t39.encoste_linha1000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015 / ALT-016: -> via3_b; a seguinte e a via2_e se coperXI ou costaLeite, senao a via3_c
+					<Code><![CDATA[// -> via3_b; a seguinte e a via2_e se coperXI ou costaLeite, senao a via3_c
 boolean coperXI = "coperXI".equals(((Trem) agent).get_terminal_name()) || "costaLeite".equals(((Trem) agent).get_terminal_name());
 ((Trem) agent).faixa_atual   = faixa_via3_b;
-((Trem) agent).proxima_faixa = coperXI ? faixa_via2_e : faixa_via3_c;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+((Trem) agent).proxima_faixa = coperXI ? null : faixa_via3_c; // ALT-103: coperXI/costaLeite pegam a via2_e junto com as marginais no bloquear_encoste_marginal
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -28542,7 +28824,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1791670000003</Id>
 		<Name><![CDATA[para_via3_c]]></Name>
 		<X>-2350</X>
-		<Y>3990</Y>
+		<Y>4040</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -28565,10 +28847,10 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: -> via3_c (trecho novo); a seguinte e a via3_d
+					<Code><![CDATA[// -> via3_c (trecho novo); a seguinte e a via3_d
 ((Trem) agent).faixa_atual   = faixa_via3_c;
 ((Trem) agent).proxima_faixa = faixa_via3_d;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -28684,7 +28966,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via3_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via3_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -28820,7 +29102,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -28899,15 +29182,15 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2 / ALT-003.4 / ALT-014: a seguinte depende do destino (tgrao e bracell saem pela marginal_c)
+					<Code><![CDATA[// a seguinte depende do destino (tgrao e bracell saem pela marginal_c)
 boolean tgrao = "tgrao".equals(((Trem) agent).get_terminal_name())
              || "bracell".equals(((Trem) agent).get_terminal_name())
              || "eldorado".equals(((Trem) agent).get_terminal_name())
-             || "suzano".equals(((Trem) agent).get_terminal_name()); // ALT-023
+             || "suzano".equals(((Trem) agent).get_terminal_name());
 ((Trem) agent).faixa_atual   = faixa_silosMuro_a;
 ((Trem) agent).proxima_faixa = tgrao ? faixa_marginal_c : faixa_silosMuro_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_silosMuro_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_silosMuro_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -29022,7 +29305,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_silosMuro_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_silosMuro_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -29158,7 +29441,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -29237,11 +29521,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2
+					<Code><![CDATA[
 ((Trem) agent).faixa_atual   = faixa_silosMuro_b;
 ((Trem) agent).proxima_faixa = faixa_silosMuro_c;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_silosMuro_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_silosMuro_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -29356,7 +29640,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_silosMuro_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_silosMuro_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -29492,7 +29776,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -29571,11 +29856,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2
+					<Code><![CDATA[
 ((Trem) agent).faixa_atual   = faixa_silosMuro_c;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_silosMuro_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_silosMuro_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -29690,7 +29975,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_silosMuro_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_silosMuro_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -29826,7 +30111,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -29986,8 +30272,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit sem_rota_silosMuro_c] trem=%d", time(), agent.getId()));
-// ALT-003.2: nenhum outro terminal segue depois da pst_silosMuro_c
+					<Code><![CDATA[if (trace_circulacao) Log.warn("GesCirculacao", "exit_sem_rota_silosMuro_c", String.format("trem=%d", agent.getId()));
+// nenhum outro terminal segue depois da pst_silosMuro_c
 error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent).get_terminal_name());]]></Code>
 				</Value>
 			</Parameter>
@@ -30048,7 +30334,7 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.4 / ALT-014 / ALT-023: fim da pst_silosMuro_a (tgrao, bracell e suzano seguem para a marginal_c)
+					<Code><![CDATA[// fim da pst_silosMuro_a (tgrao, bracell e suzano seguem para a marginal_c)
 "tgrao".equals(((Trem) agent).get_terminal_name()) ||
 "bracell".equals(((Trem) agent).get_terminal_name()) ||
 "eldorado".equals(((Trem) agent).get_terminal_name()) ||
@@ -30135,7 +30421,7 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
                              : (	"suzano".equals(((Trem) agent).get_terminal_name())||
                              		"eldorado".equals(((Trem) agent).get_terminal_name()))  ? faixa_linha6000_a : null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_marginal_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_marginal_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -30190,8 +30476,9 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_tgrao] trem=%d", time(), agent.getId()));
-// ALT-003.4: entrega o trem ao Tgrao
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_tgrao", String.format("trem=%d", agent.getId()));
+// entrega o trem ao Tgrao
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().tgrao.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -30306,7 +30593,8 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circulacao_vazios] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circulacao_vazios", String.format("trem=%d", agent.getId()));
+log_entrada(agent);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -30366,7 +30654,7 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit2] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit2", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -30492,7 +30780,7 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit7] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit7", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -30618,7 +30906,7 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit exit9] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit9", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -30757,7 +31045,8 @@ main().tgrao.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -30915,7 +31204,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_marginal_b;
 ((Trem) agent).proxima_faixa = faixa_marginal_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_pst_marginal_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_pst_marginal_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -31279,7 +31568,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_entrada_pera] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_entrada_pera", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -31421,7 +31710,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -31504,7 +31794,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_d;
 ((Trem) agent).proxima_faixa = faixa_via2_c;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_d] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_d", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -31868,7 +32158,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_entrada_pera] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_entrada_pera", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -32010,7 +32300,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -32093,7 +32384,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_e;
 ((Trem) agent).proxima_faixa = faixa_via2_d;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_e] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_e", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -32311,7 +32602,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -32391,7 +32683,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_c;
 ((Trem) agent).proxima_faixa = faixa_via2_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -32609,7 +32901,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -32689,7 +32982,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_b;
 ((Trem) agent).proxima_faixa = faixa_via2_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -32804,7 +33097,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -32949,7 +33242,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -33029,7 +33323,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_a;
 ((Trem) agent).proxima_faixa = faixa_via2_intermar_c;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -33393,7 +33687,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -33538,7 +33832,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -33618,7 +33913,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_intermar_c;
 ((Trem) agent).proxima_faixa = faixa_via2_intermar_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_intermar_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_intermar_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -33982,7 +34277,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_intermar_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_intermar_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -34127,7 +34422,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -34207,7 +34503,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_via2_intermar_b;
 ((Trem) agent).proxima_faixa = faixa_via2_intermar_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_intermar_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_intermar_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -34571,7 +34867,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_intermar_b] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_intermar_b", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -34716,7 +35012,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -34792,11 +35089,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// alivio tgrao: segue para faixa_via2_intermar_a
+					<Code><![CDATA[// alivio tgrao: via2_intermar_a e a ultima faixa antes das DVs
 ((Trem) agent).faixa_atual   = faixa_via2_intermar_a;
-((Trem) agent).proxima_faixa = faixa_railwayTrack199;
+((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_via2_intermar_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_via2_intermar_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -35160,7 +35457,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via2_intermar_a] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via2_intermar_a", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -35305,7 +35602,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -35385,7 +35683,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_railwayTrack199;
 ((Trem) agent).proxima_faixa = faixa_val_via2;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_railwayTrack199] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_railwayTrack199", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -35749,7 +36047,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_railwayTrack199] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_railwayTrack199", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -35894,7 +36192,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -35974,7 +36273,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).faixa_atual   = faixa_val_via2;
 ((Trem) agent).proxima_faixa = null;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_val_via2] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_val_via2", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -36338,7 +36637,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_val_via2] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_val_via2", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -36483,7 +36782,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -36560,8 +36860,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// alivio tgrao: fim da circulacao -> DVs
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_DVs] trem=%d", time(), agent.getId()));
-main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_DVs", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para DV");
+main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -37027,7 +37328,8 @@ main().gestorDeDVs.entrarNasDVs.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -37103,11 +37405,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-013 alívio na linha 4000: intervalo4000_a -> marginal_c
+					<Code><![CDATA[// alívio na linha 4000: intervalo4000_a -> marginal_c
 ((Trem) agent).faixa_atual   = faixa_marginal_c;
 ((Trem) agent).proxima_faixa = faixa_marginal_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_marginal_c] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_marginal_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -37316,7 +37618,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -37395,11 +37698,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: bracell: fim da val_via2 -> via3_intermar
+					<Code><![CDATA[// bracell: fim da val_via2 -> via3_intermar
 ((Trem) agent).faixa_atual   = faixa_via3_intermar;
 ((Trem) agent).proxima_faixa = faixa_via3_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_intermar] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_intermar", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -37460,7 +37763,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: fim da pst_marginal_c
+					<Code><![CDATA[// fim da pst_marginal_c
 "tgrao".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
@@ -37533,11 +37836,11 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: bracell: fim da marginal_c -> intervalo4000_a
+					<Code><![CDATA[// bracell: fim da marginal_c -> intervalo4000_a
 ((Trem) agent).faixa_atual   = faixa_intervalo4000_a;
 ((Trem) agent).proxima_faixa = faixa_intervalo4000_b;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_intervalo4000_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_intervalo4000_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -37755,7 +38058,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -37831,11 +38135,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: alivio celulose (de re): intervalo4000_c -> intervalo4000_b
+					<Code><![CDATA[// alivio celulose (de re): intervalo4000_c -> intervalo4000_b
 ((Trem) agent).faixa_atual   = faixa_intervalo4000_b;
 ((Trem) agent).proxima_faixa = faixa_intervalo4000_a;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_intervalo4000_b] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_intervalo4000_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -38053,7 +38357,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -38129,11 +38434,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: alivio celulose (de re): intervalo4000_b -> intervalo4000_a
+					<Code><![CDATA[// alivio celulose (de re): intervalo4000_b -> intervalo4000_a
 ((Trem) agent).faixa_atual   = faixa_intervalo4000_a;
 ((Trem) agent).proxima_faixa = faixa_marginal_c;
 
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit alivio_para_intervalo4000_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_intervalo4000_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -38252,8 +38557,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000001</Id>
 		<Name><![CDATA[e_coperXI]]></Name>
-		<X>-2440</X>
-		<Y>3980</Y>
+		<X>-2420</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -38282,7 +38587,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015 / ALT-016: fim da via3_b - e coperXI ou costaLeite? (os dois seguem pela via2_e)
+					<Code><![CDATA[// fim da via3_b - e coperXI ou costaLeite? (os dois seguem pela via2_e)
 "coperXI".equals(((Trem) agent).get_terminal_name()) ||
 "costaLeite".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
@@ -38332,8 +38637,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000003</Id>
 		<Name><![CDATA[para_via2_e]]></Name>
-		<X>-2300</X>
-		<Y>3890</Y>
+		<X>-2350</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -38356,10 +38661,10 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: coperXI -> via2_e (depois linha verde)
+					<Code><![CDATA[// coperXI -> via2_e (depois linha verde)
 ((Trem) agent).faixa_atual   = faixa_via2_e;
 ((Trem) agent).proxima_faixa = null;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via2_e] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via2_e", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -38475,7 +38780,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_via3_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_via3_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -38611,7 +38916,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -38690,10 +38996,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-015: fim da via3_c -> via3_d; a seguinte e a silosMuro_a
+					<Code><![CDATA[// fim da via3_c -> via3_d; a seguinte e a silosMuro_a
 ((Trem) agent).faixa_atual   = faixa_via3_d;
 ((Trem) agent).proxima_faixa = faixa_silosMuro_a;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_via3_d] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_d", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -39152,7 +39458,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -39237,7 +39544,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-016: fim da via2_e - e costaLeite?
+					<Code><![CDATA[// fim da via2_e - e costaLeite?
 "costaLeite".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
@@ -39310,8 +39617,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-016: entrega o trem a CostaLeite
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_costaLeite] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[// entrega o trem a CostaLeite
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_costaLeite", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().costaLeite.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -39444,7 +39752,8 @@ main().costaLeite.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_t39] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_t39", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 
 main().adm.comecar_encoste.take(agent);]]></Code>
 				</Value>
@@ -39506,7 +39815,7 @@ main().adm.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-023: fim da pst_marginal_c - e suzano?
+					<Code><![CDATA[// fim da pst_marginal_c - e suzano?
 "suzano".equals(((Trem) agent).get_terminal_name()) ||
 "eldorado".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
@@ -39580,10 +39889,10 @@ main().adm.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-023: suzano -> pmc_linha6000_a
+					<Code><![CDATA[// suzano -> pmc_linha6000_a
 ((Trem) agent).faixa_atual   = faixa_linha6000_a;
 ((Trem) agent).proxima_faixa = null;
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_linha6000_a] trem=%d faixa_atual=%s proxima_faixa=%s", time(), agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_linha6000_a", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
@@ -39699,7 +40008,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][enter circular_marginal_c] trem=%d", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "enter_circular_marginal_c", String.format("trem=%d", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -39838,7 +40147,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Faixa faixa_atual = ((Trem) train).faixa_atual;
+					<Code><![CDATA[log_circulacao(train, "entrou faixa " + (((Trem) train).faixa_atual == null ? "?" : ((Trem) train).faixa_atual.track.getName()));
+Faixa faixa_atual = ((Trem) train).faixa_atual;
 faixa_atual.ocupar((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
@@ -39914,8 +40224,9 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-023: entrega o trem à Suzano
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_suzano] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[// entrega o trem à Suzano
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_suzano", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().suzano.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -40048,7 +40359,8 @@ main().suzano.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_t39] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_t39", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 
 main().tes.comecar_encoste.take(agent);]]></Code>
 				</Value>
@@ -40110,7 +40422,7 @@ main().tes.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-023: fim da pst_marginal_c - e suzano?
+					<Code><![CDATA[// fim da pst_marginal_c - e suzano?
 "suzano".equals(((Trem) agent).get_terminal_name())]]></Code>
 				</Value>
 			</Parameter>
@@ -40183,8 +40495,9 @@ main().tes.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-023: entrega o trem à Suzano
-if (trace_circulacao) traceln("🟠➡️ " + String.format("[%.1f][Circ][exit para_eldorado] trem=%d", time(), agent.getId()));
+					<Code><![CDATA[// entrega o trem à Suzano
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_eldorado", String.format("trem=%d", agent.getId()));
+log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 main().eldorado.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -40207,6 +40520,236 @@ main().eldorado.comecar_encoste.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1793014601642</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1795900000101</Id>
+		<Name><![CDATA[bloquear_encoste_marginal]]></Name>
+		<X>-2385</X>
+		<Y>3920</Y>
+		<Label>
+			<X>-40</X>
+			<Y>55</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[new ResourcePool[][] {
+    {
+        rp_pst_via2_e,
+        rp_pmc_marginal_a,
+        rp_pmc_marginal_b,
+        rp_pmc_marginal_c,
+        rp_pmc_intervalo4000_a,
+        rp_pmc_intervalo4000_b,
+        rp_pst_switch36
+    }
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[new ResourcePool[][] {
+    {rp_pst_via2_e}
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// ALT-103: coperXI/costaLeite pegam a via2_e e as faixas da manobra (marginal_a/b/c, intervalo4000_a/b) de uma vez.
+// Antes a via2_e era licenciada no início da via3_b e as marginais só no terminal: com um vazio na marginal
+// esperando a via2_e, os dois travavam. Quem solta as marginais é o terminal (CoperXI: pst_marginal_liberar;
+// CostaLeite: liberar_marginal_encoste); a via2_e sai pelo caminho normal (liberar_faixas_ocupadas).
+Trem t = (Trem) agent;
+faixa_via2_e.licenciar(t);
+faixa_marginal_a.bloquear(t);
+faixa_marginal_b.bloquear(t);
+faixa_marginal_c.bloquear(t);
+faixa_intervalo4000_a.bloquear(t);
+faixa_intervalo4000_b.bloquear(t);
+main().railwaySwitch73.connectTracks(main().pst_marginal_a, main().pst_marginal_b);]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1795900000106</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

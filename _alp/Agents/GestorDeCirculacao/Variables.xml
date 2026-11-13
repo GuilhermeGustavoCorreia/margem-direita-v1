@@ -143,7 +143,7 @@ faixa_via3_b.linhaTMDS	= pl_pst_via_3_b;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-003.2
+				<Code><![CDATA[
 faixa_via3_c           = new Faixa();
 faixa_via3_c.ordem     = 4;
 faixa_via3_c.recurso   = rp_via3_c;
@@ -172,7 +172,7 @@ faixa_via3_c.linhaTMDS = pl_via3_c;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-015: antiga via3_c (renomeada para via3_d)
+				<Code><![CDATA[// antiga via3_c (renomeada para via3_d)
 faixa_via3_d           = new Faixa();
 faixa_via3_d.ordem     = 5;
 faixa_via3_d.recurso   = rp_via3_d;
@@ -201,7 +201,7 @@ faixa_via3_d.linhaTMDS = pl_via3_d;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-003.2
+				<Code><![CDATA[
 faixa_silosMuro_a           = new Faixa();
 faixa_silosMuro_a.ordem     = 5;
 faixa_silosMuro_a.recurso   = rp_silosMuro_a;
@@ -230,7 +230,7 @@ faixa_silosMuro_a.linhaTMDS = pl_silosMuro_a;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-003.2
+				<Code><![CDATA[
 faixa_silosMuro_b           = new Faixa();
 faixa_silosMuro_b.ordem     = 6;
 faixa_silosMuro_b.recurso   = rp_silosMuro_b;
@@ -259,7 +259,7 @@ faixa_silosMuro_b.linhaTMDS = pl_silosMuro_b;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-003.2
+				<Code><![CDATA[
 faixa_silosMuro_c           = new Faixa();
 faixa_silosMuro_c.ordem     = 7;
 faixa_silosMuro_c.recurso   = rp_silosMuro_c;
@@ -316,7 +316,7 @@ faixa_via2_c.linhaTMDS	= pl_pst_via_2_c;]]></Code>
               StaticVariable="false">
 			<Type><![CDATA[Faixa]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[// ALT-003.1
+				<Code><![CDATA[
 faixa_entrada_pera           = new Faixa();
 faixa_entrada_pera.ordem     = 2;
 faixa_entrada_pera.recurso   = rp_entrada_pera;
@@ -1246,7 +1246,7 @@ faixa_linha7000_a.ordem          	= 1;
 faixa_linha7000_a.recurso        	= rp_pmc_linha7000_a;
 faixa_linha7000_a.track          	= main().pmc_linha7000_a;
 faixa_linha7000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-008: sem enter (faixa usada so pelas manobras do Tgrao)
+// sem enter (faixa usada so pelas manobras do Tgrao)
 faixa_linha7000_a.linhaTMDS			= pl_pmc_linha7000_a;]]></Code>
 			</InitialValue>
 		</Properties>
@@ -1274,7 +1274,7 @@ faixa_linha7000_b.ordem          	= 2;
 faixa_linha7000_b.recurso        	= rp_pmc_linha7000_b;
 faixa_linha7000_b.track          	= main().pmc_linha7000_b;
 faixa_linha7000_b.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-008: sem enter (faixa usada so pelas manobras do Tgrao)
+// sem enter (faixa usada so pelas manobras do Tgrao)
 faixa_linha7000_b.linhaTMDS			= pl_pmc_linha7000_b;]]></Code>
 			</InitialValue>
 		</Properties>
@@ -1302,7 +1302,7 @@ faixa_linha7000_c.ordem          	= 3;
 faixa_linha7000_c.recurso        	= rp_pmc_linha7000_c;
 faixa_linha7000_c.track          	= main().pmc_linha7000_c;
 faixa_linha7000_c.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-008: sem enter (faixa usada so pelas manobras do Tgrao)
+// sem enter (faixa usada so pelas manobras do Tgrao)
 faixa_linha7000_c.linhaTMDS			= pl_pmc_linha7000_c;]]></Code>
 			</InitialValue>
 		</Properties>
@@ -1330,7 +1330,7 @@ faixa_linha7000_d.ordem          	= 4;
 faixa_linha7000_d.recurso        	= rp_pmc_linha7000_d;
 faixa_linha7000_d.track          	= main().pmc_linha7000_d;
 faixa_linha7000_d.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-008: sem enter (faixa usada so pelas manobras do Tgrao)
+// sem enter (faixa usada so pelas manobras do Tgrao)
 faixa_linha7000_d.linhaTMDS			= pl_pmc_linha7000_d;]]></Code>
 			</InitialValue>
 		</Properties>
@@ -1339,7 +1339,7 @@ faixa_linha7000_d.linhaTMDS			= pl_pmc_linha7000_d;]]></Code>
 		<Id>1791800000046</Id>
 		<Name><![CDATA[faixa_linha6000_a]]></Name>
 		<X>130</X>
-		<Y>1810</Y>
+		<Y>1830</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1358,7 +1358,7 @@ faixa_linha6000_a.ordem          	= 4;
 faixa_linha6000_a.recurso        	= rp_pmc_linha6000_a;
 faixa_linha6000_a.track          	= main().pmc_linha6000_a;
 faixa_linha6000_a.estado         	= Faixa.EstadoFaixa.LIVRE;
-// ALT-023: enter para a chegada da Suzano (antes sem enter, so manobras do Tgrao)
+// enter para a chegada da Suzano (antes sem enter, so manobras do Tgrao)
 faixa_linha6000_a.enter            = circular_linha6000_a;
 faixa_linha6000_a.linhaTMDS			= pl_pmc_linha6000_a;]]></Code>
 			</InitialValue>
@@ -1498,12 +1498,11 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
-	<Variable Class="CollectionVariable">
-		<Id>1787602396616</Id>
-		<Name><![CDATA[coordenadas_ferroviarias]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>60</X>
-		<Y>500</Y>
+	<Variable Class="PlainVariable">
+		<Id>1793910000001</Id>
+		<Name><![CDATA[trens_no_gestor]]></Name>
+		<X>160</X>
+		<Y>370</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1511,10 +1510,32 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[java.util.Set<Integer>]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new java.util.HashSet<Integer>()]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1795850000402</Id>
+		<Name><![CDATA[trens_em_circulacao]]></Name>
+		<X>160</X>
+		<Y>390</Y>
+		<Label>
+			<X>10</X>
+			<Y>1</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-			<CollectionClass>LinkedHashMap</CollectionClass>
-			<ElementClass>PositionOnTrack</ElementClass>
-			<ValueElementClass>Integer</ValueElementClass>
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>Trem</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
 		</Properties>
 	</Variable>
 	<Variable Class="CollectionVariable">

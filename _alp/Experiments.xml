@@ -51,6 +51,9 @@
 			<Parameter>
 				<ParameterName>TAMANHO_VAGAO_GRAO</ParameterName>
 			</Parameter>
+			<Parameter>
+				<ParameterName>pasta_simulacao</ParameterName>
+			</Parameter>
 		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>

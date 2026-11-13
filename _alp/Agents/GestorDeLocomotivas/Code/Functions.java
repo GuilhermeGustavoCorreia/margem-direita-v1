@@ -146,7 +146,7 @@ if (primeiroCarro instanceof Locomotiva) {
     
 } else {
 
-    traceln("erro: carro não é locomotiva");
+    Log.erro("GesLocomotivas", "carro_nao_e_locomotiva", "carro não é locomotiva");
     return false;
     
 }
@@ -154,14 +154,14 @@ if (primeiroCarro instanceof Locomotiva) {
 
 boolean solicitar_locomotivas_manobra(String patio,String tipo)
 {/*ALCODESTART::1789664284000*/
-traceln("chamando locomotiva de manobra");
+Log.info("GesLocomotivas", "solicitar_loco_manobra", "chamando locomotiva de manobra");
 
 switch (patio) {
 
     case "pst":
         if (tipo.equals("manobra-coperXI-rechego")) {
             
-            traceln("dkfnALIEFNÃPIN");
+            Log.debug("GesLocomotivas", "debug_temporario", "dkfnALIEFNÃPIN");
             
         } else {
             error("Tipo de manobra desconhecido no PST: [" + tipo + "]");
@@ -185,7 +185,7 @@ if (primeiroCarro instanceof Locomotiva) {
     
 } else {
 
-    traceln("erro: carro não é locomotiva");
+    Log.erro("GesLocomotivas", "carro_nao_e_locomotiva", "carro não é locomotiva");
     return false;
     
 }
@@ -193,7 +193,7 @@ if (primeiroCarro instanceof Locomotiva) {
 
 ResourcePool selecionar_rp_locomotiva_trecho(String ferrovia)
 {/*ALCODESTART::1790779134818*/
-traceln("chamando locomotiva de trecho");
+Log.info("GesLocomotivas", "solicitar_loco_trecho", "chamando locomotiva de trecho");
 
 if (ferrovia == null)
     error("FERROVIA NULA");

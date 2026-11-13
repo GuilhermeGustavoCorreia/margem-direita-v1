@@ -506,7 +506,7 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1788997163077</Id>
 		<Name><![CDATA[button5]]></Name>
-		<X>320</X>
+		<X>320.001</X>
 		<Y>10.4</Y>
 		<Label>
 			<X>0</X>
@@ -516,11 +516,11 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="120" Height="35">
+		<BasicProperties Width="118" Height="35">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_rumo.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTeste_rumo);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -967,7 +967,7 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 	<Text>
 		<Id>1789668778220</Id>
 		<Name><![CDATA[text40]]></Name>
-		<X>1070</X>
+		<X>1000</X>
 		<Y>60</Y>
 		<Label>
 			<X>0</X>
@@ -992,7 +992,7 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 	<Text>
 		<Id>1789668800984</Id>
 		<Name><![CDATA[text95]]></Name>
-		<X>1080</X>
+		<X>1010</X>
 		<Y>85</Y>
 		<Label>
 			<X>0</X>
@@ -1019,7 +1019,7 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 		<Id>1790084636701</Id>
 		<Name><![CDATA[text33]]></Name>
 		<X>1000</X>
-		<Y>1700</Y>
+		<Y>1500</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1044,7 +1044,7 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 		<Id>1790084884367</Id>
 		<Name><![CDATA[text35]]></Name>
 		<X>1000</X>
-		<Y>1890</Y>
+		<Y>1690</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1069,7 +1069,7 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 		<Id>1790085376898</Id>
 		<Name><![CDATA[text41]]></Name>
 		<X>1000</X>
-		<Y>2090</Y>
+		<Y>1890</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1403,8 +1403,8 @@ main().getTamanhoDoTrem(_loteDeCarregados_linhaVerde)</TextCode>
 	<Text>
 		<Id>1791553583737</Id>
 		<Name><![CDATA[text42]]></Name>
-		<X>600</X>
-		<Y>30</Y>
+		<X>1000</X>
+		<Y>320</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1430,7 +1430,7 @@ RUMO E MRS 21 NA CABECA]]></Text>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1791553651361</Id>
 		<Name><![CDATA[button6]]></Name>
-		<X>320</X>
+		<X>320.001</X>
 		<Y>93.984</Y>
 		<Label>
 			<X>0</X>
@@ -1440,11 +1440,11 @@ RUMO E MRS 21 NA CABECA]]></Text>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="120" Height="35">
+		<BasicProperties Width="118" Height="35">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_vli.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "vli", tremTeste_vli);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -1455,7 +1455,7 @@ RUMO E MRS 21 NA CABECA]]></Text>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1791553656674</Id>
 		<Name><![CDATA[button7]]></Name>
-		<X>320</X>
+		<X>320.001</X>
 		<Y>52.192</Y>
 		<Label>
 			<X>0</X>
@@ -1465,11 +1465,11 @@ RUMO E MRS 21 NA CABECA]]></Text>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="120" Height="35">
+		<BasicProperties Width="118" Height="35">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTeste_mrs.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", tremTeste_mrs);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
@@ -1530,4 +1530,430 @@ RUMO E MRS 21 NA CABECA]]></Text>
 		<Dy>0</Dy>
 		<Dz>0</Dz>
 	</Line>
+	<Text>
+		<Id>1793976048055</Id>
+		<Name><![CDATA[text]]></Name>
+		<X>250</X>
+		<Y>20</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[text]]></Text>
+		<TextCode>podeReceberNovoLote()? "TRUE": "FALSE"</TextCode>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>20</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1794525383738</Id>
+		<Name><![CDATA[text37]]></Name>
+		<X>960</X>
+		<Y>620</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-65536</Color>
+		<Text><![CDATA[Remover eventos dinamicos]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Arc>
+		<Id>1794525383745</Id>
+		<Name><![CDATA[arc1]]></Name>
+		<X>1029.944</X>
+		<Y>702.246</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Dz>0</Dz>
+		<Rotation>0.0</Rotation>
+		<RadiusX>79.893</RadiusX>
+		<RadiusY>40</RadiusY>
+		<StartAngle>-270.0</StartAngle>
+		<Angle>123.9000015258789</Angle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Arc>
+	<Oval>
+		<Id>1794525383747</Id>
+		<Name><![CDATA[oval1]]></Name>
+		<X>1017.215</X>
+		<Y>797.215</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<RadiusX>17.5855</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
+	<Text>
+		<Id>1794525443148</Id>
+		<Name><![CDATA[text38]]></Name>
+		<X>2160</X>
+		<Y>1140</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-65536</Color>
+		<Text><![CDATA[Ajustar padrão]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Arc>
+		<Id>1794525443152</Id>
+		<Name><![CDATA[arc2]]></Name>
+		<X>2120</X>
+		<Y>1220</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Dz>0</Dz>
+		<Rotation>75.0</Rotation>
+		<RadiusX>79.893</RadiusX>
+		<RadiusY>40</RadiusY>
+		<StartAngle>-270.0</StartAngle>
+		<Angle>123.9000015258789</Angle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Arc>
+	<Oval>
+		<Id>1794525443154</Id>
+		<Name><![CDATA[oval2]]></Name>
+		<X>2060</X>
+		<Y>1320</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<RadiusX>78.7</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
+	<Text>
+		<Id>1794525494873</Id>
+		<Name><![CDATA[text49]]></Name>
+		<X>2160</X>
+		<Y>1640</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-65536</Color>
+		<Text><![CDATA[Ajustar padrão]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Arc>
+		<Id>1794525494876</Id>
+		<Name><![CDATA[arc3]]></Name>
+		<X>2120</X>
+		<Y>1720</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Dz>0</Dz>
+		<Rotation>75.0</Rotation>
+		<RadiusX>79.893</RadiusX>
+		<RadiusY>40</RadiusY>
+		<StartAngle>-270.0</StartAngle>
+		<Angle>123.9000015258789</Angle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Arc>
+	<Oval>
+		<Id>1794525494878</Id>
+		<Name><![CDATA[oval3]]></Name>
+		<X>2060</X>
+		<Y>1820</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<RadiusX>78.7</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
+	<Text>
+		<Id>1794525505942</Id>
+		<Name><![CDATA[text50]]></Name>
+		<X>2160</X>
+		<Y>2060</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-65536</Color>
+		<Text><![CDATA[Ajustar padrão]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Arc>
+		<Id>1794525505944</Id>
+		<Name><![CDATA[arc4]]></Name>
+		<X>2120</X>
+		<Y>2140</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Dz>0</Dz>
+		<Rotation>75.0</Rotation>
+		<RadiusX>79.893</RadiusX>
+		<RadiusY>40</RadiusY>
+		<StartAngle>-270.0</StartAngle>
+		<Angle>123.9000015258789</Angle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Arc>
+	<Oval>
+		<Id>1794525505946</Id>
+		<Name><![CDATA[oval4]]></Name>
+		<X>2060</X>
+		<Y>2240</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<RadiusX>78.7</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
+	<Text>
+		<Id>1794525527267</Id>
+		<Name><![CDATA[text51]]></Name>
+		<X>2160</X>
+		<Y>620</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-65536</Color>
+		<Text><![CDATA[Ajustar padrão]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Arc>
+		<Id>1794525527269</Id>
+		<Name><![CDATA[arc5]]></Name>
+		<X>2120</X>
+		<Y>700</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<Dz>0</Dz>
+		<Rotation>75.0</Rotation>
+		<RadiusX>79.893</RadiusX>
+		<RadiusY>40</RadiusY>
+		<StartAngle>-270.0</StartAngle>
+		<Angle>123.9000015258789</Angle>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Arc>
+	<Oval>
+		<Id>1794525527271</Id>
+		<Name><![CDATA[oval5]]></Name>
+		<X>2060</X>
+		<Y>800</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>2</LineWidth>
+		<LineColor>-65536</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>DASHED</LineStyle>
+		<RadiusX>78.7</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
 </Presentation>

@@ -1,5 +1,6 @@
 public interface ITerminalMoega
 {
+	
 	boolean podeReceberNovoLote();
 	float getOverloadVazios();
 	
@@ -20,4 +21,5 @@ public interface ITerminalMoega
 	ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios();
 	void 			 set_quantidade_alivio(int qt_quantidade);
 	int  			 get_quantidade_vazios();
+	
 }

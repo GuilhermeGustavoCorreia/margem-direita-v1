@@ -1141,3 +1141,496 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Traces:** `[Alivio4000][compatibilidade]` quando o trem é definido e a cada 60 s para terminal em espera.
 - **Riscos conhecidos:** trem incompleto fica na 4000 até um terminal da mesma ferrovia entrar em overload; `getFerrovia()` dos terminais devolve a ferrovia em atendimento, não necessariamente a dos vazios.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`
+## ALT-083 — interface-leitura-arquivos
+- **Data:** 2026-11-03
+- **Status:** validada em 2026-11-05 (12 terminais e 1 combinação lidos sem erro)
+- **Objetivo:** etapa 1 da interface HTML (`simulacao/interface_simulacao.html`). O modelo lê os arquivos gerados pela interface e mostra no log o que entendeu. Nada muda no comportamento da simulação.
+- **Alterações (Main):**
+  - Parâmetro `pasta_simulacao` (String, padrão `"simulacao"`, relativo à pasta do modelo).
+  - Variáveis `duracao_h`, `warmup_h` (double) e `replicacoes` (int), preenchidas a partir de `config/simulacao.csv`. Ainda não são aplicadas.
+  - Função `ler_csv(caminho)`: separador `;`, pula o cabeçalho e linhas vazias; `error()` se o arquivo não existir.
+  - Função `carregar_configuracao()`, chamada no On startup depois de `configurar_log_em_arquivo()`. Lê e valida:
+    - `config/simulacao.csv`: duração > 0, 0 ≤ warm-up < duração, replicações ≥ 1.
+    - `config/terminais_moega.csv`: `main().<instancia>` existe (reflexão) e implementa `ITerminalMoega`; aviso se a classe difere de `agente`; segmento e ao menos uma ferrovia.
+    - `input/tempo_entre_chegadas.csv`: terminal cadastrado, ferrovia operada pelo terminal, intervalo > 0.
+  - Havendo erro, para com `error()` depois de listar todos no log.
+- **Traces:** `[config]`.
+- **Arquivos:** `_alp/Agents/Main/AOC.Main.xml`, `_alp/Agents/Main/Variables.xml`, `_alp/Agents/Main/Code/{Functions.java,Functions.xml}`
+## ALT-084 — gestor-isn
+- **Data:** 2026-11-05
+- **Status:** aplicada, aguardando validação
+- **Objetivo:** pátio ISN com estacionamento (linha 02) e circulação própria (linha 01 e porteira), no padrão de faixas do GestorDeCirculacao. Inclui a parte do GestorDeChegadas que decide o destino e coloca o trem no trilho.
+- **Alterações (GestorDeISN):**
+  - Faixas `faixa_isn_a..e` (trechos `isn_linha01_*`) e `faixa_isn_porteira` (`psn_linha_porteira`), pools `rp_isn_*`, polyline nova `pl_isn_porteira` no painel.
+  - Fluxo `circular_isn_*` → `ir_isn_*` → Exit com `seguir_para_faixa()`; entrega ao GestorDeCirculacao na `faixa_val_via2` (próxima `faixa_via3_intermar`).
+  - Linha 02: ◇ `e_estacionar` (`trem.estacionarISN`) no fim da faixa c → `ir_isn_linha02_e` (travessão `railwayTrack24`) → `ir_linha02` → `liberar_linha01` → `espera_linha02` → `sair_linha02` (porteira).
+  - `registrar_faixas()` no On startup (faixas do ISN em `gestorDeCirculacao.faixas`); evento `ev_verificar_saida` (1 min) chama `verificar_saida()`.
+  - Removidos `destino_isn` e `para_circulacao`; função `main()` adicionada.
+- **Alterações (outros):**
+  - Trem: variável `estacionarISN`.
+  - GestorDeChegadas: `receber_trem` grava `estacionarISN`; `entrada_livre` exige `faixa_isn_a` LIVRE; `ev_relogio` não chama mais `verificar_saida`; função `main()` adicionada.
+  - Terminais ADM, CoperXI, CoperXXI, MoegaoMar, MoegaoTerra, TES e Tgrao: Exit `paraGestorCirculacao_chegadaCarregados` chama `gestorDeChegadas.receber_trem`.
+  - CLAUDE.md: exceção à regra dos pools de linha (pools do ISN no GestorDeISN).
+- **Traces:** `[ISN]` e `[chegadas]`.
+- **Riscos conhecidos:** `para_via3_ate_santa` e a exceção da Bracell ficam sem uso pelos terminais [revisar]; Tgrao tem a cabeça para o Valongo e ainda não foi testado no ISN; posição da `pl_isn_porteira` no painel é provisória.
+- **Arquivos:** `_alp/Agents/GestorDeISN/*`, `_alp/Agents/GestorDeChegadas/*`, `_alp/Agents/Trem/Variables.xml`, `_alp/Agents/{ADM,CoperXI,CoperXXI,MoegaoMar,MoegaoTerra,TES,Tgrao}/EmbeddedObjects.xml`, `_alp/Classes/Class.{Pedido,FluxoChegada}.java`, `CLAUDE.md`, `docs/gestores.md`
+## ALT-085 — prefixo-do-trem
+- **Data:** 2026-11-05
+- **Status:** aplicada, aguardando validação
+- **Objetivo:** todo trem que entra no modelo recebe um prefixo (letra + 2 dígitos pares), atribuído pelo GestorDeChegadas na criação.
+- **Regra (sorteio aleatório, número sempre par):**
+  - Rumo: grão X/I/Y, açúcar R, celulose L; 02–98.
+  - MRS: grão M 60–78; açúcar M 80–98; celulose U 30–48.
+  - VLI: U 02–98 (qualquer segmento).
+- **Alterações:**
+  - Trem: variável `prefixo` (String), criada pelo usuário.
+  - GestorDeChegadas: função `gerar_prefixo(trem)` (segmento e ferrovia lidos do 1º vagão); `receber_trem` grava `trem.prefixo` antes de tudo, inclusive no trem do botão manual.
+  - Traces `[chegadas]` e `[ISN]`: `trem=<id>/<prefixo>`.
+- **Riscos conhecidos:** sorteio simples, dois trens no modelo podem ter o mesmo prefixo; combinação ferrovia × segmento fora da regra para com `error()`; trens criados por TrainDecouple (lotes) não herdam o prefixo.
+- **Arquivos:** `_alp/Agents/Trem/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeISN/{EmbeddedObjects.xml,Code/Functions.java}`
+
+## ALT-086 — log-gestor-circulacao
+- **Data:** 2026-11-05
+- **Status:** aplicada, aguardando validação
+- **Objetivo:** log padronizado do GestorDeCirculacao: `[ges-circulacao][tempo] - [prefixo: segmento destino] [status]`, ex.: `[ges-circulacao][12.40h] - [R42: acucar coperXI] [entrou faixa pst_via3_a]`.
+- **Quando loga:**
+  - Entrada no gestor (`chegada_carregados`, `circulacao`, `circulacao_vazios`, `tentar_usar_faixa`): `comecou circulacao`. Só na 1ª entrada: o `tentar_usar_faixa` recebe o trem a cada faixa, então o gestor guarda os ids em `trens_no_gestor`.
+  - onEnter dos 45 TrainMoveTo de faixa (`ir_*`, `recuar_*`...): `entrou faixa <track da faixa_atual>`.
+  - Saída para terminal (`para_*` de cada terminal, `continuar5`, `para_manobra_coperXI`): `saiu para terminal <nome>`; `exit` (takeAlivio): `saiu para terminal <nome> (alivio)`; `para_DVS`, `alivio_para_DVs`, `exit3`: `saiu para DV`. Tira o trem de `trens_no_gestor`.
+- **Alterações (GestorDeCirculacao):** funções `log_circulacao(trem, status)`, `log_entrada(trem)`, `log_saida(trem, status)`; variável `trens_no_gestor` (Set<Integer>). Os traces antigos `trace_circulacao` ficaram como estavam.
+- **Riscos conhecidos:** trens criados por TrainDecouple não têm prefixo (sai `null`); TrainMoveTo legados sem onEnter (`moverAtéOPonto`, `linha_5k_*`, `irAteCruzamento*`) não logam; se um trem sair do gestor por um caminho fora da lista acima, a próxima entrada dele não loga `comecou circulacao`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects.xml,Variables.xml,Code/Functions.xml,Code/Functions.java}`
+
+## ALT-087 — log-padrao
+- **Data:** 2026-11-05
+- **Status:** aplicada, aguardando compilar e validar
+- **Objetivo:** padronizar os logs de todos os agentes. Formato: `[   0.320h] INFO  Origem  evento  mensagem`, tempo sempre em horas, níveis DEBUG/INFO/WARN/ERRO, filtro por nível e por origem.
+- **Alterações:**
+  - Nova classe `Log` (`_alp/Classes/Class.Log.java`, registrada no `.alpx`) com `iniciar`, `debug`, `info`, `warn`, `erro`, `nivelMinimo`, `silenciados`. Saída por `System.out` (continua espelhada em `logs/sim.log`).
+  - GestorDeCirculacao: 130 `traceln` convertidos (opção B: cabeçalho padronizado, texto da mensagem mantido). `Log.iniciar(this)` no `inicializar`. Evento = `enter_<bloco>`/`exit_<bloco>`; `exit_sem_rota_silosMuro_c` sai como WARN. O emoji 🟠➡️ foi removido.
+  - GestorDeISN (14 `traceln`) e GestorDeChegadas (6): convertidos do mesmo jeito. Origens `ISN` e `Chegadas`; `Log.iniciar(this)` em `registrar_faixas` (ISN) e `iniciar` (Chegadas). No ISN o evento do `seguir_para_faixa` é o nome do bloco (`nascimento`, `fim_isn_linha01_a`...); a `Log` troca espaços por `_` no evento.
+  - GestorDeAlivios (22 `traceln`, origem `GesAlivios`) e GestorDeLocomotivas (6, origem `GesLocomotivas`): convertidos. As tags antigas viraram evento (`diag_pst`, `qtd_alivio`, `alivio4000_compatibilidade`, `saida_4000_livre`, `retornar_alivio_pmc`...). Passam a WARN: `SEM LOCO`, `nenhuma faixa contem a posicao` e `sem faixas de alívio`. `erro: carro não é locomotiva` passa a ERRO. Os `diag_*` continuam em INFO. O `dkfnALIEFNÃPIN` (resto de depuração) virou DEBUG com o mesmo texto.
+  - Terminais ADM (18), TES (30) e T39 (4): convertidos, origem = nome do terminal, evento = tag antiga (`decidir_moega`, `descarga_04e5`, `resto_3000`...). Marcos de alívio: `alivio_inicio` (ADM: loco chegou; TES: pega lote) e `alivio_fim` (TES). `AVISO` virou WARN, `ERRO` virou ERRO, e os prints soltos do ADM (`get_distancia_entrada_linha7`, `linha_entrada`, `vagoes_entrando_linha7`) e do T39 (`trem_na_faixa`) viraram DEBUG, que não aparece com `nivelMinimo = INFO`. Ainda não existem logs de `chegou`, `descarga_inicio`, `descarga_fim` e `saiu` nos terminais.
+  - Referências `ALT-NNN` removidas dos comentários e das descrições de função dos 8 agentes convertidos (texto mantido). Regra do `CLAUDE.md` atualizada.
+- **Pendente:** converter os demais agentes (Trem, terminais restantes, Main, MoverTremCompleto_Ponto). Eles ainda logam no formato antigo; `ALT-NNN` ainda aparece nos comentários deles. Os terminais MoegaoMar e MoegaoTerra logam com a tag `[CoperXII]` (cópia).
+- **Backup:** `_backup_antes_alt087/` (`_alp` e `.alpx` antes da alteração).
+- **Arquivos:** `_alp/Classes/Class.Log.java`, `MargemDireitaModel1.alpx`, `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java}`, `_alp/Agents/GestorDeISN/**`, `_alp/Agents/GestorDeChegadas/**`, `_alp/Agents/GestorDeAlivios/**`, `_alp/Agents/GestorDeLocomotivas/**`, `_alp/Agents/{ADM,TES,T39}/**`, `CLAUDE.md`
+
+## ALT-088 — coperxi-contagem-vagao-fracionado
+- **Data:** 2026-11-06
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** o `pega1vagao` separa o último vagão do lote antes da descarga. O vagão separado (`train2`) esperava na fila do `mnbCarregados_ocupar1` sem estar em nenhuma variável, e só entrava em `_loteEmDescarga` no `descarregar`. Com isso, `_getVagosLinhaMoega()` e `get_vagoes_carregados()` contavam a menos: o rechego (`<= 27`) era chamado cedo, `pode_rechegar_…` achava espaço que não existia e `podeReceberNovoLote()` liberava novo trem com vagão ainda carregado. Como `atualiza_vaiDescarga()` só olhava `_loteEmDescarga`, um segundo release podia separar outro vagão enquanto o primeiro ainda esperava.
+- **Alterações (agente CoperXI):**
+  - Nova variável `_vagao_aguardando_descarga` (Trem).
+  - `pega1vagao.onExitDecoupled`: `_vagao_aguardando_descarga = (Trem) train2;`
+  - `descarregar.onEnter`: `_vagao_aguardando_descarga = null;`
+  - `_getVagosLinhaMoega()`: soma `_vagao_aguardando_descarga` (vagão ainda está na linha).
+  - `get_vagoes_carregados()`: soma `_loteEmDescarga` (vagão na moega ainda está carregado).
+  - `atualiza_vaiDescarga()`: só libera novo lote se `_vagao_aguardando_descarga == null`.
+  - Log de contagem: nova função `log_contagem(evento)` (classe `Log`, origem `CoperXI`) imprime `mar/meio/terra/bomba`, `aguardando`, `descarga`, `verde`, `linhaMoega` e `carregados`. Eventos: `fracionou` (`pega1vagao`), `entrou_descarga` (`descarregar`), `release` (`rp_manobrando_carregados.onRelease`) e `rechego` (injeção da loco em `atualiza_precisa_de_rechego()`, no lugar dos 3 `traceln`).
+- **2ª etapa (após 1º teste, log de 2026-11-06):**
+  - O evento cíclico `pegarVagaoPraDescarga` (1 s) também libera lotes e ignorava a trava: vários vagões eram fracionados e ficavam na fila do `mnbCarregados_ocupar1`, só o último aparecia. A condição do evento passa a exigir `_vagao_aguardando_descarga == null` e `mnbCarregados_ocupar3.size() == 0` (sem loco de rechego esperando).
+  - Lote do rechego sumia da contagem entre o `trainCouple` (zera `_loteDeCarregados_linhaVerde`) e a entrega nas linhas. Nova variável `_lote_em_rechego` (Trem): recebe o trem no `trainCouple.onExit` e volta a null no `mnbCarregados_liberar2.onExit`. `get_vagoes_carregados()` soma `_lote_em_rechego.getNumeroDeVagoes()` (sem a loco). `log_contagem` mostra `rechego=`.
+- **Observação:** `_loteEmDescarga` só volta a null nos `formarBloco*`, então `get_vagoes_carregados()` conta o vagão até ele formar bloco nas linhas de vazios (conservador).
+- **Backup:** `_backup_antes_alt088/CoperXI/` (original) e `_backup_antes_alt088/CoperXI/etapa2/` (antes da 2ª etapa)
+- **Arquivos:** `_alp/Agents/CoperXI/{Variables.xml,EmbeddedObjects.xml,Code/Functions.java,Code/Functions.xml,Code/Events.java}`
+
+## ALT-089 — coperxi-um-vagao-por-vez-na-descarga
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-09 mostrou o evento `pegarVagaoPraDescarga` (20 s) fracionando um vagão a cada ciclo, inclusive durante o encoste: 26 `fracionou` para 13 `entrou_descarga` em 1,437 h. Os vagões ficavam na fila do `mnbCarregados_ocupar1` e só o último aparecia em `_vagao_aguardando_descarga`, então `_getVagosLinhaMoega()` contava ~12 a menos. A condição da 2ª etapa da ALT-088 no evento não estava no código. Além disso, o `atualiza_vaiDescarga()` do `onRelease` nunca liberava, porque `_loteEmDescarga` só volta a null no `formarBloco*`.
+- **Regra:** só um vagão fracionado por vez; novo lote só vai para `descarga_moega`/`pega1vagao` sem vagão aguardando nem em descarga, sem loco de rechego esperando e fora do alívio.
+- **Alterações (agente CoperXI):**
+  - `atualiza_vaiDescarga()`: passa a exigir também `!fazendoAlivio` (regra única de liberação).
+  - Evento `pegarVagaoPraDescarga`: corpo substituído por `atualiza_vaiDescarga();` (fica só como retomada, ex.: fim do alívio).
+  - `formarBlocoMar_a/b` e `formarBlocoTerra_a/b` (`onExit` e `onExitHit`): chamam `atualiza_vaiDescarga()` no fim, depois de `_loteEmDescarga = null`.
+- **Pendente:** `_lote_em_rechego` (2ª etapa da ALT-088) também não está no código.
+- **Backup:** `_backup_antes_alt089/CoperXI/`
+- **Arquivos:** `_alp/Agents/CoperXI/{EmbeddedObjects.xml,Code/Functions.java,Code/Events.java}`
+
+## ALT-090 — log-circulacao-prefixo-id
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Motivo:** rastrear o trem de alívio do PST (prefixo null) e conferir se o trem que volta do alívio tem o mesmo id da loco.
+- **Alteração (GestorDeCirculacao):** `log_circulacao()` passa de `[prefixo: segmento destino] [status]` para `[(prefixo - id): segmento destino] [status]`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`
+
+## ALT-091 — log-id-loco-alivio-pst
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Motivo:** conferir se o trem que volta do alívio do PST tem o mesmo id da loco chamada.
+- **Alteração (GestorDeAlivios):** `chamar_locomotiva_de_alivio_pst()` registra `loco do alivio (prefixo - id)` ao tirar a loco do wait da ferrovia.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`
+
+## ALT-092 — alivio-pst-faixa-criacao-ocupada-e-prefixo-mnb
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** logs de 2026-11-09 mostraram `The car being added on the track 'via1_intermar_d' intersects with another car`. O `liberar_faixas_pst` (Release de tudo) solta o `rp_via1_intermar_d` com o trem de volta ainda na faixa; o `atualizar_status_alivio_terminal` devolve o terminal a `terminais_pst` e o próximo alívio cria a loco em cima dele. A ALT-091 confirmou que o trem de volta é o mesmo agente da loco (mesmo id).
+- **Alterações (GestorDeAlivios):**
+  - `seize_faixa_criacao_pst.onExit`: `ocupar_agente(9999)` vira `ocupar((Trem) agent)` (OCUPADA com o id da loco) e registra `loco do alivio (prefixo - id) ocupa <recurso>`.
+  - `fazer_procedimento_de_alivio_pst()`: só segue se a faixa de criação estiver LIVRE; senão o terminal continua em `terminais_pst` (log a cada 60 s).
+  - `retornar_alivio.onEnter`: se a faixa de criação não for a de entrada na circulação (Tgrao: `marginal_c`), libera ali.
+  - A liberação da `via1_intermar_d` fica com o GestorDeCirculacao (`liberar_faixas_ocupadas`), sem mudança lá.
+  - Prefixo `MNB` + número ímpar no trem de alívio: nova variável `contador_mnb` (int, inicial -1). Aplicado em `seize_faixa_criacao_pst` (PST), `fazer_procedimento_de_alivio_pmc()` e `loco_manobra_alivio_pmc` (PMC) e `loco_pcx_starts` (linha 4000).
+- **Docs:** `docs/gestores.md` (GestorDeAlivios).
+- **Backup:** `_backup_antes_alt092/GestorDeAlivios/`
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java}`
+
+## ALT-093 — trens-em-circulacao
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-09: em 2,783 h o GestorDeISN liberou o M98 da linha 02 e, no mesmo instante, o GestorDeChegadas mandou o R02 direto para a circulação, os dois para a CoperXI. `podeReceberNovoLote()` só olha os carregados no terminal, e o M98 ainda não tinha chegado. Em 3,172 h o R02 encostou nos vagões da linha verde (`ir_linha_verde.outHit` sem conexão).
+- **Regra:** um trem a caminho de cada terminal por vez.
+- **Alterações:**
+  - GestorDeCirculacao: nova collection `trens_em_circulacao` (ArrayList<Trem>). `log_saida()` retira o trem quando ele sai para o terminal.
+  - GestorDeChegadas: `decidir_destino()` só manda direto para a circulação se o terminal pode receber e não há trem em `trens_em_circulacao` com o mesmo `ITerminalMoega_destino`. `receber_trem()` adiciona o trem à lista quando o destino é a circulação (e o trem do botão manual, se tiver destino).
+  - GestorDeISN: `verificar_saida()` só libera a linha 02 com a mesma checagem e também confere o `pedido_atual` da Chegadas; ao liberar, adiciona o trem à lista.
+  - Trens de alívio não entram na lista.
+- **Backup:** `_backup_antes_alt093/`
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{Variables.xml,Code/Functions.java}`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `_alp/Agents/GestorDeISN/Code/Functions.java`
+
+## ALT-094 — coperxi-trem-chegando-e-vez-da-linha02
+- **Data:** 2026-11-09
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-09 (após a ALT-093): (1) o R96 saiu de `trens_em_circulacao` no `log_saida` (4,891 h), mas a CoperXI só conta os vagões a partir do `deixar27vgs`; nesse intervalo `podeReceberNovoLote()` ficou true e o P5 (M98) foi mandado direto (4,900 h), batendo na linha verde em 5,191 h. (2) O R02 ficou na linha 02 desde 3,006 h: a Chegadas mandou o P4 e o P5 na frente dele.
+- **Alterações:**
+  - CoperXI: variável `_trem_chegando` (Trem). Recebe o trem no `encostarLinhaVerde.onEnter`; volta a null no novo Delay `finalizar_manobra` (0 s), entre `mnbCarregados_liberar` e `devolverLocomotiva` (fim da manobra de chegada). `podeReceberNovoLote()` devolve false enquanto `_trem_chegando != null`.
+  - GestorDeChegadas: `decidir_destino()` conta o trem da linha 02 (`lote_linha02`) com o mesmo destino como trem a caminho; o pedido novo fica na fila e o ISN libera o da linha 02 primeiro.
+- **Conectores:** `connector41` passa a ligar `finalizar_manobra.out` → `devolverLocomotiva.port`; novo `connector_finalizar_manobra` liga `mnbCarregados_liberar.out` → `finalizar_manobra.in`. Posição do bloco a ajustar no editor.
+- **Backup:** `_backup_antes_alt094/`
+- **Arquivos:** `_alp/Agents/CoperXI/{Variables.xml,EmbeddedObjects.xml,Connectors.xml,Code/Functions.java}`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`
+
+## ALT-095 — gestordvs-quantos-vagoes-cabem
+- **Data:** 2026-11-10
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** `quantos_vagoes_cabem` devolvia 82 fixo e o GestorDeAlivios usava 12 fixo (chamada comentada). Com DVs cheias, um MNB que não fecha 82 nem cabe ficaria preso na entrada.
+- **Alterações:**
+  - GestorDeDVs: `quantos_vagoes_cabem(terminal)` — falta = 82 − acumulado do tipo (ferrovia × segmento do terminal); vazios ≥ falta → falta (acopla e parte); vazios ≤ livre → vazios (estaciona); senão 0. O acumulado e o livre incluem o `lote_slot_via2`.
+  - GestorDeDVs: funções novas `acumulado_do_tipo(ferrovia, segmento)`, `espaco_livre()` (`CAPACIDADE_X − main().getNumeroDeVagoes(lote_x)` nas 4 linhas + slot da via 2 = 138), `log_estado()`, `texto_linha(lote, capacidade)`; variáveis `trace_dvs` (true) e `TAMANHO_TREM_FORMADO` (82, constante).
+  - GestorDeDVs: logs `consulta_cabem` e `estado` (origem `GesDVs`); com retorno 0, só a cada 60 s.
+  - GestorDeAlivios: `colocar_terminal_em_alivio_pst` usa `quantos_vagoes_as_dvs_precisam(terminal)` no lugar do 12 fixo; `fazer_procedimento_de_alivio_pst` consulta uma vez só e passa o valor para `colocar_terminal_em_alivio_pst(terminal, cabem_na_dv)` (parâmetro novo); com retorno 0 não começa o alívio (terminal fica em `terminais_pst`).
+- **Limitação:** os lotes das DVs ainda não são preenchidos fisicamente; até lá, acumulado = 0 e livre = 138.
+- **Backup:** `_backup_antes_alt095/`
+- **Arquivos:** `_alp/Agents/GestorDeDVs/{Variables.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/GestorDeAlivios/Code/{Functions.java,Functions.xml}`
+
+## ALT-096 — gestordvs-logs-manobra
+- **Data:** 2026-11-10
+- **Status:** aplicada, aguardando compilar e validar
+- **O que:** logs da manobra nas DVs com os dados do trem.
+- **Alterações (GestorDeDVs):**
+  - `texto_trem(trem)`: `(prefixo - id) | N vgs + M loco | ferrovia/segmento` (tipo pelo `getPrimeiroVagao()`, que pula as locos).
+  - `log_comecou_manobra(trem)` → trace `comecou_manobra` (com o livre); chamado no `onEnter` do `entrarNasDVs`.
+  - `colocar_lote(linha, lote)`: grava `lote_direita/dv2/dv3/dv4/slot_via2` (linha `"DIR"`, `"DV2"`, `"DV3"`, `"DV4"`, `"SLOT"`), trace `colocou_lote` e `log_estado()`. Ainda sem chamada: entra com os MoveTos.
+  - `log_terminou_manobra(trem)` → trace `terminou_manobra` + `log_estado()`; chamado no `onEnter` do `trainExit`.
+- **Backup:** `_backup_antes_alt096/`
+- **Arquivos:** `_alp/Agents/GestorDeDVs/{EmbeddedObjects.xml,Code/Functions.java,Code/Functions.xml}`
+
+## ALT-097 — gestordvs-estacionar-formar
+- **Data:** 2026-11-10
+- **Status:** aplicada, aguardando compilar e validar
+- **O que:** fluxo físico das DVs: estacionar lotes, formar o trem de 82 e sair por `circ_pos_fim_placa_2`.
+- **Sentido:** carro 0 do lado da Ponta da Praia, loco no fim (lado do Valongo). Até o ponto e até a saída o trem anda recuando (Ponta da Praia → Valongo); do ponto para a linha, avançando.
+- **Fluxo (GestorDeDVs):** `entrarNasDVs` (`iniciar_manobra`) → ◇ `sel_segue_direto` (82 vgs ou celulose)
+  - sim → `ir_saida`
+  - não → `ir_ponto` (`_dv_ponto_aux_mnb`, evitando as 4 linhas: passa pela `dv_5`) → `moverComposicao` → `liberar_faixas_ponto` → ◇ `sel_acao` (`escolher_linha`)
+    - linha → `ir_linha` (ponta da Ponta da Praia da linha, 3 m; `out` = linha vazia, `outHit` = bateu no lote) → `deixar_lote` (decouple dos primeiros `min(capacidade, vagões)`) → `lote_estacionado` (`colocar_lote`); o resto volta ao `moverComposicao`
+    - bateu no lote → `entrar_lote` + `acoplar_lote` (`limpar_lote`) → ◇ `sel_formando`: formando → volta ao ponto; senão → `deixar_lote`
+    - sem linha (82 formado ou só loco) → `ir_saida` (`circ_pos_fim_placa_2`, log `saida_82` / `saida_loco` / `saida`) → `trainExit` (`finalizar_manobra`) → `liberar_faixas_circulacao` → ◇ `sel_so_loco`: só loco → `devolverLocomotiva`; senão `trainDecouple3` (corta as locos do fim: `size − vagões`)
+- **Regras:** `formando` = acumulado do tipo > 0 e acumulado + vagões do trem == 82. Estacionar: 1º linha com lote do mesmo tipo e espaço (acopla e completa), 2º linha vazia. Slot da via 2 fora desta versão (livre = 108). Linha DV4 = `dv_4_b`. `condicao_pode_receber_alivio()` = `trem_em_manobra == null`.
+- **Funções novas:** `segue_direto`, `iniciar_manobra`, `escolher_linha`, `mesmo_tipo`, `get_lote`, `get_capacidade`, `get_track_linha`, `get_offset_do_inicio`, `get_trilhos_evitar`, `entrar_lote_da_linha`, `limpar_lote`, `n_vagoes_deixar`, `log_saida`, `finalizar_manobra`.
+- **Variáveis novas:** `trem_em_manobra`, `linha_destino`, `formando`.
+- **Blocos novos:** `sel_segue_direto`, `ir_ponto`, `liberar_faixas_ponto`, `sel_acao`, `ir_linha`, `entrar_lote`, `acoplar_lote`, `sel_formando`, `deixar_lote`, `lote_estacionado`, `ir_saida`, `sel_so_loco` (posições a ajustar no editor). Os blocos antigos do esqueleto (`irDV3..5`, `trainCouple*`, `cabeDV*` etc.) ficaram desconectados.
+- **Backup:** `_backup_antes_alt097/`
+- **Arquivos:** `_alp/Agents/GestorDeDVs/{EmbeddedObjects.xml,Connectors.xml,Variables.xml,Code/Functions.java,Code/Functions.xml}`
+
+## ALT-098 — movertremponto-residual-pela-traseira
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-10 (ALT-097): no `gestorDeDVs.moverComposicao`, a loco do MNB01 parou no `_dv_ponto_aux_mnb` atravessando o switch (traseira na `railwayTrack203`). O `_jaEstaNoDestino` olha frente e traseira e deu true; o `_distanciaResidual` só olhava a frente (`getTrack(true)`), não achou carro na track do ponto e chamou `trem.getDistanceToTarget()` com o trem parado → `Cannot obtain distance to target while the train is stopped`.
+- **Alterações (`MoverTremCompleto_Ponto._distanciaResidual`):**
+  - procura o carro também pela traseira (`getTrack(false)`), como o `_jaEstaNoDestino`; achado pela traseira, soma o comprimento do próprio carro.
+  - sem carro na track do ponto: tenta `getDistanceToTarget()`; se o trem estiver parado, `Log.warn` (`MoverTremPonto distancia_residual`) e move o comprimento do trem.
+- **Impacto:** agente compartilhado; só muda o caso que antes terminava em erro.
+- **Backup:** `_backup_antes_alt098/`
+- **Arquivos:** `_alp/Agents/MoverTremCompleto_Ponto/Code/Functions.java`
+
+## ALT-099 — dvs-decisao-da-linha-uma-vez
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-11: `proxima_linha` saía duplicado. A condição do `sel_acao` chamava `escolher_linha`, que grava log e altera `linha_destino`; o SelectOutput avalia a condição duas vezes (quando o trem fica pronto no bloco anterior e na transmissão).
+- **1ª tentativa (descartada):** decidir no `liberar_faixas_ponto.onExit` e condição `linha_destino != null` → erro `The choice for agent changed before the agent transmission` (a 1ª avaliação ocorre antes do `onExit` do bloco anterior).
+- **Alterações (GestorDeDVs):**
+  - nova função pura `calcular_linha(trem)` (String ou null; sem log e sem alterar estado).
+  - `escolher_linha` grava `linha_destino = calcular_linha(trem)` e loga `proxima_linha` / `sem_linha`.
+  - `sel_acao.condition` → `calcular_linha((Trem) agent) != null`; `sel_acao.onEnter` → `escolher_linha((Trem) agent);`.
+  - `liberar_faixas_ponto.onExit` volta a ficar vazio.
+- **Analisado sem alteração:** acumulado 81 / falta 1 — buscar 1 vagão é aceito; formação do 82 em várias linhas (DIR → DV2 → DV3) — lógica de `formando` já volta ao ponto a cada acoplamento.
+- **Backup:** `_backup_antes_alt099/` (estado ALT-098) e `_backup_antes_alt099b/` (1ª tentativa)
+- **Arquivos:** `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `Code/Functions.java`, `Code/Functions.xml`
+
+## ALT-100 — coperxi-primeiro-vagao-da-linha-de-vazios
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-11: trem de 82 no CoperXI, alívios levaram 35 + 35 + 11 e 1 vagão ficou parado na linha. O primeiro vagão de uma linha de vazios vazia ia do `formarBloco*.out` direto para `acumularX.in1` (esperando o próximo vagão) e `_loteDeVazios_LinhaX` só era preenchido no acoplamento → `_getVagosVazios()` não contava esse vagão e o alívio não conseguia retirá-lo (não passa pelo `wait_bloco*`). Trava quando é o último vagão do trem.
+- **Alterações (CoperXI), nas 4 linhas (Mar A/B, Terra A/B) — igual ao caminho do excedente (`mnbVazios_liberar17/19/21/23`):**
+  - conectores `mnbVazios_liberar9/11/13/15.out` → `wait_blocoMar_a/Mar_b/Terra_a/Terra_b.in` (antes `acumular2/acumular1/acumular/acumular3.in1`) — refeitos pelo usuário no AnyLogic.
+  - `onExit` desses Release: `_loteDeVazios_LinhaX = (Trem) agent;`.
+- **Comportamento:** o vagão sozinho conta como vazio e fica no wait; o próximo vagão bate (`onExitHit`: `condicao_ficar = true` + `liberar_wait`) e os dois acoplam; num alívio sai pelo wait com `condicao_ficar = false`.
+- **Fora:** CoperXXI e CostaLeite parecem ter a mesma estrutura (não alterados).
+- **Backup:** `_backup_antes_alt100/`
+- **Arquivos:** `_alp/Agents/CoperXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXI/Connectors.xml`
+
+## ALT-101 — alivio-via2-entrega-as-dvs-no-via2-intermar-a
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-11 (Tgrao): o alívio pela via 2 andava duas faixas além de `via2_intermar_a` (`railwayTrack199 → val_via2`) e entrava nas DVs pelo lado do Valongo → `gestorDeDVs.ir_ponto`: `There is no straight route from val_via2, offset 10 to railwayTrack203`.
+- **Alterações (GestorDeCirculacao), igual ao fim do caminho via1 (`para_via6` → `ir_via1_intermar_a` → `para_DVS`):**
+  - `alivio_para_via2_intermar_a.onExit`: `proxima_faixa = null` (antes `faixa_railwayTrack199`).
+  - conector `recuar_via2_intermar_a.out` → `alivio_para_DVs` (antes `alivio_para_railwayTrack199`).
+  - cadeia `alivio_para_railwayTrack199 → railwayTrack199 → val_via2 → recuar_val_via2` fica desconectada para o alívio (não apagada).
+- **Risco:** rota recuando de `via2_intermar_a` até `railwayTrack203` (evitando as 4 linhas) não confirmada pelo XML.
+- **Backup:** `_backup_antes_alt101/`
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Connectors.xml`
+
+## ALT-102 — dvs-livre-por-tipo-e-reserva-do-lider
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-11 (Tgrao + CoperXI): (1) `espaco_livre()` somava vagas de todas as linhas, inclusive de linha com lote de outro tipo → `livre=34` para açúcar quando cabiam 33; sobrou 1 vagão (`sem_linha`) que saiu com a loco. (2) DIR 40 grão + 67 açúcar = 107: açúcar falta 15 (terminal com 14), grão falta 42 sem espaço → nenhum tipo fecha 82, `retorno=0` para sempre.
+- **Regra nova (`quantos_vagoes_cabem`):**
+  - fecha o trem (`vazios >= falta`) → `falta` (como antes).
+  - senão, `vazios` precisa caber em `espaco_livre_tipo` (linhas vazias + linhas do mesmo tipo).
+  - reserva do líder (tipo com mais vagões acumulados que este): simula estacionar os vazios (mesma ordem do `calcular_linha`, por linha) e exige que sobre `falta_lider` para o líder; senão 0.
+  - cota fixa por tipo descartada: 108 vagas não comportam dois tipos reservando 82.
+- **Funções novas:** `lote_do_tipo`, `espaco_livre_tipo`, `lote_do_lider`, `espaco_lider_apos`. Log `consulta_cabem` ganha `livre_tipo` e `lider=tipo falta sobra`.
+- **Efeito colateral:** um tipo não-líder pode esperar o líder fechar o trem.
+- **Backup:** `_backup_antes_alt102/`
+- **Arquivos:** `_alp/Agents/GestorDeDVs/Code/Functions.java`, `Code/Functions.xml`
+
+## ALT-103 — coperxi-costaleite-encoste-pega-via2e-e-marginais-juntas
+- **Data:** 2026-11-11
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema 1 (deadlock):** log de 2026-11-11 (208.18h): R22 (carregado CoperXI) licenciou a via2_e no início da via3_b e, no terminal, o `pst_marginal_bloquear` pedia marginal_a/b/c + intervalo4000_a/b. O vazio do Tgrao (MNB01) estava nas marginais esperando a via2_e. Um esperava o outro. A CostaLeite tem o mesmo `pst_marginal_bloquear` (mesmas 5 faixas e o mesmo switch73).
+- **Problema 2 (CostaLeite nunca soltava as marginais):** nenhum Release apontava para o `pst_marginal_bloquear` dela e o `liberar_faixas_ocupadas` só libera faixas `OCUPADA` (as marginais ficam `OCUPADA_BLOQUEADA`). A loco saía pelo `mov_devolver_loco` com as 5 unidades; log de 2026-11-11 (215.48h): `saida_4000_livre aguardando rp_pmc_intervalo4000_b: OCUPADA_BLOQUEADA | trem 25853` para sempre, e o mesmo agente 25853 seguia como loco dos alívios (MNB01..07).
+- **Alterações (GestorDeCirculacao):**
+  - `para_via3_b`: coperXI/costaLeite → `proxima_faixa = null` (não licencia mais a via2_e antes).
+  - Novo Seize `bloquear_encoste_marginal` entre `e_coperXI.outT` e `para_via2_e`: um conjunto `{rp_pst_via2_e, marginal_a/b/c, intervalo4000_a/b}`; onExit licencia a via2_e, `bloquear()` nas 5 faixas e `railwaySwitch73` marginal_a↔b. O `para_via2_e` encontra a via2_e já licenciada e não pede de novo.
+- **Alterações (CoperXI):** `pst_marginal_bloquear` excluído do build e desligado (`encostarLinhaVerde` → `ir_linha_verde`); `pst_marginal_liberar` passa a `SPECIFIED_RESOURCES` com os 5 pools (antes `ALL_FROM_SEIZES {pst_marginal_bloquear}`), mantendo os `liberar()`.
+- **Alterações (CostaLeite):** `pst_marginal_bloquear` excluído do build e desligado (`encostar` → `ir_marginal`); novo Release `liberar_marginal_encoste` (`SPECIFIED_RESOURCES`, 5 pools + `liberar()`) entre `desacoplar_10vgs` (loco) e `mov_devolver_loco`.
+- **A validar:**
+  - [ ] Seize policy do `bloquear_encoste_marginal` = "Seize whole set at once" (conferir na tela; se pegar uma a uma, o deadlock volta).
+  - [ ] Caminho da loco da CostaLeite até o `guardar_loco` não passa pela marginal (se passar, o Release tem que ir depois).
+  - [ ] Cenário do deadlock (vazio do Tgrao + carregado CoperXI) e saída da 4000 depois de um trem da CostaLeite.
+- **Backup:** `_backup_antes_alt103/` (subpastas GestorDeCirculacao, CoperXI, CostaLeite). Cópia igual ficou por engano em `_backup_antes_alt100/<agente>/`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/CoperXI/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/CostaLeite/{EmbeddedObjects,Connectors}.xml`
+
+## ALT-104 — costaleite-rota-loco-alivio
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (1,339h): `The track via1_intermar_d is not directly connected to the next track in the route: psnSaidaCopexXXI_b1` no `ir_entrada_terminal_pst`. O `get_pos_alivio()` da CostaLeite passou a devolver `_costaLeite_inicio_alivio` (na `psnSaidaCopexXXI_b1`), mas `get_faixas_primeiro_alivio()` seguia vazia; `Alivio.getRotaLicenciada()` montava `[via1_intermar_d, psnSaidaCopexXXI_b1]`, sem as linhas do meio.
+- **Alteração (CostaLeite):** `get_faixas_primeiro_alivio()` devolve `linhaPaqueta_a` e `linhaCostaLeita_a` como `Faixa` sem recurso (mesmo padrão do CoperXXI). Rota: `via1_intermar_d → linhaPaqueta_a → linhaCostaLeita_a → psnSaidaCopexXXI_b1` (conferida no grafo de AMVs do Main).
+- **Observação:** o WARNING `bloquear_faixas_pst ... empty resource set` continua (as faixas não têm recurso) e é inofensivo.
+- **A validar:**
+  - [ ] Loco do alívio chega a `_costaLeite_inicio_alivio` e o alívio da CostaLeite termina.
+- **Backup:** `_backup_antes_alt104/CostaLeite/Functions.java`
+- **Arquivos:** `_alp/Agents/CostaLeite/Code/Functions.java`
+
+## ALT-105 — gestor-alivios-um-alivio-pst-por-vez
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (2,076h): `Alivio.getConjuntoRecursos_faixas(): terminal sem faixas de primeiro alivio`. Quando as DVs voltaram a aceitar (2,066h), Tgrao e CostaLeite passaram no mesmo `analisar_pst()`: o `rp_alivio_pst.idle()` só é testado antes do `for` e o laço não parava. O segundo `colocar_terminal_em_alivio_pst` sobrescreveu `alivio_em_andamento_pst`; a CostaLeite terminou e esvaziou a lista, e a loco seguinte entrou no `bloquear_faixas_pst` com o `Alivio` vazio.
+- **Alteração (GestorDeAlivios):** em `analisar_pst()`, depois de `fazer_procedimento_de_alivio_pst(terminal)`, `return` se o terminal saiu de `terminais_pst` (alívio começou).
+- **A verificar:** `analisar_pmc()` e `analisar_pcx()` têm o mesmo laço sem parada.
+- **Backup:** `_backup_antes_alt105_106/GestorDeAlivios/`
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`
+
+## ALT-106 — recurso-amv-switch36-no-encoste
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (1,253h): `Train [274] and train [273] are trying to occupy the switch railwaySwitch36 simultaneously`. O AMV liga `pst_linha_verde`, `railwayTrack22` (lado da `pstLinhaDaBomba`, CoperXI) e `railwayTrack77` (lado da `linha_cantina`/`pst_linha_atendimento_costaLeite`). O encoste passa por ele e nenhum recurso o protegia.
+- **Alterações:**
+  - GestorDeCirculacao: novo ResourcePool `rp_pst_switch36` (cópia do `rp_pmc_marginal_a`), incluído no conjunto do `bloquear_encoste_marginal` (pego junto com via2_e, marginais e 4000).
+  - CoperXI `pst_marginal_liberar` e CostaLeite `liberar_marginal_encoste`: liberam também o `rp_pst_switch36`.
+- **A validar:**
+  - [ ] Compila (pool novo acessível como `main().gestorDeCirculacao.rp_pst_switch36`).
+  - [ ] Nenhum outro movimento (descarga do CoperXI, alívio) cruza o AMV fora do encoste; se cruzar, precisa pegar o mesmo recurso.
+- **Backup:** `_backup_antes_alt105_106/` (GestorDeCirculacao, CoperXI, CostaLeite)
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/CoperXI/EmbeddedObjects.xml`, `_alp/Agents/CostaLeite/EmbeddedObjects.xml`
+
+## ALT-107 — logs-movimentos-coperxi-costaleite
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Objetivo:** acompanhar de perto os movimentos do CoperXI e da CostaLeite (investigação da colisão no `railwaySwitch36`, ALT-106).
+- **Alterações (CoperXI e CostaLeite):**
+  - Nova função `log_mov(String evento, Agent a)`: `Log.info(<terminal>, evento, "(prefixo - id) | N vgs + N loco | linhas=<tracks ocupadas>")`.
+  - Chamada no `onEnter` (`ini:<bloco>`) e no `onExit` (`fim:<bloco>`) de todos os TrainMoveTo, no `onEnter` de todos os Enter (`etapa:<bloco>`) e no `onExit` do `pst_marginal_liberar` / `liberar_marginal_encoste` (`liberou:<bloco>`). Código existente nos campos foi mantido (a chamada entra na primeira linha).
+  - Total: 82 chamadas no CoperXI, 44 na CostaLeite.
+- **Não cobertos:** blocos `MoverTremCompleto_Ponto`, `TrainDecouple`/`TrainCouple` e `DevolverLocomotiva`.
+- **Para silenciar:** `Log.silenciados.add("CoperXI")` / `Log.silenciados.add("CostaLeite")`.
+- **Backup:** `_backup_antes_alt107/` (CoperXI, CostaLeite)
+- **Arquivos:** `_alp/Agents/{CoperXI,CostaLeite}/EmbeddedObjects.xml`, `_alp/Agents/{CoperXI,CostaLeite}/Code/Functions.{java,xml}`
+
+## ALT-108 — coperxi-rota-loco-alivio-sem-linhas-da-costaleite
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (4,710h): `The track linhaCostaLeita_a is not directly connected to the next track in the route: pstSaidaCoperXI`. A `get_faixas_primeiro_alivio()` do CoperXI estava com as linhas da CostaLeite (`linhaPaqueta_a`, `linhaCostaLeita_a`), código colado no agente errado durante a ALT-104. A `pstSaidaCoperXI` sai direto da `via1_intermar_d`.
+- **Alteração (CoperXI):** `get_faixas_primeiro_alivio()` volta a devolver lista vazia (como no commit `46cec1d`). Rota: `via1_intermar_d → pstSaidaCoperXI`.
+- **Backup:** `_backup_antes_alt108/CoperXI/Functions.java`
+- **Arquivos:** `_alp/Agents/CoperXI/Code/Functions.java`
+
+## ALT-109 — dvs-devolve-loco-direto-da-linha
+- **Data:** 2026-11-12
+- **Status:** validada (log de 2026-11-12: `colocou_lote` → `devolveu_loco` → `terminou_manobra`)
+- **Nota:** registrada primeiro como ALT-103, número já usado por outra sessão; renumerada.
+- **Pedido:** depois de colocar o lote, a loco sozinha não precisa ir ao `_dv_ponto_aux_mnb` nem ao `circ_pos_fim_placa_2`; é devolvida direto.
+- **Alterações (GestorDeDVs):**
+  - novo `sel_loco_sozinha` (SelectOutput) entre `deixar_lote.out` e `moverComposicao`; condição pura `main().getNumeroDeVagoes((Trem) agent) == 0`.
+  - `outT` → `devolverLocomotiva.port`; `onExitTrue`: log `devolveu_loco ... na linha X`, `log_terminou_manobra`, `trem_em_manobra = null`, `formando = false` (libera o próximo alívio). `linha_destino` não é zerada ali porque o lote pode sair do `deixar_lote` depois da loco e o `colocar_lote` usa ela; o `iniciar_manobra` zera no próximo trem.
+  - `outF` (sobraram vagões) → `moverComposicao`, como antes.
+  - conector `con_dvs_15` passa a `deixar_lote.out → sel_loco_sozinha.in`; novos `con_dvs_21` e `con_dvs_22`.
+- **Por que funciona:** `devolverLocomotiva` entrega ao `gestorDeLocomotivas.guardar_loco`, que começa com `sairDaTrack` (TrainExit); as faixas já foram liberadas no `liberar_faixas_ponto`.
+- **Sem mudança:** `ir_saida → trainExit → sel_so_loco` segue para trem com vagões (`saida_82`, `sem_linha`).
+- **Backup:** `_backup_antes_alt103/` (nome mantido)
+- **Arquivos:** `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`
+
+## ALT-110 — costaleite-solta-vazio-do-wait-no-fim-do-alivio
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (3,650h): com as 3 linhas de vazios cheias (8+8+8), o 25º vazio (`26107`) saiu da moega, `cabe_linhaTerra` = false → `mnbVazios_liberar15 → wait`. Nada chamava `wait.free()`: o vazio ficou preso, o `_loteEmDescarga` não voltou a null (só zera no `formarBloco*`) e o `atualiza_vaiDescarga` nunca liberou a próxima descarga, nem depois do alívio de 24 (4,857h).
+- **Alteração (CostaLeite):** `deixarTerminal.onEnter` (fim do alívio) solta todos do `wait` antes do `atualiza_vaiDescarga()`: `while (wait.size() > 0) wait.free(wait.get(0));`. O vazio volta ao `mnbVazios_ocupar1 → cabe_linha*`, entra na linha vazia e o `formarBloco` zera o `_loteEmDescarga`.
+- **Ajuste (2026-11-12):** o `while (wait.size() > 0) wait.free(wait.get(0));` era laço infinito — o `free()` só agenda a saída, o `wait.size()` não diminui dentro do evento e a simulação congelava no `deixarTerminal` (log ALT-111: `soltou_wait soltando 1` e nada depois). Trocado por `wait.freeAll();`. Backup do ajuste: `_backup_antes_alt110b/`.
+- **Backup:** `_backup_antes_alt110/`
+- **Arquivos:** `_alp/Agents/CostaLeite/EmbeddedObjects.xml`
+
+## ALT-111 — costaleite-logs-recurso-de-manobra
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Objetivo:** investigar o travamento da descarga da CostaLeite depois do alívio (ALT-110): `wait` com 1 vazio, `rp_manobrando_carregados` em uso, `waitLotesParaDescarga` = 2, `_loteEmDescarga` preenchido. Os Seize/Release/Wait não tinham log.
+- **Funções novas (CostaLeite):** `texto_trem(t)` → `(prefixo - id)`; `texto_estado()` → `rp=ocupado/capacidade | wait=N | waitLotes=N | emDescarga=(prefixo - id)`; `log_rp(evento, a)` → trem + estado.
+- **Logs:**
+  - Seize `mnbCarregados_ocupar`, `mnbVazios_ocupar1/2/4/5/6`: `fila:<bloco>` (onEnter) e `pegou:<bloco>` (onExit).
+  - Release `mnbCarregados_liberar`, `mnbVazios_liberar9..16`: `soltou:<bloco>` (onExit).
+  - `wait.onEnter`: `esperando:wait`.
+  - `cabe_linhaTerra.onExitFalse`: `linhas_cheias` (Mar/Meio/Terra x/8 + estado).
+  - `deixarTerminal`: `soltou_wait` antes do `wait.free`.
+  - `atualiza_vaiDescarga()`: `vai_descarga` / `nao_descarrega` + estado.
+- **Para silenciar:** `Log.silenciados.add("CostaLeite")`.
+- **Backup:** `_backup_antes_alt111/`
+- **Arquivos:** `_alp/Agents/CostaLeite/EmbeddedObjects.xml`, `Code/Functions.java`, `Code/Functions.xml`
+
+## ALT-112 — costaleite-trem-chegando
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** (1) `podeReceberNovoLote()` era `_getVagoesCarregados() < 0` (sempre false, erro de sinal). (2) Mesma janela da ALT-094 no CoperXI: os carregados só contam a partir dos `fica_lote_*`; entre o `comecar_encoste` e o primeiro desacoplamento o terminal parecia vazio.
+- **Alterações (CostaLeite):**
+  - Variável `_trem_chegando` (Trem). Recebe o trem no `comecar_encoste.onEnter`; volta a null no `liberar_marginal_encoste.onExit` (último lote já deixado pelo `desacoplar_10vgs`).
+  - `podeReceberNovoLote()`: false enquanto `_trem_chegando != null`; senão `_getVagoesCarregados() <= 0`.
+- **Backup:** `_backup_antes_alt112/`
+- **Arquivos:** `_alp/Agents/CostaLeite/{Variables.xml,EmbeddedObjects.xml,Code/Functions.java}`
+## ALT-113 — botoes-passam-pelo-gestor-de-chegadas
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **Problema:** os botões dos terminais chamavam `tremTeste_*.inject()` (CostaLeite: `trem_rumo_grao.inject()`) direto, sem passar pelas condições do GestorDeChegadas. Cliques seguidos criavam um trem em cima do anterior na `isn_linha01_a` (`intersects with another car`); a criação falhava no meio e sobrava um `Trem` sem vagões (erro do prefixo no trem 25984 e trem vazio no `ir_via3_intermar`).
+- **Alterações:**
+  - GestorDeChegadas: `pedir_trem(terminal, ferrovia, fonte)` cria um pedido manual na fila e chama `despachar()`; o trem entra pelas mesmas regras do pedido programado.
+  - 20 botões em ADM, CoperXI, CoperXXI, CostaLeite, MoegaoMar, MoegaoTerra, TES e Tgrao passam a chamar `main().gestorDeChegadas.pedir_trem(this, "<ferrovia>", <fonte>)`.
+  - `despachar()` registra o motivo de espera (`aguardando`) só quando ele muda e a decisão (`decisao`) com o porquê. Funções novas: `motivo_entrada`, `trem_a_caminho`, `motivo_destino`, `registrar_motivo`. `entrada_livre` e `decidir_destino` usam essas funções (mesma regra).
+  - Pedido: campos `manual` e `ultimo_motivo`.
+  - `gerar_prefixo`: trem sem vagão válido vira `Log.warn` (`sem_prefixo`, com carros, locos e destino) e prefixo `???`, sem parar a simulação.
+  - `receber_trem`: trem sem pedido passa a `Log.warn`.
+  - CLAUDE.md: pasta do modelo em `margem-direita-desktop`.
+- **Fora do escopo:** botões `tremTesteSource` e `trem_celulose_teste` (terminais de celulose) continuam com `inject()` direto.
+- **Backup:** `_backup_antes_alt113/`
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/{Functions.java,Functions.xml}`, `_alp/Classes/Class.Pedido.java`, `_alp/Agents/{ADM,CoperXI,CoperXXI,CostaLeite,MoegaoMar,MoegaoTerra,TES,Tgrao}/Levels/Level.level.xml`, `CLAUDE.md`
+## ALT-114 — dvs-fila-na-entrada
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **Problema:** dois alívios chegaram às DVs ao mesmo tempo (MNB17 em manobra, MNB19 chegou). O `iniciar_manobra` só avisava (`manobra_simultanea`) e sobrescrevia `trem_em_manobra` e `linha_destino = null`; o MNB17 seguiu para o `deixar_lote` e o `get_capacidade(null)` estourou (`NullPointerException ... "linha" is null`).
+- **Alterações (GestorDeDVs):**
+  - Variável `fila_dvs` (`ArrayList<Trem>`).
+  - `chegar_nas_dvs(trem)`: entra direto se não há manobra; senão vai para a fila e espera parado na entrada (log `aguardando_dvs`).
+  - `liberar_proxima_manobra()`: o primeiro da fila entra (log `entra_da_fila`). Chamada no `finalizar_manobra` (saída) e no caso da loco sozinha: no `sel_loco_sozinha.onExitTrue` se o lote já foi colocado, senão no `lote_estacionado.onExit` depois do `colocar_lote`.
+  - `get_capacidade(null)`: devolve 0 com `Log.warn` (`linha_nula`).
+- **Alterações (GestorDeCirculacao):** Exits `para_DVS` e `alivio_para_DVs` chamam `gestorDeDVs.chegar_nas_dvs` em vez de `entrarNasDVs.take`.
+- **Risco a validar:** o trem da fila fica parado no fim da circulação, na entrada das DVs; se a manobra em andamento passar por esse trecho, os trens podem se bloquear.
+- **Backup:** `_backup_antes_alt114/`
+- **Arquivos:** `_alp/Agents/GestorDeDVs/{Code/Functions.java,Code/Functions.xml,Variables.xml,EmbeddedObjects.xml}`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`
+
+## ALT-115 — alivio-pst-saida-pela-via1-intermar-c
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando compilar e validar
+- **Problema:** log de 2026-11-12 (5,717h): `There is no straight route from via1_intermar_c, offset 319 to via1_intermar_d, offset 0` no `ir_via1_intermar_d`. Alívio do CoperXI com 44 vazios (MNB19): no `avancoAlivio` (`MoverTremCompleto_Ponto` até `pos_aux_alivio_pst` com `verificarUltimo`) a ponta do trem passou da `via1_intermar_d` para a `via1_intermar_c`. O `configurar_para_circulacao` mandava sempre para a d (offset 0), que já tinha ficado atrás da ponta. Além disso, o trem entrou na c **sem licença** (só a d, faixa de criação, estava apreendida).
+- **Alterações:**
+  - `Alivio.get_faixas_saida()`: faixas de `get_primeiras_linhas_de_circulacao_vazios()` do terminal, sem a faixa de criação (CoperXI, T39, TES e ADM: `via1_intermar_c`; terminais que devolvem null: nenhuma).
+  - `Alivio.getConjuntoRecursos_faixa_criacao()`: faixa de criação + faixas de saída no mesmo conjunto (um Seize só, evita o trem segurar a d esperando a c). `seize_faixa_criacao_pst.onExit` ocupa as faixas de saída com o id da loco.
+  - `fazer_procedimento_de_alivio_pst()`: só começa o alívio com as faixas de saída LIVRES (mesmo padrão da faixa de criação).
+  - `liberar_faixas_pst`: era Release no modo padrão (soltava tudo o que o trem tinha, inclusive as faixas debaixo dele, sem atualizar o estado). Passa a `ALL_FROM_SEIZES` com `bloquear_faixas_pst`, `usar_recurso_loco_pst` e `seize_alivio_pst`.
+  - Release novo `liberar_faixas_fora_do_trem_pst` (depois do `liberar_faixas_pst`): `Alivio.liberar_faixas_fora_do_trem(trem, faixas)` solta as faixas que o trem ainda possui mas onde ele não está mais (log `retorno_alivio`). As faixas debaixo do trem ficam com ele e a circulação libera quando ele sai. Substitui a liberação da faixa de criação que ficava no `retornar_alivio.onEnter` (removida).
+  - `configurar_para_circulacao`: se o trem está na `via1_intermar_c`, entra por c → b; senão d → c. Faixa atual/próxima que o trem já possui fica LICENCIADA (a circulação não tenta apreender de novo). Aviso se o trem chegou na `via1_intermar_b`. Log `retorno_alivio` com a faixa de entrada.
+- **Efeito colateral esperado:** Tgrao — as faixas do `ocupar_saida_alivio` (6000_a, marginal_c, silosMuro_a, via3_c) deixam de ser soltas no retorno e passam a ser liberadas pelo laço da circulação, como a ALT-009 previa.
+- **Riscos a validar:** (1) a `via1_intermar_c` fica apreendida durante todo o alívio do CoperXI/T39/TES; (2) o `liberar_faixas_pst` deixou de ser "solta tudo": recurso de terminal que o trem não tenha devolvido passa a ficar com ele.
+- **Backup:** `_backup_antes_alt115/`
+- **Arquivos:** `_alp/Classes/Class.Alivio.java`, `_alp/Agents/GestorDeAlivios/{EmbeddedObjects.xml,Connectors.xml,Code/Functions.java}`
+## ALT-116 — coperxxi-pode-receber-novo-lote
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** `podeReceberNovoLote()` do CoperXXI passa a recusar trem enquanto um trem está entrando (`_trem_chegando`, do `comecar_encoste` ao `entrar_moega`) ou enquanto há carregados no terminal (`get_vagoes_carregados() == 0`, regra do Guilherme).
+  - Corrige a batida no `_coperXII_encoste` (erro `ir_encoste.outHit` sem ligação): o ISN liberava o 2º trem com a segunda parte do 1º ainda no encoste.
+  - Variável nova `_trem_chegando` (Trem).
+- **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.java`
+## ALT-117 — moegoes-pode-receber-novo-lote
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** MoegaoMar e MoegaoTerra recebem a mesma regra da ALT-116: `podeReceberNovoLote()` recusa trem enquanto um trem está entrando (`_trem_chegando`, do `comecar_encoste` ao `entrar_moega`) ou com carregados no terminal (`get_vagoes_carregados() == 0`).
+  - Variável nova `_trem_chegando` (Trem) nos dois agentes.
+- **Arquivos:** `_alp/Agents/{MoegaoMar,MoegaoTerra}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{MoegaoMar,MoegaoTerra}/Code/Functions.java`
+## ALT-118 — alivio-pst-segura-faixa-de-criacao
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** no retorno do alívio PST, `Alivio.liberar_faixas_fora_do_trem` não solta mais a faixa de criação (`via1_intermar_d`) quando o trem ainda não passou por ela (exceto Tgrao, que sai pela marginal_c). A circulação libera a faixa quando o trem sair dela.
+  - Corrige a colisão no `ir_entrada_terminal_pst`: o alívio do MoegaoMar devolvia a `via1_intermar_d` ainda no terminal, o alívio do MoegaoTerra começava e a loco nova encontrava o trem de volta no corredor não licenciado (`linhaPaqueta_a` → `psnSaidaCopexXXI_a` → `pstSaidaMoegao`).
+- **Arquivos:** `_alp/Classes/Class.Alivio.java`
+## ALT-119 — costaleite-linha-terra-sem-vazios
+- **Data:** 2026-11-12
+- **Status:** aplicada pelo Guilherme no AnyLogic, aguardando validação
+- **O que:** `podeReceberNovoLote()` do CostaLeite também devolve false enquanto `_loteDeVazios_LinhaTerra != null`.
+  - O encoste dos carregados recua até o `_costaLeite_linhaTerra` (`mov_recuar_linhaTerra`) e deixa 14 vagões na linha Terra, a mesma linha do lote de vazios. Com o alívio travado nas DVs, o trem novo entrava e batia nos vazios (`mov_recuar_linhaTerra.outHit`).
+- **Arquivos:** `_alp/Agents/CostaLeite/Code/Functions.java`
+## ALT-120 — coperxxi-alivio-respeita-quantidade
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** o alívio do CoperXXI passa a levar só a quantidade definida pelo GestorDeAlivios (`set_quantidade_alivio`), no padrão do CoperXI.
+  - Variáveis novas `quantidade_alivio` (41) e `qt_vgs_inicio_alivio` (gravada no `iniciar_alivio`).
+  - Depois de cada engate (lote_b → lote_a → moega), `rmv_excesso` (TrainDecouple, primeiros carros) corta `max(0, trazidos − quantidade_alivio)`; o excesso volta para o estoque da própria linha (`guardar_excesso_alivio`) e continua como `lote_vazios_x`.
+  - `precisa_mais_vgs` decide entre engatar o próximo lote (`alivio_seguir`) ou voltar (`fim_alivio`).
+  - Funções novas `get_vgs_trazidos_alivio`, `guardar_excesso_alivio`.
+  - Corrige o impasse nas DVs: o gestor pedia 6 (faltavam 6 para 82) e o CoperXXI entregava 41; o acumulado passava de 82 e o trem nunca era formado.
+- **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`, `_alp/Agents/CoperXXI/Levels/Level.level.xml`
+## ALT-121 — alivio-pst-chegada-por-batida
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** `ir_entrada_terminal_pst.outHit` do GestorDeAlivios passa a ter ligação (Exit `bateu_entrada_terminal_pst`). Se a loco encostou no lote na linha de destino antes do ponto de alívio, conta como chegada (`takeAlivio`) e registra `chegada_por_batida`; batida em outra linha continua parando a simulação com mensagem.
+  - Corrige o erro do 2º alívio do MoegaoTerra: o ponto de alívio coincide com a cabeça do lote_b e a loco encostava antes de chegar a ele.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/{EmbeddedObjects,Connectors}.xml`
+## ALT-123 — log-de-analise-coperxi-coperxxi
+- **Data:** 2026-11-12
+- **Status:** aplicada, aguardando validação
+- **O que:** variável `log_de_analise` (boolean, inicial true) e função `log_analise(evento, agente, msg)` no CoperXI e no CoperXXI. Com a variável em true, cada bloco do fluxo escreve no log (classe `Log`, origem = nome do agente, evento = nome do bloco):
+  - SelectOutput: resultado (true/false); TrainCouple: "acoplou"; TrainDecouple: "vai cortar", "parte que segue", "parte cortada";
+  - TrainMoveTo: "inicio", "chegou", "bateu (outHit)"; Seize: "na fila", "pegou"; Release: "soltou"; Wait: "esperando", "liberado"; Hold: "passou"; Delay: "inicio", "fim"; TrainExit/TrainEnter: saiu/entrou na via.
+  - Cada linha traz trem, carros, vagões e locos. A lógica não muda.
+  - CoperXXI: 48 blocos (97 pontos). CoperXI: 121 blocos (237 pontos).
+- **Arquivos:** `_alp/Agents/{CoperXI,CoperXXI}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{CoperXI,CoperXXI}/Code/Functions.{java,xml}`
+## ALT-124 — coperxxi-alivio-parcial-sobra
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **O que:** alívio parcial do CoperXXI (pedido de 1 a 41) no padrão do Costa Leite: a sobra sai do trem, volta para a posição e fica no wait.
+  - `estoque_b`, `estoque_a` e `estoque_moega` passam de Hold para Wait. `liberar_estoque(linha)` solta o lote no `acoplar_x` (no lugar de `unblock`).
+  - O alívio engata sempre todos os lotes (b → a → moega), para a moega nunca ficar ocupada por vazios com b/a vazios. `precisa_mais_vgs` = `ainda_tem_lote_vazios()`; `rmv_excesso` só corta no último engate.
+  - A sobra (rabo, lado da moega) vai para `entrar_sobra` → `linha_livre_sobra` (espera de 30 s em `espera_linha_sobra` até o trem do alívio sair da `psnSaidaCopexXXI_b`) → `ir_sobra` (até `_coperXXI_lote_b`) → `sobra_cabe` / `cortar_sobra` → `guardar_sobra`. Reparte em b (22) → a (13) → moega.
+  - A descarga (lote 2) só volta depois que a sobra é guardada: `retornar_gestorDeAlivios` não libera se `trem_sobra != null`; `guardar_sobra(..., true)` libera.
+  - Variáveis novas `trem_alivio` e `trem_sobra`. Funções novas `ainda_tem_lote_vazios`, `linha_livre_para_sobra`, `get_capacidade_linha`, `sobra_linha_alvo`, `registrar_sobra`, `guardar_sobra`, `liberar_estoque`.
+  - A sobra anda sem loco (simplificação, como no Costa Leite).
+  - Correção (teste com pedido 4): a sobra fica com a frente virada para o encoste; `ir_sobra` anda de ré (`forward = false`) e `cortar_sobra` corta os últimos carros (`decoupleFirstCars = false`), que são o lado do lote_b.
+- **Validar:** sentido dos "primeiros carros" no `cortar_sobra` (parte cortada deve ser a do lado do lote_b); `getTrack(true/false)` do trem do alívio; posição dos pedaços em relação a `_coperXXI_lote_a`; pedidos 41, 38, 32, 20, 6 e 1.
+- **Backup:** `_backup/ALT-124/` (agente antes da alteração e o script `alt124.py`).
+- **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`

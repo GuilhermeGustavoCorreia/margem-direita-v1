@@ -27,7 +27,8 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.chegada_carregados.take(agent)]]></Code>
+					<Code><![CDATA[// o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -122,7 +123,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -152,7 +153,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -376,7 +377,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -406,7 +407,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -630,7 +631,7 @@
 			<Parameter>
 				<Name><![CDATA[limitArrivals]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -660,7 +661,7 @@
 			<Parameter>
 				<Name><![CDATA[track]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().railwayTrack6]]></Code>
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1228,7 +1229,7 @@
 	<EmbeddedObject>
 		<Id>1792519325544</Id>
 		<Name><![CDATA[para_ajuste_loco]]></Name>
-		<X>1250</X>
+		<X>1200</X>
 		<Y>540</Y>
 		<Label>
 			<X>-10</X>
@@ -2212,7 +2213,7 @@ atualizar_licenciamento_linha3000((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792520703785</Id>
 		<Name><![CDATA[sooRumo_41vgs]]></Name>
-		<X>1120</X>
+		<X>1130</X>
 		<Y>550</Y>
 		<Label>
 			<X>-35</X>
@@ -2334,8 +2335,8 @@ atualizar_licenciamento_linha3000((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792520814361</Id>
 		<Name><![CDATA[para_comecar_encoste_moegas]]></Name>
-		<X>1170</X>
-		<Y>610</Y>
+		<X>1200</X>
+		<Y>590</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -2681,10 +2682,10 @@ atualizar_licenciamento_linha3000((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-035: lote fica na linha 03
+					<Code><![CDATA[// lote fica na linha 03
 lote_linha_3 = (Trem) agent;
-traceln(String.format("[%.1f][TES][linha03] lote=%d com %d vagoes", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
-// ALT-036: comeca a descarga na moega da linha 03
+Log.info("TES", "linha03", String.format("lote=%d com %d vagoes", agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
+// comeca a descarga na moega da linha 03
 exec_descraga_linha03.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -3002,9 +3003,9 @@ exec_descraga_linha03.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-035: lote fica parado na linha 04
+					<Code><![CDATA[// lote fica parado na linha 04
 lote_linha_4 = (Trem) agent;
-traceln(String.format("[%.1f][TES][linha04] lote=%d com %d vagoes", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
+Log.info("TES", "linha04", String.format("lote=%d com %d vagoes", agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
 ficar_linha04.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -3384,7 +3385,7 @@ ficar_linha04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[/* ALT-054: no maximo 11 na linha 05 (o que sobrar volta para a 3000) */ Math.min(11, ((Trem) train).getNumeroDeVagoes())]]></Code>
+					<Code><![CDATA[/* no maximo 11 na linha 05 (o que sobrar volta para a 3000) */ Math.min(11, ((Trem) train).getNumeroDeVagoes())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3496,10 +3497,10 @@ ficar_linha04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-035: lote fica parado na linha 05
+					<Code><![CDATA[// lote fica parado na linha 05
 lote_linha_5 = (Trem) agent;
-traceln(String.format("[%.1f][TES][linha05] lote=%d com %d vagoes", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
-// ALT-038: espera no wait_lote_linha05 ate o proximo_vagao_04e5 soltar
+Log.info("TES", "linha05", String.format("lote=%d com %d vagoes", agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
+// espera no wait_lote_linha05 ate o proximo_vagao_04e5 soltar
 ficar_linha05.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -3577,11 +3578,11 @@ ficar_linha05.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792521700024</Id>
 		<Name><![CDATA[eh_rumo]]></Name>
-		<X>1010</X>
+		<X>980</X>
 		<Y>540</Y>
 		<Label>
-			<X>-30</X>
-			<Y>-20</Y>
+			<X>20</X>
+			<Y>35</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3787,7 +3788,7 @@ ficar_linha05.take(agent);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
-// ALT-036: descarga da linha 03 comeca com 2 vagoes e a linha nao esta talhada
+// descarga da linha 03 comeca com 2 vagoes e a linha nao esta talhada
 talhou_linha03 = false;
 qt_vgs_descarga_linha03 = 2;]]></Code>
 				</Value>
@@ -3849,10 +3850,10 @@ qt_vgs_descarga_linha03 = 2;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-036/044: descarga da linha 03 parada (sem espaco ate _tes_linha03_fim ou sem carregados)
+					<Code><![CDATA[// descarga da linha 03 parada (sem espaco ate _tes_linha03_fim ou sem carregados)
 // -> pronta para o alivio (pode_aliviar_linha03)
 talhou_linha03 = true;
-traceln(String.format("[%.1f][TES][descarga_linha03] lote=%d parou, %d vagoes carregados", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoesCarregados()));]]></Code>
+Log.info("TES", "descarga_linha03", String.format("lote=%d parou, %d vagoes carregados", agent.getId(), ((Trem) agent).getNumeroDeVagoesCarregados()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -4177,7 +4178,7 @@ traceln(String.format("[%.1f][TES][descarga_linha03] lote=%d parou, %d vagoes ca
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-036: descarrega os vagoes que estao na moega (primeiros carregados a partir da frente)
+					<Code><![CDATA[// descarrega os vagoes que estao na moega (primeiros carregados a partir da frente)
 ((Trem) agent).descarregar_vagoes(
 	false, 
 	qt_vgs_descarga_linha03
@@ -4918,7 +4919,7 @@ traceln(String.format("[%.1f][TES][descarga_linha03] lote=%d parou, %d vagoes ca
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-036: avanca 2 vagoes, ou so 1 se nao couberem 2
+					<Code><![CDATA[// avanca 2 vagoes, ou so 1 se nao couberem 2
 qt_vgs_descarga_linha03 = Math.min(2, (int) Math.floor(distancia_ate_fim_linha03((Trem) agent) / main().TAMANHO_VAGAO_GRAO));]]></Code>
 				</Value>
 			</Parameter>
@@ -6214,17 +6215,17 @@ qt_vgs_descarga_linha03 = Math.min(2, (int) Math.floor(distancia_ate_fim_linha03
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-037: vagao descarregado na moega 04
+					<Code><![CDATA[// vagao descarregado na moega 04
 ((Trem) agent).descarregar_vagoes(true, ((Trem) agent).getNumeroDeVagoes());
-traceln(String.format("[%.1f][TES][descarga_04e5] vagao=%d descarregado, vai p/ fundo %d", time(), agent.getId(), fundo_destino_04e5));
-// ALT-051: ultimo vagao (o proprio lote) -> o lote so fica null depois de descarregar
+Log.info("TES", "descarga_04e5", String.format("vagao=%d descarregado, vai p/ fundo %d", agent.getId(), fundo_destino_04e5));
+// ultimo vagao (o proprio lote) -> o lote so fica null depois de descarregar
 if (agent == lote_linha_5) {
     lote_linha_5 = null;
-    traceln(String.format("[%.1f][TES][descarga_04e5] linha 05 descarregada", time()));
+    Log.info("TES", "descarga_04e5", "linha 05 descarregada");
 }
 if (agent == lote_linha_4) {
     lote_linha_4 = null;
-    traceln(String.format("[%.1f][TES][descarga_04e5] linha 04 descarregada", time()));
+    Log.info("TES", "descarga_04e5", "linha 04 descarregada");
 }]]></Code>
 				</Value>
 			</Parameter>
@@ -6776,7 +6777,7 @@ if (agent == lote_linha_4) {
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
-// ALT-047: trem em manobra (os carregados dele contam no _getVagoesCarregados)
+// trem em manobra (os carregados dele contam no _getVagoesCarregados)
 trem_em_encoste = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
@@ -7896,7 +7897,7 @@ trem_em_encoste = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-038: vagao da linha 04 vai para a moega 04
+					<Code><![CDATA[// vagao da linha 04 vai para a moega 04
 exec_descarga_04e5.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -7951,7 +7952,7 @@ exec_descarga_04e5.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-038: vagao da linha 05 vai para a moega 04
+					<Code><![CDATA[// vagao da linha 05 vai para a moega 04
 exec_descarga_04e5.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -8186,7 +8187,7 @@ exec_descarga_04e5.take(agent);]]></Code>
 		<Id>1792674451487</Id>
 		<Name><![CDATA[para_finalizar_encoste]]></Name>
 		<X>1700</X>
-		<Y>1350</Y>
+		<Y>1390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -8323,10 +8324,9 @@ exec_descarga_04e5.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-039: so a loco passa aqui (sem vagao)
-// ALT-047
+					<Code><![CDATA[// so a loco passa aqui (sem vagao)
 trem_em_encoste = null;
-// ALT-052: fim da manobra (Rumo depois da linha 05, VLI depois da linha 04)
+// fim da manobra (Rumo depois da linha 05, VLI depois da linha 04)
 // -> acoplar as 2 locos FIPS PCX no lote que ficou na 3000. No encoste do resto nao acopla.
 if (resto_com_fips) resto_com_fips = false;
 else if (lote_linha3000_emDescarga != null) acoplar_locos_3000.take(lote_linha3000_emDescarga);]]></Code>
@@ -8449,8 +8449,8 @@ else if (lote_linha3000_emDescarga != null) acoplar_locos_3000.take(lote_linha30
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-038: 1 vagao da linha 05 ou 04 a caminho da moega 04
-traceln(String.format("[%.1f][TES][descarga_04e5] vagao=%d para a moega 04, fundo %d", time(), agent.getId(), fundo_destino_04e5));]]></Code>
+					<Code><![CDATA[// 1 vagao da linha 05 ou 04 a caminho da moega 04
+Log.info("TES", "descarga_04e5", String.format("vagao=%d para a moega 04, fundo %d", agent.getId(), fundo_destino_04e5));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8537,8 +8537,8 @@ traceln(String.format("[%.1f][TES][descarga_04e5] vagao=%d para a moega 04, fund
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-051: ultimo vagao: o proprio lote vai para a moega; lote_linha_5 fica null no descarga_moega04 (depois de descarregar)
-traceln(String.format("[%.1f][TES][descarga_04e5] ultimo vagao da linha 05 vai para a moega", time()));]]></Code>
+					<Code><![CDATA[// ultimo vagao: o proprio lote vai para a moega; lote_linha_5 fica null no descarga_moega04 (depois de descarregar)
+Log.info("TES", "descarga_04e5", "ultimo vagao da linha 05 vai para a moega");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8619,8 +8619,8 @@ traceln(String.format("[%.1f][TES][descarga_04e5] ultimo vagao da linha 05 vai p
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-051: ultimo vagao: o proprio lote vai para a moega; lote_linha_4 fica null no descarga_moega04 (depois de descarregar)
-traceln(String.format("[%.1f][TES][descarga_04e5] ultimo vagao da linha 04 vai para a moega", time()));]]></Code>
+					<Code><![CDATA[// ultimo vagao: o proprio lote vai para a moega; lote_linha_4 fica null no descarga_moega04 (depois de descarregar)
+Log.info("TES", "descarga_04e5", "ultimo vagao da linha 04 vai para a moega");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8708,7 +8708,7 @@ traceln(String.format("[%.1f][TES][descarga_04e5] ultimo vagao da linha 04 vai p
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-040: fim da manobra de encoste das linhas 04/05 (como na ADM: 0,1 s depois do release,
+					<Code><![CDATA[// fim da manobra de encoste das linhas 04/05 (como na ADM: 0,1 s depois do release,
 // quando os lotes ja estao parados nos wait)
 iniciar_descarga_moegas();]]></Code>
 				</Value>
@@ -8920,7 +8920,7 @@ iniciar_descarga_moegas();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: o lote da linha 03 (parado depois da descarga) vai para o pegar_vazios.in2
+					<Code><![CDATA[// o lote da linha 03 (parado depois da descarga) vai para o pegar_vazios.in2
 alivio_linha03.take(lote_linha_3);]]></Code>
 				</Value>
 			</Parameter>
@@ -9120,11 +9120,11 @@ alivio_linha03.take(lote_linha_3);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: lote entrando no acoplamento do alivio
+					<Code><![CDATA[// lote entrando no acoplamento do alivio
 vgs_lote_alivio    = ((Trem) agent).size();
 vazios_lote_alivio = ((Trem) agent).getNumeroDeVagoesVazios();
 lote_linha_3 = null;
-traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)", time(), agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
+Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazios)", agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9340,7 +9340,7 @@ traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)",
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-043: solta o lote do fundo 04 para o alivio
+					<Code><![CDATA[// solta o lote do fundo 04 para o alivio
 condicao_ficar_fundo04 = false;
 liberar_wait_lote_fundo04();]]></Code>
 				</Value>
@@ -9541,12 +9541,12 @@ liberar_wait_lote_fundo04();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: lote entrando no acoplamento do alivio
+					<Code><![CDATA[// lote entrando no acoplamento do alivio
 vgs_lote_alivio    = ((Trem) agent).size();
 vazios_lote_alivio = ((Trem) agent).getNumeroDeVagoesVazios();
 lote_linha_04_fundo = null;
 condicao_ficar_fundo04 = true;
-traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)", time(), agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
+Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazios)", agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9762,7 +9762,7 @@ traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)",
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-043: solta o lote do fundo 05 para o alivio
+					<Code><![CDATA[// solta o lote do fundo 05 para o alivio
 condicao_ficar_fundo05 = false;
 liberar_wait_lote_fundo05();]]></Code>
 				</Value>
@@ -9963,12 +9963,12 @@ liberar_wait_lote_fundo05();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: lote entrando no acoplamento do alivio
+					<Code><![CDATA[// lote entrando no acoplamento do alivio
 vgs_lote_alivio    = ((Trem) agent).size();
 vazios_lote_alivio = ((Trem) agent).getNumeroDeVagoesVazios();
 lote_linha_05_fundo = null;
 condicao_ficar_fundo05 = true;
-traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)", time(), agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
+Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazios)", agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -10832,10 +10832,10 @@ traceln(String.format("[%.1f][TES][alivio] pega lote=%d (%d vagoes, %d vazios)",
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042/044: excesso da linha 03 (vazios que sobraram + carregados) fica onde esta
+					<Code><![CDATA[// excesso da linha 03 (vazios que sobraram + carregados) fica onde esta
 // e espera o alivio sair para a descarga continuar (retomar_descargas)
 lote_linha_3 = (Trem) agent;
-traceln(String.format("[%.1f][TES][alivio] linha 03 fica com %d vagoes (%d carregados)", time(), ((Trem) agent).size(), ((Trem) agent).getNumeroDeVagoesCarregados()));
+Log.info("TES", "alivio", String.format("linha 03 fica com %d vagoes (%d carregados)", ((Trem) agent).size(), ((Trem) agent).getNumeroDeVagoesCarregados()));
 voltar_linha03.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -10890,7 +10890,7 @@ voltar_linha03.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: excesso fica no fundo 04 (ja esta do lado do comeco) e volta para o wait
+					<Code><![CDATA[// excesso fica no fundo 04 (ja esta do lado do comeco) e volta para o wait
 voltando_do_alivio = true;
 voltar_fundo04.take(agent);]]></Code>
 				</Value>
@@ -10946,7 +10946,7 @@ voltar_fundo04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: excesso fica no fundo 05 (ja esta do lado do comeco) e volta para o wait
+					<Code><![CDATA[// excesso fica no fundo 05 (ja esta do lado do comeco) e volta para o wait
 voltando_do_alivio = true;
 voltar_fundo05.take(agent);]]></Code>
 				</Value>
@@ -11380,9 +11380,8 @@ voltar_fundo05.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-044: diagnostico da escolha da linha
-traceln(String.format("[%.1f][TES][alivio] analisar: pegos=%d/%d linha03=%b fundo05=%d (wait %d) fundo04=%d (wait %d)", time(),
-    main().getNumeroDeVagoes((Trem) agent) - qt_vgs_inicio_alivio, quantidade_alivio, pode_aliviar_linha03(),
+					<Code><![CDATA[// diagnostico da escolha da linha
+Log.info("TES", "alivio", String.format("analisar: pegos=%d/%d linha03=%b fundo05=%d (wait %d) fundo04=%d (wait %d)", main().getNumeroDeVagoes((Trem) agent) - qt_vgs_inicio_alivio, quantidade_alivio, pode_aliviar_linha03(),
     main().getNumeroDeVagoes(lote_linha_05_fundo), wait_fundo_05.size(),
     main().getNumeroDeVagoes(lote_linha_04_fundo), wait_fundo_04.size()));]]></Code>
 				</Value>
@@ -11444,8 +11443,8 @@ traceln(String.format("[%.1f][TES][alivio] analisar: pegos=%d/%d linha03=%b fund
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: alivio do TES terminou -> volta para o GestorDeAlivios (linha 4000)
-traceln(String.format("[%.1f][TES][alivio] fim trem=%d levou %d vazios (pedido %d)", time(), agent.getId(), main().getNumeroDeVagoes((Trem) agent) - qt_vgs_inicio_alivio, quantidade_alivio));
+					<Code><![CDATA[// alivio do TES terminou -> volta para o GestorDeAlivios (linha 4000)
+Log.info("TES", "alivio_fim", String.format("fim trem=%d levou %d vazios (pedido %d)", agent.getId(), main().getNumeroDeVagoes((Trem) agent) - qt_vgs_inicio_alivio, quantidade_alivio));
 main().gestorDeAlivios.linha_4000.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -11894,7 +11893,7 @@ main().gestorDeAlivios.linha_4000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-043: o vazio bateu no lote de fundo -> solta o lote para acoplar (como no T39)
+					<Code><![CDATA[// o vazio bateu no lote de fundo -> solta o lote para acoplar (como no T39)
 condicao_ficar_fundo05 = true;
 liberar_wait_lote_fundo05();]]></Code>
 				</Value>
@@ -12187,9 +12186,9 @@ liberar_wait_lote_fundo05();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-037/042: lote de fundo da linha 05
+					<Code><![CDATA[// lote de fundo da linha 05
 lote_linha_05_fundo = (Trem) agent;
-traceln(String.format("[%.1f][TES][fundo_05] lote=%d com %d vazios", time(), agent.getId(), ((Trem) agent).size()));
+Log.info("TES", "fundo_05", String.format("lote=%d com %d vazios", agent.getId(), ((Trem) agent).size()));
 // excesso que voltou do alivio nao fecha ciclo de descarga
 if (voltando_do_alivio) voltando_do_alivio = false;
 else                    fim_ciclo_04e5();]]></Code>
@@ -12400,7 +12399,7 @@ else                    fim_ciclo_04e5();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: lote do fundo 05 vai para o alivio
+					<Code><![CDATA[// lote do fundo 05 vai para o alivio
 alivio_linha05.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -12659,7 +12658,7 @@ alivio_linha05.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-043: o vazio bateu no lote de fundo -> solta o lote para acoplar (como no T39)
+					<Code><![CDATA[// o vazio bateu no lote de fundo -> solta o lote para acoplar (como no T39)
 condicao_ficar_fundo04 = true;
 liberar_wait_lote_fundo04();]]></Code>
 				</Value>
@@ -12892,7 +12891,7 @@ liberar_wait_lote_fundo04();]]></Code>
 	<EmbeddedObject>
 		<Id>1792679060028</Id>
 		<Name><![CDATA[acoplar_fundo2]]></Name>
-		<X>3360</X>
+		<X>3590</X>
 		<Y>900</Y>
 		<Label>
 			<X>-20</X>
@@ -13058,7 +13057,7 @@ liberar_wait_lote_fundo04();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: lote do fundo 04 vai para o alivio
+					<Code><![CDATA[// lote do fundo 04 vai para o alivio
 alivio_linha04.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -13266,9 +13265,9 @@ alivio_linha04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-037/042: lote de fundo da linha 04
+					<Code><![CDATA[// lote de fundo da linha 04
 lote_linha_04_fundo = (Trem) agent;
-traceln(String.format("[%.1f][TES][fundo_04] lote=%d com %d vazios", time(), agent.getId(), ((Trem) agent).size()));
+Log.info("TES", "fundo_04", String.format("lote=%d com %d vazios", agent.getId(), ((Trem) agent).size()));
 // excesso que voltou do alivio nao fecha ciclo de descarga
 if (voltando_do_alivio) voltando_do_alivio = false;
 else                    fim_ciclo_04e5();]]></Code>
@@ -13337,7 +13336,7 @@ else                    fim_ciclo_04e5();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-042: vazio vai para o fundo da vez
+					<Code><![CDATA[// vazio vai para o fundo da vez
 if (fundo_destino_04e5 == 5) entrar_fundo05.take(agent);
 else                         entrar_fundo04.take(agent);]]></Code>
 				</Value>
@@ -13399,7 +13398,7 @@ else                         entrar_fundo04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[/* ALT-055: Use = Condition (antes estava em probabilidade e a condicao era ignorada) */ lote_linha_05_fundo != null && wait_fundo_05.size() > 0 && lote_linha_5 == null]]></Code>
+					<Code><![CDATA[/* Use = Condition (antes estava em probabilidade e a condicao era ignorada) */ lote_linha_05_fundo != null && wait_fundo_05.size() > 0 && lote_linha_5 == null]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -13773,7 +13772,7 @@ else                         entrar_fundo04.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-044: alivio saiu das linhas 03/04/05 -> descargas continuam
+					<Code><![CDATA[// alivio saiu das linhas 03/04/05 -> descargas continuam
 retomar_descargas();]]></Code>
 				</Value>
 			</Parameter>
@@ -14257,8 +14256,8 @@ retomar_descargas();]]></Code>
 	<EmbeddedObject>
 		<Id>1792691300002</Id>
 		<Name><![CDATA[acoplar_locos_3000]]></Name>
-		<X>700</X>
-		<Y>-250</Y>
+		<X>70</X>
+		<Y>1340</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -14341,8 +14340,8 @@ retomar_descargas();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-045: lote da 3000 espera as locos FIPS no acoplar_loco_pcx.in1
-traceln(String.format("[%.1f][TES][acoplar_locos_3000] lote=%d com %d vagoes espera %d locos FIPS", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes(), qt_loco));]]></Code>
+					<Code><![CDATA[// lote da 3000 espera as locos FIPS no acoplar_loco_pcx.in1
+Log.info("TES", "acoplar_locos_3000", String.format("lote=%d com %d vagoes espera %d locos FIPS", agent.getId(), ((Trem) agent).getNumeroDeVagoes(), qt_loco));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -14378,8 +14377,8 @@ traceln(String.format("[%.1f][TES][acoplar_locos_3000] lote=%d com %d vagoes esp
 	<EmbeddedObject>
 		<Id>1792691300004</Id>
 		<Name><![CDATA[acoplar_loco_pcx]]></Name>
-		<X>980</X>
-		<Y>-250</Y>
+		<X>380</X>
+		<Y>1350</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -14442,8 +14441,8 @@ traceln(String.format("[%.1f][TES][acoplar_locos_3000] lote=%d com %d vagoes esp
 	<EmbeddedObject>
 		<Id>1792691300006</Id>
 		<Name><![CDATA[loco_pcx_starts]]></Name>
-		<X>600</X>
-		<Y>-160</Y>
+		<X>10</X>
+		<Y>1450</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-30</Y>
@@ -14689,8 +14688,8 @@ traceln(String.format("[%.1f][TES][acoplar_locos_3000] lote=%d com %d vagoes esp
 	<EmbeddedObject>
 		<Id>1792691300012</Id>
 		<Name><![CDATA[usar_recurso_loco]]></Name>
-		<X>670</X>
-		<Y>-170</Y>
+		<X>230</X>
+		<Y>1330</Y>
 		<Label>
 			<X>-25</X>
 			<Y>55</Y>
@@ -14851,7 +14850,7 @@ traceln(String.format("[%.1f][TES][acoplar_locos_3000] lote=%d com %d vagoes esp
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-046: o lote da 3000 segura as 2 locos FIPS (devolvidas no rls_rp_mnb_linha04e05) e chama as locos
+					<Code><![CDATA[// o lote da 3000 segura as 2 locos FIPS (devolvidas no rls_rp_mnb_linha04e05) e chama as locos
 loco_pcx_starts.inject();]]></Code>
 				</Value>
 			</Parameter>
@@ -14900,8 +14899,8 @@ loco_pcx_starts.inject();]]></Code>
 	<EmbeddedObject>
 		<Id>1792691300014</Id>
 		<Name><![CDATA[entrar_loco_pcx]]></Name>
-		<X>740</X>
-		<Y>-160</Y>
+		<X>150</X>
+		<Y>1440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-25</Y>
@@ -14972,8 +14971,8 @@ loco_pcx_starts.inject();]]></Code>
 	<EmbeddedObject>
 		<Id>1792691300016</Id>
 		<Name><![CDATA[mv_loco_pcx_3000]]></Name>
-		<X>830</X>
-		<Y>-160</Y>
+		<X>270</X>
+		<Y>1440</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -15113,8 +15112,8 @@ loco_pcx_starts.inject();]]></Code>
 	<EmbeddedObject>
 		<Id>1792691300018</Id>
 		<Name><![CDATA[para_lote_3000_com_loco]]></Name>
-		<X>1280</X>
-		<Y>-260</Y>
+		<X>720</X>
+		<Y>1340</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -15137,8 +15136,8 @@ loco_pcx_starts.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-045/046: lote da 3000 com as locos FIPS na cauda espera as linhas 03/04/05 esvaziarem
-traceln(String.format("[%.1f][TES][resto_3000] lote=%d com %d carros pronto para o encoste", time(), agent.getId(), ((Trem) agent).size()));
+					<Code><![CDATA[// lote da 3000 com as locos FIPS na cauda espera as linhas 03/04/05 esvaziarem
+Log.info("TES", "resto_3000", String.format("lote=%d com %d carros pronto para o encoste", agent.getId(), ((Trem) agent).size()));
 esperar_resto_3000.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -15169,8 +15168,8 @@ esperar_resto_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792698710361</Id>
 		<Name><![CDATA[mv_loco_pcx_3001]]></Name>
-		<X>1150</X>
-		<Y>-260</Y>
+		<X>590</X>
+		<Y>1340</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -15310,8 +15309,8 @@ esperar_resto_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792698800002</Id>
 		<Name><![CDATA[esperar_resto_3000]]></Name>
-		<X>1380</X>
-		<Y>-260</Y>
+		<X>100</X>
+		<Y>1600</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -15427,11 +15426,11 @@ esperar_resto_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792698800004</Id>
 		<Name><![CDATA[wait_resto_3000]]></Name>
-		<X>1460</X>
-		<Y>-260</Y>
+		<X>200</X>
+		<Y>1590</Y>
 		<Label>
-			<X>-10</X>
-			<Y>-10</Y>
+			<X>-20</X>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -15487,7 +15486,7 @@ esperar_resto_3000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-046: encosta o resto da 3000 assim que as linhas estiverem livres
+					<Code><![CDATA[// encosta o resto da 3000 assim que as linhas estiverem livres
 tentar_encostar_resto_3000(true);]]></Code>
 				</Value>
 			</Parameter>
@@ -15530,8 +15529,8 @@ tentar_encostar_resto_3000(true);]]></Code>
 	<EmbeddedObject>
 		<Id>1792698800006</Id>
 		<Name><![CDATA[rls_linha3000]]></Name>
-		<X>1540</X>
-		<Y>-260</Y>
+		<X>390</X>
+		<Y>1590</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>
@@ -15629,8 +15628,8 @@ tentar_encostar_resto_3000(true);]]></Code>
 	<EmbeddedObject>
 		<Id>1792698800008</Id>
 		<Name><![CDATA[para_encoste_resto_3000]]></Name>
-		<X>1620</X>
-		<Y>-260</Y>
+		<X>520</X>
+		<Y>1600</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -15653,8 +15652,8 @@ tentar_encostar_resto_3000(true);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-046: mesmo encoste do primeiro lote (linhas 03 -> 04 -> 05); as locos FIPS vao na cauda
-// ALT-052: o finalizar_encoste nao acopla locos de novo no fim desta manobra
+					<Code><![CDATA[// mesmo encoste do primeiro lote (linhas 03 -> 04 -> 05); as locos FIPS vao na cauda
+// o finalizar_encoste nao acopla locos de novo no fim desta manobra
 resto_com_fips = true;
 comecar_encoste_moegas.take(agent);]]></Code>
 				</Value>
@@ -15818,8 +15817,8 @@ comecar_encoste_moegas.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900002</Id>
 		<Name><![CDATA[tirar_locos_mrs]]></Name>
-		<X>1010</X>
-		<Y>600</Y>
+		<X>1080</X>
+		<Y>650</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-20</Y>
@@ -15852,7 +15851,7 @@ comecar_encoste_moegas.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[/* ALT-054: MRS - solta as locos da cabeca (vao para o GestorDeLocomotivas) */ ((Trem) train).getNumeroDeLocomotivas()]]></Code>
+					<Code><![CDATA[/* MRS - solta as locos da cabeca (vao para o GestorDeLocomotivas) */ ((Trem) train).getNumeroDeLocomotivas()]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -15940,8 +15939,8 @@ comecar_encoste_moegas.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900006</Id>
 		<Name><![CDATA[para_acoplar_locos_mrs]]></Name>
-		<X>1070</X>
-		<Y>600</Y>
+		<X>1200</X>
+		<Y>640</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -15964,7 +15963,7 @@ comecar_encoste_moegas.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-054: MRS - os 82 vagoes ficam na 3000 e recebem as 2 locos FIPS PCX na cauda;
+					<Code><![CDATA[// MRS - os 82 vagoes ficam na 3000 e recebem as 2 locos FIPS PCX na cauda;
 // o encoste segue o caminho do resto (wait_resto_3000)
 acoplar_locos_3000.take(agent);]]></Code>
 				</Value>
@@ -15996,8 +15995,8 @@ acoplar_locos_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900008</Id>
 		<Name><![CDATA[libera_linha3000]]></Name>
-		<X>1500</X>
-		<Y>-260</Y>
+		<X>300</X>
+		<Y>1600</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -16026,7 +16025,7 @@ acoplar_locos_3000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[/* ALT-054: so libera a 3000 se o lote cabe numa manobra (24+12+11); a MRS (82) volta para a 3000 com o que sobrar */ ((Trem) agent).getNumeroDeVagoes() <= 47]]></Code>
+					<Code><![CDATA[/* so libera a 3000 se o lote cabe numa manobra (24+12+11); a MRS (82) volta para a 3000 com o que sobrar */ ((Trem) agent).getNumeroDeVagoes() <= 47]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -16074,8 +16073,8 @@ acoplar_locos_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900010</Id>
 		<Name><![CDATA[sobrou_vagoes_linha05]]></Name>
-		<X>1580</X>
-		<Y>1400</Y>
+		<X>1620</X>
+		<Y>1350</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -16104,7 +16103,7 @@ acoplar_locos_3000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[/* ALT-054 */ ((Trem) agent).getNumeroDeVagoes() > 0]]></Code>
+					<Code><![CDATA[((Trem) agent).getNumeroDeVagoes() > 0]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -16152,10 +16151,10 @@ acoplar_locos_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900012</Id>
 		<Name><![CDATA[voltar_3000]]></Name>
-		<X>1620</X>
-		<Y>1400</Y>
+		<X>1740</X>
+		<Y>1340</Y>
 		<Label>
-			<X>-20</X>
+			<X>-5</X>
 			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -16239,10 +16238,10 @@ acoplar_locos_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900014</Id>
 		<Name><![CDATA[rls_volta_3000]]></Name>
-		<X>1660</X>
-		<Y>1400</Y>
+		<X>1850</X>
+		<Y>1340</Y>
 		<Label>
-			<X>-40</X>
+			<X>-15</X>
 			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -16338,8 +16337,8 @@ acoplar_locos_3000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792716900016</Id>
 		<Name><![CDATA[para_esperar_resto_3000]]></Name>
-		<X>1700</X>
-		<Y>1400</Y>
+		<X>1960</X>
+		<Y>1350</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -16362,11 +16361,11 @@ acoplar_locos_3000.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-054: MRS - o que sobrou da 1a manobra (locos FIPS na cauda) volta para a 3000 e espera o 2o encoste.
+					<Code><![CDATA[// MRS - o que sobrou da 1a manobra (locos FIPS na cauda) volta para a 3000 e espera o 2o encoste.
 // Mantem as locos FIPS e a 3000 (linha3000_lote_em_descarga); libera a manobra das linhas 04/05.
 trem_em_encoste = null;
 lote_linha3000_emDescarga = (Trem) agent;
-traceln(String.format("[%.1f][TES][resto_3000] lote=%d voltou para a 3000 com %d vagoes", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
+Log.info("TES", "resto_3000", String.format("lote=%d voltou para a 3000 com %d vagoes", agent.getId(), ((Trem) agent).getNumeroDeVagoes()));
 iniciar_descarga_moegas();
 esperar_resto_3000.take(agent);]]></Code>
 				</Value>
@@ -16390,6 +16389,53 @@ esperar_resto_3000.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1792716900017</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794525819820</Id>
+		<Name><![CDATA[devolverLocomotiva2]]></Name>
+		<X>1190</X>
+		<Y>680</Y>
+		<Label>
+			<X>-25</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DevolverLocomotiva</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>DevolverLocomotiva</ClassName>
+				<ItemName>1789651316428</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters/>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794525819818</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

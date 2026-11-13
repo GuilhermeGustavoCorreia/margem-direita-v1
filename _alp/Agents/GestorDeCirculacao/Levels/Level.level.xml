@@ -2645,8 +2645,8 @@
 	<Polyline>
 		<Id>1791909375679</Id>
 		<Name><![CDATA[pl_pst_railwayTrack199]]></Name>
-		<X>-1304</X>
-		<Y>-77</Y>
+		<X>-1270</X>
+		<Y>-40</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2685,7 +2685,7 @@
 	<Polyline>
 		<Id>1791909375691</Id>
 		<Name><![CDATA[pl_pst_val_via2]]></Name>
-		<X>-1360</X>
+		<X>-1304</X>
 		<Y>-77</Y>
 		<Label>
 			<X>10</X>

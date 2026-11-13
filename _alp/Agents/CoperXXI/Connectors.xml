@@ -38,11 +38,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>185</X>
+				<X>100</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>185</X>
+				<X>150</X>
 				<Y>50</Y>
 			</Point>
 			<Point>
@@ -132,11 +132,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>185</X>
+				<X>100</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>185</X>
+				<X>150</X>
 				<Y>-50</Y>
 			</Point>
 			<Point>
@@ -805,7 +805,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>140</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -813,7 +813,7 @@
 	<Connector>
 		<Id>1793290000057</Id>
 		<Name><![CDATA[connector1018]]></Name>
-		<X>3380</X>
+		<X>3410</X>
 		<Y>300</Y>
 		<Label>
 			<X>10</X>
@@ -848,7 +848,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>470</X>
+				<X>440</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -895,7 +895,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>60</X>
+				<X>120</X>
 				<Y>-50</Y>
 			</Point>
 			<Point>
@@ -903,7 +903,7 @@
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>310</X>
+				<X>360</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -1000,7 +1000,7 @@
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -1017,7 +1017,7 @@
 	<Connector>
 		<Id>1793290000061</Id>
 		<Name><![CDATA[connector1022]]></Name>
-		<X>3580</X>
+		<X>3600</X>
 		<Y>600</Y>
 		<Label>
 			<X>10</X>
@@ -1033,7 +1033,7 @@
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -1052,11 +1052,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>50</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>50</X>
 				<Y>-80</Y>
 			</Point>
 		</Points>
@@ -1247,7 +1247,7 @@
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -1264,7 +1264,7 @@
 	<Connector>
 		<Id>1793290000066</Id>
 		<Name><![CDATA[connector1027]]></Name>
-		<X>3570</X>
+		<X>3590</X>
 		<Y>800</Y>
 		<Label>
 			<X>10</X>
@@ -1280,7 +1280,7 @@
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -1299,11 +1299,11 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>-80</Y>
 			</Point>
 		</Points>
@@ -1355,7 +1355,7 @@
 		<Id>1793290000068</Id>
 		<Name><![CDATA[connector1029]]></Name>
 		<X>3250</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1398,7 +1398,7 @@
 		<Id>1793290000069</Id>
 		<Name><![CDATA[connector1030]]></Name>
 		<X>3360</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1441,7 +1441,7 @@
 		<Id>1793290000070</Id>
 		<Name><![CDATA[connector1031]]></Name>
 		<X>3350</X>
-		<Y>1160</Y>
+		<Y>1260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1488,7 +1488,7 @@
 		<Id>1793290000071</Id>
 		<Name><![CDATA[connector1032]]></Name>
 		<X>3550</X>
-		<Y>1170</Y>
+		<Y>1270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1535,7 +1535,7 @@
 		<Id>1793290000072</Id>
 		<Name><![CDATA[connector1033]]></Name>
 		<X>3550</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1578,7 +1578,7 @@
 		<Id>1793290000073</Id>
 		<Name><![CDATA[connector1034]]></Name>
 		<X>3410</X>
-		<Y>1200</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1621,7 +1621,7 @@
 		<Id>1793290000074</Id>
 		<Name><![CDATA[connector1035]]></Name>
 		<X>3400</X>
-		<Y>1210</Y>
+		<Y>1310</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1676,7 +1676,7 @@
 		<Id>1793290000075</Id>
 		<Name><![CDATA[connector1036]]></Name>
 		<X>3500</X>
-		<Y>1220</Y>
+		<Y>1320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1723,7 +1723,7 @@
 		<Id>1793290000076</Id>
 		<Name><![CDATA[connector1037]]></Name>
 		<X>3500</X>
-		<Y>1200</Y>
+		<Y>1300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1774,7 +1774,7 @@
 		<Id>1793290000077</Id>
 		<Name><![CDATA[connector1038]]></Name>
 		<X>3660</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1817,7 +1817,7 @@
 		<Id>1793290000078</Id>
 		<Name><![CDATA[connector1039]]></Name>
 		<X>3650</X>
-		<Y>1160</Y>
+		<Y>1260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1872,7 +1872,7 @@
 		<Id>1793290000079</Id>
 		<Name><![CDATA[connector1040]]></Name>
 		<X>3790</X>
-		<Y>1150</Y>
+		<Y>1250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1957,8 +1957,8 @@
 	<Connector>
 		<Id>1793290000081</Id>
 		<Name><![CDATA[connector1042]]></Name>
-		<X>3570</X>
-		<Y>1010</Y>
+		<X>3600</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1983,7 +1983,7 @@
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -1992,7 +1992,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2348,7 +2348,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>410</X>
+				<X>280</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2442,15 +2442,15 @@
 				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>370</X>
+				<X>270</X>
 				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>370</X>
+				<X>270</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
-				<X>420</X>
+				<X>290</X>
 				<Y>-10</Y>
 			</Point>
 		</Points>
@@ -2587,7 +2587,7 @@
 				<Y>50</Y>
 			</Point>
 			<Point>
-				<X>130</X>
+				<X>200</X>
 				<Y>50</Y>
 			</Point>
 		</Points>
@@ -2650,8 +2650,8 @@
 	<Connector>
 		<Id>1793290000096</Id>
 		<Name><![CDATA[connector1057]]></Name>
-		<X>3640</X>
-		<Y>1010</Y>
+		<X>3710</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2666,7 +2666,7 @@
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Hold</ClassName>
+			<ClassName>Wait</ClassName>
 			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -2690,14 +2690,14 @@
 			</Point>
 			<Point>
 				<X>40</X>
-				<Y>-40</Y>
+				<Y>-30</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1793290000097</Id>
 		<Name><![CDATA[connector1058]]></Name>
-		<X>3700</X>
+		<X>3770</X>
 		<Y>950</Y>
 		<Label>
 			<X>10</X>
@@ -2783,7 +2783,7 @@
 	<Connector>
 		<Id>1793290000099</Id>
 		<Name><![CDATA[connector1060]]></Name>
-		<X>3370</X>
+		<X>3400</X>
 		<Y>310</Y>
 		<Label>
 			<X>10</X>
@@ -2818,12 +2818,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>0</X>
-				<Y>50</Y>
+				<X>50</X>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>480</X>
-				<Y>50</Y>
+				<X>450</X>
+				<Y>40</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -3547,7 +3547,7 @@
 		<Id>1793290000116</Id>
 		<Name><![CDATA[connector1077]]></Name>
 		<X>2550</X>
-		<Y>250</Y>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3581,7 +3581,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>50</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
@@ -3589,8 +3589,12 @@
 				<Y>50</Y>
 			</Point>
 			<Point>
+				<X>100</X>
+				<Y>100</Y>
+			</Point>
+			<Point>
 				<X>140</X>
-				<Y>50</Y>
+				<Y>100</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -3813,11 +3817,11 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>20</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>180</X>
-				<Y>20</Y>
+				<X>170</X>
+				<Y>40</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -3915,7 +3919,7 @@
 		<Id>1793290000125</Id>
 		<Name><![CDATA[connector1086]]></Name>
 		<X>1720</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3958,7 +3962,7 @@
 		<Id>1793290000126</Id>
 		<Name><![CDATA[connector1087]]></Name>
 		<X>1460</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4001,7 +4005,7 @@
 		<Id>1793290000127</Id>
 		<Name><![CDATA[connector1088]]></Name>
 		<X>1590</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4044,7 +4048,7 @@
 		<Id>1793290000128</Id>
 		<Name><![CDATA[connector1089]]></Name>
 		<X>1840</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4087,7 +4091,7 @@
 		<Id>1793290000129</Id>
 		<Name><![CDATA[connector1090]]></Name>
 		<X>1830</X>
-		<Y>750</Y>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4122,14 +4126,14 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>15</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>75</X>
-				<Y>15</Y>
+				<X>70</X>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>75</X>
+				<X>70</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
@@ -4142,7 +4146,7 @@
 		<Id>1793290000130</Id>
 		<Name><![CDATA[connector1091]]></Name>
 		<X>1960</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4509,7 +4513,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>120</X>
+				<X>190</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4556,7 +4560,7 @@
 				<Y>90</Y>
 			</Point>
 			<Point>
-				<X>230</X>
+				<X>240</X>
 				<Y>90</Y>
 			</Point>
 		</Points>
@@ -4607,7 +4611,7 @@
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>170</X>
+				<X>180</X>
 				<Y>-50</Y>
 			</Point>
 		</Points>
@@ -4615,7 +4619,7 @@
 	<Connector>
 		<Id>1793290000140</Id>
 		<Name><![CDATA[connector1101]]></Name>
-		<X>3800</X>
+		<X>3810</X>
 		<Y>1050</Y>
 		<Label>
 			<X>10</X>
@@ -4650,7 +4654,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4658,7 +4662,7 @@
 	<Connector>
 		<Id>1793290000141</Id>
 		<Name><![CDATA[connector1102]]></Name>
-		<X>3790</X>
+		<X>3800</X>
 		<Y>1060</Y>
 		<Label>
 			<X>10</X>
@@ -4694,19 +4698,724 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>15</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>205</X>
-				<Y>15</Y>
+				<X>150</X>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>205</X>
+				<X>150</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
-				<X>220</X>
+				<X>210</X>
 				<Y>-10</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794506038068</Id>
+		<Name><![CDATA[connector1103]]></Name>
+		<X>5050</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>entrar_rmv_excesso</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>rmv_excesso</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794506038069</Id>
+		<Name><![CDATA[connector1104]]></Name>
+		<X>5170</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>rmv_excesso</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>precisa_mais_vgs</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>140</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794506038070</Id>
+		<Name><![CDATA[connector1105]]></Name>
+		<X>5330</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>precisa_mais_vgs</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>para_alivio_seguir2</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>320</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794506038071</Id>
+		<Name><![CDATA[connector1106]]></Name>
+		<X>5320</X>
+		<Y>310</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>precisa_mais_vgs</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>para_fim_alivio</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
+				<X>330</X>
+				<Y>50</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794506038072</Id>
+		<Name><![CDATA[connector1107]]></Name>
+		<X>5170</X>
+		<Y>320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>rmv_excesso</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>outDecoupled</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>para_guardar_excesso</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>90</Y>
+			</Point>
+			<Point>
+				<X>480</X>
+				<Y>90</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000019</Id>
+		<Name><![CDATA[connector1108]]></Name>
+		<X>4620</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>entrar_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>linha_livre_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>110</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000020</Id>
+		<Name><![CDATA[connector1109]]></Name>
+		<X>4770</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>linha_livre_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>ir_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>110</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000021</Id>
+		<Name><![CDATA[connector1110]]></Name>
+		<X>4770</X>
+		<Y>580</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>linha_livre_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>espera_linha_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>70</Y>
+			</Point>
+			<Point>
+				<X>80</X>
+				<Y>70</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000022</Id>
+		<Name><![CDATA[connector1111]]></Name>
+		<X>4890</X>
+		<Y>650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>espera_linha_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>linha_livre_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
+				<X>-190</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
+				<X>-190</X>
+				<Y>-80</Y>
+			</Point>
+			<Point>
+				<X>-130</X>
+				<Y>-80</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000023</Id>
+		<Name><![CDATA[connector1112]]></Name>
+		<X>4920</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>ir_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>sobra_cabe</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>110</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000024</Id>
+		<Name><![CDATA[connector1113]]></Name>
+		<X>4930</X>
+		<Y>580</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>ir_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>outHit</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>sobra_cabe</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>20</Y>
+			</Point>
+			<Point>
+				<X>90</X>
+				<Y>20</Y>
+			</Point>
+			<Point>
+				<X>90</X>
+				<Y>-10</Y>
+			</Point>
+			<Point>
+				<X>130</X>
+				<Y>-10</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000025</Id>
+		<Name><![CDATA[connector1114]]></Name>
+		<X>5070</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>sobra_cabe</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outT</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>para_guardar_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>260</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000026</Id>
+		<Name><![CDATA[connector1115]]></Name>
+		<X>5070</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>sobra_cabe</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>outF</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>cortar_sobra</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>100</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>100</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000027</Id>
+		<Name><![CDATA[connector1116]]></Name>
+		<X>5170</X>
+		<Y>660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>cortar_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>sobra_cabe</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>60</Y>
+			</Point>
+			<Point>
+				<X>-150</X>
+				<Y>60</Y>
+			</Point>
+			<Point>
+				<X>-150</X>
+				<Y>-90</Y>
+			</Point>
+			<Point>
+				<X>-110</X>
+				<Y>-90</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1794600000028</Id>
+		<Name><![CDATA[connector1117]]></Name>
+		<X>5170</X>
+		<Y>660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>cortar_sobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+			<ItemName>outDecoupled</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXXI</ClassName>
+			<ItemName>para_guardar_sobra_parte</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>160</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>

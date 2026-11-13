@@ -88,7 +88,7 @@ return "ferrovia";
 
 int get_quantidade_loco_alivio()
 {/*ALCODESTART::1792172934696*/
-// ALT-025: igual ao T39
+// igual ao T39
 return 1;
 /*ALCODEEND*/}
 
@@ -105,12 +105,12 @@ for (int i = 0; i < trem.size(); i++) {
         }
     }
 
-    traceln("erro: trem não tem nenhum vagão");
+    Log.erro("ADM", "trem_sem_vagao", "trem não tem nenhum vagão");
 /*ALCODEEND*/}
 
 int _get_vagoes_vazios()
 {/*ALCODESTART::1792173781676*/
-// ALT-025: vazios = lote da linha 7
+// vazios = lote da linha 7
 return main().getTamanhoDoTrem(lote_linha_7);
 /*ALCODEEND*/}
 
@@ -154,7 +154,7 @@ if (wait_linha_moegaV.size() > 0) {
 
 double iniciar_descarga_moegas()
 {/*ALCODESTART::1792500000062*/
-// ALT-024: chamada no fim da manobra (rls_mnb_carregados).
+// chamada no fim da manobra (rls_mnb_carregados).
 // Solta para a descarga o lote que estiver parado em cada moega.
 if (!descarregando_moegaX && wait_linha_moegaX.size() > 0) {
     descarregando_moegaX = true;
@@ -170,12 +170,12 @@ if (!descarregando_moegaV && wait_linha_moegaV.size() > 0) {
 
 double liberar_descarga_moega()
 {/*ALCODESTART::1792500000063*/
-// ALT-032: fluxo antigo (wait_vagao_linha7_X/V) excluído do build; o rp_moegaX/V é solto no rls_mnb_vazios_l7a/b
+// fluxo antigo (wait_vagao_linha7_X/V) excluído do build; o rp_moegaX/V é solto no rls_mnb_vazios_l7a/b
 /*ALCODEEND*/}
 
 double finalizar_descarga_moega(String moega)
 {/*ALCODESTART::1792500000064*/
-// ALT-024: último vagão da moega saiu para a descarga
+// último vagão da moega saiu para a descarga
 if ("X".equals(moega)) {
     lote_moegaX = null;
     descarregando_moegaX = false;
@@ -183,13 +183,13 @@ if ("X".equals(moega)) {
     lote_moegaV = null;
     descarregando_moegaV = false;
 }
-traceln(String.format("[%.1f][ADM][descarga] moega %s vazia", time(), moega));
+Log.info("ADM", "descarga", String.format("moega %s vazia", moega));
 liberar_wait_lote_linha2000();
 /*ALCODEEND*/}
 
 double liberar_wait_lote_linha2000()
 {/*ALCODESTART::1792500000065*/
-// ALT-024: libera o primeiro trem que espera moega vazia
+// libera o primeiro trem que espera moega vazia
 if (wait_lote_linha2000.size() > 0) {
     wait_lote_linha2000.free(wait_lote_linha2000.get(0));
 }
@@ -197,15 +197,15 @@ if (wait_lote_linha2000.size() > 0) {
 
 double liberar_espaco_linha7()
 {/*ALCODESTART::1792500000066*/
-// ALT-024: chamar quando o lote da linha 7 sair (alívio).
-// ALT-032: libera os lotes das moegas que esperavam espaço na linha 7 (wait_rp_moegaX/V)
+// chamar quando o lote da linha 7 sair (alívio).
+// libera os lotes das moegas que esperavam espaço na linha 7 (wait_rp_moegaX/V)
 liberar_wait_rp_moegaX();
 liberar_wait_rp_moegaV();
 /*ALCODEEND*/}
 
 double liberar_excesso_linha7()
 {/*ALCODESTART::1792510000053*/
-// ALT-025: a loco do alívio saiu da linha 7 -> o excesso volta pela entrada normal da linha 7
+// a loco do alívio saiu da linha 7 -> o excesso volta pela entrada normal da linha 7
 if (wait_excesso_l7.size() > 0) {
     wait_excesso_l7.free(wait_excesso_l7.get(0));
 }
@@ -213,7 +213,7 @@ if (wait_excesso_l7.size() > 0) {
 
 double get_offset_entrada_linha7()
 {/*ALCODESTART::1792520000002*/
-// ALT-026/030: a linha 7 é a railwayTrack164 (get_trilhos_linha7), no sentido:
+// a linha 7 é a railwayTrack164 (get_trilhos_linha7), no sentido:
 // começa no _adm_linha7_fim (railwayTrack164, lado do railwaySwitch102) e vai até o _adm_linha7_comeco.
 // 1 vagão entra no ponto de sempre; cada vagão a mais empurra a entrada 1 vagão para dentro da linha,
 // para a cauda do lote não cair em cima do railwaySwitch102. Se passar do fim de um trilho, segue no próximo.
@@ -226,14 +226,14 @@ for (RailwayTrack l : linhas) {
     acum += comp;
 }
 RailwayTrack ultima = linhas[linhas.length - 1];
-traceln(String.format("[%.1f][ADM][entrada_l7] lote de %d vagoes passa do fim da linha 7", time(), vagoes_entrando_linha7));
+Log.info("ADM", "entrada_l7", String.format("lote de %d vagoes passa do fim da linha 7", vagoes_entrando_linha7));
 return ultima.length(METER);
 /*ALCODEEND*/}
 
 RailwayTrack[] get_trilhos_linha7()
 {/*ALCODESTART::1792520000101*/
-// ALT-026: trilhos da linha 7, do _adm_linha7_fim ao _adm_linha7_comeco
-// ALT-030: a linha 7 virou um trilho só (railwayTrack164); 189, 193 e 195 não existem mais
+// trilhos da linha 7, do _adm_linha7_fim ao _adm_linha7_comeco
+// a linha 7 virou um trilho só (railwayTrack164); 189, 193 e 195 não existem mais
 return new RailwayTrack[] {
     main().railwayTrack164
 };
@@ -241,22 +241,22 @@ return new RailwayTrack[] {
 
 double get_distancia_entrada_linha7()
 {/*ALCODESTART::1792520000102*/
-// ALT-026: distância desde o início da railwayTrack164 até a cabeça do lote que vai entrar
+// distância desde o início da railwayTrack164 até a cabeça do lote que vai entrar
 double base  = main()._adm_linha7_fim.getOffset(METER);
 double extra = Math.max(0, vagoes_entrando_linha7 - 1) * main().TAMANHO_VAGAO_GRAO;
 
-traceln("get_distancia_entrada_linha7: " + (base + extra));
-// ALT-031: avisa se a cabeça do lote passa do _adm_linha7_comeco
+Log.debug("ADM", "get_distancia_entrada_linha7", String.valueOf(base + extra));
+// avisa se a cabeça do lote passa do _adm_linha7_comeco
 if (base + extra > main()._adm_linha7_comeco.getOffset(METER)) {
-    traceln(String.format("[%.1f][ADM][entrada_l7] AVISO lote de %d vagoes entra com a cabeca alem do _adm_linha7_comeco (%.1f > %.1f)",
-        time(), vagoes_entrando_linha7, base + extra, main()._adm_linha7_comeco.getOffset(METER)));
+    Log.warn("ADM", "entrada_l7", String.format("lote de %d vagoes entra com a cabeca alem do _adm_linha7_comeco (%.1f > %.1f)",
+        vagoes_entrando_linha7, base + extra, main()._adm_linha7_comeco.getOffset(METER)));
 }
 return base + extra;
 /*ALCODEEND*/}
 
 RailwayTrack get_track_entrada_linha7()
 {/*ALCODESTART::1792520000103*/
-// ALT-026: trilho da linha 7 onde cai a cabeça do lote que vai entrar (par do get_offset_entrada_linha7)
+// trilho da linha 7 onde cai a cabeça do lote que vai entrar (par do get_offset_entrada_linha7)
 RailwayTrack[] linhas = get_trilhos_linha7();
 double alvo = get_distancia_entrada_linha7();
 double acum = 0;
@@ -266,14 +266,14 @@ for (RailwayTrack l : linhas) {
     acum += comp;
 }
 
-traceln("linha entrada: " + linhas[linhas.length - 1].getName());
+Log.debug("ADM", "linha_entrada", linhas[linhas.length - 1].getName());
 
 return linhas[linhas.length - 1];
 /*ALCODEEND*/}
 
 boolean trem_na_linha7(Trem trem)
 {/*ALCODESTART::1792550000006*/
-// ALT-029: true se algum carro do trem ainda está em um dos trilhos da linha 7
+// true se algum carro do trem ainda está em um dos trilhos da linha 7
 for (RailwayTrack l : get_trilhos_linha7()) {
     if (trem.estaNaLinha(l)) return true;
 }
@@ -304,7 +304,7 @@ return (vagoes_linha_07);
 
 double liberar_wait_rp_moegaX()
 {/*ALCODESTART::1792570000014*/
-// ALT-032: solta o lote da moega X que espera a moega ficar livre (ou espaço na linha 7)
+// solta o lote da moega X que espera a moega ficar livre (ou espaço na linha 7)
 if (wait_rp_moegaX.size() > 0) {
     wait_rp_moegaX.free(wait_rp_moegaX.get(0));
 }
@@ -312,7 +312,7 @@ if (wait_rp_moegaX.size() > 0) {
 
 double liberar_wait_rp_moegaV()
 {/*ALCODESTART::1792570000015*/
-// ALT-032: solta o lote da moega V que espera a moega ficar livre (ou espaço na linha 7)
+// solta o lote da moega V que espera a moega ficar livre (ou espaço na linha 7)
 if (wait_rp_moegaV.size() > 0) {
     wait_rp_moegaV.free(wait_rp_moegaV.get(0));
 }
@@ -320,8 +320,8 @@ if (wait_rp_moegaV.size() > 0) {
 
 boolean linha7_tem_espaco()
 {/*ALCODESTART::1792570000016*/
-// ALT-032: cabe mais 1 vagão na linha 7? Conta o lote, os vagões a caminho e os que estão em descarga.
-// Durante o alívio não tira vagão da moega (ALT-031).
+// cabe mais 1 vagão na linha 7? Conta o lote, os vagões a caminho e os que estão em descarga.
+// Durante o alívio não tira vagão da moega.
 if (alivio_linha7_em_andamento) return false;
 int total = main().getTamanhoDoTrem(lote_linha_7) + vagoes_pendentes_linha7 + vagoes_em_descarga;
 return total < CAPACIDADE_LINHA_7;

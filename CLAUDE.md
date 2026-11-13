@@ -4,16 +4,19 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
 
 ## Antes de qualquer alteração
 
-1. Perguntar: "O AnyLogic está fechado?" Só editar com resposta sim.
+1. Antes de aplicar, mostrar a alteração em dois blocos:
+   - **As is:** como está hoje (código ou comportamento atual).
+   - **To be:** como vai ficar.
+   Depois perguntar: "Confirmar alteração? (AnyLogic fechado)". Só editar com resposta sim.
    O AnyLogic salva por cima de edições externas.
-2. Explicar o problema e a solução proposta, e esperar confirmação.
+2. Se houver decisão em aberto, perguntar junto, antes do "Confirmar alteração?".
 3. Leitura é livre. Edição, não.
 4. Antes de diagnosticar, reler o arquivo do agente ou pedir o texto atual do campo no AnyLogic.
    O arquivo no disco pode estar diferente do que está no editor.
 
 ## Onde estão as coisas
 
-- Pasta do modelo: `C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\MargemDireitaModel1`
+- Pasta do modelo: `C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop`
 - Código-fonte: `_alp\Agents\<Agente>\`
   - `EmbeddedObjects.xml`: blocos do fluxograma e seus parâmetros
   - `Connectors.xml`: ligações entre blocos
@@ -26,7 +29,7 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
 
 - **Main**: todos os trilhos e as linhas internas dos terminais.
 - **Terminais**: CoperXI, CoperXXI, CostaLeite, MoegaoTerra, MoegaoMar, Bracell, Tgrao.
-- **Gestores**: GestorDeLocomotivas, GestorDeCirculacao, GestorDeAlivios.
+- **Gestores**: GestorDeLocomotivas, GestorDeCirculacao, GestorDeAlivios, GestorDeISN, GestorDeChegadas.
   GestorDeChegadas e GestorDeDVs ainda não estão desenvolvidos.
 - **Auxiliares**: Trem, Locomotiva, Vagao, MoverTremCompleto, DevolverLocomotiva,
   ChamarLocomotiva, DescarregaLote, DescargaContinua, DecoupleDelay.
@@ -34,6 +37,7 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
 ### Recursos de linha
 
 - Os ResourcePools de linha ficam no GestorDeCirculacao: `main().gestorDeCirculacao.rp_...`.
+  Exceção (ALT-084): as faixas do pátio ISN e seus pools ficam no GestorDeISN (`main().gestorDeISN.rp_isn_*`).
 - Não existe método `pst_*()` no Main para recurso de linha. Conferir o nome em `docs/gestores.md` antes de usar.
 
 ## Logs da simulação
@@ -47,8 +51,11 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
   Trem e recurso envolvidos aparecem nos traces logo antes do erro.
 - Log grande: procurar pelo prefixo do trace (ex.: `[diag_liberar]`) ou pelo ID do trem, sem ler o arquivo inteiro.
 - Erros na criação dos agentes, antes do On startup do Main, não entram no log.
-- Traces novos: prefixo `[tag]`, tempo e ID do trem.
-  Ex.: `traceln(String.format("[%.1f][Tgrao][bloco] trem=%d ...", time(), agent.getId()));`
+- Traces novos usam a classe `Log` (`_alp/Classes/Class.Log.java`), nunca `traceln` direto:
+  `Log.info("Origem", "evento", String.format("trem=%d ...", ...));` (também `debug`, `warn`, `erro`).
+  Saída: `[   0.320h] INFO  GesCirculacao   exit_para_via3_a   trem=...`. Tempo sempre em horas; origem = nome do agente.
+  Cada replicação chama `Log.iniciar(this)` (hoje no startup do GestorDeCirculacao, GestorDeISN e GestorDeChegadas).
+  `Log.nivelMinimo` e `Log.silenciados` filtram por nível e por origem. Convertidos até agora: GestorDeCirculacao, GestorDeISN, GestorDeChegadas, GestorDeAlivios, GestorDeLocomotivas, ADM, TES, T39.
 - `logs/sim.log` é versionado no GitHub, para ser lido pelo Claude Code na web e no celular.
   Depois de rodar, Guilherme faz commit e push só do log, com a mensagem `log <descrição curta>`.
   Commit de log não é ALT e não entra no CHANGELOG.
@@ -70,7 +77,7 @@ Se um doc divergir do código, avisar e não alterar o modelo com base só no do
 - Arquivos XML usam CRLF. Preservar ao editar.
 - Nomes de blocos em `Connectors.xml` têm que bater exatamente com o `<Name>` em `EmbeddedObjects.xml`.
 - Funções novas em snake_case (ex.: `get_tipo_loco_alivio`), não camelCase.
-- Comentários no código citam a ALT (ex.: `// ALT-009: ...`).
+- Comentários no código não citam ALT (ALT-087). O histórico fica no `CHANGELOG.md`.
 
 ## Regras de domínio que não podem ser quebradas
 
