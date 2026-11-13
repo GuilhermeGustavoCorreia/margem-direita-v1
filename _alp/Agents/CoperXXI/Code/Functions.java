@@ -337,10 +337,12 @@ int sobra = get_vgs_trazidos_alivio(trem) - quantidade_alivio;
 if (sobra <= 0) {
 	fim_alivio.take(trem);
 } else if (sobra > CAPACIDADE_LOTE_B + CAPACIDADE_LOTE_A) {
-	// moega: corta no lugar, a peça fica do lado do encoste do ponto da moega
+	// moega: peça de sobra - 35, do ponto da moega para o lado do encoste
 	_peca_linha  = "moega";
 	_peca_vagoes = sobra - CAPACIDADE_LOTE_B - CAPACIDADE_LOTE_A;
-	entrar_cortar_peca.take(trem);
+	// a cauda vai até moega + peça: a peça começa no ponto da moega e o lote em descarga completa a partir dela
+	if (distancia_peca_moega(trem) < 0.5) entrar_cortar_peca.take(trem);
+	else                                  entrar_mover_moega.take(trem);
 } else if (sobra > CAPACIDADE_LOTE_B) {
 	// a: cauda no _coperXXI_lote_a_aux_mnb (cauda do lote a)
 	_peca_linha  = "a";
@@ -387,4 +389,23 @@ try {
 	Log.warn("CoperXXI", "cauda_no_ponto", "nao leu a posicao do trem: " + e);
 }
 return false;
+/*ALCODEEND*/}
+
+double distancia_peca_moega(Trem trem)
+{/*ALCODESTART::1794810000008*/
+// quanto o trem anda de ré (para o Valongo) até a cauda (primeiro carro, lado do encoste) ficar em
+// _coperXII_moega + comprimento da peça. Assim a peça da moega começa sempre no ponto da moega.
+try {
+	double alvo = main()._coperXII_moega.getOffset(METER);
+	for (int i = 0; i < _peca_vagoes; i++) alvo += trem.getCar(i).getLength();
+	Agent cauda = trem.getFirst();
+	java.lang.reflect.Method getOffset = cauda.getClass().getMethod("getOffset", boolean.class);
+	double fim = Math.max((double) getOffset.invoke(cauda, true), (double) getOffset.invoke(cauda, false));
+	double d = fim - alvo;
+	Log.info("CoperXXI", "distancia_peca_moega", String.format("trem=%d cauda=%.1f alvo=%.1f distancia=%.1f", trem.getId(), fim, alvo, d));
+	return Math.max(0, d);
+} catch (Exception e) {
+	Log.warn("CoperXXI", "distancia_peca_moega", "nao leu a posicao do trem: " + e);
+	return 0;
+}
 /*ALCODEEND*/}
