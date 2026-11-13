@@ -1634,3 +1634,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** sentido dos "primeiros carros" no `cortar_sobra` (parte cortada deve ser a do lado do lote_b); `getTrack(true/false)` do trem do alívio; posição dos pedaços em relação a `_coperXXI_lote_a`; pedidos 41, 38, 32, 20, 6 e 1.
 - **Backup:** `_backup/ALT-124/` (agente antes da alteração e o script `alt124.py`).
 - **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`
+## ALT-126 — coperxxi-sobra-com-loco-pontos-aux
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **O que:** a sobra do alívio parcial do CoperXXI é deixada peça a peça pela própria loco, sem andar sozinha (substitui a sobra da ALT-124).
+  - Pontos na `psnSaidaCopexXXI_b` acertados para vagão de 17,5 m: `_coperXXI_lote_b_aux_mnb` 370 → 399 (cauda do b, 14 + 22 × 17,5), `_coperXXI_lote_a` 389,239 → 399, `_coperXXI_lote_a_aux_mnb` 565 → 626,5 (cauda do a, 399 + 13 × 17,5), `_coperXII_moega` 594,239 → 626,5 (os 35 de b + a não cabiam antes da moega).
+  - O alívio engata b → a → moega. No fim, `proxima_peca()` corta a sobra do rabo (lado da moega): moega (`s − 35`, no lugar), a (`mover_peca_a`: cauda no `a_aux`, até 13) e b (`mover_peca_b`: cauda no `b_aux`). `cortar_peca` (primeiros carros) e `guardar_peca()` guardam cada peça no estoque da linha. `cauda_no_ponto()` evita mover distância 0.
+  - `engatar_moega` vai até `_coperXII_encoste` e acopla ao bater no lote da moega (antes parava no ponto da moega e travava se o lote não estivesse encostado).
+  - Removidos da ALT-124: `entrar_sobra`, `linha_livre_sobra`, `espera_linha_sobra`, `ir_sobra`, `sobra_cabe`, `cortar_sobra`, `para_guardar_sobra`, `para_guardar_sobra_parte`, `rmv_excesso`, `para_guardar_excesso`; funções `guardar_excesso_alivio`, `linha_livre_para_sobra`, `sobra_linha_alvo`, `registrar_sobra`, `guardar_sobra`; variáveis `trem_alivio`, `trem_sobra`. `retornar_gestorDeAlivios` volta a liberar a descarga direto.
+  - Variáveis novas `_peca_linha`, `_peca_vagoes`.
+- **Validar:** sentido do `MoverTremCompleto_Ponto` (`vaiRecuar = false`, `sentidoPontaDaPraia = false`); a frente do trem entra até ~340 m na `linhaCostaLeita_a` / `linhaPaqueta_a` sem licença (pendência); pedidos 41, 38, 32, 20, 6, 4 e 1.
+- **Arquivos:** `_alp/Agents/CoperXXI/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`, `_alp/Agents/Main/Levels/Level.level.xml`

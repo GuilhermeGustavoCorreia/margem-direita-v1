@@ -485,8 +485,8 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1794600000029</Id>
-		<Name><![CDATA[trem_alivio]]></Name>
+		<Id>1794800000027</Id>
+		<Name><![CDATA[_peca_linha]]></Name>
 		<X>1860</X>
 		<Y>1840</Y>
 		<Label>
@@ -500,15 +500,15 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[Trem]]></Type>
+			<Type><![CDATA[String]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[null]]></Code>
+				<Code><![CDATA[""]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1794600000030</Id>
-		<Name><![CDATA[trem_sobra]]></Name>
+		<Id>1794800000028</Id>
+		<Name><![CDATA[_peca_vagoes]]></Name>
 		<X>1860</X>
 		<Y>1870</Y>
 		<Label>
@@ -522,9 +522,9 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[Trem]]></Type>
+			<Type><![CDATA[int]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[null]]></Code>
+				<Code><![CDATA[0]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

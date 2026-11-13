@@ -137,3 +137,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-121**: GestorDeAlivios — loco do alívio PST que encosta no lote na linha de destino conta como chegada (outHit ligado)
 - **ALT-123**: CoperXI e CoperXXI — log de análise por bloco (variável `log_de_analise`)
 - **ALT-124**: CoperXXI — alívio parcial: estoques viram Wait, alívio engata tudo e a sobra volta para b → a → moega
+- **ALT-126**: CoperXXI — sobra do alívio deixada pela loco nos pontos auxiliares (moega → a → b); pontos acertados para vagão de 17,5 m

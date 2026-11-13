@@ -5932,7 +5932,6 @@ proximo_grupo.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[fazendoAlivio = true;
 qt_vgs_inicio_alivio = ((Trem) agent).getNumeroDeVagoes();
-trem_alivio = (Trem) agent;
 traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (%d carros)", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
@@ -5997,11 +5996,8 @@ traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (
 // ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
 aguardando_alivio = false;
 fazendoAlivio = false;
-// com sobra, a descarga só volta quando a sobra for guardada (guardar_sobra)
-if (trem_sobra == null) {
-	liberar_espaco_vazios();
-	iniciar_proximo_lote();
-}]]></Code>
+liberar_espaco_vazios();
+iniciar_proximo_lote();]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6430,7 +6426,7 @@ if (trem_sobra == null) {
 			<Parameter>
 				<Name><![CDATA[positionOnTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._coperXII_moega]]></Code>
+					<Code><![CDATA[main()._coperXII_encoste]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6475,7 +6471,8 @@ if (trem_sobra == null) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote da moega", time(), train.getId()));
+					<Code><![CDATA[// anda até bater no lote da moega (ele pode não estar encostado no ponto da moega)
+traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote da moega", time(), train.getId()));
 log_analise("engatar_moega", train, "inicio");]]></Code>
 				</Value>
 			</Parameter>
@@ -11638,140 +11635,6 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794506038056</Id>
-		<Name><![CDATA[rmv_excesso]]></Name>
-		<X>5150</X>
-		<Y>300</Y>
-		<Label>
-			<X>-25</X>
-			<Y>-20</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainDecouple</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.rail</PackageName>
-				<ClassName>TrainDecouple</ClassName>
-				<ItemName>1412464642016</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.rail</PackageName>
-				<ClassName>TrainDecouple</ClassName>
-				<ItemName>1412464642017</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[decoupleFirstCars]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[nCars]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[ainda_tem_lote_vazios() ? 0 : Math.max(0, get_vgs_trazidos_alivio((Trem) train) - quantidade_alivio)]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[newTrain]]></Name>
-				<Value Class="EntityCodeValue">
-					<IsAgentEntity>true</IsAgentEntity>
-					<EntityEmbeddedObject>
-						<Id>1794506038057</Id>
-						<ActiveObjectClass>
-							<PackageName>margemdireitamodel</PackageName>
-							<ClassName>Trem</ClassName>
-						</ActiveObjectClass>
-						<GenericParameterSubstitute>
-							<GenericParameterSubstituteReference>
-								<PackageName>margemdireitamodel</PackageName>
-								<ClassName>Trem</ClassName>
-								<ItemName>1773066591669</ItemName>
-							</GenericParameterSubstituteReference>
-						</GenericParameterSubstitute>
-						<Parameters/>
-						<ReplicationFlag>true</ReplicationFlag>
-						<Replication Class="CodeValue">
-							<Code><![CDATA[100]]></Code>
-						</Replication>
-						<CollectionType>ARRAY_LIST_BASED</CollectionType>
-						<InitialLocationType>XYZ</InitialLocationType>
-						<ColumnCode Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</ColumnCode>
-						<RowCode Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</RowCode>
-						<LocationNameCode Class="CodeValue">
-							<Code><![CDATA[""]]></Code>
-						</LocationNameCode>
-						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
-						<InitializationDatabaseTableQuery>
-							<Id>1794506038058</Id>
-							<TableReference/>
-						</InitializationDatabaseTableQuery>
-						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-						<QuantityColumn/>
-					</EntityEmbeddedObject>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[addToCustomPopulation]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[population]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("rmv_excesso", train, "vai cortar");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("rmv_excesso", train, "parte que segue");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitDecoupled]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("rmv_excesso", train2, "parte cortada");]]></Code>
-				</Value>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1794506038059</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
 		<Id>1794506038060</Id>
 		<Name><![CDATA[precisa_mais_vgs]]></Name>
 		<X>5300</X>
@@ -11938,9 +11801,9 @@ alivio_seguir((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// engatou tudo; o rmv_excesso já cortou a sobra
+					<Code><![CDATA[// engatou tudo: deixa a sobra peça a peça (moega -> a -> b) e depois volta ao GestorDeAlivios
 etapa_alivio = "";
-fim_alivio.take(agent);]]></Code>
+proxima_peca((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -11968,64 +11831,10 @@ fim_alivio.take(agent);]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794506038066</Id>
-		<Name><![CDATA[para_guardar_excesso]]></Name>
-		<X>5650</X>
-		<Y>400</Y>
-		<Label>
-			<X>-10</X>
-			<Y>-15</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Exit</ClassName>
-				<ItemName>1412336242934</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[guardar_excesso_alivio((Trem) agent);]]></Code>
-				</Value>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1794506038067</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1794600000001</Id>
-		<Name><![CDATA[entrar_sobra]]></Name>
-		<X>4600</X>
-		<Y>560</Y>
+		<Id>1794800000001</Id>
+		<Name><![CDATA[entrar_cortar_peca]]></Name>
+		<X>5030</X>
+		<Y>520</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -12108,7 +11917,7 @@ fim_alivio.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("entrar_sobra", agent, "sobra do alívio");]]></Code>
+					<Code><![CDATA[log_analise("entrar_cortar_peca", agent, "corta no lugar");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -12135,104 +11944,19 @@ fim_alivio.take(agent);]]></Code>
 		</LocationNameCode>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
-			<Id>1794600000002</Id>
+			<Id>1794800000002</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794600000003</Id>
-		<Name><![CDATA[linha_livre_sobra]]></Name>
-		<X>4750</X>
-		<Y>560</Y>
+		<Id>1794800000003</Id>
+		<Name><![CDATA[entrar_mover_a]]></Name>
+		<X>5030</X>
+		<Y>600</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-20</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>SelectOutput</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>SelectOutput</ClassName>
-				<ItemName>1412336242931</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[conditionIsProbabilistic]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[false]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[condition]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[// a loco do alívio já saiu da psnSaidaCopexXXI_b?
-linha_livre_para_sobra()]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[probability]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onAtEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[choiceIsVolatile]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitTrue]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("linha_livre_sobra", agent, "true");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitFalse]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("linha_livre_sobra", agent, "false");]]></Code>
-				</Value>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1794600000004</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1794600000005</Id>
-		<Name><![CDATA[espera_linha_sobra]]></Name>
-		<X>4850</X>
-		<Y>630</Y>
-		<Label>
-			<X>-25</X>
+			<X>-10</X>
 			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -12240,61 +11964,87 @@ linha_livre_para_sobra()]]></Code>
 		<ShowLabel>true</ShowLabel>
 		<ActiveObjectClass>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Delay</ClassName>
+			<ClassName>Enter</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Delay</ClassName>
-				<ItemName>1412336242930</ItemName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
-				<Name><![CDATA[type]]></Name>
+				<Name><![CDATA[locationType]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[delayTime]]></Name>
-				<Value Class="CodeUnitValue">
-					<Code><![CDATA[30]]></Code>
-					<Unit Class="TimeUnits">SECOND</Unit>
-				</Value>
+				<Name><![CDATA[locationX]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[capacity]]></Name>
+				<Name><![CDATA[locationY]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[maximumCapacity]]></Name>
+				<Name><![CDATA[locationZ]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[entityLocation]]></Name>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[pushProtocol]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[forceStatisticsCollection]]></Name>
-			</Parameter>
-			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("espera_linha_sobra", agent, "inicio");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onAtExit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("espera_linha_sobra", agent, "fim");]]></Code>
+					<Code><![CDATA[log_analise("entrar_mover_a", agent, "cauda até o a_aux");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -12314,228 +12064,107 @@ linha_livre_para_sobra()]]></Code>
 		</LocationNameCode>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
-			<Id>1794600000006</Id>
+			<Id>1794800000004</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794600000007</Id>
-		<Name><![CDATA[ir_sobra]]></Name>
-		<X>4900</X>
-		<Y>560</Y>
+		<Id>1794800000005</Id>
+		<Name><![CDATA[entrar_mover_b]]></Name>
+		<X>5030</X>
+		<Y>680</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-20</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.rail</PackageName>
-				<ClassName>TrainMoveTo</ClassName>
-				<ItemName>1412464642017</ItemName>
-			</GenericParameterSubstituteReference>
-			<GenericParameterSubstituteValue Class="CodeValue">
-				<Code><![CDATA[Trem]]></Code>
-			</GenericParameterSubstituteValue>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[forward]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[false]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[routeType]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[BlockedTrackHandling]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[route]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[tracksToAvoid]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[targetType]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[positionOnTrack]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[main()._coperXXI_lote_b]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[targetTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[targetOffset]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[limitDistance]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[distanceIs]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[maxDistance]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[switchDistance]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[cruiseSpeed]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[startOptions]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[accelerateCondition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[finishOptions]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[decelerateCondition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("ir_sobra", train, "inicio");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onAtSwitch]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnterTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitTrack]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitYard]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("ir_sobra", train, "chegou");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitHit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("ir_sobra", train, "bateu (outHit)");]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onRemove]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1794600000008</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1794600000009</Id>
-		<Name><![CDATA[sobra_cabe]]></Name>
-		<X>5050</X>
-		<Y>560</Y>
-		<Label>
-			<X>-20</X>
-			<Y>-20</Y>
+			<X>-10</X>
+			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<ActiveObjectClass>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>SelectOutput</ClassName>
+			<ClassName>Enter</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>SelectOutput</ClassName>
-				<ItemName>1412336242931</ItemName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
-				<Name><![CDATA[conditionIsProbabilistic]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[false]]></Code>
-				</Value>
+				<Name><![CDATA[locationType]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[condition]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[// o que resta da sobra cabe inteiro na próxima linha (b -> a -> moega)?
-((Trem) agent).getNumeroDeVagoes() <= get_capacidade_linha(sobra_linha_alvo())]]></Code>
-				</Value>
+				<Name><![CDATA[locationX]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[probability]]></Name>
+				<Name><![CDATA[locationY]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[onAtEnter]]></Name>
+				<Name><![CDATA[locationZ]]></Name>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[choiceIsVolatile]]></Name>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("sobra_cabe", agent, "true");]]></Code>
+					<Code><![CDATA[log_analise("entrar_mover_b", agent, "cauda até o b_aux");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
-				<Name><![CDATA[onExitFalse]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("sobra_cabe", agent, "false");]]></Code>
-				</Value>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -12555,17 +12184,197 @@ linha_livre_para_sobra()]]></Code>
 		</LocationNameCode>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
-			<Id>1794600000010</Id>
+			<Id>1794800000006</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794600000011</Id>
-		<Name><![CDATA[cortar_sobra]]></Name>
-		<X>5150</X>
-		<Y>660</Y>
+		<Id>1794800000007</Id>
+		<Name><![CDATA[mover_peca_a]]></Name>
+		<X>5180</X>
+		<Y>600</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>MoverTremCompleto_Ponto</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>MoverTremCompleto_Ponto</ClassName>
+				<ItemName>1784731674754</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[estaSobreOPonto_condition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[irParaPonto_positionOnTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainMoveTo_maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainMoveTo_positionOnTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[vaiRecuar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[posicaoNaVia]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._coperXXI_lote_a_aux_mnb]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sentidoPontaDaPraia]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[verificarUltimo]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[moverDistanciaExtraa]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanciaExtraa]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794800000008</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794800000009</Id>
+		<Name><![CDATA[mover_peca_b]]></Name>
+		<X>5180</X>
+		<Y>680</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>MoverTremCompleto_Ponto</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>MoverTremCompleto_Ponto</ClassName>
+				<ItemName>1784731674754</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[estaSobreOPonto_condition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[irParaPonto_positionOnTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainMoveTo_maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainMoveTo_positionOnTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[vaiRecuar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[posicaoNaVia]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._coperXXI_lote_b_aux_mnb]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sentidoPontaDaPraia]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[verificarUltimo]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[moverDistanciaExtraa]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanciaExtraa]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794800000010</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794800000011</Id>
+		<Name><![CDATA[cortar_peca]]></Name>
+		<X>5350</X>
+		<Y>520</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -12595,13 +12404,13 @@ linha_livre_para_sobra()]]></Code>
 			<Parameter>
 				<Name><![CDATA[decoupleFirstCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[false]]></Code>
+					<Code><![CDATA[true]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[nCars]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[get_capacidade_linha(sobra_linha_alvo())]]></Code>
+					<Code><![CDATA[_peca_vagoes]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -12609,7 +12418,7 @@ linha_livre_para_sobra()]]></Code>
 				<Value Class="EntityCodeValue">
 					<IsAgentEntity>true</IsAgentEntity>
 					<EntityEmbeddedObject>
-						<Id>1794600000012</Id>
+						<Id>1794800000012</Id>
 						<ActiveObjectClass>
 							<PackageName>margemdireitamodel</PackageName>
 							<ClassName>Trem</ClassName>
@@ -12639,7 +12448,7 @@ linha_livre_para_sobra()]]></Code>
 						</LocationNameCode>
 						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
 						<InitializationDatabaseTableQuery>
-							<Id>1794600000013</Id>
+							<Id>1794800000013</Id>
 							<TableReference/>
 						</InitializationDatabaseTableQuery>
 						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
@@ -12656,21 +12465,19 @@ linha_livre_para_sobra()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("cortar_sobra", train, "vai cortar");]]></Code>
+					<Code><![CDATA[log_analise("cortar_peca", train, "vai cortar");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("cortar_sobra", train, "parte que segue");]]></Code>
+					<Code><![CDATA[log_analise("cortar_peca", train, "parte que segue");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// a parte cortada (rabo da sobra, que andou de ré: lado do lote_b) fica com a linha alvo antes de o resto voltar ao sobra_cabe
-registrar_sobra((Trem) train2);
-log_analise("cortar_sobra", train2, "parte cortada");]]></Code>
+					<Code><![CDATA[log_analise("cortar_peca", train2, "parte cortada");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -12691,16 +12498,70 @@ log_analise("cortar_sobra", train2, "parte cortada");]]></Code>
 		</LocationNameCode>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
-			<Id>1794600000014</Id>
+			<Id>1794800000014</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1794600000015</Id>
-		<Name><![CDATA[para_guardar_sobra]]></Name>
-		<X>5350</X>
+		<Id>1794800000015</Id>
+		<Name><![CDATA[para_guardar_peca]]></Name>
+		<X>5550</X>
+		<Y>470</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[guardar_peca((Trem) agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1794800000016</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1794800000017</Id>
+		<Name><![CDATA[para_proxima_peca]]></Name>
+		<X>5550</X>
 		<Y>560</Y>
 		<Label>
 			<X>-10</X>
@@ -12724,7 +12585,7 @@ log_analise("cortar_sobra", train2, "parte cortada");]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[guardar_sobra((Trem) agent, true);]]></Code>
+					<Code><![CDATA[proxima_peca((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -12745,61 +12606,7 @@ log_analise("cortar_sobra", train2, "parte cortada");]]></Code>
 		</LocationNameCode>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
-			<Id>1794600000016</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
-		<Id>1794600000017</Id>
-		<Name><![CDATA[para_guardar_sobra_parte]]></Name>
-		<X>5350</X>
-		<Y>660</Y>
-		<Label>
-			<X>-10</X>
-			<Y>-15</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Exit</ClassName>
-				<ItemName>1412336242934</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[guardar_sobra((Trem) agent, false);]]></Code>
-				</Value>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1794600000018</Id>
+			<Id>1794800000018</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

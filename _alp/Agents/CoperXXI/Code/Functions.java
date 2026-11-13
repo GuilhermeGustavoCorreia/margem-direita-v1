@@ -307,35 +307,10 @@ int get_vgs_trazidos_alivio(Trem trem)
 return trem.getNumeroDeVagoes() - qt_vgs_inicio_alivio;
 /*ALCODEEND*/}
 
-double guardar_excesso_alivio(Trem lote)
-{/*ALCODESTART::1794506038076*/
-// sobra do alívio (rabo do trem, lado da moega): espera a loco sair da linha,
-// anda até o lote_b e é repartida em b -> a -> moega (sobra_cabe / cortar_sobra / guardar_sobra)
-trem_sobra = lote;
-lote.tipoDeLote = "coperXII_sobra";
-Log.info("CoperXXI", "alivio_sobra", String.format("trem=%d sobra de %d vgs (pedido=%d)",
-	lote.getId(), lote.getNumeroDeVagoes(), quantidade_alivio));
-entrar_sobra.take(lote);
-/*ALCODEEND*/}
-
 boolean ainda_tem_lote_vazios()
 {/*ALCODESTART::1794600000031*/
 // ainda há lote de vazios parado em b, a ou moega? O alívio engata todos antes de cortar a sobra
 return lote_vazios_b != null || lote_vazios_a != null || lote_vazios_moega != null;
-/*ALCODEEND*/}
-
-boolean linha_livre_para_sobra()
-{/*ALCODESTART::1794600000032*/
-// a sobra só anda depois que o trem do alívio saiu da psnSaidaCopexXXI_b (as duas pontas fora da linha)
-if (fazendoAlivio) return false;
-if (trem_alivio == null) return true;
-try {
-	RailwayTrack linha = main().psnSaidaCopexXXI_b;
-	return trem_alivio.getTrack(true) != linha && trem_alivio.getTrack(false) != linha;
-} catch (Exception e) {
-	// o trem do alívio já não existe (acoplado nas DVs ou removido)
-	return true;
-}
 /*ALCODEEND*/}
 
 int get_capacidade_linha(String linha)
@@ -346,42 +321,6 @@ if ("a".equals(linha)) return CAPACIDADE_LOTE_A;
 return get_capacidade_moega();
 /*ALCODEEND*/}
 
-String sobra_linha_alvo()
-{/*ALCODESTART::1794600000034*/
-// a sobra enche b, depois a, depois o lote da moega
-if (lote_vazios_b == null) return "b";
-if (lote_vazios_a == null) return "a";
-return "moega";
-/*ALCODEEND*/}
-
-double registrar_sobra(Trem trem)
-{/*ALCODESTART::1794600000035*/
-// marca o pedaço da sobra com a linha alvo e grava o lote de vazios dela
-String linha = sobra_linha_alvo();
-trem.tipoDeLote = "coperXII_vazios_" + linha;
-if ("b".equals(linha))      lote_vazios_b = trem;
-else if ("a".equals(linha)) lote_vazios_a = trem;
-else                        lote_vazios_moega = trem;
-/*ALCODEEND*/}
-
-double guardar_sobra(Trem trem,boolean ultima)
-{/*ALCODESTART::1794600000036*/
-// guarda um pedaço da sobra no estoque da linha dele; o último pedaço retoma a descarga
-if (trem != lote_vazios_b && trem != lote_vazios_a && trem != lote_vazios_moega) registrar_sobra(trem);
-if (trem == lote_vazios_b)      entrar_estoque_b.take(trem);
-else if (trem == lote_vazios_a) entrar_estoque_a.take(trem);
-else                            entrar_estoque_moega.take(trem);
-Log.info("CoperXXI", "sobra_guardada", String.format("trem=%d %d vgs em %s | b=%d a=%d moega=%d",
-	trem.getId(), trem.getNumeroDeVagoes(), trem.tipoDeLote,
-	CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_A - get_espaco_linha("a"), get_capacidade_moega() - get_espaco_linha("moega")));
-if (ultima) {
-	trem_sobra = null;
-	verificar_alivio();
-	liberar_espaco_vazios();
-	iniciar_proximo_lote();
-}
-/*ALCODEEND*/}
-
 double liberar_estoque(String linha)
 {/*ALCODESTART::1794600000037*/
 // solta o lote de vazios parado no Wait da linha para o TrainCouple
@@ -390,3 +329,62 @@ else if ("a".equals(linha)) { if (estoque_a.size() > 0)     estoque_a.free(estoq
 else                        { if (estoque_moega.size() > 0) estoque_moega.free(estoque_moega.get(0)); }
 /*ALCODEEND*/}
 
+double proxima_peca(Trem trem)
+{/*ALCODESTART::1794800000029*/
+// deixa a sobra do alívio peça a peça, do rabo (lado da moega) para a frente: moega -> a -> b.
+// A cauda do trem é o lado da moega; cada peça é cortada com cortar_peca (primeiros carros).
+int sobra = get_vgs_trazidos_alivio(trem) - quantidade_alivio;
+if (sobra <= 0) {
+	fim_alivio.take(trem);
+} else if (sobra > CAPACIDADE_LOTE_B + CAPACIDADE_LOTE_A) {
+	// moega: corta no lugar, a peça fica do lado do encoste do ponto da moega
+	_peca_linha  = "moega";
+	_peca_vagoes = sobra - CAPACIDADE_LOTE_B - CAPACIDADE_LOTE_A;
+	entrar_cortar_peca.take(trem);
+} else if (sobra > CAPACIDADE_LOTE_B) {
+	// a: cauda no _coperXXI_lote_a_aux_mnb (cauda do lote a)
+	_peca_linha  = "a";
+	_peca_vagoes = sobra - CAPACIDADE_LOTE_B;
+	if (cauda_no_ponto(trem, main()._coperXXI_lote_a_aux_mnb)) entrar_cortar_peca.take(trem);
+	else                                                        entrar_mover_a.take(trem);
+} else {
+	// b: cauda no _coperXXI_lote_b_aux_mnb (cauda do lote b)
+	_peca_linha  = "b";
+	_peca_vagoes = sobra;
+	if (cauda_no_ponto(trem, main()._coperXXI_lote_b_aux_mnb)) entrar_cortar_peca.take(trem);
+	else                                                        entrar_mover_b.take(trem);
+}
+if (sobra > 0)
+	Log.info("CoperXXI", "proxima_peca", String.format("trem=%d sobra=%d -> %d vgs no lote %s (pedido=%d)",
+		trem.getId(), sobra, _peca_vagoes, _peca_linha, quantidade_alivio));
+/*ALCODEEND*/}
+
+double guardar_peca(Trem lote)
+{/*ALCODESTART::1794800000030*/
+// peça da sobra cortada: vira o lote de vazios da linha e entra no estoque (Wait) dela
+lote.tipoDeLote = "coperXII_vazios_" + _peca_linha;
+if ("b".equals(_peca_linha))      { lote_vazios_b = lote;     entrar_estoque_b.take(lote); }
+else if ("a".equals(_peca_linha)) { lote_vazios_a = lote;     entrar_estoque_a.take(lote); }
+else                              { lote_vazios_moega = lote; entrar_estoque_moega.take(lote); }
+Log.info("CoperXXI", "peca_guardada", String.format("trem=%d %d vgs no lote %s | b=%d a=%d moega=%d",
+	lote.getId(), lote.getNumeroDeVagoes(), _peca_linha,
+	CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_A - get_espaco_linha("a"), get_capacidade_moega() - get_espaco_linha("moega")));
+/*ALCODEEND*/}
+
+boolean cauda_no_ponto(Trem trem,PositionOnTrack ponto)
+{/*ALCODESTART::1794800000031*/
+// a cauda do trem (primeiro carro, lado da moega) já está no ponto? Evita um TrainMoveTo de distância 0
+try {
+	Agent carro = trem.getFirst();
+	java.lang.reflect.Method getTrack  = carro.getClass().getMethod("getTrack", boolean.class);
+	java.lang.reflect.Method getOffset = carro.getClass().getMethod("getOffset", boolean.class);
+	double p = ponto.getOffset(METER);
+	for (boolean frente : new boolean[] { true, false }) {
+		if ((RailwayTrack) getTrack.invoke(carro, frente) == ponto.getTrack()
+			&& Math.abs((double) getOffset.invoke(carro, frente) - p) < 0.5) return true;
+	}
+} catch (Exception e) {
+	Log.warn("CoperXXI", "cauda_no_ponto", "nao leu a posicao do trem: " + e);
+}
+return false;
+/*ALCODEEND*/}

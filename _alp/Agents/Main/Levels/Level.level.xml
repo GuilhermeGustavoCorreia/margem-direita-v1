@@ -5053,7 +5053,7 @@ if (senha.equals("FIPS123")) {
 							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 							<QuantityColumn/>
 						</EmbeddedObject>
-						<Offset>389.239</Offset>
+						<Offset>399.0</Offset>
 						<EmbeddedObject>
 							<Id>1785424025669</Id>
 							<ActiveObjectClass>
@@ -5157,7 +5157,7 @@ if (senha.equals("FIPS123")) {
 							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 							<QuantityColumn/>
 						</EmbeddedObject>
-						<Offset>594.239</Offset>
+						<Offset>626.5</Offset>
 						<EmbeddedObject>
 							<Id>1785427488018</Id>
 							<ActiveObjectClass>
@@ -5365,7 +5365,7 @@ if (senha.equals("FIPS123")) {
 							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 							<QuantityColumn/>
 						</EmbeddedObject>
-						<Offset>565.0</Offset>
+						<Offset>626.5</Offset>
 						<EmbeddedObject>
 							<Id>1794578006959</Id>
 							<ActiveObjectClass>
@@ -5469,7 +5469,7 @@ if (senha.equals("FIPS123")) {
 							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 							<QuantityColumn/>
 						</EmbeddedObject>
-						<Offset>370.0</Offset>
+						<Offset>399.0</Offset>
 						<EmbeddedObject>
 							<Id>1794578039144</Id>
 							<ActiveObjectClass>
