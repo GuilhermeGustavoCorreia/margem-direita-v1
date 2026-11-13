@@ -140,3 +140,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-126**: CoperXXI — sobra do alívio deixada pela loco nos pontos auxiliares (moega → a → b); pontos acertados para vagão de 17,5 m
 - **ALT-127**: CoperXXI — alívio também é pedido sem carregados no terminal (≥ 1 vazio), encadeado no fim de cada alívio; não recebe trem durante o alívio
 - **ALT-128**: CoperXXI — peça da sobra na última linha engatada é cortada no lugar (fim do erro de rota no `mover_peca_b` com lote b curto)
+- **ALT-129**: CoperXXI — descarga não começa grupo com alívio pedido ou em andamento (`pode_descarregar_grupo`)

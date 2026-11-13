@@ -1666,3 +1666,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `proxima_peca()`: ramos a e b cortam no lugar se `_ultima_linha_engatada` for a linha da peça (ou se a cauda já estiver no ponto aux, como antes). Ramo da moega sem mudança.
 - **Validar:** pedido 4 até zerar o terminal só pelo lote b (22 → 18 → 14 → … → 0); lote a cortado no lugar quando o alívio não engata a moega.
 - **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXXI/Variables.xml`
+## ALT-129 — coperxxi-descarga-espera-alivio
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **Problema:** com a ALT-127 o alívio é pedido com o terminal sem carga. Um trem novo entrou enquanto o alívio estava pedido (`aguardando_alivio`), o lote 1 começou a descarregar (havia 1 vaga no lote a) e a loco do alívio engatou ao mesmo tempo. O grupo da descarga acoplou no `acoplar_a` com `etapa_alivio = "a"` e foi tratado como trem do alívio (`proxima_peca`), dando erro de rota no `mover_peca_b` (`offset 868 to offset 516`).
+- **O que:** descarga e alívio nunca ao mesmo tempo. Função nova `pode_descarregar_grupo()` = `get_espaco_vazios() > 0 && !aguardando_alivio && !fazendoAlivio`, usada na `condition` e no `onEnter` do `tem_espaco_vazios`. O lote espera no `aguarda_espaco_vazios` até o fim do alívio (`liberar_espaco_vazios()` no `retornar_gestorDeAlivios`).
+- **Validar:** trem que chega com alívio pedido encosta e espera; a descarga começa só depois de `alivio terminou`.
+- **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.{java,xml}`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`

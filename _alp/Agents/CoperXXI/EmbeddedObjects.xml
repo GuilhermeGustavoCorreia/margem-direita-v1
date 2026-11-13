@@ -3365,8 +3365,8 @@ log_analise("cortar_lotes", train, "vai cortar");]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-076: cabe vagão em lote_b, lote_a ou no lote da moega?
-get_espaco_vazios() > 0]]></Code>
+					<Code><![CDATA[// cabe vagão em lote_b, lote_a ou no lote da moega, sem alívio pedido nem em andamento?
+pode_descarregar_grupo()]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3382,7 +3382,7 @@ get_espaco_vazios() > 0]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-076: fecha o Hold antes do trem chegar nele (evita loop SelectOutput <-> Hold)
-if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
+if (!pode_descarregar_grupo()) aguarda_espaco_vazios.block();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

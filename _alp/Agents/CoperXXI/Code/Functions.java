@@ -424,3 +424,9 @@ try {
 	return 0;
 }
 /*ALCODEEND*/}
+
+boolean pode_descarregar_grupo()
+{/*ALCODESTART::1794900000002*/
+// cabe vazio no terminal e não há alívio pedido nem em andamento (descarga e alívio nunca ao mesmo tempo)
+return get_espaco_vazios() > 0 && !aguardando_alivio && !fazendoAlivio;
+/*ALCODEEND*/}
