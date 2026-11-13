@@ -1682,3 +1682,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Doc:** `docs/terminais/coperxxi.md` criado (regras de recebimento e alívio das ALT-127 a 130).
 - **Validar:** trem seguinte fica no ISN até `pedir_alivio` parar e os vazios zerarem; alívios do trem anterior usam a loco da ferrovia dele.
 - **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `docs/terminais/coperxxi.md`
+## ALT-131 — coperxxi-grupo-bate-sem-lote
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e conferir os blocos ligados e a compilação)
+- **Problema:** teste com alívio de 19: o alívio levou moega + lote a e deixou o lote a vazio. O grupo seguinte da descarga (`ir_lote_a`) encostou na cauda do lote b (mesmo ponto 399) e saiu pelo `outHit` para o `acoplar_a`, que ficou esperando um lote do `estoque_a` vazio. Terminal travado.
+- **O que:** SelectOutput novos `tem_lote_a` e `tem_lote_b` entre o `outHit` do `ir_lote_*` e o `acoplar_*`. Condição `estoque_x.size() > 0`: true → `acoplar_x.in1`; false → `para_chegou_vazios*` (caminho do "chegou").
+  - Removidos os conectores `ir_lote_a.outHit → acoplar_a.in1` e `ir_lote_b.outHit → acoplar_b.in1`; criados 6 conectores (connector1118 a 1123).
+- **Doc:** `docs/terminais/coperxxi.md`, seção "Grupo que bate sem lote na linha".
+- **Validar:** alívio de 19 até a 2ª parte descarregar no lote a vazio (`tem_lote_a | false` e depois `guardado (coperXII_vazios_a)`).
+- **Arquivos:** `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXXI/Connectors.xml`, `docs/terminais/coperxxi.md`

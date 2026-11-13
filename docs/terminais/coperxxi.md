@@ -1,6 +1,6 @@
 # Terminal CoperXXI
 
-> ALT-127 a ALT-130. Ficha iniciada com as regras de recebimento e alívio; o restante do terminal ainda não foi documentado aqui.
+> ALT-127 a ALT-131. Ficha iniciada com as regras de recebimento e alívio; o restante do terminal ainda não foi documentado aqui.
 
 ## Identificação
 
@@ -34,3 +34,8 @@
 
 - A loco engata b → a → moega e deixa a sobra peça a peça (moega → a → b).
 - A peça da última linha engatada (`_ultima_linha_engatada`) é cortada no lugar: a cauda do trem é a cauda do próprio lote, que não se moveu.
+
+### Grupo que bate sem lote na linha
+
+- `ir_lote_a` / `ir_lote_b` levam o grupo descarregado até o ponto da linha. Se bater (`outHit`), passam por `tem_lote_a` / `tem_lote_b` (SelectOutput): com lote parado no estoque da linha (`estoque_x.size() > 0`), acopla; sem lote, segue pelo mesmo caminho do "chegou" (`para_chegou_vazios*`).
+- Motivo: com a linha a vazia (o alívio levou o lote a), o grupo encostou na cauda do lote b, que fica no mesmo ponto (`_coperXXI_lote_a` = `_coperXXI_lote_b_aux_mnb` = 399). O `outHit` mandava o grupo ao `acoplar_a`, que esperava para sempre um lote que não existia.

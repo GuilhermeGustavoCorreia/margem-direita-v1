@@ -142,3 +142,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-128**: CoperXXI — peça da sobra na última linha engatada é cortada no lugar (fim do erro de rota no `mover_peca_b` com lote b curto)
 - **ALT-129**: CoperXXI — descarga não começa grupo com alívio pedido ou em andamento (`pode_descarregar_grupo`)
 - **ALT-130**: CoperXXI — terminal só recebe trem depois de esvaziar (ferrovia é lida na chegada do carregado); ficha `docs/terminais/coperxxi.md`
+- **ALT-131**: CoperXXI — grupo que bate sem lote na linha segue como "chegou" (`tem_lote_a`/`tem_lote_b`)
