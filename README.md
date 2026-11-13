@@ -139,3 +139,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-124**: CoperXXI — alívio parcial: estoques viram Wait, alívio engata tudo e a sobra volta para b → a → moega
 - **ALT-126**: CoperXXI — sobra do alívio deixada pela loco nos pontos auxiliares (moega → a → b); pontos acertados para vagão de 17,5 m
 - **ALT-127**: CoperXXI — alívio também é pedido sem carregados no terminal (≥ 1 vazio), encadeado no fim de cada alívio; não recebe trem durante o alívio
+- **ALT-128**: CoperXXI — peça da sobra na última linha engatada é cortada no lugar (fim do erro de rota no `mover_peca_b` com lote b curto)

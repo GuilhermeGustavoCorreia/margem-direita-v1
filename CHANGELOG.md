@@ -1657,3 +1657,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - O gatilho do GestorDeAlivios continua `getOverloadVazios() > 1` (vale 2 com `aguardando_alivio`).
 - **Validar:** com qtd 6, após o último grupo, alívios encadeados até b, a e moega ficarem vazios; trem novo não entra durante a manobra do alívio.
 - **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`
+## ALT-128 — coperxxi-peca-corta-no-lugar
+- **Data:** 2026-11-13
+- **Status:** aplicada, aguardando validação
+- **Problema:** com os alívios encadeados da ALT-127 (pedido 4), o terminal passou a ser esvaziado só pelo lote b. A cada alívio o `mover_peca_b` reposicionava o trem e o lote b foi escorregando. Com 14 vgs, o trem não cobria mais o `_coperXXI_lote_b_aux_mnb` e o `irParaPonto` do `MoverTremCompleto_Ponto` deu `There is no straight route from psnSaidaCopexXXI_b, offset 242 to ... offset 516`.
+- **O que:** quando a linha da peça é a última que o alívio engatou, a cauda do trem é a cauda do próprio lote, que não se moveu: a peça é cortada no lugar, sem `mover_peca_*`.
+  - Variável nova `_ultima_linha_engatada` (String), gravada no `para_fim_alivio.onExit` antes de zerar `etapa_alivio`.
+  - `proxima_peca()`: ramos a e b cortam no lugar se `_ultima_linha_engatada` for a linha da peça (ou se a cauda já estiver no ponto aux, como antes). Ramo da moega sem mudança.
+- **Validar:** pedido 4 até zerar o terminal só pelo lote b (22 → 18 → 14 → … → 0); lote a cortado no lugar quando o alívio não engata a moega.
+- **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXXI/Variables.xml`

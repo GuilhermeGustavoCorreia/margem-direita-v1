@@ -11804,6 +11804,7 @@ alivio_seguir((Trem) agent);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// engatou tudo: deixa a sobra peça a peça (moega -> a -> b) e depois volta ao GestorDeAlivios
+_ultima_linha_engatada = etapa_alivio;
 etapa_alivio = "";
 proxima_peca((Trem) agent);]]></Code>
 				</Value>

@@ -360,14 +360,16 @@ if (sobra <= 0) {
 	// a: cauda no _coperXXI_lote_a_aux_mnb (cauda do lote a)
 	_peca_linha  = "a";
 	_peca_vagoes = sobra - CAPACIDADE_LOTE_B;
-	if (cauda_no_ponto(trem, main()._coperXXI_lote_a_aux_mnb)) entrar_cortar_peca.take(trem);
-	else                                                        entrar_mover_a.take(trem);
+	// lote a foi o último engatado: a cauda do trem é a cauda do próprio lote, já no lugar
+	if ("a".equals(_ultima_linha_engatada) || cauda_no_ponto(trem, main()._coperXXI_lote_a_aux_mnb)) entrar_cortar_peca.take(trem);
+	else                                                                                               entrar_mover_a.take(trem);
 } else {
 	// b: cauda no _coperXXI_lote_b_aux_mnb (cauda do lote b)
 	_peca_linha  = "b";
 	_peca_vagoes = sobra;
-	if (cauda_no_ponto(trem, main()._coperXXI_lote_b_aux_mnb)) entrar_cortar_peca.take(trem);
-	else                                                        entrar_mover_b.take(trem);
+	// lote b foi o único engatado: a cauda do trem é a cauda do próprio lote, já no lugar
+	if ("b".equals(_ultima_linha_engatada) || cauda_no_ponto(trem, main()._coperXXI_lote_b_aux_mnb)) entrar_cortar_peca.take(trem);
+	else                                                                                               entrar_mover_b.take(trem);
 }
 if (sobra > 0)
 	Log.info("CoperXXI", "proxima_peca", String.format("trem=%d sobra=%d -> %d vgs no lote %s (pedido=%d)",
