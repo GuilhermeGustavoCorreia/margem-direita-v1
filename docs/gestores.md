@@ -119,6 +119,7 @@ O trem nasce na `circ_pos_inicio_placa_2`, dentro da `isn_linha01_a`. Documento 
 Ainda não desenvolvido. Requisitos já definidos:
 
 - Recebe o trem de alívio em `entrarNasDVs`.
+- Saída das DVs (ALT-143): antes do `ir_saida` (move-to até `circ_pos_fim_placa_2`), o Seize `ocupar_val_via2_saida` licencia a `val_via2`, porque o caminho passa pelo AMV da saída do ISN (`railwaySwitch134`). O `liberar_faixas_circulacao`, depois do `trainExit`, solta a faixa.
 - Precisa informar o espaço livre, em vagões, por ferrovia.
   O GestorDeAlivios usa esse valor antes de aliviar o Tgrao (precisa ser mais de 40).
 

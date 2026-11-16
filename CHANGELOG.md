@@ -1817,3 +1817,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** os 4 terminais juntos; procurar `na fila do mnb_pcx` / `pegou mnb_pcx` e os `soltou` no fim de cada encoste e alívio; nenhuma operação deve ficar na fila para sempre.
 - **Doc:** `docs/gestores.md`, `docs/terminais/bracell.md`, `docs/terminais/tgrao.md`.
 - **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,Tgrao,Suzano,Bracell}/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/Eldorado/Code/Functions.java`
+
+## ALT-143 — dvs-saida-licencia-val-via2
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `Train [460] and train [147] are trying to occupy the switch railwaySwitch134 simultaneously` (~1,41 h). O `railwaySwitch134` liga `val_via2_a`, `psn_linha_porteira` (saída do ISN) e `railwayTrack42`. O MNB01 (alívio da Bracell) saiu das DVs pelo `ir_saida` (move-to até `circ_pos_fim_placa_2`, sem licença de faixa) e o L94 saiu do ISN com a `val_via2` licenciada; os dois chegaram juntos no AMV.
+- **O que (GestorDeDVs):** Seize novo `ocupar_val_via2_saida` (`main().gestorDeCirculacao.faixa_val_via2.recurso`) entre `sel_segue_direto.outT` / `sel_acao.outF` e o `ir_saida`; no onExit, `faixa_val_via2.ocupar(trem)`. O `liberar_faixas_circulacao` (depois do `trainExit`) solta a faixa junto com as outras.
+- **Validar:** os 4 terminais juntos; nos trens que saem das DVs aparece `ocupar_val_via2_saida ... pegou` antes do `saida`, e trem do ISN espera a `val_via2` quando um MNB está saindo.
+- **Doc:** `docs/gestores.md`, seção GestorDeDVs.
+- **Arquivos:** `_alp/Agents/GestorDeDVs/{EmbeddedObjects,Connectors}.xml`
