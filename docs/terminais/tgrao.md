@@ -15,8 +15,9 @@
 `podeReceberNovoLote()` recusa o trem enquanto:
 - há um trem entrando (`_trem_chegando`): do `comecar_encoste` até o `tirarLote` deixar o 1º lote na linha mar;
 - há carregados no terminal (`_getVagoesCarregados()` > 0: `lote_linhaMar` + `lote_linhaTerra`).
+- há vazios no terminal (`_getVagoesVazios()` > 0: `loteVazios_linhaMar` + `loteVazios_linhaMoega`), esperando alívio ou em alívio.
 
-O terminal recebe um trem por vez: o próximo só entra depois de descarregar tudo.
+O terminal recebe um trem por vez: o próximo só entra depois de descarregar e aliviar tudo.
 
 ## Regras do alívio
 

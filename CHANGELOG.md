@@ -1706,3 +1706,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Doc:** `docs/terminais/tgrao.md`, seção "Recebimento de trem".
 - **Validar:** X34 fica estacionado na linha 02 até o Y42 descarregar linha mar e moega; `liberado_linha02` só depois dos `lote_*` ficarem null.
 - **Arquivos:** `_alp/Agents/Tgrao/Code/Functions.java`, `_alp/Agents/Tgrao/EmbeddedObjects.xml`, `_alp/Agents/Tgrao/Variables.xml`, `docs/terminais/tgrao.md`
+
+## ALT-133 — tgrao-nao-recebe-com-vazios
+- **Data:** 2026-11-16
+- **Status:** aplicada no AnyLogic pelo Guilherme (código colado no editor), aguardando validação
+- **Problema:** com as DVs cheias (108/108), o alívio do Tgrao foi recusado (`cabem=0`) e os 40 vazios do Y94 ficaram na linha mar. O `podeReceberNovoLote()` olhava só os carregados e liberou o Y92, que encostou nos vazios e saiu pelo `encostar_linhaMar.outHit` sem ligação: `Agent can't leave the port root.tgrao.encostar_linhaMar.outHit`.
+- **O que:** `podeReceberNovoLote()` também recusa com `_getVagoesVazios() > 0`.
+- **Doc:** `docs/terminais/tgrao.md`, seção "Recebimento de trem".
+- **Fora do escopo (visto no mesmo log):** alívio do Tgrao saiu com 2 vagões definidos e 28 de espaço nas DVs (regra exige mais de 40) e o MNB levou 40; DVs com 108 rumo/grão não formam trem de 82 para sair.
+- **Validar:** com DVs cheias, o trem da linha 02 fica estacionado até o alívio do Tgrao acontecer.
+- **Arquivos:** `_alp/Agents/Tgrao/Code/Functions.java`, `docs/terminais/tgrao.md`
