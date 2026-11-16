@@ -7,7 +7,7 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
 1. Antes de aplicar, mostrar a alteração em dois blocos:
    - **As is:** como está hoje (código ou comportamento atual).
    - **To be:** como vai ficar.
-   Depois perguntar: "Confirmar alteração? (AnyLogic fechado)". Só editar com resposta sim.
+   Depois perguntar: "Faz sentido essa lógica?". Se a resposta for sim, aplicar.
    O AnyLogic salva por cima de edições externas.
 2. Se houver decisão em aberto, perguntar junto, antes do "Confirmar alteração?".
 3. Leitura é livre. Edição, não.
