@@ -934,7 +934,8 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._suzano_entrada_terminal]]></Code>
+					<Code><![CDATA[// zigue-zague do lote na 6000_d: ré até passar do AMV 81 (6000_c), depois avança pelo railwayTrack82
+main()._suzano_inversao_6000c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4015,7 +4016,8 @@ lote_L7000 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._suzano_entrada_terminal]]></Code>
+					<Code><![CDATA[// zigue-zague do lote na 6000_d: ré até passar do AMV 81 (6000_c), depois avança pelo railwayTrack82
+main()._suzano_inversao_6000c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4918,7 +4920,8 @@ lote_L7000 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._suzano_entrada_terminal]]></Code>
+					<Code><![CDATA[// zigue-zague do lote na 6000_d: ré até passar do AMV 81 (6000_c), depois avança pelo railwayTrack82
+main()._suzano_inversao_6000c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6394,7 +6397,8 @@ aguarda_L4c.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._suzano_entrada_terminal]]></Code>
+					<Code><![CDATA[// zigue-zague do lote na 6000_d: ré até passar do AMV 81 (6000_c), depois avança pelo railwayTrack82
+main()._suzano_inversao_6000c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9483,7 +9487,8 @@ loteVazios_L4 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._suzano_entrada_terminal]]></Code>
+					<Code><![CDATA[// zigue-zague do lote na 6000_d: ré até passar do AMV 81 (6000_c), depois avança pelo railwayTrack82
+main()._suzano_inversao_6000c]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

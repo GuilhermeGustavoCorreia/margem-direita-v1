@@ -1838,3 +1838,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **A conferir:** rotas (se algum movimento exigir inversão no meio, sai `no route`); orientação do corte no encoste (`rmv_40vgs`: os 24 da frente ficam na 6000_d e os 40 de trás vão para as linhas); a triangulação continua passando pela 7000_c, que o Tgrao também usa.
 - **Validar:** os 4 terminais; Suzano encosta e deixa os 24 na 6000_d; Tgrao não bate; pedidos do Eldorado ficam `terminal não pode receber` enquanto a Suzano estiver ocupada (e vice-versa).
 - **Arquivos:** `_alp/Agents/Suzano/EmbeddedObjects.xml`, `_alp/Agents/{Suzano,Eldorado}/Code/Functions.{java,xml}`
+
+## ALT-145 — suzano-ziguezague-6000c
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** com o lote na 6000_d (ALT-144), `mvp_ir_entrada_terminal`: *no straight route from railwayTrack114 ... to pmc_linha7000_c*. De ré pela 6000 não há caminho até a 7000_c; o travessão `railwayTrack82` liga 6000_c → 7000_c no sentido Ponta da Praia, então lote ↔ linhas exige zigue-zague com inversão na 6000_c.
+- **O que:**
+  - **Main (Level):** RailStopline nova `_suzano_inversao_6000c` na `pmc_linha6000_c`, offset 31 px (~40 m do `railwaySwitch81`).
+  - **Suzano:** `posicaoNaVia` de `mvp_ir_entrada_terminal` (encoste, 40 → linhas), `recuar3` (triangulação, saindo do lote com os 24 carregados), `recuar2` (triangulação, indo deixar os 24 vazios), `recuar4` (triangulação, saindo do lote depois dos vazios) e `recuar_alivio_L7000` (alívio, indo buscar os 24 vazios) passa de `_suzano_entrada_terminal` para `_suzano_inversao_6000c`. Os movimentos para frente seguintes não mudam.
+- **A conferir:** orientação dos trens depois dos acoplamentos (pode dar *no route*); saída do alívio da 6000_d para a circulação.
+- **Arquivos:** `_alp/Agents/Main/Levels/Level.level.xml`, `_alp/Agents/Suzano/EmbeddedObjects.xml`
