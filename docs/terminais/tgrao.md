@@ -28,6 +28,7 @@ O terminal recebe um trem por vez: o próximo só entra depois de descarregar e 
 
 ## Recursos
 
+- `rp_mnb_pcx` (ALT-142): o trem pega na circulação antes da `silosMuro_a` e solta no `liberar_mnb_pcx` (entre `tirarLote2` e `devolverLocomotiva`); o alívio pega no GestorDeAlivios (`ocupar_mnb_pcx_pst`) e solta no `liberar_faixas_pst`.
 - Linhas 7000 a, b, c, d: `rp_linha7000` com Seize (`ocupar_7000_abcd`, `ocupar_7000_abcd_alivio`, `ocupar_7000_abcd_locoB`) e Release (`liberar_7000_*`, `passar_7000_abcd_vazios`).
 - Saída do alívio: `ocupar_saida_alivio` e `liberar_7000_abcd_alivio`.
 - Faixas de circulação: a faixa de criação, marginal_a, é apreendida pelo GestorDeCirculacao.

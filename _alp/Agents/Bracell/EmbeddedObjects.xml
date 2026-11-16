@@ -8256,8 +8256,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: depois do recuar3 a loco solta a linha 5000/6000
-main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)]]></Code>
+					<Code><![CDATA[// depois do recuar3 a loco solta a linha 5000/6000 e o mnb_pcx (fim do encoste)
+main().gestorDeCirculacao.incluir_mnb_pcx(main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent), (Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

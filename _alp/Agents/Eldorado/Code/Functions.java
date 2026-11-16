@@ -181,11 +181,13 @@ return pools.toArray(new ResourcePool[0]);
 
 ResourcePool[] get_recursos_fim_encoste(Trem trem)
 {/*ALCODESTART::1798130000002*/
-// fim do encoste (loco deixou o último lote): solta a linha 5000/6000
+// fim do encoste (loco deixou o último lote): solta a linha 5000/6000, o mnb_pcx
 // e as faixas marginal_c e linha6000_a que o trem segurou durante as manobras.
 GestorDeCirculacao gc = main().gestorDeCirculacao;
 List<ResourcePool> pools = new ArrayList<ResourcePool>();
 for (ResourcePool rp : gc.get_recursos_linha_5000_6000(trem)) pools.add(rp);
+// fim do encoste: solta também o mnb_pcx (pego na circulação, antes da silosMuro_a)
+for (ResourcePool rp : gc.get_recursos_mnb_pcx(trem)) pools.add(rp);
 for (Faixa f : java.util.List.of(gc.faixa_marginal_c, gc.faixa_linha6000_a)) {
 	if (f.idTremLicenciado == trem.getId()) f.liberar();
 	if (!trem.resourceUnitsOfPool(f.recurso).isEmpty() && !pools.contains(f.recurso)) pools.add(f.recurso);

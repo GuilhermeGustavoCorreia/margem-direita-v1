@@ -153,3 +153,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-139**: GestorDeCirculacao — licenciamento de faixa com prioridade 1; trem em circulação passa na frente do alívio PMC e das manobras na fila (destrava Eldorado × alívio da Suzano)
 - **ALT-140**: GestorDeAlivios — loco do alívio PMC da Suzano e do Eldorado também pede a `rp_linha6000` no `bloquear_faixas_pmc` (não bate no trem do Eldorado manobrando)
 - **ALT-141**: Eldorado — encoste segura as faixas `marginal_c` e `linha6000_a` até o último lote (manobra até `_eldorado_mnb_encoste`); não bate no trem da Suzano
+- **ALT-142**: recurso `rp_mnb_pcx` — uma operação por vez (encoste, alívio, triangulação) na área comum de Tgrao, Bracell, Eldorado e Suzano; sempre `mnb_pcx` antes das faixas

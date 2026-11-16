@@ -29,6 +29,10 @@ Regra: loco que sobra volta ao GestorDeLocomotivas. Nunca vai para TrainDispose.
 Controla as faixas de circulação e o licenciamento dos trens.
 
 - **Prioridade da circulação** (ALT-139): `licenciar_esta_faixa` e `licenciar_proxima_faixa` têm prioridade da tarefa 1. Os Seize de várias faixas (alívio PMC e manobras dos terminais) ficam com 0, então o trem em circulação passa na frente deles na fila dos pools.
+- **Recurso `rp_mnb_pcx`** (ALT-142, capacidade 1): uma operação por vez na área comum de Tgrao, Bracell, Eldorado e Suzano (`silosMuro_a`, `marginal_c`, `linha6000_a`, linhas 5000/6000/7000, `intervalo4000`). Regra: pega primeiro o `rp_mnb_pcx`, depois faixas e linhas.
+  - Encoste: no `para_via3_d`, se `eh_terminal_mnb_pcx(trem)`, o trem passa por `entrar_mnb_pcx → ocupar_mnb_pcx → para_licenciar_apos_mnb` antes de licenciar a `silosMuro_a`. O terminal solta no fim do encoste (Bracell `liberar_linha5000_6000`, Eldorado `get_recursos_fim_encoste`, Suzano `liberar_faixas_circulacao`, Tgrao `liberar_mnb_pcx`).
+  - Alívio e triangulação: ver GestorDeAlivios e Suzano.
+  - Funções: `get_recursos_mnb_pcx(Trem)` (só se o trem tiver a unidade) e `incluir_mnb_pcx(ResourcePool[], Trem)`.
 
 - **Faixas**: cada `Faixa` tem `estado` (LIVRE, OCUPADA, BLOQUEADA), `idTremLicenciado` e `recurso` (ResourcePool).
 - **Entrada na circulação**: desde a ALT-084 o trem carregado chega pelas faixas do GestorDeISN e é entregue já com
@@ -74,6 +78,8 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
   Hoje a lista só tem a Bracell: a Suzano entra quando tiver o fluxo de coleta dos vazios; o Eldorado, quando o agente existir.
   Lógica separada: não usa a linha 4000 e não depende das DVs. Só verifica overload > 1 e se há loco da ferrovia no wait.
   No `bloquear_faixas_pmc` (ALT-140), a loco da Suzano e do Eldorado pede, no mesmo conjunto, as faixas do terminal e a `rp_linha6000`; o terminal solta tudo no início do alívio (`get_recursos_loco_alivio`). A Bracell não pede a 6000 (sem Release no alívio).
+  Antes do `bloquear_faixas_pmc`, a loco pega o `rp_mnb_pcx` (`ocupar_mnb_pcx_pmc`, ALT-142); `retornar_alivio_pmc` solta no `soltar_mnb_pcx_pmc → liberar_mnb_pcx_pmc → para_circulacao_alivio_pmc`.
+  No PST, o alívio do Tgrao passa por `eh_alivio_tgrao → ocupar_mnb_pcx_pst` antes do `seize_faixa_criacao_pst`; o `liberar_faixas_pst` solta.
   Um alívio do PMC por vez (`terminal_alivio_pmc`). Ida: `loco_alivio_pmc → ocupar_linha5000_6000 → trainEnter_pmc` (`circ_pos_inicio_L5K`) `→ ir_alivio_pmc` (`get_pos_alivio()`) `→ para_alivio_terminal_pmc` (`takeAlivio`).
   O trem sai com todos os vazios do terminal. Volta: o terminal define `faixa_atual`/`proxima_faixa` e chama `retornar_alivio_pmc(trem)`,
   que solta a trava, devolve o terminal para `terminais_pmc`, marca `eh_alivio` e entrega o trem ao GestorDeCirculacao.

@@ -684,7 +684,8 @@ Log.info("GesAlivios", "retornar_alivio_pmc", String.format("trem=%d vagoes=%d |
     trem.getId(), main().getNumeroDeVagoes(trem),
     terminal == null ? "-" : ((Agent) terminal).getName()));
 
-main().gestorDeCirculacao.tentar_usar_faixa.take(trem);
+// solta o mnb_pcx (soltar_mnb_pcx_pmc -> liberar_mnb_pcx_pmc) e entrega o trem ao GestorDeCirculacao
+soltar_mnb_pcx_pmc.take(trem);
 /*ALCODEEND*/}
 
 ResourcePool[][] get_conjunto_faixas_pmc()

@@ -29,6 +29,7 @@ Os `lote_carregados_L*` nunca são atribuídos no fluxograma; quem cobre a desca
 
 ## Linhas e recursos
 
+- `rp_mnb_pcx` (ALT-142): o trem pega na circulação antes da `silosMuro_a` e a loco solta no `liberar_linha5000_6000`; a loco do alívio pega no GestorDeAlivios e solta ao sair do terminal.
 - 4 linhas de descarga: L1, L2, L3, L4. Cada uma recebe um lote de 16 vagões (`deixarLote*`, nCars = 16).
 - A Bracell fica depois da linha 5000: `intervalo4000_c → linha5000_a → linha5000_b → … → linha 6000/7000_h → _bracell_L12 / _bracell_L34`.
 - Recurso de linha: `rp_linha5000` e `rp_linha6000` (GestorDeCirculacao).

@@ -1800,3 +1800,20 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** Eldorado e Suzano juntos; o trem da Suzano espera na `pst_marginal_c`/`linha6000_a` até `Eldorado liberar_linha5000_6000 | soltou`, sem batida no `avancar*`.
 - **Doc:** Eldorado ainda sem ficha em `docs/terminais/`.
 - **Arquivos:** `_alp/Agents/Eldorado/EmbeddedObjects.xml`, `_alp/Agents/Eldorado/Code/Functions.{java,xml}`
+
+## ALT-142 — recurso-mnb-pcx
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** travas por fila em ordem entre Seize de conjunto (alívio, triangulação) e trens que já seguravam faixas (ALT-139 e log das 15:38: troca da Suzano × L22 do Eldorado na `rp_linha6000`). Tgrao, Bracell, Eldorado e Suzano compartilham pontos no encoste, triangulação, manobra e alívio; cada operação pegava as peças numa ordem diferente.
+- **Regra:** `rp_mnb_pcx` (capacidade 1) no GestorDeCirculacao. Encoste, alívio dos 4 terminais e triangulação da Suzano pegam o `rp_mnb_pcx` **antes** de faixas e linhas. Trens que só passam pela área não pegam (ALT-139 dá prioridade a eles).
+- **O que:**
+  - **GestorDeCirculacao:** pool `rp_mnb_pcx`; funções `eh_terminal_mnb_pcx`, `get_recursos_mnb_pcx`, `incluir_mnb_pcx`; `para_via3_d` desvia os 4 terminais para `entrar_mnb_pcx → ocupar_mnb_pcx → para_licenciar_apos_mnb` (depois `tentar_usar_faixa`).
+  - **Fim do encoste:** Bracell `liberar_linha5000_6000` e Suzano `liberar_faixas_circulacao` passam por `incluir_mnb_pcx`; Eldorado `get_recursos_fim_encoste` inclui o mnb_pcx; Tgrao Release novo `liberar_mnb_pcx` entre `tirarLote2` e `devolverLocomotiva`.
+  - **GestorDeAlivios PMC:** Seize `ocupar_mnb_pcx_pmc` antes do `bloquear_faixas_pmc` (das duas entradas); `retornar_alivio_pmc` passa por `soltar_mnb_pcx_pmc → liberar_mnb_pcx_pmc → para_circulacao_alivio_pmc`.
+  - **GestorDeAlivios PST:** SelectOutput `eh_alivio_tgrao` e Seize `ocupar_mnb_pcx_pst` antes do `seize_faixa_criacao_pst`; `liberar_faixas_pst` inclui `ocupar_mnb_pcx_pst` nos seizeBlocks.
+  - **Suzano triangulação:** Seize `ocupar_mnb_pcx_triangulacao` entre `usar_recurso_loco1` e `ocupar_faixas_triangulacao`; `liberar_faixas_triangulacao` inclui o bloco nos seizeBlocks.
+- **Efeitos:** uma operação por vez nos 4 terminais; o trem que espera o mnb_pcx fica no fim da `via3_c` e segura quem vem atrás na via3, inclusive trens de outros terminais. Enquanto o alívio do Tgrao espera o mnb_pcx, os outros alívios PST esperam junto.
+- **A conferir:** no Tgrao, o trem que chega ao `retornar_alivio` tem que ser o mesmo agente que pegou o mnb_pcx no `ocupar_mnb_pcx_pst` (2 locos de manobra, `separarLocomotivas`). Se não for, o mnb_pcx não é solto e todo encoste seguinte fica `na fila do mnb_pcx`. A ALT-142 de prioridade proposta antes foi descartada.
+- **Validar:** os 4 terminais juntos; procurar `na fila do mnb_pcx` / `pegou mnb_pcx` e os `soltou` no fim de cada encoste e alívio; nenhuma operação deve ficar na fila para sempre.
+- **Doc:** `docs/gestores.md`, `docs/terminais/bracell.md`, `docs/terminais/tgrao.md`.
+- **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,Tgrao,Suzano,Bracell}/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/Eldorado/Code/Functions.java`

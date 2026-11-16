@@ -108,3 +108,25 @@ trens_em_circulacao.remove((Trem) trem);
 log_circulacao(trem, status);
 /*ALCODEEND*/}
 
+boolean eh_terminal_mnb_pcx(Trem trem)
+{/*ALCODESTART::1798140000901*/
+// terminais que usam o recurso mnb_pcx (encoste, alívio e triangulação na área comum)
+String t = trem.get_terminal_name();
+return "tgrao".equals(t) || "bracell".equals(t) || "eldorado".equals(t) || "suzano".equals(t);
+/*ALCODEEND*/}
+
+ResourcePool[] get_recursos_mnb_pcx(Trem trem)
+{/*ALCODESTART::1798140000902*/
+// rp_mnb_pcx, se o trem tiver a unidade (Release em SPECIFIED_RESOURCES dá erro se não tiver)
+if (trem != null && !trem.resourceUnitsOfPool(rp_mnb_pcx).isEmpty()) return new ResourcePool[] { rp_mnb_pcx };
+return new ResourcePool[0];
+/*ALCODEEND*/}
+
+ResourcePool[] incluir_mnb_pcx(ResourcePool[] recursos,Trem trem)
+{/*ALCODESTART::1798140000903*/
+// junta o rp_mnb_pcx (se o trem tiver a unidade) aos recursos de um Release
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+if (recursos != null) for (ResourcePool rp : recursos) if (!pools.contains(rp)) pools.add(rp);
+for (ResourcePool rp : get_recursos_mnb_pcx(trem)) if (!pools.contains(rp)) pools.add(rp);
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
