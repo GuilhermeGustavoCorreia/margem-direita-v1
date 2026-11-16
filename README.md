@@ -145,3 +145,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-131**: CoperXXI — grupo que bate sem lote na linha segue como "chegou" (`tem_lote_a`/`tem_lote_b`)
 - **ALT-132**: Tgrao — podeReceberNovoLote recusa trem entrando (_trem_chegando) ou com carregados no terminal; removido trace "bom dia Bruno"
 - **ALT-133**: Tgrao — não recebe trem com vazios no terminal (esperando ou em alívio)
+- **ALT-134**: Bracell, Eldorado e Suzano — podeReceberNovoLote recusa trem entrando, carregados ou vazios no terminal (Suzano também na troca)

@@ -513,7 +513,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4601,6 +4602,7 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_vazios_linha01 = ((Trem) agent);
+_trem_chegando = null;
 aliviar_linha_01.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -4656,6 +4658,7 @@ aliviar_linha_01.take(agent);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_vazios_linha02 = ((Trem) agent);
+_trem_chegando = null;
 aliviar_linha_02.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -4711,6 +4714,7 @@ aliviar_linha_02.take(agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_vazios_linha03 = ((Trem) agent);
+_trem_chegando = null;
 aliviar_linha_03.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -4766,6 +4770,7 @@ aliviar_linha_03.take(agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_vazios_linha04 = ((Trem) agent);
+_trem_chegando = null;
 aliviar_linha_04.take(agent)]]></Code>
 				</Value>
 			</Parameter>

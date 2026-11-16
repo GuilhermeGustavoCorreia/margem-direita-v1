@@ -44,7 +44,11 @@ return "pmc";
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792958885238*/
-return true;
+// trem entrando ou descarregando: do comecar_encoste até o 1º lote de vazios
+// (a contagem de carregados ainda não existe)
+if (_trem_chegando != null) return false;
+// vazios no terminal (esperando ou em alívio)
+return _getVagoesVazios() == 0;
 /*ALCODEEND*/}
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()

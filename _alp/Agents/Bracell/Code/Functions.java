@@ -44,7 +44,11 @@ return "pmc";
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1788188469793*/
-return true;
+// trem entrando ou descarregando: do encoste até o 1º lote de vazios
+if (_trem_chegando != null) return false;
+if (_getVagoesCarregados() > 0) return false;
+// vazios no terminal (esperando ou em alívio)
+return _getVagoesVazios() == 0;
 /*ALCODEEND*/}
 
 PositionOnTrack  getPosicaoUltimoVagao(Trem trem,boolean offsetCrescenteParaAtras)

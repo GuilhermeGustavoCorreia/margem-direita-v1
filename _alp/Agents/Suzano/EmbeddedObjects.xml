@@ -87,7 +87,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1103,6 +1104,7 @@
 					<Code><![CDATA[// ALT-057: os 24 vagões ficam na L7000
 // ALT-059: esperam a loco FIPS no trainCouple.in2
 lote_L7000 = (Trem) agent;
+_trem_chegando = null;
 aguardar_L7000.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -1473,6 +1475,7 @@ aguardar_lote_sair_6000_a.unblock();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-057: lote de 10 carregados na L1
 lote_carregados_L1 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L1.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -1876,6 +1879,7 @@ descarregar_L1.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-057: lote de 10 carregados na L2
 lote_carregados_L2 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L2.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -2279,6 +2283,7 @@ descarregar_L2.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-057: lote de 10 carregados na L3
 lote_carregados_L3 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L3.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -2560,6 +2565,7 @@ descarregar_L3.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-057: últimos 10 carregados na L4 (sem decouple)
 lote_carregados_L4 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L4.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -5245,6 +5251,7 @@ verificar_descarregou_tudo();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-060: troca: 6 vazios + 4 carregados na L1
 lote_carregados_L1 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L1.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -5648,6 +5655,7 @@ descarregar_L1.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-059: troca: 10 carregados na L2
 lote_carregados_L2 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L2.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -6051,6 +6059,7 @@ descarregar_L2.take(agent);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-060: troca: 10 carregados na L3 (último lote)
 lote_carregados_L3 = (Trem) agent;
+_trem_chegando = null;
 descarregar_L3.take(agent);
 // as 3 linhas descarregam juntas
 aguarda_L4a.unblock();

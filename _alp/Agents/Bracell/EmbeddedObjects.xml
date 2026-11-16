@@ -88,7 +88,8 @@
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-014: ferrovia e segmento do trem em atendimento (usados pelo alívio)
-atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1004,6 +1005,7 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_L1 = ((Trem) agent);
+_trem_chegando = null;
 aguardarAliviar_L1.take(agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -5301,6 +5303,7 @@ aguarda_L4c.unblock();]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_L2 = ((Trem) agent);
+_trem_chegando = null;
 aguardarAliviar_L2.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -5356,6 +5359,7 @@ aguardarAliviar_L2.take(agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_L3 = ((Trem) agent);
+_trem_chegando = null;
 aguardarAliviar_L3.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -5411,6 +5415,7 @@ aguardarAliviar_L3.take(agent)]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[loteVazios_L4 = ((Trem) agent);
+_trem_chegando = null;
 aguardarAliviar_L4.take(agent);]]></Code>
 				</Value>
 			</Parameter>

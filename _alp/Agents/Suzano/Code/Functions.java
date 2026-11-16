@@ -32,7 +32,13 @@ return "pmc";
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792408546629*/
-return true;
+// trem entrando: do comecar_encoste até o 1º lote ficar no terminal
+if (_trem_chegando != null) return false;
+// troca dos 24 em andamento (os lotes mudam de variável)
+if (em_troca) return false;
+if (_getVagoesCarregados() > 0) return false;
+// vazios no terminal (esperando ou em alívio)
+return _getVagoesVazios() == 0;
 /*ALCODEEND*/}
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()

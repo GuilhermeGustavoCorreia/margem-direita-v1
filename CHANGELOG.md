@@ -1716,3 +1716,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Fora do escopo (visto no mesmo log):** alívio do Tgrao saiu com 2 vagões definidos e 28 de espaço nas DVs (regra exige mais de 40) e o MNB levou 40; DVs com 108 rumo/grão não formam trem de 82 para sair.
 - **Validar:** com DVs cheias, o trem da linha 02 fica estacionado até o alívio do Tgrao acontecer.
 - **Arquivos:** `_alp/Agents/Tgrao/Code/Functions.java`, `docs/terminais/tgrao.md`
+
+## ALT-134 — celulose-pode-receber-novo-lote
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `podeReceberNovoLote()` de Bracell, Eldorado e Suzano retornava sempre `true`.
+- **Regra:** celulose recebe um trem por vez; o próximo só entra depois de descarregar e aliviar (o trem sai com todos os vagões).
+- **O que:**
+  - Variável nova `_trem_chegando` (Trem, null) nos três terminais.
+  - **Bracell:** `encoste.onEnter` preenche; cada `loteVazios_L1..L4 = ...` zera. `podeReceberNovoLote()`: recusa com `_trem_chegando`, carregados ou vazios.
+  - **Eldorado:** `comecar_encoste.onEnter` preenche; cada `lote_vazios_linha01..04 = ...` zera. `podeReceberNovoLote()`: recusa com `_trem_chegando` ou vazios (`_getVagoesCarregados()` retorna 0 fixo).
+  - **Suzano:** `comecar_encoste.onEnter` preenche; `lote_L7000 = ...` e cada `lote_carregados_L1..L4 = ...` zeram. `podeReceberNovoLote()`: recusa com `_trem_chegando`, `em_troca`, carregados ou vazios.
+- **Observação:** na Bracell os `lote_carregados_L*` nunca são atribuídos, então `_getVagoesCarregados()` também é sempre 0; a descarga fica coberta pelo `_trem_chegando` até o 1º lote de vazios.
+- **Doc:** `docs/terminais/bracell.md`, seção "Recebimento de trem" (Eldorado e Suzano sem ficha .md).
+- **Validar:** 2 pedidos seguidos para cada terminal; o 2º trem fica na linha 02 do ISN até o alívio do 1º sair.
+- **Arquivos:** `_alp/Agents/{Bracell,Eldorado,Suzano}/{Code/Functions.java,EmbeddedObjects.xml,Variables.xml}`, `docs/terminais/bracell.md`

@@ -11,6 +11,16 @@
 - Ponto de chegada da loco de alívio: `main()._bracell_alivio`, na linha 5000_b (`get_pos_alivio()`).
 - Convenção dos documentos: carro de índice 0 aponta para a Ponta da Praia; o último, para o Valongo.
 
+## Recebimento de trem
+
+`podeReceberNovoLote()` recusa o trem enquanto:
+- há um trem entrando (`_trem_chegando`): do `encoste` até o 1º lote de vazios (`loteVazios_L*`);
+- há carregados no terminal (`_getVagoesCarregados()` > 0);
+- há vazios no terminal (`_getVagoesVazios()` > 0), esperando ou em alívio.
+
+O terminal recebe um trem por vez: o próximo só entra depois do alívio.
+Os `lote_carregados_L*` nunca são atribuídos no fluxograma; quem cobre a descarga é o `_trem_chegando`.
+
 ## Regras
 
 - A Bracell não alivia pela linha 4000. A linha 4000 é só para T39, TES e ADMO.
