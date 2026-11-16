@@ -1749,3 +1749,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - blocos próprios do modelo (MoverTremCompleto, DescarregaLote, DecoupleDelay etc.) não foram instrumentados;
   - Tgrao 74 blocos (107 pontos), Bracell 72 (114), Eldorado 80 (130), Suzano 107 (165). A lógica não muda.
 - **Arquivos:** `_alp/Agents/{Tgrao,Bracell,Eldorado,Suzano}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{Tgrao,Bracell,Eldorado,Suzano}/Code/Functions.{java,xml}`
+
+## ALT-137 — suzano-solta-linha6000-no-alivio
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic, conferir a ligação dos blocos e compilar)
+- **Problema:** no 2º trem da Suzano a loco FIPS da troca ficava para sempre em `ocupar_faixas_triangulacao | na fila`. O `ocupar_faixas_mnb_alivio` do alívio anterior apreende `rp_pmc_marginal_c` e `rp_linha6000`; a marginal_c volta pela circulação, mas a `rp_linha6000` não é faixa e nenhum Release a soltava. O trem do alívio saía da Margem Direita com a unidade.
+- **O que:** Release novo `liberar_linha6000_alivio` (SPECIFIED_RESOURCES, `main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)`) entre o `pausar` e o `para_sair_alivio`.
+  - Conector `connector52` (`pausar.port1`) passa a ir para `liberar_linha6000_alivio.in`; conector novo `conn_liberar_linha6000_alivio` (`liberar_linha6000_alivio.out` → `para_sair_alivio.in`).
+- **A verificar:** a Eldorado tem `ocupar_linha5000_6000` com `rp_linha6000`; conferir se é solto no fim do alívio.
+- **Validar:** 2 trens seguidos na Suzano; na 2ª troca aparece `ocupar_faixas_triangulacao | pegou`.
+- **Arquivos:** `_alp/Agents/Suzano/EmbeddedObjects.xml`, `_alp/Agents/Suzano/Connectors.xml`
