@@ -44510,8 +44510,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1788186499658</Id>
 		<Name><![CDATA[bracell_presentation]]></Name>
-		<X>-1000</X>
-		<Y>100</Y>
+		<X>860</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44629,8 +44629,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1788997196406</Id>
 		<Name><![CDATA[coperXI_presentation]]></Name>
-		<X>860</X>
-		<Y>520</Y>
+		<X>-1000</X>
+		<Y>1000</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44789,8 +44789,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1792083786893</Id>
 		<Name><![CDATA[costaLeite_presentation]]></Name>
-		<X>860</X>
-		<Y>370</Y>
+		<X>-1000</X>
+		<Y>850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44858,8 +44858,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1792517223016</Id>
 		<Name><![CDATA[suzano_presentation]]></Name>
-		<X>-1000</X>
-		<Y>700</Y>
+		<X>860</X>
+		<Y>370</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44902,8 +44902,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1793014789627</Id>
 		<Name><![CDATA[eldorado_presentation]]></Name>
-		<X>-1000</X>
-		<Y>850</Y>
+		<X>860</X>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44924,8 +44924,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1793299544412</Id>
 		<Name><![CDATA[moegaoMar_presentation]]></Name>
-		<X>680</X>
-		<Y>220</Y>
+		<X>-1000</X>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

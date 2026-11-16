@@ -432,3 +432,4 @@ boolean pode_descarregar_grupo()
 // cabe vazio no terminal e não há alívio pedido nem em andamento (descarga e alívio nunca ao mesmo tempo)
 return get_espaco_vazios() > 0 && !aguardando_alivio && !fazendoAlivio;
 /*ALCODEEND*/}
+

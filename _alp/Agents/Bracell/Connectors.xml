@@ -369,55 +369,12 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Bracell</ClassName>
-			<ItemName>pausar</ItemName>
+			<ItemName>descarregaLote3</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Pausar</ClassName>
-			<ItemName>port1</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-50</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1788184369130</Id>
-		<Name><![CDATA[connector26]]></Name>
-		<X>1510</X>
-		<Y>825</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>descarregaLote3</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>DescarregaLote</ClassName>
 			<ItemName>port</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>pausar</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Pausar</ClassName>
-			<ItemName>port</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
@@ -425,7 +382,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>60</X>
+				<X>-150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -2434,49 +2391,6 @@
 		</Points>
 	</Connector>
 	<Connector>
-		<Id>1788724782717</Id>
-		<Name><![CDATA[connector56]]></Name>
-		<X>160</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>pausar1</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Pausar</ClassName>
-			<ItemName>port</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Bracell</ClassName>
-			<ItemName>irAteTerminal</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>1940</X>
-				<Y>220</Y>
-			</Point>
-			<Point>
-				<X>1900</X>
-				<Y>220</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
 		<Id>1788725927826</Id>
 		<Name><![CDATA[connector57]]></Name>
 		<X>2280</X>
@@ -3038,8 +2952,8 @@
 	<Connector>
 		<Id>1792014000219</Id>
 		<Name><![CDATA[connector_alt014_10]]></Name>
-		<X>2100</X>
-		<Y>200</Y>
+		<X>2060</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3050,12 +2964,12 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Bracell</ClassName>
-			<ItemName>pausar1</ItemName>
+			<ItemName>irAteTerminal</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>Pausar</ClassName>
-			<ItemName>port1</ItemName>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
@@ -3073,8 +2987,8 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>160</X>
-				<Y>10</Y>
+				<X>200</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>

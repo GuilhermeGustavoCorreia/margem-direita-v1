@@ -278,7 +278,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>trem_celulose_teste.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", trem_celulose_teste);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>

@@ -1,4 +1,4 @@
-[log] 2026-11-13T10:07:59.274316400 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop\logs\sim.log
+[log] 2026-11-16T11:33:51.890095 gravando em C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop\logs\sim.log
 [config] pasta: C:\Users\cs404937\Desktop\projetos-digitais\anylogic\margem-direita\margem-direita-desktop\simulacao
 [config] simulacao.csv: duracao=720,0h warmup=48,0h replicacoes=5 | OK
 [config] terminais_moega.csv: 12 terminais
@@ -18,364 +18,356 @@
 [config] leitura concluída sem erros
 [sim] simulação até 720,0 h
 [    0.000h] INFO  Chegadas        fluxos                       0 fluxos de chegada
-[    0.306h] INFO  Chegadas        pedido_manual                P1 coperXXI/rumo pedido pelo botão (fila=1)
-[    0.306h] INFO  Chegadas        decisao                      P1 coperXXI/rumo -> circulacao (terminal pode receber, nenhum trem a caminho)
-[    0.306h] INFO  Chegadas        inject                       P1 coperXXI/rumo -> inject (destino=circulacao, espera=0,00h)
-[    0.306h] INFO  Chegadas        entrou_trilho                P1 coperXXI/rumo trem=26039/R72 entrou no trilho -> circulacao
-[    0.306h] INFO  ISN             chegou                       trem=26039/R72 chegou -> direto para a circulação
-[    0.306h] INFO  ISN             nascimento                   trem=26039/R72 faixa_atual=rp_isn_a proxima_faixa=rp_isn_b
-[    0.306h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [comecou circulacao]
-[    0.306h] INFO  ISN             circular_isn_a               trem=26039/R72
-[    0.306h] INFO  ISN             fim_isn_linha01_a            trem=26039/R72 faixa_atual=rp_isn_b proxima_faixa=rp_isn_c
-[    0.306h] INFO  ISN             circular_isn_b               trem=26039/R72
-[    0.309h] INFO  ISN             fim_isn_linha01_b            trem=26039/R72 faixa_atual=rp_isn_c proxima_faixa=rp_isn_d
-[    0.309h] INFO  ISN             circular_isn_c               trem=26039/R72
-[    0.313h] INFO  ISN             fim_isn_linha01_c            trem=26039/R72 faixa_atual=rp_isn_d proxima_faixa=rp_isn_e
-[    0.313h] INFO  ISN             circular_isn_d               trem=26039/R72
-[    0.366h] INFO  ISN             fim_isn_linha01_d            trem=26039/R72 faixa_atual=rp_isn_e proxima_faixa=rp_isn_porteira
-[    0.366h] INFO  ISN             circular_isn_e               trem=26039/R72
-[    0.435h] INFO  ISN             fim_isn_linha01_e            trem=26039/R72 faixa_atual=rp_isn_porteira proxima_faixa=rp_pst_val_via2
-[    0.435h] INFO  ISN             circular_isn_porteira        trem=26039/R72
-[    0.439h] INFO  ISN             entrega_à_circulação         trem=26039/R72 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
-[    0.439h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa val_via2]
-[    0.449h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via3_intermar]
-[    0.541h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via3_a]
-[    0.542h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa via2_c]
-[    0.546h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [entrou faixa track_entrada_pera]
-[    0.547h] INFO  GesCirculacao   circulacao                   [(R72 - 26039):  coperXXI] [saiu para terminal coperXXI]
-[1968,1][CoperXII][chegada] trem=26039 carros=84
-[    0.547h] INFO  CoperXXI        ir_encoste                   trem=26039 carros=84 vgs=82 locos=2 | inicio
-[2197,7][CoperXII][ir_encoste] trem=26039 chegou no _coperXII_encoste
-[    0.610h] INFO  CoperXXI        ir_encoste                   trem=26039 carros=84 vgs=82 locos=2 | chegou
-[    0.610h] INFO  CoperXXI        liberar_faixas_circulacao1   trem=26039 carros=84 vgs=82 locos=2 | soltou
-[2197,7][CoperXII][corte_lotes] trem=26039 lote1=42 carros
-[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26039 carros=84 vgs=82 locos=2 | vai cortar
-[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26125 carros=42 vgs=41 locos=1 | parte cortada
-[    0.610h] INFO  CoperXXI        cortar_lotes                 trem=26039 carros=42 vgs=41 locos=1 | parte que segue
-[2197,7][CoperXII][entrar_moega] trem=26125 lote com 42 carros na fila da moega
-[    0.610h] INFO  CoperXXI        seize_moega                  trem=26125 carros=42 vgs=41 locos=1 | na fila
-[2197,7][CoperXII][segunda_parte] trem=26039 segunda parte esperando (42 carros, locos=1)
-[    0.610h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=42 vgs=41 locos=1 | esperando
-[    0.610h] INFO  CoperXXI        seize_moega                  trem=26125 carros=42 vgs=41 locos=1 | pegou
-[    0.610h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=42 vgs=41 locos=1 | true
-[    0.610h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=42 vgs=41 locos=1 | true
-[2197,7][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=7 (lote tem 42 carros, espaco b=22 a=13)
-[    0.610h] INFO  CoperXXI        ir_moega                     trem=26125 carros=42 vgs=41 locos=1 | inicio
-[    0.621h] INFO  CoperXXI        ir_moega                     trem=26125 carros=42 vgs=41 locos=1 | chegou
-[    0.621h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=42 vgs=41 locos=1 | soltou
-[    0.621h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=42 vgs=41 locos=1 | inicio
-[    0.634h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=42 vgs=41 locos=1 | fim
-[    0.634h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=42 vgs=41 locos=1 | false
-[2281,6][CoperXII][corte] trem=26125 corta 7 carros da frente
-[    0.634h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=42 vgs=41 locos=1 | vai cortar
-[    0.634h] INFO  CoperXXI        cortar_grupo                 trem=26126 carros=7 vgs=6 locos=1 | parte cortada
-[    0.634h] INFO  CoperXXI        linha_b                      trem=26126 carros=7 vgs=6 locos=1 | true
-[    0.634h] INFO  CoperXXI        ir_lote_b                    trem=26126 carros=7 vgs=6 locos=1 | inicio
-[    0.665h] INFO  CoperXXI        ir_lote_b                    trem=26126 carros=7 vgs=6 locos=1 | chegou
-[2394,2][CoperXII][vazios] trem=26126 chegou na linha com 7 carros
-[    0.665h] INFO  CoperXXI        tem_loco_frente              trem=26126 carros=7 vgs=6 locos=1 | true
-[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26126 carros=7 vgs=6 locos=1 | vai cortar
-[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26127 carros=1 vgs=0 locos=1 | parte cortada
-[    0.665h] INFO  CoperXXI        tirar_loco_frente            trem=26126 carros=6 vgs=6 locos=0 | parte que segue
-[    0.665h] INFO  CoperXXI        tem_moega                    trem=26126 carros=6 vgs=6 locos=0 | false
-[2394,2][CoperXII][vazios] trem=26126 guardado (coperXII_vazios_b) | lote_b=6/22 lote_a=0/13
-[    0.665h] INFO  CoperXXI        estoque_b                    trem=26126 carros=6 vgs=6 locos=0 | esperando
-[    0.665h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=35 vgs=35 locos=0 | parte que segue
-[    0.665h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=35 vgs=35 locos=0 | passou
-[2394,2][CoperXII][loco] trem=26125 lote sem loco: buscando loco
-[    0.665h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=35 vgs=35 locos=0 | false
-[    0.665h] INFO  CoperXXI        tem_segunda_parte            trem=26125 carros=35 vgs=35 locos=0 | true
-[    0.665h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=42 vgs=41 locos=1 | liberado
-[2394,2][CoperXII][loco] trem=26039 tirando a loco da segunda parte
-[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26039 carros=42 vgs=41 locos=1 | vai cortar
-[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26128 carros=1 vgs=0 locos=1 | parte cortada
-[2394,2][CoperXII][loco] trem=26128 loco da segunda parte indo para a cauda do lote
-[    0.665h] INFO  CoperXXI        levar_loco                   trem=26128 carros=1 vgs=0 locos=1 | inicio
-[    0.665h] INFO  CoperXXI        tirar_loco_segunda           trem=26039 carros=41 vgs=41 locos=0 | parte que segue
-[2394,2][CoperXII][segunda_parte] trem=26039 segunda parte esperando (41 carros, locos=0)
-[    0.665h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=41 vgs=41 locos=0 | esperando
-[    0.676h] INFO  CoperXXI        levar_loco                   trem=26128 carros=1 vgs=0 locos=1 | bateu (outHit)
-[2433,1][CoperXII][loco] trem=26125 loco acoplada na cauda do lote (36 carros)
-[    0.676h] INFO  CoperXXI        acoplar_loco                 trem=26125 carros=36 vgs=35 locos=1 | acoplou
-[    0.676h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=36 vgs=35 locos=1 | true
-[2433,1][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=6 (lote tem 36 carros, espaco b=16 a=13)
-[    0.676h] INFO  CoperXXI        ir_moega                     trem=26125 carros=36 vgs=35 locos=1 | inicio
-[    0.681h] INFO  CoperXXI        ir_moega                     trem=26125 carros=36 vgs=35 locos=1 | chegou
-[    0.681h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=36 vgs=35 locos=1 | soltou
-[    0.681h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=36 vgs=35 locos=1 | inicio
-[    0.694h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=36 vgs=35 locos=1 | fim
-[    0.694h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=36 vgs=35 locos=1 | false
-[2497,2][CoperXII][corte] trem=26125 corta 6 carros da frente
-[    0.694h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=36 vgs=35 locos=1 | vai cortar
-[    0.694h] INFO  CoperXXI        cortar_grupo                 trem=26129 carros=6 vgs=6 locos=0 | parte cortada
-[    0.694h] INFO  CoperXXI        linha_b                      trem=26129 carros=6 vgs=6 locos=0 | true
-[    0.694h] INFO  CoperXXI        ir_lote_b                    trem=26129 carros=6 vgs=6 locos=0 | inicio
-[    0.720h] INFO  CoperXXI        ir_lote_b                    trem=26129 carros=6 vgs=6 locos=0 | bateu (outHit)
-[    0.720h] INFO  CoperXXI        estoque_b                    trem=26126 carros=6 vgs=6 locos=0 | liberado
-[    0.720h] INFO  CoperXXI        acoplar_b                    trem=26129 carros=12 vgs=12 locos=0 | acoplou
-[2590,7][CoperXII][vazios] trem=26129 chegou na linha com 12 carros
-[    0.720h] INFO  CoperXXI        tem_loco_frente              trem=26129 carros=12 vgs=12 locos=0 | false
-[    0.720h] INFO  CoperXXI        tem_loco_tras                trem=26129 carros=12 vgs=12 locos=0 | false
-[    0.720h] INFO  CoperXXI        tem_moega                    trem=26129 carros=12 vgs=12 locos=0 | false
-[2590,7][CoperXII][vazios] trem=26129 guardado (coperXII_vazios_b) | lote_b=12/22 lote_a=0/13
-[    0.720h] INFO  CoperXXI        estoque_b                    trem=26129 carros=12 vgs=12 locos=0 | esperando
-[    0.720h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=30 vgs=29 locos=1 | parte que segue
-[    0.720h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=30 vgs=29 locos=1 | passou
-[    0.720h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=30 vgs=29 locos=1 | true
-[    0.720h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=30 vgs=29 locos=1 | true
-[2590,7][CoperXII][grupo] trem=26125 linha=b vagoes=6 carros=6 (lote tem 30 carros, espaco b=10 a=13)
-[    0.720h] INFO  CoperXXI        ir_moega                     trem=26125 carros=30 vgs=29 locos=1 | inicio
-[    0.724h] INFO  CoperXXI        ir_moega                     trem=26125 carros=30 vgs=29 locos=1 | chegou
-[    0.724h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=30 vgs=29 locos=1 | soltou
-[    0.724h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=30 vgs=29 locos=1 | inicio
-[    0.737h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=30 vgs=29 locos=1 | fim
-[    0.737h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=30 vgs=29 locos=1 | false
-[2651,5][CoperXII][corte] trem=26125 corta 6 carros da frente
-[    0.737h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=30 vgs=29 locos=1 | vai cortar
-[    0.737h] INFO  CoperXXI        cortar_grupo                 trem=26130 carros=6 vgs=6 locos=0 | parte cortada
-[    0.737h] INFO  CoperXXI        linha_b                      trem=26130 carros=6 vgs=6 locos=0 | true
-[    0.737h] INFO  CoperXXI        ir_lote_b                    trem=26130 carros=6 vgs=6 locos=0 | inicio
-[    0.758h] INFO  CoperXXI        ir_lote_b                    trem=26130 carros=6 vgs=6 locos=0 | bateu (outHit)
-[    0.758h] INFO  CoperXXI        estoque_b                    trem=26129 carros=12 vgs=12 locos=0 | liberado
-[    0.758h] INFO  CoperXXI        acoplar_b                    trem=26130 carros=18 vgs=18 locos=0 | acoplou
-[2729,3][CoperXII][vazios] trem=26130 chegou na linha com 18 carros
-[    0.758h] INFO  CoperXXI        tem_loco_frente              trem=26130 carros=18 vgs=18 locos=0 | false
-[    0.758h] INFO  CoperXXI        tem_loco_tras                trem=26130 carros=18 vgs=18 locos=0 | false
-[    0.758h] INFO  CoperXXI        tem_moega                    trem=26130 carros=18 vgs=18 locos=0 | false
-[2729,3][CoperXII][vazios] trem=26130 guardado (coperXII_vazios_b) | lote_b=18/22 lote_a=0/13
-[    0.758h] INFO  CoperXXI        estoque_b                    trem=26130 carros=18 vgs=18 locos=0 | esperando
-[    0.758h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=24 vgs=23 locos=1 | parte que segue
-[    0.758h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=24 vgs=23 locos=1 | passou
-[    0.758h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=24 vgs=23 locos=1 | true
-[    0.758h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=24 vgs=23 locos=1 | true
-[2729,3][CoperXII][grupo] trem=26125 linha=b vagoes=4 carros=4 (lote tem 24 carros, espaco b=4 a=13)
-[    0.758h] INFO  CoperXXI        ir_moega                     trem=26125 carros=24 vgs=23 locos=1 | inicio
-[    0.763h] INFO  CoperXXI        ir_moega                     trem=26125 carros=24 vgs=23 locos=1 | chegou
-[    0.763h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=24 vgs=23 locos=1 | soltou
-[    0.763h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=24 vgs=23 locos=1 | inicio
-[    0.775h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=24 vgs=23 locos=1 | fim
-[    0.775h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=24 vgs=23 locos=1 | false
-[2790,0][CoperXII][corte] trem=26125 corta 4 carros da frente
-[    0.775h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=24 vgs=23 locos=1 | vai cortar
-[    0.775h] INFO  CoperXXI        cortar_grupo                 trem=26131 carros=4 vgs=4 locos=0 | parte cortada
-[    0.775h] INFO  CoperXXI        linha_b                      trem=26131 carros=4 vgs=4 locos=0 | true
-[    0.775h] INFO  CoperXXI        ir_lote_b                    trem=26131 carros=4 vgs=4 locos=0 | inicio
-[    0.792h] INFO  CoperXXI        ir_lote_b                    trem=26131 carros=4 vgs=4 locos=0 | bateu (outHit)
-[    0.792h] INFO  CoperXXI        estoque_b                    trem=26130 carros=18 vgs=18 locos=0 | liberado
-[    0.792h] INFO  CoperXXI        acoplar_b                    trem=26131 carros=22 vgs=22 locos=0 | acoplou
-[2852,1][CoperXII][vazios] trem=26131 chegou na linha com 22 carros
-[    0.792h] INFO  CoperXXI        tem_loco_frente              trem=26131 carros=22 vgs=22 locos=0 | false
-[    0.792h] INFO  CoperXXI        tem_loco_tras                trem=26131 carros=22 vgs=22 locos=0 | false
-[    0.792h] INFO  CoperXXI        tem_moega                    trem=26131 carros=22 vgs=22 locos=0 | false
-[2852,1][CoperXII][vazios] trem=26131 guardado (coperXII_vazios_b) | lote_b=22/22 lote_a=0/13
-[    0.792h] INFO  CoperXXI        estoque_b                    trem=26131 carros=22 vgs=22 locos=0 | esperando
-[    0.792h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=20 vgs=19 locos=1 | parte que segue
-[    0.792h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=20 vgs=19 locos=1 | passou
-[    0.792h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=20 vgs=19 locos=1 | true
-[    0.792h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=20 vgs=19 locos=1 | true
-[2852,1][CoperXII][grupo] trem=26125 linha=a vagoes=6 carros=6 (lote tem 20 carros, espaco b=0 a=13)
-[    0.792h] INFO  CoperXXI        ir_moega                     trem=26125 carros=20 vgs=19 locos=1 | inicio
-[    0.795h] INFO  CoperXXI        ir_moega                     trem=26125 carros=20 vgs=19 locos=1 | chegou
-[    0.795h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=20 vgs=19 locos=1 | soltou
-[    0.795h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=20 vgs=19 locos=1 | inicio
-[    0.808h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=20 vgs=19 locos=1 | fim
-[    0.808h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=20 vgs=19 locos=1 | false
-[2907,6][CoperXII][corte] trem=26125 corta 6 carros da frente
-[    0.808h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=20 vgs=19 locos=1 | vai cortar
-[    0.808h] INFO  CoperXXI        cortar_grupo                 trem=26132 carros=6 vgs=6 locos=0 | parte cortada
-[    0.808h] INFO  CoperXXI        linha_b                      trem=26132 carros=6 vgs=6 locos=0 | false
-[    0.808h] INFO  CoperXXI        ir_lote_a                    trem=26132 carros=6 vgs=6 locos=0 | inicio
-[    0.819h] INFO  CoperXXI        ir_lote_a                    trem=26132 carros=6 vgs=6 locos=0 | chegou
-[2947,4][CoperXII][vazios] trem=26132 chegou na linha com 6 carros
-[    0.819h] INFO  CoperXXI        tem_loco_frente              trem=26132 carros=6 vgs=6 locos=0 | false
-[    0.819h] INFO  CoperXXI        tem_loco_tras                trem=26132 carros=6 vgs=6 locos=0 | false
-[    0.819h] INFO  CoperXXI        tem_moega                    trem=26132 carros=6 vgs=6 locos=0 | false
-[2947,4][CoperXII][vazios] trem=26132 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=6/13
-[    0.819h] INFO  CoperXXI        estoque_a                    trem=26132 carros=6 vgs=6 locos=0 | esperando
-[    0.819h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=14 vgs=13 locos=1 | parte que segue
-[    0.819h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=14 vgs=13 locos=1 | passou
-[    0.819h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=14 vgs=13 locos=1 | true
-[    0.819h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=14 vgs=13 locos=1 | true
-[2947,4][CoperXII][grupo] trem=26125 linha=a vagoes=6 carros=6 (lote tem 14 carros, espaco b=0 a=7)
-[    0.819h] INFO  CoperXXI        ir_moega                     trem=26125 carros=14 vgs=13 locos=1 | inicio
-[    0.823h] INFO  CoperXXI        ir_moega                     trem=26125 carros=14 vgs=13 locos=1 | chegou
-[    0.823h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=14 vgs=13 locos=1 | soltou
-[    0.823h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=14 vgs=13 locos=1 | inicio
-[    0.836h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=14 vgs=13 locos=1 | fim
-[    0.836h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=14 vgs=13 locos=1 | false
-[3008,1][CoperXII][corte] trem=26125 corta 6 carros da frente
-[    0.836h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=14 vgs=13 locos=1 | vai cortar
-[    0.836h] INFO  CoperXXI        cortar_grupo                 trem=26133 carros=6 vgs=6 locos=0 | parte cortada
-[    0.836h] INFO  CoperXXI        linha_b                      trem=26133 carros=6 vgs=6 locos=0 | false
-[    0.836h] INFO  CoperXXI        ir_lote_a                    trem=26133 carros=6 vgs=6 locos=0 | inicio
-[    0.842h] INFO  CoperXXI        ir_lote_a                    trem=26133 carros=6 vgs=6 locos=0 | bateu (outHit)
-[    0.842h] INFO  CoperXXI        estoque_a                    trem=26132 carros=6 vgs=6 locos=0 | liberado
-[    0.842h] INFO  CoperXXI        acoplar_a                    trem=26133 carros=12 vgs=12 locos=0 | acoplou
-[3032,2][CoperXII][vazios] trem=26133 chegou na linha com 12 carros
-[    0.842h] INFO  CoperXXI        tem_loco_frente              trem=26133 carros=12 vgs=12 locos=0 | false
-[    0.842h] INFO  CoperXXI        tem_loco_tras                trem=26133 carros=12 vgs=12 locos=0 | false
-[    0.842h] INFO  CoperXXI        tem_moega                    trem=26133 carros=12 vgs=12 locos=0 | false
-[3032,2][CoperXII][vazios] trem=26133 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=12/13
-[    0.842h] INFO  CoperXXI        estoque_a                    trem=26133 carros=12 vgs=12 locos=0 | esperando
-[    0.842h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=8 vgs=7 locos=1 | parte que segue
-[    0.842h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=8 vgs=7 locos=1 | passou
-[    0.842h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=8 vgs=7 locos=1 | true
-[    0.842h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=8 vgs=7 locos=1 | true
-[3032,2][CoperXII][grupo] trem=26125 linha=a vagoes=1 carros=1 (lote tem 8 carros, espaco b=0 a=1)
-[    0.842h] INFO  CoperXXI        ir_moega                     trem=26125 carros=8 vgs=7 locos=1 | inicio
-[    0.847h] INFO  CoperXXI        ir_moega                     trem=26125 carros=8 vgs=7 locos=1 | chegou
-[    0.847h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=8 vgs=7 locos=1 | soltou
-[    0.847h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=8 vgs=7 locos=1 | inicio
-[    0.859h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=8 vgs=7 locos=1 | fim
-[    0.859h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=8 vgs=7 locos=1 | false
-[3092,9][CoperXII][corte] trem=26125 corta 1 carros da frente
-[    0.859h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=8 vgs=7 locos=1 | vai cortar
-[    0.859h] INFO  CoperXXI        cortar_grupo                 trem=26134 carros=1 vgs=1 locos=0 | parte cortada
-[    0.859h] INFO  CoperXXI        linha_b                      trem=26134 carros=1 vgs=1 locos=0 | false
-[    0.859h] INFO  CoperXXI        ir_lote_a                    trem=26134 carros=1 vgs=1 locos=0 | inicio
-[    0.861h] INFO  CoperXXI        ir_lote_a                    trem=26134 carros=1 vgs=1 locos=0 | bateu (outHit)
-[    0.861h] INFO  CoperXXI        estoque_a                    trem=26133 carros=12 vgs=12 locos=0 | liberado
-[    0.861h] INFO  CoperXXI        acoplar_a                    trem=26134 carros=13 vgs=13 locos=0 | acoplou
-[3101,2][CoperXII][vazios] trem=26134 chegou na linha com 13 carros
-[    0.861h] INFO  CoperXXI        tem_loco_frente              trem=26134 carros=13 vgs=13 locos=0 | false
-[    0.861h] INFO  CoperXXI        tem_loco_tras                trem=26134 carros=13 vgs=13 locos=0 | false
-[    0.861h] INFO  CoperXXI        tem_moega                    trem=26134 carros=13 vgs=13 locos=0 | false
-[3101,2][CoperXII][vazios] trem=26134 guardado (coperXII_vazios_a) | lote_b=22/22 lote_a=13/13
-[    0.861h] INFO  CoperXXI        estoque_a                    trem=26134 carros=13 vgs=13 locos=0 | esperando
-[    0.861h] INFO  CoperXXI        cortar_grupo                 trem=26125 carros=7 vgs=6 locos=1 | parte que segue
-[    0.861h] INFO  CoperXXI        aguarda_grupo                trem=26125 carros=7 vgs=6 locos=1 | passou
-[    0.861h] INFO  CoperXXI        tem_loco_lote                trem=26125 carros=7 vgs=6 locos=1 | true
-[    0.861h] INFO  CoperXXI        tem_espaco_vazios            trem=26125 carros=7 vgs=6 locos=1 | true
-[3101,2][CoperXII][grupo] trem=26125 linha=moega vagoes=6 carros=7 (lote tem 7 carros, espaco b=0 a=0)
-[    0.861h] INFO  CoperXXI        ir_moega                     trem=26125 carros=7 vgs=6 locos=1 | inicio
-[    0.862h] INFO  CoperXXI        ir_moega                     trem=26125 carros=7 vgs=6 locos=1 | chegou
-[    0.862h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26125 carros=7 vgs=6 locos=1 | soltou
-[    0.862h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=7 vgs=6 locos=1 | inicio
-[    0.875h] INFO  CoperXXI        descarga_grupo               trem=26125 carros=7 vgs=6 locos=1 | fim
-[3148,9][CoperXII][corte] trem=26125 último grupo do lote
-[    0.875h] INFO  CoperXXI        e_ultimo_grupo               trem=26125 carros=7 vgs=6 locos=1 | true
-[3148,9][CoperXII][moega] trem=26125 grupo de 7 carros fica na moega
-[    0.875h] INFO  CoperXXI        tem_loco_resto               trem=26125 carros=7 vgs=6 locos=1 | true
-[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26125 carros=7 vgs=6 locos=1 | vai cortar
-[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26135 carros=1 vgs=0 locos=1 | parte cortada
-[    0.875h] INFO  CoperXXI        tirar_loco_resto             trem=26125 carros=6 vgs=6 locos=0 | parte que segue
-[    0.875h] INFO  CoperXXI        moega_tem_lote               trem=26125 carros=6 vgs=6 locos=0 | false
-[3148,9][CoperXII][moega] trem=26125 lote da moega com 6 vgs (capacidade 6)
-[    0.875h] INFO  CoperXXI        moega_tem_rp                 trem=26125 carros=6 vgs=6 locos=0 | true
-[3148,9][CoperXII][segunda_parte] lote_em_descarga=26125 -> 26039
-[3148,9][CoperXII][resto] trem=26125 lote terminou na moega: moega liberada
-[    0.875h] INFO  CoperXXI        liberar_moega_resto          trem=26125 carros=6 vgs=6 locos=0 | soltou
-[3148,9][CoperXII][alivio] 41 vazios prontos (b=22 a=13 moega=6): pedindo alívio
-[    0.875h] INFO  CoperXXI        estoque_moega                trem=26125 carros=6 vgs=6 locos=0 | esperando
-[    0.875h] INFO  GesDVs          consulta_cabem               coperXXI | tipo=rumo/acucar | acumulado=0 | falta=82 | vazios=41 | livre=108 | livre_tipo=108 | lider=- | retorno=41
-[    0.875h] INFO  GesDVs          estado                       DIR 0/41 | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=108
-[    0.875h] INFO  GesAlivios      qtd_alivio                   coperXXI | vazios no terminal: 41 | cabem_na_dv0: 4 | definido: 4 (limitado pelas DVs)
-[    0.875h] INFO  GesAlivios      diag_pst                     chamar loco | ferrovia=rumo | locos no wait=2
-[    0.875h] INFO  GesAlivios      diag_pst                     loco do alivio (null - 26127)
-[    0.875h] INFO  GesAlivios      diag_pst                     loco do alivio (MNB01 - 26127) ocupa rp_via1_intermar_d
-WARNING [             3,149] root.gestorDeAlivios.bloquear_faixas_pst: Agent 234 passed the block immediately due to empty resource set(s) defined.
-[3160,8][CoperXII][alivio] trem=26127 loco do alívio chegou (1 carros)
-[3160,8][CoperXII][alivio] trem=26127 engatando lote_b
-[    0.878h] INFO  CoperXXI        engatar_b                    trem=26127 carros=1 vgs=0 locos=1 | inicio
-[    0.879h] INFO  CoperXXI        engatar_b                    trem=26127 carros=1 vgs=0 locos=1 | bateu (outHit)
-[    0.879h] INFO  CoperXXI        estoque_b                    trem=26131 carros=22 vgs=22 locos=0 | liberado
-[    0.879h] INFO  CoperXXI        acoplar_b                    trem=26127 carros=23 vgs=22 locos=1 | acoplou
-[    0.879h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=23 vgs=22 locos=1 | vai cortar
-[    0.879h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=23 vgs=22 locos=1 | parte que segue
-[    0.879h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=23 vgs=22 locos=1 | true
-[3164,2][CoperXII][alivio] trem=26127 engatando lote_a
-[    0.879h] INFO  CoperXXI        engatar_a                    trem=26127 carros=23 vgs=22 locos=1 | inicio
-[    0.882h] INFO  CoperXXI        engatar_a                    trem=26127 carros=23 vgs=22 locos=1 | bateu (outHit)
-[    0.882h] INFO  CoperXXI        estoque_a                    trem=26134 carros=13 vgs=13 locos=0 | liberado
-[    0.882h] INFO  CoperXXI        acoplar_a                    trem=26127 carros=36 vgs=35 locos=1 | acoplou
-[    0.882h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=36 vgs=35 locos=1 | vai cortar
-[    0.882h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=36 vgs=35 locos=1 | parte que segue
-[    0.882h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=36 vgs=35 locos=1 | true
-[3175,9][CoperXII][alivio] trem=26127 engatando lote da moega
-[    0.882h] INFO  CoperXXI        engatar_moega                trem=26127 carros=36 vgs=35 locos=1 | inicio
-[    0.884h] INFO  CoperXXI        engatar_moega                trem=26127 carros=36 vgs=35 locos=1 | chegou
-[    0.884h] INFO  CoperXXI        estoque_moega                trem=26125 carros=6 vgs=6 locos=0 | liberado
-[    0.884h] INFO  CoperXXI        acoplar_moega                trem=26127 carros=42 vgs=41 locos=1 | acoplou
-[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=42 vgs=41 locos=1 | vai cortar
-[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26136 carros=37 vgs=37 locos=0 | parte cortada
-[    0.884h] INFO  CoperXXI        alivio_sobra                 trem=26136 sobra de 37 vgs (pedido=4)
-[    0.884h] INFO  CoperXXI        rmv_excesso                  trem=26127 carros=5 vgs=4 locos=1 | parte que segue
-[    0.884h] INFO  CoperXXI        precisa_mais_vgs             trem=26127 carros=5 vgs=4 locos=1 | false
-[    0.884h] INFO  CoperXXI        entrar_sobra                 trem=26136 carros=37 vgs=37 locos=0 | sobra do alívio
-[    0.884h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | false
-[    0.884h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | inicio
-[3181,6][CoperXII][alivio] trem=26127 alívio engatado: 4 vgs, voltando ao GestorDeAlivios
-[    0.884h] INFO  GesAlivios      diag_pst                     alivio terminou | coperXXI voltou para terminais_pst
-[    0.884h] INFO  GesAlivios      retorno_alivio               (MNB01 - 26127) entra na circulacao por rp_via1_intermar_d (proxima rp_via1_intermar_c)
-[    0.884h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [comecou circulacao]
-[    0.884h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_d]
-[    0.892h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | fim
-[    0.892h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | false
-[    0.892h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | inicio
-[    0.900h] INFO  CoperXXI        espera_linha_sobra           trem=26136 carros=37 vgs=37 locos=0 | fim
-[    0.900h] INFO  CoperXXI        linha_livre_sobra            trem=26136 carros=37 vgs=37 locos=0 | true
-[    0.900h] INFO  CoperXXI        ir_sobra                     trem=26136 carros=37 vgs=37 locos=0 | inicio
-[    0.909h] INFO  CoperXXI        ir_sobra                     trem=26136 carros=37 vgs=37 locos=0 | chegou
-[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=37 vgs=37 locos=0 | false
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=37 vgs=37 locos=0 | vai cortar
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26137 carros=22 vgs=22 locos=0 | parte cortada
-[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26137 22 vgs em coperXII_vazios_b | b=22 a=0 moega=0
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=15 vgs=15 locos=0 | parte que segue
-[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=15 vgs=15 locos=0 | false
-[    0.909h] INFO  CoperXXI        estoque_b                    trem=26137 carros=22 vgs=22 locos=0 | esperando
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=15 vgs=15 locos=0 | vai cortar
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26138 carros=13 vgs=13 locos=0 | parte cortada
-[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26138 13 vgs em coperXII_vazios_a | b=22 a=13 moega=0
-[    0.909h] INFO  CoperXXI        cortar_sobra                 trem=26136 carros=2 vgs=2 locos=0 | parte que segue
-[    0.909h] INFO  CoperXXI        sobra_cabe                   trem=26136 carros=2 vgs=2 locos=0 | true
-[    0.909h] INFO  CoperXXI        sobra_guardada               trem=26136 2 vgs em coperXII_vazios_moega | b=22 a=13 moega=2
-[3272,9][CoperXII][segunda_parte] trem=26039 começa a descarga (41 vgs carregados, locos=0)
-[    0.909h] INFO  CoperXXI        estoque_a                    trem=26138 carros=13 vgs=13 locos=0 | esperando
-[    0.909h] INFO  CoperXXI        estoque_moega                trem=26136 carros=2 vgs=2 locos=0 | esperando
-[    0.909h] INFO  CoperXXI        espera_segunda_parte         trem=26039 carros=41 vgs=41 locos=0 | liberado
-[3272,9][CoperXII][entrar_moega] trem=26039 lote com 41 carros na fila da moega
-[    0.909h] INFO  CoperXXI        seize_moega                  trem=26039 carros=41 vgs=41 locos=0 | na fila
-[    0.909h] INFO  CoperXXI        seize_moega                  trem=26039 carros=41 vgs=41 locos=0 | pegou
-[3272,9][CoperXII][loco] trem=26039 lote sem loco: buscando loco
-[    0.909h] INFO  CoperXXI        tem_loco_lote                trem=26039 carros=41 vgs=41 locos=0 | false
-[3272,9][CoperXII][loco] trem=26039 sem segunda parte: pedindo loco FIPS PST
-[    0.909h] INFO  CoperXXI        tem_segunda_parte            trem=26039 carros=41 vgs=41 locos=0 | false
-[    0.909h] INFO  CoperXXI        seize_loco_fips              trem=26039 carros=41 vgs=41 locos=0 | na fila
-[    0.909h] INFO  CoperXXI        seize_loco_fips              trem=26039 carros=41 vgs=41 locos=0 | pegou
-[3272,9][CoperXII][loco] trem=26139 loco FIPS PST criada (entra em pos_loco_pera)
-[    0.909h] INFO  CoperXXI        caminho_pera_bloquear        trem=26139 carros=1 vgs=0 locos=1 | na fila
-[    0.909h] INFO  CoperXXI        caminho_pera_bloquear        trem=26139 carros=1 vgs=0 locos=1 | pegou
-[    0.909h] INFO  CoperXXI        trainEnter                   trem=26139 carros=1 vgs=0 locos=1 | entrou na via
-[3272,9][CoperXII][loco] trem=26139 loco FIPS PST indo para a cauda do lote
-[    0.909h] INFO  CoperXXI        levar_loco_fips              trem=26139 carros=1 vgs=0 locos=1 | inicio
-[    0.912h] INFO  CoperXXI        levar_loco_fips              trem=26139 carros=1 vgs=0 locos=1 | bateu (outHit)
-[3283,0][CoperXII][loco] trem=26139 loco FIPS encostou e soltou as faixas
-[    0.912h] INFO  CoperXXI        liberar_caminho_pera         trem=26139 carros=1 vgs=0 locos=1 | soltou
-[3283,0][CoperXII][loco] trem=26039 loco acoplada na cauda do lote (42 carros)
-[    0.912h] INFO  CoperXXI        acoplar_loco                 trem=26039 carros=42 vgs=41 locos=1 | acoplou
-[    0.912h] INFO  CoperXXI        tem_espaco_vazios            trem=26039 carros=42 vgs=41 locos=1 | true
-[3283,0][CoperXII][grupo] trem=26039 linha=moega vagoes=4 carros=4 (lote tem 42 carros, espaco b=0 a=0)
-[    0.912h] INFO  CoperXXI        ir_moega                     trem=26039 carros=42 vgs=41 locos=1 | inicio
-[    0.925h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_c]
-[    0.940h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_b]
-[    0.945h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [entrou faixa via1_intermar_a]
-[    0.954h] INFO  CoperXXI        ir_moega                     trem=26039 carros=42 vgs=41 locos=1 | chegou
-[    0.954h] INFO  CoperXXI        liberar_faixas_circulacao2   trem=26039 carros=42 vgs=41 locos=1 | soltou
-[    0.954h] INFO  CoperXXI        descarga_grupo               trem=26039 carros=42 vgs=41 locos=1 | inicio
-[    0.967h] INFO  CoperXXI        descarga_grupo               trem=26039 carros=42 vgs=41 locos=1 | fim
-[    0.967h] INFO  CoperXXI        e_ultimo_grupo               trem=26039 carros=42 vgs=41 locos=1 | false
-[3481,2][CoperXII][corte] trem=26039 corta 4 carros da frente
-[    0.967h] INFO  CoperXXI        cortar_grupo                 trem=26039 carros=42 vgs=41 locos=1 | vai cortar
-[    0.967h] INFO  CoperXXI        cortar_grupo                 trem=26141 carros=4 vgs=4 locos=0 | parte cortada
-[3481,2][CoperXII][moega] trem=26141 grupo de 4 carros fica na moega
-[    0.967h] INFO  CoperXXI        tem_loco_resto               trem=26141 carros=4 vgs=4 locos=0 | false
-[    0.967h] INFO  CoperXXI        moega_tem_lote               trem=26141 carros=4 vgs=4 locos=0 | true
-[    0.967h] INFO  CoperXXI        estoque_moega                trem=26136 carros=2 vgs=2 locos=0 | liberado
-[    0.980h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26127): acucar sem destino] [saiu para DV]
-[    0.980h] INFO  GesDVs          comecou_manobra              (MNB01 - 26127) | 4 vgs + 1 loco | rumo/acucar | livre=108 | acumulado do tipo=0 | estaciona
-[    1.033h] INFO  GesDVs          proxima_linha                (MNB01 - 26127) | 4 vgs + 1 loco | rumo/acucar -> DIR
-[    1.067h] INFO  GesDVs          colocou_lote                 DIR 4/41 | (LOTE_DIR - 26142) | 4 vgs + 0 loco | rumo/acucar
-[    1.067h] INFO  GesDVs          estado                       DIR 4/41 rumo/acucar | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=104
-[    1.067h] INFO  GesDVs          devolveu_loco                (MNB01 - 26127) | 0 vgs + 1 loco | - | na linha DIR
-[    1.067h] INFO  GesDVs          terminou_manobra             (MNB01 - 26127) | 0 vgs + 1 loco | -
-[    1.067h] INFO  GesDVs          estado                       DIR 4/41 rumo/acucar | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=104
+[    0.323h] INFO  Chegadas        pedido_manual                P1 suzano/mrs pedido pelo botão (fila=1)
+[    0.323h] INFO  Chegadas        decisao                      P1 suzano/mrs -> circulacao (terminal pode receber, nenhum trem a caminho)
+[    0.323h] INFO  Chegadas        inject                       P1 suzano/mrs -> inject (destino=circulacao, espera=0,00h)
+[    0.323h] INFO  Suzano          paraGestorCirculacao_chegadaCarregados trem=26227 carros=65 vgs=64 locos=1 | saiu
+[    0.323h] INFO  Chegadas        entrou_trilho                P1 suzano/mrs trem=26227/L72 entrou no trilho -> circulacao
+[    0.323h] INFO  ISN             chegou                       trem=26227/L72 chegou -> direto para a circulação
+[    0.323h] INFO  ISN             nascimento                   trem=26227/L72 faixa_atual=rp_isn_a proxima_faixa=rp_isn_b
+[    0.323h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [comecou circulacao]
+[    0.323h] INFO  ISN             circular_isn_a               trem=26227/L72
+[    0.323h] INFO  ISN             fim_isn_linha01_a            trem=26227/L72 faixa_atual=rp_isn_b proxima_faixa=rp_isn_c
+[    0.323h] INFO  ISN             circular_isn_b               trem=26227/L72
+[    0.326h] INFO  ISN             fim_isn_linha01_b            trem=26227/L72 faixa_atual=rp_isn_c proxima_faixa=rp_isn_d
+[    0.326h] INFO  ISN             circular_isn_c               trem=26227/L72
+[    0.330h] INFO  ISN             fim_isn_linha01_c            trem=26227/L72 faixa_atual=rp_isn_d proxima_faixa=rp_isn_e
+[    0.330h] INFO  ISN             circular_isn_d               trem=26227/L72
+[    0.382h] INFO  ISN             fim_isn_linha01_d            trem=26227/L72 faixa_atual=rp_isn_e proxima_faixa=rp_isn_porteira
+[    0.382h] INFO  ISN             circular_isn_e               trem=26227/L72
+[    0.452h] INFO  ISN             fim_isn_linha01_e            trem=26227/L72 faixa_atual=rp_isn_porteira proxima_faixa=rp_pst_val_via2
+[    0.452h] INFO  ISN             circular_isn_porteira        trem=26227/L72
+[    0.455h] INFO  ISN             entrega_à_circulação         trem=26227/L72 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
+[    0.455h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa val_via2]
+[    0.466h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa via3_intermar]
+[    0.558h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa via3_a]
+[    0.559h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa via3_b]
+[    0.611h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa via3_c]
+[    0.618h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa via3_d]
+[    0.643h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa pst_silosMuro_a]
+[    0.665h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa pst_marginal_c]
+[    0.670h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [entrou faixa pmc_linha6000_a]
+[    0.673h] INFO  GesCirculacao   circulacao                   [(L72 - 26227):  suzano] [saiu para terminal suzano]
+[    0.673h] INFO  Suzano          comecar_encoste              trem=26227 carros=65 vgs=64 locos=1 | entrou
+[    0.673h] INFO  Suzano          para_encostar_linha7000      trem=26227 carros=65 vgs=64 locos=1 | saiu
+[    0.673h] INFO  Suzano          encostar_linha7000           trem=26227 carros=65 vgs=64 locos=1 | entrou
+[    0.673h] INFO  Suzano          mov_avnc__L7000              trem=26227 carros=65 vgs=64 locos=1 | inicio
+[    0.716h] INFO  Suzano          mov_avnc__L7000              trem=26227 carros=65 vgs=64 locos=1 | chegou
+[    0.716h] INFO  Suzano          rmv_40vgs                    trem=26227 carros=65 vgs=64 locos=1 | vai cortar
+[    0.716h] INFO  Suzano          rmv_40vgs                    trem=26294 carros=25 vgs=24 locos=1 | parte cortada
+[    0.716h] INFO  Suzano          para_remover_loco_circulacao trem=26294 carros=25 vgs=24 locos=1 | saiu
+[    0.716h] INFO  Suzano          rmv_40vgs                    trem=26227 carros=40 vgs=40 locos=0 | parte que segue
+[    0.716h] INFO  Suzano          remover_loco_circulacao      trem=26294 carros=25 vgs=24 locos=1 | entrou
+[    0.716h] INFO  Suzano          deixar_24vgs_L7000           trem=26294 carros=25 vgs=24 locos=1 | vai cortar
+[    0.716h] INFO  Suzano          deixar_24vgs_L7000           trem=26295 carros=24 vgs=24 locos=0 | parte cortada
+[    0.716h] INFO  Suzano          para_lote_L7000              trem=26295 carros=24 vgs=24 locos=0 | saiu
+[    0.716h] INFO  Suzano          aguardar_L7000               trem=26295 carros=24 vgs=24 locos=0 | entrou
+[    0.718h] INFO  Suzano          para_linha01                 trem=26227 carros=40 vgs=40 locos=0 | saiu
+[    0.718h] INFO  Suzano          linha01                      trem=26227 carros=40 vgs=40 locos=0 | entrou
+[    0.718h] INFO  Suzano          colocar_L1                   trem=26227 carros=40 vgs=40 locos=0 | inicio
+[    0.718h] INFO  Suzano          deixar_24vgs_L7000           trem=26294 carros=1 vgs=0 locos=1 | parte que segue
+[    0.718h] INFO  Suzano          aguardar_lote_sair_6000_a    trem=26294 carros=1 vgs=0 locos=1 | passou
+[    0.737h] INFO  Suzano          colocar_L1                   trem=26227 carros=40 vgs=40 locos=0 | chegou
+[    0.737h] INFO  Suzano          deixar_lote_L1               trem=26227 carros=40 vgs=40 locos=0 | vai cortar
+[    0.737h] INFO  Suzano          deixar_lote_L1               trem=26296 carros=10 vgs=10 locos=0 | parte cortada
+[    0.737h] INFO  Suzano          para_descarregar_L1          trem=26296 carros=10 vgs=10 locos=0 | saiu
+[    0.737h] INFO  Suzano          deixar_lote_L1               trem=26227 carros=30 vgs=30 locos=0 | parte que segue
+[    0.748h] INFO  Suzano          para_linha02                 trem=26227 carros=30 vgs=30 locos=0 | saiu
+[    0.748h] INFO  Suzano          linha02                      trem=26227 carros=30 vgs=30 locos=0 | entrou
+[    0.748h] INFO  Suzano          colocar_L2                   trem=26227 carros=30 vgs=30 locos=0 | inicio
+[    0.766h] INFO  Suzano          colocar_L2                   trem=26227 carros=30 vgs=30 locos=0 | chegou
+[    0.766h] INFO  Suzano          deixar_lote_L2               trem=26227 carros=30 vgs=30 locos=0 | vai cortar
+[    0.766h] INFO  Suzano          deixar_lote_L2               trem=26297 carros=10 vgs=10 locos=0 | parte cortada
+[    0.766h] INFO  Suzano          para_descarregar_L2          trem=26297 carros=10 vgs=10 locos=0 | saiu
+[    0.766h] INFO  Suzano          deixar_lote_L2               trem=26227 carros=20 vgs=20 locos=0 | parte que segue
+[    0.777h] INFO  Suzano          para_linha03                 trem=26227 carros=20 vgs=20 locos=0 | saiu
+[    0.777h] INFO  Suzano          linha03                      trem=26227 carros=20 vgs=20 locos=0 | entrou
+[    0.777h] INFO  Suzano          colocar_L3                   trem=26227 carros=20 vgs=20 locos=0 | inicio
+[    0.795h] INFO  Suzano          colocar_L3                   trem=26227 carros=20 vgs=20 locos=0 | chegou
+[    0.795h] INFO  Suzano          deixar_lote_L3               trem=26227 carros=20 vgs=20 locos=0 | vai cortar
+[    0.795h] INFO  Suzano          deixar_lote_L3               trem=26298 carros=10 vgs=10 locos=0 | parte cortada
+[    0.795h] INFO  Suzano          para_descarregar_L3          trem=26298 carros=10 vgs=10 locos=0 | saiu
+[    0.795h] INFO  Suzano          deixar_lote_L3               trem=26227 carros=10 vgs=10 locos=0 | parte que segue
+[    0.806h] INFO  Suzano          para_linha04                 trem=26227 carros=10 vgs=10 locos=0 | saiu
+[    0.806h] INFO  Suzano          linha04                      trem=26227 carros=10 vgs=10 locos=0 | entrou
+[    0.806h] INFO  Suzano          colocar_L4                   trem=26227 carros=10 vgs=10 locos=0 | inicio
+[    0.824h] INFO  Suzano          colocar_L4                   trem=26227 carros=10 vgs=10 locos=0 | chegou
+[    0.824h] INFO  Suzano          liberar_faixas_circulacao    trem=26227 carros=10 vgs=10 locos=0 | soltou
+[    0.824h] INFO  Suzano          para_descarregar_L4          trem=26227 carros=10 vgs=10 locos=0 | saiu
+[    0.824h] INFO  Suzano          descarregar_L4               trem=26227 carros=10 vgs=10 locos=0 | entrou
+[    0.824h] INFO  Suzano          descarregar_L1               trem=26296 carros=10 vgs=10 locos=0 | entrou
+[    0.824h] INFO  Suzano          aguarda_L4a                  trem=26296 carros=10 vgs=10 locos=0 | passou
+[    0.824h] INFO  Suzano          descarregar_L2               trem=26297 carros=10 vgs=10 locos=0 | entrou
+[    0.824h] INFO  Suzano          aguarda_L4b                  trem=26297 carros=10 vgs=10 locos=0 | passou
+[    0.824h] INFO  Suzano          descarregar_L3               trem=26298 carros=10 vgs=10 locos=0 | entrou
+[    0.824h] INFO  Suzano          aguarda_L4c                  trem=26298 carros=10 vgs=10 locos=0 | passou
+[    0.837h] INFO  Suzano          fim_descarga_L3              trem=26298 carros=10 vgs=10 locos=0 | saiu
+[3012,0][Suzano][registrar_linha_descarregada] 1 de 4 linhas descarregadas
+[    0.837h] INFO  Suzano          aguardar_troca_L3            trem=26298 carros=10 vgs=10 locos=0 | entrou
+[    0.837h] INFO  Suzano          fim_descarga_L2              trem=26297 carros=10 vgs=10 locos=0 | saiu
+[3012,0][Suzano][registrar_linha_descarregada] 2 de 4 linhas descarregadas
+[    0.837h] INFO  Suzano          aguardar_troca_L2            trem=26297 carros=10 vgs=10 locos=0 | entrou
+[    0.837h] INFO  Suzano          fim_descarga_L1              trem=26296 carros=10 vgs=10 locos=0 | saiu
+[3012,0][Suzano][registrar_linha_descarregada] 3 de 4 linhas descarregadas
+[    0.837h] INFO  Suzano          aguardar_troca_L1            trem=26296 carros=10 vgs=10 locos=0 | entrou
+[    0.837h] INFO  Suzano          fazer_inversao               trem=26227 carros=10 vgs=10 locos=0 | inicio
+[    0.839h] INFO  Suzano          fazer_inversao               trem=26227 carros=10 vgs=10 locos=0 | fim
+[    0.839h] INFO  Suzano          para_vazios_L4               trem=26227 carros=10 vgs=10 locos=0 | saiu
+[3022,0][Suzano][registrar_linha_descarregada] 4 de 4 linhas descarregadas
+[3022,0][Suzano][registrar_linha_descarregada] chama loco FIPS para a troca dos 24
+[    0.839h] INFO  Suzano          usar_recurso_loco1           trem=26299 carros=1 vgs=0 locos=1 | na fila
+[    0.839h] INFO  Suzano          usar_recurso_loco1           trem=26299 carros=1 vgs=0 locos=1 | pegou
+[    0.839h] INFO  Suzano          ocupar_faixas_triangulacao   trem=26299 carros=1 vgs=0 locos=1 | na fila
+[    0.839h] INFO  Suzano          ocupar_faixas_triangulacao   trem=26299 carros=1 vgs=0 locos=1 | pegou
+[    0.839h] INFO  Suzano          trainEnter1                  trem=26299 carros=1 vgs=0 locos=1 | entrou na via
+[    0.839h] INFO  Suzano          para_pegar_lote_7000         trem=26299 carros=1 vgs=0 locos=1 | saiu
+[    0.839h] INFO  Suzano          pegar_lote_7000              trem=26299 carros=1 vgs=0 locos=1 | entrou
+[    0.839h] INFO  Suzano          mov_avnc__L7000a             trem=26299 carros=1 vgs=0 locos=1 | inicio
+[    0.851h] INFO  Suzano          mov_avnc__L7000a             trem=26299 carros=1 vgs=0 locos=1 | bateu (outHit)
+[    0.851h] INFO  Suzano          pegar24carreg                trem=26299 carros=25 vgs=24 locos=1 | acoplou
+[    0.858h] INFO  Suzano          par_pegar_linha01            trem=26299 carros=25 vgs=24 locos=1 | saiu
+[    0.858h] INFO  Suzano          pegar_linha01                trem=26299 carros=25 vgs=24 locos=1 | entrou
+[    0.858h] INFO  Suzano          mov_ir_linha01               trem=26299 carros=25 vgs=24 locos=1 | inicio
+[    0.862h] INFO  Suzano          mov_ir_linha01               trem=26299 carros=25 vgs=24 locos=1 | bateu (outHit)
+[    0.862h] INFO  Suzano          pegar_vzs                    trem=26299 carros=35 vgs=34 locos=1 | acoplou
+[    0.868h] INFO  Suzano          par_pegar_linha02            trem=26299 carros=35 vgs=34 locos=1 | saiu
+[    0.868h] INFO  Suzano          pegar_linha02                trem=26299 carros=35 vgs=34 locos=1 | entrou
+[    0.868h] INFO  Suzano          mov_ir_linha02               trem=26299 carros=35 vgs=34 locos=1 | inicio
+[    0.871h] INFO  Suzano          mov_ir_linha02               trem=26299 carros=35 vgs=34 locos=1 | bateu (outHit)
+[    0.871h] INFO  Suzano          pegar_vzs1                   trem=26299 carros=45 vgs=44 locos=1 | acoplou
+[    0.877h] INFO  Suzano          par_pegar_linha03            trem=26299 carros=45 vgs=44 locos=1 | saiu
+[    0.877h] INFO  Suzano          pegar_linha03                trem=26299 carros=45 vgs=44 locos=1 | entrou
+[    0.877h] INFO  Suzano          mov_ir_linha03               trem=26299 carros=45 vgs=44 locos=1 | inicio
+[    0.881h] INFO  Suzano          mov_ir_linha03               trem=26299 carros=45 vgs=44 locos=1 | bateu (outHit)
+[    0.881h] INFO  Suzano          pegar_vzs2                   trem=26299 carros=55 vgs=54 locos=1 | acoplou
+[    0.887h] INFO  Suzano          para_ir_linha7000            trem=26299 carros=55 vgs=54 locos=1 | saiu
+[    0.887h] INFO  Suzano          ir_linha7000                 trem=26299 carros=55 vgs=54 locos=1 | entrou
+[    0.887h] INFO  Suzano          mov_avnc__L700b              trem=26299 carros=55 vgs=54 locos=1 | inicio
+[    0.894h] INFO  Suzano          mov_avnc__L700b              trem=26299 carros=55 vgs=54 locos=1 | chegou
+[    0.894h] INFO  Suzano          deixar_24vzs                 trem=26299 carros=55 vgs=54 locos=1 | vai cortar
+[    0.894h] INFO  Suzano          deixar_24vzs                 trem=26301 carros=24 vgs=24 locos=0 | parte cortada
+[    0.894h] INFO  Suzano          para_vazios_L7000            trem=26301 carros=24 vgs=24 locos=0 | saiu
+[    0.894h] INFO  Suzano          deixar_24vzs                 trem=26299 carros=31 vgs=30 locos=1 | parte que segue
+[    0.895h] INFO  Suzano          para_linha01a                trem=26299 carros=31 vgs=30 locos=1 | saiu
+[    0.895h] INFO  Suzano          linha01a                     trem=26299 carros=31 vgs=30 locos=1 | entrou
+[    0.895h] INFO  Suzano          mov_ir_linha01a              trem=26299 carros=31 vgs=30 locos=1 | inicio
+[    0.901h] INFO  Suzano          mov_ir_linha01a              trem=26299 carros=31 vgs=30 locos=1 | chegou
+[    0.901h] INFO  Suzano          deixar_lote_L1a              trem=26299 carros=31 vgs=30 locos=1 | vai cortar
+[    0.901h] INFO  Suzano          deixar_lote_L1a              trem=26302 carros=10 vgs=10 locos=0 | parte cortada
+[    0.901h] INFO  Suzano          para_descarregar_L5          trem=26302 carros=10 vgs=10 locos=0 | saiu
+[    0.901h] INFO  Suzano          deixar_lote_L1a              trem=26299 carros=21 vgs=20 locos=1 | parte que segue
+[    0.905h] INFO  Suzano          para_linha02a                trem=26299 carros=21 vgs=20 locos=1 | saiu
+[    0.905h] INFO  Suzano          linha02a                     trem=26299 carros=21 vgs=20 locos=1 | entrou
+[    0.905h] INFO  Suzano          mov_ir_linha02a              trem=26299 carros=21 vgs=20 locos=1 | inicio
+[    0.911h] INFO  Suzano          mov_ir_linha02a              trem=26299 carros=21 vgs=20 locos=1 | chegou
+[    0.911h] INFO  Suzano          deixar_lote_L5               trem=26299 carros=21 vgs=20 locos=1 | vai cortar
+[    0.911h] INFO  Suzano          deixar_lote_L5               trem=26303 carros=10 vgs=10 locos=0 | parte cortada
+[    0.911h] INFO  Suzano          para_descarregar_L6          trem=26303 carros=10 vgs=10 locos=0 | saiu
+[    0.911h] INFO  Suzano          deixar_lote_L5               trem=26299 carros=11 vgs=10 locos=1 | parte que segue
+[    0.914h] INFO  Suzano          para_linha03a                trem=26299 carros=11 vgs=10 locos=1 | saiu
+[    0.914h] INFO  Suzano          linha03a                     trem=26299 carros=11 vgs=10 locos=1 | entrou
+[    0.914h] INFO  Suzano          mov_ir_linha03a              trem=26299 carros=11 vgs=10 locos=1 | inicio
+[    0.920h] INFO  Suzano          mov_ir_linha03a              trem=26299 carros=11 vgs=10 locos=1 | chegou
+[    0.920h] INFO  Suzano          deixar_lote_L6               trem=26299 carros=11 vgs=10 locos=1 | vai cortar
+[    0.920h] INFO  Suzano          deixar_lote_L6               trem=26304 carros=10 vgs=10 locos=0 | parte cortada
+[    0.920h] INFO  Suzano          para_descarregar_L7          trem=26304 carros=10 vgs=10 locos=0 | saiu
+[    0.920h] INFO  Suzano          deixar_lote_L6               trem=26299 carros=1 vgs=0 locos=1 | parte que segue
+[    0.920h] INFO  GesLocomotivas  rp_locoFips_pcx              218 devolveu 1 unidade | idle=7 busy=1 cap=8
+[    0.920h] INFO  Suzano          liberar_loco_fips            trem=26299 carros=1 vgs=0 locos=1 | soltou
+[    0.920h] INFO  Suzano          liberar_faixas_triangulacao  trem=26299 carros=1 vgs=0 locos=1 | soltou
+[    0.920h] INFO  Suzano          descarregar_L3               trem=26304 carros=10 vgs=10 locos=0 | entrou
+[    0.920h] INFO  Suzano          aguarda_L4c                  trem=26304 carros=10 vgs=10 locos=0 | passou
+[    0.920h] INFO  Suzano          descarregar_L1               trem=26302 carros=10 vgs=10 locos=0 | entrou
+[    0.920h] INFO  Suzano          aguarda_L4a                  trem=26302 carros=10 vgs=10 locos=0 | passou
+[    0.920h] INFO  Suzano          descarregar_L2               trem=26303 carros=10 vgs=10 locos=0 | entrou
+[    0.920h] INFO  Suzano          aguarda_L4b                  trem=26303 carros=10 vgs=10 locos=0 | passou
+[    0.933h] INFO  Suzano          fim_descarga_L2              trem=26303 carros=10 vgs=10 locos=0 | saiu
+[    0.933h] INFO  Suzano          fim_descarga_L1              trem=26302 carros=10 vgs=10 locos=0 | saiu
+[    0.933h] INFO  Suzano          fim_descarga_L3              trem=26304 carros=10 vgs=10 locos=0 | saiu
+[3358,7][Suzano][verificar_descarregou_tudo] 64 vazios, overload = 2,0
+[    0.933h] INFO  GesAlivios      alivio_pmc                   suzano | vazios=64 | loco=26294 (rumo)
+[    0.965h] INFO  GesAlivios      para_alivio_terminal_pmc     loco=26294 -> suzano
+[    0.965h] INFO  Suzano          iniciar_alivio               trem=26294 carros=1 vgs=0 locos=1 | entrou
+[3474,8][Suzano][iniciar_alivio] loco=26294 | vazios=64
+[    0.965h] INFO  Suzano          liberar_recursos_loco_alivio trem=26294 carros=1 vgs=0 locos=1 | soltou
+[    0.965h] INFO  Suzano          ocupar_faixas_mnb_alivio     trem=26294 carros=1 vgs=0 locos=1 | na fila
+[    0.965h] INFO  Suzano          alivio_vz_L1                 trem=26302 carros=10 vgs=10 locos=0 | entrou
+[    0.965h] INFO  Suzano          alivio_vz_L2                 trem=26303 carros=10 vgs=10 locos=0 | entrou
+[    0.965h] INFO  Suzano          alivio_vz_L3                 trem=26304 carros=10 vgs=10 locos=0 | entrou
+[    0.965h] INFO  Suzano          alivio_vz_L4                 trem=26227 carros=10 vgs=10 locos=0 | entrou
+[    0.965h] INFO  Suzano          alivio_vz_L7000              trem=26301 carros=24 vgs=24 locos=0 | entrou
+[    0.965h] INFO  Suzano          ocupar_faixas_mnb_alivio     trem=26294 carros=1 vgs=0 locos=1 | pegou
+[    0.966h] INFO  Suzano          avancar_alivio_L1            trem=26294 carros=1 vgs=0 locos=1 | inicio
+[    0.977h] INFO  Suzano          avancar_alivio_L1            trem=26294 carros=1 vgs=0 locos=1 | bateu (outHit)
+[    0.977h] INFO  Suzano          acoplar_alivio_L1            trem=26294 carros=11 vgs=10 locos=1 | acoplou
+[    0.995h] INFO  Suzano          avancar_alivio_L2            trem=26294 carros=11 vgs=10 locos=1 | inicio
+[    1.006h] INFO  Suzano          avancar_alivio_L2            trem=26294 carros=11 vgs=10 locos=1 | bateu (outHit)
+[    1.006h] INFO  Suzano          acoplar_alivio_L2            trem=26294 carros=21 vgs=20 locos=1 | acoplou
+[    1.024h] INFO  Suzano          avancar_alivio_L3            trem=26294 carros=21 vgs=20 locos=1 | inicio
+[    1.035h] INFO  Suzano          avancar_alivio_L3            trem=26294 carros=21 vgs=20 locos=1 | bateu (outHit)
+[    1.035h] INFO  Suzano          acoplar_alivio_L3            trem=26294 carros=31 vgs=30 locos=1 | acoplou
+[    1.053h] INFO  Suzano          avancar_alivio_L4            trem=26294 carros=31 vgs=30 locos=1 | inicio
+[    1.064h] INFO  Suzano          avancar_alivio_L4            trem=26294 carros=31 vgs=30 locos=1 | bateu (outHit)
+[    1.064h] INFO  Suzano          acoplar_alivio_L4            trem=26294 carros=41 vgs=40 locos=1 | acoplou
+[    1.082h] INFO  Suzano          avancar_alivio_L7000         trem=26294 carros=41 vgs=40 locos=1 | inicio
+[    1.086h] INFO  Suzano          avancar_alivio_L7000         trem=26294 carros=41 vgs=40 locos=1 | bateu (outHit)
+[    1.086h] INFO  Suzano          acoplar_alivio_L7000         trem=26294 carros=65 vgs=64 locos=1 | acoplou
+[    1.086h] INFO  Suzano          para_sair_alivio             trem=26294 carros=65 vgs=64 locos=1 | saiu
+[3908,4][Suzano][para_sair_alivio] trem=26294 vagoes=64
+[    1.086h] INFO  GesAlivios      retornar_alivio_pmc          trem=26294 vagoes=64 | suzano volta para terminais_pmc
+[    1.086h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [comecou circulacao]
+[    1.086h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa pst_marginal_b]
+[    1.111h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa pst_marginal_a]
+[    1.117h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_f]
+[    1.141h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_e]
+[    1.142h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_d]
+[    1.190h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_c]
+[    1.193h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_b]
+[    1.195h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_a]
+[    1.196h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_intermar_c]
+[    1.231h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_intermar_b]
+[    1.248h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [entrou faixa via2_intermar_a]
+[    1.286h] INFO  GesCirculacao   circulacao                   [(MNB01 - 26294): celulose suzano] [saiu para DV]
+[    1.286h] INFO  GesDVs          comecou_manobra              (MNB01 - 26294) | 64 vgs + 1 loco | rumo/celulose | livre=108 | acumulado do tipo=0 | segue direto
+[    1.286h] INFO  GesDVs          saida                        (MNB01 - 26294) | 64 vgs + 1 loco | rumo/celulose -> circ_pos_fim_placa_2
+[    1.432h] INFO  GesDVs          terminou_manobra             (MNB01 - 26294) | 64 vgs + 1 loco | rumo/celulose
+[    1.432h] INFO  GesDVs          estado                       DIR 0/41 | DV2 0/32 | DV3 0/28 | DV4 0/7 | livre=108
+[    2.748h] INFO  Chegadas        pedido_manual                P2 suzano/mrs pedido pelo botão (fila=1)
+[    2.748h] INFO  Chegadas        decisao                      P2 suzano/mrs -> circulacao (terminal pode receber, nenhum trem a caminho)
+[    2.748h] INFO  Chegadas        inject                       P2 suzano/mrs -> inject (destino=circulacao, espera=0,00h)
+[    2.748h] INFO  Suzano          paraGestorCirculacao_chegadaCarregados trem=26306 carros=65 vgs=64 locos=1 | saiu
+[    2.748h] INFO  Chegadas        entrou_trilho                P2 suzano/mrs trem=26306/L42 entrou no trilho -> circulacao
+[    2.748h] INFO  ISN             chegou                       trem=26306/L42 chegou -> direto para a circulação
+[    2.748h] INFO  ISN             nascimento                   trem=26306/L42 faixa_atual=rp_isn_a proxima_faixa=rp_isn_b
+[    2.748h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [comecou circulacao]
+[    2.748h] INFO  ISN             circular_isn_a               trem=26306/L42
+[    2.748h] INFO  ISN             fim_isn_linha01_a            trem=26306/L42 faixa_atual=rp_isn_b proxima_faixa=rp_isn_c
+[    2.748h] INFO  ISN             circular_isn_b               trem=26306/L42
+[    2.752h] INFO  ISN             fim_isn_linha01_b            trem=26306/L42 faixa_atual=rp_isn_c proxima_faixa=rp_isn_d
+[    2.752h] INFO  ISN             circular_isn_c               trem=26306/L42
+[    2.755h] INFO  ISN             fim_isn_linha01_c            trem=26306/L42 faixa_atual=rp_isn_d proxima_faixa=rp_isn_e
+[    2.755h] INFO  ISN             circular_isn_d               trem=26306/L42
+[    2.773h] INFO  Chegadas        pedido_manual                P3 suzano/mrs pedido pelo botão (fila=1)
+[    2.773h] INFO  Chegadas        aguardando                   P3 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 1 trem(ns) na isn_linha01_a
+[    2.797h] INFO  Chegadas        pedido_manual                P4 suzano/mrs pedido pelo botão (fila=2)
+[    2.797h] INFO  Chegadas        aguardando                   P3 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.797h] INFO  Chegadas        aguardando                   P4 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.808h] INFO  ISN             fim_isn_linha01_d            trem=26306/L42 faixa_atual=rp_isn_e proxima_faixa=rp_isn_porteira
+[    2.808h] INFO  ISN             circular_isn_e               trem=26306/L42
+[    2.817h] INFO  Chegadas        decisao                      P3 suzano/mrs -> isn (trem a caminho do terminal: 26306/L42; linha 02 livre)
+[    2.817h] INFO  Chegadas        inject                       P3 suzano/mrs -> inject (destino=isn, espera=0,04h)
+[    2.817h] INFO  Suzano          paraGestorCirculacao_chegadaCarregados trem=26372 carros=65 vgs=64 locos=1 | saiu
+[    2.817h] INFO  Chegadas        entrou_trilho                P3 suzano/mrs trem=26372/L22 entrou no trilho -> isn
+[    2.817h] INFO  ISN             chegou                       trem=26372/L22 chegou -> estacionar na linha 02
+[    2.817h] INFO  ISN             nascimento                   trem=26372/L22 faixa_atual=rp_isn_a proxima_faixa=rp_isn_b
+[    2.817h] INFO  GesCirculacao   circulacao                   [(L22 - 26372):  suzano] [comecou circulacao]
+[    2.817h] INFO  ISN             circular_isn_a               trem=26372/L22
+[    2.817h] INFO  ISN             fim_isn_linha01_a            trem=26372/L22 faixa_atual=rp_isn_b proxima_faixa=rp_isn_c
+[    2.817h] INFO  ISN             circular_isn_b               trem=26372/L22
+[    2.820h] INFO  Chegadas        pedido_manual                P5 suzano/mrs pedido pelo botão (fila=2)
+[    2.820h] INFO  Chegadas        aguardando                   P4 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 1 trem(ns) na isn_linha01_a
+[    2.820h] INFO  Chegadas        aguardando                   P5 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 1 trem(ns) na isn_linha01_a
+[    2.820h] INFO  ISN             fim_isn_linha01_b            trem=26372/L22 faixa_atual=rp_isn_c proxima_faixa=null
+[    2.820h] INFO  ISN             circular_isn_c               trem=26372/L22
+[    2.824h] INFO  ISN             atravessando_linha02         trem=26372/L22 atravessando para a linha 02
+[    2.827h] INFO  ISN             indo_parada_linha02          trem=26372/L22 indo para o ponto de parada da linha 02
+[    2.842h] INFO  Chegadas        pedido_manual                P6 suzano/mrs pedido pelo botão (fila=3)
+[    2.842h] INFO  Chegadas        aguardando                   P6 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 1 trem(ns) na isn_linha01_a
+[    2.861h] INFO  Chegadas        pedido_manual                P7 suzano/mrs pedido pelo botão (fila=4)
+[    2.861h] INFO  Chegadas        aguardando                   P7 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 1 trem(ns) na isn_linha01_a
+[    2.867h] INFO  Chegadas        aguardando                   P4 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.867h] INFO  Chegadas        aguardando                   P5 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.867h] INFO  Chegadas        aguardando                   P6 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.867h] INFO  Chegadas        aguardando                   P7 suzano/mrs entrada ocupada: faixa_isn_a=OCUPADA, 0 trem(ns) na isn_linha01_a
+[    2.877h] INFO  ISN             fim_isn_linha01_e            trem=26306/L42 faixa_atual=rp_isn_porteira proxima_faixa=rp_pst_val_via2
+[    2.877h] INFO  ISN             circular_isn_porteira        trem=26306/L42
+[    2.881h] INFO  ISN             entrega_à_circulação         trem=26306/L42 faixa_atual=rp_pst_val_via2 proxima_faixa=rp_via3_intermar
+[    2.881h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa val_via2]
+[    2.891h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa via3_intermar]
+[    2.940h] INFO  ISN             estacionado_linha02          trem=26372/L22 estacionado na linha 02, esperando suzano
+[    2.950h] INFO  Chegadas        aguardando                   P4 suzano/mrs trem a caminho do terminal: 26306/L42; linha 02 ocupada por 26372/L22
+[    2.950h] INFO  Chegadas        aguardando                   P5 suzano/mrs trem a caminho do terminal: 26306/L42; linha 02 ocupada por 26372/L22
+[    2.950h] INFO  Chegadas        aguardando                   P6 suzano/mrs trem a caminho do terminal: 26306/L42; linha 02 ocupada por 26372/L22
+[    2.950h] INFO  Chegadas        aguardando                   P7 suzano/mrs trem a caminho do terminal: 26306/L42; linha 02 ocupada por 26372/L22
+[    2.983h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa via3_a]
+[    2.984h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa via3_b]
+[    3.036h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa via3_c]
+[    3.043h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa via3_d]
+[    3.069h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa pst_silosMuro_a]
+[    3.090h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa pst_marginal_c]
+[    3.096h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [entrou faixa pmc_linha6000_a]
+[    3.098h] INFO  GesCirculacao   circulacao                   [(L42 - 26306):  suzano] [saiu para terminal suzano]
+[    3.098h] INFO  Suzano          comecar_encoste              trem=26306 carros=65 vgs=64 locos=1 | entrou
+[    3.098h] INFO  Suzano          para_encostar_linha7000      trem=26306 carros=65 vgs=64 locos=1 | saiu
+[    3.098h] INFO  Suzano          encostar_linha7000           trem=26306 carros=65 vgs=64 locos=1 | entrou
+[    3.098h] INFO  Suzano          mov_avnc__L7000              trem=26306 carros=65 vgs=64 locos=1 | inicio
+[    3.100h] INFO  Chegadas        aguardando                   P4 suzano/mrs terminal não pode receber; trem a caminho do terminal: 26372/L22; linha 02 ocupada por 26372/L22
+[    3.100h] INFO  Chegadas        aguardando                   P5 suzano/mrs terminal não pode receber; trem a caminho do terminal: 26372/L22; linha 02 ocupada por 26372/L22
+[    3.100h] INFO  Chegadas        aguardando                   P6 suzano/mrs terminal não pode receber; trem a caminho do terminal: 26372/L22; linha 02 ocupada por 26372/L22
+[    3.100h] INFO  Chegadas        aguardando                   P7 suzano/mrs terminal não pode receber; trem a caminho do terminal: 26372/L22; linha 02 ocupada por 26372/L22
+[    3.141h] INFO  Suzano          mov_avnc__L7000              trem=26306 carros=65 vgs=64 locos=1 | chegou
+[    3.141h] INFO  Suzano          rmv_40vgs                    trem=26306 carros=65 vgs=64 locos=1 | vai cortar
+[    3.141h] INFO  Suzano          rmv_40vgs                    trem=26438 carros=25 vgs=24 locos=1 | parte cortada
+[    3.141h] INFO  Suzano          para_remover_loco_circulacao trem=26438 carros=25 vgs=24 locos=1 | saiu
+[    3.141h] INFO  Suzano          rmv_40vgs                    trem=26306 carros=40 vgs=40 locos=0 | parte que segue
+[    3.141h] INFO  Suzano          remover_loco_circulacao      trem=26438 carros=25 vgs=24 locos=1 | entrou
+[    3.141h] INFO  Suzano          deixar_24vgs_L7000           trem=26438 carros=25 vgs=24 locos=1 | vai cortar
+[    3.141h] INFO  Suzano          deixar_24vgs_L7000           trem=26439 carros=24 vgs=24 locos=0 | parte cortada
+[    3.141h] INFO  Suzano          para_lote_L7000              trem=26439 carros=24 vgs=24 locos=0 | saiu
+[    3.141h] INFO  Suzano          deixar_24vgs_L7000           trem=26438 carros=1 vgs=0 locos=1 | parte que segue
+[    3.141h] INFO  Suzano          aguardar_lote_sair_6000_a    trem=26438 carros=1 vgs=0 locos=1 | passou
+[    3.141h] INFO  Suzano          aguardar_L7000               trem=26439 carros=24 vgs=24 locos=0 | entrou
+[    3.144h] INFO  Suzano          para_linha01                 trem=26306 carros=40 vgs=40 locos=0 | saiu
+[    3.144h] INFO  Suzano          linha01                      trem=26306 carros=40 vgs=40 locos=0 | entrou
+[    3.144h] INFO  Suzano          colocar_L1                   trem=26306 carros=40 vgs=40 locos=0 | inicio
+[    3.162h] INFO  Suzano          colocar_L1                   trem=26306 carros=40 vgs=40 locos=0 | chegou
+[    3.162h] INFO  Suzano          deixar_lote_L1               trem=26306 carros=40 vgs=40 locos=0 | vai cortar
+[    3.162h] INFO  Suzano          deixar_lote_L1               trem=26440 carros=10 vgs=10 locos=0 | parte cortada
+[    3.162h] INFO  Suzano          para_descarregar_L1          trem=26440 carros=10 vgs=10 locos=0 | saiu
+[    3.162h] INFO  Suzano          deixar_lote_L1               trem=26306 carros=30 vgs=30 locos=0 | parte que segue
+[    3.173h] INFO  Suzano          para_linha02                 trem=26306 carros=30 vgs=30 locos=0 | saiu
+[    3.173h] INFO  Suzano          linha02                      trem=26306 carros=30 vgs=30 locos=0 | entrou
+[    3.173h] INFO  Suzano          colocar_L2                   trem=26306 carros=30 vgs=30 locos=0 | inicio
+[    3.191h] INFO  Suzano          colocar_L2                   trem=26306 carros=30 vgs=30 locos=0 | chegou
+[    3.191h] INFO  Suzano          deixar_lote_L2               trem=26306 carros=30 vgs=30 locos=0 | vai cortar
+[    3.191h] INFO  Suzano          deixar_lote_L2               trem=26441 carros=10 vgs=10 locos=0 | parte cortada
+[    3.191h] INFO  Suzano          para_descarregar_L2          trem=26441 carros=10 vgs=10 locos=0 | saiu
+[    3.191h] INFO  Suzano          deixar_lote_L2               trem=26306 carros=20 vgs=20 locos=0 | parte que segue
+[    3.202h] INFO  Suzano          para_linha03                 trem=26306 carros=20 vgs=20 locos=0 | saiu
+[    3.202h] INFO  Suzano          linha03                      trem=26306 carros=20 vgs=20 locos=0 | entrou
+[    3.202h] INFO  Suzano          colocar_L3                   trem=26306 carros=20 vgs=20 locos=0 | inicio
+[    3.221h] INFO  Suzano          colocar_L3                   trem=26306 carros=20 vgs=20 locos=0 | chegou
+[    3.221h] INFO  Suzano          deixar_lote_L3               trem=26306 carros=20 vgs=20 locos=0 | vai cortar
+[    3.221h] INFO  Suzano          deixar_lote_L3               trem=26442 carros=10 vgs=10 locos=0 | parte cortada
+[    3.221h] INFO  Suzano          para_descarregar_L3          trem=26442 carros=10 vgs=10 locos=0 | saiu
+[    3.221h] INFO  Suzano          deixar_lote_L3               trem=26306 carros=10 vgs=10 locos=0 | parte que segue
+[    3.231h] INFO  Suzano          para_linha04                 trem=26306 carros=10 vgs=10 locos=0 | saiu
+[    3.231h] INFO  Suzano          linha04                      trem=26306 carros=10 vgs=10 locos=0 | entrou
+[    3.231h] INFO  Suzano          colocar_L4                   trem=26306 carros=10 vgs=10 locos=0 | inicio
+[    3.250h] INFO  Suzano          colocar_L4                   trem=26306 carros=10 vgs=10 locos=0 | chegou
+[    3.250h] INFO  Suzano          liberar_faixas_circulacao    trem=26306 carros=10 vgs=10 locos=0 | soltou
+[    3.250h] INFO  Suzano          para_descarregar_L4          trem=26306 carros=10 vgs=10 locos=0 | saiu
+[    3.250h] INFO  Suzano          descarregar_L4               trem=26306 carros=10 vgs=10 locos=0 | entrou
+[    3.250h] INFO  Suzano          descarregar_L1               trem=26440 carros=10 vgs=10 locos=0 | entrou
+[    3.250h] INFO  Suzano          aguarda_L4a                  trem=26440 carros=10 vgs=10 locos=0 | passou
+[    3.250h] INFO  Suzano          descarregar_L2               trem=26441 carros=10 vgs=10 locos=0 | entrou
+[    3.250h] INFO  Suzano          aguarda_L4b                  trem=26441 carros=10 vgs=10 locos=0 | passou
+[    3.250h] INFO  Suzano          descarregar_L3               trem=26442 carros=10 vgs=10 locos=0 | entrou
+[    3.250h] INFO  Suzano          aguarda_L4c                  trem=26442 carros=10 vgs=10 locos=0 | passou
+[    3.262h] INFO  Suzano          fim_descarga_L3              trem=26442 carros=10 vgs=10 locos=0 | saiu
+[11743,5][Suzano][registrar_linha_descarregada] 1 de 4 linhas descarregadas
+[    3.262h] INFO  Suzano          aguardar_troca_L3            trem=26442 carros=10 vgs=10 locos=0 | entrou
+[    3.262h] INFO  Suzano          fim_descarga_L2              trem=26441 carros=10 vgs=10 locos=0 | saiu
+[11743,5][Suzano][registrar_linha_descarregada] 2 de 4 linhas descarregadas
+[    3.262h] INFO  Suzano          aguardar_troca_L2            trem=26441 carros=10 vgs=10 locos=0 | entrou
+[    3.262h] INFO  Suzano          fim_descarga_L1              trem=26440 carros=10 vgs=10 locos=0 | saiu
+[11743,5][Suzano][registrar_linha_descarregada] 3 de 4 linhas descarregadas
+[    3.262h] INFO  Suzano          aguardar_troca_L1            trem=26440 carros=10 vgs=10 locos=0 | entrou
+[    3.262h] INFO  Suzano          fazer_inversao               trem=26306 carros=10 vgs=10 locos=0 | inicio
+[    3.265h] INFO  Suzano          fazer_inversao               trem=26306 carros=10 vgs=10 locos=0 | fim
+[    3.265h] INFO  Suzano          para_vazios_L4               trem=26306 carros=10 vgs=10 locos=0 | saiu
+[11753,5][Suzano][registrar_linha_descarregada] 4 de 4 linhas descarregadas
+[11753,5][Suzano][registrar_linha_descarregada] chama loco FIPS para a troca dos 24
+[    3.265h] INFO  Suzano          usar_recurso_loco1           trem=26443 carros=1 vgs=0 locos=1 | na fila
+[    3.265h] INFO  Suzano          usar_recurso_loco1           trem=26443 carros=1 vgs=0 locos=1 | pegou
+[    3.265h] INFO  Suzano          ocupar_faixas_triangulacao   trem=26443 carros=1 vgs=0 locos=1 | na fila

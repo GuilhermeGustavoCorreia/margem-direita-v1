@@ -279,6 +279,23 @@
 				<ClassName>TES</ClassName>
 			</ActiveObjectClass>
 		</ContainerLink>
+		<ContainerLink>
+			<Id>1794838901685</Id>
+			<Name><![CDATA[coperXXI]]></Name>
+			<X>1150</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>CoperXXI</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
 	</ContainerLinks>
 	<EmbeddedObjects xmlns:al="http://anylogic.com"/>
 	<Presentation>
