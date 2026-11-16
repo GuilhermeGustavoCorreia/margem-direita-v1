@@ -1190,8 +1190,8 @@ inverter_locomotiva.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: solta as faixas de circulação que o trem já deixou
-main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
+					<Code><![CDATA[// solta as faixas de circulação que o trem já deixou, menos marginal_c e linha6000_a (manobras do encoste)
+get_faixas_circulacao_liberar((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9097,8 +9097,8 @@ for (Faixa f : primeiro_alivio_faixas) {
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// depois de deixar o último lote (linha 04) a loco solta a linha 5000/6000
-main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)]]></Code>
+					<Code><![CDATA[// depois de deixar o último lote (linha 04) a loco solta a linha 5000/6000 e as faixas marginal_c e linha6000_a
+get_recursos_fim_encoste((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

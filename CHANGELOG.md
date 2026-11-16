@@ -1788,3 +1788,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** mesmo cenário dos 4 terminais; a loco da Suzano espera no `bloquear_faixas_pmc` até `Eldorado liberar_linha5000_6000 | soltou` e segue até `para_alivio_terminal_pmc ... -> suzano` sem batida.
 - **Doc:** `docs/gestores.md`, seção GestorDeAlivios.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-141 — eldorado-segura-marginal-c-no-encoste
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `eldorado.avancar3.outHit: it has no connections`. O `_eldorado_mnb_encoste` (destino dos `avancar`…`avancar3`) fica na `pst_marginal_c`: a cada lote o trem do Eldorado manobra pela `pmc_linha6000_a` até a marginal_c. O `liberar_faixas_circulacao` (0,945 h) soltava as duas faixas na entrada do terminal; às 1,105/1,110 h o GestorDeCirculacao licenciou marginal_c e linha6000_a para o L42 da Suzano e o `avancar3` bateu nele. A `rp_linha6000` do Eldorado não protege: a circulação usa `rp_pmc_marginal_c` e `rp_pmc_linha6000_a`.
+- **O que (Eldorado):**
+  - Função nova `get_faixas_circulacao_liberar(Trem)`: igual à `liberar_faixas_ocupadas` do GestorDeCirculacao, mas pula `faixa_marginal_c` e `faixa_linha6000_a`. Usada no `liberar_faixas_circulacao`.
+  - Função nova `get_recursos_fim_encoste(Trem)`: linha 5000/6000 + `rp_pmc_marginal_c` + `rp_pmc_linha6000_a` (só os que o trem possui) e `liberar()` nas duas faixas. Usada no `liberar_linha5000_6000` (depois do `tira_10vgs3`), no lugar da `get_recursos_linha_5000_6000`.
+- **Efeito:** a circulação para Suzano e Bracell espera o fim dos encostes do Eldorado (~0,3 h).
+- **Validar:** Eldorado e Suzano juntos; o trem da Suzano espera na `pst_marginal_c`/`linha6000_a` até `Eldorado liberar_linha5000_6000 | soltou`, sem batida no `avancar*`.
+- **Doc:** Eldorado ainda sem ficha em `docs/terminais/`.
+- **Arquivos:** `_alp/Agents/Eldorado/EmbeddedObjects.xml`, `_alp/Agents/Eldorado/Code/Functions.{java,xml}`

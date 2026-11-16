@@ -161,3 +161,34 @@ if (a instanceof Trem) {
 Log.info("Eldorado", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
+
+ResourcePool[] get_faixas_circulacao_liberar(Trem trem)
+{/*ALCODESTART::1798130000001*/
+// igual ao liberar_faixas_ocupadas do GestorDeCirculacao, mas a marginal_c e a linha6000_a
+// ficam com o trem: o encoste do Eldorado manobra até a marginal_c (_eldorado_mnb_encoste).
+// As duas são soltas no liberar_linha5000_6000 (get_recursos_fim_encoste).
+GestorDeCirculacao gc = main().gestorDeCirculacao;
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+for (Faixa f : gc.faixas) {
+	if (f == gc.faixa_marginal_c || f == gc.faixa_linha6000_a) continue;
+	if (f.idTremLicenciado != trem.getId() || f.estado != Faixa.EstadoFaixa.OCUPADA) continue;
+	if (!f.faixaEstaVazia()) continue;
+	f.liberar();
+	if (!trem.resourceUnitsOfPool(f.recurso).isEmpty() && !pools.contains(f.recurso)) pools.add(f.recurso);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+
+ResourcePool[] get_recursos_fim_encoste(Trem trem)
+{/*ALCODESTART::1798130000002*/
+// fim do encoste (loco deixou o último lote): solta a linha 5000/6000
+// e as faixas marginal_c e linha6000_a que o trem segurou durante as manobras.
+GestorDeCirculacao gc = main().gestorDeCirculacao;
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+for (ResourcePool rp : gc.get_recursos_linha_5000_6000(trem)) pools.add(rp);
+for (Faixa f : java.util.List.of(gc.faixa_marginal_c, gc.faixa_linha6000_a)) {
+	if (f.idTremLicenciado == trem.getId()) f.liberar();
+	if (!trem.resourceUnitsOfPool(f.recurso).isEmpty() && !pools.contains(f.recurso)) pools.add(f.recurso);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
