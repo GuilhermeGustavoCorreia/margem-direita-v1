@@ -143,3 +143,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-129**: CoperXXI — descarga não começa grupo com alívio pedido ou em andamento (`pode_descarregar_grupo`)
 - **ALT-130**: CoperXXI — terminal só recebe trem depois de esvaziar (ferrovia é lida na chegada do carregado); ficha `docs/terminais/coperxxi.md`
 - **ALT-131**: CoperXXI — grupo que bate sem lote na linha segue como "chegou" (`tem_lote_a`/`tem_lote_b`)
+- **ALT-132**: Tgrao — podeReceberNovoLote recusa trem entrando (_trem_chegando) ou com carregados no terminal; removido trace "bom dia Bruno"

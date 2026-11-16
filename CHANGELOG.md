@@ -1691,3 +1691,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Doc:** `docs/terminais/coperxxi.md`, seção "Grupo que bate sem lote na linha".
 - **Validar:** alívio de 19 até a 2ª parte descarregar no lote a vazio (`tem_lote_a | false` e depois `guardado (coperXII_vazios_a)`).
 - **Arquivos:** `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXXI/Connectors.xml`, `docs/terminais/coperxxi.md`
+
+## ALT-132 — tgrao-pode-receber-novo-lote
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `podeReceberNovoLote()` do Tgrao retornava sempre `true`. No log, o Y42 saiu da circulação para o terminal às 2,996h e, 15 s depois, o ISN liberou o X34 da linha 02 (`liberado: tgrao pode receber`), com o Y42 ainda entrando.
+- **O que:**
+  - Variável nova `_trem_chegando` (Trem, null).
+  - `comecar_encoste.onEnter`: `_trem_chegando = (Trem) agent;`
+  - `tirarLote.onExitDecoupled`: `_trem_chegando = null;` (1º lote na linha mar)
+  - `podeReceberNovoLote()`: recusa com `_trem_chegando != null` ou `_getVagoesCarregados() > 0`.
+  - Removido o `traceln` de demonstração do `colocarLinhaMar.onEnter` ("bom dia Bruno").
+- **Decisão:** um trem por vez no terminal (mesmo padrão de CoperXI, MoegaoMar e CostaLeite).
+- **Doc:** `docs/terminais/tgrao.md`, seção "Recebimento de trem".
+- **Validar:** X34 fica estacionado na linha 02 até o Y42 descarregar linha mar e moega; `liberado_linha02` só depois dos `lote_*` ficarem null.
+- **Arquivos:** `_alp/Agents/Tgrao/Code/Functions.java`, `_alp/Agents/Tgrao/EmbeddedObjects.xml`, `_alp/Agents/Tgrao/Variables.xml`, `docs/terminais/tgrao.md`

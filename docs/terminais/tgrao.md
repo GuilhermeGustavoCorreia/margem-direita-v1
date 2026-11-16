@@ -10,6 +10,14 @@
   Não são locomotivas da ferrovia.
 - Convenção dos documentos: carro de índice 0 aponta para a Ponta da Praia; o último, para o Valongo.
 
+## Recebimento de trem
+
+`podeReceberNovoLote()` recusa o trem enquanto:
+- há um trem entrando (`_trem_chegando`): do `comecar_encoste` até o `tirarLote` deixar o 1º lote na linha mar;
+- há carregados no terminal (`_getVagoesCarregados()` > 0: `lote_linhaMar` + `lote_linhaTerra`).
+
+O terminal recebe um trem por vez: o próximo só entra depois de descarregar tudo.
+
 ## Regras do alívio
 
 - O alívio do Tgrao é sempre de 40 vagões. Nunca menos.

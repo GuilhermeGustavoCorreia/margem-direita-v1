@@ -342,7 +342,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -665,10 +666,6 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-012: demonstração
-traceln(String.format("[%.1f][Tgrao][colocarLinhaMar] trem=%d bom dia Bruno", time(), agent.getId()));]]></Code>
-				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -951,7 +948,8 @@ traceln(String.format("[%.1f][Tgrao][colocarLinhaMar] trem=%d bom dia Bruno", ti
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linhaMar = ((Trem) train2)]]></Code>
+					<Code><![CDATA[lote_linhaMar = ((Trem) train2);
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
