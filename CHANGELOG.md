@@ -1867,3 +1867,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Efeito:** quem espera o `mnb_pcx` segura só a `via3_a`/`via3_b`, que nenhuma operação da área comum usa.
 - **Doc:** `docs/gestores.md`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-148 — alivio-solta-mnb-pcx-apos-marginal-c
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `Train [603] and train [766] are trying to occupy the switch railwaySwitch82` (4,533 h). O MNB17 (alívio do Tgrao) soltou o `mnb_pcx` no `retornar_alivio` (ao sair do terminal) ainda fisicamente na 7000; no mesmo instante a loco de manobra do alívio da Suzano pegou o `mnb_pcx` e foi para a Suzano por `railwayTrack120` → 7000_b → AMV 82 (trecho sem faixa). Os dois chegaram juntos ao AMV.
+- **O que:**
+  - **GestorDeCirculacao:** `liberar_faixas_ocupadas(Trem)` inclui o `rp_mnb_pcx` (se o trem tiver a unidade) quando `trem.eh_alivio` e a `faixa_marginal_c` já não está licenciada para ele; log `soltou mnb_pcx (saiu da marginal_c)`.
+  - **GestorDeAlivios:** `liberar_mnb_pcx_pmc` passa a soltar nada (`new ResourcePool[0]`); `liberar_faixas_pst` deixa de soltar o `ocupar_mnb_pcx_pst`.
+- **Efeito:** o próximo da fila do `mnb_pcx` espera o trem do alívio sair da área comum (todos saem por `marginal_c → marginal_b`).
+- **Validar:** 4 terminais; depois de cada `retornar_alivio`, o `soltou mnb_pcx (saiu da marginal_c)` aparece quando o trem já está na `marginal_b`/`marginal_a`, e só então o próximo `pegou mnb_pcx`.
+- **Doc:** `docs/gestores.md`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/{EmbeddedObjects.xml,Code/Functions.java}`, `docs/gestores.md`

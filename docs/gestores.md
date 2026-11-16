@@ -32,6 +32,7 @@ Controla as faixas de circulação e o licenciamento dos trens.
 - **Recurso `rp_mnb_pcx`** (ALT-142, capacidade 1): uma operação por vez na área comum de Tgrao, Bracell, Eldorado e Suzano (`silosMuro_a`, `marginal_c`, `linha6000_a`, linhas 5000/6000/7000, `intervalo4000`). Regra: pega primeiro o `rp_mnb_pcx`, depois faixas e linhas.
   - Encoste: no `para_via3_b` (ALT-147; antes no `para_via3_d`), se `eh_terminal_mnb_pcx(trem)`, o trem passa por `entrar_mnb_pcx → ocupar_mnb_pcx → para_licenciar_apos_mnb` antes de licenciar a `via3_c` (a saída do alívio do Tgrao usa a `via3_c`). O terminal solta no fim do encoste (Bracell `liberar_linha5000_6000`, Eldorado `get_recursos_fim_encoste`, Suzano `liberar_faixas_circulacao`, Tgrao `liberar_mnb_pcx`).
   - Alívio e triangulação: ver GestorDeAlivios e Suzano.
+  - Saída do alívio (ALT-148): o trem leva o `mnb_pcx` para a circulação; a `liberar_faixas_ocupadas` inclui o `rp_mnb_pcx` quando o trem é `eh_alivio`, tem a unidade e a `marginal_c` já não está com ele (cauda fora da área comum).
   - Funções: `get_recursos_mnb_pcx(Trem)` (só se o trem tiver a unidade) e `incluir_mnb_pcx(ResourcePool[], Trem)`.
 
 - **Faixas**: cada `Faixa` tem `estado` (LIVRE, OCUPADA, BLOQUEADA), `idTremLicenciado` e `recurso` (ResourcePool).

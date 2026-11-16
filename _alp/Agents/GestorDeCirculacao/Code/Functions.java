@@ -64,6 +64,17 @@ for (Faixa faixa : faixas) {
     }
 }
 
+// trem de alívio da área comum (Tgrao, Bracell, Eldorado, Suzano): solta o mnb_pcx
+// só quando a cauda já passou da marginal_c (último trecho da área comum na saída)
+if (trem.eh_alivio && faixa_marginal_c.idTremLicenciado != trem.getId()) {
+    for (ResourcePool rp : get_recursos_mnb_pcx(trem)) {
+        if (!recursosLiberados.contains(rp)) {
+            recursosLiberados.add(rp);
+            log_circulacao(trem, "soltou mnb_pcx (saiu da marginal_c)");
+        }
+    }
+}
+
 return recursosLiberados.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 

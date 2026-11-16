@@ -3189,7 +3189,7 @@ if (destino.getTrains().contains(t)) {
 			<Parameter>
 				<Name><![CDATA[seizeBlocks]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ bloquear_faixas_pst, usar_recurso_loco_pst, seize_alivio_pst, ocupar_mnb_pcx_pst }]]></Code>
+					<Code><![CDATA[{ bloquear_faixas_pst, usar_recurso_loco_pst, seize_alivio_pst }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6130,8 +6130,9 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// trem do alívio saindo do terminal: solta o mnb_pcx
-main().gestorDeCirculacao.get_recursos_mnb_pcx((Trem) agent)]]></Code>
+					<Code><![CDATA[// o mnb_pcx segue com o trem do alívio e é solto pelo GestorDeCirculacao
+// quando a cauda passa da marginal_c (liberar_faixas_ocupadas)
+new ResourcePool[0]]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6163,9 +6164,6 @@ main().gestorDeCirculacao.get_recursos_mnb_pcx((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[Log.info("GesAlivios", "liberar_mnb_pcx_pmc", String.format("trem=%d soltou", agent.getId()));]]></Code>
-				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>

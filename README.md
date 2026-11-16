@@ -159,3 +159,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-145**: Suzano — zigue-zague do lote na 6000_d: ponto `_suzano_inversao_6000c` e recuos até ele antes de ir do lote para as linhas e das linhas para o lote
 - **ALT-146**: Suzano e Eldorado — `terminal_ocupado()` conta também trem a caminho (`trens_em_circulacao`); a trava mútua vale desde o envio do trem
 - **ALT-147**: GestorDeCirculacao — `mnb_pcx` do encoste pedido no `para_via3_b` (antes da `via3_c`), não mais no `para_via3_d`
+- **ALT-148**: alívio da área comum solta o `mnb_pcx` só quando a cauda passa da `marginal_c` (não mais ao sair do terminal)

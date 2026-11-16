@@ -684,7 +684,8 @@ Log.info("GesAlivios", "retornar_alivio_pmc", String.format("trem=%d vagoes=%d |
     trem.getId(), main().getNumeroDeVagoes(trem),
     terminal == null ? "-" : ((Agent) terminal).getName()));
 
-// solta o mnb_pcx (soltar_mnb_pcx_pmc -> liberar_mnb_pcx_pmc) e entrega o trem ao GestorDeCirculacao
+// entrega o trem ao GestorDeCirculacao (soltar_mnb_pcx_pmc -> para_circulacao_alivio_pmc);
+// o mnb_pcx vai junto e é solto quando a cauda passa da marginal_c
 soltar_mnb_pcx_pmc.take(trem);
 /*ALCODEEND*/}
 
