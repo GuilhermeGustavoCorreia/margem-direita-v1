@@ -149,3 +149,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-135**: Suzano, Eldorado e Bracell — trem de teste entra pelo GestorDeChegadas (`receber_trem`), não direto na circulação
 - **ALT-136**: Tgrao, Bracell, Eldorado e Suzano — log de análise por bloco (variável `log_de_analise`)
 - **ALT-137**: Suzano — alívio solta a `rp_linha6000` antes de sair (`liberar_linha6000_alivio`); destrava a troca do 2º trem
+- **ALT-138**: Eldorado — a loco solta a `rp_linha6000` depois do último lote (`liberar_linha5000_6000`); destrava o 2º trem e a linha 6000 para Bracell e Suzano

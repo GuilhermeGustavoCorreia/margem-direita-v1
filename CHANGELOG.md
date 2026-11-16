@@ -1759,3 +1759,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **A verificar:** a Eldorado tem `ocupar_linha5000_6000` com `rp_linha6000`; conferir se é solto no fim do alívio.
 - **Validar:** 2 trens seguidos na Suzano; na 2ª troca aparece `ocupar_faixas_triangulacao | pegou`.
 - **Arquivos:** `_alp/Agents/Suzano/EmbeddedObjects.xml`, `_alp/Agents/Suzano/Connectors.xml`
+
+## ALT-138 — eldorado-solta-linha6000
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** o trem de carregados do Eldorado apreende a `rp_linha6000` (capacidade 1) no `ocupar_linha5000_6000` e nenhum Release a soltava. O `liberar_faixas_circulacao` só solta faixas (`liberar_faixas_ocupadas`). Depois dos decouples, a unidade fica com a loco, que saía pelo `devolverLocomotiva` com a linha 6000. Todo Seize seguinte da `rp_linha6000` esperava para sempre, sem erro: o 2º trem do Eldorado, o encoste da Bracell, o alívio da Suzano e o GestorDeCirculacao. É a pendência "A verificar" da ALT-137.
+- **O que:** Release novo `liberar_linha5000_6000` (SPECIFIED_RESOURCES, `main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)`, `log_analise(..., "soltou")`) entre o `tira_10vgs3` e o `devolverLocomotiva`, igual ao da Bracell.
+  - Conector `connector31` (`devolverLocomotiva.port`) passa a ligar no `liberar_linha5000_6000.out`. Conector novo `conn_liberar_linha5000_6000` (`tira_10vgs3.out` → `liberar_linha5000_6000.in`).
+- **Validar:** 2 trens seguidos no Eldorado; no 2º aparece `ocupar_linha5000_6000 | pegou`. Depois, Eldorado junto com Bracell e Suzano.
+- **Arquivos:** `_alp/Agents/Eldorado/EmbeddedObjects.xml`, `_alp/Agents/Eldorado/Connectors.xml`
