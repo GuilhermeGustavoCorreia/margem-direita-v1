@@ -1731,3 +1731,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Doc:** `docs/terminais/bracell.md`, seção "Recebimento de trem" (Eldorado e Suzano sem ficha .md).
 - **Validar:** 2 pedidos seguidos para cada terminal; o 2º trem fica na linha 02 do ISN até o alívio do 1º sair.
 - **Arquivos:** `_alp/Agents/{Bracell,Eldorado,Suzano}/{Code/Functions.java,EmbeddedObjects.xml,Variables.xml}`, `docs/terminais/bracell.md`
+
+## ALT-135 — celulose-entra-pelo-gestor-de-chegadas
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** o trem de teste de Suzano, Eldorado e Bracell saía do TrainSource direto para `gestorDeCirculacao.chegada_carregados`, sem chamar `receber_trem()`. O `pedido_atual` do GestorDeChegadas ficava preso no 1º pedido e a fila parava (P2 a P16 sem decisão); o trem rodava sem prefixo (`null`) e sem passar pelo ISN.
+- **O que:** `onExit` do Exit de chegada dos carregados (`paraGestorCirculacao_chegadaCarregados` na Suzano e na Eldorado; Exit equivalente na Bracell) passa a chamar `main().gestorDeChegadas.receber_trem((Trem) agent);`, igual ao Tgrao e ao CostaLeite.
+- **Validar:** pedidos seguidos para os três terminais; cada trem recebe prefixo, passa pelo ISN e a fila anda (`decisao` / `aguardando`).
+- **Arquivos:** `_alp/Agents/{Suzano,Eldorado,Bracell}/EmbeddedObjects.xml`

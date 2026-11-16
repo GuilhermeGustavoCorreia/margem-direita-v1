@@ -146,3 +146,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-132**: Tgrao — podeReceberNovoLote recusa trem entrando (_trem_chegando) ou com carregados no terminal; removido trace "bom dia Bruno"
 - **ALT-133**: Tgrao — não recebe trem com vazios no terminal (esperando ou em alívio)
 - **ALT-134**: Bracell, Eldorado e Suzano — podeReceberNovoLote recusa trem entrando, carregados ou vazios no terminal (Suzano também na troca)
+- **ALT-135**: Suzano, Eldorado e Bracell — trem de teste entra pelo GestorDeChegadas (`receber_trem`), não direto na circulação

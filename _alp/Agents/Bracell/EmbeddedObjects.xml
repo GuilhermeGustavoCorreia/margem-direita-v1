@@ -7605,8 +7605,7 @@ loteVazios_L4 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-003.2: trem de teste entra pela circulacao
-main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
+					<Code><![CDATA[main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
