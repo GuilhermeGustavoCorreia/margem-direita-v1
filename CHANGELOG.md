@@ -1752,7 +1752,7 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 
 ## ALT-137 — suzano-solta-linha6000-no-alivio
 - **Data:** 2026-11-16
-- **Status:** aplicada, aguardando validação (abrir no AnyLogic, conferir a ligação dos blocos e compilar)
+- **Status:** validada em 2026-11-16 (2 trens seguidos na Suzano; a troca do 2º passou pelo `ocupar_faixas_triangulacao`)
 - **Problema:** no 2º trem da Suzano a loco FIPS da troca ficava para sempre em `ocupar_faixas_triangulacao | na fila`. O `ocupar_faixas_mnb_alivio` do alívio anterior apreende `rp_pmc_marginal_c` e `rp_linha6000`; a marginal_c volta pela circulação, mas a `rp_linha6000` não é faixa e nenhum Release a soltava. O trem do alívio saía da Margem Direita com a unidade.
 - **O que:** Release novo `liberar_linha6000_alivio` (SPECIFIED_RESOURCES, `main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)`) entre o `pausar` e o `para_sair_alivio`.
   - Conector `connector52` (`pausar.port1`) passa a ir para `liberar_linha6000_alivio.in`; conector novo `conn_liberar_linha6000_alivio` (`liberar_linha6000_alivio.out` → `para_sair_alivio.in`).
