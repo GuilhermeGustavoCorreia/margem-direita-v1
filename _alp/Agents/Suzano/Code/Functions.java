@@ -32,13 +32,9 @@ return "pmc";
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792408546629*/
-// trem entrando: do comecar_encoste até o 1º lote ficar no terminal
-if (_trem_chegando != null) return false;
-// troca dos 24 em andamento (os lotes mudam de variável)
-if (em_troca) return false;
-if (_getVagoesCarregados() > 0) return false;
-// vazios no terminal (esperando ou em alívio)
-return _getVagoesVazios() == 0;
+// Suzano e Eldorado não atendem ao mesmo tempo: o lote de 24 da Suzano fica na 6000_d,
+// caminho obrigatório do Eldorado (6000_c -> 6000_d -> 6000_e -> 6000_f)
+return !terminal_ocupado() && !main().eldorado.terminal_ocupado();
 /*ALCODEEND*/}
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()
@@ -196,3 +192,13 @@ if (a instanceof Trem) {
 Log.info("Suzano", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
+boolean terminal_ocupado()
+{/*ALCODESTART::1798160000001*/
+// trem entrando: do comecar_encoste até o 1º lote ficar no terminal
+if (_trem_chegando != null) return true;
+// troca dos 24 em andamento (os lotes mudam de variável)
+if (em_troca) return true;
+if (_getVagoesCarregados() > 0) return true;
+// vazios no terminal (esperando ou em alívio)
+return _getVagoesVazios() > 0;
+/*ALCODEEND*/}

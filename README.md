@@ -155,3 +155,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-141**: Eldorado — encoste segura as faixas `marginal_c` e `linha6000_a` até o último lote (manobra até `_eldorado_mnb_encoste`); não bate no trem da Suzano
 - **ALT-142**: recurso `rp_mnb_pcx` — uma operação por vez (encoste, alívio, triangulação) na área comum de Tgrao, Bracell, Eldorado e Suzano; sempre `mnb_pcx` antes das faixas
 - **ALT-143**: GestorDeDVs — saída das DVs licencia a `val_via2` antes do `ir_saida` (não cruza com trem saindo do ISN no `railwaySwitch134`)
+- **ALT-144**: Suzano — lote de 24 na `pmc_linha6000_d` (1 m do fim) em vez da 7000_d; Suzano e Eldorado não atendem ao mesmo tempo (`terminal_ocupado`)

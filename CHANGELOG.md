@@ -1826,3 +1826,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** os 4 terminais juntos; nos trens que saem das DVs aparece `ocupar_val_via2_saida ... pegou` antes do `saida`, e trem do ISN espera a `val_via2` quando um MNB está saindo.
 - **Doc:** `docs/gestores.md`, seção GestorDeDVs.
 - **Arquivos:** `_alp/Agents/GestorDeDVs/{EmbeddedObjects,Connectors}.xml`
+
+## ALT-144 — suzano-lote-6000d-e-trava-eldorado
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `tgrao.colocarTrem_L7.colocarCaudaNoPonto.outHit` (~1,59 h). O lote de 24 da Suzano (carregados e depois vazios) fica horas em `_suzano_encoste` (`pmc_linha7000_e`, ~130 m); com ~420 m, a cauda entra na `7000_d`, linha do Tgrao (`ocupar_7000_abcd`). O Tgrao recuou na 7000 e bateu nos 24 vazios.
+- **Decisão (Guilherme):** o lote vai para a `pmc_linha6000_d` (~563 m), a 1 m do fim da via (lado da 6000_e). A triangulação usa o travessão `railwayTrack82` (6000_c/d ↔ 7000_c) até as linhas (`railwayTrack85`). Como a 6000_d é caminho obrigatório do Eldorado (6000_c → d → e → f), Suzano e Eldorado não atendem ao mesmo tempo.
+- **O que:**
+  - **Suzano:** `mov_avnc__L7000`, `mov_avnc__L7000a`, `mov_avnc__L700b` e `avancar_alivio_L7000` passam de `TARGET_AT_POINT_ON_TRACK` (`_suzano_encoste`) para `TARGET_AT_TRACK_OFFSET` na `pmc_linha6000_d`, `offsetFromBeginningOfTrack = false`, `targetOffset = 1 m`; `tracksToAvoid = { pmc_linha6000_e }` (antes evitavam a 6000_d).
+  - **Suzano e Eldorado:** função nova `terminal_ocupado()` com a regra antiga do `podeReceberNovoLote()`; o `podeReceberNovoLote()` passa a ser `!terminal_ocupado() && !main().<outro>.terminal_ocupado()`.
+- **A conferir:** rotas (se algum movimento exigir inversão no meio, sai `no route`); orientação do corte no encoste (`rmv_40vgs`: os 24 da frente ficam na 6000_d e os 40 de trás vão para as linhas); a triangulação continua passando pela 7000_c, que o Tgrao também usa.
+- **Validar:** os 4 terminais; Suzano encosta e deixa os 24 na 6000_d; Tgrao não bate; pedidos do Eldorado ficam `terminal não pode receber` enquanto a Suzano estiver ocupada (e vice-versa).
+- **Arquivos:** `_alp/Agents/Suzano/EmbeddedObjects.xml`, `_alp/Agents/{Suzano,Eldorado}/Code/Functions.{java,xml}`

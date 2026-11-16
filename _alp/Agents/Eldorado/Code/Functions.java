@@ -44,11 +44,9 @@ return "pmc";
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792958885238*/
-// trem entrando ou descarregando: do comecar_encoste até o 1º lote de vazios
-// (a contagem de carregados ainda não existe)
-if (_trem_chegando != null) return false;
-// vazios no terminal (esperando ou em alívio)
-return _getVagoesVazios() == 0;
+// Suzano e Eldorado não atendem ao mesmo tempo: o lote de 24 da Suzano fica na 6000_d,
+// caminho obrigatório do Eldorado (6000_c -> 6000_d -> 6000_e -> 6000_f)
+return !terminal_ocupado() && !main().suzano.terminal_ocupado();
 /*ALCODEEND*/}
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()
@@ -193,4 +191,13 @@ for (Faixa f : java.util.List.of(gc.faixa_marginal_c, gc.faixa_linha6000_a)) {
 	if (!trem.resourceUnitsOfPool(f.recurso).isEmpty() && !pools.contains(f.recurso)) pools.add(f.recurso);
 }
 return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+
+boolean terminal_ocupado()
+{/*ALCODESTART::1798160000002*/
+// trem entrando ou descarregando: do comecar_encoste até o 1º lote de vazios
+// (a contagem de carregados ainda não existe)
+if (_trem_chegando != null) return true;
+// vazios no terminal (esperando ou em alívio)
+return _getVagoesVazios() > 0;
 /*ALCODEEND*/}

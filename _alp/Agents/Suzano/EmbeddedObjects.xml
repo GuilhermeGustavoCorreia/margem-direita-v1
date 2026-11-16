@@ -339,13 +339,13 @@ encostar_linha7000.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ main().pmc_linha6000_d }]]></Code>
+					<Code><![CDATA[{ main().pmc_linha6000_e }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -356,12 +356,23 @@ encostar_linha7000.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// lote de 24 da Suzano na 6000_d, a 1 m do fim da via (lado da 6000_e)
+main().pmc_linha6000_d]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
@@ -3771,13 +3782,13 @@ registrar_linha_descarregada();]]></Code>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ main().pmc_linha6000_d, main().pmc_linha6000_e }]]></Code>
+					<Code><![CDATA[{ main().pmc_linha6000_e }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3788,12 +3799,23 @@ registrar_linha_descarregada();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// lote de 24 da Suzano na 6000_d, a 1 m do fim da via (lado da 6000_e)
+main().pmc_linha6000_d]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
@@ -4980,13 +5002,13 @@ lote_L7000 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ main().pmc_linha6000_d }]]></Code>
+					<Code><![CDATA[{ main().pmc_linha6000_e }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4997,12 +5019,23 @@ lote_L7000 = null;]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// lote de 24 da Suzano na 6000_d, a 1 m do fim da via (lado da 6000_e)
+main().pmc_linha6000_d]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
@@ -9534,13 +9567,13 @@ loteVazios_L4 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ main().pmc_linha6000_d, main().pmc_linha6000_e }]]></Code>
+					<Code><![CDATA[{ main().pmc_linha6000_e }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9551,12 +9584,23 @@ loteVazios_L4 = null;]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// lote de 24 da Suzano na 6000_d, a 1 m do fim da via (lado da 6000_e)
+main().pmc_linha6000_d]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
