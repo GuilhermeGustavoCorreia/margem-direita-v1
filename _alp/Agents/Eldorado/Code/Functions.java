@@ -195,6 +195,10 @@ return pools.toArray(new ResourcePool[0]);
 
 boolean terminal_ocupado()
 {/*ALCODESTART::1798160000002*/
+// trem a caminho deste terminal (já mandado para a circulação, ainda não chegou ao comecar_encoste)
+for (Trem t : main().gestorDeCirculacao.trens_em_circulacao) {
+	if (t.ITerminalMoega_destino == this) return true;
+}
 // trem entrando ou descarregando: do comecar_encoste até o 1º lote de vazios
 // (a contagem de carregados ainda não existe)
 if (_trem_chegando != null) return true;

@@ -194,6 +194,10 @@ Log.info("Suzano", evento, t + " | " + msg);
 
 boolean terminal_ocupado()
 {/*ALCODESTART::1798160000001*/
+// trem a caminho deste terminal (já mandado para a circulação, ainda não chegou ao comecar_encoste)
+for (Trem t : main().gestorDeCirculacao.trens_em_circulacao) {
+	if (t.ITerminalMoega_destino == this) return true;
+}
 // trem entrando: do comecar_encoste até o 1º lote ficar no terminal
 if (_trem_chegando != null) return true;
 // troca dos 24 em andamento (os lotes mudam de variável)

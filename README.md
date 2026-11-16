@@ -157,3 +157,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-143**: GestorDeDVs — saída das DVs licencia a `val_via2` antes do `ir_saida` (não cruza com trem saindo do ISN no `railwaySwitch134`)
 - **ALT-144**: Suzano — lote de 24 na `pmc_linha6000_d` (1 m do fim) em vez da 7000_d; Suzano e Eldorado não atendem ao mesmo tempo (`terminal_ocupado`)
 - **ALT-145**: Suzano — zigue-zague do lote na 6000_d: ponto `_suzano_inversao_6000c` e recuos até ele antes de ir do lote para as linhas e das linhas para o lote
+- **ALT-146**: Suzano e Eldorado — `terminal_ocupado()` conta também trem a caminho (`trens_em_circulacao`); a trava mútua vale desde o envio do trem

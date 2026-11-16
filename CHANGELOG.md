@@ -1848,3 +1848,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - **Suzano:** `posicaoNaVia` de `mvp_ir_entrada_terminal` (encoste, 40 → linhas), `recuar3` (triangulação, saindo do lote com os 24 carregados), `recuar2` (triangulação, indo deixar os 24 vazios), `recuar4` (triangulação, saindo do lote depois dos vazios) e `recuar_alivio_L7000` (alívio, indo buscar os 24 vazios) passa de `_suzano_entrada_terminal` para `_suzano_inversao_6000c`. Os movimentos para frente seguintes não mudam.
 - **A conferir:** orientação dos trens depois dos acoplamentos (pode dar *no route*); saída do alívio da 6000_d para a circulação.
 - **Arquivos:** `_alp/Agents/Main/Levels/Level.level.xml`, `_alp/Agents/Suzano/EmbeddedObjects.xml`
+
+## ALT-146 — terminal-ocupado-trem-a-caminho
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Contexto:** o zigue-zague da ALT-145 funcionou (3 ciclos completos da Suzano: encoste, triangulação, alívio e saída pelas DVs).
+- **Problema:** `eldorado.entrarNoTerminal.outHit` (~603,63 h). O P5 (Suzano, L02) foi injetado às 602,767 h e o P6 (Eldorado, L96) às 602,983 h: o `terminal_ocupado()` da Suzano dava false porque o L02 ainda estava na circulação (`_trem_chegando` só é preenchido no `comecar_encoste`). O L96 pegou o `mnb_pcx` quando a Suzano terminou o encoste e bateu no lote de 24 na 6000_d.
+- **O que:** `terminal_ocupado()` da Suzano e do Eldorado retorna true também se houver trem em `main().gestorDeCirculacao.trens_em_circulacao` com `ITerminalMoega_destino == this`.
+- **Validar:** pedidos alternados Suzano/Eldorado; o 2º fica `terminal não pode receber` até o 1º terminar o alívio.
+- **Arquivos:** `_alp/Agents/{Suzano,Eldorado}/Code/Functions.java`
