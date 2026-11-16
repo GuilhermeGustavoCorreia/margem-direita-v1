@@ -1857,3 +1857,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que:** `terminal_ocupado()` da Suzano e do Eldorado retorna true também se houver trem em `main().gestorDeCirculacao.trens_em_circulacao` com `ITerminalMoega_destino == this`.
 - **Validar:** pedidos alternados Suzano/Eldorado; o 2º fica `terminal não pode receber` até o 1º terminar o alívio.
 - **Arquivos:** `_alp/Agents/{Suzano,Eldorado}/Code/Functions.java`
+
+## ALT-147 — mnb-pcx-antes-da-via3c
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** deadlock a partir de 1,852 h (sem erro). O alívio do Tgrao (loco 26846) tinha o `mnb_pcx` e esperava o `ocupar_saida_alivio` (`linha6000_a`, `marginal_c`, `silosMuro_a`, **`via3_c`**); o Y94 (Tgrao carregado) segurava `via3_c`/`via3_d` e esperava o `mnb_pcx` (pedido no `para_via3_d`, ALT-142). Em cascata: L42 (Suzano) parado na via3 com a cauda na `val_via2`, MNB01 (Eldorado) preso no `ocupar_val_via2_saida`, alívio da Bracell na fila do `mnb_pcx`.
+- **Causa:** a ALT-142 pedia o `mnb_pcx` depois de licenciar a `via3_c`, que também é usada pela saída do alívio do Tgrao (regra "mnb_pcx antes das faixas" quebrada).
+- **O que (GestorDeCirculacao):** o desvio `eh_terminal_mnb_pcx → entrar_mnb_pcx` sai do `para_via3_d` e vai para o `para_via3_b` (fim da `via3_a`, antes de licenciar a `via3_c`). `para_via3_d` volta a chamar só o `tentar_usar_faixa`.
+- **Efeito:** quem espera o `mnb_pcx` segura só a `via3_a`/`via3_b`, que nenhuma operação da área comum usa.
+- **Doc:** `docs/gestores.md`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`

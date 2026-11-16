@@ -28799,7 +28799,10 @@ boolean coperXI = "coperXI".equals(((Trem) agent).get_terminal_name()) || "costa
 ((Trem) agent).proxima_faixa = coperXI ? null : faixa_via3_c; // ALT-103: coperXI/costaLeite pegam a via2_e junto com as marginais no bloquear_encoste_marginal
 if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
-tentar_usar_faixa.take(agent);]]></Code>
+// tgrao, bracell, eldorado e suzano: pega o mnb_pcx antes de licenciar a via3_c
+// (a saída do alívio do Tgrao usa a via3_c; ALT-147)
+if (eh_terminal_mnb_pcx((Trem) agent)) entrar_mnb_pcx.take(agent);
+else tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -39007,9 +39010,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 ((Trem) agent).proxima_faixa = faixa_silosMuro_a;
 if (trace_circulacao) Log.info("GesCirculacao", "exit_para_via3_d", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 
-// tgrao, bracell, eldorado e suzano: pega o mnb_pcx antes de licenciar a silosMuro_a
-if (eh_terminal_mnb_pcx((Trem) agent)) entrar_mnb_pcx.take(agent);
-else tentar_usar_faixa.take(agent);]]></Code>
+tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -41369,7 +41370,7 @@ main().railwaySwitch73.connectTracks(main().pst_marginal_a, main().pst_marginal_
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// com o mnb_pcx na mão, licencia a silosMuro_a (faixa_atual/proxima_faixa já definidos no para_via3_d)
+					<Code><![CDATA[// com o mnb_pcx na mão, licencia a via3_c (faixa_atual/proxima_faixa já definidos no para_via3_b)
 tentar_usar_faixa.take(agent);]]></Code>
 				</Value>
 			</Parameter>
