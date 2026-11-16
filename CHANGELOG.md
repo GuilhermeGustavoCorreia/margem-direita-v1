@@ -1768,3 +1768,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Conector `connector31` (`devolverLocomotiva.port`) passa a ligar no `liberar_linha5000_6000.out`. Conector novo `conn_liberar_linha5000_6000` (`tira_10vgs3.out` → `liberar_linha5000_6000.in`).
 - **Validar:** 2 trens seguidos no Eldorado; no 2º aparece `ocupar_linha5000_6000 | pegou`. Depois, Eldorado junto com Bracell e Suzano.
 - **Arquivos:** `_alp/Agents/Eldorado/EmbeddedObjects.xml`, `_alp/Agents/Eldorado/Connectors.xml`
+
+## ALT-139 — prioridade-licenciamento-circulacao
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** deadlock com os 4 terminais de celulose atendendo. Às 9,169 h o L50 (Eldorado) licencia a `silosMuro_a`. Às 9,181 h a loco do 2º alívio da Suzano entra no `bloquear_faixas_pmc` pedindo `rp_silosMuro_a` + `rp_pmc_marginal_c` + `rp_pmc_linha6000_a` (apreender tudo de uma vez) e entra na fila dos três pools. O L50 pede a `marginal_c` (livre, 1/1) no `licenciar_proxima_faixa` e fica atrás da loco na fila do pool. A loco espera a `silosMuro_a` do L50 e o L50 espera a loco: nenhum anda. Confirmado no modelo pausado: 1 na fila do `bloquear_faixas_pmc`, 1 na fila do `licenciar_proxima_faixa`, `rp_pmc_marginal_c` 1/1 livre, `rp_silosMuro_a` 0/1.
+- **O que:** prioridade da tarefa = 1 nos Seize `licenciar_esta_faixa` e `licenciar_proxima_faixa` do GestorDeCirculacao. Os Seize de várias faixas (`bloquear_faixas_pmc`, `ocupar_faixas_triangulacao`, `ocupar_faixas_mnb_alivio`, `ocupar_faixas_manobra`) continuam com 0.
+- **Efeito colateral:** com trens seguidos na circulação, a loco do alívio pode esperar mais.
+- **Validar:** mesmo cenário (Tgrao, Bracell, Eldorado e Suzano juntos); depois de `alivio_pmc suzano`, o trem do Eldorado entra na `pst_silosMuro_a` e vem `para_alivio_terminal_pmc ... -> suzano`.
+- **Doc:** `docs/gestores.md`, seção GestorDeCirculacao.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`

@@ -28,6 +28,8 @@ Regra: loco que sobra volta ao GestorDeLocomotivas. Nunca vai para TrainDispose.
 
 Controla as faixas de circulação e o licenciamento dos trens.
 
+- **Prioridade da circulação** (ALT-139): `licenciar_esta_faixa` e `licenciar_proxima_faixa` têm prioridade da tarefa 1. Os Seize de várias faixas (alívio PMC e manobras dos terminais) ficam com 0, então o trem em circulação passa na frente deles na fila dos pools.
+
 - **Faixas**: cada `Faixa` tem `estado` (LIVRE, OCUPADA, BLOQUEADA), `idTremLicenciado` e `recurso` (ResourcePool).
 - **Entrada na circulação**: desde a ALT-084 o trem carregado chega pelas faixas do GestorDeISN e é entregue já com
   `faixa_atual = faixa_val_via2` e `proxima_faixa = faixa_via3_intermar` em `tentar_usar_faixa`. Daí é licenciado até a entrada do terminal de destino.

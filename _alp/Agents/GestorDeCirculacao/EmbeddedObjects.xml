@@ -9089,6 +9089,9 @@ log_entrada(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[priority]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
@@ -9515,6 +9518,9 @@ if (((Trem) agent).proxima_faixa == null) {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[priority]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
