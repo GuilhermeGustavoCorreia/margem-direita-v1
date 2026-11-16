@@ -73,6 +73,7 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - **Celulose PMC** (ALT-014, ALT-061, `analisar_pmc`): Bracell, Suzano e Eldorado, lista `terminais_pmc`.
   Hoje a lista só tem a Bracell: a Suzano entra quando tiver o fluxo de coleta dos vazios; o Eldorado, quando o agente existir.
   Lógica separada: não usa a linha 4000 e não depende das DVs. Só verifica overload > 1 e se há loco da ferrovia no wait.
+  No `bloquear_faixas_pmc` (ALT-140), a loco da Suzano e do Eldorado pede, no mesmo conjunto, as faixas do terminal e a `rp_linha6000`; o terminal solta tudo no início do alívio (`get_recursos_loco_alivio`). A Bracell não pede a 6000 (sem Release no alívio).
   Um alívio do PMC por vez (`terminal_alivio_pmc`). Ida: `loco_alivio_pmc → ocupar_linha5000_6000 → trainEnter_pmc` (`circ_pos_inicio_L5K`) `→ ir_alivio_pmc` (`get_pos_alivio()`) `→ para_alivio_terminal_pmc` (`takeAlivio`).
   O trem sai com todos os vazios do terminal. Volta: o terminal define `faixa_atual`/`proxima_faixa` e chama `retornar_alivio_pmc(trem)`,
   que solta a trava, devolve o terminal para `terminais_pmc`, marca `eh_alivio` e entrega o trem ao GestorDeCirculacao.

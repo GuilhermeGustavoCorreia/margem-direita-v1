@@ -151,3 +151,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-137**: Suzano — alívio solta a `rp_linha6000` antes de sair (`liberar_linha6000_alivio`); destrava a troca do 2º trem
 - **ALT-138**: Eldorado — a loco solta a `rp_linha6000` depois do último lote (`liberar_linha5000_6000`); destrava o 2º trem e a linha 6000 para Bracell e Suzano
 - **ALT-139**: GestorDeCirculacao — licenciamento de faixa com prioridade 1; trem em circulação passa na frente do alívio PMC e das manobras na fila (destrava Eldorado × alívio da Suzano)
+- **ALT-140**: GestorDeAlivios — loco do alívio PMC da Suzano e do Eldorado também pede a `rp_linha6000` no `bloquear_faixas_pmc` (não bate no trem do Eldorado manobrando)

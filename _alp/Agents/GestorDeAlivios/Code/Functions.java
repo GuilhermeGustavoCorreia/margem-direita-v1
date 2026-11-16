@@ -698,6 +698,14 @@ if (faixas != null) {
 		if (f != null && f.recurso != null && !recursos.contains(f.recurso)) recursos.add(f.recurso);
 	}
 }
+// Suzano e Eldorado: a loco também pede a linha 6000 (no mesmo conjunto),
+// para não entrar enquanto um trem de carregados manobra nela.
+// A Suzano e o Eldorado soltam a linha 6000 da loco em get_recursos_loco_alivio.
+// A Bracell fica de fora: o alívio dela não tem Release da linha 6000.
+if (terminal_alivio_pmc == main().suzano || terminal_alivio_pmc == main().eldorado) {
+	ResourcePool rp6000 = main().gestorDeCirculacao.rp_linha6000;
+	if (!recursos.contains(rp6000)) recursos.add(rp6000);
+}
 if (recursos.isEmpty()) {
 	Log.warn("GesAlivios", "bloquear_faixas_pmc", String.format("%s sem faixas de alívio (get_faixas_primeiro_alivio vazio)",
 		((Agent) terminal_alivio_pmc).getName()));

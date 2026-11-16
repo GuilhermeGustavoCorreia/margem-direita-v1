@@ -1778,3 +1778,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** mesmo cenário (Tgrao, Bracell, Eldorado e Suzano juntos); depois de `alivio_pmc suzano`, o trem do Eldorado entra na `pst_silosMuro_a` e vem `para_alivio_terminal_pmc ... -> suzano`.
 - **Doc:** `docs/gestores.md`, seção GestorDeCirculacao.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-140 — loco-alivio-pmc-pede-linha6000
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** com a ALT-139 o deadlock sumiu e apareceu `ir_alivio_pmc.outHit: it has no connections`: a loco do alívio da Suzano (agente 279) bateu no trem do Eldorado (agente 213), que manobrava com a `rp_linha6000`. A loco do alívio PMC só pedia as faixas do terminal; o `ocupar_linha5000_6000` antes do `bloquear_faixas_pmc` (ALT-014/061/063) não está mais no fluxo do GestorDeAlivios (`loco_alivio_pmc → bloquear_faixas_pmc → trainEnter_pmc`), sem registro da remoção.
+- **O que:** `get_conjunto_faixas_pmc()` inclui `main().gestorDeCirculacao.rp_linha6000` no mesmo conjunto quando o terminal é Suzano ou Eldorado. Com "apreender tudo de uma vez", a loco só nasce com as faixas e a linha 6000 livres. A Suzano (`liberar_recursos_loco_alivio`) e o Eldorado (`liberar_faixas_loco_alivio`) já soltam a 6000 pela `get_recursos_loco_alivio`.
+- **Pendente:** Bracell fora: o alívio dela não tem Release da `rp_linha6000` (a loco levaria a unidade embora). Avaliar se a loco da Bracell também precisa da 6000.
+- **Validar:** mesmo cenário dos 4 terminais; a loco da Suzano espera no `bloquear_faixas_pmc` até `Eldorado liberar_linha5000_6000 | soltou` e segue até `para_alivio_terminal_pmc ... -> suzano` sem batida.
+- **Doc:** `docs/gestores.md`, seção GestorDeAlivios.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
