@@ -184,3 +184,14 @@ for (Faixa f : primeiro_alivio_faixas) {
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 
+double log_analise(String evento,Agent a,String msg)
+{/*ALCODESTART::1796400000031*/
+// log de análise: só escreve com log_de_analise = true
+if (!log_de_analise) return;
+String t = (a == null) ? "-" : String.valueOf(a.getId());
+if (a instanceof Trem) {
+	Trem tr = (Trem) a;
+	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
+}
+Log.info("Suzano", evento, t + " | " + msg);
+/*ALCODEEND*/}

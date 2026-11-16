@@ -282,7 +282,8 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
+					<Code><![CDATA[log_analise("paraGestorCirculacao_chegadaCarregados", agent, "saiu");
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -395,6 +396,9 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("iniciar_alivio", agent, "entrou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -513,7 +517,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+					<Code><![CDATA[log_analise("comecar_encoste", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
 _trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
@@ -574,7 +579,8 @@ _trem_chegando = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encostar_linha6000.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encostar_linha7000", agent, "saiu");
+encostar_linha6000.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -688,7 +694,8 @@ _trem_chegando = (Trem) agent;]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-014: ferrovia e segmento do trem em atendimento (usados pelo alívio)
+					<Code><![CDATA[log_analise("encostar_linha6000", agent, "entrou");
+// ALT-014: ferrovia e segmento do trem em atendimento (usados pelo alívio)
 atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -822,6 +829,9 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("entrarNoTerminal", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -837,9 +847,15 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("entrarNoTerminal", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("entrarNoTerminal", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -895,7 +911,8 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[inverter_locomotiva.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_inverter_locomotiva", agent, "saiu");
+inverter_locomotiva.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -1070,6 +1087,9 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ocupar_linha5000_6000", agent, "na fila");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -1085,6 +1105,9 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ocupar_linha5000_6000", agent, "pegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1200,6 +1223,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("liberar_faixas_circulacao", agent, "soltou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUpTerminated]]></Name>
@@ -1315,7 +1341,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("inverter_locomotiva", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1375,7 +1402,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encoste_terminal.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encoste_terminal", agent, "saiu");
+encoste_terminal.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -1450,12 +1478,21 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("removerLoco", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("removerLoco", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("removerLoco", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -1585,12 +1622,18 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("delay", agent, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtExit]]></Name>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("delay", agent, "fim");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1676,6 +1719,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("trainEnter", train, "entrou na via");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -1740,6 +1786,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplarLoco", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -1860,6 +1909,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("trainMoveTo", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -1875,9 +1927,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("trainMoveTo", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("trainMoveTo", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1993,7 +2051,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("encoste_terminal", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2053,7 +2112,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encostar_linha01.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encostar_linha01", agent, "saiu");
+encostar_linha01.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -2167,7 +2227,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("encostar_linha01", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2298,6 +2359,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -2313,9 +2377,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -2442,6 +2512,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar1", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -2457,9 +2530,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar1", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar1", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -2586,6 +2665,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar2", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -2601,9 +2683,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar2", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar2", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -2723,12 +2811,21 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -2852,6 +2949,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar3", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -2867,9 +2967,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar3", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar3", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -2989,12 +3095,21 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs1", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs1", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs1", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3111,12 +3226,21 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs2", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs2", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs2", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3233,12 +3357,21 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs3", train, "vai cortar");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs3", train, "parte que segue");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tira_10vgs3", train2, "parte cortada");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3291,7 +3424,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[descarga_linha01.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_descarga_linha01", agent, "saiu");
+descarga_linha01.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3345,7 +3479,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encostar_linha02.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encostar_linha02", agent, "saiu");
+encostar_linha02.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3399,7 +3534,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encostar_linha03.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encostar_linha03", agent, "saiu");
+encostar_linha03.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3453,7 +3589,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[encostar_linha04.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_encostar_linha04", agent, "saiu");
+encostar_linha04.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3567,7 +3704,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("encostar_linha02", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3687,7 +3825,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("encostar_linha03", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3807,7 +3946,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("encostar_linha04", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3935,6 +4075,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -3950,9 +4093,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4076,6 +4225,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -4091,9 +4243,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4217,6 +4375,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -4232,9 +4393,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4358,6 +4525,9 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -4373,9 +4543,15 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4541,7 +4717,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("descarga_linha01", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4601,7 +4778,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_vazios_linha01 = ((Trem) agent);
+					<Code><![CDATA[log_analise("para_aliviar_linha_01", agent, "saiu");
+lote_vazios_linha01 = ((Trem) agent);
 _trem_chegando = null;
 aliviar_linha_01.take(agent);]]></Code>
 				</Value>
@@ -4657,7 +4835,8 @@ aliviar_linha_01.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_vazios_linha02 = ((Trem) agent);
+					<Code><![CDATA[log_analise("para_aliviar_linha_02", agent, "saiu");
+lote_vazios_linha02 = ((Trem) agent);
 _trem_chegando = null;
 aliviar_linha_02.take(agent)]]></Code>
 				</Value>
@@ -4713,7 +4892,8 @@ aliviar_linha_02.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_vazios_linha03 = ((Trem) agent);
+					<Code><![CDATA[log_analise("para_aliviar_linha_03", agent, "saiu");
+lote_vazios_linha03 = ((Trem) agent);
 _trem_chegando = null;
 aliviar_linha_03.take(agent)]]></Code>
 				</Value>
@@ -4769,7 +4949,8 @@ aliviar_linha_03.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_vazios_linha04 = ((Trem) agent);
+					<Code><![CDATA[log_analise("para_aliviar_linha_04", agent, "saiu");
+lote_vazios_linha04 = ((Trem) agent);
 _trem_chegando = null;
 aliviar_linha_04.take(agent)]]></Code>
 				</Value>
@@ -5027,6 +5208,9 @@ aliviar_linha_04.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aguarda_linha01", agent, "passou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5093,6 +5277,9 @@ aliviar_linha_04.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aguarda_linha02", agent, "passou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5159,6 +5346,9 @@ aliviar_linha_04.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aguarda_linha03", agent, "passou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5274,7 +5464,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("descarga_linha02", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5397,7 +5588,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("descarga_linha03", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5517,7 +5709,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("descarga_linha04", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5577,7 +5770,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[descarga_linha02.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_descarga_linha02", agent, "saiu");
+descarga_linha02.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -5631,7 +5825,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[descarga_linha03.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_descarga_linha03", agent, "saiu");
+descarga_linha03.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -5685,7 +5880,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[descarga_linha04.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_descarga_linha04", agent, "saiu");
+descarga_linha04.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -5766,6 +5962,9 @@ aliviar_linha_04.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("desbloquear_descargas", agent, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtExit]]></Name>
@@ -5773,7 +5972,8 @@ aliviar_linha_04.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[aguarda_linha01.unblock();
+					<Code><![CDATA[log_analise("desbloquear_descargas", agent, "fim");
+aguarda_linha01.unblock();
 aguarda_linha02.unblock();
 aguarda_linha03.unblock();]]></Code>
 				</Value>
@@ -5832,7 +6032,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[buscar_linha01.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_buscar_linha01", agent, "saiu");
+buscar_linha01.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -5946,7 +6147,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("buscar_linha01", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6006,7 +6208,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[buscar_linha02.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_buscar_linha02", agent, "saiu");
+buscar_linha02.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6120,7 +6323,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("buscar_linha02", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6180,7 +6384,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[buscar_linha03.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_buscar_linha03", agent, "saiu");
+buscar_linha03.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6294,7 +6499,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("buscar_linha03", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6354,7 +6560,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[buscar_linha04.take(agent)]]></Code>
+					<Code><![CDATA[log_analise("para_buscar_linha04", agent, "saiu");
+buscar_linha04.take(agent)]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -6468,7 +6675,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[log_analise("buscar_linha04", agent, "entrou");
+atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6528,7 +6736,8 @@ aguarda_linha03.unblock();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_marginal_b;
+					<Code><![CDATA[log_analise("para_circulacao", agent, "saiu");
+((Trem) agent).faixa_atual   = main().gestorDeCirculacao.faixa_marginal_b;
 ((Trem) agent).proxima_faixa = main().gestorDeCirculacao.faixa_marginal_a;
 
 main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
@@ -6653,6 +6862,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01a", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -6668,9 +6880,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha01a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -6794,6 +7012,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02a", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -6809,9 +7030,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha02a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -6935,6 +7162,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03a", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -6950,9 +7180,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha03a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7076,6 +7312,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04a", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -7091,9 +7330,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04a", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_linha04a", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7161,6 +7406,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7225,6 +7473,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar1", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7289,6 +7540,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar2", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7353,6 +7607,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("acoplar3", train1, "acoplou");]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7464,6 +7721,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aliviar_linha_01", agent, "entrou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7581,6 +7841,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aliviar_linha_02", agent, "entrou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7698,6 +7961,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aliviar_linha_03", agent, "entrou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7815,6 +8081,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("aliviar_linha_04", agent, "entrou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -7944,6 +8213,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar4", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -7959,9 +8231,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar4", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar4", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8088,6 +8366,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar5", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -8103,9 +8384,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar5", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar5", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8232,6 +8519,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar6", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -8247,9 +8537,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar6", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar6", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8376,6 +8672,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar7", train, "inicio");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -8391,9 +8690,15 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar7", train, "chegou");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("avancar7", train, "bateu (outHit)");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -8579,6 +8884,9 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ocupar_faixas_manobra", agent, "na fila");]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -8595,7 +8903,8 @@ main().gestorDeAlivios.retornar_alivio_pmc((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.faixa_marginal_c.ocupar((Trem) agent);
+					<Code><![CDATA[log_analise("ocupar_faixas_manobra", agent, "pegou");
+main().gestorDeCirculacao.faixa_marginal_c.ocupar((Trem) agent);
 main().gestorDeCirculacao.faixa_linha6000_a.ocupar((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -8715,7 +9024,8 @@ get_recursos_loco_alivio((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-063: faixas do caminho da loco voltam a ficar livres
+					<Code><![CDATA[log_analise("liberar_faixas_loco_alivio", agent, "soltou");
+// ALT-063: faixas do caminho da loco voltam a ficar livres
 for (Faixa f : primeiro_alivio_faixas) {
 	if (f != null && f.idTremLicenciado == 9999) f.liberar();
 }]]></Code>

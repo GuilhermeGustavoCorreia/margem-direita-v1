@@ -1739,3 +1739,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que:** `onExit` do Exit de chegada dos carregados (`paraGestorCirculacao_chegadaCarregados` na Suzano e na Eldorado; Exit equivalente na Bracell) passa a chamar `main().gestorDeChegadas.receber_trem((Trem) agent);`, igual ao Tgrao e ao CostaLeite.
 - **Validar:** pedidos seguidos para os três terminais; cada trem recebe prefixo, passa pelo ISN e a fila anda (`decisao` / `aguardando`).
 - **Arquivos:** `_alp/Agents/{Suzano,Eldorado,Bracell}/EmbeddedObjects.xml`
+
+## ALT-136 — log-de-analise-tgrao-celulose
+- **Data:** 2026-11-16
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Motivo:** o modelo travou sem erro com Tgrao, Bracell, Eldorado e Suzano atendendo ao mesmo tempo; falta rastro das manobras.
+- **O que:** variável `log_de_analise` (boolean, true) e função `log_analise(evento, agente, msg)` no Tgrao, Bracell, Eldorado e Suzano, no padrão da ALT-123. Cada bloco da biblioteca escreve no log (classe `Log`, origem = nome do agente, evento = nome do bloco):
+  - mesmos pontos da ALT-123, mais Enter ("entrou") e Exit ("saiu");
+  - blocos próprios do modelo (MoverTremCompleto, DescarregaLote, DecoupleDelay etc.) não foram instrumentados;
+  - Tgrao 74 blocos (107 pontos), Bracell 72 (114), Eldorado 80 (130), Suzano 107 (165). A lógica não muda.
+- **Arquivos:** `_alp/Agents/{Tgrao,Bracell,Eldorado,Suzano}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{Tgrao,Bracell,Eldorado,Suzano}/Code/Functions.{java,xml}`
