@@ -1991,3 +1991,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `Pedido.segmento` (null = segmento padrão do terminal; o `tempo_entre_chegadas.csv` ainda não traz segmento).
 - **Validar:** TES com Rumo e depois MRS; o MRS vai para o ISN (`terminal com outro tipo (rumo/grao)`) e só sai com o TES vazio.
 - **Arquivos:** `_alp/Agents/{TES,T39}/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeChegadas/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeISN/Code/Functions.java`, `_alp/Classes/Class.Pedido.java`
+
+## ALT-159 — adm-segundo-lote-offset
+- **Data:** 2026-11-17
+- **Status:** aplicada
+- **Problema:** `_adm_segundo_lote (PositionOnTrack) : Parameter 'offset=1500.0' should be in the range [0, 1267.725...]` na criação do modelo. O comprimento da `pmc_linha2000_a` medido pelos pontos do desenho (1.743) não é o comprimento real (1.267,7 m).
+- **O que:** `_adm_segundo_lote` volta para 1.045 (o resto de até 10 vagões + 2 locos no fim da 2000 ocupa ~1.048–1.268).
+- **Atenção:** com a frente em 1.045, um trem de 82 no 2º lote fica com a cauda ~435 m no `railwayTrack78` (entrada da 1000/2000/3000) e segura as faixas da circulação até o `mov_linha2K_ponto_b`.
+- **Arquivos:** `_alp/Agents/Main/Levels/Level.level.xml`
