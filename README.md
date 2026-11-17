@@ -169,3 +169,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-155**: ADM — Seize das locos FIPS pelo trem do ADM (antes do `acoplar_loco_mnb.in1`) e Release no `rls_moema1`
 - **ALT-156**: GestorDeISN e GestorDeDVs — `faixa_isn_linha02_e` licenciada pela travessia para a linha 02 e pela saída das DVs
 - **ALT-157**: ADM — 2º lote com `_LOTE_DESCARGA_TAMANHO_RECEBIMENTO` (10) e promoção só com o terminal vazio quando a ferrovia/segmento muda
+- **ALT-158**: TES e T39 — só recebem outra ferrovia/segmento com o terminal vazio (`pode_receber_tipo` no GestorDeChegadas e no ISN)

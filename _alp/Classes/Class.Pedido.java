@@ -11,6 +11,7 @@ public class Pedido implements Serializable {
     public ITerminalMoega   terminal;
     public String           instancia;
     public String           ferrovia;          // "rumo" | "mrs" | "vli"
+    public String           segmento;          // "grao" | "acucar" | ...; null = segmento padrão do terminal
     public com.anylogic.libraries.rail.TrainSource fonte;   // tremTeste_<ferrovia> do terminal
     public double           hora_pedido_h  = -1;
     public double           hora_entrada_h = -1;

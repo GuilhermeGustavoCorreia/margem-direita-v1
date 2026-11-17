@@ -28,7 +28,8 @@ for (Trem t : main().gestorDeCirculacao.trens_em_circulacao) {
 Pedido p = main().gestorDeChegadas.pedido_atual;
 if (p != null && "circulacao".equals(p.destino) && p.terminal == destino) trem_a_caminho = true;
 
-if (destino.podeReceberNovoLote() && !trem_a_caminho) {
+// mesma regra de ferrovia/segmento do GestorDeChegadas, com o tipo real do trem parado
+if (main().gestorDeChegadas.pode_receber_trem(destino, lote_linha02) && !trem_a_caminho) {
 	main().gestorDeCirculacao.trens_em_circulacao.add(lote_linha02);
 	Log.info("ISN", "liberado_linha02", String.format("trem=%d/%s liberado: %s pode receber", lote_linha02.getId(), ((Trem) lote_linha02).prefixo, ((Agent) lote_linha02.ITerminalMoega_destino).getName()));
 	parado_linha02 = false;

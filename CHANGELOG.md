@@ -1978,3 +1978,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Pendência:** T39 e TES. No T39 o resto fica perto do `t39_encoste` (1.230), e um trem de 82 no 2º lote ficaria com a cauda no `railwayTrack78`. No TES o `_tes_segundo_lote` está na `pmc_linha4000_c`.
 - **Validar:** ADM com trem VLI seguido de MRS; o MRS para no 2º lote e só vira `emDescarga` depois de `segundo_lote ... promovido (mesmo_tipo=false)`, com a linha 7 vazia.
 - **Arquivos:** `_alp/Agents/ADM/{EmbeddedObjects.xml,Connectors.xml,Variables.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/{TES,T39}/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Events.java`, `_alp/Agents/Main/Levels/Level.level.xml`
+
+## ALT-158 — tes-t39-receber-mesmo-tipo
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** impasse na linha 4000 (~7 h). O M78 (MRS) entrou no TES às 6,970 h com lotes do Y02 (Rumo) ainda no terminal; o trem da 4000 ficou Rumo com 59 vagões e o TES, só com vazios MRS, esperou para sempre (`tes espera | terminal: mrs/grao | trem da 4000: rumo/grao`).
+- **Regra:** TES e T39 só recebem trem de outra ferrovia ou segmento com o terminal vazio (sem carregados e sem vazios). O ADM resolve pelo 2º lote.
+- **O que:**
+  - TES e T39: nova função `terminal_vazio()`.
+  - GestorDeChegadas: novas funções `pode_receber_tipo(terminal, ferrovia, segmento)` e `pode_receber_trem(terminal, trem)` (tipo do 1º vagão). `decidir_destino` usa `pode_receber_tipo` com o pedido; `motivo_destino` registra `terminal com outro tipo (fer/seg)`.
+  - GestorDeISN `verificar_saida`: libera o trem da linha 02 com `pode_receber_trem`.
+  - `Pedido.segmento` (null = segmento padrão do terminal; o `tempo_entre_chegadas.csv` ainda não traz segmento).
+- **Validar:** TES com Rumo e depois MRS; o MRS vai para o ISN (`terminal com outro tipo (rumo/grao)`) e só sai com o TES vazio.
+- **Arquivos:** `_alp/Agents/{TES,T39}/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeChegadas/Code/{Functions.java,Functions.xml}`, `_alp/Agents/GestorDeISN/Code/Functions.java`, `_alp/Classes/Class.Pedido.java`

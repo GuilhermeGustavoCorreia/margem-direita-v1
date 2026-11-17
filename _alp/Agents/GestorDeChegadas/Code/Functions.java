@@ -97,7 +97,7 @@ String decidir_destino(Pedido p)
 {/*ALCODESTART::1795840000111*/
 // se o terminal pode receber e não há outro trem a caminho dele, vai direto para a circulação.
 // Senão estaciona no ISN, se a linha 02 estiver livre. Senão espera na fila.
-if (p.terminal.podeReceberNovoLote() && trem_a_caminho(p) == null) return "circulacao";
+if (pode_receber_tipo(p.terminal, p.ferrovia, p.segmento) && trem_a_caminho(p) == null) return "circulacao";
 if (main().gestorDeISN.pode_estacionar()) return "isn";
 return null;
 /*ALCODEEND*/}
@@ -238,6 +238,8 @@ String motivo_destino(Pedido p)
 // descreve por que o pedido não vai direto para a circulação
 java.util.List<String> m = new java.util.ArrayList<String>();
 if (!p.terminal.podeReceberNovoLote()) m.add("terminal não pode receber");
+else if (!pode_receber_tipo(p.terminal, p.ferrovia, p.segmento))
+	m.add(String.format("terminal com outro tipo (%s/%s)", p.terminal.getFerrovia(), p.terminal.getSegmento()));
 Trem c = trem_a_caminho(p);
 if (c != null) m.add(String.format("trem a caminho do terminal: %d/%s", c.getId(), c.prefixo));
 if (!main().gestorDeISN.pode_estacionar()) {
@@ -255,3 +257,31 @@ p.ultimo_motivo = motivo;
 Log.info("Chegadas", "aguardando", String.format("%s %s", p, motivo));
 /*ALCODEEND*/}
 
+boolean pode_receber_tipo(ITerminalMoega terminal,String ferrovia,String segmento)
+{/*ALCODESTART::1798200000303*/
+// um terminal não descarrega duas ferrovias/segmentos ao mesmo tempo:
+// TES e T39 só recebem outro tipo com o terminal vazio (o ADM resolve pelo 2º lote)
+// segmento null = segmento padrão do terminal (o pedido ainda não traz segmento)
+if (!terminal.podeReceberNovoLote()) return false;
+
+boolean vazio;
+if      (terminal instanceof TES) vazio = ((TES) terminal).terminal_vazio();
+else if (terminal instanceof T39) vazio = ((T39) terminal).terminal_vazio();
+else return true;
+if (vazio) return true;
+
+boolean mesma_ferrovia = java.util.Objects.equals(ferrovia, terminal.getFerrovia());
+boolean mesmo_segmento = segmento == null || java.util.Objects.equals(segmento, terminal.getSegmento());
+return mesma_ferrovia && mesmo_segmento;
+/*ALCODEEND*/}
+
+boolean pode_receber_trem(ITerminalMoega terminal,Trem trem)
+{/*ALCODESTART::1798200000304*/
+// mesma regra do pode_receber_tipo, com a ferrovia e o segmento do 1º vagão do trem
+String fer = null, seg = null;
+for (int i = 0; i < trem.size(); i++) {
+	Agent c = trem.getCar(i);
+	if (c instanceof Vagao) { fer = ((Vagao) c).ferrovia; seg = ((Vagao) c).segmento; break; }
+}
+return pode_receber_tipo(terminal, fer, seg);
+/*ALCODEEND*/}

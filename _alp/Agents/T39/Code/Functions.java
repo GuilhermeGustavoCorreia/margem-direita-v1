@@ -313,3 +313,12 @@ int get_quantidade_loco_alivio()
 return 1;
 /*ALCODEEND*/}
 
+boolean terminal_vazio()
+{/*ALCODESTART::1798200000302*/
+// sem trem chegando, sem lote na 1000 e sem vagões (carregados ou vazios) no terminal
+return _trem_chegando == null
+    && lote_linha_1000_emDescarga == null
+    && lote_linha_1000_proximo == null
+    && _getVagoesCarregados() == 0
+    && _getVagoesVazios() == 0;
+/*ALCODEEND*/}

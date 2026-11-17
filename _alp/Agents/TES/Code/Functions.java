@@ -401,3 +401,15 @@ Trem lote = (Trem) wait_encoste_3000.get(0);
 Log.info("TES", "novo_lote_3000", String.format("lote=%d sai da 3000 para o encoste", lote.getId()));
 wait_encoste_3000.free(lote);
 /*ALCODEEND*/}
+
+boolean terminal_vazio()
+{/*ALCODESTART::1798200000301*/
+// sem trem chegando, sem lote na 3000, sem encoste e sem vagões (carregados ou vazios) no terminal
+return _trem_chegando == null
+    && lote_linha3000_emDescarga == null
+    && lote_linha3000_proximo == null
+    && trem_em_encoste == null
+    && wait_encoste_3000.size() == 0
+    && _getVagoesCarregados() == 0
+    && _getVagoesVazios() == 0;
+/*ALCODEEND*/}
