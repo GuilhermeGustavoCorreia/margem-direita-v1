@@ -167,3 +167,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-153**: T39 — botão "Encostar" e Exit do trem de teste passam pelo GestorDeChegadas (`pedir_trem` / `receber_trem`)
 - **ALT-154**: ADM — `rls_fim_manobra` devolve também o `linha2000_lote_em_descarga`
 - **ALT-155**: ADM — Seize das locos FIPS pelo trem do ADM (antes do `acoplar_loco_mnb.in1`) e Release no `rls_moema1`
+- **ALT-156**: GestorDeISN e GestorDeDVs — `faixa_isn_linha02_e` licenciada pela travessia para a linha 02 e pela saída das DVs

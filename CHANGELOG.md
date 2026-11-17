@@ -1952,3 +1952,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Pendência:** as locos FIPS devolvidas pelo ADM acumulam no `locomotivasPCX` (o alívio PCX sempre cria locos novas); o T39 tira a loco do modelo no `trainExit2`.
 - **Validar:** ciclo só do ADM; aparece `rp_locoFips_pcx ... devolveu` 2x antes do `devolverLocomotiva2` e o pool volta a 8 livres.
 - **Arquivos:** `_alp/Agents/ADM/{EmbeddedObjects.xml,Connectors.xml}`
+
+## ALT-156 — faixa-isn-linha02-e
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `Train [684] and train [780] are trying to occupy the switch railwaySwitch124 simultaneously` (3,117 h). O U66 (ADM) atravessava para a linha 02 do ISN (`isn_linha01_c` → `railwayTrack24` → `isn_linha02_e` → AMV 124 → `isn_linha02_f`) e o MNB05 saía das DVs para o `circ_pos_fim_placa_2` (na `isn_linha02_a`) por `railwayTrack14` → AMV 124 → `isn_linha02_e`. Nenhum dos dois licenciava a `isn_linha02_e`: a travessia ia com `proxima_faixa = null` e a saída das DVs só pegava a `val_via2`.
+- **O que:**
+  - GestorDeISN: novo `rp_isn_linha02_e` e nova `faixa_isn_linha02_e` (track `isn_linha02_e`, linha `l_isn_linha02_e`), registrada no `registrar_faixas`.
+  - GestorDeISN `para_isn_c`: quem vai estacionar pede `faixa_isn_linha02_e` como próxima (antes `null`); `ir_isn_linha02_e.onEnter` ocupa a faixa. Solta no `liberar_linha01` (ou na próxima liberação) quando a `isn_linha02_e` esvazia.
+  - GestorDeDVs `ocupar_val_via2_saida`: Seize de `{ faixa_val_via2.recurso, gestorDeISN.rp_isn_linha02_e }` e ocupa as duas faixas; o `liberar_faixas_circulacao` (depois do `trainExit`) solta.
+- **Validar:** trem estacionando na linha 02 do ISN enquanto um trem sai das DVs; um espera o outro passar pela `isn_linha02_e`.
+- **Arquivos:** `_alp/Agents/GestorDeISN/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java}`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`

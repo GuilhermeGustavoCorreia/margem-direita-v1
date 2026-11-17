@@ -65,7 +65,7 @@ double registrar_faixas()
 Log.iniciar(this);
 // as faixas do ISN entram na lista do GestorDeCirculacao para que
 // liberar_faixas_ocupadas() as libere quando o trem sair delas
-List<Faixa> faixas_isn = java.util.List.of(faixa_isn_a, faixa_isn_b, faixa_isn_c, faixa_isn_d, faixa_isn_e, faixa_isn_porteira);
+List<Faixa> faixas_isn = java.util.List.of(faixa_isn_a, faixa_isn_b, faixa_isn_c, faixa_isn_d, faixa_isn_e, faixa_isn_porteira, faixa_isn_linha02_e);
 for (Faixa f : faixas_isn)
 	if (!main().gestorDeCirculacao.faixas.contains(f)) main().gestorDeCirculacao.faixas.add(f);
 Log.info("ISN", "registrar_faixas", String.format("%d faixas registradas no GestorDeCirculacao", faixas_isn.size()));

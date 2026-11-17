@@ -4516,11 +4516,19 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 			<Parameter>
 				<Name><![CDATA[seizeFromOnePool]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[new ResourcePool[][] {
+    {
+        main().gestorDeCirculacao.faixa_val_via2.recurso,
+        main().gestorDeISN.rp_isn_linha02_e
+    }
+}]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resourcePool]]></Name>
@@ -4654,9 +4662,11 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// licencia a val_via2 antes de sair das DVs (o ir_saida passa pelo AMV da saída do ISN)
+					<Code><![CDATA[// licencia a val_via2 e a isn_linha02_e antes de sair das DVs (o ir_saida passa pelo AMV da saída do ISN)
 // o liberar_faixas_circulacao (depois do trainExit) solta junto com as outras faixas do trem
 main().gestorDeCirculacao.faixa_val_via2.ocupar((Trem) agent);
+// a saída passa pela isn_linha02_e (travessão do ISN)
+main().gestorDeISN.faixa_isn_linha02_e.ocupar((Trem) agent);
 Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>

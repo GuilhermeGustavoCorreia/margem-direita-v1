@@ -256,4 +256,32 @@ faixa_isn_porteira.linhaTMDS			= pl_isn_porteira;]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798200000044</Id>
+		<Name><![CDATA[faixa_isn_linha02_e]]></Name>
+		<X>-100</X>
+		<Y>920</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_isn_linha02_e          	= new Faixa();
+faixa_isn_linha02_e.ordem      	= 7;
+faixa_isn_linha02_e.recurso    	= rp_isn_linha02_e;
+faixa_isn_linha02_e.track      	= main().isn_linha02_e;
+faixa_isn_linha02_e.estado     	= Faixa.EstadoFaixa.LIVRE;
+faixa_isn_linha02_e.enter      	= null;
+faixa_isn_linha02_e.linhaTMDS	= l_isn_linha02_e;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 </Variables>
