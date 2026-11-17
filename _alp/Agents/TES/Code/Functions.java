@@ -60,7 +60,10 @@ return (Main) getEngine().getRoot();
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792519031770*/
-return true;
+// trem entrando: do comecar_encoste até parar na linha 3000
+if (_trem_chegando != null) return false;
+// a 3000 comporta um trem só: o resto fica nela durante o ciclo
+return lote_linha3000_emDescarga == null && lote_linha3000_proximo == null;
 /*ALCODEEND*/}
 
 float getOverloadVazios()

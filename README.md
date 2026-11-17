@@ -160,3 +160,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-146**: Suzano e Eldorado — `terminal_ocupado()` conta também trem a caminho (`trens_em_circulacao`); a trava mútua vale desde o envio do trem
 - **ALT-147**: GestorDeCirculacao — `mnb_pcx` do encoste pedido no `para_via3_b` (antes da `via3_c`), não mais no `para_via3_d`
 - **ALT-148**: alívio da área comum solta o `mnb_pcx` só quando a cauda passa da `marginal_c` (não mais ao sair do terminal)
+- **ALT-149**: TES, ADM e T39 — `_trem_chegando` e `podeReceberNovoLote()` pela linha de chegada (3000/2000/1000); T39 `encosta_L1K1_proximo` grava o `proximo`

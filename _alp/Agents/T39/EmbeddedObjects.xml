@@ -1664,7 +1664,8 @@ main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2481,7 +2482,10 @@ main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
 atualizar_faixa_linha_1000_a((Trem) train);
 if (lote_linha_1000_emDescarga == lote_linha_1000_proximo){
 	lote_linha_1000_proximo = null;
-}]]></Code>
+}
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -7074,8 +7078,11 @@ var_loco = ((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linha_1000_emDescarga = ((Trem) train);
-atualizar_faixa_linha_1000_a((Trem) train);]]></Code>
+					<Code><![CDATA[lote_linha_1000_proximo = ((Trem) train);
+atualizar_faixa_linha_1000_a((Trem) train);
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

@@ -772,7 +772,8 @@ Log.info("ADM", "alivio_inicio", String.format("loco=%d chegou com %d vagoes | l
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1378,7 +1379,10 @@ atualizar_licenciamento_linha2000((Trem) train);
 
 if (lote_linha2000_emDescarga == lote_linha2000_proximo){
 	lote_linha2000_proximo = null;
-}]]></Code>
+}
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1604,7 +1608,10 @@ if (lote_linha2000_emDescarga == lote_linha2000_proximo){
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_linha2000_proximo = ((Trem) train);
-atualizar_licenciamento_linha2000((Trem) train);]]></Code>
+atualizar_licenciamento_linha2000((Trem) train);
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

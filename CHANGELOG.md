@@ -1879,3 +1879,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Validar:** 4 terminais; depois de cada `retornar_alivio`, o `soltou mnb_pcx (saiu da marginal_c)` aparece quando o trem já está na `marginal_b`/`marginal_a`, e só então o próximo `pegou mnb_pcx`.
 - **Doc:** `docs/gestores.md`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/{EmbeddedObjects.xml,Code/Functions.java}`, `docs/gestores.md`
+
+## ALT-149 — pode-receber-novo-lote-pcx
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `podeReceberNovoLote()` do TES, ADM e T39 retornava sempre `true`. O GestorDeChegadas mandava trem direto para a circulação com a linha de chegada ocupada (no TES o trem ficava parado na circulação esperando a `faixa_linha3000_a`). No T39, o `encosta_L1K1_proximo` gravava `lote_linha_1000_emDescarga` em vez de `lote_linha_1000_proximo`, sobrescrevendo o lote em descarga.
+- **O que:**
+  - Nova variável `Trem _trem_chegando` (null) nos três agentes. Recebe o trem no `onEnter` do `comecar_encoste` (TES, ADM) / `encoste_linha1000` (T39); volta a null quando o trem para na linha de chegada (`mov_linha3K_ponto_a/b`, `mov_linha2K_ponto_a/b`, `encosta_L1K1_proximo/fim`).
+  - `podeReceberNovoLote()`: false com `_trem_chegando != null`. TES: `lote_linha3000_emDescarga == null && lote_linha3000_proximo == null` (a 3000 comporta um trem). ADM: `lote_linha2000_proximo == null`. T39: `lote_linha_1000_proximo == null`.
+  - T39 `encosta_L1K1_proximo.onEnter`: grava `lote_linha_1000_proximo`.
+- **A confirmar:** se a 2000 e a 1000 comportam fisicamente dois trens de 82 (`emDescarga` + `proximo`). Se não, ADM e T39 passam a usar a condição do TES.
+- **Validar:** dois pedidos seguidos para o mesmo terminal; o 2º fica `terminal não pode receber` (ou vai ao ISN) até o 1º parar na linha de chegada (TES: até a 3000 esvaziar).
+- **Arquivos:** `_alp/Agents/{TES,ADM,T39}/{Variables.xml,EmbeddedObjects.xml,Code/Functions.java}`

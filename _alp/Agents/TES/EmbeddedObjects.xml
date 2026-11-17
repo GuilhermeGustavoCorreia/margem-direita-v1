@@ -1022,7 +1022,8 @@ main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
+					<Code><![CDATA[atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+_trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1382,7 +1383,10 @@ atualizar_licenciamento_linha3000((Trem) train);
 
 if (lote_linha3000_emDescarga == lote_linha3000_proximo){
 	lote_linha3000_proximo = null;
-}]]></Code>
+}
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1608,7 +1612,10 @@ if (lote_linha3000_emDescarga == lote_linha3000_proximo){
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_linha3000_proximo = ((Trem) train);
-atualizar_licenciamento_linha3000((Trem) train);]]></Code>
+atualizar_licenciamento_linha3000((Trem) train);
+
+// trem parado na linha de chegada
+_trem_chegando = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
