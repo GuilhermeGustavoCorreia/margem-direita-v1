@@ -1891,3 +1891,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **A confirmar:** se a 2000 e a 1000 comportam fisicamente dois trens de 82 (`emDescarga` + `proximo`). Se não, ADM e T39 passam a usar a condição do TES.
 - **Validar:** dois pedidos seguidos para o mesmo terminal; o 2º fica `terminal não pode receber` (ou vai ao ISN) até o 1º parar na linha de chegada (TES: até a 3000 esvaziar).
 - **Arquivos:** `_alp/Agents/{TES,ADM,T39}/{Variables.xml,EmbeddedObjects.xml,Code/Functions.java}`
+
+## ALT-150 — adm-t39-linha-chegada-vazia
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `root.adm.mov_linha2K_ponto_a: Agent can't leave the port outHit: it has no connections` (~5,10 h). O Y42 voltou para a 2000 com 27 vagões (`fim_manobra`); pela ALT-149 o ADM podia receber (`proximo` livre), o X34 foi para o `mov_linha2K_ponto_a` e bateu na cauda do Y42. O `outHit` do bloco de `proximo` está desconectado nos três terminais (`mov_linha2K_ponto_a`, `mov_linha3K_ponto_a`, `encosta_L1K1_proximo`).
+- **O que:** `podeReceberNovoLote()` do ADM e do T39 passa a exigir a linha de chegada vazia, como o TES: `emDescarga == null && proximo == null` (além de `_trem_chegando == null`). O 2º trem espera no ISN.
+- **Pendência:** usar o `proximo` de fato (ponto de parada atrás do lote ou ligação do `outHit`) nos três terminais.
+- **Validar:** vários pedidos seguidos para o ADM; o 2º fica na linha 02 do ISN até a 2000 esvaziar.
+- **Arquivos:** `_alp/Agents/{ADM,T39}/Code/Functions.java`

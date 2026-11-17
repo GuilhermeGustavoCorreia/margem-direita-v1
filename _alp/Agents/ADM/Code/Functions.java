@@ -7,8 +7,8 @@ boolean podeReceberNovoLote()
 {/*ALCODESTART::1792172934670*/
 // trem entrando: do comecar_encoste até parar na linha 2000
 if (_trem_chegando != null) return false;
-// a 2000 aceita um 2º trem como proximo, atrás do lote em descarga
-return lote_linha2000_proximo == null;
+// a 2000 comporta um trem só: o 2º espera no ISN
+return lote_linha2000_emDescarga == null && lote_linha2000_proximo == null;
 /*ALCODEEND*/}
 
 float getOverloadVazios()

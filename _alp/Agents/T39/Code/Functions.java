@@ -119,8 +119,8 @@ boolean podeReceberNovoLote()
 {/*ALCODESTART::1790949987803*/
 // trem entrando: do encoste_linha1000 até parar na linha 1000
 if (_trem_chegando != null) return false;
-// a 1000 aceita um 2º trem como proximo, atrás do lote em descarga
-return lote_linha_1000_proximo == null;
+// a 1000 comporta um trem só: o 2º espera no ISN
+return lote_linha_1000_emDescarga == null && lote_linha_1000_proximo == null;
 /*ALCODEEND*/}
 
 PositionOnTrack get_pos_alivio()
