@@ -12130,7 +12130,11 @@ aliviar_linha_09_fundo.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("exit8", agent, "saiu");]]></Code>
+					<Code><![CDATA[log_analise("exit8", agent, "saiu");
+// não há mais vagões nas linhas: volta para a 4000 com o que pegou
+Log.warn("T39", "alivio_incompleto", String.format("trem=%d pegou=%d pedido=%d", agent.getId(),
+    ((Trem) agent).getNumeroDeVagoes() - qt_vgs_inicio_alivio, quantidade_alivio));
+main().gestorDeAlivios.linha_4000.take(agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

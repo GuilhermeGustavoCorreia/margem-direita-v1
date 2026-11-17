@@ -12,9 +12,10 @@ if (aguardar_moega.size() > 0) {
 
 int _getVagoesVazios()
 {/*ALCODESTART::1790875052692*/
-int vagoes_linha_10 	 = main().getTamanhoDoTrem(lote_linha_10);
-int vagoes_linha_9 		 = main().getTamanhoDoTrem(lote_linha_9);
-int vagoes_linha_9_fundo = main().getTamanhoDoTrem(lote_linha_9_fundo);
+// só vagões (uma loco parada numa linha de vazios não conta)
+int vagoes_linha_10 	 = main().getNumeroDeVagoes(lote_linha_10);
+int vagoes_linha_9 		 = main().getNumeroDeVagoes(lote_linha_9);
+int vagoes_linha_9_fundo = main().getNumeroDeVagoes(lote_linha_9_fundo);
 
 
 
@@ -204,9 +205,10 @@ quantidade_alivio = qt_quantidade;
 
 int get_quantidade_vazios()
 {/*ALCODESTART::1791224200391*/
-int vagoes_linha_10 	 = main().getTamanhoDoTrem(lote_linha_10);
-int vagoes_linha_9 		 = main().getTamanhoDoTrem(lote_linha_9);
-int vagoes_linha_9_fundo = main().getTamanhoDoTrem(lote_linha_9_fundo);
+// só vagões (uma loco parada numa linha de vazios não conta)
+int vagoes_linha_10 	 = main().getNumeroDeVagoes(lote_linha_10);
+int vagoes_linha_9 		 = main().getNumeroDeVagoes(lote_linha_9);
+int vagoes_linha_9_fundo = main().getNumeroDeVagoes(lote_linha_9_fundo);
 
 
 

@@ -181,3 +181,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-167**: logs do alívio do PCX, do `rp_acesso_moema` e da espera do corte do T39
 - **ALT-168**: ADM/TES/T39 — `log_de_analise` em todos os blocos e snapshot de estado a cada 5 min
 - **ALT-169**: T39 — o corte segura o `rp_acesso_moema` até o pedaço cortado sair da 1000_c
+- **ALT-170**: T39 — vazios contam só vagões; `exit8` devolve o alívio incompleto à 4000

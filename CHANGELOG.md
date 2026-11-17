@@ -2099,3 +2099,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Blocos novos entre o `release` e o `para_verificar_fim_lote`: Wait `esperar_corte_sair_1000` (o pai espera segurando só o acesso) → Release `liberar_acesso_corte` (ALL_FROM_SEIZES `{ acesso_moema_corte }`).
   - `livar_linha_1000_c` (o pedaço saiu da 1000_c) libera o pai do `esperar_corte_sair_1000`.
 - **Arquivos:** `_alp/Agents/T39/{EmbeddedObjects,Connectors}.xml`
+
+## ALT-170 — t39-vazios-so-vagoes-e-exit8-volta-4000
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** travamento às 3,654 h. Uma loco da ponta de um corte (27711) passou pela moega e ficou na linha 10. `_getVagoesVazios()` / `get_quantidade_vazios()` somavam `getTamanhoDoTrem` (carros) e contaram a loco: alívio pedido de 61 com 60 vagões. O alívio 27981 pegou os 60, `terminou_alivio` deu false, as linhas estavam vazias e o trem caiu no `exit8` (Exit sem destino), parado no T39 com o `rp_acesso_moema` e as faixas. O M64 do ADM ficou na fila do acesso.
+- **O que:**
+  - `_getVagoesVazios()` e `get_quantidade_vazios()` somam `main().getNumeroDeVagoes(...)` (só vagões).
+  - `exit8`: `WARN T39 alivio_incompleto trem=… pegou=… pedido=…` e `main().gestorDeAlivios.linha_4000.take(agent)`, igual ao `para_linha_4000`.
+- **Em aberto:** a loco da ponta do corte continua indo para a moega e para as linhas de vazios.
+- **Arquivos:** `_alp/Agents/T39/EmbeddedObjects.xml`, `_alp/Agents/T39/Code/Functions.java`
