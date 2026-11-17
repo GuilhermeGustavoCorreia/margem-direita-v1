@@ -357,6 +357,9 @@ tentar_encostar_resto_3000(true);
 
 double tentar_encostar_resto_3000(boolean mostrar_trace)
 {/*ALCODESTART::1792698800016*/
+// o lote novo da 3000 tem prioridade: é ele que ocupa as linhas primeiro
+tentar_encostar_novo_lote_3000(mostrar_trace);
+
 // solta o resto da 3000 (com as locos FIPS na cauda) para o encoste das linhas 03/04/05
 // quando os lotes do primeiro encoste ja sairam: linha 03 aliviada, linhas 04 e 05 descarregadas
 // e o fundo 04 (mesmo espaco da linha 04) aliviado. O fundo 05 fica em outra track.
@@ -379,3 +382,22 @@ atualizar_licenciamento_linha3000(resto);
 wait_resto_3000.free(resto);
 /*ALCODEEND*/}
 
+double tentar_encostar_novo_lote_3000(boolean mostrar_trace)
+{/*ALCODESTART::1798200000030*/
+// solta o 1º lote do trem novo (parado na 3000) para o encoste das linhas 03/04/05
+// só com as linhas livres e sem outro encoste em andamento (ex.: o resto do trem anterior)
+if (wait_encoste_3000.size() == 0) return;
+
+boolean linhas_livres = lote_linha_3 == null && lote_linha_4 == null
+                     && lote_linha_04_fundo == null && lote_linha_5 == null;
+if (!linhas_livres || trem_em_encoste != null) {
+    if (mostrar_trace)
+        Log.info("TES", "novo_lote_3000", String.format("espera: linha03=%d linha04=%d fundo04=%d linha05=%d em_encoste=%b", main().getTamanhoDoTrem(lote_linha_3), main().getTamanhoDoTrem(lote_linha_4),
+            main().getTamanhoDoTrem(lote_linha_04_fundo), main().getTamanhoDoTrem(lote_linha_5), trem_em_encoste != null));
+    return;
+}
+
+Trem lote = (Trem) wait_encoste_3000.get(0);
+Log.info("TES", "novo_lote_3000", String.format("lote=%d sai da 3000 para o encoste", lote.getId()));
+wait_encoste_3000.free(lote);
+/*ALCODEEND*/}

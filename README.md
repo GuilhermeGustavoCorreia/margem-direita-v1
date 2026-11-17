@@ -163,3 +163,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-149**: TES, ADM e T39 — `_trem_chegando` e `podeReceberNovoLote()` pela linha de chegada (3000/2000/1000); T39 `encosta_L1K1_proximo` grava o `proximo`
 - **ALT-150**: ADM e T39 — `podeReceberNovoLote()` exige a linha de chegada vazia (o `outHit` do `proximo` está desconectado)
 - **ALT-151**: ADM e T39 — `emDescarga` da linha de chegada volta a null quando sobram só locos
+- **ALT-152**: TES — 1º lote do trem novo espera na 3000 (`wait_encoste_3000`) até as linhas 03/04/05 ficarem livres

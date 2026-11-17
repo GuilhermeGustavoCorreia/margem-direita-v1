@@ -1910,3 +1910,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - T39 `liberar_linha_1000_emDescarga.onExit` (saída do `sobrou_so_loco`): `lote_linha_1000_emDescarga = null;`
 - **Validar:** pedidos seguidos para o ADM; o X34 sai da linha 02 logo depois do `fim_manobra ... so com N loco(s)` do Y42.
 - **Arquivos:** `_alp/Agents/{ADM,T39}/EmbeddedObjects.xml`
+
+## ALT-152 — tes-novo-lote-espera-linhas
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `root.tes.ir_linha03: Agent can't leave the port outHit` (~1,82 h). O resto do Y42 saiu da 3000 para o encoste (1,478 h) e zerou o `lote_linha3000_emDescarga`; o Y02 foi liberado do ISN e chegou à 3000. O 1º encoste dele (`sooRumo_41vgs` → `comecar_encoste_moegas` → `seize` → `ir_linha03`) não conferia as linhas e bateu no lote 27008 (6 carregados que sobraram do alívio) na linha 03.
+- **O que (TES):**
+  - Novos blocos `esperar_encoste_3000` (Enter) → `wait_encoste_3000` (Wait) → `para_encoste_3000` (Exit, `comecar_encoste_moegas.take(agent)`).
+  - `para_comecar_encoste_moegas.onExit`: `esperar_encoste_3000.take(agent)` (antes ia direto para o `comecar_encoste_moegas`).
+  - Nova função `tentar_encostar_novo_lote_3000(boolean)`: solta o lote do `wait_encoste_3000` só com `lote_linha_3`, `lote_linha_4`, `lote_linha_04_fundo` e `lote_linha_5` null e `trem_em_encoste == null`. Chamada no `onEnter` do `wait_encoste_3000` e no começo do `tentar_encostar_resto_3000` (mesmos gatilhos do resto). Log `novo_lote_3000`.
+- **Efeito:** o TES continua recebendo assim que a 3000 esvazia; o trem novo espera na 3000 até as linhas 03/04/05 liberarem.
+- **Validar:** dois pedidos seguidos para o TES; o 2º mostra `novo_lote_3000 espera: ...` e só sai quando as linhas ficam livres.
+- **Arquivos:** `_alp/Agents/TES/{EmbeddedObjects.xml,Connectors.xml,Code/Functions.java,Code/Functions.xml}`
