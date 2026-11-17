@@ -2026,3 +2026,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Nova função `tentar_liberar_espaco_vazios()`, chamada no `onEnter` do Wait, no `onRelease` do `fazendo_alivio` e a cada ciclo do `atualizar_analises` do GestorDeAlivios.
 - **Validar:** T39 com o alívio bloqueado; aparece o AVISO, a moega para, e depois do alívio `espaco liberado, vagao=... segue`.
 - **Arquivos:** `_alp/Agents/T39/{EmbeddedObjects.xml,Connectors.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/GestorDeAlivios/Code/Events.java`
+
+## ALT-163 — liberar-faixas-na-espera-do-terminal
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** o U22 (26715, adm/vli) ficou no `wait_segundo_lote_2000` da ADM, que estava em RUMO descarregando. As faixas `via3_b` e `via3_c` continuaram OCUPADA com os tracks vazios, porque o `liberar_faixas_ocupadas` só rodava no `liberar_faixas_circulacao`, depois do `ponto_b`. O Y40 (27293, tes) travou na `via3_a` e a linha 02 do ISN travou atrás dele.
+- **O que:** novo Release `liberar_faixas_espera` (mesmo código: `liberar_faixas_ocupadas`) logo antes do ponto de espera de cada terminal. Solta só as faixas já vazias; as que ainda têm a cauda seguem até o `liberar_faixas_circulacao`.
+  - ADM: `mov_linha2K_ponto_a` (out e outHit) → `liberar_faixas_espera` → `wait_segundo_lote_2000`
+  - TES: `mov_linha3K_ponto_a` → `liberar_faixas_espera` → `ocupar_lote_em_descarga`
+  - T39: `encosta_L1K1_proximo` → `liberar_faixas_espera` → `ser_linha_1000_emDescarga`
+- **Validar:** segundo lote da ADM de outra ferrovia esperando; a `via3_b`/`via3_c` ficam LIVRE e o próximo trem do TES passa.
+- **Arquivos:** `_alp/Agents/{ADM,TES,T39}/{EmbeddedObjects.xml,Connectors.xml}`

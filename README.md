@@ -174,3 +174,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-160**: ADM — encoste direto só com o mesmo tipo do terminal (ou terminal vazio); senão 2º lote
 - **ALT-161**: T39 — alívio licencia também a `faixa_linha1000_b` (AMV 104)
 - **ALT-162**: T39 — moega para quando as linhas 9/10/fundo estão cheias (`wait_espaco_vazios`)
+- **ALT-163**: ADM/TES/T39 — libera as faixas de circulação vazias antes do ponto de espera (`liberar_faixas_espera`)
