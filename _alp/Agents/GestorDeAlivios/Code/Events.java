@@ -14,5 +14,7 @@ void atualizar_analises()
 analisar_pst();
 analisar_pmc();
 analisar_pcx();
+// 2º lote do ADM: promove quando o terminal libera (descarga e alívio)
+main().adm.tentar_promover_segundo_lote();
 /*ALCODEEND*/}
 

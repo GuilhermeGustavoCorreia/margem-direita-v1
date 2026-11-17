@@ -295,11 +295,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>mov_linha2K_ponto_a</ItemName>
+			<ItemName>wait_segundo_lote_2000</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
 			<ItemName>out</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -308,15 +308,15 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-15</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-50</X>
+				<X>-15</X>
 				<Y>100</Y>
 			</Point>
 			<Point>
-				<X>-110</X>
+				<X>-30</X>
 				<Y>100</Y>
 			</Point>
 		</Points>
@@ -5709,6 +5709,100 @@
 			<Point>
 				<X>1980</X>
 				<Y>500</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000109</Id>
+		<Name><![CDATA[connector_seg_lote_1798200000109]]></Name>
+		<X>840</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>mov_linha2K_ponto_a</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>wait_segundo_lote_2000</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000110</Id>
+		<Name><![CDATA[connector_seg_lote_1798200000110]]></Name>
+		<X>840</X>
+		<Y>610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>mov_linha2K_ponto_a</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>outHit</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>wait_segundo_lote_2000</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>-10</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>-10</Y>
 			</Point>
 		</Points>
 	</Connector>

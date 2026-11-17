@@ -1963,3 +1963,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeDVs `ocupar_val_via2_saida`: Seize de `{ faixa_val_via2.recurso, gestorDeISN.rp_isn_linha02_e }` e ocupa as duas faixas; o `liberar_faixas_circulacao` (depois do `trainExit`) solta.
 - **Validar:** trem estacionando na linha 02 do ISN enquanto um trem sai das DVs; um espera o outro passar pela `isn_linha02_e`.
 - **Arquivos:** `_alp/Agents/GestorDeISN/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java}`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`
+
+## ALT-157 — adm-segundo-lote
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Regra (definida pelo Guilherme):** um terminal não descarrega duas ferrovias/segmentos ao mesmo tempo. Com o lote em descarga na linha de chegada com até `_LOTE_DESCARGA_TAMANHO_RECEBIMENTO` (10) vagões, um trem de qualquer ferrovia pode parar no 2º lote. Ele vira `emDescarga` quando a vaga da linha é solta (mesma ferrovia e segmento) ou só com o terminal vazio, sem carregados e sem vazios (tipo diferente).
+- **Problema que motivou:** impasse na linha 4000 (5,5 h): o M78 (MRS) entrou no ADM com os lotes do U96 (VLI) ainda descarregando; os vazios se misturaram na linha 7 e o trem da 4000 foi definido como VLI com 36 vagões. Depois só vieram vazios MRS, e ADM e TES esperaram a 4000 para sempre.
+- **O que:**
+  - Parâmetro `_LOTE_DESCARGA_TAMANHO_RECEBIMENTO = 10` no ADM, TES e T39 (por enquanto usado só no ADM).
+  - ADM `podeReceberNovoLote()`: recebe com a 2000 vazia ou com `lote_linha2000_emDescarga` ≤ parâmetro, sem `proximo` e sem `_trem_chegando`.
+  - Main: `_adm_segundo_lote` de 1.045 para 1.500 na `pmc_linha2000_a`. O resto volta para o fim da 2000 pelo `movtc_recuar_linha2000` (para quando a ponta entra na `pmc_linha2000_a`); com até 10 vagões + 2 locos (~220 m) ocupa ~1.520–1.743, e o trem de 82 parado com a frente em 1.500 fica com a cauda em ~20 (sem tocar no `railwayTrack78`).
+  - ADM: novo Wait `wait_segundo_lote_2000` entre `mov_linha2K_ponto_a` (`out` e `outHit`) e `ocupar_lote_em_descarga`. Funções `tentar_promover_segundo_lote()`, `eh_mesmo_tipo_em_atendimento(Trem)`, `terminal_vazio_para_novo_tipo()`. Chamada no `onEnter` do Wait e a cada ciclo do `atualizar_analises` do GestorDeAlivios.
+  - ADM `comecar_encoste`: só atualiza a ferrovia/segmento em atendimento se a 2000 estiver vazia; `mov_linha2K_ponto_b` atualiza ao promover.
+- **Pendência:** T39 e TES. No T39 o resto fica perto do `t39_encoste` (1.230), e um trem de 82 no 2º lote ficaria com a cauda no `railwayTrack78`. No TES o `_tes_segundo_lote` está na `pmc_linha4000_c`.
+- **Validar:** ADM com trem VLI seguido de MRS; o MRS para no 2º lote e só vira `emDescarga` depois de `segundo_lote ... promovido (mesmo_tipo=false)`, com a linha 7 vazia.
+- **Arquivos:** `_alp/Agents/ADM/{EmbeddedObjects.xml,Connectors.xml,Variables.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/{TES,T39}/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Events.java`, `_alp/Agents/Main/Levels/Level.level.xml`

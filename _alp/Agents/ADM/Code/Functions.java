@@ -5,10 +5,14 @@ return (Main) getEngine().getRoot();
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792172934670*/
-// trem entrando: do comecar_encoste até parar na linha 2000
+// trem entrando: do comecar_encoste até parar na linha 2000 (encoste ou 2º lote)
 if (_trem_chegando != null) return false;
-// a 2000 comporta um trem só: o 2º espera no ISN
-return lote_linha2000_emDescarga == null && lote_linha2000_proximo == null;
+// já há um 2º lote esperando
+if (lote_linha2000_proximo != null) return false;
+// linha vazia
+if (lote_linha2000_emDescarga == null) return true;
+// 2º lote (qualquer ferrovia): o lote em descarga tem até _LOTE_DESCARGA_TAMANHO_RECEBIMENTO vagões
+return main().getNumeroDeVagoes(lote_linha2000_emDescarga) <= _LOTE_DESCARGA_TAMANHO_RECEBIMENTO;
 /*ALCODEEND*/}
 
 float getOverloadVazios()
@@ -330,3 +334,43 @@ int total = main().getTamanhoDoTrem(lote_linha_7) + vagoes_pendentes_linha7 + va
 return total < CAPACIDADE_LINHA_7;
 /*ALCODEEND*/}
 
+double tentar_promover_segundo_lote()
+{/*ALCODESTART::1798200000201*/
+// solta o 2º lote (wait_segundo_lote_2000) para pegar a vaga da 2000 e virar emDescarga:
+// mesma ferrovia e segmento: na hora (espera a vaga no ocupar_lote_em_descarga);
+// tipo diferente: só com o terminal vazio (sem carregados e sem vazios), para não misturar ferrovias
+if (wait_segundo_lote_2000.size() == 0) return;
+Trem lote = (Trem) wait_segundo_lote_2000.get(0);
+
+boolean mesmo_tipo = eh_mesmo_tipo_em_atendimento(lote);
+if (!mesmo_tipo && !terminal_vazio_para_novo_tipo()) return;
+
+Log.info("ADM", "segundo_lote", String.format("trem=%d promovido (mesmo_tipo=%b)", lote.getId(), mesmo_tipo));
+wait_segundo_lote_2000.free(lote);
+/*ALCODEEND*/}
+
+boolean eh_mesmo_tipo_em_atendimento(Trem trem)
+{/*ALCODESTART::1798200000202*/
+// compara o 1º vagão do trem com a ferrovia/segmento em atendimento
+for (int i = 0; i < trem.size(); i++) {
+    Agent carro = trem.getCar(i);
+    if (carro instanceof Vagao) {
+        Vagao v = (Vagao) carro;
+        return java.util.Objects.equals(v.ferrovia, ferrovia_em_atendimento)
+            && java.util.Objects.equals(v.segmento, segmento_em_atendimento);
+    }
+}
+return false;
+/*ALCODEEND*/}
+
+boolean terminal_vazio_para_novo_tipo()
+{/*ALCODESTART::1798200000203*/
+// sem carregados (fora o 2º lote), sem vazios na linha 7 e sem alívio em andamento
+int carregados = _getVagoesCarregados() - main().getNumeroDeVagoes(lote_linha2000_proximo);
+return lote_linha2000_emDescarga == null
+    && carregados <= 0
+    && _get_vagoes_vazios() == 0
+    && vagoes_pendentes_linha7 == 0
+    && vagoes_em_descarga == 0
+    && !alivio_linha7_em_andamento;
+/*ALCODEEND*/}
