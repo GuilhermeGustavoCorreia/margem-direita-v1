@@ -149,7 +149,11 @@ return new ArrayList<>(Arrays.asList(
 float getOverloadVazios()
 {/*ALCODESTART::1790950228294*/
 boolean moega_esta_desocupada     = moega_ocupada.idle() > 0;
-boolean ultimos_vazios_no_terminal = (_getVagoesCarregados() == 0 && _getVagoesVazios() > 0);
+// segundo lote de outra ferrovia/segmento não conta: ele só entra depois do alívio destes vazios
+int carregados = _getVagoesCarregados();
+if (lote_linha_1000_proximo != null && !eh_mesmo_tipo_em_atendimento(lote_linha_1000_proximo))
+    carregados -= main().getNumeroDeVagoes(lote_linha_1000_proximo);
+boolean ultimos_vazios_no_terminal = (carregados <= 0 && _getVagoesVazios() > 0);
 
 //ultimos vagoes
 if (moega_esta_desocupada && ultimos_vazios_no_terminal) {
@@ -335,4 +339,18 @@ if (!tem_espaco) return;
 Agent vagao = wait_espaco_vazios.get(0);
 Log.info("T39", "descarga", String.format("espaco liberado, vagao=%d segue para as linhas de vazios", vagao.getId()));
 wait_espaco_vazios.free(vagao);
+/*ALCODEEND*/}
+
+boolean eh_mesmo_tipo_em_atendimento(Trem trem)
+{/*ALCODESTART::1798200000442*/
+// compara o 1º vagão do trem com a ferrovia/segmento em atendimento
+for (int i = 0; i < trem.size(); i++) {
+    Agent carro = trem.getCar(i);
+    if (carro instanceof Vagao) {
+        Vagao v = (Vagao) carro;
+        return java.util.Objects.equals(v.ferrovia, getFerrovia())
+            && java.util.Objects.equals(v.segmento, getSegmento());
+    }
+}
+return false;
 /*ALCODEEND*/}

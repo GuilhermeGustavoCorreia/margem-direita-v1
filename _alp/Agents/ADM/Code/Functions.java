@@ -21,7 +21,11 @@ int vazios = get_quantidade_vazios();
 float overload = (float) vazios / QUANTIDADE_PARA_ALIVIAR;
 
 boolean moegas_ocupadas = (rp_moegaV.idle() == 0 || rp_moegaX.idle() == 0);	
-boolean ultimos_vazios_no_terminal = (_getVagoesCarregados() == 0 && _getVagoesVazios() > 0);
+// segundo lote de outra ferrovia/segmento não conta: ele só entra depois do alívio destes vazios
+int carregados = _getVagoesCarregados();
+if (lote_linha2000_proximo != null && !eh_mesmo_tipo_em_atendimento(lote_linha2000_proximo))
+    carregados -= main().getNumeroDeVagoes(lote_linha2000_proximo);
+boolean ultimos_vazios_no_terminal = (carregados <= 0 && _getVagoesVazios() > 0);
 
 //ultimos vagoes
 if (ultimos_vazios_no_terminal && !moegas_ocupadas) {

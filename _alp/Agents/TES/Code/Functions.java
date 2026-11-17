@@ -70,7 +70,11 @@ float getOverloadVazios()
 {/*ALCODESTART::1792519031772*/
 // padrao do T39
 boolean moegas_livres  = rp_moega03.idle() > 0 && rp_moega04.idle() > 0;
-boolean ultimos_vazios = (_getVagoesCarregados() == 0 && _getVagoesVazios() > 0);
+// segundo lote de outra ferrovia/segmento não conta: ele só entra depois do alívio destes vazios
+int carregados = _getVagoesCarregados();
+if (lote_linha3000_proximo != null && !eh_mesmo_tipo_em_atendimento(lote_linha3000_proximo))
+    carregados -= main().getNumeroDeVagoes(lote_linha3000_proximo);
+boolean ultimos_vazios = (carregados <= 0 && _getVagoesVazios() > 0);
 
 // ultimos vazios do terminal: forca o alivio
 if (moegas_livres && ultimos_vazios) return (float) 2.0;
@@ -412,4 +416,18 @@ return _trem_chegando == null
     && wait_encoste_3000.size() == 0
     && _getVagoesCarregados() == 0
     && _getVagoesVazios() == 0;
+/*ALCODEEND*/}
+
+boolean eh_mesmo_tipo_em_atendimento(Trem trem)
+{/*ALCODESTART::1798200000441*/
+// compara o 1º vagão do trem com a ferrovia/segmento em atendimento
+for (int i = 0; i < trem.size(); i++) {
+    Agent carro = trem.getCar(i);
+    if (carro instanceof Vagao) {
+        Vagao v = (Vagao) carro;
+        return java.util.Objects.equals(v.ferrovia, getFerrovia())
+            && java.util.Objects.equals(v.segmento, getSegmento());
+    }
+}
+return false;
 /*ALCODEEND*/}

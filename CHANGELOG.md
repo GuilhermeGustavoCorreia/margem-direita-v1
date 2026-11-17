@@ -2037,3 +2037,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - T39: `encosta_L1K1_proximo` → `liberar_faixas_espera` → `ser_linha_1000_emDescarga`
 - **Validar:** segundo lote da ADM de outra ferrovia esperando; a `via3_b`/`via3_c` ficam LIVRE e o próximo trem do TES passa.
 - **Arquivos:** `_alp/Agents/{ADM,TES,T39}/{EmbeddedObjects.xml,Connectors.xml}`
+
+## ALT-164 — overload-ignora-segundo-lote-de-outro-tipo
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** impasse na ADM. O M64 (26715, mrs, 82 carregados) era o segundo lote (`lote_linha2000_proximo`) e entrava no `_getVagoesCarregados()`. Com isso o `getOverloadVazios()` não via "últimos vazios", os 16 vazios rumo da linha 7 não pediam alívio, o trem da 4000 parou em 66 e o M64 não era promovido. Os trens atrás esperavam a via3.
+- **O que (ADM, TES, T39):** no `getOverloadVazios()`, o lote `*_proximo` de outra ferrovia/segmento não conta como carregado. TES e T39 ganharam `eh_mesmo_tipo_em_atendimento(Trem)` (compara o 1º vagão com `getFerrovia()`/`getSegmento()`).
+- **Validar:** segundo lote de outra ferrovia na ADM; os últimos vazios pedem alívio, a 4000 fecha 82 e o segundo lote é promovido.
+- **Arquivos:** `_alp/Agents/ADM/Code/Functions.java`, `_alp/Agents/{TES,T39}/Code/{Functions.java,Functions.xml}`

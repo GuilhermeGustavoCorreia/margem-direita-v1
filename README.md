@@ -175,3 +175,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-161**: T39 — alívio licencia também a `faixa_linha1000_b` (AMV 104)
 - **ALT-162**: T39 — moega para quando as linhas 9/10/fundo estão cheias (`wait_espaco_vazios`)
 - **ALT-163**: ADM/TES/T39 — libera as faixas de circulação vazias antes do ponto de espera (`liberar_faixas_espera`)
+- **ALT-164**: ADM/TES/T39 — overload ignora o segundo lote de outra ferrovia/segmento
