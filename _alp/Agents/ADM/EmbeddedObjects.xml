@@ -2536,8 +2536,8 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792420298484</Id>
 		<Name><![CDATA[usar_recurso_loco]]></Name>
-		<X>710</X>
-		<Y>1000</Y>
+		<X>900</X>
+		<Y>950</Y>
 		<Label>
 			<X>-25</X>
 			<Y>55</Y>
@@ -14121,7 +14121,7 @@ main().gestorDeCirculacao.faixa_linha2000_d.ocupar((Trem) agent);
 			<Parameter>
 				<Name><![CDATA[seizeBlocks]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ licenciar_moema }]]></Code>
+					<Code><![CDATA[{ licenciar_moema, usar_recurso_loco }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

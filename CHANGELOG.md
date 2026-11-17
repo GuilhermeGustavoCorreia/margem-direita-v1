@@ -1940,3 +1940,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que (ADM):** `rls_fim_manobra` (saída "só locos" do `so_locos_manobra`) solta `{ mnb_carregados, linha2000_lote_em_descarga }` (antes só `mnb_carregados`).
 - **Validar:** pedidos seguidos para o ADM; o 2º trem passa do `ocupar_lote_em_descarga` logo depois do `fim_manobra ... so com N loco(s)` do 1º.
 - **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`
+
+## ALT-155 — adm-seize-loco-fips-no-trem
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** travamento por falta de locos FIPS do PCX (`pediu_2_locos ... livres: 0`, ~6,4 h). O ADM fazia o Seize do `rp_locoFips_pcx` (`usar_recurso_loco`, `qt_loco = 2`) com o trem da loco criado pelo `loco_pcx_starts`; no `acoplar_loco_mnb` esse trem entra pelo `in2` e é destruído, levando as unidades junto. Nenhum Release do ADM devolvia (o `devolverLocomotiva2` só guarda a loco no `locomotivasPCX`). Ciclo só do ADM confirmou: 2 unidades presas por trem.
+- **O que (ADM):**
+  - `loco_pcx_starts.out` → `trainEnter` (a loco nasce sem Seize).
+  - `tem_loco_mnb.outF` → `usar_recurso_loco` → `acoplar_loco_mnb.in1`: o Seize passa a ser do trem do ADM (que sobrevive ao acoplamento). Bloco movido para perto do `acoplar_loco_mnb`.
+  - `rls_moema1` (antes do `devolverLocomotiva2`): `seizeBlocks = { licenciar_moema, usar_recurso_loco }`.
+- **Pendência:** as locos FIPS devolvidas pelo ADM acumulam no `locomotivasPCX` (o alívio PCX sempre cria locos novas); o T39 tira a loco do modelo no `trainExit2`.
+- **Validar:** ciclo só do ADM; aparece `rp_locoFips_pcx ... devolveu` 2x antes do `devolverLocomotiva2` e o pool volta a 8 livres.
+- **Arquivos:** `_alp/Agents/ADM/{EmbeddedObjects.xml,Connectors.xml}`

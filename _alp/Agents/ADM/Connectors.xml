@@ -696,6 +696,49 @@
 	<Connector>
 		<Id>1792420300833</Id>
 		<Name><![CDATA[connector3]]></Name>
+		<X>940</X>
+		<Y>970</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>usar_recurso_loco</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>acoplar_loco_mnb</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainCouple</ClassName>
+			<ItemName>in1</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>50</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1792420300835</Id>
+		<Name><![CDATA[connector4]]></Name>
 		<X>780</X>
 		<Y>1020</Y>
 		<Label>
@@ -718,49 +761,6 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>usar_recurso_loco</ItemName>
-		</TargetEmbeddedObjectReference>
-		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>out</ItemName>
-		</TargetConnectableItemReference>
-		<Points>
-			<Point>
-				<X>0</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>-30</X>
-				<Y>0</Y>
-			</Point>
-		</Points>
-	</Connector>
-	<Connector>
-		<Id>1792420300835</Id>
-		<Name><![CDATA[connector4]]></Name>
-		<X>710</X>
-		<Y>1020</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<SourceEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>ADM</ClassName>
-			<ItemName>usar_recurso_loco</ItemName>
-		</SourceEmbeddedObjectReference>
-		<SourceConnectableItemReference>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-			<ItemName>in</ItemName>
-		</SourceConnectableItemReference>
-		<TargetEmbeddedObjectReference>
-			<PackageName>margemdireitamodel</PackageName>
-			<ClassName>ADM</ClassName>
 			<ItemName>loco_pcx_starts</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -774,7 +774,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-40</X>
+				<X>-110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1634,12 +1634,12 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>acoplar_loco_mnb</ItemName>
+			<ItemName>usar_recurso_loco</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainCouple</ClassName>
-			<ItemName>in1</ItemName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
@@ -1651,7 +1651,7 @@
 				<Y>60</Y>
 			</Point>
 			<Point>
-				<X>140</X>
+				<X>50</X>
 				<Y>60</Y>
 			</Point>
 		</Points>
