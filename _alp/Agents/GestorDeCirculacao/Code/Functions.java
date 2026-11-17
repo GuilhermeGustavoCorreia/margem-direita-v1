@@ -141,3 +141,4 @@ if (recursos != null) for (ResourcePool rp : recursos) if (!pools.contains(rp)) 
 for (ResourcePool rp : get_recursos_mnb_pcx(trem)) if (!pools.contains(rp)) pools.add(rp);
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
+

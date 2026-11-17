@@ -206,3 +206,4 @@ if (_getVagoesCarregados() > 0) return true;
 // vazios no terminal (esperando ou em alívio)
 return _getVagoesVazios() > 0;
 /*ALCODEEND*/}
+

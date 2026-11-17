@@ -374,3 +374,4 @@ return lote_linha2000_emDescarga == null
     && vagoes_em_descarga == 0
     && !alivio_linha7_em_andamento;
 /*ALCODEEND*/}
+

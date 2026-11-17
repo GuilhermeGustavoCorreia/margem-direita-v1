@@ -394,3 +394,4 @@ Agent lote = esperar_espaco_corte.get(0);
 Log.info("T39", "corte", String.format("lote=%d segue: corte=%d livre=%d", lote.getId(), corte, livre));
 esperar_espaco_corte.free(lote);
 /*ALCODEEND*/}
+

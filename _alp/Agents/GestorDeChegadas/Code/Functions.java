@@ -286,3 +286,4 @@ for (int i = 0; i < trem.size(); i++) {
 }
 return pode_receber_tipo(terminal, fer, seg);
 /*ALCODEEND*/}
+

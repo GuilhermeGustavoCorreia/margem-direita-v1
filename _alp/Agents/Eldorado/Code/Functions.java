@@ -159,7 +159,6 @@ if (a instanceof Trem) {
 Log.info("Eldorado", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
-
 ResourcePool[] get_faixas_circulacao_liberar(Trem trem)
 {/*ALCODESTART::1798130000001*/
 // igual ao liberar_faixas_ocupadas do GestorDeCirculacao, mas a marginal_c e a linha6000_a
@@ -205,3 +204,4 @@ if (_trem_chegando != null) return true;
 // vazios no terminal (esperando ou em alívio)
 return _getVagoesVazios() > 0;
 /*ALCODEEND*/}
+

@@ -27,31 +27,6 @@
 		<FillMaterial>null</FillMaterial>
 		<ArcRadius>10</ArcRadius>
 	</RoundedRectangle>
-	<Control Type="Button">
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1790854201211</Id>
-		<Name><![CDATA[button5]]></Name>
-		<X>-130</X>
-		<Y>10</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="120" Height="120">
-			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor>-16777216</TextColor>
-			<Enabled>true</Enabled>
-			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTesteSource);</ActionCode>
-		</BasicProperties>
-		<ExtendedProperties>
-			<Font Name="Dialog" Size="20" Style="1"/>
-			<LabelText>Encostar</LabelText>
-		</ExtendedProperties>
-	</Control>
 	<Line>
 		<Id>1790854201224</Id>
 		<Name><![CDATA[line1]]></Name>
@@ -377,31 +352,6 @@
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
 		<Text><![CDATA[Encostar no Terminal Linha 1000]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>18</Size>
-			<Style>1</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1790861604637</Id>
-		<Name><![CDATA[text19]]></Name>
-		<X>-460</X>
-		<Y>-140</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Trem de Teste]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>18</Size>
@@ -1607,4 +1557,158 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
+	<Text>
+		<Id>1794942197590</Id>
+		<Name><![CDATA[text35]]></Name>
+		<X>-810</X>
+		<Y>-225</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[TREM DE TESTE]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>26</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Rectangle>
+		<Id>1794942197597</Id>
+		<Name><![CDATA[rectangle2]]></Name>
+		<X>-820</X>
+		<Y>-230</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>1</LineWidth>
+		<LineColor>-16777216</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>350</Width>
+		<Height>220</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Line>
+		<Id>1794942197599</Id>
+		<Name><![CDATA[line4]]></Name>
+		<X>-820</X>
+		<Y>-190</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>1</LineWidth>
+		<LineColor>-16777216</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>350</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
+	<Control Type="Button">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1794942255151</Id>
+		<Name><![CDATA[button5]]></Name>
+		<X>-130</X>
+		<Y>10</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="120" Height="35">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTeste_rumo);</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="20" Style="1"/>
+			<LabelText>RUMO</LabelText>
+		</ExtendedProperties>
+	</Control>
+	<Control Type="Button">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1794942255153</Id>
+		<Name><![CDATA[button6]]></Name>
+		<X>-130</X>
+		<Y>93.584</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="120" Height="35">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "vli", tremTeste_vli);</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="20" Style="1"/>
+			<LabelText>VLI</LabelText>
+		</ExtendedProperties>
+	</Control>
+	<Control Type="Button">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1794942255155</Id>
+		<Name><![CDATA[button7]]></Name>
+		<X>-130</X>
+		<Y>51.792</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="120" Height="35">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", tremTeste_mrs);</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="20" Style="1"/>
+			<LabelText>MRS</LabelText>
+		</ExtendedProperties>
+	</Control>
 </Presentation>

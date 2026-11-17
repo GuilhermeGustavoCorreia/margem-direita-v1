@@ -1112,7 +1112,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570202</Id>
 		<Name><![CDATA[novo_lote]]></Name>
-		<X>630</X>
+		<X>400</X>
 		<Y>490</Y>
 		<Label>
 			<X>-5</X>
@@ -1229,7 +1229,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570259</Id>
 		<Name><![CDATA[para_ajuste_loco]]></Name>
-		<X>1250</X>
+		<X>1350</X>
 		<Y>490</Y>
 		<Label>
 			<X>-10</X>
@@ -1283,7 +1283,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570282</Id>
 		<Name><![CDATA[mov_linha2K_ponto_b]]></Name>
-		<X>1050</X>
+		<X>1090</X>
 		<Y>490</Y>
 		<Label>
 			<X>-40</X>
@@ -1440,7 +1440,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570326</Id>
 		<Name><![CDATA[linha_2000_vazia]]></Name>
-		<X>730</X>
+		<X>600</X>
 		<Y>490</Y>
 		<Label>
 			<X>-30</X>
@@ -1521,7 +1521,7 @@ lote_linha2000_emDescarga == null
 	<EmbeddedObject>
 		<Id>1792174570361</Id>
 		<Name><![CDATA[mov_linha2K_ponto_a]]></Name>
-		<X>800</X>
+		<X>670</X>
 		<Y>590</Y>
 		<Label>
 			<X>-35</X>
@@ -1672,7 +1672,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570412</Id>
 		<Name><![CDATA[ocupar_lote_em_descarga]]></Name>
-		<X>950</X>
+		<X>990</X>
 		<Y>480</Y>
 		<Label>
 			<X>-50</X>
@@ -1878,11 +1878,11 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792174570499</Id>
 		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
-		<X>1150</X>
+		<X>1250</X>
 		<Y>480</Y>
 		<Label>
 			<X>-35</X>
-			<Y>-15</Y>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -1977,8 +1977,8 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000421</Id>
 		<Name><![CDATA[liberar_faixas_espera]]></Name>
-		<X>840</X>
-		<Y>650</Y>
+		<X>790</X>
+		<Y>580</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-15</Y>
@@ -3324,7 +3324,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792425448527</Id>
 		<Name><![CDATA[wait_lote_linha2000]]></Name>
-		<X>1800</X>
+		<X>1720</X>
 		<Y>280</Y>
 		<Label>
 			<X>-34</X>
@@ -7473,11 +7473,11 @@ liberar_descarga_moega();]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000513</Id>
 		<Name><![CDATA[acesso_moema_manobra]]></Name>
-		<X>1910</X>
-		<Y>290</Y>
+		<X>1850</X>
+		<Y>230</Y>
 		<Label>
-			<X>-30</X>
-			<Y>-10</Y>
+			<X>-25</X>
+			<Y>50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -7674,11 +7674,11 @@ liberar_descarga_moega();]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000504</Id>
 		<Name><![CDATA[acesso_moema_chegada]]></Name>
-		<X>690</X>
-		<Y>550</Y>
+		<X>510</X>
+		<Y>480</Y>
 		<Label>
-			<X>-30</X>
-			<Y>-10</Y>
+			<X>-50</X>
+			<Y>50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -14374,11 +14374,11 @@ main().gestorDeCirculacao.faixa_linha2000_d.liberar();]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000510</Id>
 		<Name><![CDATA[liberar_acesso_espera]]></Name>
-		<X>920</X>
-		<Y>640</Y>
+		<X>860</X>
+		<Y>580</Y>
 		<Label>
-			<X>-5</X>
-			<Y>-10</Y>
+			<X>-35</X>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -14473,8 +14473,8 @@ main().gestorDeCirculacao.faixa_linha2000_d.liberar();]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000507</Id>
 		<Name><![CDATA[liberar_acesso_chegada]]></Name>
-		<X>1190</X>
-		<Y>540</Y>
+		<X>1170</X>
+		<Y>480</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-10</Y>
@@ -14894,10 +14894,10 @@ atualizar_licenciamento_linha2000((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000107</Id>
 		<Name><![CDATA[wait_segundo_lote_2000]]></Name>
-		<X>880</X>
+		<X>930</X>
 		<Y>580</Y>
 		<Label>
-			<X>-10</X>
+			<X>-45</X>
 			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>

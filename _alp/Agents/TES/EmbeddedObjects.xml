@@ -1113,7 +1113,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325512</Id>
 		<Name><![CDATA[novo_lote]]></Name>
-		<X>400</X>
+		<X>180</X>
 		<Y>540</Y>
 		<Label>
 			<X>-5</X>
@@ -1284,7 +1284,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325576</Id>
 		<Name><![CDATA[mov_linha3K_ponto_b]]></Name>
-		<X>820</X>
+		<X>780</X>
 		<Y>540</Y>
 		<Label>
 			<X>-40</X>
@@ -1440,7 +1440,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325624</Id>
 		<Name><![CDATA[linha3000_vazia]]></Name>
-		<X>500</X>
+		<X>380</X>
 		<Y>540</Y>
 		<Label>
 			<X>-30</X>
@@ -1518,7 +1518,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325655</Id>
 		<Name><![CDATA[mov_linha3K_ponto_a]]></Name>
-		<X>570</X>
+		<X>450</X>
 		<Y>640</Y>
 		<Label>
 			<X>-35</X>
@@ -1669,7 +1669,7 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325703</Id>
 		<Name><![CDATA[ocupar_lote_em_descarga]]></Name>
-		<X>720</X>
+		<X>680</X>
 		<Y>530</Y>
 		<Label>
 			<X>-50</X>
@@ -1875,11 +1875,11 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325758</Id>
 		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
-		<X>900</X>
+		<X>980</X>
 		<Y>530</Y>
 		<Label>
-			<X>-35</X>
-			<Y>-15</Y>
+			<X>-65</X>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -1974,11 +1974,11 @@ _trem_chegando = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000431</Id>
 		<Name><![CDATA[liberar_faixas_espera]]></Name>
-		<X>640</X>
-		<Y>600</Y>
+		<X>540</X>
+		<Y>630</Y>
 		<Label>
-			<X>-35</X>
-			<Y>-15</Y>
+			<X>-40</X>
+			<Y>40</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3685,7 +3685,7 @@ ficar_linha05.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792521700024</Id>
 		<Name><![CDATA[eh_rumo]]></Name>
-		<X>980</X>
+		<X>1030</X>
 		<Y>540</Y>
 		<Label>
 			<X>20</X>
@@ -8293,8 +8293,8 @@ exec_descarga_04e5.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000525</Id>
 		<Name><![CDATA[acesso_moema_encoste]]></Name>
-		<X>1460</X>
-		<Y>300</Y>
+		<X>1420</X>
+		<Y>230</Y>
 		<Label>
 			<X>-35</X>
 			<Y>50</Y>
@@ -8494,8 +8494,8 @@ exec_descarga_04e5.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000516</Id>
 		<Name><![CDATA[acesso_moema_chegada]]></Name>
-		<X>460</X>
-		<Y>600</Y>
+		<X>290</X>
+		<Y>530</Y>
 		<Label>
 			<X>-35</X>
 			<Y>50</Y>
@@ -16137,8 +16137,8 @@ tentar_encostar_resto_3000(true);]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000522</Id>
 		<Name><![CDATA[liberar_acesso_espera]]></Name>
-		<X>760</X>
-		<Y>590</Y>
+		<X>610</X>
+		<Y>630</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>
@@ -16236,8 +16236,8 @@ tentar_encostar_resto_3000(true);]]></Code>
 	<EmbeddedObject>
 		<Id>1798200000519</Id>
 		<Name><![CDATA[liberar_acesso_chegada]]></Name>
-		<X>940</X>
-		<Y>590</Y>
+		<X>890</X>
+		<Y>530</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>

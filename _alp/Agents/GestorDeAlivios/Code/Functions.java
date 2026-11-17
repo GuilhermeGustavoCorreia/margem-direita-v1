@@ -783,3 +783,4 @@ for (ResourcePool[] linha : faixas) {
 }
 return new ResourcePool[][] { todos.toArray(new ResourcePool[0]) };
 /*ALCODEEND*/}
+
