@@ -322,3 +322,17 @@ return _trem_chegando == null
     && _getVagoesCarregados() == 0
     && _getVagoesVazios() == 0;
 /*ALCODEEND*/}
+
+double tentar_liberar_espaco_vazios()
+{/*ALCODESTART::1798200000411*/
+// solta o vagão parado no wait_espaco_vazios quando abrir lugar na linha 10, na 9 ou no fundo da 9
+if (wait_espaco_vazios.size() == 0) return;
+boolean tem_espaco =
+	main().getTamanhoDoTrem(lote_linha_10)      < CAPACIDADE_LINHA_10 ||
+	main().getTamanhoDoTrem(lote_linha_9)       < CAPACIDADE_LINHA_9  ||
+	main().getTamanhoDoTrem(lote_linha_9_fundo) < CAPACIDADE_LINHA_9_FUNDO;
+if (!tem_espaco) return;
+Agent vagao = wait_espaco_vazios.get(0);
+Log.info("T39", "descarga", String.format("espaco liberado, vagao=%d segue para as linhas de vazios", vagao.getId()));
+wait_espaco_vazios.free(vagao);
+/*ALCODEEND*/}

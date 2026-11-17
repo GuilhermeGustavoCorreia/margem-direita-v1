@@ -173,3 +173,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-159**: Main — `_adm_segundo_lote` volta para 1.045 (offset 1.500 fora da `pmc_linha2000_a`)
 - **ALT-160**: ADM — encoste direto só com o mesmo tipo do terminal (ou terminal vazio); senão 2º lote
 - **ALT-161**: T39 — alívio licencia também a `faixa_linha1000_b` (AMV 104)
+- **ALT-162**: T39 — moega para quando as linhas 9/10/fundo estão cheias (`wait_espaco_vazios`)

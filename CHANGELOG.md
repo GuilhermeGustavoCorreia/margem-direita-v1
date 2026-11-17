@@ -2015,3 +2015,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** `Train [786] and train [789] are trying to occupy the switch railwaySwitch104` (8,300 h). A loco do alívio do T39 ia para o `pos_t39_alivio` pelo `railwayTrack79` → AMV 104 → `pmc_linha1000_c` e o lote do T39 (corte de 15 do 27288) andava na `pmc_linha1000_b` para a linha 11. O AMV 104 liga `pmc_linha1000_b`, `pmc_linha1000_c` e `railwayTrack79`; o alívio licenciava só a `linha1000_c`.
 - **O que (T39):** `primeiro_alivio_faixas` inclui a `faixa_linha1000_b`. O trem do T39 fica na `pmc_linha1000_a` e só usa a b e a c para encostar nas moegas, então o alívio espera no máximo um encoste.
 - **Arquivos:** `_alp/Agents/T39/Variables.xml`
+
+## ALT-162 — t39-moega-espera-espaco-vazios
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `The car being added on the track 't39_linha9_fundo' intersects with another car` (2,283 h). O alívio do T39 esperava o trem MRS da 4000 fechar (correto pela regra de ferrovia) e a descarga continuou: linha 10 → linha 9 → fundo da 9 sem checar capacidade. As três comportam 14 + 24 + 23 = 61 vazios; o 62º nasceu em cima de outro.
+- **O que (T39):**
+  - Novo SelectOutput `tem_espaco_vazios` entre `aliviar_moega` e `disp_alivio1`: há lugar na 10, na 9 ou no fundo da 9 (`CAPACIDADE_LINHA_9_FUNDO`)?
+  - Sem lugar: novo Wait `wait_espaco_vazios` (log `AVISO sem espaco nas linhas 9/10/fundo`); a moega para. Fica antes do `disp_alivio1`, para não segurar o `fazendo_alivio`.
+  - Nova função `tentar_liberar_espaco_vazios()`, chamada no `onEnter` do Wait, no `onRelease` do `fazendo_alivio` e a cada ciclo do `atualizar_analises` do GestorDeAlivios.
+- **Validar:** T39 com o alívio bloqueado; aparece o AVISO, a moega para, e depois do alívio `espaco liberado, vagao=... segue`.
+- **Arquivos:** `_alp/Agents/T39/{EmbeddedObjects.xml,Connectors.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/GestorDeAlivios/Code/Events.java`

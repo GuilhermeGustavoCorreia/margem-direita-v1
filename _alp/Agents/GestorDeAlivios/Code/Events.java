@@ -16,5 +16,7 @@ analisar_pmc();
 analisar_pcx();
 // 2º lote do ADM: promove quando o terminal libera (descarga e alívio)
 main().adm.tentar_promover_segundo_lote();
+// T39: vagão parado por falta de espaço nas linhas de vazios
+main().t39.tentar_liberar_espaco_vazios();
 /*ALCODEEND*/}
 
