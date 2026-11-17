@@ -1932,3 +1932,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `para_encoste_linha1000.onExit`: `main().gestorDeChegadas.receber_trem((Trem) agent);` (antes `gestorDeCirculacao.chegada_carregados.take`).
 - **Validar:** clicar no T39 com outro trem na `isn_linha01`; o pedido fica `entrada ocupada` e o trem nasce com prefixo.
 - **Arquivos:** `_alp/Agents/T39/{Levels/Level.level.xml,EmbeddedObjects.xml}`
+
+## ALT-154 — adm-liberar-vaga-2000
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** modelo travado a partir de 3,255 h, sem erro. O Y92 (2º trem do ADM) entrou no terminal às 2,220 h e parou no `ocupar_lote_em_descarga` (Seize do `linha2000_lote_em_descarga`), que nenhum bloco do ADM devolvia: o 1º trem (26700) ficou com a unidade até sair só com as locos. Como as faixas só são liberadas depois do `mov_linha2K_ponto_b`, a cauda do Y92 segurou a via 3: o I30 (TES) parou na `via3_a` e o I16 (T39) na entrada da circulação.
+- **O que (ADM):** `rls_fim_manobra` (saída "só locos" do `so_locos_manobra`) solta `{ mnb_carregados, linha2000_lote_em_descarga }` (antes só `mnb_carregados`).
+- **Validar:** pedidos seguidos para o ADM; o 2º trem passa do `ocupar_lote_em_descarga` logo depois do `fim_manobra ... so com N loco(s)` do 1º.
+- **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`

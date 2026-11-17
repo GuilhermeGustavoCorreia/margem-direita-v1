@@ -165,3 +165,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-151**: ADM e T39 — `emDescarga` da linha de chegada volta a null quando sobram só locos
 - **ALT-152**: TES — 1º lote do trem novo espera na 3000 (`wait_encoste_3000`) até as linhas 03/04/05 ficarem livres
 - **ALT-153**: T39 — botão "Encostar" e Exit do trem de teste passam pelo GestorDeChegadas (`pedir_trem` / `receber_trem`)
+- **ALT-154**: ADM — `rls_fim_manobra` devolve também o `linha2000_lote_em_descarga`

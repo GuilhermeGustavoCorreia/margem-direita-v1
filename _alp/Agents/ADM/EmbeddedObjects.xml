@@ -10619,7 +10619,7 @@ lote_linha2000_emDescarga = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[resources]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ mnb_carregados }]]></Code>
+					<Code><![CDATA[{ mnb_carregados, linha2000_lote_em_descarga }]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
