@@ -18761,7 +18761,8 @@ tentar_liberar_espaco_vazios();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[tentar_liberar_espaco_corte();]]></Code>
+					<Code><![CDATA[Log.info("T39", "corte", String.format("lote=%d espera | linha11 livre=%b corte=%d livre=%d", agent.getId(), linha_11_ocupada.idle() > 0, tamanho_proximo_corte(), espaco_livre_vazios()));
+tentar_liberar_espaco_corte();]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

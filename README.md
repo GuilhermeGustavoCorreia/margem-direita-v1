@@ -178,3 +178,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-164**: ADM/TES/T39 — overload ignora o segundo lote de outra ferrovia/segmento
 - **ALT-165**: Moema — `rp_acesso_moema` para chegadas, encostes, manobra da ADM, cortes do T39 e alívios; ADM sem 2º lote
 - **ALT-166**: TES — lote no `wait_encoste_3000` não conta como carregado (alívio dos últimos vazios)
+- **ALT-167**: logs do alívio do PCX, do `rp_acesso_moema` e da espera do corte do T39

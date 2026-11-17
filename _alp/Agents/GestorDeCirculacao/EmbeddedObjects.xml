@@ -23330,9 +23330,17 @@ faixa_linha1000_c.liberar()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onSeize]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[dono_acesso_moema = agent;
+Log.info("GesCirculacao", "acesso_moema", "pegou " + (agent instanceof Trem ? ((Trem) agent).prefixo + "/" + agent.getId() : String.valueOf(agent)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRelease]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[dono_acesso_moema = null;
+Log.info("GesCirculacao", "acesso_moema", "soltou " + (agent instanceof Trem ? ((Trem) agent).prefixo + "/" + agent.getId() : String.valueOf(agent)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onWrapUp]]></Name>

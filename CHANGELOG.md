@@ -2068,3 +2068,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que (TES):** `_getVagoesCarregados()` não conta o `lote_linha3000_emDescarga` quando há lote no `wait_encoste_3000` (igual ao `wait_resto_3000`).
 - **Validar:** novo lote esperando o encoste com vazios nas linhas; aparece `qtd_alivio tes`, as linhas esvaziam e o lote encosta.
 - **Arquivos:** `_alp/Agents/TES/Code/Functions.java`
+
+## ALT-167 — logs-alivio-pcx-e-acesso-moema
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** travamento às 4,648 h sem informação no log: o alívio do T39 foi definido e não andou, e não dava para saber qual recurso ele esperava.
+- **O que (só logs):**
+  - GestorDeCirculacao: variável `dono_acesso_moema`; `rp_acesso_moema` loga `acesso_moema pegou/soltou <prefixo>/<id>`.
+  - GestorDeAlivios: logs `alivio_pcx` em `comecar_alivio`, saída do `bloquear_faixas_ate_terminal`, chegada no terminal, volta à 4000, `wait_trem_4000` e `liberar_wait_trem_4000()` (WARN quando não há trem na 4000).
+  - GestorDeAlivios: `diag_alivio_pcx()` no `atualizar_analises`. Com o alívio mais de 1 min no `bloquear_faixas_ate_terminal`, a cada 5 min loga `alivio_espera`: trem, destino, tempo, acesso (idle/dono), locos, cada faixa (estado, id, trens no track), estado do corte do T39 e overload de TES/ADM/T39. Variáveis `t_espera_alivio_pcx`, `t_ultimo_diag_alivio_pcx`, `trem_espera_alivio_pcx`.
+  - T39: `esperar_espaco_corte` loga o motivo da espera (linha 11, corte, espaço livre).
+- **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,T39}/...`

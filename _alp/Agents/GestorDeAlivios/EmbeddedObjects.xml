@@ -657,6 +657,11 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[t_espera_alivio_pcx = time();
+t_ultimo_diag_alivio_pcx = -1;
+trem_espera_alivio_pcx = agent;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -673,7 +678,10 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[ocuparFaixas(alivio_em_andamento_pcx.getFaixas())]]></Code>
+					<Code><![CDATA[t_espera_alivio_pcx = -1;
+trem_espera_alivio_pcx = null;
+Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d pegou acesso e faixas -> %s", agent.getId(), (alivio_em_andamento_pcx == null || alivio_em_andamento_pcx.get_moega_atual() == null ? "-" : ((Agent) alivio_em_andamento_pcx.get_moega_atual()).getName())));
+ocuparFaixas(alivio_em_andamento_pcx.getFaixas())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1276,6 +1284,9 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 com %d vagoes", agent.getId(), main().getNumeroDeVagoes((Trem) agent)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1520,7 +1531,8 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[aux_esta_ocorrendo_alivio_pcx = false;]]></Code>
+					<Code><![CDATA[aux_esta_ocorrendo_alivio_pcx = false;
+Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d espera na 4000 (%d vagoes)", agent.getId(), main().getNumeroDeVagoes((Trem) agent)));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1879,6 +1891,9 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d vagoes=%d -> %s pede acesso + faixas", agent.getId(), main().getNumeroDeVagoes((Trem) agent), (alivio_em_andamento_pcx == null || alivio_em_andamento_pcx.get_moega_atual() == null ? "-" : ((Agent) alivio_em_andamento_pcx.get_moega_atual()).getName())));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -1937,7 +1952,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
+					<Code><![CDATA[Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d chegou em %s", agent.getId(), (alivio_em_andamento_pcx == null || alivio_em_andamento_pcx.get_moega_atual() == null ? "-" : ((Agent) alivio_em_andamento_pcx.get_moega_atual()).getName())));
+alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

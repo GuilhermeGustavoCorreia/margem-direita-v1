@@ -204,7 +204,11 @@ double liberar_wait_trem_4000()
 {/*ALCODESTART::1791232984589*/
 // libera o primeiro que entrou
 if (wait_trem_4000.size() > 0) {
-    wait_trem_4000.free(wait_trem_4000.get(0));
+    Agent t = wait_trem_4000.get(0);
+    Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d liberado da 4000", t.getId()));
+    wait_trem_4000.free(t);
+} else {
+    Log.warn("GesAlivios", "alivio_pcx", "nenhum trem na 4000 para liberar");
 }
 /*ALCODEEND*/}
 
@@ -784,3 +788,44 @@ for (ResourcePool[] linha : faixas) {
 return new ResourcePool[][] { todos.toArray(new ResourcePool[0]) };
 /*ALCODEEND*/}
 
+double diag_alivio_pcx()
+{/*ALCODESTART::1798200000605*/
+// alívio do PCX parado no bloquear_faixas_ate_terminal: a cada 5 min mostra quem segura o quê
+if (t_espera_alivio_pcx < 0 || trem_espera_alivio_pcx == null) return;
+double espera = time() - t_espera_alivio_pcx;
+if (espera < 60) return;
+if (t_ultimo_diag_alivio_pcx >= 0 && time() - t_ultimo_diag_alivio_pcx < 300) return;
+t_ultimo_diag_alivio_pcx = time();
+
+GestorDeCirculacao gc = main().gestorDeCirculacao;
+Agent dono = gc.dono_acesso_moema;
+String destino = (alivio_em_andamento_pcx == null || alivio_em_andamento_pcx.get_moega_atual() == null)
+    ? "-" : ((Agent) alivio_em_andamento_pcx.get_moega_atual()).getName();
+Log.warn("GesAlivios", "alivio_espera", String.format("trem=%d -> %s | esperando ha %.2fh | acesso idle=%d dono=%s | locos idle=%d busy=%d | wait_4000=%d",
+    trem_espera_alivio_pcx.getId(), destino, espera / 3600.0,
+    gc.rp_acesso_moema.idle(),
+    dono == null ? "-" : (dono instanceof Trem ? ((Trem) dono).prefixo + "/" + dono.getId() : String.valueOf(dono)),
+    main().gestorDeLocomotivas.rp_locoFips_pcx.idle(), main().gestorDeLocomotivas.rp_locoFips_pcx.busy(),
+    wait_trem_4000.size()));
+
+if (alivio_em_andamento_pcx != null && alivio_em_andamento_pcx.getFaixas() != null) {
+    for (Faixa f : alivio_em_andamento_pcx.getFaixas()) {
+        if (f == null) continue;
+        StringBuilder trens = new StringBuilder();
+        if (f.track != null) {
+            for (Object t : f.track.getTrains()) trens.append(((Agent) t).getId()).append(" ");
+        }
+        Log.warn("GesAlivios", "alivio_espera", String.format("  %s | estado=%s id=%d idle=%d | no track: %s",
+            f.recurso == null ? "-" : f.recurso.getName(), f.estado, f.idTremLicenciado,
+            f.recurso == null ? -1 : f.recurso.idle(),
+            trens.length() == 0 ? "vazio" : trens.toString().trim()));
+    }
+}
+
+T39 t39 = main().t39;
+Log.warn("GesAlivios", "alivio_espera", String.format("  T39 | esperar_espaco_corte=%d linha11_idle=%d corte=%d livre=%d wait_espaco_vazios=%d",
+    t39.esperar_espaco_corte.size(), t39.linha_11_ocupada.idle(), t39.tamanho_proximo_corte(), t39.espaco_livre_vazios(),
+    t39.wait_espaco_vazios.size()));
+Log.warn("GesAlivios", "alivio_espera", String.format("  overload | TES=%.2f ADM=%.2f T39=%.2f",
+    main().tes.getOverloadVazios(), main().adm.getOverloadVazios(), t39.getOverloadVazios()));
+/*ALCODEEND*/}

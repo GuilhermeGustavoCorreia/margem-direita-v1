@@ -19,5 +19,7 @@ main().adm.tentar_promover_segundo_lote();
 // T39: vagão parado por falta de espaço nas linhas de vazios
 main().t39.tentar_liberar_espaco_vazios();
 main().t39.tentar_liberar_espaco_corte();
+// diagnóstico: alívio do PCX esperando acesso/faixas
+diag_alivio_pcx();
 /*ALCODEEND*/}
 
