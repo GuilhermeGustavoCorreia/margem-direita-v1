@@ -2089,3 +2089,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - ADM 117 blocos (187 pontos), TES 141 (224), T39 167 (265). Blocos próprios do modelo não foram instrumentados.
   - `log_estado()`: `estado`, `estado_lotes` (id:vagões de cada `lote_*`), `estado_pools` (idle/busy) e `estado_waits` (tamanho). Chamado a cada 5 min pelo `atualizar_analises` do GestorDeAlivios (variável `t_ultimo_log_estado_terminais`).
 - **Arquivos:** `_alp/Agents/{ADM,TES,T39}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{ADM,TES,T39}/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Events.java`
+
+## ALT-169 — t39-acesso-moema-ate-corte-sair-da-1000
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** colisão no `railwaySwitch104` às 2,212 h. O pai do corte (27534) soltava o `rp_acesso_moema` no `release`, logo depois do `tirar_lote`, com o pedaço cortado (27753) ainda parado na 1000_b/c esperando o `licenciar_linha_1000_b`. O alívio do T39, que estava na fila, pegou o acesso e as faixas, e a loco entrou pela `railwayTrack79` em cima do pedaço.
+- **O que:**
+  - `release` deixa de soltar o `acesso_moema_corte` (continua soltando b1, c1 e linha 13).
+  - Blocos novos entre o `release` e o `para_verificar_fim_lote`: Wait `esperar_corte_sair_1000` (o pai espera segurando só o acesso) → Release `liberar_acesso_corte` (ALL_FROM_SEIZES `{ acesso_moema_corte }`).
+  - `livar_linha_1000_c` (o pedaço saiu da 1000_c) libera o pai do `esperar_corte_sair_1000`.
+- **Arquivos:** `_alp/Agents/T39/{EmbeddedObjects,Connectors}.xml`
