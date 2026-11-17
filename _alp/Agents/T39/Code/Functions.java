@@ -160,6 +160,12 @@ if (moega_esta_desocupada && ultimos_vazios_no_terminal) {
     return (float) 2.0;
 }
 
+// lote esperando lugar para o próximo corte: força o alívio
+if (moega_esta_desocupada && _getVagoesVazios() > 0 && esperar_espaco_corte.size() > 0
+    && espaco_livre_vazios() < tamanho_proximo_corte()) {
+    return (float) 2.0;
+}
+
 if (QUANTIDADE_PARA_ALIVIAR <= 0) return 0;
 return (float) _getVagoesVazios() / QUANTIDADE_PARA_ALIVIAR;
 /*ALCODEEND*/}
@@ -353,4 +359,38 @@ for (int i = 0; i < trem.size(); i++) {
     }
 }
 return false;
+/*ALCODEEND*/}
+
+int espaco_livre_vazios()
+{/*ALCODESTART::1798200000543*/
+// lugares livres nas linhas 9, 10 e fundo da 9, descontando o que ainda vai chegar nelas
+// (vagões esperando espaço, o vagão na moega e o corte na linha 11)
+int capacidade = CAPACIDADE_LINHA_10 + CAPACIDADE_LINHA_9 + CAPACIDADE_LINHA_9_FUNDO;
+int ocupados = main().getTamanhoDoTrem(lote_linha_10) + main().getTamanhoDoTrem(lote_linha_9)
+    + main().getTamanhoDoTrem(lote_linha_9_fundo);
+int a_caminho = wait_espaco_vazios.size() + moega_ocupada.busy();
+if (linha_11_ocupada.idle() == 0) a_caminho += main().getNumeroDeVagoes(lote_linha_11);
+return capacidade - ocupados - a_caminho;
+/*ALCODEEND*/}
+
+int tamanho_proximo_corte()
+{/*ALCODESTART::1798200000544*/
+// próximo corte do lote parado no esperar_espaco_corte
+if (esperar_espaco_corte.size() == 0) return 0;
+Trem lote = (Trem) esperar_espaco_corte.get(0);
+return Math.min(CAPACIDADE_LINHA_11, main().getNumeroDeVagoes(lote));
+/*ALCODEEND*/}
+
+double tentar_liberar_espaco_corte()
+{/*ALCODESTART::1798200000545*/
+// o lote só sai da 1000_a para tirar o corte com a linha 11 livre e lugar para todo o corte
+// nas linhas de vazios; senão a cauda do corte para em cima da 1000_b/c e trava o alívio
+if (esperar_espaco_corte.size() == 0) return;
+if (linha_11_ocupada.idle() == 0) return;
+int corte = tamanho_proximo_corte();
+int livre = espaco_livre_vazios();
+if (livre < corte) return;
+Agent lote = esperar_espaco_corte.get(0);
+Log.info("T39", "corte", String.format("lote=%d segue: corte=%d livre=%d", lote.getId(), corte, livre));
+esperar_espaco_corte.free(lote);
 /*ALCODEEND*/}

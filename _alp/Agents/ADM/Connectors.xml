@@ -195,11 +195,11 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>linha_2000_vazia</ItemName>
+			<ItemName>acesso_moema_chegada</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>SelectOutput</ClassName>
+			<ClassName>Seize</ClassName>
 			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -389,7 +389,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>liberar_faixas_circulacao</ItemName>
+			<ItemName>liberar_acesso_chegada</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -837,7 +837,7 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>sz_mnb_carregados</ItemName>
+			<ItemName>acesso_moema_manobra</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -1822,7 +1822,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>sz_mnb_carregados</ItemName>
+			<ItemName>acesso_moema_manobra</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -5565,7 +5565,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>licenciar_moema</ItemName>
+			<ItemName>licenciar_linhas_2000</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -5598,7 +5598,7 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>licenciar_moema</ItemName>
+			<ItemName>licenciar_linhas_2000</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -5831,6 +5831,143 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
+			<ItemName>liberar_acesso_espera</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>-10</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>-10</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000506</Id>
+		<Name><![CDATA[connector_1798200000506]]></Name>
+		<X>740</X>
+		<Y>500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>acesso_moema_chegada</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>linha_2000_vazia</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>-90</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000509</Id>
+		<Name><![CDATA[connector_1798200000509]]></Name>
+		<X>1090</X>
+		<Y>500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>liberar_acesso_chegada</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>liberar_faixas_circulacao</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000512</Id>
+		<Name><![CDATA[connector_1798200000512]]></Name>
+		<X>840</X>
+		<Y>650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>liberar_acesso_espera</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
 			<ItemName>wait_segundo_lote_2000</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -5854,6 +5991,49 @@
 			<Point>
 				<X>40</X>
 				<Y>-10</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1798200000515</Id>
+		<Name><![CDATA[connector_1798200000515]]></Name>
+		<X>1610</X>
+		<Y>250</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>acesso_moema_manobra</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>sz_mnb_carregados</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>340</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>

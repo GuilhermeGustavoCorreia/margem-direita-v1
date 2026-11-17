@@ -544,7 +544,7 @@
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[todosNumConjunto(alivio_em_andamento_pcx.getConjuntoRecursos_faixas())]]></Code>
+					<Code><![CDATA[conjunto_alivio_pcx()]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

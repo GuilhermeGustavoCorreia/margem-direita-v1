@@ -769,3 +769,17 @@ for (Faixa f : get_faixas_saida_4000()) {
 }
 /*ALCODEEND*/}
 
+ResourcePool[][] conjunto_alivio_pcx()
+{/*ALCODESTART::1798200000503*/
+// alívio do PCX: rp_acesso_moema primeiro, depois as faixas até o terminal (um Seize só)
+ArrayList<ResourcePool> todos = new ArrayList<>();
+todos.add(main().gestorDeCirculacao.rp_acesso_moema);
+ResourcePool[][] faixas = todosNumConjunto(alivio_em_andamento_pcx.getConjuntoRecursos_faixas());
+for (ResourcePool[] linha : faixas) {
+    if (linha == null) continue;
+    for (ResourcePool rp : linha) {
+        if (rp != null && !todos.contains(rp)) todos.add(rp);
+    }
+}
+return new ResourcePool[][] { todos.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}

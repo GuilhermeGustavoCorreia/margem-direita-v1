@@ -260,13 +260,14 @@ Log.info("Chegadas", "aguardando", String.format("%s %s", p, motivo));
 boolean pode_receber_tipo(ITerminalMoega terminal,String ferrovia,String segmento)
 {/*ALCODESTART::1798200000303*/
 // um terminal não descarrega duas ferrovias/segmentos ao mesmo tempo:
-// TES e T39 só recebem outro tipo com o terminal vazio (o ADM resolve pelo 2º lote)
+// TES, T39 e ADM só recebem outro tipo com o terminal vazio
 // segmento null = segmento padrão do terminal (o pedido ainda não traz segmento)
 if (!terminal.podeReceberNovoLote()) return false;
 
 boolean vazio;
 if      (terminal instanceof TES) vazio = ((TES) terminal).terminal_vazio();
 else if (terminal instanceof T39) vazio = ((T39) terminal).terminal_vazio();
+else if (terminal instanceof ADM) vazio = ((ADM) terminal).terminal_vazio_para_novo_tipo();
 else return true;
 if (vazio) return true;
 

@@ -2045,3 +2045,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que (ADM, TES, T39):** no `getOverloadVazios()`, o lote `*_proximo` de outra ferrovia/segmento não conta como carregado. TES e T39 ganharam `eh_mesmo_tipo_em_atendimento(Trem)` (compara o 1º vagão com `getFerrovia()`/`getSegmento()`).
 - **Validar:** segundo lote de outra ferrovia na ADM; os últimos vazios pedem alívio, a 4000 fecha 82 e o segundo lote é promovido.
 - **Arquivos:** `_alp/Agents/ADM/Code/Functions.java`, `_alp/Agents/{TES,T39}/Code/{Functions.java,Functions.xml}`
+
+## ALT-165 — rp-acesso-moema
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** travamento às 33,69 h. O alívio do T39 não voltava à 4000: o corte em descarga ficava com a cauda em cima da 1000_b/c quando as linhas 9/10/fundo enchiam, e o alívio precisava passar por ali para abrir espaço. Sem alívio, TES e ADM também pararam.
+- **O que:**
+  - GestorDeCirculacao: novo `rp_acesso_moema` (capacidade 1). Um movimento por vez na área da Moema; quem precisa dele pega antes das faixas e não espera segurando o acesso.
+  - GestorDeAlivios: `bloquear_faixas_ate_terminal` pede `conjunto_alivio_pcx()` (acesso + faixas); solta na volta à 4000 (`liberar_faixas_ate_terminal`).
+  - Chegada (TES, ADM, T39): Seize `acesso_moema_chegada` depois do `novo_lote`; Release `liberar_acesso_chegada` quando o trem para na linha X000 e `liberar_acesso_espera` no caminho do ponto_a/proximo.
+  - ADM: `acesso_moema_manobra` antes do `sz_mnb_carregados`; `licenciar_moema` renomeado para `licenciar_linhas_2000`; `rls_moema` e `rls_moema1` soltam os dois. Sem 2º lote (`podeReceberNovoLote` exige `emDescarga` e `proximo` null) e `pode_receber_tipo` vale também para a ADM.
+  - TES: `acesso_moema_encoste` depois do `comecar_encoste_moegas`; `rls_rp_mnb_linha04e05` e `rls_volta_3000` soltam o acesso.
+  - T39: `esperar_espaco_corte` (Wait) + `acesso_moema_corte` antes do `aguarda_linha_13`. O lote só tira o corte com a linha 11 livre e lugar para o corte inteiro nas 9/10/fundo (`espaco_livre_vazios`, `tamanho_proximo_corte`, `tentar_liberar_espaco_corte`). `getOverloadVazios` força o alívio com lote esperando espaço. O `release` solta o acesso.
+- **Fora:** vinda das locos FIPS até os trens dos terminais.
+- **Validar:** T39 com as linhas de vazios enchendo; aparece `T39 corte lote=... segue` só com espaço, o alívio entra e volta à 4000. TES/ADM/T39 nunca dois movimentos ao mesmo tempo na Moema.
+- **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,GestorDeChegadas,ADM,TES,T39}/...`

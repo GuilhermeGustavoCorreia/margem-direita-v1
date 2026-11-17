@@ -5,14 +5,10 @@ return (Main) getEngine().getRoot();
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1792172934670*/
-// trem entrando: do comecar_encoste até parar na linha 2000 (encoste ou 2º lote)
+// trem entrando: do comecar_encoste até parar na linha 2000
 if (_trem_chegando != null) return false;
-// já há um 2º lote esperando
-if (lote_linha2000_proximo != null) return false;
-// linha vazia
-if (lote_linha2000_emDescarga == null) return true;
-// 2º lote (qualquer ferrovia): o lote em descarga tem até _LOTE_DESCARGA_TAMANHO_RECEBIMENTO vagões
-return main().getNumeroDeVagoes(lote_linha2000_emDescarga) <= _LOTE_DESCARGA_TAMANHO_RECEBIMENTO;
+// sem 2º lote: a cauda de 82 vagões ficaria na garganta da Moema e travaria o alívio
+return lote_linha2000_emDescarga == null && lote_linha2000_proximo == null;
 /*ALCODEEND*/}
 
 float getOverloadVazios()
