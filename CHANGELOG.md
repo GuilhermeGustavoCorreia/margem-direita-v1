@@ -2008,3 +2008,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **TES e T39:** a mesma regra já vale pela entrada (`pode_receber_tipo`): o trem de outro tipo espera no ISN até o terminal ficar sem carregados e sem vazios.
 - **Validar:** ADM com MRS e depois VLI; o VLI para no 2º lote e só vira `emDescarga` com `promovido (mesmo_tipo=false)` depois que a linha 7 esvazia; o trem MRS da 4000 fecha 82.
 - **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`
+
+## ALT-161 — t39-alivio-licencia-1000-b
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `Train [786] and train [789] are trying to occupy the switch railwaySwitch104` (8,300 h). A loco do alívio do T39 ia para o `pos_t39_alivio` pelo `railwayTrack79` → AMV 104 → `pmc_linha1000_c` e o lote do T39 (corte de 15 do 27288) andava na `pmc_linha1000_b` para a linha 11. O AMV 104 liga `pmc_linha1000_b`, `pmc_linha1000_c` e `railwayTrack79`; o alívio licenciava só a `linha1000_c`.
+- **O que (T39):** `primeiro_alivio_faixas` inclui a `faixa_linha1000_b`. O trem do T39 fica na `pmc_linha1000_a` e só usa a b e a c para encostar nas moegas, então o alívio espera no máximo um encoste.
+- **Arquivos:** `_alp/Agents/T39/Variables.xml`

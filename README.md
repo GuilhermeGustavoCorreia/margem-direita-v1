@@ -172,3 +172,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-158**: TES e T39 — só recebem outra ferrovia/segmento com o terminal vazio (`pode_receber_tipo` no GestorDeChegadas e no ISN)
 - **ALT-159**: Main — `_adm_segundo_lote` volta para 1.045 (offset 1.500 fora da `pmc_linha2000_a`)
 - **ALT-160**: ADM — encoste direto só com o mesmo tipo do terminal (ou terminal vazio); senão 2º lote
+- **ALT-161**: T39 — alívio licencia também a `faixa_linha1000_b` (AMV 104)

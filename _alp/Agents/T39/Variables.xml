@@ -684,6 +684,7 @@
 	main().gestorDeCirculacao.faixa_linha3000_c,
 	main().gestorDeCirculacao.faixa_linha2000_c,
 	main().gestorDeCirculacao.faixa_linha2000_d,
+	main().gestorDeCirculacao.faixa_linha1000_b,   // AMV 104 (1000_b / 1000_c / railwayTrack79)
 	main().gestorDeCirculacao.faixa_linha1000_c
 }]]></Code>
 			</CollectionInitializer>
