@@ -1549,8 +1549,8 @@ liberar_wait_lote_linha_9_fundo();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// trem de teste entra pela circulacao
-main().gestorDeCirculacao.chegada_carregados.take(agent);]]></Code>
+					<Code><![CDATA[// o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

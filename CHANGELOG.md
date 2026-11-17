@@ -1922,3 +1922,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Efeito:** o TES continua recebendo assim que a 3000 esvazia; o trem novo espera na 3000 até as linhas 03/04/05 liberarem.
 - **Validar:** dois pedidos seguidos para o TES; o 2º mostra `novo_lote_3000 espera: ...` e só sai quando as linhas ficam livres.
 - **Arquivos:** `_alp/Agents/TES/{EmbeddedObjects.xml,Connectors.xml,Code/Functions.java,Code/Functions.xml}`
+
+## ALT-153 — t39-botao-pelo-gestor-de-chegadas
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** `The car being added on the track 'isn_linha01_a' intersects with another car` (0,56 h) e, em seguida, `gestorDeCirculacao.ir_via3_intermar: The train is empty`. O botão "Encostar" do T39 chamava `tremTesteSource.inject()` direto, sem passar pelo GestorDeChegadas; o trem nasceu em cima do X34 (TES) na `isn_linha01_a` e entrou vazio na circulação (`(null - 26785): t39`, sem prefixo).
+- **O que (T39):**
+  - Botão "Encostar": `main().gestorDeChegadas.pedir_trem(this, "rumo", tremTesteSource);`
+  - `para_encoste_linha1000.onExit`: `main().gestorDeChegadas.receber_trem((Trem) agent);` (antes `gestorDeCirculacao.chegada_carregados.take`).
+- **Validar:** clicar no T39 com outro trem na `isn_linha01`; o pedido fica `entrada ocupada` e o trem nasce com prefixo.
+- **Arquivos:** `_alp/Agents/T39/{Levels/Level.level.xml,EmbeddedObjects.xml}`

@@ -45,7 +45,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>tremTesteSource.inject();</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTesteSource);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>
