@@ -7413,7 +7413,10 @@ _trem_chegando = null;]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[for (Object t : main().gestorDeCirculacao.faixa_linha1000_a.track.getTrains()) {
     Log.debug("T39", "trem_na_faixa_a", String.valueOf(t));
-}]]></Code>
+}
+
+// a 1000 ficou sem vagões: libera a linha de chegada
+lote_linha_1000_emDescarga = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

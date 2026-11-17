@@ -10547,7 +10547,10 @@ Log.debug("ADM", "vagoes_entrando_linha7", String.valueOf(vagoes_entrando_linha7
 				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[
-Log.info("ADM", "fim_manobra", String.format("trem=%d so com %d loco(s) -> devolve locos e comeca a descarga", agent.getId(), ((Trem) agent).size()));]]></Code>
+Log.info("ADM", "fim_manobra", String.format("trem=%d so com %d loco(s) -> devolve locos e comeca a descarga", agent.getId(), ((Trem) agent).size()));
+
+// a 2000 ficou sem vagões: libera a linha de chegada
+lote_linha2000_emDescarga = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

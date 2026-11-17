@@ -162,3 +162,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-148**: alívio da área comum solta o `mnb_pcx` só quando a cauda passa da `marginal_c` (não mais ao sair do terminal)
 - **ALT-149**: TES, ADM e T39 — `_trem_chegando` e `podeReceberNovoLote()` pela linha de chegada (3000/2000/1000); T39 `encosta_L1K1_proximo` grava o `proximo`
 - **ALT-150**: ADM e T39 — `podeReceberNovoLote()` exige a linha de chegada vazia (o `outHit` do `proximo` está desconectado)
+- **ALT-151**: ADM e T39 — `emDescarga` da linha de chegada volta a null quando sobram só locos

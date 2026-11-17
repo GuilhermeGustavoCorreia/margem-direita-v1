@@ -1900,3 +1900,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Pendência:** usar o `proximo` de fato (ponto de parada atrás do lote ou ligação do `outHit`) nos três terminais.
 - **Validar:** vários pedidos seguidos para o ADM; o 2º fica na linha 02 do ISN até a 2000 esvaziar.
 - **Arquivos:** `_alp/Agents/{ADM,T39}/Code/Functions.java`
+
+## ALT-151 — adm-t39-zerar-em-descarga
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** depois da ALT-150 o ADM nunca mais recebeu trem: às 552 h os pedidos P3..P20 ainda esperavam e o X34 continuava na linha 02 do ISN. O `lote_linha2000_emDescarga` (ADM) e o `lote_linha_1000_emDescarga` (T39) nunca voltavam a null.
+- **O que:**
+  - ADM `so_locos_manobra.onExitTrue` (só locos, 2000 sem vagões): `lote_linha2000_emDescarga = null;`
+  - T39 `liberar_linha_1000_emDescarga.onExit` (saída do `sobrou_so_loco`): `lote_linha_1000_emDescarga = null;`
+- **Validar:** pedidos seguidos para o ADM; o X34 sai da linha 02 logo depois do `fim_manobra ... so com N loco(s)` do Y42.
+- **Arquivos:** `_alp/Agents/{ADM,T39}/EmbeddedObjects.xml`
