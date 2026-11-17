@@ -171,3 +171,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-157**: ADM — 2º lote com `_LOTE_DESCARGA_TAMANHO_RECEBIMENTO` (10) e promoção só com o terminal vazio quando a ferrovia/segmento muda
 - **ALT-158**: TES e T39 — só recebem outra ferrovia/segmento com o terminal vazio (`pode_receber_tipo` no GestorDeChegadas e no ISN)
 - **ALT-159**: Main — `_adm_segundo_lote` volta para 1.045 (offset 1.500 fora da `pmc_linha2000_a`)
+- **ALT-160**: ADM — encoste direto só com o mesmo tipo do terminal (ou terminal vazio); senão 2º lote

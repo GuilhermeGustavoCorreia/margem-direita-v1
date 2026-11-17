@@ -1999,3 +1999,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que:** `_adm_segundo_lote` volta para 1.045 (o resto de até 10 vagões + 2 locos no fim da 2000 ocupa ~1.048–1.268).
 - **Atenção:** com a frente em 1.045, um trem de 82 no 2º lote fica com a cauda ~435 m no `railwayTrack78` (entrada da 1000/2000/3000) e segura as faixas da circulação até o `mov_linha2K_ponto_b`.
 - **Arquivos:** `_alp/Agents/Main/Levels/Level.level.xml`
+
+## ALT-160 — adm-encoste-so-mesmo-tipo
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** impasse na 4000 (~7 h). O U40 (VLI) entrou no ADM às 6,270 h com vazios MRS na linha 7 e foi direto para o encoste (2000 vazia); os vazios se misturaram e o trem MRS da 4000 parou em 67.
+- **O que (ADM):** `linha_2000_vazia` vai para o encoste só com a 2000 vazia **e** (`eh_mesmo_tipo_em_atendimento` ou `terminal_vazio_para_novo_tipo()`); senão o trem para no 2º lote e espera a promoção. O `comecar_encoste` só atualiza a ferrovia/segmento em atendimento na mesma condição.
+- **TES e T39:** a mesma regra já vale pela entrada (`pode_receber_tipo`): o trem de outro tipo espera no ISN até o terminal ficar sem carregados e sem vazios.
+- **Validar:** ADM com MRS e depois VLI; o VLI para no 2º lote e só vira `emDescarga` com `promovido (mesmo_tipo=false)` depois que a linha 7 esvazia; o trem MRS da 4000 fecha 82.
+- **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`

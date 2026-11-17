@@ -773,7 +773,9 @@ Log.info("ADM", "alivio_inicio", String.format("loco=%d chegou com %d vagoes | l
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// o 2º lote (linha com lote em descarga) só vira o tipo em atendimento quando for promovido
-if (lote_linha2000_emDescarga == null) atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
+if (lote_linha2000_emDescarga == null
+    && (eh_mesmo_tipo_em_atendimento((Trem) agent) || terminal_vazio_para_novo_tipo()))
+    atualizarFerroviaEProdutoEmAtendimento((Trem) agent);
 _trem_chegando = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
@@ -1468,7 +1470,10 @@ _trem_chegando = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[lote_linha2000_emDescarga == null]]></Code>
+					<Code><![CDATA[// encoste direto só com a 2000 vazia e o trem do mesmo tipo do terminal (ou o terminal vazio);
+// senão para no 2º lote e espera os vazios do outro tipo saírem
+lote_linha2000_emDescarga == null
+&& (eh_mesmo_tipo_em_atendimento((Trem) agent) || terminal_vazio_para_novo_tipo())]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
