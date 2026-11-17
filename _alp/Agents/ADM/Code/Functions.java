@@ -375,3 +375,53 @@ return lote_linha2000_emDescarga == null
     && !alivio_linha7_em_andamento;
 /*ALCODEEND*/}
 
+String lote_txt(Trem t)
+{/*ALCODESTART::1798200000702*/
+if (t == null) return "-";
+return t.getId() + ":" + main().getNumeroDeVagoes(t);
+/*ALCODEEND*/}
+
+String estado_resumo()
+{/*ALCODESTART::1798200000703*/
+return String.format("vz=%d cg=%d ov=%.2f moega=%s", _getVagoesVazios(), _getVagoesCarregados(), getOverloadVazios(),
+    "X=" + (rp_moegaX.idle() > 0 ? "livre" : "ocupada") + " V=" + (rp_moegaV.idle() > 0 ? "livre" : "ocupada"));
+/*ALCODEEND*/}
+
+double log_analise(String evento,Agent a,String msg)
+{/*ALCODESTART::1798200000704*/
+// log de análise: só escreve com log_de_analise = true
+if (!log_de_analise) return;
+String t = (a == null) ? "-" : String.valueOf(a.getId());
+if (a instanceof Trem) {
+	Trem tr = (Trem) a;
+	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
+}
+Log.info("ADM", evento, t + " | " + msg + " | " + estado_resumo());
+/*ALCODEEND*/}
+
+double log_estado()
+{/*ALCODESTART::1798200000705*/
+// snapshot do terminal para o log de análise (idle/busy dos pools, tamanho dos waits)
+if (!log_de_analise) return;
+Log.info("ADM", "estado", estado_resumo());
+Log.info("ADM", "estado_lotes", "lote_linha2000_emDescarga=" + lote_txt(lote_linha2000_emDescarga) +
+    " lote_linha2000_proximo=" + lote_txt(lote_linha2000_proximo) +
+    " lote_moegaX=" + lote_txt(lote_moegaX) +
+    " lote_moegaV=" + lote_txt(lote_moegaV) +
+    " lote_linha_7=" + lote_txt(lote_linha_7) +
+    " _trem_chegando=" + lote_txt(_trem_chegando));
+Log.info("ADM", "estado_pools", "linha2000_lote_em_descarga=" + linha2000_lote_em_descarga.idle() + "/" + linha2000_lote_em_descarga.busy() +
+    " mnb_vazios=" + mnb_vazios.idle() + "/" + mnb_vazios.busy() +
+    " mnb_carregados=" + mnb_carregados.idle() + "/" + mnb_carregados.busy() +
+    " mnb_alivio=" + mnb_alivio.idle() + "/" + mnb_alivio.busy() +
+    " rp_moegaX=" + rp_moegaX.idle() + "/" + rp_moegaX.busy() +
+    " rp_moegaV=" + rp_moegaV.idle() + "/" + rp_moegaV.busy());
+Log.info("ADM", "estado_waits", "wait_lote_linha2000=" + wait_lote_linha2000.size() +
+    " wait_lote_linha_07=" + wait_lote_linha_07.size() +
+    " wait_linha_moegaX=" + wait_linha_moegaX.size() +
+    " wait_linha_moegaV=" + wait_linha_moegaV.size() +
+    " wait_excesso_l7=" + wait_excesso_l7.size() +
+    " wait_rp_moegaX=" + wait_rp_moegaX.size() +
+    " wait_rp_moegaV=" + wait_rp_moegaV.size() +
+    " wait_segundo_lote_2000=" + wait_segundo_lote_2000.size());
+/*ALCODEEND*/}

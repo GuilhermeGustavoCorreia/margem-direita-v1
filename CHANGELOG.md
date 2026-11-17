@@ -2079,3 +2079,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeAlivios: `diag_alivio_pcx()` no `atualizar_analises`. Com o alívio mais de 1 min no `bloquear_faixas_ate_terminal`, a cada 5 min loga `alivio_espera`: trem, destino, tempo, acesso (idle/dono), locos, cada faixa (estado, id, trens no track), estado do corte do T39 e overload de TES/ADM/T39. Variáveis `t_espera_alivio_pcx`, `t_ultimo_diag_alivio_pcx`, `trem_espera_alivio_pcx`.
   - T39: `esperar_espaco_corte` loga o motivo da espera (linha 11, corte, espaço livre).
 - **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,T39}/...`
+
+## ALT-168 — log-de-analise-adm-tes-t39
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Motivo:** travamento às 9,4 h: a 4000 (mrs/grao) parou com 79 de 82 e o ADM (vli/grao) ficou esperando. Faltavam 3 vazios do M60 (28704) no T39, que não pediu mais alívio. O log não mostrava o estado do T39.
+- **O que (só logs):** variável `log_de_analise` (boolean, true) e funções `log_analise(evento, agente, msg)`, `estado_resumo()`, `lote_txt(Trem)` e `log_estado()` no ADM, TES e T39, no padrão da ALT-123/136.
+  - Cada bloco da biblioteca escreve no log (evento = nome do bloco), com os mesmos pontos da ALT-136. Toda linha termina com `vz=… cg=… ov=… moega=…` (`_getVagoesVazios`, `_getVagoesCarregados`, `getOverloadVazios`, moegas livres/ocupadas).
+  - ADM 117 blocos (187 pontos), TES 141 (224), T39 167 (265). Blocos próprios do modelo não foram instrumentados.
+  - `log_estado()`: `estado`, `estado_lotes` (id:vagões de cada `lote_*`), `estado_pools` (idle/busy) e `estado_waits` (tamanho). Chamado a cada 5 min pelo `atualizar_analises` do GestorDeAlivios (variável `t_ultimo_log_estado_terminais`).
+- **Arquivos:** `_alp/Agents/{ADM,TES,T39}/{EmbeddedObjects,Variables}.xml`, `_alp/Agents/{ADM,TES,T39}/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Events.java`

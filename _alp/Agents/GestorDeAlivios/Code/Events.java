@@ -21,5 +21,12 @@ main().t39.tentar_liberar_espaco_vazios();
 main().t39.tentar_liberar_espaco_corte();
 // diagnóstico: alívio do PCX esperando acesso/faixas
 diag_alivio_pcx();
+// log de análise dos terminais do PCX a cada 5 min (cada terminal tem o seu log_de_analise)
+if (t_ultimo_log_estado_terminais < 0 || time() - t_ultimo_log_estado_terminais >= 300) {
+    t_ultimo_log_estado_terminais = time();
+    main().adm.log_estado();
+    main().tes.log_estado();
+    main().t39.log_estado();
+}
 /*ALCODEEND*/}
 

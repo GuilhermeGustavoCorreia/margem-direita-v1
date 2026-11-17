@@ -395,3 +395,51 @@ Log.info("T39", "corte", String.format("lote=%d segue: corte=%d livre=%d", lote.
 esperar_espaco_corte.free(lote);
 /*ALCODEEND*/}
 
+String lote_txt(Trem t)
+{/*ALCODESTART::1798200000712*/
+if (t == null) return "-";
+return t.getId() + ":" + main().getNumeroDeVagoes(t);
+/*ALCODEEND*/}
+
+String estado_resumo()
+{/*ALCODESTART::1798200000713*/
+return String.format("vz=%d cg=%d ov=%.2f moega=%s", _getVagoesVazios(), _getVagoesCarregados(), getOverloadVazios(),
+    (moega_ocupada.idle() > 0 ? "livre" : "ocupada"));
+/*ALCODEEND*/}
+
+double log_analise(String evento,Agent a,String msg)
+{/*ALCODESTART::1798200000714*/
+// log de análise: só escreve com log_de_analise = true
+if (!log_de_analise) return;
+String t = (a == null) ? "-" : String.valueOf(a.getId());
+if (a instanceof Trem) {
+	Trem tr = (Trem) a;
+	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
+}
+Log.info("T39", evento, t + " | " + msg + " | " + estado_resumo());
+/*ALCODEEND*/}
+
+double log_estado()
+{/*ALCODESTART::1798200000715*/
+// snapshot do terminal para o log de análise (idle/busy dos pools, tamanho dos waits)
+if (!log_de_analise) return;
+Log.info("T39", "estado", estado_resumo());
+Log.info("T39", "estado_lotes", "lote_linha_1000_emDescarga=" + lote_txt(lote_linha_1000_emDescarga) +
+    " lote_linha_1000_proximo=" + lote_txt(lote_linha_1000_proximo) +
+    " lote_linha_11=" + lote_txt(lote_linha_11) +
+    " lote_linha_10=" + lote_txt(lote_linha_10) +
+    " lote_linha_9=" + lote_txt(lote_linha_9) +
+    " lote_linha_9_fundo=" + lote_txt(lote_linha_9_fundo) +
+    " _trem_chegando=" + lote_txt(_trem_chegando) +
+    " lote_moega=" + (int) lote_moega);
+Log.info("T39", "estado_pools", "linha_11_ocupada=" + linha_11_ocupada.idle() + "/" + linha_11_ocupada.busy() +
+    " moega_ocupada=" + moega_ocupada.idle() + "/" + moega_ocupada.busy() +
+    " fazendo_alivio=" + fazendo_alivio.idle() + "/" + fazendo_alivio.busy() +
+    " linha_1000_emDescarga=" + linha_1000_emDescarga.idle() + "/" + linha_1000_emDescarga.busy());
+Log.info("T39", "estado_waits", "aguardar_moega=" + aguardar_moega.size() +
+    " wait_lote_linha_09=" + wait_lote_linha_09.size() +
+    " wait_lote_linha_10=" + wait_lote_linha_10.size() +
+    " wait_lote_linha_9_fundo=" + wait_lote_linha_9_fundo.size() +
+    " wait_espaco_vazios=" + wait_espaco_vazios.size() +
+    " esperar_espaco_corte=" + esperar_espaco_corte.size());
+/*ALCODEEND*/}
