@@ -2060,3 +2060,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Fora:** vinda das locos FIPS até os trens dos terminais.
 - **Validar:** T39 com as linhas de vazios enchendo; aparece `T39 corte lote=... segue` só com espaço, o alívio entra e volta à 4000. TES/ADM/T39 nunca dois movimentos ao mesmo tempo na Moema.
 - **Arquivos:** `_alp/Agents/{GestorDeCirculacao,GestorDeAlivios,GestorDeChegadas,ADM,TES,T39}/...`
+
+## ALT-166 — tes-carregados-ignora-wait-encoste
+- **Data:** 2026-11-17
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **Problema:** TES travado às 382,815 h. O X50 (28020) esperava no `wait_encoste_3000` as linhas 03/04/05 esvaziarem e entrava no `_getVagoesCarregados()`. Os 20 vazios restantes (6 na linha 03, 14 no fundo 05) não forçavam o alívio; o U80 ficou no ISN.
+- **O que (TES):** `_getVagoesCarregados()` não conta o `lote_linha3000_emDescarga` quando há lote no `wait_encoste_3000` (igual ao `wait_resto_3000`).
+- **Validar:** novo lote esperando o encoste com vazios nas linhas; aparece `qtd_alivio tes`, as linhas esvaziam e o lote encosta.
+- **Arquivos:** `_alp/Agents/TES/Code/Functions.java`

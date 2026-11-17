@@ -33,10 +33,11 @@ return (
 
 int _getVagoesCarregados()
 {/*ALCODESTART::1792518896291*/
-// o lote parado no wait_resto_3000 nao conta (espera as linhas liberarem);
-// senao o alivio dos ultimos vazios nunca e forcado (deadlock na VLI)
+// lote parado esperando as linhas liberarem (resto no wait_resto_3000 ou novo lote no
+// wait_encoste_3000) nao conta; senao o alivio dos ultimos vazios nunca e forcado
 boolean resto_esperando = wait_resto_3000.size() > 0 && wait_resto_3000.get(0) == lote_linha3000_emDescarga;
-int vagoes_linha_3000_emDescarga = resto_esperando ? 0 : main().getNumeroDeVagoes(lote_linha3000_emDescarga);
+boolean novo_esperando  = wait_encoste_3000.size() > 0;
+int vagoes_linha_3000_emDescarga = (resto_esperando || novo_esperando) ? 0 : main().getNumeroDeVagoes(lote_linha3000_emDescarga);
 int vagoes_linha_3000_proximo 	 = main().getNumeroDeVagoes(lote_linha3000_proximo);
 
 int vagoes_linha_03				 = lote_linha_3 != null? lote_linha_3.getNumeroDeVagoesCarregados() : 0;
