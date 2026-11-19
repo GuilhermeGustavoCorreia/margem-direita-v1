@@ -49,16 +49,19 @@ return ferrovia_em_atendimento;
 
 double takeAlivio(Trem trem)
 {/*ALCODESTART::1794956361297*/
-// chamado pelo GestorDeAlivios (tipo "proprio", trem = null): o alívio do TEC ainda não existe
-Log.info("TEC", "takeAlivio", "pronto para alivio (a implementar)");
+// chamado pelo GestorDeAlivios (tipo "proprio", trem = null): solta o trem que espera no aguardando_alivio
+if (aguardando_alivio.size() > 0) {
+	Log.info("TEC", "takeAlivio", "inicio do alivio");
+	aguardando_alivio.free(aguardando_alivio.get(0));
+} else {
+	Log.warn("TEC", "takeAlivio", "nenhum trem no aguardando_alivio");
+}
 /*ALCODEEND*/}
 
 ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios()
 {/*ALCODESTART::1794956361299*/
-return new ArrayList<>(Arrays.asList(
-	main().gestorDeCirculacao.faixa_via1_intermar_d, 
-	main().gestorDeCirculacao.faixa_via1_intermar_c
-));
+// primeira faixa da saída do alívio
+return new ArrayList<>(Arrays.asList(main().gestorDeCirculacao.faixa_via1_intermar_a));
 /*ALCODEEND*/}
 
 double set_quantidade_alivio(int qt_quantidade)

@@ -42856,7 +42856,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[eh_terminal_tec((Trem) agent)]]></Code>
+					<Code><![CDATA[// trem chegando no TEC; o alívio do TEC (eh_alivio) segue para as DVs
+eh_terminal_tec((Trem) agent) && !((Trem) agent).eh_alivio]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

@@ -2146,3 +2146,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Decidido:** `_trem_chegando`, `ferrovia_em_atendimento`, `segmento_em_atendimento` e `descarga_concluida` voltam a null/false quando o trem sair do TEC no alívio (a construir); o alívio devolve o TEC a `terminais_pst`. `tecAcucar` fica fora de `terminais_pst` por enquanto.
 - **Em aberto:** o `"proprio"` ainda não consulta o espaço nas DVs (`quantos_vagoes_as_dvs_precisam`). O `analisar_pst` só chega ao TEC com `condicao_pode_receber_alivio()` das DVs e `rp_alivio_pst` livre.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/TEC/EmbeddedObjects.xml`, `_alp/Agents/TEC/Code/Functions.java`, `_alp/Classes/Class.ITerminalMoega.java`
+
+## ALT-174 — tec-alivio-saida
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:** saída do alívio do TEC. O trem sai com os 82 vazios e a loco da cauda, entra na circulação pela `via1_intermar_a` e passa pela entrada das DVs, onde `segue_direto` (82) o manda direto para a saída.
+  - TEC `takeAlivio`: solta o trem do Wait `aguardando_alivio`.
+  - TEC, Exit novo `para_circulacao`: `eh_alivio = true`, `faixa_atual = faixa_via1_intermar_a`, `proxima_faixa = null`; zera `_trem_chegando`, `ferrovia_em_atendimento`, `segmento_em_atendimento` e `descarga_concluida`; devolve o TEC a `gestorDeAlivios.terminais_pst`; `gestorDeCirculacao.tentar_usar_faixa.take(trem)`.
+  - TEC `get_primeiras_linhas_de_circulacao_vazios()`: `faixa_via1_intermar_a` (antes, faixas do ADM).
+  - GestorDeCirculacao `eh_tec`: `eh_terminal_tec(trem) && !trem.eh_alivio`; o trem de alívio segue `ir_via1_intermar_a` (recuando) → `para_DVS` → `gestorDeDVs.chegar_nas_dvs`.
+- **Riscos:** `railwayTrack111`, `railwayTrack162`, `railwayTrack10` e `_183` não têm faixa (hoje só o TEC usa).
+- **Arquivos:** `_alp/Agents/TEC/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/TEC/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`
