@@ -3531,7 +3531,7 @@ Log.info("ISN", "estacionado_linha02", String.format("trem=%d/%s estacionado na 
 					<Code><![CDATA[// liberado por verificar_saida(); sai para frente pela psn_linha_porteira
 Trem trem = (Trem) agent;
 trem.estacionarISN = false;
-seguir_para_faixa(trem, faixa_isn_porteira, main().gestorDeCirculacao.faixa_val_via2, "saída da linha 02");]]></Code>
+seguir_para_faixa(trem, faixa_isn_porteira, main().gestorDeCirculacao.faixa_val_via2_a, "saída da linha 02");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -4192,8 +4192,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// fim da isn_linha01_e -> porteira; próxima val_via2 (1ª faixa do GestorDeCirculacao)
-seguir_para_faixa((Trem) agent, faixa_isn_porteira, main().gestorDeCirculacao.faixa_val_via2, "fim isn_linha01_e");]]></Code>
+					<Code><![CDATA[// fim da isn_linha01_e -> porteira; próxima val_via2_a (1ª faixa do GestorDeCirculacao)
+seguir_para_faixa((Trem) agent, faixa_isn_porteira, main().gestorDeCirculacao.faixa_val_via2_a, "fim isn_linha01_e");]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

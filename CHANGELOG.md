@@ -2157,3 +2157,9 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeCirculacao `eh_tec`: `eh_terminal_tec(trem) && !trem.eh_alivio`; o trem de alívio segue `ir_via1_intermar_a` (recuando) → `para_DVS` → `gestorDeDVs.chegar_nas_dvs`.
 - **Riscos:** `railwayTrack111`, `railwayTrack162`, `railwayTrack10` e `_183` não têm faixa (hoje só o TEC usa).
 - **Arquivos:** `_alp/Agents/TEC/{EmbeddedObjects,Connectors}.xml`, `_alp/Agents/TEC/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`
+
+## ALT-175 — isn-proxima-val-via2-a
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação
+- **O que:** GestorDeISN, na entrada da porteira (fim da `isn_linha01_e` e saída da linha 02), a próxima faixa passa a ser `faixa_val_via2_a` (antes `faixa_val_via2`). A `val_via2_a` é a 1ª faixa do GestorDeCirculacao para todos os trens; o trem do TEC deixava de licenciar a `val_via2` indevidamente.
+- **Arquivos:** `_alp/Agents/GestorDeISN/EmbeddedObjects.xml`
