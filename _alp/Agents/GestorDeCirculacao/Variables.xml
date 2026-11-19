@@ -1758,6 +1758,62 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 			</CollectionInitializer>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798300000031</Id>
+		<Name><![CDATA[faixa_val_via2_a]]></Name>
+		<X>-560</X>
+		<Y>4450</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_val_via2_a          			= new Faixa();
+faixa_val_via2_a.ordem          	= 2;
+faixa_val_via2_a.recurso        	= rp_val_via2_a;
+faixa_val_via2_a.track          	= main().val_via2_a;
+faixa_val_via2_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_val_via2_a.enter          	= circular_val_via2_a;
+faixa_val_via2_a.linhaTMDS			= pl_pst_val_via2_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798300000032</Id>
+		<Name><![CDATA[faixa_dv_entrada_c]]></Name>
+		<X>-560</X>
+		<Y>4530</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_dv_entrada_c          			= new Faixa();
+faixa_dv_entrada_c.ordem          	= 2;
+faixa_dv_entrada_c.recurso        	= rp_dv_entrada_c;
+faixa_dv_entrada_c.track          	= main().dv_entrada_c;
+faixa_dv_entrada_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_dv_entrada_c.enter          	= circular_dv_entrada_c;
+faixa_dv_entrada_c.linhaTMDS			= pl_pst_dv_entrada_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1789316927425</Id>
 		<Name><![CDATA[faixas]]></Name>
@@ -1775,7 +1831,7 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 			<ElementClass>Faixa</ElementClass>
 			<ValueElementClass>String</ValueElementClass>
 			<CollectionInitializer Class="CodeValue">
-				<Code><![CDATA[{ faixa_intervalo4000_a, faixa_intervalo4000_b, faixa_intervalo4000_c, faixa_via2_c, faixa_via2_d, faixa_via2_f, faixa_via2_e, faixa_via2_b, faixa_via2_a, faixa_via2_intermar_c, faixa_via2_intermar_b, faixa_via2_intermar_a, faixa_railwayTrack199, faixa_val_via2, faixa_via3_intermar, faixa_via3_a, faixa_via3_b, faixa_via1_intermar_a, faixa_via1_intermar_b, faixa_via1_intermar_c, faixa_via1_intermar_d, faixa_entrada_pera, faixa_via3_c, faixa_via3_d, faixa_silosMuro_a, faixa_silosMuro_b, faixa_silosMuro_c, faixa_marginal_c,
+				<Code><![CDATA[{ faixa_intervalo4000_a, faixa_intervalo4000_b, faixa_intervalo4000_c, faixa_via2_c, faixa_via2_d, faixa_via2_f, faixa_via2_e, faixa_via2_b, faixa_via2_a, faixa_via2_intermar_c, faixa_via2_intermar_b, faixa_via2_intermar_a, faixa_railwayTrack199, faixa_val_via2, faixa_val_via2_a, faixa_dv_entrada_c, faixa_via3_intermar, faixa_via3_a, faixa_via3_b, faixa_via1_intermar_a, faixa_via1_intermar_b, faixa_via1_intermar_c, faixa_via1_intermar_d, faixa_entrada_pera, faixa_via3_c, faixa_via3_d, faixa_silosMuro_a, faixa_silosMuro_b, faixa_silosMuro_c, faixa_marginal_c,
   faixa_marginal_a, faixa_marginal_b, faixa_linha1000_a, faixa_linha1000_b, faixa_linha1000_c, faixa_linha2000_a, faixa_linha2000_b, faixa_linha2000_c, faixa_linha2000_d, faixa_linha2000_e, faixa_linha3000_a, faixa_linha3000_b, faixa_linha3000_c, faixa_linha3000_d, faixa_linha3000_e, faixa_linha4000_a, faixa_linha4000_b, faixa_linha4000_c,
   faixa_linha7000_a, faixa_linha7000_b, faixa_linha7000_c, faixa_linha7000_d, faixa_linha6000_a }]]></Code>
 			</CollectionInitializer>

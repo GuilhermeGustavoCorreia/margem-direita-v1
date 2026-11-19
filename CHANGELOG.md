@@ -2109,3 +2109,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `exit8`: `WARN T39 alivio_incompleto trem=… pegou=… pedido=…` e `main().gestorDeAlivios.linha_4000.take(agent)`, igual ao `para_linha_4000`.
 - **Em aberto:** a loco da ponta do corte continua indo para a moega e para as linhas de vazios.
 - **Arquivos:** `_alp/Agents/T39/EmbeddedObjects.xml`, `_alp/Agents/T39/Code/Functions.java`
+
+## ALT-171 — tec-rota-de-chegada
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:** rota de chegada do TEC e esqueleto do agente.
+  - Rota: `isn_linha01_a … e` → `psn_linha_porteira` (GestorDeISN) → `val_via2_a` → `dv_entrada_c` → `via1_intermar_a` (de frente) → `tec.comecar_encoste`.
+  - GestorDeISN, saída da porteira: trem do TEC segue para `faixa_val_via2_a` (próxima `faixa_dv_entrada_c`); os demais continuam em `faixa_val_via2` → `faixa_via3_intermar`.
+  - GestorDeCirculacao: faixas novas `faixa_val_via2_a` e `faixa_dv_entrada_c` (pools `rp_val_via2_a`, `rp_dv_entrada_c`; TMDS `pl_pst_val_via2_a`, `pl_pst_dv_entrada_c`), cada uma com `circular_*` → `ir_*` (de frente, 10 m do fim) → Exit; entraram na lista `faixas`.
+  - GestorDeCirculacao: função `eh_terminal_tec(Trem)`; SelectOutput `eh_tec` depois da `circular_via1_intermar_a` → `ir_via1_intermar_a_tec` (de frente) → `para_tec` (`main().tec.comecar_encoste`). Os outros trens seguem para `ir_via1_intermar_a` → `para_DVS`, como antes.
+  - TEC: implementa `ITerminalMoega`; variáveis `_trem_chegando`, `ferrovia_em_atendimento`, `segmento_em_atendimento`; Enter `comecar_encoste` (registra o trem e loga) → Wait `aguardando_encoste`.
+  - TEC: funções da interface sem referências ao ADM. Provisórias até o encoste/descarga/alívio existirem: `podeReceberNovoLote` = sem trem chegando; `getOverloadVazios` e `get_quantidade_vazios` = 0; `get_pos_alivio` = null; `get_faixas_primeiro_alivio` = lista vazia; `takeAlivio` só loga WARN.
+- **Em aberto:** posição dos traços do TMDS (`pl_pst_val_via2_a`, `pl_pst_dv_entrada_c`) e `getPatio()` do TEC (hoje `"pmc"`). `_trem_chegando` só volta a null quando o encoste existir (até lá, um trem por vez).
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/GestorDeCirculacao/Levels/Level.level.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeISN/EmbeddedObjects.xml`, `_alp/Agents/TEC/{AOC.TEC,EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/TEC/Code/Functions.java`

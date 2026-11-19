@@ -145,4 +145,48 @@
 			</Point>
 		</Points>
 	</Connector>
+	<Connector>
+		<Id>1798300000043</Id>
+		<Name><![CDATA[connector_encoste_1]]></Name>
+		<X>110</X>
+		<Y>100</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>TEC</ClassName>
+			<ItemName>comecar_encoste</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>TEC</ClassName>
+			<ItemName>aguardando_encoste</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>130</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+
 </Connectors>

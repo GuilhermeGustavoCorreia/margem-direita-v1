@@ -3,6 +3,7 @@
 	<Id>1794956073436</Id>
 	<Name><![CDATA[TEC]]></Name>
 	<Folder>1782841100114</Folder>
+	<Implements>ITerminalMoega</Implements>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1794956073439</Id>
