@@ -565,7 +565,8 @@
 	main().tgrao,
 	main().coperXXI,
 	main().moegaoMar,
-	main().tec
+	main().tec,
+	main().tecAcucar
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>

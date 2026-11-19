@@ -43088,7 +43088,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_tec", String.format("trem=%d", agent.getId()));
 log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());
 
-main().tec.comecar_encoste.take(agent);]]></Code>
+if ("tecAcucar".equals(((Trem) agent).get_terminal_name()))
+	main().tecAcucar.comecar_encoste.take(agent);
+else
+	main().tec.comecar_encoste.take(agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -43148,7 +43151,7 @@ main().tec.comecar_encoste.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA["tec".equals(((Trem) agent).get_terminal_name())]]></Code>
+					<Code><![CDATA[eh_terminal_tec((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

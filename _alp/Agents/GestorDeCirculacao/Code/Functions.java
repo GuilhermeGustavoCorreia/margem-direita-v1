@@ -144,7 +144,9 @@ return pools.toArray(new ResourcePool[0]);
 
 boolean eh_terminal_tec(Trem trem)
 {/*ALCODESTART::1798300000035*/
-// trens do TEC: ISN -> val_via2_a -> dv_entrada_c -> via1_intermar_a (de frente) -> tec.comecar_encoste
-return trem != null && "tec".equals(trem.get_terminal_name());
+// trens do TEC e do TEC_ACUCAR: ISN -> val_via2_a -> dv_entrada_c -> via1_intermar_a (de frente) -> comecar_encoste do terminal
+if (trem == null) return false;
+String t = trem.get_terminal_name();
+return "tec".equals(t) || "tecAcucar".equals(t);
 /*ALCODEEND*/}
 

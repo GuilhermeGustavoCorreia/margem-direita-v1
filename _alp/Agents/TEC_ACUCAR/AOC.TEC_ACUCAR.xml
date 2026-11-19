@@ -3,6 +3,7 @@
 	<Id>1794956104647</Id>
 	<Name><![CDATA[TEC_ACUCAR]]></Name>
 	<Folder>1782841100114</Folder>
+	<Implements>ITerminalMoega</Implements>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1794956104650</Id>
@@ -75,7 +76,7 @@
 	</EnvironmentProperties>
 	<DatasetsCreationProperties>
 		<AutoCreate>true</AutoCreate>
-		<Id>1794956104646</Id>
+		<Id>1798330000003</Id>
 		<OccurrenceAtTime>true</OccurrenceAtTime>
 		<OccurrenceDate>1794988800000</OccurrenceDate>
 		<OccurrenceTime Class="CodeUnitValue">
@@ -88,10 +89,10 @@
 		</RecurrenceCode>
 	</DatasetsCreationProperties>
 	<ScaleRuler>
-		<Id>1794956104648</Id>
+		<Id>1798330000004</Id>
 		<Name><![CDATA[scale]]></Name>
-		<X>0</X>
-		<Y>-150</Y>
+		<X>-150</X>
+		<Y>800</Y>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
@@ -104,11 +105,14 @@
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
-	<CurrentLevel>1794956104651</CurrentLevel>
+	<CurrentLevel>1798330000005</CurrentLevel>
+	<Variables xmlns:al="http://anylogic.com"/>
+	<Functions xmlns:al="http://anylogic.com"/>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1794956147261</Id>
+			<Id>1798330000065</Id>
 			<Name><![CDATA[main]]></Name>
+			<ExcludeFromBuild>true</ExcludeFromBuild>
 			<X>50</X>
 			<Y>-100</Y>
 			<Label>
@@ -124,9 +128,10 @@
 			</ActiveObjectClass>
 		</ContainerLink>
 	</ContainerLinks>
+	<EmbeddedObjects xmlns:al="http://anylogic.com"/>
 	<Presentation>
 		<Level>
-			<Id>1794956104651</Id>
+			<Id>1798330000005</Id>
 			<Name><![CDATA[level]]></Name>
 			<X>0</X>
 			<Y>0</Y>
@@ -140,6 +145,7 @@
 			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 			<Z>0</Z>
 			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+			<Presentation xmlns:al="http://anylogic.com"/>
 		</Level>
 	</Presentation>
 </ActiveObjectClass>

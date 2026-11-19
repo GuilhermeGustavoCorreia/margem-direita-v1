@@ -1,0 +1,1750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedObjects>
+	<EmbeddedObject>
+		<Id>1798330000027</Id>
+		<Name><![CDATA[paraGestorCirculacao_chegadaCarregados]]></Name>
+		<X>-85</X>
+		<Y>140</Y>
+		<Label>
+			<X>-160</X>
+			<Y>70</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("paraGestorCirculacao_chegadaCarregados", agent, "saiu");
+// o trem entra pelo GestorDeChegadas, que entrega ao GestorDeISN
+main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000026</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000029</Id>
+		<Name><![CDATA[tremTeste_mrs]]></Name>
+		<X>-330</X>
+		<Y>150</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-30</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainSource</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642031</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642032</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[arrivalType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.MANUAL]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[interarrivalTime]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[200]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.AT_START]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalTime]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalSchedule]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[setAgentParametersFromDB]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[databaseTable]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalDate]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[numberOfCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[84]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[putInRailYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().circ_pos_inicio_placa_2]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[track]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[300]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[orientation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1798330000002</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1798330000001</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[initialSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[acceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[deceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addTrainToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newRailCar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[(carindex < 2)? new Locomotiva() : new Vagao();]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carLength]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[(carindex < 2) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carSetup]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[if (car instanceof Vagao) {
+
+    ((Vagao) car).setSegmento("grao");
+    ((Vagao) car).setFerrovia("mrs"); 
+	((Vagao) car).setTerminal(main().tecAcucar);
+
+} else if (car instanceof Locomotiva) {
+    ((Locomotiva) car).ferrovia = "mrs";
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addCarToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[((Trem) train).ITerminalMoega_destino = main().tecAcucar]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000028</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000031</Id>
+		<Name><![CDATA[tremTeste_vli]]></Name>
+		<X>-330</X>
+		<Y>200</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-30</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainSource</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642031</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642032</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[arrivalType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.MANUAL]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[interarrivalTime]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[200]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.AT_START]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalTime]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalSchedule]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[setAgentParametersFromDB]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[databaseTable]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalDate]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[numberOfCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[84]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[putInRailYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().circ_pos_inicio_placa_2]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[track]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[300]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[orientation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1798330000002</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1798330000001</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[initialSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[acceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[deceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addTrainToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newRailCar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[(carindex < 1|| carindex == 36)? new Locomotiva() : new Vagao();]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carLength]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[(carindex < 1|| carindex == 36) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carSetup]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[if (car instanceof Vagao) {
+
+    ((Vagao) car).setSegmento("grao");
+    ((Vagao) car).setFerrovia("vli"); 
+	((Vagao) car).setTerminal(main().tecAcucar);
+
+} else if (car instanceof Locomotiva) {
+    ((Locomotiva) car).ferrovia = "vli";
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addCarToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[((Trem) train).ITerminalMoega_destino = main().tecAcucar]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000030</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000033</Id>
+		<Name><![CDATA[tremTeste_rumo]]></Name>
+		<X>-330</X>
+		<Y>100</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-30</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainSource</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642031</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainSource</ClassName>
+				<ItemName>1412464642032</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[arrivalType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.MANUAL]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[interarrivalTime]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[triangular(5, 25, 15)]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.AT_START]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[firstArrivalTime]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalSchedule]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[setAgentParametersFromDB]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[databaseTable]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[arrivalDate]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxArrivals]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[1]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[numberOfCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[84]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[putInRailYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().circ_pos_inicio_placa_2]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[track]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().isn_linha01_a]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[300]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[orientation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1798330000002</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1798330000001</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[initialSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[main().velocidadeMnb_efetiva]]></Code>
+					<Unit Class="SpeedUnits">KPH</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[acceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[deceleration]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[4]]></Code>
+					<Unit Class="AccelerationUnits">MPS_SQ</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addTrainToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[trainPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newRailCar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[(carindex < 1 || carindex == 42)? new Locomotiva() : new Vagao();]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carLength]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[(carindex < 1 || carindex == 42) ? 22.5 : main().TAMANHO_VAGAO_GRAO ]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carSetup]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[if (car instanceof Vagao) {
+
+    ((Vagao) car).setSegmento("grao");
+    ((Vagao) car).setFerrovia("rumo");
+	((Vagao) car).setTerminal(main().tecAcucar);
+
+} else if (car instanceof Locomotiva) {
+    ((Locomotiva) car).ferrovia = "rumo";
+    ((Locomotiva) car).de_tracao = (carindex == 42);
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addCarToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[carPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[((Trem) train).ITerminalMoega_destino = main().tecAcucar]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000032</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000074</Id>
+		<Name><![CDATA[comecar_encoste]]></Name>
+		<X>580</X>
+		<Y>190</Y>
+		<Label>
+			<X>-5</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Enter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Enter</ClassName>
+				<ItemName>1412336242933</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLatitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLongitude]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationGeoPlaceName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationXYZInNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNetwork]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationLevel]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[locationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[speed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[changeDimensions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[length]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[width]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[height]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[
+Trem t = (Trem) agent;
+_trem_chegando = t;
+atualizarFerroviaEProdutoEmAtendimento(t);]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000075</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000076</Id>
+		<Name><![CDATA[ir_tec_encoste]]></Name>
+		<X>700</X>
+		<Y>190</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainMoveTo</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[forward]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[BlockedTrackHandling]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[route]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracksToAvoid]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._tecAcucar_encoste]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[targetOffset]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[limitDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[distanceIs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maxDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[switchDistance]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[cruiseSpeed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[startOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[accelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[finishOptions]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[decelerateCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_tec_encoste", train, "inicio");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtSwitch]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnterTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrack]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitYard]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("ir_tec_encoste", train, "chegou no _tec_encoste");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitHit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000077</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000078</Id>
+		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
+		<X>800</X>
+		<Y>180</Y>
+		<Label>
+			<X>-40</X>
+			<Y>55</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("liberar_faixas_circulacao", agent, "soltou");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000079</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000080</Id>
+		<Name><![CDATA[descarregar]]></Name>
+		<X>910</X>
+		<Y>180</Y>
+		<Label>
+			<X>-30</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>DescarregaLote</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>DescarregaLote</ClassName>
+				<ItemName>1782504710558</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters/>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000081</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000082</Id>
+		<Name><![CDATA[tirar_loco]]></Name>
+		<X>1030</X>
+		<Y>200</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainDecouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642016</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainDecouple</ClassName>
+				<ItemName>1412464642017</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[decoupleFirstCars]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[nCars]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// a loco do 1º carro (cabeça, no fim da linha)
+1]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[newTrain]]></Name>
+				<Value Class="EntityCodeValue">
+					<IsAgentEntity>true</IsAgentEntity>
+					<EntityEmbeddedObject>
+						<Id>1798330000083</Id>
+						<ActiveObjectClass>
+							<PackageName>margemdireitamodel</PackageName>
+							<ClassName>Trem</ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName>margemdireitamodel</PackageName>
+								<ClassName>Trem</ClassName>
+								<ItemName>1773066591669</ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters/>
+						<ReplicationFlag>true</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1798330000084</Id>
+							<TableReference/>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn/>
+					</EntityEmbeddedObject>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[addToCustomPopulation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[population]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("tirar_loco", train, "loco da cabeça separada");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitDecoupled]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000085</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000086</Id>
+		<Name><![CDATA[loco_sair]]></Name>
+		<X>1130</X>
+		<Y>290</Y>
+		<Label>
+			<X>-20</X>
+			<Y>45</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainExit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainExit</ClassName>
+				<ItemName>1412464642015</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[removeFromSpace]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000087</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000088</Id>
+		<Name><![CDATA[loco_entrar_cauda]]></Name>
+		<X>1230</X>
+		<Y>290</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-25</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainEnter</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainEnter</ClassName>
+				<ItemName>1412464642033</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[locationType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.LOCATION_TRACK_OFFSET]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[positionOnTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main()._tecAcucar_encoste]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[track]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[get_track_cauda()]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[offset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[get_offset_cauda()]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[orientation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("loco_entrar_cauda", train, "loco na cauda");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000089</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000090</Id>
+		<Name><![CDATA[acoplar_loco_cauda]]></Name>
+		<X>1340</X>
+		<Y>200</Y>
+		<Label>
+			<X>-20</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainCouple</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainCouple</ClassName>
+				<ItemName>1412464641999</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.rail</PackageName>
+				<ClassName>TrainCouple</ClassName>
+				<ItemName>1412464642999</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onEnter1]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter2]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// trem descarregado, loco na cauda: pronto para o alívio
+descarga_concluida = true;
+log_analise("acoplar_loco_cauda", train1, "loco acoplada no ultimo vagao; overload 2.0");]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000091</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000092</Id>
+		<Name><![CDATA[aguardando_alivio]]></Name>
+		<X>1450</X>
+		<Y>180</Y>
+		<Label>
+			<X>-26</X>
+			<Y>52</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Wait</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Wait</ClassName>
+				<ItemName>1412336243169</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocation]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[queuing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparisonForPreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// o trem que sai do acoplar_loco_cauda passa a ser o trem do terminal
+_trem_chegando = (Trem) agent;
+log_analise("aguardando_alivio", agent, "vz=" + _get_vagoes_vazios() + " cg=" + _getVagoesCarregados());]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000093</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1798330000107</Id>
+		<Name><![CDATA[para_circulacao]]></Name>
+		<X>1600</X>
+		<Y>190</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// alívio do TEC: o trem sai com a loco da cauda, passa pela entrada das DVs e segue direto (82)
+Trem t = (Trem) agent;
+t.eh_alivio     = true;
+t.faixa_atual   = main().gestorDeCirculacao.faixa_via1_intermar_a;
+t.proxima_faixa = null;
+
+// fecha o ciclo do TEC: libera para o próximo trem e volta para a análise de alívio
+_trem_chegando          = null;
+ferrovia_em_atendimento = null;
+segmento_em_atendimento = null;
+descarga_concluida      = false;
+main().gestorDeAlivios.terminais_pst.add(main().tecAcucar);
+
+Log.info("TEC_ACUCAR", "para_circulacao", String.format("trem=%d vz=%d saiu para a circulacao (via1_intermar_a)", t.getId(), t.getNumeroDeVagoesVazios()));
+main().gestorDeCirculacao.tentar_usar_faixa.take(t);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1798330000108</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+</EmbeddedObjects>

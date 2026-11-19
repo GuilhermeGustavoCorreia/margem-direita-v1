@@ -2163,3 +2163,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Status:** aplicada, aguardando validação
 - **O que:** GestorDeISN, na entrada da porteira (fim da `isn_linha01_e` e saída da linha 02), a próxima faixa passa a ser `faixa_val_via2_a` (antes `faixa_val_via2`). A `val_via2_a` é a 1ª faixa do GestorDeCirculacao para todos os trens; o trem do TEC deixava de licenciar a `val_via2` indevidamente.
 - **Arquivos:** `_alp/Agents/GestorDeISN/EmbeddedObjects.xml`
+
+## ALT-176 — tec-acucar
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:** TEC_ACUCAR com a mesma lógica do TEC.
+  - Agente TEC_ACUCAR = cópia do TEC (IDs novos): implementa `ITerminalMoega`; mesmo fluxo (encoste → descarga → loco da cabeça para a cauda → `aguardando_alivio` → `para_circulacao`), mesmas funções, variáveis e trens de teste. Diferenças: encoste em `main()._tecAcucar_encoste` (`railwayTrack136`, ponta de linha), logs com origem `TEC_ACUCAR`, `para_circulacao` devolve `main().tecAcucar` a `terminais_pst`.
+  - GestorDeCirculacao: `eh_terminal_tec` reconhece `"tec"` e `"tecAcucar"`; `_eh_tec` passa a usar `eh_terminal_tec`; `para_tec` chama o `comecar_encoste` do terminal do trem.
+  - GestorDeAlivios: `main().tecAcucar` entra em `terminais_pst`.
+- **Riscos:** herda a saída pelas DVs (`ocupar_val_via2_saida` licencia `val_via2` + `isn_linha02_e`, fora do caminho do trem). `railwayTrack111` e `railwayTrack130` sem faixa, compartilhadas por TEC e TEC_ACUCAR.
+- **Arquivos:** `_alp/Agents/TEC_ACUCAR/**`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/Variables.xml`
