@@ -135,4 +135,26 @@
 			</CollectionInitializer>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798310000028</Id>
+		<Name><![CDATA[descarga_concluida]]></Name>
+		<X>-160</X>
+		<Y>760</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[false]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 </Variables>

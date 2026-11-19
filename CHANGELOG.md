@@ -2122,3 +2122,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - TEC: funções da interface sem referências ao ADM. Provisórias até o encoste/descarga/alívio existirem: `podeReceberNovoLote` = sem trem chegando; `getOverloadVazios` e `get_quantidade_vazios` = 0; `get_pos_alivio` = null; `get_faixas_primeiro_alivio` = lista vazia; `takeAlivio` só loga WARN.
 - **Em aberto:** posição dos traços do TMDS (`pl_pst_val_via2_a`, `pl_pst_dv_entrada_c`) e `getPatio()` do TEC (hoje `"pmc"`). `_trem_chegando` só volta a null quando o encoste existir (até lá, um trem por vez).
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/GestorDeCirculacao/Levels/Level.level.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.{java,xml}`, `_alp/Agents/GestorDeISN/EmbeddedObjects.xml`, `_alp/Agents/TEC/{AOC.TEC,EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/TEC/Code/Functions.java`
+
+## ALT-172 — tec-encoste-e-descarga
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:** fluxo do TEC do encoste até o pedido de alívio (o alívio fica para depois; o TEC não usa locos do GestorDeLocomotivas).
+  - `comecar_encoste` → `ir_tec_encoste` (TrainMoveTo de frente até `main()._tec_encoste`, na `railwayTrack3`) → `liberar_faixas_circulacao` (Release com `liberar_faixas_ocupadas`) → `descarregar` (DescarregaLote, 45 fixo no bloco) → `tirar_loco` (TrainDecouple, 1 carro da frente = loco do 1º carro).
+  - Loco: `outDecoupled` → `loco_sair` (TrainExit) → `loco_entrar_cauda` (TrainEnter no trilho/offset da traseira do último vagão) → `acoplar_loco_cauda.in2`. Vagões: `out` → `acoplar_loco_cauda.in1`. Depois → Wait `aguardando_alivio`.
+  - `acoplar_loco_cauda` (ao sair): `descarga_concluida = true`; `getOverloadVazios()` devolve 2.0 com a descarga concluída (antes 0).
+  - Funções novas `get_track_cauda()`, `get_offset_cauda()` e `get_ultimo_carro_info()` (reflection em `getTrack`/`getOffset` do último vagão). A loco entra na orientação padrão, com a cabeça na traseira do vagão (trem no sentido do trilho) ou um comprimento de loco (22,5 m) depois dela (trem contra o sentido).
+  - Removido o Wait provisório `aguardando_encoste`. `log_analise` do TEC passa a logar com origem `TEC` (estava `Tgrao`).
+- **Riscos:** a `railwayTrack3` é ponta de linha (sem desvio para a loco contornar), por isso a loco sai e entra na cauda. Se a cauda parar perto da emenda de dois trilhos, a loco pode não caber no TrainEnter; nesse caso, criar um ponto fixo.
+- **Arquivos:** `_alp/Agents/TEC/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/TEC/Code/Functions.{java,xml}`

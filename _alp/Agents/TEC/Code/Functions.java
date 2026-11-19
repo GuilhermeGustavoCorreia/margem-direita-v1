@@ -11,8 +11,8 @@ return _trem_chegando == null;
 
 float getOverloadVazios()
 {/*ALCODESTART::1794956361282*/
-// provisório: TEC ainda não tem descarga, então não gera vazios nem pede alívio
-return 0;
+// descarregado e com a loco na cauda: pede o alívio
+return descarga_concluida ? (float) 2.0 : 0;
 /*ALCODEEND*/}
 
 PositionOnTrack get_pos_alivio()
@@ -103,6 +103,46 @@ if (a instanceof Trem) {
 	Trem tr = (Trem) a;
 	t = String.format("trem=%d carros=%d vgs=%d locos=%d", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas());
 }
-Log.info("Tgrao", evento, t + " | " + msg);
+Log.info("TEC", evento, t + " | " + msg);
+/*ALCODEEND*/}
+
+RailwayTrack get_track_cauda()
+{/*ALCODESTART::1798310000029*/
+// trilho da traseira do último vagão do trem parado no _tec_encoste
+Agent ultimo = _trem_chegando.getLast();
+try {
+	return (RailwayTrack) ultimo.getClass().getMethod("getTrack", boolean.class).invoke(ultimo, false);
+} catch (Exception e) {
+	error("TEC get_track_cauda: " + e);
+	return null;
+}
+/*ALCODEEND*/}
+
+double get_offset_cauda()
+{/*ALCODESTART::1798310000030*/
+// cabeça da loco que entra na cauda (TrainEnter na orientação padrão: a loco fica entre offset - comprimento e offset).
+// trem andando no sentido do trilho (traseira no menor offset): cabeça da loco na traseira do vagão.
+// trem andando contra o sentido do trilho: cabeça da loco um comprimento de loco depois da traseira.
+double[] info = get_ultimo_carro_info();
+double frente = info[0], tras = info[1];
+double comp_loco = 22.5; // locos de 22,5 m (formações de teste)
+double offset = (frente > tras) ? tras : tras + comp_loco;
+Log.info("TEC", "loco_cauda", String.format("trilho=%s frente=%.1f tras=%.1f offset_loco=%.1f", get_track_cauda().getName(), frente, tras, offset));
+return offset;
+/*ALCODEEND*/}
+
+double[] get_ultimo_carro_info()
+{/*ALCODESTART::1798310000031*/
+// {offset da frente, offset da traseira} do último vagão, no trilho da traseira
+Agent ultimo = _trem_chegando.getLast();
+try {
+	java.lang.reflect.Method mo = ultimo.getClass().getMethod("getOffset", boolean.class);
+	double frente = (double) mo.invoke(ultimo, true);
+	double tras   = (double) mo.invoke(ultimo, false);
+	return new double[] { frente, tras };
+} catch (Exception e) {
+	error("TEC get_ultimo_carro_info: " + e);
+	return new double[] { 0, 0 };
+}
 /*ALCODEEND*/}
 
