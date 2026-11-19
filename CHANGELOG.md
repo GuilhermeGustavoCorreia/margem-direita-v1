@@ -2134,3 +2134,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Removido o Wait provisório `aguardando_encoste`. `log_analise` do TEC passa a logar com origem `TEC` (estava `Tgrao`).
 - **Riscos:** a `railwayTrack3` é ponta de linha (sem desvio para a loco contornar), por isso a loco sai e entra na cauda. Se a cauda parar perto da emenda de dois trilhos, a loco pode não caber no TrainEnter; nesse caso, criar um ponto fixo.
 - **Arquivos:** `_alp/Agents/TEC/{EmbeddedObjects,Connectors,Variables}.xml`, `_alp/Agents/TEC/Code/Functions.{java,xml}`
+
+## ALT-173 — tec-terminais-pst-e-contagem
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:**
+  - GestorDeAlivios: `main().tec` entra em `terminais_pst`. Novo tipo de loco de alívio `"proprio"` (loco do próprio trem): no início do `fazer_procedimento_de_alivio_pst`, o terminal sai de `terminais_pst`, loga `alivio_proprio` e recebe `takeAlivio(null)`. Não pede loco, não cria trem e não consulta as DVs.
+  - TEC: `get_tipo_loco_alivio()` = `"proprio"`; `takeAlivio` só loga `pronto para alivio (a implementar)` (aceita null).
+  - TEC: `_getVagoesCarregados()` e `_get_vagoes_vazios()` contam os vagões do `_trem_chegando` (`getNumeroDeVagoesCarregados` / `getNumeroDeVagoesVazios`); `get_quantidade_vazios()` = `_get_vagoes_vazios()`. O Wait `aguardando_alivio` (ao entrar) passa `_trem_chegando` para o trem que sai do `acoplar_loco_cauda`.
+  - `ITerminalMoega`: comentário do `get_tipo_loco_alivio` inclui `"proprio"`.
+- **Decidido:** `_trem_chegando`, `ferrovia_em_atendimento`, `segmento_em_atendimento` e `descarga_concluida` voltam a null/false quando o trem sair do TEC no alívio (a construir); o alívio devolve o TEC a `terminais_pst`. `tecAcucar` fica fora de `terminais_pst` por enquanto.
+- **Em aberto:** o `"proprio"` ainda não consulta o espaço nas DVs (`quantos_vagoes_as_dvs_precisam`). O `analisar_pst` só chega ao TEC com `condicao_pode_receber_alivio()` das DVs e `rp_alivio_pst` livre.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/TEC/EmbeddedObjects.xml`, `_alp/Agents/TEC/Code/Functions.java`, `_alp/Classes/Class.ITerminalMoega.java`

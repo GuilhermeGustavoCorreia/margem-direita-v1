@@ -1638,6 +1638,11 @@ log_analise("acoplar_loco_cauda", train1, "loco acoplada no ultimo vagao; overlo
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// o trem que sai do acoplar_loco_cauda passa a ser o trem do terminal
+_trem_chegando = (Trem) agent;
+log_analise("aguardando_alivio", agent, "vz=" + _get_vagoes_vazios() + " cg=" + _getVagoesCarregados());]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>

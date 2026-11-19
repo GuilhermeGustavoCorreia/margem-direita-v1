@@ -184,3 +184,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-170**: T39 — vazios contam só vagões; `exit8` devolve o alívio incompleto à 4000
 - **ALT-171**: TEC — rota de chegada (ISN → val_via2_a → dv_entrada_c → via1_intermar_a) e esqueleto do agente
 - **ALT-172**: TEC — encoste no `_tec_encoste`, descarga, loco da cabeça para a cauda e overload 2.0
+- **ALT-173**: TEC em `terminais_pst` (alívio tipo "proprio") e contagem de vagões

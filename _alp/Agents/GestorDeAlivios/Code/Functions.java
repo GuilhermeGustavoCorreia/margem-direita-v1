@@ -281,6 +281,16 @@ if (podeReceber && rp_alivio_pst.idle() > 0) {
 double fazer_procedimento_de_alivio_pst(ITerminalMoega terminal)
 {/*ALCODESTART::1791469616777*/
 String nomeTerminal = ((Agent) terminal).getName();
+
+// "proprio": o terminal alivia com a loco que já está no trem (TEC). Não pede loco nem cria trem.
+// Sai de terminais_pst para não ser analisado de novo; o alívio do terminal o devolve à lista quando terminar.
+if ("proprio".equals(terminal.get_tipo_loco_alivio())) {
+    terminais_pst.remove(terminal);
+    Log.info("GesAlivios", "alivio_proprio", nomeTerminal + " | alivio com a loco do proprio terminal");
+    terminal.takeAlivio(null);
+    return;
+}
+
 boolean condicao_DVs_eh_compativel_com_terminal = main().gestorDeDVs.condicao_pode_receber_alivio();
 
 if (condicao_DVs_eh_compativel_com_terminal) {

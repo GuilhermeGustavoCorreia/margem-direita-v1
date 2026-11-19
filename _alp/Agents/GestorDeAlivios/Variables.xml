@@ -564,7 +564,8 @@
 	main().costaLeite,
 	main().tgrao,
 	main().coperXXI,
-	main().moegaoMar
+	main().moegaoMar,
+	main().tec
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>

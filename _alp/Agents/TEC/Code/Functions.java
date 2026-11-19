@@ -49,8 +49,8 @@ return ferrovia_em_atendimento;
 
 double takeAlivio(Trem trem)
 {/*ALCODESTART::1794956361297*/
-// provisório: TEC ainda não tem alívio
-Log.warn("TEC", "takeAlivio", String.format("trem=%d alivio ainda nao implementado", trem.getId()));
+// chamado pelo GestorDeAlivios (tipo "proprio", trem = null): o alívio do TEC ainda não existe
+Log.info("TEC", "takeAlivio", "pronto para alivio (a implementar)");
 /*ALCODEEND*/}
 
 ArrayList<Faixa> get_primeiras_linhas_de_circulacao_vazios()
@@ -68,14 +68,13 @@ quantidade_alivio = qt_quantidade;
 
 int get_quantidade_vazios()
 {/*ALCODESTART::1794956361303*/
-// provisório: TEC ainda não tem descarga
-return 0;
+return _get_vagoes_vazios();
 /*ALCODEEND*/}
 
 String get_tipo_loco_alivio()
 {/*ALCODESTART::1794956361305*/
-// "manobra": loco FIPS PST criada em pos_locoManobra_PST | "ferrovia": loco da ferrovia em atendimento
-return "ferrovia";
+// "manobra": loco FIPS PST | "ferrovia": loco da ferrovia em atendimento | "proprio": loco do próprio trem (TEC)
+return "proprio";
 /*ALCODEEND*/}
 
 int get_quantidade_loco_alivio()
@@ -86,12 +85,14 @@ return 1;
 
 int _getVagoesCarregados()
 {/*ALCODESTART::1795094986476*/
-return 0;
+// vagões carregados do trem no TEC
+return _trem_chegando == null ? 0 : _trem_chegando.getNumeroDeVagoesCarregados();
 /*ALCODEEND*/}
 
 int _get_vagoes_vazios()
 {/*ALCODESTART::1795095004533*/
-return 0;
+// vagões vazios do trem no TEC (a loco não conta)
+return _trem_chegando == null ? 0 : _trem_chegando.getNumeroDeVagoesVazios();
 /*ALCODEEND*/}
 
 double log_analise(String evento,Agent a,String msg)
