@@ -4527,9 +4527,22 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 // TEC: val_via2_a, próxima dv_entrada_c | demais: val_via2, próxima via3_intermar
 Trem t = (Trem) agent;
 if (main().gestorDeCirculacao.eh_terminal_tec(t))
-	seguir_para_faixa(t, main().gestorDeCirculacao.faixa_val_via2_a, main().gestorDeCirculacao.faixa_dv_entrada_c, "entrega à circulação (TEC)");
+	
+	seguir_para_faixa(
+		t, 
+		main().gestorDeCirculacao.faixa_val_via2_a, 
+		main().gestorDeCirculacao.faixa_dv_entrada_c, 
+		"entrega à circulação (TEC)"
+	);
+	
 else
-	seguir_para_faixa(t, main().gestorDeCirculacao.faixa_val_via2, main().gestorDeCirculacao.faixa_via3_intermar, "entrega à circulação");]]></Code>
+
+	seguir_para_faixa(
+		t, 
+		main().gestorDeCirculacao.faixa_val_via2_a, 
+		main().gestorDeCirculacao.faixa_val_via2, 
+		"entrega à circulação"
+	);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

@@ -551,8 +551,8 @@
 	<Connector>
 		<Id>1798320000003</Id>
 		<Name><![CDATA[connector_tec_alivio_1]]></Name>
-		<X>1310</X>
-		<Y>100</Y>
+		<X>1490</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -586,10 +586,9 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>130</X>
+				<X>110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
-
 </Connectors>

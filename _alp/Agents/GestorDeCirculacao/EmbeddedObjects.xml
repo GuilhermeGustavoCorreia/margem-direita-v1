@@ -8241,8 +8241,8 @@ configurar_rota((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789273477331</Id>
 		<Name><![CDATA[para_via3_a]]></Name>
-		<X>-3150</X>
-		<Y>3980</Y>
+		<X>1020</X>
+		<Y>5000</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -8301,8 +8301,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789274034140</Id>
 		<Name><![CDATA[ir_via3_intermar]]></Name>
-		<X>-3270</X>
-		<Y>3980</Y>
+		<X>900</X>
+		<Y>5000</Y>
 		<Label>
 			<X>0</X>
 			<Y>-20</Y>
@@ -8457,8 +8457,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789274034201</Id>
 		<Name><![CDATA[rp_via3_intermar]]></Name>
-		<X>-3380</X>
-		<Y>4020</Y>
+		<X>780</X>
+		<Y>5240</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -10102,8 +10102,8 @@ liberar_faixas.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789277120223</Id>
 		<Name><![CDATA[circular_via3_intermar]]></Name>
-		<X>-3390</X>
-		<Y>3980</Y>
+		<X>780</X>
+		<Y>5000</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -10222,8 +10222,8 @@ liberar_faixas.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765805</Id>
 		<Name><![CDATA[ir_via3_a]]></Name>
-		<X>-2950</X>
-		<Y>3990</Y>
+		<X>1450</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -10378,8 +10378,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765871</Id>
 		<Name><![CDATA[rp_pst_via3_a]]></Name>
-		<X>-3070</X>
-		<Y>4020</Y>
+		<X>1340</X>
+		<Y>5240</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -10627,8 +10627,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277765958</Id>
 		<Name><![CDATA[circular_via3_a]]></Name>
-		<X>-3060</X>
-		<Y>3990</Y>
+		<X>1330</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -11688,8 +11688,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999770</Id>
 		<Name><![CDATA[ir_via3_b]]></Name>
-		<X>-2500</X>
-		<Y>3990</Y>
+		<X>2050</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -11844,8 +11844,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999833</Id>
 		<Name><![CDATA[rp_pst_via3_b]]></Name>
-		<X>-2630</X>
-		<Y>4022</Y>
+		<X>1950</X>
+		<Y>5240</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -12093,8 +12093,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789277999917</Id>
 		<Name><![CDATA[circular_via3_b]]></Name>
-		<X>-2650</X>
-		<Y>3990</Y>
+		<X>1930</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -12785,8 +12785,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789323832171</Id>
 		<Name><![CDATA[para_via2_c]]></Name>
-		<X>-2800</X>
-		<Y>3990</Y>
+		<X>1690</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -12844,8 +12844,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789323832209</Id>
 		<Name><![CDATA[e_pera_via3_a]]></Name>
-		<X>-2870</X>
-		<Y>3990</Y>
+		<X>1530</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -16715,7 +16715,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1789390286735</Id>
 		<Name><![CDATA[rp_pmc_marginal_c]]></Name>
 		<X>-1790</X>
-		<Y>3840</Y>
+		<Y>3820</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -16964,7 +16964,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1789390286820</Id>
 		<Name><![CDATA[ir_marginal_c]]></Name>
 		<X>-1530</X>
-		<Y>3760</Y>
+		<Y>3740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -17120,7 +17120,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<Id>1789390286873</Id>
 		<Name><![CDATA[circular_marginal_c]]></Name>
 		<X>-1750</X>
-		<Y>3760</Y>
+		<Y>3740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -17239,8 +17239,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033353</Id>
 		<Name><![CDATA[rp_pmc_intervalo4000_a]]></Name>
-		<X>-1180</X>
-		<Y>3810</Y>
+		<X>-1130</X>
+		<Y>3790</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -17488,10 +17488,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033438</Id>
 		<Name><![CDATA[ir_intervalo_intervalo4000_a]]></Name>
-		<X>-840</X>
-		<Y>3760</Y>
+		<X>-850</X>
+		<Y>3740</Y>
 		<Label>
-			<X>-5</X>
+			<X>-30</X>
 			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -17641,8 +17641,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033498</Id>
 		<Name><![CDATA[circular_intervalo4000_a]]></Name>
-		<X>-1170</X>
-		<Y>3760</Y>
+		<X>-1120</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -17761,8 +17761,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391033546</Id>
 		<Name><![CDATA[continuar3]]></Name>
-		<X>-691</X>
-		<Y>3761</Y>
+		<X>-750</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -17821,7 +17821,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1789391414684</Id>
 		<Name><![CDATA[rp_pmc_intervalo4000_b]]></Name>
 		<X>-560</X>
-		<Y>3810</Y>
+		<Y>3830</Y>
 		<Label>
 			<X>50</X>
 			<Y>10</Y>
@@ -18069,8 +18069,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414799</Id>
 		<Name><![CDATA[ir_intervalo_intervalo4000_b]]></Name>
-		<X>-220</X>
-		<Y>3760</Y>
+		<X>-250</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -18223,7 +18223,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<Id>1789391414869</Id>
 		<Name><![CDATA[circular_intervalo4000_b]]></Name>
 		<X>-560</X>
-		<Y>3760</Y>
+		<Y>3740</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -18342,8 +18342,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1789391414922</Id>
 		<Name><![CDATA[continuar4]]></Name>
-		<X>-80</X>
-		<Y>3760</Y>
+		<X>-100</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -19286,8 +19286,8 @@ log_saida(agent, "saiu para terminal " + ((Trem) agent).get_terminal_name());]]>
 	<EmbeddedObject>
 		<Id>1790787941770</Id>
 		<Name><![CDATA[para_via4]]></Name>
-		<X>2390</X>
-		<Y>590</Y>
+		<X>3420</X>
+		<Y>3800</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -19344,8 +19344,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1790787941895</Id>
 		<Name><![CDATA[ir_via1_intermar_d]]></Name>
-		<X>2280</X>
-		<Y>590</Y>
+		<X>3310</X>
+		<Y>3800</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -19506,8 +19506,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790787941980</Id>
 		<Name><![CDATA[rp_via1_intermar_d]]></Name>
-		<X>2140</X>
-		<Y>630</Y>
+		<X>3160</X>
+		<Y>4020</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -19755,8 +19755,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790787942080</Id>
 		<Name><![CDATA[circular_via1_intermar_d]]></Name>
-		<X>2130</X>
-		<Y>590</Y>
+		<X>3160</X>
+		<Y>3800</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -19875,8 +19875,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790788983977</Id>
 		<Name><![CDATA[para_via5]]></Name>
-		<X>2400</X>
-		<Y>890</Y>
+		<X>2910</X>
+		<Y>3780</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -19933,8 +19933,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1790788984014</Id>
 		<Name><![CDATA[ir_via1_intermar_c]]></Name>
-		<X>2280</X>
-		<Y>890</Y>
+		<X>2790</X>
+		<Y>3780</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-20</Y>
@@ -20095,8 +20095,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790788984075</Id>
 		<Name><![CDATA[rp_via1_intermar_c]]></Name>
-		<X>2140</X>
-		<Y>930</Y>
+		<X>2560</X>
+		<Y>4040</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -20344,8 +20344,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790788984170</Id>
 		<Name><![CDATA[circular_via1_intermar_c]]></Name>
-		<X>2130</X>
-		<Y>890</Y>
+		<X>2640</X>
+		<Y>3780</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -20464,8 +20464,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789088951</Id>
 		<Name><![CDATA[para_via6]]></Name>
-		<X>2410</X>
-		<Y>1190</Y>
+		<X>2210</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -20522,8 +20522,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789088990</Id>
 		<Name><![CDATA[ir_via1_intermar_b]]></Name>
-		<X>2280</X>
-		<Y>1190</Y>
+		<X>2080</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -20684,8 +20684,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789089060</Id>
 		<Name><![CDATA[rp_via1_intermar_b]]></Name>
-		<X>2140</X>
-		<Y>1230</Y>
+		<X>1960</X>
+		<Y>4040</Y>
 		<Label>
 			<X>45</X>
 			<Y>10</Y>
@@ -20933,8 +20933,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789089155</Id>
 		<Name><![CDATA[circular_via1_intermar_b]]></Name>
-		<X>2130</X>
-		<Y>1190</Y>
+		<X>1930</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -21053,8 +21053,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789142000</Id>
 		<Name><![CDATA[para_DVS]]></Name>
-		<X>2400</X>
-		<Y>1490</Y>
+		<X>1650</X>
+		<Y>3890</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -21109,8 +21109,8 @@ main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789142037</Id>
 		<Name><![CDATA[ir_via1_intermar_a]]></Name>
-		<X>2280</X>
-		<Y>1490</Y>
+		<X>1550</X>
+		<Y>3890</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -21271,8 +21271,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789142103</Id>
 		<Name><![CDATA[rp_via1_intermar_a]]></Name>
-		<X>2140</X>
-		<Y>1530</Y>
+		<X>1330</X>
+		<Y>4040</Y>
 		<Label>
 			<X>45</X>
 			<Y>10</Y>
@@ -21520,10 +21520,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1790789142195</Id>
 		<Name><![CDATA[circular_via1_intermar_a]]></Name>
-		<X>2130</X>
-		<Y>1490</Y>
+		<X>1330</X>
+		<Y>3790</Y>
 		<Label>
-			<X>-5</X>
+			<X>-45</X>
 			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -29026,8 +29026,8 @@ main().t39.encoste_linha1000.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000001</Id>
 		<Name><![CDATA[para_via3_b]]></Name>
-		<X>-2800</X>
-		<Y>4040</Y>
+		<X>1700</X>
+		<Y>5090</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -29089,8 +29089,8 @@ else tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000003</Id>
 		<Name><![CDATA[para_via3_c]]></Name>
-		<X>-2350</X>
-		<Y>4040</Y>
+		<X>2300</X>
+		<Y>5090</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -29488,7 +29488,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1791670000011</Id>
 		<Name><![CDATA[circular_silosMuro_a]]></Name>
 		<X>-1910</X>
-		<Y>3980</Y>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -29608,7 +29608,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1791670000013</Id>
 		<Name><![CDATA[ir_silosMuro_a]]></Name>
 		<X>-1790</X>
-		<Y>3980</Y>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -29764,7 +29764,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<Id>1791670000015</Id>
 		<Name><![CDATA[para_silosMuro_b]]></Name>
 		<X>-1550</X>
-		<Y>3980</Y>
+		<Y>4090</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -30571,7 +30571,7 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 		<Id>1791680000001</Id>
 		<Name><![CDATA[e_tgrao_ou_celulose]]></Name>
 		<X>-1670</X>
-		<Y>3980</Y>
+		<Y>3990</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-20</Y>
@@ -30655,8 +30655,8 @@ error("GestorDeCirculacao: sem rota apos pst_silosMuro_c para " + ((Trem) agent)
 	<EmbeddedObject>
 		<Id>1791680000003</Id>
 		<Name><![CDATA[para_marginal_c]]></Name>
-		<X>-1570</X>
-		<Y>3930</Y>
+		<X>-1550</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -30719,7 +30719,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1791680000005</Id>
 		<Name><![CDATA[para_tgrao]]></Name>
 		<X>-1250</X>
-		<Y>3760</Y>
+		<Y>3740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -31202,8 +31202,8 @@ log_entrada(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902784205</Id>
 		<Name><![CDATA[recuar_marginal_c]]></Name>
-		<X>-1520</X>
-		<Y>3880</Y>
+		<X>-1500</X>
+		<Y>3890</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -31364,8 +31364,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902839410</Id>
 		<Name><![CDATA[definir_sentido]]></Name>
-		<X>-1610</X>
-		<Y>3760</Y>
+		<X>-1620</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -31442,8 +31442,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791902988260</Id>
 		<Name><![CDATA[para_pst_marginal_b]]></Name>
-		<X>-1420</X>
-		<Y>3880</Y>
+		<X>-1400</X>
+		<Y>3890</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -36819,8 +36819,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375680</Id>
 		<Name><![CDATA[circular_val_via2]]></Name>
-		<X>-40</X>
-		<Y>3360</Y>
+		<X>730</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -36939,8 +36939,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375682</Id>
 		<Name><![CDATA[recuar_val_via2]]></Name>
-		<X>250</X>
-		<Y>3440</Y>
+		<X>1000</X>
+		<Y>4490</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -37101,8 +37101,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375684</Id>
 		<Name><![CDATA[alivio_para_DVs]]></Name>
-		<X>350</X>
-		<Y>3440</Y>
+		<X>1100</X>
+		<Y>4490</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -37158,8 +37158,8 @@ main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791909375688</Id>
 		<Name><![CDATA[rp_pst_val_via2]]></Name>
-		<X>-20</X>
-		<Y>3420</Y>
+		<X>750</X>
+		<Y>4640</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -37407,11 +37407,11 @@ main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000013</Id>
 		<Name><![CDATA[definir_sentido_intervalo4000_a]]></Name>
-		<X>-1010</X>
-		<Y>3760</Y>
+		<X>-970</X>
+		<Y>3740</Y>
 		<Label>
-			<X>-25</X>
-			<Y>-20</Y>
+			<X>-40</X>
+			<Y>-35</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -37485,7 +37485,7 @@ main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000015</Id>
 		<Name><![CDATA[recuar_intervalo4000_a]]></Name>
-		<X>-840</X>
+		<X>-850</X>
 		<Y>3840</Y>
 		<Label>
 			<X>-20</X>
@@ -37647,8 +37647,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1791950000017</Id>
 		<Name><![CDATA[alivio_para_marginal_c]]></Name>
-		<X>-691</X>
-		<Y>3841</Y>
+		<X>-750</X>
+		<Y>3840</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -37706,8 +37706,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000001</Id>
 		<Name><![CDATA[definir_sentido_val_via2]]></Name>
-		<X>100</X>
-		<Y>3360</Y>
+		<X>880</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -37784,8 +37784,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000003</Id>
 		<Name><![CDATA[ir_val_via2]]></Name>
-		<X>250</X>
-		<Y>3360</Y>
+		<X>1000</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -37940,8 +37940,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000005</Id>
 		<Name><![CDATA[para_via3_intermar]]></Name>
-		<X>350</X>
-		<Y>3360</Y>
+		<X>1100</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -37999,10 +37999,10 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000011</Id>
 		<Name><![CDATA[eh_trgao]]></Name>
-		<X>-1430</X>
-		<Y>3760</Y>
+		<X>-1420</X>
+		<Y>3740</Y>
 		<Label>
-			<X>-25</X>
+			<X>-10</X>
 			<Y>-20</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -38079,7 +38079,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 		<Id>1792014000013</Id>
 		<Name><![CDATA[para_intervalo4000_a]]></Name>
 		<X>-1250</X>
-		<Y>3870</Y>
+		<Y>3840</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -38436,8 +38436,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000027</Id>
 		<Name><![CDATA[definir_sentido_intervalo4000_b]]></Name>
-		<X>-390</X>
-		<Y>3760</Y>
+		<X>-420</X>
+		<Y>3740</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -38514,8 +38514,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000029</Id>
 		<Name><![CDATA[recuar_intervalo4000_b]]></Name>
-		<X>-220</X>
-		<Y>3850</Y>
+		<X>-250</X>
+		<Y>3840</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -38676,8 +38676,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000031</Id>
 		<Name><![CDATA[alivio_para_intervalo4000_a]]></Name>
-		<X>-80</X>
-		<Y>3850</Y>
+		<X>-100</X>
+		<Y>3840</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -38823,8 +38823,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000001</Id>
 		<Name><![CDATA[e_coperXI]]></Name>
-		<X>-2420</X>
-		<Y>3990</Y>
+		<X>2130</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-20</Y>
@@ -38903,8 +38903,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000003</Id>
 		<Name><![CDATA[para_via2_e]]></Name>
-		<X>-2250</X>
-		<Y>3990</Y>
+		<X>2300</X>
+		<Y>4990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -40051,8 +40051,8 @@ main().adm.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792190000029</Id>
 		<Name><![CDATA[e_suzano_eldorado]]></Name>
-		<X>-1340</X>
-		<Y>3820</Y>
+		<X>-1370</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -40132,7 +40132,7 @@ main().adm.comecar_encoste.take(agent);]]></Code>
 		<Id>1792190000031</Id>
 		<Name><![CDATA[para_linha6000_a]]></Name>
 		<X>-1250</X>
-		<Y>3820</Y>
+		<Y>3790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -40794,8 +40794,8 @@ main().eldorado.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1795900000101</Id>
 		<Name><![CDATA[bloquear_encoste_marginal]]></Name>
-		<X>-2330</X>
-		<Y>3980</Y>
+		<X>2220</X>
+		<Y>4980</Y>
 		<Label>
 			<X>-45</X>
 			<Y>-20</Y>
@@ -41658,8 +41658,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000001</Id>
 		<Name><![CDATA[circular_val_via2_a]]></Name>
-		<X>-600</X>
-		<Y>4400</Y>
+		<X>130</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -41778,8 +41778,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000003</Id>
 		<Name><![CDATA[ir_val_via2_a]]></Name>
-		<X>-450</X>
-		<Y>4400</Y>
+		<X>250</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -41934,8 +41934,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000005</Id>
 		<Name><![CDATA[para_dv_entrada_c]]></Name>
-		<X>-300</X>
-		<Y>4400</Y>
+		<X>500</X>
+		<Y>4390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -41960,7 +41960,7 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// TEC: fim da val_via2_a -> dv_entrada_c
 ((Trem) agent).faixa_atual   = faixa_dv_entrada_c;
-((Trem) agent).proxima_faixa = faixa_via1_intermar_a;
+((Trem) agent).proxima_faixa = null;
 
 if (trace_circulacao) Log.info("GesCirculacao", "exit_para_dv_entrada_c", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
 tentar_usar_faixa.take(agent);]]></Code>
@@ -41993,8 +41993,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000007</Id>
 		<Name><![CDATA[rp_val_via2_a]]></Name>
-		<X>-600</X>
-		<Y>4440</Y>
+		<X>180</X>
+		<Y>4640</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -42242,8 +42242,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000009</Id>
 		<Name><![CDATA[circular_dv_entrada_c]]></Name>
-		<X>-600</X>
-		<Y>4480</Y>
+		<X>730</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -42362,8 +42362,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000011</Id>
 		<Name><![CDATA[ir_dv_entrada_c]]></Name>
-		<X>-450</X>
-		<Y>4480</Y>
+		<X>940</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -42518,10 +42518,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000013</Id>
 		<Name><![CDATA[para_via1_intermar_a_tec]]></Name>
-		<X>-300</X>
-		<Y>4480</Y>
+		<X>1100</X>
+		<Y>3790</Y>
 		<Label>
-			<X>-10</X>
+			<X>-40</X>
 			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -42577,8 +42577,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000015</Id>
 		<Name><![CDATA[rp_dv_entrada_c]]></Name>
-		<X>-600</X>
-		<Y>4520</Y>
+		<X>730</X>
+		<Y>4040</Y>
 		<Label>
 			<X>47</X>
 			<Y>9</Y>
@@ -42826,10 +42826,10 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000017</Id>
 		<Name><![CDATA[eh_tec]]></Name>
-		<X>2205</X>
-		<Y>1490</Y>
+		<X>1430</X>
+		<Y>3790</Y>
 		<Label>
-			<X>-25</X>
+			<X>-5</X>
 			<Y>-20</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -42905,10 +42905,10 @@ eh_terminal_tec((Trem) agent) && !((Trem) agent).eh_alivio]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000019</Id>
 		<Name><![CDATA[ir_via1_intermar_a_tec]]></Name>
-		<X>2280</X>
-		<Y>1420</Y>
+		<X>1550</X>
+		<Y>3790</Y>
 		<Label>
-			<X>-5</X>
+			<X>-30</X>
 			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -43061,8 +43061,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000021</Id>
 		<Name><![CDATA[para_tec]]></Name>
-		<X>2400</X>
-		<Y>1420</Y>
+		<X>1650</X>
+		<Y>3790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -43110,6 +43110,143 @@ main().tec.comecar_encoste.take(agent);]]></Code>
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1798300000022</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1795108379078</Id>
+		<Name><![CDATA[_eh_tec]]></Name>
+		<X>330</X>
+		<Y>4390</Y>
+		<Label>
+			<X>0</X>
+			<Y>-20</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>SelectOutput</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>SelectOutput</ClassName>
+				<ItemName>1412336242931</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[conditionIsProbabilistic]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[condition]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA["tec".equals(((Trem) agent).get_terminal_name())]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[probability]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onAtEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[choiceIsVolatile]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTrue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitFalse]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1795108379076</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1795108413771</Id>
+		<Name><![CDATA[para_val_via_2]]></Name>
+		<X>500</X>
+		<Y>4490</Y>
+		<Label>
+			<X>-10</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Exit</ClassName>
+				<ItemName>1412336242934</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// TEC: fim da val_via2_a -> dv_entrada_c
+((Trem) agent).faixa_atual   = faixa_val_via2;
+((Trem) agent).proxima_faixa = faixa_via3_intermar;
+
+if (trace_circulacao) Log.info("GesCirculacao", "exit_para_faixa_via2_b", String.format("trem=%d faixa_atual=%s proxima_faixa=%s", agent.getId(), (((Trem) agent).faixa_atual == null ? "null" : ((Trem) agent).faixa_atual.recurso.getName()), (((Trem) agent).proxima_faixa == null ? "null" : ((Trem) agent).proxima_faixa.recurso.getName())));
+tentar_usar_faixa.take(agent);]]></Code>
+				</Value>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1795108413769</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

@@ -66,8 +66,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1789314692594</Id>
 		<Name><![CDATA[faixa_via3_intermar]]></Name>
-		<X>-3355</X>
-		<Y>4065</Y>
+		<X>1000</X>
+		<Y>5250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -94,8 +94,8 @@ faixa_via3_intermar.linhaTMDS	= pl_pst_via_3_intermar;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1789314706440</Id>
 		<Name><![CDATA[faixa_via3_a]]></Name>
-		<X>-3045</X>
-		<Y>4065</Y>
+		<X>1600</X>
+		<Y>5250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -122,8 +122,8 @@ faixa_via3_a.linhaTMDS			= pl_pst_via_3_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1789314742220</Id>
 		<Name><![CDATA[faixa_via3_b]]></Name>
-		<X>-2610</X>
-		<Y>4070</Y>
+		<X>2250</X>
+		<Y>5250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -548,11 +548,11 @@ faixa_railwayTrack199.linhaTMDS			= pl_pst_railwayTrack199;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1791909375690</Id>
 		<Name><![CDATA[faixa_val_via2]]></Name>
-		<X>-10</X>
-		<Y>3450</Y>
+		<X>1050</X>
+		<Y>4650</Y>
 		<Label>
 			<X>15</X>
-			<Y>5</Y>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -633,7 +633,7 @@ faixa_marginal_b.linhaTMDS			= pl_pmc_marginal_b;]]></Code>
 		<Id>1789390286730</Id>
 		<Name><![CDATA[faixa_marginal_c]]></Name>
 		<X>-1765</X>
-		<Y>3885</Y>
+		<Y>3865</Y>
 		<Label>
 			<X>9</X>
 			<Y>1</Y>
@@ -660,8 +660,8 @@ faixa_marginal_c.linhaTMDS			= pl_pmc_marginal_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1789391033346</Id>
 		<Name><![CDATA[faixa_intervalo4000_a]]></Name>
-		<X>-1155</X>
-		<Y>3855</Y>
+		<X>-1105</X>
+		<Y>3835</Y>
 		<Label>
 			<X>25</X>
 			<Y>0</Y>
@@ -689,7 +689,7 @@ faixa_intervalo4000_a.linhaTMDS			= pl_pmc_intervalo4000_a;]]></Code>
 		<Id>1789391414678</Id>
 		<Name><![CDATA[faixa_intervalo4000_b]]></Name>
 		<X>-535</X>
-		<Y>3855</Y>
+		<Y>3875</Y>
 		<Label>
 			<X>9</X>
 			<Y>1</Y>
@@ -744,8 +744,8 @@ faixa_intervalo4000_c.linhaTMDS			= pl_pmc_intervalo4000_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790787941759</Id>
 		<Name><![CDATA[faixa_via1_intermar_d]]></Name>
-		<X>2165</X>
-		<Y>675</Y>
+		<X>3440</X>
+		<Y>4040</Y>
 		<Label>
 			<X>15</X>
 			<Y>5</Y>
@@ -772,8 +772,8 @@ faixa_via1_intermar_d.linhaTMDS	= pl_pst_via_1_intermar_d;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790788983972</Id>
 		<Name><![CDATA[faixa_via1_intermar_c]]></Name>
-		<X>2165</X>
-		<Y>975</Y>
+		<X>2840</X>
+		<Y>4040</Y>
 		<Label>
 			<X>15</X>
 			<Y>5</Y>
@@ -800,11 +800,11 @@ faixa_via1_intermar_c.linhaTMDS	= pl_pst_via_1_intermar_c;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790789088946</Id>
 		<Name><![CDATA[faixa_via1_intermar_b]]></Name>
-		<X>2165</X>
-		<Y>1275</Y>
+		<X>2220</X>
+		<Y>4060</Y>
 		<Label>
-			<X>15</X>
-			<Y>5</Y>
+			<X>20</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -828,11 +828,11 @@ faixa_via1_intermar_b.linhaTMDS	= pl_pst_via_1_intermar_b;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1790789141995</Id>
 		<Name><![CDATA[faixa_via1_intermar_a]]></Name>
-		<X>2165</X>
-		<Y>1575</Y>
+		<X>1600</X>
+		<Y>4050</Y>
 		<Label>
 			<X>15</X>
-			<Y>5</Y>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -1545,8 +1545,8 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1798300000031</Id>
 		<Name><![CDATA[faixa_val_via2_a]]></Name>
-		<X>-560</X>
-		<Y>4450</Y>
+		<X>380</X>
+		<Y>4650</Y>
 		<Label>
 			<X>15</X>
 			<Y>5</Y>
@@ -1573,11 +1573,11 @@ faixa_val_via2_a.linhaTMDS			= pl_pst_val_via2_a;]]></Code>
 	<Variable Class="PlainVariable">
 		<Id>1798300000032</Id>
 		<Name><![CDATA[faixa_dv_entrada_c]]></Name>
-		<X>-560</X>
-		<Y>4530</Y>
+		<X>1050</X>
+		<Y>4050</Y>
 		<Label>
 			<X>15</X>
-			<Y>5</Y>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
