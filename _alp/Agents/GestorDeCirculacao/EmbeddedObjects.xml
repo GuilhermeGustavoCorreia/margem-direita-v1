@@ -29148,8 +29148,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000005</Id>
 		<Name><![CDATA[circular_via3_c]]></Name>
-		<X>-2280</X>
-		<Y>3980</Y>
+		<X>-2190</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -29268,8 +29268,8 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791670000007</Id>
 		<Name><![CDATA[ir_via3_c]]></Name>
-		<X>-2160</X>
-		<Y>3980</Y>
+		<X>-2070</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -38903,7 +38903,7 @@ tentar_usar_faixa.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000003</Id>
 		<Name><![CDATA[para_via2_e]]></Name>
-		<X>-2350</X>
+		<X>-2250</X>
 		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
@@ -39238,8 +39238,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792080000009</Id>
 		<Name><![CDATA[para_via3_d]]></Name>
-		<X>-2080</X>
-		<Y>3980</Y>
+		<X>-1990</X>
+		<Y>3990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -40794,11 +40794,11 @@ main().eldorado.comecar_encoste.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1795900000101</Id>
 		<Name><![CDATA[bloquear_encoste_marginal]]></Name>
-		<X>-2385</X>
-		<Y>3920</Y>
+		<X>-2330</X>
+		<Y>3980</Y>
 		<Label>
-			<X>-40</X>
-			<Y>55</Y>
+			<X>-45</X>
+			<Y>-20</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -41273,8 +41273,8 @@ main().railwaySwitch73.connectTracks(main().pst_marginal_a, main().pst_marginal_
 	<EmbeddedObject>
 		<Id>1798140000003</Id>
 		<Name><![CDATA[entrar_mnb_pcx]]></Name>
-		<X>-2080</X>
-		<Y>4180</Y>
+		<X>-2070</X>
+		<Y>4190</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -41604,7 +41604,7 @@ main().railwaySwitch73.connectTracks(main().pst_marginal_a, main().pst_marginal_
 		<Id>1798140000007</Id>
 		<Name><![CDATA[para_licenciar_apos_mnb]]></Name>
 		<X>-1780</X>
-		<Y>4180</Y>
+		<Y>4190</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>

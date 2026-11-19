@@ -6165,6 +6165,9 @@ atendimento_terminal.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[routeType]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.ROUTE_AUTO]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[BlockedTrackHandling]]></Name>

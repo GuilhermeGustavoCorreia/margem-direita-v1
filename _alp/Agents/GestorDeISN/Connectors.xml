@@ -3,8 +3,8 @@
 	<Connector>
 		<Id>1795850000159</Id>
 		<Name><![CDATA[connector_isn1]]></Name>
-		<X>310</X>
-		<Y>500</Y>
+		<X>320</X>
+		<Y>510</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -38,7 +38,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>180</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -89,8 +89,8 @@
 	<Connector>
 		<Id>1795850000161</Id>
 		<Name><![CDATA[connector_isn3]]></Name>
-		<X>410</X>
-		<Y>560</Y>
+		<X>440</X>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -124,7 +124,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -175,8 +175,8 @@
 	<Connector>
 		<Id>1795850000163</Id>
 		<Name><![CDATA[connector_isn5]]></Name>
-		<X>410</X>
-		<Y>620</Y>
+		<X>440</X>
+		<Y>630</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,7 +210,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -304,8 +304,8 @@
 	<Connector>
 		<Id>1795850000166</Id>
 		<Name><![CDATA[connector_isn8]]></Name>
-		<X>510</X>
-		<Y>680</Y>
+		<X>520</X>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -339,16 +339,20 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
+				<X>30</X>
+				<Y>50</Y>
+			</Point>
+			<Point>
 				<X>80</X>
-				<Y>0</Y>
+				<Y>50</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1795850000167</Id>
 		<Name><![CDATA[connector_isn9]]></Name>
-		<X>510</X>
-		<Y>680</Y>
+		<X>530</X>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -382,16 +386,16 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-20</X>
-				<Y>60</Y>
+				<X>110</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1795850000168</Id>
 		<Name><![CDATA[connector_isn10]]></Name>
-		<X>510</X>
-		<Y>740</Y>
+		<X>650</X>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -421,20 +425,20 @@
 		</TargetConnectableItemReference>
 		<Points>
 			<Point>
-				<X>0</X>
-				<Y>0</Y>
+				<X>30</X>
+				<Y>10</Y>
 			</Point>
 			<Point>
-				<X>80</X>
-				<Y>0</Y>
+				<X>90</X>
+				<Y>10</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1795850000169</Id>
 		<Name><![CDATA[connector_isn11]]></Name>
-		<X>610</X>
-		<Y>740</Y>
+		<X>780</X>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -468,7 +472,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -476,8 +480,8 @@
 	<Connector>
 		<Id>1795850000170</Id>
 		<Name><![CDATA[connector_isn12]]></Name>
-		<X>710</X>
-		<Y>740</Y>
+		<X>880</X>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -511,7 +515,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -519,8 +523,8 @@
 	<Connector>
 		<Id>1795850000171</Id>
 		<Name><![CDATA[connector_isn13]]></Name>
-		<X>810</X>
-		<Y>740</Y>
+		<X>980</X>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -554,7 +558,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>60</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -605,8 +609,8 @@
 	<Connector>
 		<Id>1795850000173</Id>
 		<Name><![CDATA[connector_isn15]]></Name>
-		<X>410</X>
-		<Y>800</Y>
+		<X>440</X>
+		<Y>810</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -640,7 +644,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -691,8 +695,8 @@
 	<Connector>
 		<Id>1795850000175</Id>
 		<Name><![CDATA[connector_isn17]]></Name>
-		<X>410</X>
-		<Y>860</Y>
+		<X>440</X>
+		<Y>870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -726,7 +730,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -777,8 +781,8 @@
 	<Connector>
 		<Id>1795850000177</Id>
 		<Name><![CDATA[connector_isn19]]></Name>
-		<X>410</X>
-		<Y>920</Y>
+		<X>440</X>
+		<Y>930</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -812,7 +816,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>110</X>
 				<Y>0</Y>
 			</Point>
 		</Points>

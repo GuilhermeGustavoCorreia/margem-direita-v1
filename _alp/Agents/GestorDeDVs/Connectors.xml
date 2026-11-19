@@ -1365,7 +1365,7 @@
 	<Connector>
 		<Id>1797330000027</Id>
 		<Name><![CDATA[con_dvs_1]]></Name>
-		<X>550</X>
+		<X>500</X>
 		<Y>150</Y>
 		<Label>
 			<X>10</X>
@@ -1408,7 +1408,7 @@
 	<Connector>
 		<Id>1797330000028</Id>
 		<Name><![CDATA[con_dvs_2]]></Name>
-		<X>660</X>
+		<X>610</X>
 		<Y>150</Y>
 		<Label>
 			<X>10</X>
@@ -1443,7 +1443,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -1451,7 +1451,7 @@
 	<Connector>
 		<Id>1797330000029</Id>
 		<Name><![CDATA[con_dvs_3]]></Name>
-		<X>650</X>
+		<X>600</X>
 		<Y>160</Y>
 		<Label>
 			<X>10</X>
@@ -1494,7 +1494,7 @@
 				<Y>140</Y>
 			</Point>
 			<Point>
-				<X>150</X>
+				<X>200</X>
 				<Y>140</Y>
 			</Point>
 		</Points>
@@ -1725,15 +1725,15 @@
 				<Y>-310</Y>
 			</Point>
 			<Point>
-				<X>-400</X>
+				<X>-450</X>
 				<Y>-310</Y>
 			</Point>
 			<Point>
-				<X>-400</X>
+				<X>-450</X>
 				<Y>-360</Y>
 			</Point>
 			<Point>
-				<X>-340</X>
+				<X>-410</X>
 				<Y>-360</Y>
 			</Point>
 		</Points>
@@ -2400,7 +2400,7 @@
 		<Id>1798150000003</Id>
 		<Name><![CDATA[conn_ocupar_val_via2_saida]]></Name>
 		<X>760</X>
-		<Y>140</Y>
+		<Y>150</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2434,7 +2434,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-150</X>
+				<X>-30</X>
 				<Y>0</Y>
 			</Point>
 		</Points>

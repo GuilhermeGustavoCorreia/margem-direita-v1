@@ -1870,11 +1870,11 @@ Log.info("ISN", "chegou", String.format("trem=%d/%s chegou -> %s", agent.getId()
 	<EmbeddedObject>
 		<Id>1795850000113</Id>
 		<Name><![CDATA[para_isn_a]]></Name>
-		<X>400</X>
+		<X>500</X>
 		<Y>500</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -2204,8 +2204,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<X>500</X>
 		<Y>560</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -2535,8 +2535,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<X>500</X>
 		<Y>620</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -2945,10 +2945,10 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 		<Id>1795850000133</Id>
 		<Name><![CDATA[para_isn_d]]></Name>
 		<X>600</X>
-		<Y>680</Y>
+		<Y>740</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -2999,8 +2999,8 @@ seguir_para_faixa((Trem) agent, faixa_isn_d, faixa_isn_e, "fim isn_linha01_c");]
 	<EmbeddedObject>
 		<Id>1795850000135</Id>
 		<Name><![CDATA[ir_isn_linha02_e]]></Name>
-		<X>500</X>
-		<Y>740</Y>
+		<X>640</X>
+		<Y>680</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-25</Y>
@@ -3155,8 +3155,8 @@ faixa_isn_linha02_e.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1795840000205</Id>
 		<Name><![CDATA[ir_linha02]]></Name>
-		<X>600</X>
-		<Y>740</Y>
+		<X>740</X>
+		<Y>680</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-25</Y>
@@ -3300,8 +3300,8 @@ Log.info("ISN", "indo_parada_linha02", String.format("trem=%d/%s indo para o pon
 	<EmbeddedObject>
 		<Id>1795850000137</Id>
 		<Name><![CDATA[liberar_linha01]]></Name>
-		<X>700</X>
-		<Y>740</Y>
+		<X>840</X>
+		<Y>670</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -3400,8 +3400,8 @@ main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1795840000207</Id>
 		<Name><![CDATA[espera_linha02]]></Name>
-		<X>800</X>
-		<Y>740</Y>
+		<X>940</X>
+		<Y>670</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-15</Y>
@@ -3504,11 +3504,11 @@ Log.info("ISN", "estacionado_linha02", String.format("trem=%d/%s estacionado na 
 	<EmbeddedObject>
 		<Id>1795850000139</Id>
 		<Name><![CDATA[sair_linha02]]></Name>
-		<X>900</X>
-		<Y>740</Y>
+		<X>1040</X>
+		<Y>680</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3837,11 +3837,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1795850000145</Id>
 		<Name><![CDATA[para_isn_e]]></Name>
-		<X>500</X>
+		<X>550</X>
 		<Y>800</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-20</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -4168,11 +4168,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1795850000151</Id>
 		<Name><![CDATA[para_isn_porteira]]></Name>
-		<X>500</X>
+		<X>550</X>
 		<Y>860</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-35</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -4499,11 +4499,11 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1795850000157</Id>
 		<Name><![CDATA[para_val_via2]]></Name>
-		<X>500</X>
+		<X>550</X>
 		<Y>920</Y>
 		<Label>
-			<X>-150</X>
-			<Y>75</Y>
+			<X>-25</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>

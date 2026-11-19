@@ -484,3 +484,4 @@ Log.info("TES", "estado_waits", "wait_lote_linha04=" + wait_lote_linha04.size() 
     " wait_resto_3000=" + wait_resto_3000.size() +
     " wait_encoste_3000=" + wait_encoste_3000.size());
 /*ALCODEEND*/}
+

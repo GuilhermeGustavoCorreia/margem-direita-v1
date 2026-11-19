@@ -2457,7 +2457,7 @@
 	<EmbeddedObject>
 		<Id>1790793595946</Id>
 		<Name><![CDATA[entrarNasDVs]]></Name>
-		<X>530</X>
+		<X>480</X>
 		<Y>140</Y>
 		<Label>
 			<X>0</X>
@@ -2956,10 +2956,10 @@
 	<EmbeddedObject>
 		<Id>1797330000001</Id>
 		<Name><![CDATA[sel_segue_direto]]></Name>
-		<X>630</X>
+		<X>580</X>
 		<Y>140</Y>
 		<Label>
-			<X>-5</X>
+			<X>-25</X>
 			<Y>-20</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -4492,8 +4492,8 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 	<EmbeddedObject>
 		<Id>1798150000001</Id>
 		<Name><![CDATA[ocupar_val_via2_saida]]></Name>
-		<X>610</X>
-		<Y>140</Y>
+		<X>690</X>
+		<Y>130</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-10</Y>

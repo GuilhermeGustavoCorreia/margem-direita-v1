@@ -445,3 +445,4 @@ Log.info("T39", "estado_waits", "aguardar_moega=" + aguardar_moega.size() +
     " wait_espaco_vazios=" + wait_espaco_vazios.size() +
     " esperar_espaco_corte=" + esperar_espaco_corte.size());
 /*ALCODEEND*/}
+

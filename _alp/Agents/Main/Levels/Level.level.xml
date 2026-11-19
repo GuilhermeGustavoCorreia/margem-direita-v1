@@ -8053,33 +8053,33 @@ if (senha.equals("FIPS123")) {
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>-3.533</X>
-						<Y>29.705</Y>
+						<X>-2.533</X>
+						<Y>34.105</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>-7.594</X>
-						<Y>5.037</Y>
+						<X>-6.594</X>
+						<Y>9.437</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>0.569</X>
-						<Y>54.366</Y>
+						<X>1.554</X>
+						<Y>58.769</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>20.967</X>
-						<Y>177.005</Y>
+						<X>20.867</X>
+						<Y>175.305</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>16.865</X>
-						<Y>152.344</Y>
+						<X>16.78</X>
+						<Y>150.641</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
-						<X>24.768</X>
-						<Y>201.714</Y>
+						<X>24.668</X>
+						<Y>200.014</Y>
 						<Z>0</Z>
 					</Point>
 					<Point>
@@ -44616,8 +44616,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1788186499658</Id>
 		<Name><![CDATA[bracell_presentation]]></Name>
-		<X>860</X>
-		<Y>220</Y>
+		<X>-480</X>
+		<Y>1330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44779,8 +44779,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1790885457931</Id>
 		<Name><![CDATA[t39_presentation]]></Name>
-		<X>-550</X>
-		<Y>550</Y>
+		<X>1350</X>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44801,8 +44801,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1791643906848</Id>
 		<Name><![CDATA[coperXXI_presentation]]></Name>
-		<X>220</X>
-		<Y>370</Y>
+		<X>-1120</X>
+		<Y>1480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44823,8 +44823,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1791667958989</Id>
 		<Name><![CDATA[tgrao_presentation]]></Name>
-		<X>860</X>
-		<Y>670</Y>
+		<X>-480</X>
+		<Y>1780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44917,8 +44917,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1792172586442</Id>
 		<Name><![CDATA[adm_presentation]]></Name>
-		<X>-1000</X>
-		<Y>250</Y>
+		<X>900</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44964,8 +44964,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1792517223016</Id>
 		<Name><![CDATA[suzano_presentation]]></Name>
-		<X>860</X>
-		<Y>370</Y>
+		<X>-480</X>
+		<Y>1480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44986,8 +44986,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1792519124507</Id>
 		<Name><![CDATA[tes_presentation]]></Name>
-		<X>-1000</X>
-		<Y>400</Y>
+		<X>900</X>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -45008,8 +45008,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1793014789627</Id>
 		<Name><![CDATA[eldorado_presentation]]></Name>
-		<X>860</X>
-		<Y>520</Y>
+		<X>-480</X>
+		<Y>1630</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -45052,8 +45052,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1793301361253</Id>
 		<Name><![CDATA[moegaoTerra_presentation]]></Name>
-		<X>220</X>
-		<Y>220</Y>
+		<X>-1120</X>
+		<Y>1330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
