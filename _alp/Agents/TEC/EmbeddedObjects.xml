@@ -822,8 +822,8 @@ main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798300000039</Id>
 		<Name><![CDATA[comecar_encoste]]></Name>
-		<X>630</X>
-		<Y>290</Y>
+		<X>580</X>
+		<Y>190</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -906,12 +906,10 @@ main().gestorDeChegadas.receber_trem((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// trem chegou da circulação (via1_intermar_a); encoste ainda não implementado
+					<Code><![CDATA[
 Trem t = (Trem) agent;
 _trem_chegando = t;
-ferrovia_em_atendimento = t.getFerrovia();
-segmento_em_atendimento = t.getSegmento();
-Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segmento=%s", t.getId(), t.prefixo, ferrovia_em_atendimento, segmento_em_atendimento));]]></Code>
+atualizarFerroviaEProdutoEmAtendimento(t);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -947,11 +945,11 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000001</Id>
 		<Name><![CDATA[ir_tec_encoste]]></Name>
-		<X>250</X>
-		<Y>100</Y>
+		<X>700</X>
+		<Y>190</Y>
 		<Label>
-			<X>-40</X>
-			<Y>50</Y>
+			<X>-20</X>
+			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -1094,10 +1092,10 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000003</Id>
 		<Name><![CDATA[liberar_faixas_circulacao]]></Name>
-		<X>400</X>
-		<Y>100</Y>
+		<X>800</X>
+		<Y>180</Y>
 		<Label>
-			<X>-65</X>
+			<X>-40</X>
 			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -1196,8 +1194,8 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000005</Id>
 		<Name><![CDATA[descarregar]]></Name>
-		<X>550</X>
-		<Y>100</Y>
+		<X>910</X>
+		<Y>180</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -1243,8 +1241,8 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000007</Id>
 		<Name><![CDATA[tirar_loco]]></Name>
-		<X>700</X>
-		<Y>100</Y>
+		<X>1030</X>
+		<Y>200</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-20</Y>
@@ -1369,8 +1367,8 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000011</Id>
 		<Name><![CDATA[loco_sair]]></Name>
-		<X>850</X>
-		<Y>40</Y>
+		<X>1130</X>
+		<Y>290</Y>
 		<Label>
 			<X>-20</X>
 			<Y>45</Y>
@@ -1423,8 +1421,8 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000013</Id>
 		<Name><![CDATA[loco_entrar_cauda]]></Name>
-		<X>1000</X>
-		<Y>40</Y>
+		<X>1230</X>
+		<Y>290</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-25</Y>
@@ -1470,8 +1468,9 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offset]]></Name>
-				<Value Class="CodeValue">
+				<Value Class="CodeUnitValue">
 					<Code><![CDATA[get_offset_cauda()]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1510,8 +1509,8 @@ Log.info("TEC", "comecar_encoste", String.format("trem=%d/%s ferrovia=%s segment
 	<EmbeddedObject>
 		<Id>1798310000015</Id>
 		<Name><![CDATA[acoplar_loco_cauda]]></Name>
-		<X>1150</X>
-		<Y>100</Y>
+		<X>1340</X>
+		<Y>200</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -1579,8 +1578,8 @@ log_analise("acoplar_loco_cauda", train1, "loco acoplada no ultimo vagao; overlo
 	<EmbeddedObject>
 		<Id>1798310000017</Id>
 		<Name><![CDATA[aguardando_alivio]]></Name>
-		<X>1300</X>
-		<Y>100</Y>
+		<X>1450</X>
+		<Y>180</Y>
 		<Label>
 			<X>-26</X>
 			<Y>52</Y>

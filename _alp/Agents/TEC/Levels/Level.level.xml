@@ -393,7 +393,7 @@
 		<Id>1794956224053</Id>
 		<Name><![CDATA[button6]]></Name>
 		<X>320</X>
-		<Y>93.984</Y>
+		<Y>95</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -696,34 +696,6 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Line>
-		<Id>1794956752141</Id>
-		<Name><![CDATA[line3]]></Name>
-		<X>550</X>
-		<Y>100</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor>-16777216</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>700</Dx>
-		<Dy>0</Dy>
-		<Dz>0</Dz>
-	</Line>
 	<Text>
 		<Id>1794956752143</Id>
 		<Name><![CDATA[text46]]></Name>

@@ -147,3 +147,19 @@ try {
 }
 /*ALCODEEND*/}
 
+double atualizarFerroviaEProdutoEmAtendimento(Trem trem)
+{/*ALCODESTART::1795098515817*/
+for (int i = 0; i < trem.size(); i++) {
+        Agent carro = trem.getCar(i); // confere o nome exato do método com Ctrl+Espaço
+
+        if (carro instanceof Vagao) {
+            Vagao vagao = (Vagao) carro;
+            ferrovia_em_atendimento = vagao.ferrovia;
+            segmento_em_atendimento = vagao.segmento;
+            return; // achou o primeiro vagão, encerra
+        }
+    }
+
+    Log.erro("ADM", "trem_sem_vagao", "trem não tem nenhum vagão");
+/*ALCODEEND*/}
+
