@@ -148,8 +148,8 @@
 	<Connector>
 		<Id>1798300000043</Id>
 		<Name><![CDATA[connector_encoste_1]]></Name>
-		<X>110</X>
-		<Y>100</Y>
+		<X>650</X>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -183,10 +183,9 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>130</X>
+				<X>190</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
-
 </Connectors>

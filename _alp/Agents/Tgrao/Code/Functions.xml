@@ -325,8 +325,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1796400000001</Id>
 		<Name><![CDATA[log_analise]]></Name>
-		<X>550</X>
-		<Y>100</Y>
+		<X>300</X>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

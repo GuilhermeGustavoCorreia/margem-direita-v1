@@ -110,10 +110,11 @@
 	<Functions xmlns:al="http://anylogic.com"/>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1794956136078</Id>
+			<Id>1795094903856</Id>
 			<Name><![CDATA[main]]></Name>
-			<X>-100</X>
-			<Y>270</Y>
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+			<X>50</X>
+			<Y>-100</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>

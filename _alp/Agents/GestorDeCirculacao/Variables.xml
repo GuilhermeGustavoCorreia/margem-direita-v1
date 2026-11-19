@@ -1542,6 +1542,62 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798300000031</Id>
+		<Name><![CDATA[faixa_val_via2_a]]></Name>
+		<X>-560</X>
+		<Y>4450</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_val_via2_a          			= new Faixa();
+faixa_val_via2_a.ordem          	= 2;
+faixa_val_via2_a.recurso        	= rp_val_via2_a;
+faixa_val_via2_a.track          	= main().val_via2_a;
+faixa_val_via2_a.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_val_via2_a.enter          	= circular_val_via2_a;
+faixa_val_via2_a.linhaTMDS			= pl_pst_val_via2_a;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1798300000032</Id>
+		<Name><![CDATA[faixa_dv_entrada_c]]></Name>
+		<X>-560</X>
+		<Y>4530</Y>
+		<Label>
+			<X>15</X>
+			<Y>5</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Faixa]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[faixa_dv_entrada_c          			= new Faixa();
+faixa_dv_entrada_c.ordem          	= 2;
+faixa_dv_entrada_c.recurso        	= rp_dv_entrada_c;
+faixa_dv_entrada_c.track          	= main().dv_entrada_c;
+faixa_dv_entrada_c.estado         	= Faixa.EstadoFaixa.LIVRE;
+faixa_dv_entrada_c.enter          	= circular_dv_entrada_c;
+faixa_dv_entrada_c.linhaTMDS			= pl_pst_dv_entrada_c;]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1795850000402</Id>
 		<Name><![CDATA[trens_em_circulacao]]></Name>
@@ -1756,62 +1812,6 @@ faixa_via2_f.linhaTMDS			= pl_pst_via2_f;]]></Code>
 	main().via2_intermar_c
 }]]></Code>
 			</CollectionInitializer>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1798300000031</Id>
-		<Name><![CDATA[faixa_val_via2_a]]></Name>
-		<X>-560</X>
-		<Y>4450</Y>
-		<Label>
-			<X>15</X>
-			<Y>5</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[Faixa]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[faixa_val_via2_a          			= new Faixa();
-faixa_val_via2_a.ordem          	= 2;
-faixa_val_via2_a.recurso        	= rp_val_via2_a;
-faixa_val_via2_a.track          	= main().val_via2_a;
-faixa_val_via2_a.estado         	= Faixa.EstadoFaixa.LIVRE;
-faixa_val_via2_a.enter          	= circular_val_via2_a;
-faixa_val_via2_a.linhaTMDS			= pl_pst_val_via2_a;]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1798300000032</Id>
-		<Name><![CDATA[faixa_dv_entrada_c]]></Name>
-		<X>-560</X>
-		<Y>4530</Y>
-		<Label>
-			<X>15</X>
-			<Y>5</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[Faixa]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[faixa_dv_entrada_c          			= new Faixa();
-faixa_dv_entrada_c.ordem          	= 2;
-faixa_dv_entrada_c.recurso        	= rp_dv_entrada_c;
-faixa_dv_entrada_c.track          	= main().dv_entrada_c;
-faixa_dv_entrada_c.estado         	= Faixa.EstadoFaixa.LIVRE;
-faixa_dv_entrada_c.enter          	= circular_dv_entrada_c;
-faixa_dv_entrada_c.linhaTMDS			= pl_pst_dv_entrada_c;]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="CollectionVariable">

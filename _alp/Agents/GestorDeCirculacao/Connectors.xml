@@ -7855,7 +7855,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000024</Id>
 		<Name><![CDATA[connector_tec_2]]></Name>
@@ -7899,7 +7898,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000025</Id>
 		<Name><![CDATA[connector_tec_3]]></Name>
@@ -7943,7 +7941,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000026</Id>
 		<Name><![CDATA[connector_tec_4]]></Name>
@@ -7987,7 +7984,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000027</Id>
 		<Name><![CDATA[connector_tec_5]]></Name>
@@ -8031,7 +8027,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000028</Id>
 		<Name><![CDATA[connector_tec_6]]></Name>
@@ -8075,7 +8070,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000029</Id>
 		<Name><![CDATA[connector_tec_7]]></Name>
@@ -8119,7 +8113,6 @@
 			</Point>
 		</Points>
 	</Connector>
-
 	<Connector>
 		<Id>1798300000030</Id>
 		<Name><![CDATA[connector_tec_8]]></Name>
@@ -8163,5 +8156,4 @@
 			</Point>
 		</Points>
 	</Connector>
-
 </Connectors>
