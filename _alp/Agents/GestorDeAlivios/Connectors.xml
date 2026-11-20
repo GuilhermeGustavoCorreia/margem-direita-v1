@@ -1159,6 +1159,57 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>seize_saida_4000</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>20</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>40</X>
+				<Y>80</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1799200000003</Id>
+		<Name><![CDATA[connector_seize_saida_4000]]></Name>
+		<X>2470</X>
+		<Y>1080</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>seize_saida_4000</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
 			<ItemName>liberar_linha_4000</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -1172,12 +1223,16 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>10</X>
+				<X>20</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
-				<Y>0</Y>
+				<X>20</X>
+				<Y>-80</Y>
+			</Point>
+			<Point>
+				<X>30</X>
+				<Y>-80</Y>
 			</Point>
 		</Points>
 	</Connector>

@@ -770,10 +770,15 @@ double ocupar_faixas_saida_4000(Trem trem)
 // na saída do trem cheio, as faixas da 4000 onde ele ainda está ficam OCUPADA com o id dele.
 // As outras ficam LIVRE (as da linha 4000 estavam com 9999 desde o bloquear_4000).
 List<RailwayTrack> tracksDoTrem = trem.getAllOccupiedTracks();
+GestorDeCirculacao gc = main().gestorDeCirculacao;
 
 for (Faixa f : get_faixas_saida_4000()) {
 
-    if (tracksDoTrem.contains(f.track)) {
+    // intervalo4000_c/b: o trem pegou no seize_saida_4000 e ainda vai passar por elas
+    boolean caminho_de_saida = (f == gc.faixa_intervalo4000_b || f == gc.faixa_intervalo4000_c)
+                               && !trem.resourceUnitsOfPool(f.recurso).isEmpty();
+
+    if (tracksDoTrem.contains(f.track) || caminho_de_saida) {
 
         f.ocupar(trem);
         Log.info("GesAlivios", "ocupar_faixas_saida_4000", String.format("trem=%d ocupa %s",

@@ -90,7 +90,7 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - **Tgrao**: o alívio é sempre de 40 vagões, nunca menos.
   Só alivia se o GestorDeDVs tiver mais de 40 vagões de espaço livre para a ferrovia do Tgrao. [pendente no código]
 - **Alívio na linha 4000** (circuito PCX, ALT-013): quando o trem volta do alívio com `CAPACIDADE_LINHA_4000` (82) vagões,
-  ◇ `linha_4000_cheia` → `liberar_linha_4000` (solta `linha4000_a/b/c`) → `para_alivio_na_linha_4000`, que marca `eh_alivio`,
+  ◇ `linha_4000_cheia` → `seize_saida_4000` (pega `intervalo4000_c/b/a` de uma vez; c e b ficam OCUPADA, a LICENCIADA) → `liberar_linha_4000` (solta `linha4000_a/b/c`) → `para_alivio_na_linha_4000`, que marca `eh_alivio`,
   zera `lote_linha_4000` e entrega o trem ao GestorDeCirculacao com `faixa_atual = intervalo4000_a`, `proxima_faixa = marginal_c`.
   Com menos de 82, o trem espera em `wait_trem_4000`.
   Na volta do alívio, o `ir_linha_4000` para o trem a 10 m do início da `pmc_linha4000_a` (antes `pos_linha_4000_criar_loco`, na `intervalo4000_b`),

@@ -2192,3 +2192,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **O que:** `ir_linha_4000` passa de `TARGET_AT_POINT_ON_TRACK` (`pos_linha_4000_criar_loco`) para `TARGET_AT_TRACK_OFFSET` em `main().pmc_linha4000_a`, 10 m do início (lado da `intervalo4000_c`). O ponto de criação da loco não muda.
 - **Limite conhecido:** a 4000 (a+b+c ≈ 1.132 m) comporta 2 locos + ~62 vagões (17,5 m). Acima disso o trem passa do fim da `linha4000_c` (lado do TES). Na saída com 82, o trem atravessa `intervalo4000_c` e `intervalo4000_b` sem licenciar essas faixas (`faixa_atual = intervalo4000_a`).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-179 — seize-saida-4000
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** com o trem da 4000 esperando dentro da linha, na saída com 82 ele atravessava `intervalo4000_c` e `intervalo4000_b` sem licenciar. `ocupar_faixas_saida_4000` deixava essas faixas LIVRE e a loco nova nasceu em `pos_linha_4000_criar_loco` em cima da cauda (`loco_pcx_starts`: car intersects on `pmc_intervalo4000_b`).
+- **O que (GestorDeAlivios):**
+  - Novo Seize `seize_saida_4000` entre `linha_4000_cheia` (outT) e `liberar_linha_4000`: pega `intervalo4000_c`, `b` e `a` num conjunto só. No onExit, c e b ficam OCUPADA pelo trem e a fica LICENCIADA (faixa_atual da entrega à circulação).
+  - `ocupar_faixas_saida_4000`: `intervalo4000_c/b` que o trem possui ficam OCUPADA mesmo antes de ele chegar nelas; o GestorDeCirculacao solta o recurso quando a cauda sai.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
