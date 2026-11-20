@@ -2208,3 +2208,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** o trem cheio da 4000 pega `intervalo4000_c/b` no `seize_saida_4000` antes de chegar nelas. Na primeira chamada de `liberar_faixas_ocupadas` as duas estavam vazias (o trem ainda dentro da 4000) e eram soltas na largada. A loco nova nasceu na `intervalo4000_b` em cima da cauda (car intersects, 1,990 h).
 - **O que (GestorDeCirculacao.liberar_faixas_ocupadas):** `intervalo4000_c` não é solta enquanto o trem ocupar `linha4000_a/b/c`; `intervalo4000_b` não é solta enquanto ocupar `linha4000_*` ou `intervalo4000_c`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`
+
+## ALT-181 — par-via1-intermar-a-dv-entrada-c
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** M68 (para o TEC_ACUCAR) licenciou a `dv_entrada_c` e esperava a `via1_intermar_a`; o MNB21 (para as DVs) licenciou a `via1_intermar_a` e entrou nas DVs pela `dv_entrada_c` sem licenciar. Colisão de frente em 4,158 h (`gestorDeDVs.ir_ponto.outHit`).
+- **O que (GestorDeCirculacao):**
+  - `licenciar_esta_faixa`: passa a usar conjunto de recursos; se `faixa_atual` é `via1_intermar_a` ou `dv_entrada_c`, pega as duas juntas e licencia as duas para o trem. Demais faixas como antes.
+  - `para_DVS`, `alivio_para_DVs`, `exit3`: se a `dv_entrada_c` está licenciada para o trem, passa a OCUPADA.
+  - `liberar_faixas_ocupadas`: `dv_entrada_c` não é solta enquanto o trem ocupar a `via1_intermar_a` (exceto trem chegando ao TEC, que percorre a `dv_entrada_c` pela circulação).
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `docs/gestores.md`

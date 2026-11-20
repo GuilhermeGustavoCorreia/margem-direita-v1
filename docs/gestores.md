@@ -40,6 +40,7 @@ Controla as faixas de circulação e o licenciamento dos trens.
   `faixa_atual = faixa_val_via2` e `proxima_faixa = faixa_via3_intermar` em `tentar_usar_faixa`. Daí é licenciado até a entrada do terminal de destino.
   O `chegada_carregados` / `para_via3_ate_santa` não recebe mais trens dos terminais [revisar: exceção da Bracell e botões manuais].
 - **Regra de licenciamento**: o trem licencia só a faixa à frente (`faixa_atual` / `proxima_faixa`).
+- **Par `via1_intermar_a` + `dv_entrada_c`**: são um trecho só. O `licenciar_esta_faixa` pega as duas juntas (conjunto único) quando a `faixa_atual` é uma delas, em qualquer sentido: chegada ao TEC/TEC_ACUCAR, saída do TEC (alívio) e ida para as DVs. Na ida para as DVs, `para_DVS`/`alivio_para_DVs`/`exit3` marcam a `dv_entrada_c` OCUPADA; o `liberar_faixas_ocupadas` só a solta depois que o trem sai da `via1_intermar_a` (o GestorDeDVs chama em `liberar_faixas_circulacao`/`liberar_faixas_ponto`).
   Cada faixa tem `circular_*` → `ir_*` (TrainMoveTo) → Exit, que define o próximo par.
   A decisão de destino fica no fim da última faixa da rota.
 - **Percurso do trem da Bracell** (ALT-014): `val_via2 → via3_intermar → via3_a → via3_b → via3_c → pst_silosMuro_a → pst_marginal_c → pmc_intervalo4000_a → pmc_intervalo4000_b → pmc_intervalo4000_c → bracell.encoste`.

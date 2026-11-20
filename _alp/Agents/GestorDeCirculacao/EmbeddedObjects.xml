@@ -994,6 +994,8 @@ configurar_rota((Trem) agent)]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_exit3", String.format("trem=%d", agent.getId()));
 log_saida(agent, "saiu para DV");
+// dv_entrada_c licenciada junto com a via1_intermar_a: a manobra das DVs passa por ela
+if (faixa_dv_entrada_c.idTremLicenciado == agent.getId()) faixa_dv_entrada_c.ocupar((Trem) agent);
 main().gestorDeDVs.posicionarMnbDvs.take(agent)]]></Code>
 				</Value>
 			</Parameter>
@@ -9033,11 +9035,17 @@ log_entrada(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[seizeFromOnePool]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[true]]></Code>
+					<Code><![CDATA[false]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// via1_intermar_a + dv_entrada_c são um trecho só: licenciadas juntas, em qualquer sentido
+(((Trem) agent).faixa_atual == faixa_via1_intermar_a || ((Trem) agent).faixa_atual == faixa_dv_entrada_c)
+    ? new ResourcePool[][] { { faixa_via1_intermar_a.recurso, faixa_dv_entrada_c.recurso } }
+    : new ResourcePool[][] { { ((Trem) agent).faixa_atual.recurso } }]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[resourcePool]]></Name>
@@ -9172,7 +9180,11 @@ log_entrada(agent);]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[Faixa faixa = ((Trem) agent).faixa_atual;
-faixa.licenciar((Trem) agent);]]></Code>
+faixa.licenciar((Trem) agent);
+
+// par via1_intermar_a + dv_entrada_c: a outra metade fica licenciada para o mesmo trem
+if (faixa == faixa_via1_intermar_a) faixa_dv_entrada_c.licenciar((Trem) agent);
+else if (faixa == faixa_dv_entrada_c) faixa_via1_intermar_a.licenciar((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -21079,6 +21091,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[if (trace_circulacao) Log.info("GesCirculacao", "exit_para_DVS", String.format("trem=%d", agent.getId()));
 log_saida(agent, "saiu para DV");
+// dv_entrada_c licenciada junto com a via1_intermar_a: a manobra das DVs passa por ela
+if (faixa_dv_entrada_c.idTremLicenciado == agent.getId()) faixa_dv_entrada_c.ocupar((Trem) agent);
 main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>
@@ -37128,6 +37142,8 @@ faixa_atual.ocupar((Trem) train);]]></Code>
 					<Code><![CDATA[// alivio tgrao: fim da circulacao -> DVs
 if (trace_circulacao) Log.info("GesCirculacao", "exit_alivio_para_DVs", String.format("trem=%d", agent.getId()));
 log_saida(agent, "saiu para DV");
+// dv_entrada_c licenciada junto com a via1_intermar_a: a manobra das DVs passa por ela
+if (faixa_dv_entrada_c.idTremLicenciado == agent.getId()) faixa_dv_entrada_c.ocupar((Trem) agent);
 main().gestorDeDVs.chegar_nas_dvs((Trem) agent);]]></Code>
 				</Value>
 			</Parameter>

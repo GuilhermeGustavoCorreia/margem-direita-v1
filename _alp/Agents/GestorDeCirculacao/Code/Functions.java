@@ -50,6 +50,10 @@ for (Faixa faixa : faixas) {
     if (faixa == faixa_intervalo4000_c && antes_de_c) continue;
     if (faixa == faixa_intervalo4000_b && antes_de_b) continue;
 
+    // ida para as DVs: dv_entrada_c foi licenciada junto com a via1_intermar_a; só solta depois que o trem sai da via1_intermar_a
+    if (faixa == faixa_dv_entrada_c && occ.contains(main().via1_intermar_a)
+        && !(eh_terminal_tec(trem) && !trem.eh_alivio)) continue;
+
     boolean faixaDoTrem = (faixa.idTremLicenciado == trem.getId());
     boolean faixaOcupada = (faixa.estado == Faixa.EstadoFaixa.OCUPADA);
 
