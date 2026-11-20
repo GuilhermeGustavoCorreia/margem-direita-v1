@@ -694,6 +694,9 @@ if (terminal != null && !terminais_pmc.contains(terminal)) {
 
 trem.eh_alivio = true;
 
+// terminal de onde o MNB saiu
+if (terminal != null) trem.origem = ((Agent) terminal).getName();
+
 Log.info("GesAlivios", "retornar_alivio_pmc", String.format("trem=%d vagoes=%d | %s volta para terminais_pmc",
     trem.getId(), main().getNumeroDeVagoes(trem),
     terminal == null ? "-" : ((Agent) terminal).getName()));

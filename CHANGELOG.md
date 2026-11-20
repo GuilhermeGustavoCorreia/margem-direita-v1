@@ -2173,3 +2173,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeAlivios: `main().tecAcucar` entra em `terminais_pst`.
 - **Riscos:** herda a saída pelas DVs (`ocupar_val_via2_saida` licencia `val_via2` + `isn_linha02_e`, fora do caminho do trem). `railwayTrack111` e `railwayTrack130` sem faixa, compartilhadas por TEC e TEC_ACUCAR.
 - **Arquivos:** `_alp/Agents/TEC_ACUCAR/**`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/Variables.xml`
+
+## ALT-177 — trem-origem
+- **Data:** 2026-11-19
+- **Status:** aplicada, aguardando validação (abrir no AnyLogic e compilar)
+- **O que:** novo atributo `String origem` no `Trem`, preenchido na saída do MNB:
+  - alívio PST (`atualizar_status_alivio_terminal`): `getName()` do terminal;
+  - alívio PMC (`retornar_alivio_pmc`): `getName()` do terminal;
+  - alívio PCX, volta para a 4000 (`linha_4000`): `getName()` do terminal (`alivio_em_andamento_pcx.get_moega_atual()`);
+  - saída da 4000 com 82 (`para_alivio_na_linha_4000`): `"linha4k"`.
+  - Rótulo do 1º carro (Vagao e Locomotiva): `prefixo - destino (de origem)`, só quando `origem != null`.
+- **Arquivos:** `_alp/Agents/Trem/Variables.xml`, `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/Vagao/Levels/Level.level.xml`, `_alp/Agents/Locomotiva/Levels/Level.level.xml`

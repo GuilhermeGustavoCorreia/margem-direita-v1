@@ -188,3 +188,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-174**: TEC — saída do alívio pela via1_intermar_a até as DVs (segue direto com 82)
 - **ALT-175**: GestorDeISN — próxima faixa da porteira passa a ser val_via2_a
 - **ALT-176**: TEC_ACUCAR — cópia da lógica do TEC (encoste no _tecAcucar_encoste) e em terminais_pst
+- **ALT-177**: Trem — atributo origem (terminal do alívio ou linha4k) e rótulo com origem

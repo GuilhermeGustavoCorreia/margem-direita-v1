@@ -466,6 +466,7 @@
 		<Text><![CDATA[10]]></Text>
 		<TextCode>(getTrain() instanceof Trem &amp;&amp; ((Trem) getTrain()).getFirst() == this)
     ? ((Trem) getTrain()).prefixo + " - " + ((Trem) getTrain()).destino
+      + (((Trem) getTrain()).origem != null ? " (de " + ((Trem) getTrain()).origem + ")" : "")
     : ""</TextCode>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>

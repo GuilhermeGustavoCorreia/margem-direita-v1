@@ -1285,7 +1285,10 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 com %d vagoes", agent.getId(), main().getNumeroDeVagoes((Trem) agent)));]]></Code>
+					<Code><![CDATA[// terminal de onde o MNB saiu (TES, T39, ADM)
+if (alivio_em_andamento_pcx != null && alivio_em_andamento_pcx.get_moega_atual() != null)
+    ((Trem) agent).origem = ((Agent) alivio_em_andamento_pcx.get_moega_atual()).getName();
+Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 com %d vagoes", agent.getId(), main().getNumeroDeVagoes((Trem) agent)));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4168,6 +4171,9 @@ t.eh_alivio = true;]]></Code>
 alivio_em_andamento_pst.atualizar_moegas();
 terminais_pst.add(terminal_atual);
 
+// terminal de onde o MNB saiu
+((Trem) agent).origem = ((Agent) terminal_atual).getName();
+
 // DEBUG
 Log.info("GesAlivios", "diag_pst", "alivio terminou | " + ((Agent) terminal_atual).getName() + " voltou para terminais_pst");]]></Code>
 				</Value>
@@ -4892,6 +4898,7 @@ Trem trem = (Trem) agent;
 Log.info("GesAlivios", "para_alivio_na_linha_4000", String.format("trem=%d vagoes=%d -> DVs", trem.getId(), main().getNumeroDeVagoes(trem)));
 
 trem.eh_alivio     = true;
+trem.origem        = "linha4k";
 trem.faixa_atual   = main().gestorDeCirculacao.faixa_intervalo4000_a;
 trem.proxima_faixa = main().gestorDeCirculacao.faixa_marginal_c;
 
