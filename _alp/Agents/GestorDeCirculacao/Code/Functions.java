@@ -72,6 +72,7 @@ for (Faixa faixa : faixas) {
             faixa.liberar();
             if (temUnidade) {
                 recursosLiberados.add(faixa.recurso);
+                log_circulacao(trem, "soltou " + faixa.track.getName());
             }
         }
     }
@@ -99,6 +100,7 @@ if (!no_cruzamento
     && !trem.resourceUnitsOfPool(rp_cruzamento_porteira).isEmpty()
     && !recursosLiberados.contains(rp_cruzamento_porteira)) {
     recursosLiberados.add(rp_cruzamento_porteira);
+    dono_cruzamento = null;
     log_circulacao(trem, "soltou cruzamento_porteira");
 }
 
@@ -221,4 +223,53 @@ List<ResourcePool> pools = new ArrayList<ResourcePool>();
 pools.add(rp_cruzamento_porteira);
 pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
 return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}
+
+String texto_trem_id(int id)
+{/*ALCODESTART::1800000000001*/
+// "(prefixo - id)" de um trem em circulação; fora dela, só o id
+if (id == 0) return "ninguem";
+for (Trem t : trens_em_circulacao) if (t.getId() == id) return "(" + t.prefixo + " - " + id + ")";
+return "(trem " + id + ")";
+/*ALCODEEND*/}
+
+double log_aguarda_licenca(Trem trem,ResourcePool[][] conjunto)
+{/*ALCODESTART::1800000000002*/
+// trace de espera: só sai se algum recurso do conjunto estiver sem unidade livre.
+// Mostra cada recurso ocupado e o dono (faixa: idTremLicenciado e estado; cruzamento: dono_cruzamento)
+if (trem == null || conjunto == null || conjunto.length == 0) return;
+List<String> ocupados = new ArrayList<String>();
+for (ResourcePool rp : conjunto[0]) {
+    if (rp == null || rp.idle() > 0) continue;
+    if (rp == rp_cruzamento_porteira) {
+        ocupados.add("cruzamento_porteira com=" + (dono_cruzamento == null ? "?" : texto_trem_id(dono_cruzamento.getId())));
+        continue;
+    }
+    String txt = rp.getName();
+    for (Faixa f : faixas) {
+        if (f.recurso == rp) { txt = f.track.getName() + " dono=" + texto_trem_id(f.idTremLicenciado) + " " + f.estado; break; }
+    }
+    ocupados.add(txt);
+}
+if (ocupados.isEmpty()) return;
+esperando_licenca.add(trem.getId());
+Log.info("GesCirculacao", "aguarda_licenca", "(" + trem.prefixo + " - " + trem.getId() + ") " + String.join(" | ", ocupados));
+/*ALCODEEND*/}
+
+double log_pegou_licenca(Trem trem,String descricao)
+{/*ALCODESTART::1800000000003*/
+// trace de fim de espera (só para quem logou aguarda_licenca) e registro do dono do cruzamento
+if (trem == null) return;
+if (esperando_licenca.remove(trem.getId()))
+    Log.info("GesCirculacao", "pegou_licenca", "(" + trem.prefixo + " - " + trem.getId() + ") " + descricao);
+registrar_dono_cruzamento(trem);
+/*ALCODEEND*/}
+
+double registrar_dono_cruzamento(Trem trem)
+{/*ALCODESTART::1800000000004*/
+// se o trem acabou de pegar o cruzamento da porteira, guarda o dono e loga
+if (trem == null || trem.resourceUnitsOfPool(rp_cruzamento_porteira).isEmpty()) return;
+if (dono_cruzamento == trem) return;
+dono_cruzamento = trem;
+log_circulacao(trem, "pegou cruzamento_porteira");
 /*ALCODEEND*/}

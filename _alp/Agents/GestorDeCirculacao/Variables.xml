@@ -1837,4 +1837,48 @@ faixa_dv_entrada_c.linhaTMDS			= pl_pst_dv_entrada_c;]]></Code>
 			</CollectionInitializer>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1800000000011</Id>
+		<Name><![CDATA[dono_cruzamento]]></Name>
+		<X>-2400</X>
+		<Y>4400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1800000000012</Id>
+		<Name><![CDATA[esperando_licenca]]></Name>
+		<X>-2400</X>
+		<Y>4450</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[java.util.HashSet<Integer>]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new java.util.HashSet<Integer>()]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 </Variables>

@@ -205,3 +205,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-191**: GestorDeChegadas — `pedido_criado` só com `log_analise_detalhada`
 - **ALT-192**: GestorDeCirculacao — trem da pera pega a rota inteira na porteira
 - **ALT-193**: Desfaz a ALT-192 (rota inteira da pera)
+- **ALT-194**: Traces de licença (`aguarda_licenca`, `pegou_licenca`, `soltou <faixa>`) e dono do cruzamento

@@ -2326,3 +2326,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Status:** aplicada
 - **O que:** desfaz a ALT-192 (`eh_terminal_pera`, rota da pera em `get_conjunto_licenca` e licença das faixas no onExit dos Seize de licença), a pedido do Guilherme, para reanalisar o deadlock M86 × MNB39 × MNB21.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-194 — traces-de-licenca-e-cruzamento
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** o log não mostrava quem espera licença, quem é dono de cada faixa nem quem está com o cruzamento; os deadlocks eram deduzidos pela ausência de registros.
+- **O que:**
+  - GestorDeCirculacao: variáveis `dono_cruzamento` (Trem) e `esperando_licenca` (HashSet<Integer>); funções `texto_trem_id`, `log_aguarda_licenca`, `log_pegou_licenca`, `registrar_dono_cruzamento`.
+  - `licenciar_esta_faixa` / `licenciar_proxima_faixa`: `aguarda_licenca` no onEnter e `pegou_licenca` no onExit.
+  - GestorDeDVs `seize_cruzamento_entrada` / `ocupar_val_via2_saida`: os mesmos traces.
+  - `liberar_faixas_ocupadas`: `soltou <faixa>` e limpa `dono_cruzamento` ao soltar o cruzamento.
+  - Nenhuma mudança de comportamento.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/Variables.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`

@@ -9160,6 +9160,9 @@ log_entrada(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_aguarda_licenca((Trem) agent, get_conjunto_licenca((Trem) agent, ((Trem) agent).faixa_atual));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -9187,7 +9190,8 @@ else if (faixa == faixa_dv_entrada_c && faixa_via1_intermar_a.idTremLicenciado !
 if (faixa == faixa_val_via2_a && eh_terminal_tec((Trem) agent) && !((Trem) agent).eh_alivio) {
     if (faixa_dv_entrada_c.idTremLicenciado != agent.getId())    faixa_dv_entrada_c.licenciar((Trem) agent);
     if (faixa_via1_intermar_a.idTremLicenciado != agent.getId()) faixa_via1_intermar_a.licenciar((Trem) agent);
-}]]></Code>
+}
+log_pegou_licenca((Trem) agent, faixa.track.getName());]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9602,6 +9606,9 @@ if (((Trem) agent).proxima_faixa == null) {
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_aguarda_licenca((Trem) agent, get_conjunto_licenca((Trem) agent, ((Trem) agent).proxima_faixa));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitTimeout]]></Name>
@@ -9631,7 +9638,8 @@ if (faixa == faixa_val_via2_a && eh_terminal_tec((Trem) agent) && !((Trem) agent
     if (faixa_via1_intermar_a.idTremLicenciado != agent.getId()) faixa_via1_intermar_a.licenciar((Trem) agent);
 }
 
-]]></Code>
+
+log_pegou_licenca((Trem) agent, faixa.track.getName());]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

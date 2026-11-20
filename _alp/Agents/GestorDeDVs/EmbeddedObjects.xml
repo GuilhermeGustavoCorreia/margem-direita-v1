@@ -4741,7 +4741,8 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d na fila", agent.getId()));]]></Code>
+					<Code><![CDATA[Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d na fila", agent.getId()));
+main().gestorDeCirculacao.log_aguarda_licenca((Trem) agent, main().gestorDeCirculacao.get_conjunto_saida_dvs((Trem) agent));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4764,7 +4765,8 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 // o liberar_faixas_circulacao (depois do trainExit) solta junto com as outras faixas do trem
 main().gestorDeCirculacao.faixa_val_via2.ocupar((Trem) agent);
 main().gestorDeISN.faixa_isn_linha02_e.ocupar((Trem) agent);
-Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent.getId()));]]></Code>
+Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent.getId()));
+main().gestorDeCirculacao.log_pegou_licenca((Trem) agent, "ocupar_val_via2_saida");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4962,7 +4964,8 @@ Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Log.info("GesDVs", "seize_cruzamento_entrada", String.format("trem=%d na fila", agent.getId()));]]></Code>
+					<Code><![CDATA[Log.info("GesDVs", "seize_cruzamento_entrada", String.format("trem=%d na fila", agent.getId()));
+main().gestorDeCirculacao.log_aguarda_licenca((Trem) agent, main().gestorDeCirculacao.get_conjunto_entrada_dvs((Trem) agent));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4982,7 +4985,8 @@ Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent
 				<Value Class="CodeValue">
 					<Code><![CDATA[// entrada nas linhas das DVs passa pelo cruzamento da porteira (AMV railwaySwitch27)
 // o liberar_faixas_ponto solta quando a cauda sai do cruzamento
-Log.info("GesDVs", "seize_cruzamento_entrada", String.format("trem=%d pegou", agent.getId()));]]></Code>
+Log.info("GesDVs", "seize_cruzamento_entrada", String.format("trem=%d pegou", agent.getId()));
+main().gestorDeCirculacao.log_pegou_licenca((Trem) agent, "seize_cruzamento_entrada");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
