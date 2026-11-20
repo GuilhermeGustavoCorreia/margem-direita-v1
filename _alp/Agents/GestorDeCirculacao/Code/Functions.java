@@ -177,14 +177,6 @@ String t = trem.get_terminal_name();
 return "tec".equals(t) || "tecAcucar".equals(t);
 /*ALCODEEND*/}
 
-boolean eh_terminal_pera(Trem trem)
-{/*ALCODESTART::1799900000001*/
-// trens da pera (moegaoTerra, moegaoMar, coperXXI): ISN -> val_via2 -> via3_intermar -> via3_a -> via2_c -> entrada_pera
-if (trem == null) return false;
-String t = trem.get_terminal_name();
-return "moegaoTerra".equals(t) || "moegaoMar".equals(t) || "coperXXI".equals(t);
-/*ALCODEEND*/}
-
 ResourcePool[][] get_conjunto_licenca(Trem trem,Faixa faixa)
 {/*ALCODESTART::1799300000010*/
 // recursos que o trem pega ao licenciar a faixa (licenciar_esta_faixa / licenciar_proxima_faixa)
@@ -196,16 +188,6 @@ pools.add(faixa.recurso);
 if      (faixa == faixa_via1_intermar_a) pools.add(faixa_dv_entrada_c.recurso);
 else if (faixa == faixa_dv_entrada_c)    pools.add(faixa_via1_intermar_a.recurso);
 else if (faixa == faixa_val_via2_a || faixa == faixa_val_via2) pools.add(rp_cruzamento_porteira);
-
-// trem para a pera (moegaoTerra, moegaoMar, coperXXI): cruza a via2 na via2_c.
-// rota inteira de uma vez, para não parar na via3_intermar segurando val_via2 + cruzamento
-if (faixa == faixa_val_via2_a && eh_terminal_pera(trem) && !trem.eh_alivio) {
-    pools.add(faixa_val_via2.recurso);
-    pools.add(faixa_via3_intermar.recurso);
-    pools.add(faixa_via3_a.recurso);
-    pools.add(faixa_via2_c.recurso);
-    pools.add(faixa_entrada_pera.recurso);
-}
 
 // trem chegando ao TEC pela porteira: rota inteira de uma vez (val_via2_a + cruzamento + par),
 // para não esperar o par segurando o cruzamento
