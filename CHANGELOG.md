@@ -2281,3 +2281,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** `IllegalStateException` em 6,526 h (`bloquear_faixas_pst`, "terminal sem faixas de primeiro alivio"). O alívio do Tgrao começou às 6,330 h e a loco ficou esperando o `mnb_pcx`; como o `rp_alivio_pst` só é pego no fim do fluxo, o alívio do MoegaoMar começou às 6,411 h, sobrescreveu `alivio_em_andamento_pst` e terminou; a loco do Tgrao leu o objeto vazio.
 - **O que (GestorDeAlivios, disparo do alívio PST):** além de `rp_alivio_pst.idle() > 0`, exige que não haja alívio PST em andamento (`alivio_em_andamento_pst == null || finalizou_moegas()`).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-189 — chave-para-traces-repetitivos
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** traces periódicos ocupavam ≈ 66% do `sim.log` (`Chegadas aguardando` 22 mil linhas, `saida_4000_livre` 5 mil, `diag_pst` 1,3 mil em 17 h).
+- **O que:**
+  - GestorDeAlivios: nova variável `trace_repetitivo` (boolean, `false`); os 8 blocos `% 60 == 0` só logam com ela ligada.
+  - GestorDeChegadas: nova variável `trace_aguardando` (boolean, `false`); `registrar_motivo` só loga com ela ligada.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`

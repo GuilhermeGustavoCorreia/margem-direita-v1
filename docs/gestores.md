@@ -78,6 +78,7 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - **Faixa de criação da loco PST** (ALT-092): no `seize_faixa_criacao_pst` a faixa (`via1_intermar_d` para `pos_locoAlivio_PST`) fica OCUPADA com o id da loco.
   Novo alívio do PST só começa com essa faixa LIVRE. Quem libera é o GestorDeCirculacao (`liberar_faixas_ocupadas`) quando o trem de volta,
   que é o mesmo agente da loco, sai dela. Se a faixa de criação não for a de entrada na circulação (Tgrao: `marginal_c`), o `retornar_alivio` libera.
+- **Traces periódicos** (`trace_repetitivo`, boolean, padrão `false`): liga os logs que saem a cada 60 s (`diag_pst` de espera, `alivio4000_compatibilidade ... espera`, `alivio_pmc ... aguardando loco`, `saida_4000_livre`). Os logs de evento saem sempre.
 - **Um alívio PST por vez**: o disparo exige `rp_alivio_pst` livre **e** nenhum alívio em andamento (`alivio_em_andamento_pst` sem moegas pendentes, `finalizou_moegas()`).
   O `rp_alivio_pst` só é pego no `seize_alivio_pst`, no fim do fluxo da loco; sem a segunda condição, outro alívio sobrescrevia o `alivio_em_andamento_pst` enquanto a loco do Tgrao esperava o `mnb_pcx`.
 - **Prefixo do trem de alívio** (ALT-092): `MNB` + número ímpar (MNB01, MNB03 … MNB99, depois volta a MNB01), contador `contador_mnb`.
@@ -134,6 +135,8 @@ Ainda não desenvolvido. Requisitos já definidos:
   O GestorDeAlivios usa esse valor antes de aliviar o Tgrao (precisa ser mais de 40).
 
 ## GestorDeChegadas
+
+- **`trace_aguardando`** (boolean, padrão `false`): liga o log `aguardando` de cada pedido na fila (`registrar_motivo`).
 
 Em desenvolvimento (ALT-084). Parte ligada ao ISN:
 

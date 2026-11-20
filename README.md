@@ -200,3 +200,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-186**: Cruzamento da porteira só ao entrar nas linhas das DVs (não na fila)
 - **ALT-187**: Prioridade 10 na entrada e na saída das DVs pelo cruzamento
 - **ALT-188**: GestorDeAlivios — um alívio PST por vez (não sobrescreve o alívio em andamento)
+- **ALT-189**: Chaves `trace_repetitivo` (GestorDeAlivios) e `trace_aguardando` (GestorDeChegadas) para os traces periódicos

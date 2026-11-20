@@ -239,7 +239,7 @@ double analisar_pst()
 boolean podeReceber = main().gestorDeDVs.condicao_pode_receber_alivio();
 
 // DEBUG (remover depois): a cada 60s, mostra por que um terminal em overload não está sendo aliviado
-if (((int) time()) % 60 == 0) {
+if (trace_repetitivo && ((int) time()) % 60 == 0) {
     for (ITerminalMoega t : colecaoMoegas) {
         float ov = t.getOverloadVazios();
         if (ov > 1) {
@@ -322,7 +322,7 @@ if (condicao_DVs_eh_compativel_com_terminal) {
 
     if (!temLoco) {
     
-        if (((int) time()) % 60 == 0) {
+        if (trace_repetitivo && ((int) time()) % 60 == 0) {
             Log.info("GesAlivios", "diag_pst", "" + nomeTerminal + " | aguardando " + qtdLoco + " loco(s) '"
                 + ("manobra".equals(tipoLoco) ? "manobra" : terminal.getFerrovia()) + "' para aliviar");
         }
@@ -339,7 +339,7 @@ if (condicao_DVs_eh_compativel_com_terminal) {
 
     if (faixa_criacao != null && faixa_criacao.estado != Faixa.EstadoFaixa.LIVRE) {
 
-        if (((int) time()) % 60 == 0) {
+        if (trace_repetitivo && ((int) time()) % 60 == 0) {
             Log.info("GesAlivios", "diag_pst", "" + nomeTerminal + " | aguardando faixa de criacao: " + faixa_criacao.getStatusTexto());
         }
 
@@ -353,7 +353,7 @@ if (condicao_DVs_eh_compativel_com_terminal) {
         for (Faixa f : faixas_saida) {
             if (f == null || f == faixa_criacao || f.recurso == null) continue;
             if (f.estado != Faixa.EstadoFaixa.LIVRE) {
-                if (((int) time()) % 60 == 0) {
+                if (trace_repetitivo && ((int) time()) % 60 == 0) {
                     Log.info("GesAlivios", "diag_pst", "" + nomeTerminal + " | aguardando faixa de saida do alivio: " + f.getStatusTexto());
                 }
                 return;
@@ -366,7 +366,7 @@ if (condicao_DVs_eh_compativel_com_terminal) {
     int cabem_na_dv = quantos_vagoes_as_dvs_precisam(terminal);
     if (cabem_na_dv <= 0) {
 
-        if (((int) time()) % 60 == 0) {
+        if (trace_repetitivo && ((int) time()) % 60 == 0) {
             Log.info("GesAlivios", "diag_pst", "" + nomeTerminal + " | DVs nao aceitam vagoes deste terminal agora (cabem=0)");
         }
 
@@ -428,7 +428,7 @@ boolean produto_e_ferrovia_incompativel = !(mesma_ferrovia && mesmo_segmento);
 if (existe_tem_na_4000 && produto_e_ferrovia_incompativel){
 
     // terminal continua em terminais_pcx e espera o trem atual sair cheio
-    if (((int) time()) % 60 == 0) {
+    if (trace_repetitivo && ((int) time()) % 60 == 0) {
         Log.info("GesAlivios", "alivio4000_compatibilidade", String.format("%s espera | terminal: %s/%s | trem da 4000: %s/%s",
             ((Agent) terminal).getName(), ferrovia_terminal, segmento_terminal,
             ferrovia_na_linha_4000, segmento_na_linha_4000));
@@ -649,7 +649,7 @@ String ferrovia = terminal.getFerrovia();
 Wait<Agent> waitLocos = get_wait_locos_ferrovia(ferrovia);
 
 if (waitLocos == null || waitLocos.size() == 0) {
-    if (((int) time()) % 60 == 0) {
+    if (trace_repetitivo && ((int) time()) % 60 == 0) {
         Log.info("GesAlivios", "alivio_pmc", "" + ((Agent) terminal).getName()
             + " | aguardando loco '" + ferrovia + "' para aliviar");
     }
@@ -757,7 +757,7 @@ for (Faixa f : get_faixas_saida_4000()) {
 
     if (f.estado != Faixa.EstadoFaixa.LIVRE) {
 
-        if (((int) time()) % 60 == 0) {
+        if (trace_repetitivo && ((int) time()) % 60 == 0) {
             Log.info("GesAlivios", "saida_4000_livre", String.format("aguardando %s",
                 f.getStatusTexto()));
         }
