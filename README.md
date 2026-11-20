@@ -197,3 +197,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-183**: GestorDeCirculacao — soltar faixas da cauda antes da fila das DVs
 - **ALT-184**: Cruzamento da porteira na entrada das DVs (sai da saída das DVs)
 - **ALT-185**: Saída das DVs volta a pegar val_via2 + cruzamento; trem do TEC pega a rota da porteira inteira
+- **ALT-186**: Cruzamento da porteira só ao entrar nas linhas das DVs (não na fila)

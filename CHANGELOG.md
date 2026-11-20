@@ -2257,3 +2257,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeDVs `ocupar_val_via2_saida`: usa `get_conjunto_saida_dvs`; onExit volta a ocupar a `val_via2`. Vale para segue direto e para a saída depois da manobra.
   - `get_conjunto_licenca`: trem chegando ao TEC na `val_via2_a` pega `val_via2_a` + cruzamento + `dv_entrada_c` + `via1_intermar_a` de uma vez. onExit do `licenciar_esta_faixa` / `licenciar_proxima_faixa` licencia o par para ele.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-186 — cruzamento-so-ao-entrar-nas-dvs
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em ≈2,08 h. U22 (alívio do TEC_ACUCAR) pegou o par `via1_intermar_a`/`dv_entrada_c` + cruzamento ao sair do TEC e ficou com o cruzamento na fila das DVs; MNB05 (segue direto, em manobra) esperava o cruzamento para sair.
+- **O que:**
+  - GestorDeCirculacao `get_conjunto_licenca`: o par `via1_intermar_a`/`dv_entrada_c` não leva mais o cruzamento (a chegada ao TEC pela `val_via2_a` continua com tudo junto).
+  - Nova função `get_conjunto_entrada_dvs(trem)`: cruzamento, se o trem ainda não tiver.
+  - GestorDeDVs: novo Seize `seize_cruzamento_entrada` entre `sel_segue_direto.outF` e `ir_ponto`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`
