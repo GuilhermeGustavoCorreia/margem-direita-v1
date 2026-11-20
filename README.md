@@ -199,3 +199,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-185**: Saída das DVs volta a pegar val_via2 + cruzamento; trem do TEC pega a rota da porteira inteira
 - **ALT-186**: Cruzamento da porteira só ao entrar nas linhas das DVs (não na fila)
 - **ALT-187**: Prioridade 10 na entrada e na saída das DVs pelo cruzamento
+- **ALT-188**: GestorDeAlivios — um alívio PST por vez (não sobrescreve o alívio em andamento)

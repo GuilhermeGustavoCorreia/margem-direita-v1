@@ -253,7 +253,10 @@ if (((int) time()) % 60 == 0) {
     }
 }
 
-if (podeReceber && rp_alivio_pst.idle() > 0) {
+// um alívio PST por vez: o anterior só acaba quando terminar todas as moegas
+// (o rp_alivio_pst só é pego no fim do fluxo da loco; até lá o alívio já está em andamento)
+boolean alivio_pst_em_andamento = alivio_em_andamento_pst != null && !alivio_em_andamento_pst.finalizou_moegas();
+if (podeReceber && rp_alivio_pst.idle() > 0 && !alivio_pst_em_andamento) {
 
     if (terminais_pst.isEmpty()) {
         

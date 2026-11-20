@@ -78,6 +78,8 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
 - **Faixa de criação da loco PST** (ALT-092): no `seize_faixa_criacao_pst` a faixa (`via1_intermar_d` para `pos_locoAlivio_PST`) fica OCUPADA com o id da loco.
   Novo alívio do PST só começa com essa faixa LIVRE. Quem libera é o GestorDeCirculacao (`liberar_faixas_ocupadas`) quando o trem de volta,
   que é o mesmo agente da loco, sai dela. Se a faixa de criação não for a de entrada na circulação (Tgrao: `marginal_c`), o `retornar_alivio` libera.
+- **Um alívio PST por vez**: o disparo exige `rp_alivio_pst` livre **e** nenhum alívio em andamento (`alivio_em_andamento_pst` sem moegas pendentes, `finalizou_moegas()`).
+  O `rp_alivio_pst` só é pego no `seize_alivio_pst`, no fim do fluxo da loco; sem a segunda condição, outro alívio sobrescrevia o `alivio_em_andamento_pst` enquanto a loco do Tgrao esperava o `mnb_pcx`.
 - **Prefixo do trem de alívio** (ALT-092): `MNB` + número ímpar (MNB01, MNB03 … MNB99, depois volta a MNB01), contador `contador_mnb`.
   Vale para PST, PMC e linha 4000. Os prefixos de chegada são pares (`gerar_prefixo`).
 - **Celulose PMC** (ALT-014, ALT-061, `analisar_pmc`): Bracell, Suzano e Eldorado, lista `terminais_pmc`.

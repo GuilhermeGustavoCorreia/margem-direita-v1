@@ -2274,3 +2274,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** deadlock em ≈4,57 h. Cruzamento livre desde 4,533 h, mas o MNB27 (nas DVs, com o par `via1_intermar_a`/`dv_entrada_c`) ficou na fila do `seize_cruzamento_entrada` atrás do Y62 (porteira, indo ao TEC), que pedia `val_via2_a` + cruzamento + par e não fechava o conjunto.
 - **O que (GestorDeDVs):** `seize_cruzamento_entrada` e `ocupar_val_via2_saida` com `priority = 10` (antes 1, igual às licenças da circulação).
 - **Arquivos:** `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-188 — um-alivio-pst-por-vez
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** `IllegalStateException` em 6,526 h (`bloquear_faixas_pst`, "terminal sem faixas de primeiro alivio"). O alívio do Tgrao começou às 6,330 h e a loco ficou esperando o `mnb_pcx`; como o `rp_alivio_pst` só é pego no fim do fluxo, o alívio do MoegaoMar começou às 6,411 h, sobrescreveu `alivio_em_andamento_pst` e terminou; a loco do Tgrao leu o objeto vazio.
+- **O que (GestorDeAlivios, disparo do alívio PST):** além de `rp_alivio_pst.idle() > 0`, exige que não haja alívio PST em andamento (`alivio_em_andamento_pst == null || finalizou_moegas()`).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
