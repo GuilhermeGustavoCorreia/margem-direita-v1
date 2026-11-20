@@ -25,7 +25,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Eldorado</ClassName>
-			<ItemName>trem_celulose_teste</ItemName>
+			<ItemName>tremTeste_rumo</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>

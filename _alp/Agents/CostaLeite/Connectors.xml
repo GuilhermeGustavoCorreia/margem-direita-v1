@@ -68,7 +68,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CostaLeite</ClassName>
-			<ItemName>trem_rumo_grao</ItemName>
+			<ItemName>tremTeste_rumo</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>

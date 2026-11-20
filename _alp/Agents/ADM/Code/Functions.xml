@@ -673,8 +673,8 @@
 		<ReturnType>String</ReturnType>
 		<Id>1798200000702</Id>
 		<Name><![CDATA[lote_txt]]></Name>
-		<X>4300</X>
-		<Y>100</Y>
+		<X>3700</X>
+		<Y>460</Y>
 		<Label>
 			<X>15</X>
 			<Y>0</Y>
@@ -693,8 +693,8 @@
 		<ReturnType>String</ReturnType>
 		<Id>1798200000703</Id>
 		<Name><![CDATA[estado_resumo]]></Name>
-		<X>4300</X>
-		<Y>140</Y>
+		<X>3700</X>
+		<Y>500</Y>
 		<Label>
 			<X>15</X>
 			<Y>0</Y>
@@ -709,8 +709,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1798200000704</Id>
 		<Name><![CDATA[log_analise]]></Name>
-		<X>4300</X>
-		<Y>180</Y>
+		<X>3700</X>
+		<Y>540</Y>
 		<Label>
 			<X>15</X>
 			<Y>0</Y>
@@ -737,8 +737,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1798200000705</Id>
 		<Name><![CDATA[log_estado]]></Name>
-		<X>4300</X>
-		<Y>220</Y>
+		<X>3700</X>
+		<Y>580</Y>
 		<Label>
 			<X>15</X>
 			<Y>0</Y>

@@ -303,7 +303,7 @@
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", trem_rumo_grao);</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "rumo", tremTeste_rumo);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>

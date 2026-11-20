@@ -311,6 +311,23 @@
 				<ClassName>TEC</ClassName>
 			</ActiveObjectClass>
 		</ContainerLink>
+		<ContainerLink>
+			<Id>1795117981439</Id>
+			<Name><![CDATA[tEC_ACUCAR]]></Name>
+			<X>1550</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>margemdireitamodel</PackageName>
+				<ClassName>TEC_ACUCAR</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
 	</ContainerLinks>
 	<EmbeddedObjects xmlns:al="http://anylogic.com"/>
 	<Presentation>

@@ -464,7 +464,9 @@
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
 		<Text><![CDATA[10]]></Text>
-		<TextCode>(getTrain() instanceof Trem &amp;&amp; ((Trem) getTrain()).getFirst() == this) ? "" + getTrain() : ""</TextCode>
+		<TextCode>(getTrain() instanceof Trem &amp;&amp; ((Trem) getTrain()).getFirst() == this)
+    ? ((Trem) getTrain()).prefixo + " - " + ((Trem) getTrain()).destino
+    : ""</TextCode>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>48</Size>

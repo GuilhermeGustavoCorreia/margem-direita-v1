@@ -737,7 +737,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Bracell</ClassName>
-			<ItemName>trem_celulose_teste</ItemName>
+			<ItemName>tremTeste_mrs</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>

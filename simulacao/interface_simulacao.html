@@ -150,7 +150,7 @@ svg text{font-family:'Open Sans';font-size:11px}
       <label>Nível<select id="logNivel"><option value="">tudo</option><option value="erro">só erros</option><option value="aviso">erros e avisos</option></select></label>
       <label>Mostrar<select id="logMax"><option value="500">últimas 500</option><option value="2000" selected>últimas 2000</option><option value="0">todas</option></select></label>
     </div>
-    <div class="msg" id="logResumo"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px"><div class="msg" id="logResumo" style="margin:0"></div><button id="btnLogCopiar" title="Copia as linhas exibidas (com os filtros aplicados)">Copiar log</button></div>
     <pre id="logTexto" style="background:#0F1B2D;color:#D6E2F0;border-radius:4px;padding:12px;font-size:12px;line-height:1.5;max-height:60vh;overflow:auto;margin:10px 0 0;white-space:pre-wrap;word-break:break-word"></pre>
   </div>
   <div class="card">
@@ -291,7 +291,8 @@ const TERMINAIS_MODELO = [
   ['CoperXI','coperXI','acucar','rumo mrs vli'], ['MoegaoTerra','moegaoTerra','acucar','rumo mrs vli'], ['CostaLeite','costaLeite','grao','rumo'],
   ['Tgrao','tgrao','grao','rumo'], ['CoperXXI','coperXXI','acucar','rumo mrs vli'], ['MoegaoMar','moegaoMar','acucar','rumo mrs vli'],
   ['Bracell','bracell','celulose','rumo'], ['Suzano','suzano','celulose','rumo'], ['Eldorado','eldorado','celulose','rumo'],
-  ['T39','t39','grao','rumo'], ['ADM','adm','grao','rumo mrs vli'], ['TES','tes','grao','rumo mrs vli']
+  ['T39','t39','grao','rumo'], ['ADM','adm','grao','rumo mrs vli'], ['TES','tes','grao','rumo mrs vli'],
+  ['TEC','tec','grao','rumo mrs vli'], ['TEC_ACUCAR','tecAcucar','acucar','rumo mrs vli']
 ].map(([agente, instancia, segmento, f]) => ({agente, instancia, segmento, ...Object.fromEntries(FERROVIAS_TERM.map(x => [x, f.split(' ').includes(x)]))}));
 const segmentoDoTerminal = ag => S.terminais.find(x => x.agente===ag)?.segmento || null;
 // ferrovias que um terminal opera (nomes como na demanda: Rumo, MRS, VLI)
@@ -835,6 +836,7 @@ function renderLog(){
     sel.push(i);
   });
   const mostra = max ? sel.slice(-max) : sel;
+  S.log.mostra = mostra;
   const larg = String(S.log.linhas.length).length;
   $('logTexto').innerHTML = mostra.map(i => {
     const l = S.log.linhas[i];
@@ -972,6 +974,14 @@ window.addEventListener('resize', () => { if(S.log.linhas.length) renderGantt();
 
 ['logFiltro','logTag','logNivel','logMax'].forEach(id => $(id).addEventListener(id==='logFiltro' ? 'input' : 'change', renderLog));
 $('btnLogLer').onclick = () => lerLog(true);
+$('btnLogCopiar').onclick = async () => {
+  const b = $('btnLogCopiar'), ids = S.log.mostra || [];
+  if(!ids.length){ b.textContent = 'Nada para copiar'; setTimeout(() => b.textContent = 'Copiar log', 1500); return; }
+  const txt = ids.map(i => S.log.linhas[i]).join('\n');
+  try{ await navigator.clipboard.writeText(txt); }
+  catch(e){ const t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+  b.textContent = `Copiado (${ids.length} linhas)`; setTimeout(() => b.textContent = 'Copiar log', 1500);
+};
 $('btnLogAbrir').onclick = async () => { S.log.handle = null; if(await escolherLog()) lerLog(false); };
 $('logAuto').onchange = e => {
   clearInterval(S.log.timer);

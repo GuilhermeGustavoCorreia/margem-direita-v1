@@ -2520,7 +2520,7 @@ main().gestorDeAlivios.retornar_alivio_pmc(trem);]]></Code>
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1788186411025</Id>
-		<Name><![CDATA[trem_celulose_teste]]></Name>
+		<Name><![CDATA[tremTeste_mrs]]></Name>
 		<X>440</X>
 		<Y>-40</Y>
 		<Label>

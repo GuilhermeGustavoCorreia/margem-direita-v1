@@ -628,7 +628,7 @@ da linha 7k, 6k ou 5k]]]></Text>
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", trem_celulose_teste);</ActionCode>
+			<ActionCode>main().gestorDeChegadas.pedir_trem(this, "mrs", tremTeste_mrs);</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="20" Style="1"/>

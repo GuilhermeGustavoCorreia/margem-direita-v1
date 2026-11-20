@@ -5,9 +5,11 @@ CostaLeite;costaLeite;grao;true;false;false
 Tgrao;tgrao;grao;true;false;false
 CoperXXI;coperXXI;acucar;true;true;true
 MoegaoMar;moegaoMar;acucar;true;true;true
-Bracell;bracell;celulose;true;false;false
+Bracell;bracell;celulose;false;true;false
 Suzano;suzano;celulose;true;false;false
 Eldorado;eldorado;celulose;true;false;false
 T39;t39;grao;true;false;false
 ADM;adm;grao;true;true;true
 TES;tes;grao;true;true;true
+TEC;tec;grao;true;true;true
+TEC_ACUAR;tecAcucar;acucar;true;true;true

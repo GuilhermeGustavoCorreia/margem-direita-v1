@@ -111,7 +111,7 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>Suzano</ClassName>
-			<ItemName>trem_celulose_teste</ItemName>
+			<ItemName>tremTeste_rumo</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
