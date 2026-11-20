@@ -2230,3 +2230,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeDVs `ocupar_val_via2_saida`: pega também `rp_cruzamento_porteira`.
   - `liberar_faixas_ocupadas`: solta o cruzamento junto com a `val_via2_a` ou a `val_via2`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-183 — liberar-faixas-antes-da-fila-das-dvs
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em ≈3,98 h. MNB09 saiu para as DVs e ficou na fila (`fila_dvs`) segurando a `via2_c` (cauda já fora). R88 esperava a `via2_c` segurando `val_via2` + `rp_cruzamento_porteira`; MNB17, em manobra nas DVs, esperava esses dois para sair. `para_DVS`/`alivio_para_DVs` entregavam o trem às DVs sem soltar faixas, e a fila não solta nada.
+- **O que (GestorDeCirculacao):** novos Release `liberar_antes_dvs` (antes de `para_DVS`) e `liberar_antes_dvs_alivio` (antes de `alivio_para_DVs`), com `resources = liberar_faixas_ocupadas((Trem) agent)`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Connectors.xml`, `docs/gestores.md`

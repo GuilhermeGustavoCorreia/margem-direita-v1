@@ -194,3 +194,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-180**: GestorDeCirculacao — intervalo4000_c/b do trem da 4000 só soltam depois que ele passa
 - **ALT-181**: GestorDeCirculacao — via1_intermar_a e dv_entrada_c licenciadas juntas
 - **ALT-182**: GestorDeCirculacao — recurso cruzamento da porteira e par via1_intermar_a/dv_entrada_c também na próxima faixa
+- **ALT-183**: GestorDeCirculacao — soltar faixas da cauda antes da fila das DVs

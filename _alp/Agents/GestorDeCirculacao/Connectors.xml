@@ -3730,11 +3730,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>para_DVS</ItemName>
+			<ItemName>liberar_antes_dvs</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
+			<ClassName>Release</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -3743,7 +3743,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>60</X>
+				<X>50</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -5568,11 +5568,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeCirculacao</ClassName>
-			<ItemName>alivio_para_DVs</ItemName>
+			<ItemName>liberar_antes_dvs_alivio</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
+			<ClassName>Release</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -5712,6 +5712,92 @@
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.rail</PackageName>
 			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>liberar_antes_dvs_alivio</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>60</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1799400000005</Id>
+		<Name><![CDATA[connector_liberar_antes_dvs]]></Name>
+		<X>1680</X>
+		<Y>3900</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>liberar_antes_dvs</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>para_DVS</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>70</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1799400000006</Id>
+		<Name><![CDATA[connector_liberar_antes_dvs_alivio]]></Name>
+		<X>1140</X>
+		<Y>4500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeCirculacao</ClassName>
+			<ItemName>liberar_antes_dvs_alivio</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
 			<ItemName>out</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
