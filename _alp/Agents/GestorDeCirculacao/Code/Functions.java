@@ -80,7 +80,7 @@ for (Faixa faixa : faixas) {
 
 // trem de alívio da área comum (Tgrao, Bracell, Eldorado, Suzano): solta o mnb_pcx
 // só quando a cauda já passou da marginal_c (último trecho da área comum na saída)
-if (trem.eh_alivio && faixa_marginal_c.idTremLicenciado != trem.getId()) {
+if (!pular_mnb_pcx && trem.eh_alivio && faixa_marginal_c.idTremLicenciado != trem.getId()) {
     for (ResourcePool rp : get_recursos_mnb_pcx(trem)) {
         if (!recursosLiberados.contains(rp)) {
             recursosLiberados.add(rp);
@@ -272,4 +272,16 @@ if (trem == null || trem.resourceUnitsOfPool(rp_cruzamento_porteira).isEmpty()) 
 if (dono_cruzamento == trem) return;
 dono_cruzamento = trem;
 log_circulacao(trem, "pegou cruzamento_porteira");
+/*ALCODEEND*/}
+
+ResourcePool[] liberar_faixas_sem_mnb_pcx(Trem trem)
+{/*ALCODESTART::1800100000001*/
+// Release do início do passo (antes de esperar a próxima licença): solta faixas OCUPADAS vazias e o cruzamento.
+// O mnb_pcx fica para o liberar_faixas_usadas (fim do passo), que roda depois de licenciar a marginal_c.
+pular_mnb_pcx = true;
+try {
+    return liberar_faixas_ocupadas(trem);
+} finally {
+    pular_mnb_pcx = false;
+}
 /*ALCODEEND*/}

@@ -206,3 +206,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-192**: GestorDeCirculacao — trem da pera pega a rota inteira na porteira
 - **ALT-193**: Desfaz a ALT-192 (rota inteira da pera)
 - **ALT-194**: Traces de licença (`aguarda_licenca`, `pegou_licenca`, `soltou <faixa>`) e dono do cruzamento
+- **ALT-195**: GestorDeCirculacao — Release no início do passo, antes de esperar a próxima licença

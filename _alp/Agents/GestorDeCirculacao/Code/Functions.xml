@@ -421,4 +421,24 @@
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>ResourcePool[]</ReturnType>
+		<Id>1800100000001</Id>
+		<Name><![CDATA[liberar_faixas_sem_mnb_pcx]]></Name>
+		<X>-2400</X>
+		<Y>4360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>

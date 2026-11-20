@@ -2338,3 +2338,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `liberar_faixas_ocupadas`: `soltou <faixa>` e limpa `dono_cruzamento` ao soltar o cruzamento.
   - Nenhuma mudança de comportamento.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/Variables.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-195 — release-antes-de-licenciar
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em 16:10 de 01/01. M86 parado no fim da `via3_intermar` esperando a `via2_c` (MNB39) ainda segurava `val_via2` + cruzamento, com a cauda já fora deles; o MNB21 precisava dos dois para sair das DVs e a cauda dele prendia a `via2_intermar_c` que o MNB39 esperava. O Release das faixas de trás só rodava depois de conseguir a próxima licença.
+- **O que (GestorDeCirculacao):**
+  - Novo Release `liberar_antes_de_licenciar` entre `tentar_usar_faixa` e `esta_licenciado_nesta_faixa`, com `liberar_faixas_sem_mnb_pcx`.
+  - Nova função `liberar_faixas_sem_mnb_pcx(trem)` e variável `pular_mnb_pcx`: mesma lógica do `liberar_faixas_ocupadas` sem soltar o `mnb_pcx` (que depende da `marginal_c` já licenciada).
+  - `liberar_faixas_usadas` continua no fim do passo.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/Variables.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Connectors.xml`, `docs/gestores.md`
