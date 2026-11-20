@@ -1532,11 +1532,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeDVs</ClassName>
-			<ItemName>ir_ponto</ItemName>
+			<ItemName>seize_cruzamento_entrada</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -1553,8 +1553,51 @@
 				<Y>140</Y>
 			</Point>
 			<Point>
-				<X>200</X>
+				<X>90</X>
 				<Y>140</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1799700000009</Id>
+		<Name><![CDATA[con_seize_cruzamento_entrada]]></Name>
+		<X>730</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeDVs</ClassName>
+			<ItemName>seize_cruzamento_entrada</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeDVs</ClassName>
+			<ItemName>ir_ponto</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>70</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
