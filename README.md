@@ -204,3 +204,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-190**: Log com hora em hh:mm - dd/mm a partir da data_inicio (simulacao.csv); trace_aguardando → log_analise_detalhada
 - **ALT-191**: GestorDeChegadas — `pedido_criado` só com `log_analise_detalhada`
 - **ALT-192**: GestorDeCirculacao — trem da pera pega a rota inteira na porteira
+- **ALT-193**: Desfaz a ALT-192 (rota inteira da pera)

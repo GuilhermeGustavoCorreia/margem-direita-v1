@@ -2320,3 +2320,9 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `get_conjunto_licenca`: na `val_via2_a`, o trem da pera pega também `val_via2`, `via3_intermar`, `via3_a`, `via2_c` e `entrada_pera`.
   - onExit do `licenciar_esta_faixa` / `licenciar_proxima_faixa`: essas faixas ficam LICENCIADAS para ele.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`
+
+## ALT-193 — desfaz-rota-inteira-da-pera
+- **Data:** 2026-11-20
+- **Status:** aplicada
+- **O que:** desfaz a ALT-192 (`eh_terminal_pera`, rota da pera em `get_conjunto_licenca` e licença das faixas no onExit dos Seize de licença), a pedido do Guilherme, para reanalisar o deadlock M86 × MNB39 × MNB21.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`
