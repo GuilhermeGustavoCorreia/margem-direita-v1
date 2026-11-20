@@ -2267,3 +2267,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Nova função `get_conjunto_entrada_dvs(trem)`: cruzamento, se o trem ainda não tiver.
   - GestorDeDVs: novo Seize `seize_cruzamento_entrada` entre `sel_segue_direto.outF` e `ir_ponto`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`
+
+## ALT-187 — prioridade-no-cruzamento-das-dvs
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em ≈4,57 h. Cruzamento livre desde 4,533 h, mas o MNB27 (nas DVs, com o par `via1_intermar_a`/`dv_entrada_c`) ficou na fila do `seize_cruzamento_entrada` atrás do Y62 (porteira, indo ao TEC), que pedia `val_via2_a` + cruzamento + par e não fechava o conjunto.
+- **O que (GestorDeDVs):** `seize_cruzamento_entrada` e `ocupar_val_via2_saida` com `priority = 10` (antes 1, igual às licenças da circulação).
+- **Arquivos:** `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`

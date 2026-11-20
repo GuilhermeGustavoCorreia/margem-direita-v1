@@ -198,3 +198,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-184**: Cruzamento da porteira na entrada das DVs (sai da saída das DVs)
 - **ALT-185**: Saída das DVs volta a pegar val_via2 + cruzamento; trem do TEC pega a rota da porteira inteira
 - **ALT-186**: Cruzamento da porteira só ao entrar nas linhas das DVs (não na fila)
+- **ALT-187**: Prioridade 10 na entrada e na saída das DVs pelo cruzamento
