@@ -88,6 +88,15 @@ if (trem.eh_alivio && faixa_marginal_c.idTremLicenciado != trem.getId()) {
     }
 }
 
+// cruzamento da porteira (AMV railwaySwitch1): solta junto com a val_via2_a (trem saindo do ISN)
+// ou com a val_via2 (saída das DVs), se o trem tiver a unidade
+if ((recursosLiberados.contains(faixa_val_via2_a.recurso) || recursosLiberados.contains(faixa_val_via2.recurso))
+    && !trem.resourceUnitsOfPool(rp_cruzamento_porteira).isEmpty()
+    && !recursosLiberados.contains(rp_cruzamento_porteira)) {
+    recursosLiberados.add(rp_cruzamento_porteira);
+    log_circulacao(trem, "soltou cruzamento_porteira");
+}
+
 return recursosLiberados.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 
@@ -163,3 +172,19 @@ String t = trem.get_terminal_name();
 return "tec".equals(t) || "tecAcucar".equals(t);
 /*ALCODEEND*/}
 
+ResourcePool[][] get_conjunto_licenca(Trem trem,Faixa faixa)
+{/*ALCODESTART::1799300000010*/
+// recursos que o trem pega ao licenciar a faixa (licenciar_esta_faixa / licenciar_proxima_faixa)
+// - via1_intermar_a + dv_entrada_c: trecho único, sempre juntas
+// - val_via2_a (saída do ISN pela porteira): junto o cruzamento da porteira (AMV railwaySwitch1)
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+pools.add(faixa.recurso);
+if      (faixa == faixa_via1_intermar_a) pools.add(faixa_dv_entrada_c.recurso);
+else if (faixa == faixa_dv_entrada_c)    pools.add(faixa_via1_intermar_a.recurso);
+else if (faixa == faixa_val_via2_a)      pools.add(rp_cruzamento_porteira);
+
+// o que o trem já tem não entra: Seize de pool de capacidade 1 que o próprio trem segura nunca sai
+pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
+
+return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}

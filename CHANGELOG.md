@@ -2218,3 +2218,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `para_DVS`, `alivio_para_DVs`, `exit3`: se a `dv_entrada_c` está licenciada para o trem, passa a OCUPADA.
   - `liberar_faixas_ocupadas`: `dv_entrada_c` não é solta enquanto o trem ocupar a `via1_intermar_a` (exceto trem chegando ao TEC, que percorre a `dv_entrada_c` pela circulação).
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-182 — cruzamento-porteira
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** MNB07 saindo das DVs (pega `val_via2` + `isn_linha02_e`) e M66 saindo do ISN pela `val_via2_a` chegaram juntos ao AMV `railwaySwitch1` (1,351 h). Além disso, o par da ALT-181 só valia no `licenciar_esta_faixa`; a `via1_intermar_a`/`dv_entrada_c` também são licenciadas como `proxima_faixa` (`licenciar_proxima_faixa`), e um trem que já tinha a `dv_entrada_c` travaria pedindo o par de novo.
+- **O que:**
+  - GestorDeCirculacao: novo ResourcePool `rp_cruzamento_porteira` (capacidade 1).
+  - Nova função `get_conjunto_licenca(trem, faixa)`: faixa + par (`via1_intermar_a`/`dv_entrada_c`) ou `rp_cruzamento_porteira` (para `val_via2_a`), sem os recursos que o trem já tem. Usada no `licenciar_esta_faixa` e no `licenciar_proxima_faixa` (os dois em modo conjunto).
+  - onExit dos dois: licencia a outra metade do par só se ainda não for do trem.
+  - GestorDeDVs `ocupar_val_via2_saida`: pega também `rp_cruzamento_porteira`.
+  - `liberar_faixas_ocupadas`: solta o cruzamento junto com a `val_via2_a` ou a `val_via2`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`

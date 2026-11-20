@@ -4525,7 +4525,8 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 					<Code><![CDATA[new ResourcePool[][] {
     {
         main().gestorDeCirculacao.faixa_val_via2.recurso,
-        main().gestorDeISN.rp_isn_linha02_e
+        main().gestorDeISN.rp_isn_linha02_e,
+        main().gestorDeCirculacao.rp_cruzamento_porteira
     }
 }]]></Code>
 				</Value>
