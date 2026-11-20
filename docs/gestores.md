@@ -93,6 +93,8 @@ Decide qual terminal aliviar, ou seja, retirar os vazios.
   ◇ `linha_4000_cheia` → `liberar_linha_4000` (solta `linha4000_a/b/c`) → `para_alivio_na_linha_4000`, que marca `eh_alivio`,
   zera `lote_linha_4000` e entrega o trem ao GestorDeCirculacao com `faixa_atual = intervalo4000_a`, `proxima_faixa = marginal_c`.
   Com menos de 82, o trem espera em `wait_trem_4000`.
+  Na volta do alívio, o `ir_linha_4000` para o trem a 10 m do início da `pmc_linha4000_a` (antes `pos_linha_4000_criar_loco`, na `intervalo4000_b`),
+  para não ocupar a passagem da Bracell. A 4000 (a+b+c ≈ 1.132 m) comporta 2 locos + ~62 vagões; acima disso o trem passa do fim da `linha4000_c`.
 
 ## GestorDeISN
 

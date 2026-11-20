@@ -2184,3 +2184,11 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - saída da 4000 com 82 (`para_alivio_na_linha_4000`): `"linha4k"`.
   - Rótulo do 1º carro (Vagao e Locomotiva): `prefixo - destino (de origem)`, só quando `origem != null`.
 - **Arquivos:** `_alp/Agents/Trem/Variables.xml`, `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/Vagao/Levels/Level.level.xml`, `_alp/Agents/Locomotiva/Levels/Level.level.xml`
+
+## ALT-178 — trem-4000-espera-dentro-da-linha
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** o MNB do alívio PCX esperava em `pos_linha_4000_criar_loco` (na `pmc_intervalo4000_b`), que é passagem da Bracell, sem segurar essa faixa. O alívio da Bracell (MNB07) recuou na `intervalo4000_b` e bateu no MNB05 parado (`recuar_intervalo4000_b.outHit` sem conexão).
+- **O que:** `ir_linha_4000` passa de `TARGET_AT_POINT_ON_TRACK` (`pos_linha_4000_criar_loco`) para `TARGET_AT_TRACK_OFFSET` em `main().pmc_linha4000_a`, 10 m do início (lado da `intervalo4000_c`). O ponto de criação da loco não muda.
+- **Limite conhecido:** a 4000 (a+b+c ≈ 1.132 m) comporta 2 locos + ~62 vagões (17,5 m). Acima disso o trem passa do fim da `linha4000_c` (lado do TES). Na saída com 82, o trem atravessa `intervalo4000_c` e `intervalo4000_b` sem licenciar essas faixas (`faixa_atual = intervalo4000_a`).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `docs/gestores.md`

@@ -1372,7 +1372,7 @@ Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 c
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.TARGET_AT_POINT_ON_TRACK]]></Code>
+					<Code><![CDATA[self.TARGET_AT_TRACK_OFFSET]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1383,12 +1383,22 @@ Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 c
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().pmc_linha4000_a]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[offsetFromBeginningOfTrack]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetOffset]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="LengthUnits">METER</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[checkFreeSpaceOnTargetTrack]]></Name>

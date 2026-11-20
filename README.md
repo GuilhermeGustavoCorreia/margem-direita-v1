@@ -189,3 +189,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-175**: GestorDeISN — próxima faixa da porteira passa a ser val_via2_a
 - **ALT-176**: TEC_ACUCAR — cópia da lógica do TEC (encoste no _tecAcucar_encoste) e em terminais_pst
 - **ALT-177**: Trem — atributo origem (terminal do alívio ou linha4k) e rótulo com origem
+- **ALT-178**: Alívio PCX — trem espera dentro da linha 4000 (fora da intervalo4000_b)
