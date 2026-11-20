@@ -2310,3 +2310,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** com a análise detalhada desligada, o `pedido_criado` ainda era a maior parte do `sim.log`.
 - **O que (GestorDeChegadas):** `pedido_criado` só sai com `log_analise_detalhada = true`.
 - **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-192 — rota-inteira-da-pera
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em ≈16,2 h. M86 (moegaoTerra) parado na `via3_intermar` com `val_via2` + cruzamento esperando a `via2_c`; MNB39 na `via2_c` esperando a `via2_intermar_c` (cauda do MNB21); MNB21 (segue direto nas DVs) esperando `val_via2` + cruzamento.
+- **O que (GestorDeCirculacao):**
+  - Nova função `eh_terminal_pera(trem)`: moegaoTerra, moegaoMar, coperXXI.
+  - `get_conjunto_licenca`: na `val_via2_a`, o trem da pera pega também `val_via2`, `via3_intermar`, `via3_a`, `via2_c` e `entrada_pera`.
+  - onExit do `licenciar_esta_faixa` / `licenciar_proxima_faixa`: essas faixas ficam LICENCIADAS para ele.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `docs/gestores.md`

@@ -9183,6 +9183,11 @@ faixa.licenciar((Trem) agent);
 // (só se ainda não for do trem: não volta OCUPADA para LICENCIADA)
 if (faixa == faixa_via1_intermar_a && faixa_dv_entrada_c.idTremLicenciado != agent.getId()) faixa_dv_entrada_c.licenciar((Trem) agent);
 else if (faixa == faixa_dv_entrada_c && faixa_via1_intermar_a.idTremLicenciado != agent.getId()) faixa_via1_intermar_a.licenciar((Trem) agent);
+// trem para a pera: a rota inteira foi pega junto com a val_via2_a
+if (faixa == faixa_val_via2_a && eh_terminal_pera((Trem) agent) && !((Trem) agent).eh_alivio) {
+    for (Faixa f : new Faixa[] { faixa_val_via2, faixa_via3_intermar, faixa_via3_a, faixa_via2_c, faixa_entrada_pera })
+        if (f.idTremLicenciado != agent.getId()) f.licenciar((Trem) agent);
+}
 // trem chegando ao TEC pela porteira: o par já foi pego junto com a val_via2_a
 if (faixa == faixa_val_via2_a && eh_terminal_tec((Trem) agent) && !((Trem) agent).eh_alivio) {
     if (faixa_dv_entrada_c.idTremLicenciado != agent.getId())    faixa_dv_entrada_c.licenciar((Trem) agent);
@@ -9625,6 +9630,11 @@ faixa.licenciar((Trem) agent);
 // (só se ainda não for do trem: não volta OCUPADA para LICENCIADA)
 if (faixa == faixa_via1_intermar_a && faixa_dv_entrada_c.idTremLicenciado != agent.getId()) faixa_dv_entrada_c.licenciar((Trem) agent);
 else if (faixa == faixa_dv_entrada_c && faixa_via1_intermar_a.idTremLicenciado != agent.getId()) faixa_via1_intermar_a.licenciar((Trem) agent);
+// trem para a pera: a rota inteira foi pega junto com a val_via2_a
+if (faixa == faixa_val_via2_a && eh_terminal_pera((Trem) agent) && !((Trem) agent).eh_alivio) {
+    for (Faixa f : new Faixa[] { faixa_val_via2, faixa_via3_intermar, faixa_via3_a, faixa_via2_c, faixa_entrada_pera })
+        if (f.idTremLicenciado != agent.getId()) f.licenciar((Trem) agent);
+}
 // trem chegando ao TEC pela porteira: o par já foi pego junto com a val_via2_a
 if (faixa == faixa_val_via2_a && eh_terminal_tec((Trem) agent) && !((Trem) agent).eh_alivio) {
     if (faixa_dv_entrada_c.idTremLicenciado != agent.getId())    faixa_dv_entrada_c.licenciar((Trem) agent);
