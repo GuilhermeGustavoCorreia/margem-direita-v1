@@ -2201,3 +2201,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Novo Seize `seize_saida_4000` entre `linha_4000_cheia` (outT) e `liberar_linha_4000`: pega `intervalo4000_c`, `b` e `a` num conjunto só. No onExit, c e b ficam OCUPADA pelo trem e a fica LICENCIADA (faixa_atual da entrega à circulação).
   - `ocupar_faixas_saida_4000`: `intervalo4000_c/b` que o trem possui ficam OCUPADA mesmo antes de ele chegar nelas; o GestorDeCirculacao solta o recurso quando a cauda sai.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-180 — saida-4000-nao-soltar-antes-de-passar
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** o trem cheio da 4000 pega `intervalo4000_c/b` no `seize_saida_4000` antes de chegar nelas. Na primeira chamada de `liberar_faixas_ocupadas` as duas estavam vazias (o trem ainda dentro da 4000) e eram soltas na largada. A loco nova nasceu na `intervalo4000_b` em cima da cauda (car intersects, 1,990 h).
+- **O que (GestorDeCirculacao.liberar_faixas_ocupadas):** `intervalo4000_c` não é solta enquanto o trem ocupar `linha4000_a/b/c`; `intervalo4000_b` não é solta enquanto ocupar `linha4000_*` ou `intervalo4000_c`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`

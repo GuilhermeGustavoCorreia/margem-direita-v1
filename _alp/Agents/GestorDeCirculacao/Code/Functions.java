@@ -39,7 +39,16 @@ for (Faixa f : faixas) {
         possui.append(f.recurso.getName()).append(" ");
 }
 
+// saída da 4000: o trem pega intervalo4000_c e b antes de chegar nelas (seize_saida_4000).
+// Vazias porque ele ainda não chegou; só soltam depois que ele passou por elas.
+List<RailwayTrack> occ = trem.getAllOccupiedTracks();
+boolean antes_de_c = occ.contains(main().pmc_linha4000_a) || occ.contains(main().pmc_linha4000_b) || occ.contains(main().pmc_linha4000_c);
+boolean antes_de_b = antes_de_c || occ.contains(main().pmc_intervalo4000_c);
+
 for (Faixa faixa : faixas) {
+
+    if (faixa == faixa_intervalo4000_c && antes_de_c) continue;
+    if (faixa == faixa_intervalo4000_b && antes_de_b) continue;
 
     boolean faixaDoTrem = (faixa.idTremLicenciado == trem.getId());
     boolean faixaOcupada = (faixa.estado == Faixa.EstadoFaixa.OCUPADA);

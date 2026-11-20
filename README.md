@@ -191,3 +191,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-177**: Trem — atributo origem (terminal do alívio ou linha4k) e rótulo com origem
 - **ALT-178**: Alívio PCX — trem espera dentro da linha 4000 (fora da intervalo4000_b)
 - **ALT-179**: Alívio PCX — Seize das intervalo4000_c/b/a antes da saída da 4000 com 82
+- **ALT-180**: GestorDeCirculacao — intervalo4000_c/b do trem da 4000 só soltam depois que ele passa
