@@ -1430,6 +1430,57 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeDVs</ClassName>
+			<ItemName>liberar_antes_saida</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>-70</Y>
+			</Point>
+			<Point>
+				<X>30</X>
+				<Y>-70</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1799500000009</Id>
+		<Name><![CDATA[con_liberar_antes_saida]]></Name>
+		<X>680</X>
+		<Y>80</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeDVs</ClassName>
+			<ItemName>liberar_antes_saida</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeDVs</ClassName>
 			<ItemName>ocupar_val_via2_saida</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -1443,8 +1494,16 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>80</X>
+				<X>5</X>
 				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>5</X>
+				<Y>70</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>70</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -1696,11 +1755,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeDVs</ClassName>
-			<ItemName>ocupar_val_via2_saida</ItemName>
+			<ItemName>liberar_antes_saida</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
+			<ClassName>Release</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -1725,16 +1784,16 @@
 				<Y>-310</Y>
 			</Point>
 			<Point>
-				<X>-450</X>
+				<X>-470</X>
 				<Y>-310</Y>
 			</Point>
 			<Point>
-				<X>-450</X>
-				<Y>-360</Y>
+				<X>-470</X>
+				<Y>-430</Y>
 			</Point>
 			<Point>
-				<X>-410</X>
-				<Y>-360</Y>
+				<X>-460</X>
+				<Y>-430</Y>
 			</Point>
 		</Points>
 	</Connector>

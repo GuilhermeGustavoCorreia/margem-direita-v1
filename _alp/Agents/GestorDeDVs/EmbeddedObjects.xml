@@ -3278,6 +3278,105 @@
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
+		<Id>1799500000001</Id>
+		<Name><![CDATA[liberar_antes_saida]]></Name>
+		<X>640</X>
+		<Y>60</Y>
+		<Label>
+			<X>-40</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.liberar_faixas_ocupadas((Trem) agent)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1799500000002</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
 		<Id>1797330000007</Id>
 		<Name><![CDATA[sel_acao]]></Name>
 		<X>1080</X>
@@ -4524,9 +4623,7 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[new ResourcePool[][] {
     {
-        main().gestorDeCirculacao.faixa_val_via2.recurso,
-        main().gestorDeISN.rp_isn_linha02_e,
-        main().gestorDeCirculacao.rp_cruzamento_porteira
+        main().gestorDeISN.rp_isn_linha02_e
     }
 }]]></Code>
 				</Value>
@@ -4534,7 +4631,7 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 			<Parameter>
 				<Name><![CDATA[resourcePool]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.faixa_val_via2.recurso]]></Code>
+					<Code><![CDATA[main().gestorDeISN.rp_isn_linha02_e]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4663,10 +4760,8 @@ if (trem_em_manobra == null) liberar_proxima_manobra();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// licencia a val_via2 e a isn_linha02_e antes de sair das DVs (o ir_saida passa pelo AMV da saída do ISN)
+					<Code><![CDATA[// a saída das DVs (dv_direita -> track203) passa pela isn_linha02_e (travessão do ISN); não passa pelo cruzamento da porteira
 // o liberar_faixas_circulacao (depois do trainExit) solta junto com as outras faixas do trem
-main().gestorDeCirculacao.faixa_val_via2.ocupar((Trem) agent);
-// a saída passa pela isn_linha02_e (travessão do ISN)
 main().gestorDeISN.faixa_isn_linha02_e.ocupar((Trem) agent);
 Log.info("GesDVs", "ocupar_val_via2_saida", String.format("trem=%d pegou", agent.getId()));]]></Code>
 				</Value>

@@ -88,9 +88,14 @@ if (trem.eh_alivio && faixa_marginal_c.idTremLicenciado != trem.getId()) {
     }
 }
 
-// cruzamento da porteira (AMV railwaySwitch1): solta junto com a val_via2_a (trem saindo do ISN)
-// ou com a val_via2 (saída das DVs), se o trem tiver a unidade
-if ((recursosLiberados.contains(faixa_val_via2_a.recurso) || recursosLiberados.contains(faixa_val_via2.recurso))
+// cruzamento da porteira (AMVs railwaySwitch1 e railwaySwitch27, entrada das DVs): solta quando a cauda
+// sai do cruzamento, isto é, o trem não tem mais val_via2_a, val_via2 nem dv_entrada_c
+// (licenciada ou ocupada) e não está na railwayTrack18
+boolean no_cruzamento = faixa_val_via2_a.idTremLicenciado == trem.getId()
+                     || faixa_val_via2.idTremLicenciado   == trem.getId()
+                     || faixa_dv_entrada_c.idTremLicenciado == trem.getId()
+                     || trem.getAllOccupiedTracks().contains(main().railwayTrack18);
+if (!no_cruzamento
     && !trem.resourceUnitsOfPool(rp_cruzamento_porteira).isEmpty()
     && !recursosLiberados.contains(rp_cruzamento_porteira)) {
     recursosLiberados.add(rp_cruzamento_porteira);
@@ -176,12 +181,13 @@ ResourcePool[][] get_conjunto_licenca(Trem trem,Faixa faixa)
 {/*ALCODESTART::1799300000010*/
 // recursos que o trem pega ao licenciar a faixa (licenciar_esta_faixa / licenciar_proxima_faixa)
 // - via1_intermar_a + dv_entrada_c: trecho único, sempre juntas
-// - val_via2_a (saída do ISN pela porteira): junto o cruzamento da porteira (AMV railwaySwitch1)
+// - val_via2_a, val_via2 e o par acima passam pelo cruzamento da porteira (AMVs railwaySwitch1 e
+//   railwaySwitch27, entrada das DVs): o cruzamento vai junto. A saída das DVs (dv_direita) não passa por ele.
 List<ResourcePool> pools = new ArrayList<ResourcePool>();
 pools.add(faixa.recurso);
-if      (faixa == faixa_via1_intermar_a) pools.add(faixa_dv_entrada_c.recurso);
-else if (faixa == faixa_dv_entrada_c)    pools.add(faixa_via1_intermar_a.recurso);
-else if (faixa == faixa_val_via2_a)      pools.add(rp_cruzamento_porteira);
+if      (faixa == faixa_via1_intermar_a) { pools.add(faixa_dv_entrada_c.recurso);    pools.add(rp_cruzamento_porteira); }
+else if (faixa == faixa_dv_entrada_c)    { pools.add(faixa_via1_intermar_a.recurso); pools.add(rp_cruzamento_porteira); }
+else if (faixa == faixa_val_via2_a || faixa == faixa_val_via2) pools.add(rp_cruzamento_porteira);
 
 // o que o trem já tem não entra: Seize de pool de capacidade 1 que o próprio trem segura nunca sai
 pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());

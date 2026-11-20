@@ -2237,3 +2237,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** deadlock em ≈3,98 h. MNB09 saiu para as DVs e ficou na fila (`fila_dvs`) segurando a `via2_c` (cauda já fora). R88 esperava a `via2_c` segurando `val_via2` + `rp_cruzamento_porteira`; MNB17, em manobra nas DVs, esperava esses dois para sair. `para_DVS`/`alivio_para_DVs` entregavam o trem às DVs sem soltar faixas, e a fila não solta nada.
 - **O que (GestorDeCirculacao):** novos Release `liberar_antes_dvs` (antes de `para_DVS`) e `liberar_antes_dvs_alivio` (antes de `alivio_para_DVs`), com `resources = liberar_faixas_ocupadas((Trem) agent)`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Connectors.xml`, `docs/gestores.md`
+
+## ALT-184 — cruzamento-na-entrada-das-dvs
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em ≈4,85 h. M78 (alívio do TEC_ACUCAR, 82 vgs) nas DVs com a cauda na `dv_entrada_c` pedia o cruzamento para sair (`ocupar_val_via2_saida`); I90 (chegando ao TEC) tinha `val_via2_a` + cruzamento e esperava o par `dv_entrada_c`/`via1_intermar_a`. A saída das DVs vai pela `dv_direita` e não passa pelo cruzamento nem pela `val_via2`.
+- **O que:**
+  - GestorDeDVs `ocupar_val_via2_saida`: pega só a `isn_linha02_e` (saem `val_via2` e `rp_cruzamento_porteira`). Novo Release `liberar_antes_saida` antes dele (de `sel_segue_direto` e `sel_acao`).
+  - GestorDeCirculacao `get_conjunto_licenca`: cruzamento junto com `val_via2_a`, `val_via2` e o par `via1_intermar_a`/`dv_entrada_c`.
+  - `liberar_faixas_ocupadas`: solta o cruzamento quando o trem não tem mais `val_via2_a`, `val_via2` nem `dv_entrada_c` e não está na `railwayTrack18`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`

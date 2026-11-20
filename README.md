@@ -195,3 +195,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-181**: GestorDeCirculacao — via1_intermar_a e dv_entrada_c licenciadas juntas
 - **ALT-182**: GestorDeCirculacao — recurso cruzamento da porteira e par via1_intermar_a/dv_entrada_c também na próxima faixa
 - **ALT-183**: GestorDeCirculacao — soltar faixas da cauda antes da fila das DVs
+- **ALT-184**: Cruzamento da porteira na entrada das DVs (sai da saída das DVs)
