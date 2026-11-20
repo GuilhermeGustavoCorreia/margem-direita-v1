@@ -189,8 +189,27 @@ if      (faixa == faixa_via1_intermar_a) { pools.add(faixa_dv_entrada_c.recurso)
 else if (faixa == faixa_dv_entrada_c)    { pools.add(faixa_via1_intermar_a.recurso); pools.add(rp_cruzamento_porteira); }
 else if (faixa == faixa_val_via2_a || faixa == faixa_val_via2) pools.add(rp_cruzamento_porteira);
 
+// trem chegando ao TEC pela porteira: rota inteira de uma vez (val_via2_a + cruzamento + par),
+// para não esperar o par segurando o cruzamento
+if (faixa == faixa_val_via2_a && eh_terminal_tec(trem) && !trem.eh_alivio) {
+    pools.add(faixa_dv_entrada_c.recurso);
+    pools.add(faixa_via1_intermar_a.recurso);
+}
+
 // o que o trem já tem não entra: Seize de pool de capacidade 1 que o próprio trem segura nunca sai
 pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
 
+return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}
+
+ResourcePool[][] get_conjunto_saida_dvs(Trem trem)
+{/*ALCODESTART::1799600000001*/
+// saída das DVs (ocupar_val_via2_saida): val_via2 + isn_linha02_e + cruzamento da porteira.
+// o que o trem já tem não entra (ex.: cruzamento pego junto com o par via1_intermar_a/dv_entrada_c)
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+pools.add(faixa_val_via2.recurso);
+pools.add(main().gestorDeISN.rp_isn_linha02_e);
+pools.add(rp_cruzamento_porteira);
+pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
 return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
 /*ALCODEEND*/}

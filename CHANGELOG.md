@@ -2247,3 +2247,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeCirculacao `get_conjunto_licenca`: cruzamento junto com `val_via2_a`, `val_via2` e o par `via1_intermar_a`/`dv_entrada_c`.
   - `liberar_faixas_ocupadas`: solta o cruzamento quando o trem não tem mais `val_via2_a`, `val_via2` nem `dv_entrada_c` e não está na `railwayTrack18`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`
+
+## ALT-185 — saida-das-dvs-pela-porteira-e-rota-do-tec
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** com a ALT-184 a saída das DVs deixou de pegar `val_via2` + cruzamento. O MNB07 (segue direto, parado no fim da `via2_intermar_a`) sai pela `railwayTrack199` → `val_via2` → AMV da porteira e bateu no Y26 que saía do ISN pela `val_via2` (1,417 h, `ir_val_via2.outHit`).
+- **O que:**
+  - GestorDeCirculacao: nova função `get_conjunto_saida_dvs(trem)`: `val_via2` + `isn_linha02_e` + `rp_cruzamento_porteira`, sem o que o trem já tem.
+  - GestorDeDVs `ocupar_val_via2_saida`: usa `get_conjunto_saida_dvs`; onExit volta a ocupar a `val_via2`. Vale para segue direto e para a saída depois da manobra.
+  - `get_conjunto_licenca`: trem chegando ao TEC na `val_via2_a` pega `val_via2_a` + cruzamento + `dv_entrada_c` + `via1_intermar_a` de uma vez. onExit do `licenciar_esta_faixa` / `licenciar_proxima_faixa` licencia o par para ele.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
