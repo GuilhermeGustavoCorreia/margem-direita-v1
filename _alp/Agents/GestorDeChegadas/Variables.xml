@@ -112,7 +112,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1799800000002</Id>
-		<Name><![CDATA[trace_aguardando]]></Name>
+		<Name><![CDATA[log_analise_detalhada]]></Name>
 		<X>-600</X>
 		<Y>-200</Y>
 		<Label>

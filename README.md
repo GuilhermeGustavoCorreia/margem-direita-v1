@@ -201,3 +201,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-187**: Prioridade 10 na entrada e na saída das DVs pelo cruzamento
 - **ALT-188**: GestorDeAlivios — um alívio PST por vez (não sobrescreve o alívio em andamento)
 - **ALT-189**: Chaves `trace_repetitivo` (GestorDeAlivios) e `trace_aguardando` (GestorDeChegadas) para os traces periódicos
+- **ALT-190**: Log com hora em hh:mm - dd/mm a partir da data_inicio (simulacao.csv); trace_aguardando → log_analise_detalhada

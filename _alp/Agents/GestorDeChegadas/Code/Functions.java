@@ -254,7 +254,7 @@ double registrar_motivo(Pedido p,String motivo)
 // registra a espera só quando o motivo muda, para o log não repetir a cada minuto
 if (motivo.equals(p.ultimo_motivo)) return;
 p.ultimo_motivo = motivo;
-if (trace_aguardando) Log.info("Chegadas", "aguardando", String.format("%s %s", p, motivo));
+if (log_analise_detalhada) Log.info("Chegadas", "aguardando", String.format("%s %s", p, motivo));
 /*ALCODEEND*/}
 
 boolean pode_receber_tipo(ITerminalMoega terminal,String ferrovia,String segmento)

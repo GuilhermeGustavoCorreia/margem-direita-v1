@@ -2290,3 +2290,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeAlivios: nova variável `trace_repetitivo` (boolean, `false`); os 8 blocos `% 60 == 0` só logam com ela ligada.
   - GestorDeChegadas: nova variável `trace_aguardando` (boolean, `false`); `registrar_motivo` só loga com ela ligada.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Variables.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-190 — hora-do-log-e-data-de-inicio
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** o tempo do log saía em horas decimais (`[  16.966h]`), difícil de ler.
+- **O que:**
+  - `Class.Log`: novo `data_inicio` (`LocalDate`, padrão 01/01 do ano atual); o tempo sai como `[hh:mm - dd/mm]`, contado de 00:00 de `data_inicio`.
+  - Main `carregar_configuracao`: lê a 4ª coluna opcional `data_inicio` (dd/mm/aaaa) do `simulacao.csv` e mostra no `[config]`.
+  - `simulacao/config/simulacao.csv`: coluna `data_inicio` (01/01/2026).
+  - `interface_simulacao.html`: campo "Data de início" na aba Configurações (salva a coluna) e leitor de log entende o formato novo (continua lendo o antigo em horas).
+  - GestorDeChegadas: `trace_aguardando` renomeada para `log_analise_detalhada`.
+  - CLAUDE.md: formato do log atualizado.
+- **Arquivos:** `_alp/Classes/Class.Log.java`, `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `simulacao/config/simulacao.csv`, `simulacao/interface_simulacao.html`, `CLAUDE.md`, `docs/gestores.md`

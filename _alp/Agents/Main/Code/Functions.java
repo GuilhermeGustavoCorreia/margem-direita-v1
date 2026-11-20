@@ -453,7 +453,7 @@ String pasta = pasta_simulacao;
 int erros = 0;
 traceln("[config] pasta: " + new java.io.File(pasta).getAbsolutePath());
 
-// ---- config/simulacao.csv: duracao_h;warmup_h;replicacoes ----
+// ---- config/simulacao.csv: duracao_h;warmup_h;replicacoes;data_inicio ----
 ArrayList<String[]> sim = ler_csv(pasta + "/config/simulacao.csv");
 if (sim.isEmpty() || sim.get(0).length < 3)
 	error("[config] simulacao.csv: esperado uma linha com duracao_h;warmup_h;replicacoes");
@@ -464,13 +464,21 @@ try {
 } catch (NumberFormatException ex) {
 	error("[config] simulacao.csv: valor não numérico (" + ex.getMessage() + ")");
 }
+// data_inicio (opcional, dd/mm/aaaa): o tempo 0 do log é 00:00 desse dia
+if (sim.get(0).length >= 4 && !sim.get(0)[3].trim().isEmpty()) {
+	try {
+		Log.data_inicio = java.time.LocalDate.parse(sim.get(0)[3].trim(), java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	} catch (java.time.format.DateTimeParseException ex) {
+		error("[config] simulacao.csv: data_inicio inválida, use dd/mm/aaaa (" + sim.get(0)[3] + ")");
+	}
+}
 String st_sim = "OK";
 if (duracao_h <= 0)          { st_sim = "ERRO: duração deve ser > 0"; erros++; }
 else if (warmup_h < 0)       { st_sim = "ERRO: warm-up negativo"; erros++; }
 else if (warmup_h >= duracao_h) { st_sim = "ERRO: warm-up >= duração"; erros++; }
 else if (replicacoes < 1)    { st_sim = "ERRO: replicações < 1"; erros++; }
-traceln(String.format("[config] simulacao.csv: duracao=%.1fh warmup=%.1fh replicacoes=%d | %s",
-	duracao_h, warmup_h, replicacoes, st_sim));
+traceln(String.format("[config] simulacao.csv: duracao=%.1fh warmup=%.1fh replicacoes=%d data_inicio=%s | %s",
+	duracao_h, warmup_h, replicacoes, Log.data_inicio.format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")), st_sim));
 
 // ---- config/terminais_moega.csv: agente;instancia;segmento;rumo;mrs;vli ----
 ArrayList<String[]> terms = ler_csv(pasta + "/config/terminais_moega.csv");

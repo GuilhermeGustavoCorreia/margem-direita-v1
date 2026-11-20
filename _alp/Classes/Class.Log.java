@@ -1,7 +1,7 @@
 /**
  * Log padronizado do modelo (ALT-087).
- * Formato: [   0.320h] INFO  Origem          evento                       mensagem
- *   - tempo sempre em horas (modelo roda em segundos)
+ * Formato: [00:19 - 01/01] INFO  Origem          evento                       mensagem
+ *   - tempo em hh:mm - dd/mm, contado a partir de 00:00 de data_inicio (modelo roda em segundos)
  *   - nivel: DEBUG | INFO | WARN | ERRO
  *   - saida por System.out, que o Main espelha em logs/sim.log
  * Uso: Log.info("ADM", "decidir_moega", "trem=1 carros=85");
@@ -16,6 +16,10 @@ public class Log {
 
     // Origens silenciadas (so DEBUG/INFO; WARN e ERRO sempre saem).
     public static java.util.Set<String> silenciados = new java.util.HashSet<String>();
+
+    // dia do tempo 0 da simulação (00:00). O Main preenche a partir do simulacao.csv (coluna data_inicio).
+    public static java.time.LocalDate data_inicio = java.time.LocalDate.of(java.time.LocalDate.now().getYear(), 1, 1);
+    private static final java.time.format.DateTimeFormatter FMT_TEMPO = java.time.format.DateTimeFormatter.ofPattern("HH:mm - dd/MM");
 
     private static com.anylogic.engine.Engine engine = null;
 
@@ -34,10 +38,10 @@ public class Log {
         if (nivel.ordinal() < Nivel.WARN.ordinal() && silenciados.contains(origem)) return;
 
         String tempo = (engine == null)
-            ? "      ---"
-            : String.format(java.util.Locale.ROOT, "%9.3f", engine.time() / 3600.0);
+            ? "--:-- - --/--"
+            : data_inicio.atStartOfDay().plusSeconds((long) engine.time()).format(FMT_TEMPO);
 
         System.out.println(String.format(java.util.Locale.ROOT,
-            "[%sh] %-5s %-15s %-28s %s", tempo, nivel, origem, evento, msg));
+            "[%s] %-5s %-15s %-28s %s", tempo, nivel, origem, evento, msg));
     }
 }

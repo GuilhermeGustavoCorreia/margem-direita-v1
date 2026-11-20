@@ -53,7 +53,8 @@ Modelo AnyLogic (Rail Library) das operações ferroviárias da Margem Direita d
 - Erros na criação dos agentes, antes do On startup do Main, não entram no log.
 - Traces novos usam a classe `Log` (`_alp/Classes/Class.Log.java`), nunca `traceln` direto:
   `Log.info("Origem", "evento", String.format("trem=%d ...", ...));` (também `debug`, `warn`, `erro`).
-  Saída: `[   0.320h] INFO  GesCirculacao   exit_para_via3_a   trem=...`. Tempo sempre em horas; origem = nome do agente.
+  Saída: `[00:19 - 01/01] INFO  GesCirculacao   exit_para_via3_a   trem=...`. Tempo em `hh:mm - dd/mm`, contado de 00:00 da `data_inicio` (`simulacao/config/simulacao.csv`); origem = nome do agente.
+  Para o % de 720 h: horas = (dias desde `data_inicio`) × 24 + hh + mm/60.
   Cada replicação chama `Log.iniciar(this)` (hoje no startup do GestorDeCirculacao, GestorDeISN e GestorDeChegadas).
   `Log.nivelMinimo` e `Log.silenciados` filtram por nível e por origem. Convertidos até agora: GestorDeCirculacao, GestorDeISN, GestorDeChegadas, GestorDeAlivios, GestorDeLocomotivas, ADM, TES, T39.
 - `logs/sim.log` é versionado no GitHub, para ser lido pelo Claude Code na web e no celular.
