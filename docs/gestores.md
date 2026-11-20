@@ -136,7 +136,7 @@ Ainda não desenvolvido. Requisitos já definidos:
 
 ## GestorDeChegadas
 
-- **`log_analise_detalhada`** (boolean, padrão `false`): liga o log `aguardando` de cada pedido na fila (`registrar_motivo`).
+- **`log_analise_detalhada`** (boolean, padrão `false`): liga os logs `pedido_criado` e `aguardando` (`registrar_motivo`) de cada pedido. `decisao`, `inject` e `entrou_trilho` saem sempre.
 
 Em desenvolvimento (ALT-084). Parte ligada ao ISN:
 

@@ -54,7 +54,7 @@ for (FluxoChegada f : fluxos) {
 		fila.add(p);
 		f.gerados++;
 		f.proxima_h += f.intervalo_h;
-		Log.info("Chegadas", "pedido_criado", String.format("%s pedido criado (fila=%d)", p, fila.size()));
+		if (log_analise_detalhada) Log.info("Chegadas", "pedido_criado", String.format("%s pedido criado (fila=%d)", p, fila.size()));
 	}
 }
 /*ALCODEEND*/}

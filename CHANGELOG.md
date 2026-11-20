@@ -2303,3 +2303,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeChegadas: `trace_aguardando` renomeada para `log_analise_detalhada`.
   - CLAUDE.md: formato do log atualizado.
 - **Arquivos:** `_alp/Classes/Class.Log.java`, `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `simulacao/config/simulacao.csv`, `simulacao/interface_simulacao.html`, `CLAUDE.md`, `docs/gestores.md`
+
+## ALT-191 — pedido-criado-na-analise-detalhada
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** com a análise detalhada desligada, o `pedido_criado` ainda era a maior parte do `sim.log`.
+- **O que (GestorDeChegadas):** `pedido_criado` só sai com `log_analise_detalhada = true`.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`
