@@ -13941,7 +13941,7 @@ log_analise("trainCouple", train1, "acoplou");]]></Code>
 			<Parameter>
 				<Name><![CDATA[posicaoNaVia]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main()._coperXI_irMarginal]]></Code>
+					<Code><![CDATA[main().positionOnTrack1]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
