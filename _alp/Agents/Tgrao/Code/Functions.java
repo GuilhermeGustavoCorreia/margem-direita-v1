@@ -27,10 +27,8 @@ alivioVazios.take(agent);
 
 boolean podeReceberNovoLote()
 {/*ALCODESTART::1787242590653*/
-// trem entrando: do comecar_encoste até o 1º lote ser deixado na linha mar
-if (_trem_chegando != null) return false;
-// ainda há carregados no terminal (linha mar ou moega)
-return _getVagoesCarregados() == 0;
+// ainda há carregados ou vazios (esperando alívio ou em alívio) no terminal
+return _getVagoesCarregados() == 0 && _getVagoesVazios() == 0;
 /*ALCODEEND*/}
 
 PositionOnTrack get_pos_alivio()

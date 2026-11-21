@@ -193,7 +193,6 @@ if (a instanceof Trem) {
 Log.info("Bracell", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
-
 ResourcePool[] get_recursos_loco_alivio(Trem trem)
 {/*ALCODESTART::1797204000001*/
 // pools das faixas do caminho (bloquear_faixas_pmc) que a loco do alívio ainda segura
@@ -203,3 +202,4 @@ for (Faixa f : get_faixas_primeiro_alivio()) {
 }
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
+

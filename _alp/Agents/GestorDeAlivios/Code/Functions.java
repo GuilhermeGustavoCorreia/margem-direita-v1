@@ -863,3 +863,4 @@ for (Faixa f : java.util.List.of(
 }
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
+

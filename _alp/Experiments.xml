@@ -4,7 +4,7 @@
 		<Id>1772633102345</Id>
 		<Name><![CDATA[Simulation]]></Name>
 		<CommandLineArguments/>
-		<MaximumMemory>512</MaximumMemory>
+		<MaximumMemory>8192</MaximumMemory>
 		<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
 		<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 		<SeedValue>1</SeedValue>
