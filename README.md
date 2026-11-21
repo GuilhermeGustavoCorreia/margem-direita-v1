@@ -220,3 +220,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-206**: GestorDeAlivios — saída do trem cheio da 4000 pega o mnb_pcx
 - **ALT-207**: GestorDeAlivios — volta do excedente vai até o criar_loco, com a intervalo4000 até o terminal
 - **ALT-208**: CoperXI — rechego pega as marginais e a intervalo4000 antes de criar a loco
+- **ALT-209**: GestorDeLocomotivas — separa trens de várias locos antes de guardar

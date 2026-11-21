@@ -15,6 +15,7 @@ Controla as locomotivas por pátio e por ferrovia.
 - **Criar loco de alívio**: `pst_colocarLocomotivas_alivioTerminal(moega)` (e pmc/pcx), que desconta do pátio e injeta a loco em `PST_POSICAO_CRIAR_LOCOMOTIVA`.
 - **Receber loco de volta**: blocos `guardar_loco`, `guardar_locoRumo/MRS/VLI/FIPS` (Enter com `take(agent)`).
   Cada um leva a loco ao seu destino.
+  No `guardar_loco`, antes do `sairDaTrack`: `tem_varias_locos` (`size() > 1`) → `separar_loco` (TrainDecouple, 1 carro) em laço. Cada loco entra sozinha no wait da ferrovia, então o `get(0)` dos alívios sempre pega 1 loco.
 - **Devolver saldo**: `devolver_saldoLocomotiva(Trem)` soma 1 ao pool do pátio de cada loco do trem.
   Hoje só é chamado pelos blocos TrainDispose (`trainDispose`, `locoFips_pmc_dispose`).
 - **Contadores de tela**: `locomotivas{Rumo,MRS,VLI}.size()`.

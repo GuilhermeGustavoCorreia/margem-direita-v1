@@ -2454,3 +2454,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Seize novo `bloquear_marginal_rechego` (conjunto único: `marginal_a/b/c`, `intervalo4000_a/b`, `pst_switch36`) entre `seize_locoFips_pst` e `mnbCarregados_ocupar3`; onExit faz `bloquear()` nas 5 faixas e liga o switch73 `marginal_a ↔ b`, como o `bloquear_encoste_marginal`. Fica antes do recurso de manobra para não esperar as marginais segurando o `rp_manobrando_carregados`.
   - `mnbCarregados_liberar2` (fim do rechego): `seizeBlocks = { mnbCarregados_ocupar3, bloquear_marginal_rechego }`; onExit volta para LIVRE as faixas com o id do trem.
 - **Arquivos:** `_alp/Agents/CoperXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXI/Connectors.xml`
+
+## ALT-209 — gestor-de-locomotivas-guarda-uma-loco-por-vez
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 13:47 de 19/01 (445,8 h): `bracell.colocar_L2b` sem rota de `_bracell_L1` (offset 19) até `_bracell_L2`. A loco do alívio (99649) era um trem com 2 locos tirado do `locomotivasRumo`; com 22,5 m a mais, o `recuar4` não tirava o trem da L1. O GestorDeLocomotivas guardava o trem como chegava, e trens de 2 locos ficavam juntos no wait.
+- **O que (GestorDeLocomotivas):** entre `guardar_loco` e `sairDaTrack`: `tem_varias_locos` (SelectOutput, `size() > 1`) → `separar_loco` (TrainDecouple, `nCars = 1`); `outDecoupled` → `sairDaTrack`, `out` → volta ao `tem_varias_locos`; F → `sairDaTrack`. Log `separar_loco`.
+- **Arquivos:** `_alp/Agents/GestorDeLocomotivas/EmbeddedObjects.xml`, `_alp/Agents/GestorDeLocomotivas/Connectors.xml`, `docs/gestores.md`
