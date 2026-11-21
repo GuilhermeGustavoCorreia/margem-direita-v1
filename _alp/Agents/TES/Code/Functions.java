@@ -370,7 +370,8 @@ tentar_encostar_novo_lote_3000(mostrar_trace);
 // e o fundo 04 (mesmo espaco da linha 04) aliviado. O fundo 05 fica em outra track.
 if (wait_resto_3000.size() == 0) return;
 
-boolean linhas_livres = linhas_livres_para_encoste();
+boolean linhas_livres = lote_linha_3 == null && lote_linha_4 == null
+                     && lote_linha_04_fundo == null && lote_linha_5 == null;
 if (!linhas_livres) {
     if (mostrar_trace)
         Log.info("TES", "resto_3000", String.format("espera: linha03=%d linha04=%d fundo04=%d linha05=%d", main().getTamanhoDoTrem(lote_linha_3), main().getTamanhoDoTrem(lote_linha_4),
@@ -392,7 +393,8 @@ double tentar_encostar_novo_lote_3000(boolean mostrar_trace)
 // só com as linhas livres e sem outro encoste em andamento (ex.: o resto do trem anterior)
 if (wait_encoste_3000.size() == 0) return;
 
-boolean linhas_livres = linhas_livres_para_encoste();
+boolean linhas_livres = lote_linha_3 == null && lote_linha_4 == null
+                     && lote_linha_04_fundo == null && lote_linha_5 == null;
 if (!linhas_livres || trem_em_encoste != null) {
     if (mostrar_trace)
         Log.info("TES", "novo_lote_3000", String.format("espera: linha03=%d linha04=%d fundo04=%d linha05=%d em_encoste=%b", main().getTamanhoDoTrem(lote_linha_3), main().getTamanhoDoTrem(lote_linha_4),
@@ -483,14 +485,3 @@ Log.info("TES", "estado_waits", "wait_lote_linha04=" + wait_lote_linha04.size() 
     " wait_encoste_3000=" + wait_encoste_3000.size());
 /*ALCODEEND*/}
 
-boolean linhas_livres_para_encoste()
-{/*ALCODESTART::1800400000001*/
-// linhas 03/04/05 livres para o encoste vindo da 3000.
-// Durante o alívio (sz_alivio segura rp_mnb_linha03 + rp_mnb_linha04e5) o lote da linha 03 pode voltar com sobra,
-// e o retomar_descargas chama o encoste de novo no fim do alívio. A linha 03 também precisa estar vazia de fato.
-boolean sem_alivio = rp_mnb_linha03.idle() > 0 && rp_mnb_linha04e5.idle() > 0 && wait_retomar_linha03.size() == 0;
-boolean linha03_vazia = main()._tes_linha03_fim.getTrack().getTrains().isEmpty();
-return sem_alivio && linha03_vazia
-    && lote_linha_3 == null && lote_linha_4 == null
-    && lote_linha_04_fundo == null && lote_linha_5 == null;
-/*ALCODEEND*/}

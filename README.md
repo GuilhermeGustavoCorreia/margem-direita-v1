@@ -210,3 +210,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-196**: GestorDeAlivios — alívio da 4000 pega o acesso_moema antes das faixas
 - **ALT-197**: GestorDeDVs — saída das DVs pega o cruzamento antes da val_via2
 - **ALT-198**: TES — encoste da 3000 só com a linha 03 vazia e sem alívio em andamento
+- **ALT-199**: Desfaz a ALT-198 (encoste do TES)
