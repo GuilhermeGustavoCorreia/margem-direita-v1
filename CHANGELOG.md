@@ -2431,3 +2431,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** travamento em 20:37 de 02/01 (45,3 h). U18 (ADM) parou no `acesso_moema_chegada` com a cauda na `silosMuro_a`; o acesso estava com o MNB89 (alívio do TES), que esperava `intervalo4000_c/b` para o excedente, na fila atrás da loco do alívio da Bracell, que esperava a `silosMuro_a`.
 - **O que (ADM, TES, T39):** a chegada até o ponto de encoste não pede o `rp_acesso_moema` (já anda com as faixas da circulação). Removidos o Seize `acesso_moema_chegada` e os Releases `liberar_acesso_chegada` e `liberar_acesso_espera`; setas religadas (`novo_lote → linha_X000_vazia`, `mov/encosta ... → liberar_faixas_circulacao`, `liberar_faixas_espera → próximo bloco`). O acesso das manobras na moega (`acesso_moema_manobra`, `acesso_moema_encoste`, `acesso_moema_corte`) não muda.
 - **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`, `_alp/Agents/ADM/Connectors.xml`, `_alp/Agents/TES/EmbeddedObjects.xml`, `_alp/Agents/TES/Connectors.xml`, `_alp/Agents/T39/EmbeddedObjects.xml`, `_alp/Agents/T39/Connectors.xml`, `docs/gestores.md`
+
+## ALT-206 — saida-da-4000-pega-mnb-pcx
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** travamento em 22:08 de 03/01 (70,1 h). MNB45 (trem cheio saindo da 4000) segurava `marginal_c/b` e esperava a `marginal_a`; a loco do alívio do Tgrao (MNB53) tinha pego o `mnb_pcx`, nasceu na `marginal_a` e esperava `marginal_b/c`. A saída da 4000 passava pela área comum sem o `mnb_pcx`.
+- **O que (GestorDeAlivios):** Seize novo `ocupar_mnb_pcx_saida_4000` (só `rp_mnb_pcx`) entre `linha_4000_cheia` (T) e `seize_saida_4000`. A devolução é a regra existente do `liberar_faixas_ocupadas` (`eh_alivio`, cauda fora da `marginal_c`).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`

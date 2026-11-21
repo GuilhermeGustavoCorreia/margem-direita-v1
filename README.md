@@ -217,3 +217,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-203**: GestorDeAlivios — alívio volta do excedente para a 4000 antes de ir ao terminal
 - **ALT-204**: Bracell — loco do alívio pega as faixas do caminho (silosMuro_a até intervalo4000_c) e solta ao chegar
 - **ALT-205**: ADM, TES, T39 — chegada até o encoste não pede o acesso Moema
+- **ALT-206**: GestorDeAlivios — saída do trem cheio da 4000 pega o mnb_pcx
