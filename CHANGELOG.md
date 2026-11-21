@@ -2357,3 +2357,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Novo Seize `pegar_acesso_moema_pcx` (só `rp_acesso_moema`) entre `comecar_alivio` e `bloquear_faixas_ate_terminal`; a espera do `diag_alivio_pcx` começa nele.
   - `conjunto_alivio_pcx()` não inclui mais o acesso: `bloquear_faixas_ate_terminal` pega só as faixas.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
+
+## ALT-197 — cruzamento-antes-da-val-via2-na-saida-das-dvs
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** travamento em 11:53 de 04/01 (83,9 h). X18 (saindo do ISN) tinha `val_via2_a` + cruzamento e esperava a `val_via2` livre; o MNB85 (segue direto, prioridade 10) pedia `val_via2` + `isn_linha02_e` + cruzamento no mesmo Seize, ficava na frente da fila da `val_via2` sem o cruzamento e travava o X18.
+- **O que:**
+  - GestorDeDVs: novo Seize `pegar_cruzamento_saida` (só o cruzamento, prioridade 10) entre `liberar_antes_saida` e `ocupar_val_via2_saida`.
+  - GestorDeCirculacao `get_conjunto_saida_dvs`: só `val_via2` + `isn_linha02_e`.
+- **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`

@@ -4760,7 +4760,7 @@ main().gestorDeCirculacao.log_aguarda_licenca((Trem) agent, main().gestorDeCircu
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// saída das DVs: val_via2 + isn_linha02_e (travessão do ISN) + cruzamento da porteira.
+					<Code><![CDATA[// saída das DVs: val_via2 + isn_linha02_e (travessão do ISN); o cruzamento veio antes, no pegar_cruzamento_saida.
 // o trem que segue direto sai pela track199 -> val_via2 -> AMV da porteira
 // o liberar_faixas_circulacao (depois do trainExit) solta junto com as outras faixas do trem
 main().gestorDeCirculacao.faixa_val_via2.ocupar((Trem) agent);
@@ -5026,6 +5026,225 @@ main().gestorDeCirculacao.log_pegou_licenca((Trem) agent, "seize_cruzamento_entr
 		<InitializationType>SPECIFIED_NUMBER</InitializationType>
 		<InitializationDatabaseTableQuery>
 			<Id>1799700000002</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1800300000001</Id>
+		<Name><![CDATA[pegar_cruzamento_saida]]></Name>
+		<X>700</X>
+		<Y>0</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Seize</ClassName>
+				<ItemName>1412336243147</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[seizeFromOnePool]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSets]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.get_conjunto_entrada_dvs((Trem) agent)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[main().gestorDeCirculacao.rp_cruzamento_porteira]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceQuantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizePolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[capacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[maximumCapacity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[sendResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationNode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationAttractor]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationResource]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationX]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationY]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[destinationZ]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[attachResources]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[entityLocationQueue]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[priority]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[10]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTaskProcessing]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[terminatedTasksEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[suspendResumeEntities]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[customizeResourceChoice]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceChoiceCondition]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceSelectionMode]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceRating]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourceComparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[taskStartBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enableTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[timeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[enablePreemption]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsBehavior]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[canceledUnitsRelease]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[pushProtocol]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[forceStatisticsCollection]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("GesDVs", "pegar_cruzamento_saida", String.format("trem=%d na fila", agent.getId()));
+main().gestorDeCirculacao.log_aguarda_licenca((Trem) agent, main().gestorDeCirculacao.get_conjunto_entrada_dvs((Trem) agent));]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitTimeout]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExitPreempted]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onSeizeUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onPrepareUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// saída das DVs: primeiro o cruzamento da porteira (senha da área), sozinho; depois val_via2 + isn_linha02_e
+Log.info("GesDVs", "pegar_cruzamento_saida", String.format("trem=%d pegou", agent.getId()));
+main().gestorDeCirculacao.log_pegou_licenca((Trem) agent, "pegar_cruzamento_saida");]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onRemove]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskTerminated]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[comparison]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskSuspended]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onTaskResumed]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1800300000002</Id>
 			<TableReference/>
 		</InitializationDatabaseTableQuery>
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>

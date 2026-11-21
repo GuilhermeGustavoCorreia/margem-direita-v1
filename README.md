@@ -208,3 +208,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-194**: Traces de licença (`aguarda_licenca`, `pegou_licenca`, `soltou <faixa>`) e dono do cruzamento
 - **ALT-195**: GestorDeCirculacao — Release no início do passo, antes de esperar a próxima licença
 - **ALT-196**: GestorDeAlivios — alívio da 4000 pega o acesso_moema antes das faixas
+- **ALT-197**: GestorDeDVs — saída das DVs pega o cruzamento antes da val_via2

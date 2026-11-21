@@ -206,12 +206,12 @@ return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
 
 ResourcePool[][] get_conjunto_saida_dvs(Trem trem)
 {/*ALCODESTART::1799600000001*/
-// saída das DVs (ocupar_val_via2_saida): val_via2 + isn_linha02_e + cruzamento da porteira.
-// o que o trem já tem não entra (ex.: cruzamento pego junto com o par via1_intermar_a/dv_entrada_c)
+// saída das DVs (ocupar_val_via2_saida): val_via2 + isn_linha02_e.
+// O cruzamento da porteira é a "senha" da área: é pego antes, sozinho, no pegar_cruzamento_saida.
+// o que o trem já tem não entra
 List<ResourcePool> pools = new ArrayList<ResourcePool>();
 pools.add(faixa_val_via2.recurso);
 pools.add(main().gestorDeISN.rp_isn_linha02_e);
-pools.add(rp_cruzamento_porteira);
 pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
 return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
 /*ALCODEEND*/}
