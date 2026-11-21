@@ -2438,3 +2438,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** travamento em 22:08 de 03/01 (70,1 h). MNB45 (trem cheio saindo da 4000) segurava `marginal_c/b` e esperava a `marginal_a`; a loco do alívio do Tgrao (MNB53) tinha pego o `mnb_pcx`, nasceu na `marginal_a` e esperava `marginal_b/c`. A saída da 4000 passava pela área comum sem o `mnb_pcx`.
 - **O que (GestorDeAlivios):** Seize novo `ocupar_mnb_pcx_saida_4000` (só `rp_mnb_pcx`) entre `linha_4000_cheia` (T) e `seize_saida_4000`. A devolução é a regra existente do `liberar_faixas_ocupadas` (`eh_alivio`, cauda fora da `marginal_c`).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
+
+## ALT-207 — volta-do-excedente-ate-criar-loco
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 19:15 de 02/01 (43,25 h): `ir_entrada_terminal` sem rota da `railwayTrack178` (offset 15) até a `pmc_linha2000_e`. Com 81 vagões, o MNB87 encostado a 10 m da `linha4000_a` ainda tinha a ponta na `track178`; da `track178` não há caminho até a `track176`.
+- **O que (GestorDeAlivios):** no ramo T do `sel_esta_no_excedente`: `seize_intervalo_volta` (intervalo4000_c/b, priority 10) → `voltar_do_excedente` (agora até o `pos_linha_4000_criar_loco`, TARGET_AT_POINT_ON_TRACK) → `ir_entrada_terminal1` (cópia do `ir_entrada_terminal`) → `liberar_intervalo_volta` → `para_alivio_terminal_pcx2`. A intervalo4000_c/b fica com o trem até a chegada no terminal.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
