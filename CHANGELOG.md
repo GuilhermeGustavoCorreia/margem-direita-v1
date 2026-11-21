@@ -2424,3 +2424,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Release novo `liberar_faixas_loco_alivio` entre `iniciar_alivio` e `irAteTerminal`; no onExit volta para LIVRE as faixas com `idTremLicenciado == 9999` (mesmo padrão da Suzano).
 - **Efeito colateral aceito:** a `intervalo4000_b` fica com a loco durante o trajeto; nesse período a 4000 não sai nem faz a manobra do excedente.
 - **Arquivos:** `_alp/Agents/Bracell/Code/Functions.java`, `_alp/Agents/Bracell/Code/Functions.xml`, `_alp/Agents/Bracell/EmbeddedObjects.xml`, `_alp/Agents/Bracell/Connectors.xml`, `docs/terminais/bracell.md`
+
+## ALT-205 — chegada-sem-acesso-moema
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** travamento em 20:37 de 02/01 (45,3 h). U18 (ADM) parou no `acesso_moema_chegada` com a cauda na `silosMuro_a`; o acesso estava com o MNB89 (alívio do TES), que esperava `intervalo4000_c/b` para o excedente, na fila atrás da loco do alívio da Bracell, que esperava a `silosMuro_a`.
+- **O que (ADM, TES, T39):** a chegada até o ponto de encoste não pede o `rp_acesso_moema` (já anda com as faixas da circulação). Removidos o Seize `acesso_moema_chegada` e os Releases `liberar_acesso_chegada` e `liberar_acesso_espera`; setas religadas (`novo_lote → linha_X000_vazia`, `mov/encosta ... → liberar_faixas_circulacao`, `liberar_faixas_espera → próximo bloco`). O acesso das manobras na moega (`acesso_moema_manobra`, `acesso_moema_encoste`, `acesso_moema_corte`) não muda.
+- **Arquivos:** `_alp/Agents/ADM/EmbeddedObjects.xml`, `_alp/Agents/ADM/Connectors.xml`, `_alp/Agents/TES/EmbeddedObjects.xml`, `_alp/Agents/TES/Connectors.xml`, `_alp/Agents/T39/EmbeddedObjects.xml`, `_alp/Agents/T39/Connectors.xml`, `docs/gestores.md`
