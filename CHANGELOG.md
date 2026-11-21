@@ -2445,3 +2445,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** exceção em 19:15 de 02/01 (43,25 h): `ir_entrada_terminal` sem rota da `railwayTrack178` (offset 15) até a `pmc_linha2000_e`. Com 81 vagões, o MNB87 encostado a 10 m da `linha4000_a` ainda tinha a ponta na `track178`; da `track178` não há caminho até a `track176`.
 - **O que (GestorDeAlivios):** no ramo T do `sel_esta_no_excedente`: `seize_intervalo_volta` (intervalo4000_c/b, priority 10) → `voltar_do_excedente` (agora até o `pos_linha_4000_criar_loco`, TARGET_AT_POINT_ON_TRACK) → `ir_entrada_terminal1` (cópia do `ir_entrada_terminal`) → `liberar_intervalo_volta` → `para_alivio_terminal_pcx2`. A intervalo4000_c/b fica com o trem até a chegada no terminal.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
+
+## ALT-208 — rechego-coperxi-bloqueia-marginais
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 17:18 de 10/01 (233,3 h): a loco FIPS do rechego do CoperXI (trem 90012) entrou no `trainEnter` em `pos_locoManobra_PST` (`marginal_a`, offset 40) em cima da cauda do MNB25 (retorno do alívio do Eldorado, licenciado na `marginal_a`). O rechego não pedia nenhuma faixa da circulação. A mensagem cita `loco_pcx_starts`, mas o carro adicionado era o do CoperXI.
+- **O que (CoperXI):**
+  - Seize novo `bloquear_marginal_rechego` (conjunto único: `marginal_a/b/c`, `intervalo4000_a/b`, `pst_switch36`) entre `seize_locoFips_pst` e `mnbCarregados_ocupar3`; onExit faz `bloquear()` nas 5 faixas e liga o switch73 `marginal_a ↔ b`, como o `bloquear_encoste_marginal`. Fica antes do recurso de manobra para não esperar as marginais segurando o `rp_manobrando_carregados`.
+  - `mnbCarregados_liberar2` (fim do rechego): `seizeBlocks = { mnbCarregados_ocupar3, bloquear_marginal_rechego }`; onExit volta para LIVRE as faixas com o id do trem.
+- **Arquivos:** `_alp/Agents/CoperXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXI/Connectors.xml`

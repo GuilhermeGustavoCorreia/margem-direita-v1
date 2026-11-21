@@ -9108,7 +9108,7 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
-			<ItemName>mnbCarregados_ocupar3</ItemName>
+			<ItemName>bloquear_marginal_rechego</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
@@ -9119,6 +9119,49 @@
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>CoperXI</ClassName>
 			<ItemName>seize_locoFips_pst</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>-70</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1797208000100</Id>
+		<Name><![CDATA[con_bloquear_marginal_rechego]]></Name>
+		<X>1310</X>
+		<Y>1100</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>mnbCarregados_ocupar3</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>CoperXI</ClassName>
+			<ItemName>bloquear_marginal_rechego</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
