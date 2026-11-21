@@ -212,3 +212,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-198**: TES — encoste da 3000 só com a linha 03 vazia e sem alívio em andamento
 - **ALT-199**: Desfaz a ALT-198 (encoste do TES)
 - **ALT-200**: TES — `lote_linha_3` só fica livre no fim do corte do alívio
+- **ALT-201**: GestorDeAlivios — excedente da 4000 (> 78 vagões) vai para a track178/101 antes de soltar o acesso

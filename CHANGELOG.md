@@ -2389,3 +2389,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `alivio_linha03` (onEnter): guarda o lote em `lote_alivio_03` e não zera mais o `lote_linha_3`.
   - `remover_excesso_03` (onExit, parte que segue, roda depois do `excesso_linha03`): se o `lote_linha_3` ainda é o lote aliviado (não sobrou nada), zera; limpa `lote_alivio_03`.
 - **Arquivos:** `_alp/Agents/TES/Variables.xml`, `_alp/Agents/TES/EmbeddedObjects.xml`
+
+## ALT-201 — excedente-da-4000-na-track178
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 13:38 de 08/01 (181,6 h): MNB03 (alívio da 4000, 82 vagões) voltou do ADM e entrou na 4000 pela ponta da `4000_c`; a 4000 comporta ≈ 80, e a cauda ficou no sw111/`track176`/sw110. Ele soltou o `acesso_moema` e o M60 (TES) passou pelo sw110 (`railwaySwitch110` ocupado por dois trens).
+- **O que (GestorDeAlivios):**
+  - Novo parâmetro `LIMITE_SEM_MANOBRA_4000 = 78`.
+  - Entre `ir_linha_4000` e `liberar_faixas_ate_terminal`: `sel_excede_4000` (vagões > 78?) → `seize_intervalo_4000` (`intervalo4000_c/b`) → `avancar_criar_loco` (ré até `pos_linha_4000_criar_loco`) → `recuar_track178` (frente até `_linha4000_excedente`, na `track101`) → `liberar_intervalo_4000`. Com até 78 vagões segue direto como antes.
+  - Ponto `_linha4000_excedente` criado pelo Guilherme na `railwayTrack101`.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Variables.xml`, `docs/gestores.md`
