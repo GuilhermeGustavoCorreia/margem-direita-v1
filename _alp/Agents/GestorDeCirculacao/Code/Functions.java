@@ -162,23 +162,6 @@ if (trem != null && !trem.resourceUnitsOfPool(rp_mnb_pcx).isEmpty()) return new 
 return new ResourcePool[0];
 /*ALCODEEND*/}
 
-ResourcePool[] incluir_mnb_pcx(ResourcePool[] recursos,Trem trem)
-{/*ALCODESTART::1798140000903*/
-// junta o rp_mnb_pcx (se o trem tiver a unidade) aos recursos de um Release
-List<ResourcePool> pools = new ArrayList<ResourcePool>();
-if (recursos != null) for (ResourcePool rp : recursos) if (!pools.contains(rp)) pools.add(rp);
-for (ResourcePool rp : get_recursos_mnb_pcx(trem)) if (!pools.contains(rp)) pools.add(rp);
-return pools.toArray(new ResourcePool[0]);
-/*ALCODEEND*/}
-
-boolean eh_terminal_tec(Trem trem)
-{/*ALCODESTART::1798300000035*/
-// trens do TEC e do TEC_ACUCAR: ISN -> val_via2_a -> dv_entrada_c -> via1_intermar_a (de frente) -> comecar_encoste do terminal
-if (trem == null) return false;
-String t = trem.get_terminal_name();
-return "tec".equals(t) || "tecAcucar".equals(t);
-/*ALCODEEND*/}
-
 ResourcePool[][] get_conjunto_licenca(Trem trem,Faixa faixa)
 {/*ALCODESTART::1799300000010*/
 // recursos que o trem pega ao licenciar a faixa (licenciar_esta_faixa / licenciar_proxima_faixa)
@@ -223,6 +206,23 @@ List<ResourcePool> pools = new ArrayList<ResourcePool>();
 pools.add(rp_cruzamento_porteira);
 pools.removeIf(rp -> !trem.resourceUnitsOfPool(rp).isEmpty());
 return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}
+
+ResourcePool[] incluir_mnb_pcx(ResourcePool[] recursos,Trem trem)
+{/*ALCODESTART::1798140000903*/
+// junta o rp_mnb_pcx (se o trem tiver a unidade) aos recursos de um Release
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+if (recursos != null) for (ResourcePool rp : recursos) if (!pools.contains(rp)) pools.add(rp);
+for (ResourcePool rp : get_recursos_mnb_pcx(trem)) if (!pools.contains(rp)) pools.add(rp);
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}
+
+boolean eh_terminal_tec(Trem trem)
+{/*ALCODESTART::1798300000035*/
+// trens do TEC e do TEC_ACUCAR: ISN -> val_via2_a -> dv_entrada_c -> via1_intermar_a (de frente) -> comecar_encoste do terminal
+if (trem == null) return false;
+String t = trem.get_terminal_name();
+return "tec".equals(t) || "tecAcucar".equals(t);
 /*ALCODEEND*/}
 
 String texto_trem_id(int id)
@@ -285,3 +285,4 @@ try {
     pular_mnb_pcx = false;
 }
 /*ALCODEEND*/}
+
