@@ -2471,3 +2471,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `bloquear_4000` pega também `intervalo4000_b/c` (mesmo conjunto da linha 4000).
   - Release novo `liberar_intervalo_criacao` entre `ir_entrada_terminal` e `para_alivio_terminal_pcx2`, com `get_recursos_intervalo_criacao(trem)` (só os pools que o trem possui).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/Code/Functions.xml`, `docs/gestores.md`
+
+## ALT-211 — configuracao-da-simulacao-com-semente
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** o commit `dd361e7` (campos de semente na interface) partiu de uma cópia antiga do `interface_simulacao.html` e apagou o campo Data de início e o leitor do log `[hh:mm - dd/mm]` (`RX_DATA`, `horasDesdeInicio`). As colunas do CSV passaram a `duracao_h;warmup_h;replicacoes;semente_tipo;semente`, e o Main lia o `simulacao.csv` pela posição (a 4ª coluna seria lida como data).
+- **O que:**
+  - Interface: junta as duas versões (semente + data de início + leitor do log). Colunas: `duracao_h;warmup_h;replicacoes;data_inicio;semente_tipo;semente`.
+  - Main `carregar_configuracao`: lê o `simulacao.csv` pelo nome da coluna; `data_inicio`, `semente_tipo` (padrão `fixa`) e `semente` (padrão 1) são opcionais. Variáveis novas `semente_tipo` (String) e `semente` (long), mostradas no log `[config]`. Ainda não mudam a rodada (fica para o experimento de replicações).
+  - `simulacao/config/simulacao.csv` com as 6 colunas.
+- **Arquivos:** `simulacao/interface_simulacao.html`, `simulacao/config/simulacao.csv`, `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/Main/Variables.xml`

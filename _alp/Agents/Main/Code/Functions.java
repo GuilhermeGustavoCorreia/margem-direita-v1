@@ -453,23 +453,49 @@ String pasta = pasta_simulacao;
 int erros = 0;
 traceln("[config] pasta: " + new java.io.File(pasta).getAbsolutePath());
 
-// ---- config/simulacao.csv: duracao_h;warmup_h;replicacoes;data_inicio ----
-ArrayList<String[]> sim = ler_csv(pasta + "/config/simulacao.csv");
-if (sim.isEmpty() || sim.get(0).length < 3)
-	error("[config] simulacao.csv: esperado uma linha com duracao_h;warmup_h;replicacoes");
+// ---- config/simulacao.csv: lido pelo nome da coluna (a ordem pode mudar na interface) ----
+// colunas: duracao_h;warmup_h;replicacoes;data_inicio;semente_tipo;semente (as 3 últimas são opcionais)
+String caminho_sim = pasta + "/config/simulacao.csv";
+ArrayList<String[]> sim = ler_csv(caminho_sim);
+String[] cab = new String[0];
+try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.InputStreamReader(
+		new java.io.FileInputStream(new java.io.File(caminho_sim).getAbsoluteFile()), "UTF-8"))) {
+	String h = br.readLine();
+	if (h != null) cab = h.replace("\uFEFF", "").split(";", -1);
+} catch (java.io.IOException ex) {
+	error("[config] erro ao ler o cabeçalho de simulacao.csv: " + ex.getMessage());
+}
+java.util.Map<String, String> cfg = new java.util.HashMap<>();
+if (!sim.isEmpty()) {
+	for (int i = 0; i < cab.length && i < sim.get(0).length; i++) cfg.put(cab[i].trim().toLowerCase(), sim.get(0)[i].trim());
+}
+if (!cfg.containsKey("duracao_h") || !cfg.containsKey("warmup_h") || !cfg.containsKey("replicacoes"))
+	error("[config] simulacao.csv: faltam colunas duracao_h, warmup_h ou replicacoes (cabeçalho: " + String.join(";", cab) + ")");
 try {
-	duracao_h   = Double.parseDouble(sim.get(0)[0].replace(',', '.'));
-	warmup_h    = Double.parseDouble(sim.get(0)[1].replace(',', '.'));
-	replicacoes = Integer.parseInt(sim.get(0)[2]);
+	duracao_h   = Double.parseDouble(cfg.get("duracao_h").replace(',', '.'));
+	warmup_h    = Double.parseDouble(cfg.get("warmup_h").replace(',', '.'));
+	replicacoes = Integer.parseInt(cfg.get("replicacoes"));
 } catch (NumberFormatException ex) {
 	error("[config] simulacao.csv: valor não numérico (" + ex.getMessage() + ")");
 }
 // data_inicio (opcional, dd/mm/aaaa): o tempo 0 do log é 00:00 desse dia
-if (sim.get(0).length >= 4 && !sim.get(0)[3].trim().isEmpty()) {
+String txt_data = cfg.getOrDefault("data_inicio", "");
+if (!txt_data.isEmpty()) {
 	try {
-		Log.data_inicio = java.time.LocalDate.parse(sim.get(0)[3].trim(), java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		Log.data_inicio = java.time.LocalDate.parse(txt_data, java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 	} catch (java.time.format.DateTimeParseException ex) {
-		error("[config] simulacao.csv: data_inicio inválida, use dd/mm/aaaa (" + sim.get(0)[3] + ")");
+		error("[config] simulacao.csv: data_inicio inválida, use dd/mm/aaaa (" + txt_data + ")");
+	}
+}
+// semente (opcional): fixa (reproduzível) ou variavel (sorteada a cada rodada)
+semente_tipo = cfg.getOrDefault("semente_tipo", "fixa").equalsIgnoreCase("variavel") ? "variavel" : "fixa";
+semente = 1;
+String txt_semente = cfg.getOrDefault("semente", "");
+if (!txt_semente.isEmpty()) {
+	try {
+		semente = Long.parseLong(txt_semente);
+	} catch (NumberFormatException ex) {
+		error("[config] simulacao.csv: semente não numérica (" + txt_semente + ")");
 	}
 }
 String st_sim = "OK";
@@ -477,8 +503,10 @@ if (duracao_h <= 0)          { st_sim = "ERRO: duração deve ser > 0"; erros++;
 else if (warmup_h < 0)       { st_sim = "ERRO: warm-up negativo"; erros++; }
 else if (warmup_h >= duracao_h) { st_sim = "ERRO: warm-up >= duração"; erros++; }
 else if (replicacoes < 1)    { st_sim = "ERRO: replicações < 1"; erros++; }
-traceln(String.format("[config] simulacao.csv: duracao=%.1fh warmup=%.1fh replicacoes=%d data_inicio=%s | %s",
-	duracao_h, warmup_h, replicacoes, Log.data_inicio.format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")), st_sim));
+if (semente_tipo.equals("fixa") && semente < 0) { st_sim = "ERRO: semente negativa"; erros++; }
+traceln(String.format("[config] simulacao.csv: duracao=%.1fh warmup=%.1fh replicacoes=%d data_inicio=%s semente=%s%s | %s",
+	duracao_h, warmup_h, replicacoes, Log.data_inicio.format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+	semente_tipo, semente_tipo.equals("fixa") ? " " + semente : "", st_sim));
 
 // ---- config/terminais_moega.csv: agente;instancia;segmento;rumo;mrs;vli ----
 ArrayList<String[]> terms = ler_csv(pasta + "/config/terminais_moega.csv");

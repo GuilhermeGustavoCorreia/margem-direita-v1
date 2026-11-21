@@ -222,3 +222,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-208**: CoperXI — rechego pega as marginais e a intervalo4000 antes de criar a loco
 - **ALT-209**: GestorDeLocomotivas — separa trens de várias locos antes de guardar
 - **ALT-210**: GestorDeAlivios — loco nova da 4000 pega as faixas (com a intervalo4000_b/c) depois das locos FIPS
+- **ALT-211**: Interface e Main — simulacao.csv com data de início e semente, lido pelo nome da coluna

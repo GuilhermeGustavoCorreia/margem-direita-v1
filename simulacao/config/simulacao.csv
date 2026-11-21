@@ -1,2 +1,2 @@
-duracao_h;warmup_h;replicacoes;data_inicio
-720;48;5;01/01/2026
+duracao_h;warmup_h;replicacoes;data_inicio;semente_tipo;semente
+720;48;5;01/01/2026;fixa;1

@@ -192,6 +192,7 @@ svg text{font-family:'Open Sans';font-size:11px}
         </span></label>
       <label>Warm-up (h)<input type="number" id="sWarmup" min="0" step="1"></label>
       <label>Número de replicações<input type="number" id="sReplic" min="1" step="1"></label>
+      <label>Data de início (00:00 do dia)<input type="date" id="sDataInicio"></label>
       <label>Semente aleatória<select id="sSementeTipo"><option value="fixa">fixa (reproduzível)</option><option value="variavel">variável (aleatória)</option></select></label>
       <label>Valor da semente<input type="number" id="sSemente" min="0" step="1"></label>
     </div>
@@ -712,11 +713,15 @@ $('btnTecLer').onclick = () => lerTec(false);
 /* =========================================================
    4. CONFIGURAÇÕES — parâmetros da simulação
    ========================================================= */
-const COLS_SIM = ['duracao_h','warmup_h','replicacoes','semente_tipo','semente'];
-S.sim = {duracao_h:720, warmup_h:48, replicacoes:5, semente_tipo:'fixa', semente:1};
+const COLS_SIM = ['duracao_h','warmup_h','replicacoes','data_inicio','semente_tipo','semente'];
+S.sim = {duracao_h:720, warmup_h:48, replicacoes:5, data_inicio:`01/01/${new Date().getFullYear()}`, semente_tipo:'fixa', semente:1};
+// data_inicio fica em dd/mm/aaaa no CSV; o input date usa aaaa-mm-dd
+const dataParaInput = d => { const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(d||''); return m ? `${m[3]}-${m[2]}-${m[1]}` : ''; };
+const inputParaData = v => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v||''); return m ? `${m[3]}/${m[2]}/${m[1]}` : ''; };
 
 function renderSim(){
   $('sDuracao').value = S.sim.duracao_h; $('sWarmup').value = S.sim.warmup_h; $('sReplic').value = S.sim.replicacoes;
+  $('sDataInicio').value = dataParaInput(S.sim.data_inicio);
   $('sSementeTipo').value = S.sim.semente_tipo; $('sSemente').value = S.sim.semente; $('sSemente').disabled = S.sim.semente_tipo !== 'fixa';
   document.querySelectorAll('.atalho').forEach(b => b.classList.toggle('ativo', +b.dataset.h === S.sim.duracao_h));
   const util = S.sim.duracao_h - S.sim.warmup_h;
@@ -732,6 +737,7 @@ function validarSim(){
   if(v.warmup_h < 0) e.push('warm-up não pode ser negativo');
   if(v.warmup_h >= v.duracao_h) e.push('warm-up deve ser menor que o tempo de simulação');
   if(!(v.replicacoes >= 1) || !Number.isInteger(v.replicacoes)) e.push('replicações deve ser inteiro ≥ 1');
+  if(!/^\d{2}\/\d{2}\/\d{4}$/.test(v.data_inicio || '')) e.push('data de início inválida');
   if(v.semente_tipo === 'fixa' && !(Number.isInteger(v.semente) && v.semente >= 0)) e.push('semente deve ser inteiro ≥ 0');
   return e;
 }
@@ -742,6 +748,12 @@ function validarSim(){
     const erros = validarSim();
     msg('msgSim', erros.length ? '✕ ' + erros.join('<br>✕ ') : 'Alterações não salvas — clique em <b>Salvar</b>.', erros.length ? 'err' : 'warn');
   }));
+$('sDataInicio').addEventListener('change', e => {
+  S.sim.data_inicio = inputParaData(e.target.value);
+  renderSim();
+  const erros = validarSim();
+  msg('msgSim', erros.length ? '✕ ' + erros.join('<br>✕ ') : 'Alterações não salvas — clique em <b>Salvar</b>.', erros.length ? 'err' : 'warn');
+});
 document.querySelectorAll('.atalho').forEach(b => b.onclick = () => {
   $('sDuracao').value = b.dataset.h;
   $('sDuracao').dispatchEvent(new Event('change'));
@@ -759,6 +771,7 @@ async function lerSim(){
   if(!txt){ msg('msgSim', 'Pasta sem config/simulacao.csv — mostrando valores padrão. Salve para criar o arquivo.', 'warn'); return; }
   const l = parseCSV(txt)[0] || {};
   S.sim = {duracao_h: num(l.duracao_h) || S.sim.duracao_h, warmup_h: num(l.warmup_h), replicacoes: Math.max(1, Math.round(num(l.replicacoes)) || 1),
+    data_inicio: /^\d{2}\/\d{2}\/\d{4}$/.test((l.data_inicio||'').trim()) ? l.data_inicio.trim() : S.sim.data_inicio,
     semente_tipo: l.semente_tipo === 'variavel' ? 'variavel' : 'fixa', semente: l.semente !== undefined && l.semente !== '' ? Math.round(num(l.semente)) : S.sim.semente};
   renderSim();
   msg('msgSim', '✓ Carregado de config/simulacao.csv', 'ok');
@@ -768,11 +781,22 @@ async function lerSim(){
    4. LOGS — lê logs/sim.log (fica fora da pasta simulacao, por isso tem handle próprio)
    ========================================================= */
 S.log = {handle:null, linhas:[], info:[], timer:null, faixa:null};
-/* Formato novo do logger:  [    1.228h] INFO  CoperXI         evento   mensagem
+/* Formato do logger:       [01:13 - 01/01] INFO  CoperXI   evento   mensagem  (hh:mm - dd/mm desde 00:00 de data_inicio)
+   Formato em horas:        [    1.228h] INFO  CoperXI         evento   mensagem  (logs antigos)
    Formato antigo:          [config] ...  /  [%.1f][Tag][...] ...  (tempo em segundos) */
+const RX_DATA = /^\[(\d{2}):(\d{2}) - (\d{2})\/(\d{2})\]\s+([A-Z]+)\s+(\S+)\s+(\S+)?\s*(.*)$/;
 const RX_NOVO = /^\[\s*(-?[\d.,]+)h\]\s+([A-Z]+)\s+(\S+)\s+(\S+)?\s*(.*)$/;
+// horas desde 00:00 de data_inicio; mês menor que o do início = ano seguinte
+function horasDesdeInicio(hh, mi, dd, mm){
+  const b = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(S.sim.data_inicio || '') || [0, '01', '01', String(new Date().getFullYear())];
+  const d0 = +b[1], m0 = +b[2], a0 = +b[3];
+  const a = (+mm < m0) ? a0 + 1 : a0;
+  return (Date.UTC(a, +mm - 1, +dd, +hh, +mi) - Date.UTC(a0, m0 - 1, d0)) / 3.6e6;
+}
 function parseLinha(l, tAnterior){
-  let m = l.match(RX_NOVO);
+  let m = l.match(RX_DATA);
+  if(m) return {t: horasDesdeInicio(m[1], m[2], m[3], m[4]), nivel: m[5], agente: m[6], evento: m[7] || ''};
+  m = l.match(RX_NOVO);
   if(m) return {t: parseFloat(m[1].replace(',','.')), nivel: m[2], agente: m[3], evento: m[4] || ''};
   m = l.match(/\[(-?\d+(?:[.,]\d+)?)\]\[([^\]]+)\]/);               // [123.4][Tag] (segundos)
   if(m) return {t: parseFloat(m[1].replace(',','.'))/3600, nivel: RX_ERRO.test(l)?'ERRO':RX_AVISO.test(l)?'AVISO':'INFO', agente: m[2], evento: ''};
