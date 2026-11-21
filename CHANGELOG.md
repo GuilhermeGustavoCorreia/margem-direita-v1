@@ -2399,3 +2399,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Entre `ir_linha_4000` e `liberar_faixas_ate_terminal`: `sel_excede_4000` (vagões > 78?) → `seize_intervalo_4000` (`intervalo4000_c/b`) → `avancar_criar_loco` (ré até `pos_linha_4000_criar_loco`) → `recuar_track178` (frente até `_linha4000_excedente`, na `track101`) → `liberar_intervalo_4000`. Com até 78 vagões segue direto como antes.
   - Ponto `_linha4000_excedente` criado pelo Guilherme na `railwayTrack101`.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Variables.xml`, `docs/gestores.md`
+
+## ALT-202 — corrige-onexit-do-recuar-track178
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste
+- **Problema:** erro de compilação em 01:54 de 01/01 (`agent cannot be resolved` no onExit do `recuar_track178`): em TrainMoveTo a variável é `train`.
+- **O que (GestorDeAlivios):** `recuar_track178` onExit usa `train.getId()`.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`

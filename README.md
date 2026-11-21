@@ -213,3 +213,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-199**: Desfaz a ALT-198 (encoste do TES)
 - **ALT-200**: TES — `lote_linha_3` só fica livre no fim do corte do alívio
 - **ALT-201**: GestorDeAlivios — excedente da 4000 (> 78 vagões) vai para a track178/101 antes de soltar o acesso
+- **ALT-202**: GestorDeAlivios — corrige o onExit do `recuar_track178` (`train` em vez de `agent`)

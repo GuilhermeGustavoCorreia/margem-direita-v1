@@ -2665,7 +2665,7 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[Log.info("GesAlivios", "excedente_4000", String.format("trem=%d excedente na track178/101", agent.getId()));]]></Code>
+					<Code><![CDATA[Log.info("GesAlivios", "excedente_4000", String.format("trem=%d excedente na track178/101", train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
