@@ -283,6 +283,57 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>pegar_acesso_moema_pcx</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>-80</Y>
+			</Point>
+			<Point>
+				<X>30</X>
+				<Y>-80</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1800200000009</Id>
+		<Name><![CDATA[connector_pegar_acesso_moema_pcx]]></Name>
+		<X>2090</X>
+		<Y>720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
+			<ItemName>pegar_acesso_moema_pcx</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>GestorDeAlivios</ClassName>
 			<ItemName>bloquear_faixas_ate_terminal</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
@@ -296,8 +347,16 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>10</X>
 				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>10</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>30</X>
+				<Y>80</Y>
 			</Point>
 		</Points>
 	</Connector>

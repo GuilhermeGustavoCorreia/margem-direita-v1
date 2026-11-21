@@ -796,9 +796,9 @@ for (Faixa f : get_faixas_saida_4000()) {
 
 ResourcePool[][] conjunto_alivio_pcx()
 {/*ALCODESTART::1798200000503*/
-// alívio do PCX: rp_acesso_moema primeiro, depois as faixas até o terminal (um Seize só)
+// alívio do PCX: faixas até o terminal. O rp_acesso_moema é pego antes, sozinho, no pegar_acesso_moema_pcx:
+// só quem tem o acesso entra na fila das linhas da área
 ArrayList<ResourcePool> todos = new ArrayList<>();
-todos.add(main().gestorDeCirculacao.rp_acesso_moema);
 ResourcePool[][] faixas = todosNumConjunto(alivio_em_andamento_pcx.getConjuntoRecursos_faixas());
 for (ResourcePool[] linha : faixas) {
     if (linha == null) continue;

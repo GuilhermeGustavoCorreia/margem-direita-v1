@@ -2348,3 +2348,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Nova função `liberar_faixas_sem_mnb_pcx(trem)` e variável `pular_mnb_pcx`: mesma lógica do `liberar_faixas_ocupadas` sem soltar o `mnb_pcx` (que depende da `marginal_c` já licenciada).
   - `liberar_faixas_usadas` continua no fim do passo.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeCirculacao/Code/Functions.xml`, `_alp/Agents/GestorDeCirculacao/Variables.xml`, `_alp/Agents/GestorDeCirculacao/EmbeddedObjects.xml`, `_alp/Agents/GestorDeCirculacao/Connectors.xml`, `docs/gestores.md`
+
+## ALT-196 — acesso-moema-antes-das-faixas-no-alivio-da-4000
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** travamento em 18:09 de 03/01 (68,2 h). U08 (TES, lote 45990) pegou o `acesso_moema` e ficou no `seize` do encoste da linha 03 (`rp_mnb_linha03` + `linha3000_b..e`, todos livres). O MNB15 (alívio da 4000) pedia `acesso_moema` + faixas no mesmo Seize e estava na frente da fila da `linha3000_c` sem ter o acesso, travando o U08.
+- **O que (GestorDeAlivios):**
+  - Novo Seize `pegar_acesso_moema_pcx` (só `rp_acesso_moema`) entre `comecar_alivio` e `bloquear_faixas_ate_terminal`; a espera do `diag_alivio_pcx` começa nele.
+  - `conjunto_alivio_pcx()` não inclui mais o acesso: `bloquear_faixas_ate_terminal` pega só as faixas.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
