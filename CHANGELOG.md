@@ -2461,3 +2461,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** exceção em 13:47 de 19/01 (445,8 h): `bracell.colocar_L2b` sem rota de `_bracell_L1` (offset 19) até `_bracell_L2`. A loco do alívio (99649) era um trem com 2 locos tirado do `locomotivasRumo`; com 22,5 m a mais, o `recuar4` não tirava o trem da L1. O GestorDeLocomotivas guardava o trem como chegava, e trens de 2 locos ficavam juntos no wait.
 - **O que (GestorDeLocomotivas):** entre `guardar_loco` e `sairDaTrack`: `tem_varias_locos` (SelectOutput, `size() > 1`) → `separar_loco` (TrainDecouple, `nCars = 1`); `outDecoupled` → `sairDaTrack`, `out` → volta ao `tem_varias_locos`; F → `sairDaTrack`. Log `separar_loco`.
 - **Arquivos:** `_alp/Agents/GestorDeLocomotivas/EmbeddedObjects.xml`, `_alp/Agents/GestorDeLocomotivas/Connectors.xml`, `docs/gestores.md`
+
+## ALT-210 — loco-da-4000-pega-faixas-depois-das-locos
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 14:45 de 30/01 (710,75 h): `loco_pcx_starts` criou as locos na `intervalo4000_b` em cima do MNB59 (retorno do alívio da Bracell). A saída da 4000 foi conferida no `inject()`, antes das 14:40; o trem ficou esperando locos FIPS no `usar_recurso_loco_pcx` (0/8 livres) e, quando pegou, foi direto ao `trainEnter` sem nada segurando a `intervalo4000_b`.
+- **O que (GestorDeAlivios):**
+  - Ordem invertida: `loco_pcx_starts → usar_recurso_loco_pcx → bloquear_4000 → trainEnter`.
+  - `bloquear_4000` pega também `intervalo4000_b/c` (mesmo conjunto da linha 4000).
+  - Release novo `liberar_intervalo_criacao` entre `ir_entrada_terminal` e `para_alivio_terminal_pcx2`, com `get_recursos_intervalo_criacao(trem)` (só os pools que o trem possui).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/Code/Functions.xml`, `docs/gestores.md`

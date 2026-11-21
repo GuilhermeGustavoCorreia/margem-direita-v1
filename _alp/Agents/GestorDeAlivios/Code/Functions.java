@@ -851,3 +851,15 @@ Log.warn("GesAlivios", "alivio_espera", String.format("  overload | TES=%.2f ADM
     main().tes.getOverloadVazios(), main().adm.getOverloadVazios(), t39.getOverloadVazios()));
 /*ALCODEEND*/}
 
+ResourcePool[] get_recursos_intervalo_criacao(Trem trem)
+{/*ALCODESTART::1797210000001*/
+// loco nova da 4000: intervalo4000_b/c pegas no bloquear_4000 (a loco nasce na intervalo4000_b).
+// Só os pools que o trem possui: o trem que já estava na 4000 passa aqui sem eles.
+List<ResourcePool> pools = new ArrayList<>();
+for (Faixa f : java.util.List.of(
+        main().gestorDeCirculacao.faixa_intervalo4000_b,
+        main().gestorDeCirculacao.faixa_intervalo4000_c)) {
+    if (!trem.resourceUnitsOfPool(f.recurso).isEmpty()) pools.add(f.recurso);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}

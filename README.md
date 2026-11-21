@@ -221,3 +221,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-207**: GestorDeAlivios — volta do excedente vai até o criar_loco, com a intervalo4000 até o terminal
 - **ALT-208**: CoperXI — rechego pega as marginais e a intervalo4000 antes de criar a loco
 - **ALT-209**: GestorDeLocomotivas — separa trens de várias locos antes de guardar
+- **ALT-210**: GestorDeAlivios — loco nova da 4000 pega as faixas (com a intervalo4000_b/c) depois das locos FIPS
