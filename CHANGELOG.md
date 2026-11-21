@@ -2366,3 +2366,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - GestorDeDVs: novo Seize `pegar_cruzamento_saida` (só o cruzamento, prioridade 10) entre `liberar_antes_saida` e `ocupar_val_via2_saida`.
   - GestorDeCirculacao `get_conjunto_saida_dvs`: só `val_via2` + `isn_linha02_e`.
 - **Arquivos:** `_alp/Agents/GestorDeCirculacao/Code/Functions.java`, `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `_alp/Agents/GestorDeDVs/Connectors.xml`, `docs/gestores.md`
+
+## ALT-198 — encoste-do-tes-espera-o-alivio
+- **Data:** 2026-11-20
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 16:25 de 06/01 (136,4 h): `tes.ir_linha03.outHit` sem conexão. O alívio da 4000 pegou o lote da linha 03 (`lote_linha_3` ficou null), o fim da descarga da moega 04 soltou o resto da 3000 para o encoste, e o alívio deixou 4 vazios na linha 03; o encoste (I06/64138) bateu neles.
+- **O que (TES):** nova função `linhas_livres_para_encoste()`, usada pelo `tentar_encostar_resto_3000` e pelo `tentar_encostar_novo_lote_3000`: além dos lotes das linhas 03/04/05 e fundo 04 vazios, exige que não haja alívio em andamento (`rp_mnb_linha03` e `rp_mnb_linha04e5` livres, `wait_retomar_linha03` vazio) e que a track do `_tes_linha03_fim` esteja sem trem.
+- **Arquivos:** `_alp/Agents/TES/Code/Functions.java`, `_alp/Agents/TES/Code/Functions.xml` (o repositório não tem ficha `docs/terminais/tes.md`)
