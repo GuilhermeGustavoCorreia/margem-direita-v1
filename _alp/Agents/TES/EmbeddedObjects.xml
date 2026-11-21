@@ -3227,7 +3227,7 @@ ficar_linha04.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792521700008</Id>
 		<Name><![CDATA[recuar_trocar_via_1]]></Name>
-		<X>1680</X>
+		<X>1660</X>
 		<Y>530</Y>
 		<Label>
 			<X>-20</X>
@@ -3286,6 +3286,12 @@ ficar_linha04.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[{ main().railwayTrack101 }]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3373,6 +3379,12 @@ ficar_linha04.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[{ main().railwayTrack101 }]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -9997,6 +10009,9 @@ Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazi
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -10430,6 +10445,9 @@ Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazi
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -10862,6 +10880,9 @@ Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazi
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -17721,6 +17742,12 @@ acoplar_locos_3000.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[{ main().railwayTrack101 }]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>

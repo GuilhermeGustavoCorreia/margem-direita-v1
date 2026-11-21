@@ -2981,6 +2981,9 @@ if (car instanceof Locomotiva) {
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -3520,6 +3523,9 @@ encostar_L3.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4061,6 +4067,9 @@ encostar_L4.take(agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -4545,6 +4554,9 @@ encostar_L4.take(agent)]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>

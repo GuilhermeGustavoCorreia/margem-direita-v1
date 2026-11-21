@@ -648,6 +648,9 @@
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">

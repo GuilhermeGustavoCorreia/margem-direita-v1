@@ -47,6 +47,9 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[tracks_evitar]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
@@ -194,6 +197,9 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[tracks_evitar]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
@@ -437,6 +443,9 @@ main.pos_Valongo]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[tracks_evitar]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
@@ -447,9 +456,9 @@ main.pos_Valongo]]></Code>
 			<Parameter>
 				<Name><![CDATA[positionOnTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[sentidoPontaDaPraia? 
-main.pos_PontaDaPraia : 
-main.pos_Valongo]]></Code>
+					<Code><![CDATA[	sentidoPontaDaPraia? 
+	main.pos_PontaDaPraia : 
+	main.pos_Valongo]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -594,6 +603,9 @@ main.pos_Valongo]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[tracksToAvoid]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[tracks_evitar]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[targetType]]></Name>
@@ -604,9 +616,11 @@ main.pos_Valongo]]></Code>
 			<Parameter>
 				<Name><![CDATA[positionOnTrack]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[sentidoPontaDaPraia? 
-main.pos_PontaDaPraia : 
-main.pos_Valongo]]></Code>
+					<Code><![CDATA[
+	sentidoPontaDaPraia? 
+	main.pos_PontaDaPraia : 
+	main.pos_Valongo
+]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

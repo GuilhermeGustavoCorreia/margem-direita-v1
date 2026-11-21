@@ -953,6 +953,9 @@ main()._suzano_inversao_6000c]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -1618,6 +1621,9 @@ descarregar_L1.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -2041,6 +2047,9 @@ descarregar_L2.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -2463,6 +2472,9 @@ descarregar_L3.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4035,6 +4047,9 @@ main()._suzano_inversao_6000c]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -4335,6 +4350,9 @@ main()._suzano_inversao_6000c]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -4637,6 +4655,9 @@ main()._suzano_inversao_6000c]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -4938,6 +4959,9 @@ main()._suzano_inversao_6000c]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -5565,6 +5589,9 @@ descarregar_L1.take(agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -5987,6 +6014,9 @@ descarregar_L2.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -6415,6 +6445,9 @@ main()._suzano_inversao_6000c]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -7813,6 +7846,9 @@ main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -8235,6 +8271,9 @@ loteVazios_L1 = null;]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -8659,6 +8698,9 @@ loteVazios_L2 = null;]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -9081,6 +9123,9 @@ loteVazios_L3 = null;]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -9505,6 +9550,9 @@ main()._suzano_inversao_6000c]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>

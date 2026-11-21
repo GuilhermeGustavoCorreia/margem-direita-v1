@@ -1782,6 +1782,9 @@ lote_costaLeite_linhaTerra = ((Trem) train2);
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -2009,6 +2012,9 @@ lote_costaLeite_lateralMoega = ((Trem) train2);
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -2234,6 +2240,9 @@ lote_costaLeite_linhaMar_a = ((Trem) train2);
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -2790,6 +2799,9 @@ descarga.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -9482,6 +9494,9 @@ alivio_meio.take(agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>

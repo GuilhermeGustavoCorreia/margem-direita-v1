@@ -12259,6 +12259,9 @@ proxima_peca((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
@@ -12348,6 +12351,9 @@ proxima_peca((Trem) agent);]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[mostrarLogs]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[tracks_evitar]]></Name>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
