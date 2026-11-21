@@ -9899,7 +9899,8 @@ alivio_linha03.take(lote_linha_3);]]></Code>
 // lote entrando no acoplamento do alivio
 vgs_lote_alivio    = ((Trem) agent).size();
 vazios_lote_alivio = ((Trem) agent).getNumeroDeVagoesVazios();
-lote_linha_3 = null;
+// o lote_linha_3 só fica livre no fim do corte (remover_excesso_03), se o alívio levar tudo
+lote_alivio_03 = (Trem) agent;
 Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazios)", agent.getId(), vgs_lote_alivio, vazios_lote_alivio));]]></Code>
 				</Value>
 			</Parameter>
@@ -11344,7 +11345,10 @@ Log.info("TES", "alivio_inicio", String.format("pega lote=%d (%d vagoes, %d vazi
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("remover_excesso_03", train, "parte que segue");]]></Code>
+					<Code><![CDATA[log_analise("remover_excesso_03", train, "parte que segue");
+// roda depois do excesso_linha03: se não sobrou nada, a linha 03 fica livre agora
+if (lote_alivio_03 != null && lote_linha_3 == lote_alivio_03) lote_linha_3 = null;
+lote_alivio_03 = null;]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

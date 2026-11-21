@@ -2379,3 +2379,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Status:** aplicada
 - **O que:** desfaz a ALT-198 (`linhas_livres_para_encoste` no TES), a pedido do Guilherme. Com a checagem física da linha 03, o encoste testado no fim do alívio (trem do alívio ainda saindo da linha 03) ficava esperando e ninguém testava de novo: o TES parou às 04:41 de 01/01.
 - **Arquivos:** `_alp/Agents/TES/Code/Functions.java`, `_alp/Agents/TES/Code/Functions.xml`
+
+## ALT-200 — lote-da-linha-03-so-fica-livre-no-fim-do-corte
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 16:25 de 06/01 (136,4 h, `tes.ir_linha03.outHit`). O `alivio_linha03` zerava o `lote_linha_3` ao começar a pegar o lote; nessa janela o fim da descarga da moega 04 soltou o resto da 3000 para o encoste; o alívio levou 2 e devolveu 4 vazios para a linha 03, e o encoste bateu neles.
+- **O que (TES):**
+  - Nova variável `lote_alivio_03` (Trem).
+  - `alivio_linha03` (onEnter): guarda o lote em `lote_alivio_03` e não zera mais o `lote_linha_3`.
+  - `remover_excesso_03` (onExit, parte que segue, roda depois do `excesso_linha03`): se o `lote_linha_3` ainda é o lote aliviado (não sobrou nada), zera; limpa `lote_alivio_03`.
+- **Arquivos:** `_alp/Agents/TES/Variables.xml`, `_alp/Agents/TES/EmbeddedObjects.xml`
