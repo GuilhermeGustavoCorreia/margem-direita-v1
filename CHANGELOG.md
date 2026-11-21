@@ -2406,3 +2406,10 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Problema:** erro de compilação em 01:54 de 01/01 (`agent cannot be resolved` no onExit do `recuar_track178`): em TrainMoveTo a variável é `train`.
 - **O que (GestorDeAlivios):** `recuar_track178` onExit usa `train.getId()`.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`
+
+## ALT-203 — volta-do-excedente-antes-de-ir-ao-terminal
+- **Data:** 2026-11-21
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** exceção em 07:51 de 02/01: `ir_entrada_terminal` sem rota da `railwayTrack101` (sentido do fim da track) até a `linha2000_e`. Depois da manobra do excedente, as locos ficam na `track101`, viradas para o sw103.
+- **O que (GestorDeAlivios):** entre `bloquear_faixas_ate_terminal` e `ir_entrada_terminal`: `sel_esta_no_excedente` (ocupa `track178` ou `track101`?) → `voltar_do_excedente` (TrainMoveTo de ré até 10 m da `linha4000_a`, como o `ir_linha_4000`). O trem já tem acesso e faixas nesse momento.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
