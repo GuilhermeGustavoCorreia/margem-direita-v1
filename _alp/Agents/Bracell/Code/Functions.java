@@ -76,9 +76,16 @@ try {
 
 ArrayList<Faixa>  get_faixas_primeiro_alivio()
 {/*ALCODESTART::1790638028230*/
-// a faixa de criação da loco (faixa_via1_intermar_d, onde fica pos_locoAlivio_PST)
-// é apreendida no seize_faixa_criacao_pst do gestor; aqui só as faixas seguintes até o terminal
-return new ArrayList<Faixa>();
+// caminho da loco do alívio no PMC: nasce na silosMuro_a (pos_locoAlivio_PMC)
+// e vai até a _bracell_alivio, na linha 5000_b
+GestorDeCirculacao gc = main().gestorDeCirculacao;
+ArrayList<Faixa> faixas = new ArrayList<Faixa>();
+faixas.add(gc.faixa_silosMuro_a);
+faixas.add(gc.faixa_marginal_c);
+faixas.add(gc.faixa_intervalo4000_a);
+faixas.add(gc.faixa_intervalo4000_b);
+faixas.add(gc.faixa_intervalo4000_c);
+return faixas;
 /*ALCODEEND*/}
 
 String getSegmento()
@@ -186,3 +193,13 @@ if (a instanceof Trem) {
 Log.info("Bracell", evento, t + " | " + msg);
 /*ALCODEEND*/}
 
+
+ResourcePool[] get_recursos_loco_alivio(Trem trem)
+{/*ALCODESTART::1797204000001*/
+// pools das faixas do caminho (bloquear_faixas_pmc) que a loco do alívio ainda segura
+List<ResourcePool> pools = new ArrayList<ResourcePool>();
+for (Faixa f : get_faixas_primeiro_alivio()) {
+	if (f != null && f.recurso != null && !pools.contains(f.recurso) && !trem.resourceUnitsOfPool(f.recurso).isEmpty()) pools.add(f.recurso);
+}
+return pools.toArray(new ResourcePool[0]);
+/*ALCODEEND*/}

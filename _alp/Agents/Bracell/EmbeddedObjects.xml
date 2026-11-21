@@ -7758,6 +7758,113 @@ loteVazios_L4 = null;]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
+		<Id>1797204000002</Id>
+		<Name><![CDATA[liberar_faixas_loco_alivio]]></Name>
+		<X>1960</X>
+		<Y>270</Y>
+		<Label>
+			<X>-35</X>
+			<Y>-15</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<ActiveObjectClass>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Release</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+				<ClassName>Release</ClassName>
+				<ItemName>1412336243154</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[releaseMode]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[self.SPECIFIED_RESOURCES]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resourcePool]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[quantity]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[resources]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// faixas do caminho da loco do alívio (bloquear_faixas_pmc do GestorDeAlivios)
+get_recursos_loco_alivio((Trem) agent)]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[seizeBlocks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[movingGoHome]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPolicyType]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPriority]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskMayPreemptOtherTasks]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpTaskPreemptionPolicy]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[wrapUpUsageState]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onEnter]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onReleaseUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[log_analise("liberar_faixas_loco_alivio", agent, "soltou faixas do caminho da loco");
+// faixas do caminho da loco voltam a ficar livres
+for (Faixa f : get_faixas_primeiro_alivio()) {
+	if (f != null && f.idTremLicenciado == 9999) f.liberar();
+}]]></Code>
+				</Value>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[onWrapUpTerminated]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>false</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[100]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InitialLocationType>XYZ</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1797204000003</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
+	<EmbeddedObject>
 		<Id>1791914037163</Id>
 		<Name><![CDATA[para_encoste_linha1000]]></Name>
 		<X>600</X>

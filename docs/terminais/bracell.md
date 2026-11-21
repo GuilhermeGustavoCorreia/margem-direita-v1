@@ -61,11 +61,13 @@ Trem de carregados (formação de teste `trem_celulose_teste`: 1 loco Rumo + 64 
 4. Descarga: L1 a L3 esperam nos Holds `aguarda_L4a/b/c`. `descarregar_L4` desbloqueia os três e as 4 linhas descarregam juntas.
 5. Cada lote vira `loteVazios_L*` e espera em `aguardarAliviar_L*`.
 
-Alívio (overload > 1 quando vazios ≥ 64):
+Alívio (overload > 1 quando vazios ≥ 64), pelo caminho do PMC no GestorDeAlivios:
 
-1. GestorDeAlivios (`analisar_celulose`): pega 1 loco da ferrovia no wait do GestorDeLocomotivas →
-   `loco_alivio_celulose` → `ocupar_linha5000_6000` → `trainEnter_celulose` (`circ_pos_inicio_L5K`) → `ir_alivio_celulose` (`_bracell_alivio`) → `takeAlivio`.
-2. Bracell: `iniciar_alivio` → `irAteTerminal` → `pausar1` → `paraAlivio_L1`.
+1. GestorDeAlivios: `alivio_pmc` → `ocupar_mnb_pcx_pmc` → `bloquear_faixas_pmc` (pega as faixas de `get_faixas_primeiro_alivio()`) →
+   `trainEnter_pmc` (`pos_locoAlivio_PMC`, na `silosMuro_a`) → `ir_alivio_pmc` (`_bracell_alivio`) → `para_alivio_terminal_pmc`.
+   - Faixas do caminho da loco: `silosMuro_a → marginal_c → intervalo4000_a → intervalo4000_b → intervalo4000_c`.
+     Ficam com a loco (id 9999) durante o trajeto, então a 4000 não sai nem faz a manobra do excedente nesse período.
+2. Bracell: `iniciar_alivio` → `liberar_faixas_loco_alivio` (solta os pools dessas faixas e volta as faixas para LIVRE) → `irAteTerminal` → `pausar1` → `paraAlivio_L1`.
 3. L1 a L4: `alivio_L*` → `colocar_L*` → `trainCouple*` → `recuar4..7`. Cada `recuar` zera o `loteVazios_L*` acoplado.
 4. `para_circVzs`: marca `eh_alivio`, devolve a Bracell para `terminais_celulose` e entrega o trem ao GestorDeCirculacao na `intervalo4000_c`.
 
@@ -77,7 +79,6 @@ Alívio (overload > 1 quando vazios ≥ 64):
 
 - [pendente] `pode_receber_novo_lote()`: hoje `podeReceberNovoLote()` sempre devolve true.
   Um 2º trem de carregados pode ser despachado durante o alívio e travar na intervalo4000 (ele espera a linha 5000, e o alívio espera a intervalo4000 para sair).
-- [verificar] Sentido da loco no `trainEnter_celulose` / `ir_alivio_celulose`. Se der "no straight route", ajustar `forward`.
 - [verificar] Se a cauda do trem de carregados ainda estiver na intervalo4000_c no `liberar_faixas_circulacao`, a faixa é solta no `liberar_faixas_circulacao1`.
 - [verificar] `pausar1` está no caminho do alívio. Confirmar se ele pausa a simulação.
 - Blocos antigos do GestorDeCirculacao (`alivio_bracell*`, `linha5K*`, `linha_5k_*`, `circulacaoVzs_PCX`) não são mais usados pela Bracell.

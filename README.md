@@ -215,3 +215,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-201**: GestorDeAlivios — excedente da 4000 (> 78 vagões) vai para a track178/101 antes de soltar o acesso
 - **ALT-202**: GestorDeAlivios — corrige o onExit do `recuar_track178` (`train` em vez de `agent`)
 - **ALT-203**: GestorDeAlivios — alívio volta do excedente para a 4000 antes de ir ao terminal
+- **ALT-204**: Bracell — loco do alívio pega as faixas do caminho (silosMuro_a até intervalo4000_c) e solta ao chegar
