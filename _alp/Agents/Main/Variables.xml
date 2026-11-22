@@ -207,6 +207,25 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+		<Id>1797212000001</Id>
+		<Name><![CDATA[replicacao_atual]]></Name>
+		<X>1910</X>
+		<Y>-6520</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
 		<Id>1797211000001</Id>
 		<Name><![CDATA[semente_tipo]]></Name>
 		<X>1910</X>

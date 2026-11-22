@@ -2481,3 +2481,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Main `carregar_configuracao`: lê o `simulacao.csv` pelo nome da coluna; `data_inicio`, `semente_tipo` (padrão `fixa`) e `semente` (padrão 1) são opcionais. Variáveis novas `semente_tipo` (String) e `semente` (long), mostradas no log `[config]`. Ainda não mudam a rodada (fica para o experimento de replicações).
   - `simulacao/config/simulacao.csv` com as 6 colunas.
 - **Arquivos:** `simulacao/interface_simulacao.html`, `simulacao/config/simulacao.csv`, `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/Main/Variables.xml`
+
+## ALT-212 — replicacoes
+- **Data:** 2026-11-21
+- **Status:** parte do modelo aplicada; o experimento `Replicacoes` (Custom Experiment) é criado pelo Guilherme no editor, com o código passado no chat
+- **O que:**
+  - Main: variável nova `replicacao_atual` (int, 0 = rodada normal). `configurar_log_em_arquivo` grava em `logs/sim_rep<n>.log` quando `replicacao_atual > 0`; a rodada normal continua em `logs/sim.log`.
+  - Experimento `Replicacoes`: lê `simulacao.csv` (replicações, semente_tipo, semente), roda em sequência e sem animação; semente `semente + r - 1` (fixa) ou sorteada (variável). A parada continua no On startup do Main (`duracao_h`).
+  - `MaximumMemory` do `Simulation` já estava em 8192 MB (alterado pelo Guilherme).
+- **Arquivos:** `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/Main/Variables.xml`

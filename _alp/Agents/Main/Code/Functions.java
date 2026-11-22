@@ -398,7 +398,9 @@ java.io.PrintStream outOriginal = (java.io.PrintStream) props.get("md.out.origin
 java.io.PrintStream errOriginal = (java.io.PrintStream) props.get("md.err.original");
 
 try {
-	java.io.File arquivo = new java.io.File("logs/sim.log").getAbsoluteFile();
+	// rodada normal: logs/sim.log; experimento de replicações: logs/sim_rep<n>.log
+	String nome_log = replicacao_atual > 0 ? "logs/sim_rep" + replicacao_atual + ".log" : "logs/sim.log";
+	java.io.File arquivo = new java.io.File(nome_log).getAbsoluteFile();
 	arquivo.getParentFile().mkdirs();
 	final java.io.PrintStream log = new java.io.PrintStream(
 		new java.io.FileOutputStream(arquivo, false), true, "UTF-8");
