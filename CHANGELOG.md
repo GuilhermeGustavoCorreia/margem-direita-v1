@@ -2528,6 +2528,12 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-217 — desliga-log-de-analise-t39
+- **Data:** 2026-11-23
+- **Status:** aplicada
+- **O que:** `log_de_analise` do T39 volta para `false` (o do TES já estava `false`).
+- **Arquivos:** `_alp/Agents/T39/Variables.xml`
+
 ## ALT-216 — avanco-do-alivio-da-4000-pega-mnb-pcx-antes
 - **Data:** 2026-11-23
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
