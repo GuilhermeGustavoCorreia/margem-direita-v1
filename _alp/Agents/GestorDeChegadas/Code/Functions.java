@@ -294,7 +294,7 @@ double iniciar_csv_trens()
 // cria (sobrescreve) o CSV dos trens criados, só com o cabeçalho.
 // Rodada normal: trens_criados.csv; replicações: trens_criados_rep<n>.csv
 int rep = main().replicacao_atual;
-java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/"
+java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/trens_criados/"
 	+ (rep > 0 ? "trens_criados_rep" + rep + ".csv" : "trens_criados.csv")).getAbsoluteFile();
 arq.getParentFile().mkdirs();
 csv_trens = arq.getPath();

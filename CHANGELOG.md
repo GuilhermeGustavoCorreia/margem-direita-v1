@@ -2500,3 +2500,9 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Variável nova `csv_trens` (caminho do arquivo).
   - Pedidos ainda na fila no fim da rodada ficam de fora; trens do warm-up entram com `warm_up = true`.
 - **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Code/Functions.xml`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `docs/gestores.md`
+
+## ALT-214 — pasta-trens-criados
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **O que (GestorDeChegadas):** o CSV dos trens criados passa para a pasta própria `simulacao/output/trens_criados/` (`trens_criados.csv` ou `trens_criados_rep<n>.csv`). Só o caminho em `iniciar_csv_trens()`; a pasta é criada automaticamente.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`
