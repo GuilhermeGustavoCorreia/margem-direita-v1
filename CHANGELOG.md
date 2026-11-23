@@ -2527,3 +2527,15 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - ADM: Seize `ocupar_intervalo_avanco` antes do `sair_linha7` (as três entradas).
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
+
+## ALT-215 — excedente-da-4000-pega-mnb-pcx
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock em 18:46 de 05/01 (115,3 h): o L42 (carregado da Bracell, com o `mnb_pcx` desde 18:40) parou na `intervalo4000_a` atrás do MNB85 (trem da 4000, 80 vgs), que fez a manobra do excedente às 18:45 sem o `mnb_pcx` e ficou no caminho; o MNB85, mandado de novo ao TES, esperava a `intervalo4000_c/b` licenciada pelo L42. A cauda do L42 na `via3_d` travou a porteira.
+- **O que (GestorDeAlivios):**
+  - `ocupar_mnb_pcx_excedente` (só `rp_mnb_pcx`) entre `sel_excede_4000` (T) e `seize_intervalo_4000`.
+  - `ocupar_mnb_pcx_volta` (só `rp_mnb_pcx`) entre `sel_esta_no_excedente` (T) e `seize_intervalo_volta`.
+  - `liberar_intervalo_4000` e `liberar_intervalo_volta` soltam também o `rp_mnb_pcx`.
+  - O encoste da Bracell já pega o `mnb_pcx` no `para_via3_b` (sem mudança).
+- **A conferir:** se, depois do `recuar_track178`, a ponta do trem de 80+ vagões do lado do sw53 fica livre.
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
