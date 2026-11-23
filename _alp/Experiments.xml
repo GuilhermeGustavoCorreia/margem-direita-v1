@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Experiments>
+	<CustomExperiment>
+		<Id>1795306010790</Id>
+		<Name><![CDATA[Replicacoes]]></Name>
+		<MaximumMemory>8192</MaximumMemory>
+		<CommandLineArguments/>
+		<VmArgs/>
+		<Code><![CDATA[// lê config/simulacao.csv (o mesmo da interface) pelo nome da coluna
+String pasta = "simulacao";
+int replicacoes = 1;
+String semente_tipo = "fixa";
+long semente = 1;
+try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.InputStreamReader(
+        new java.io.FileInputStream(new java.io.File(pasta + "/config/simulacao.csv").getAbsoluteFile()), "UTF-8"))) {
+    String[] cab = br.readLine().replace("\uFEFF", "").split(";", -1);
+    String[] val = br.readLine().split(";", -1);
+    for (int i = 0; i < cab.length && i < val.length; i++) {
+        String k = cab[i].trim().toLowerCase(), v = val[i].trim();
+        if (k.equals("replicacoes"))  replicacoes  = Integer.parseInt(v);
+        if (k.equals("semente_tipo")) semente_tipo = v.equalsIgnoreCase("variavel") ? "variavel" : "fixa";
+        if (k.equals("semente") && !v.isEmpty()) semente = Long.parseLong(v);
+    }
+} catch (Exception ex) {
+    traceln("[replicacoes] erro ao ler simulacao.csv: " + ex);
+    return;
+}
+
+Random sorteio = new Random();
+for (int r = 1; r <= replicacoes; r++) {
+    long semente_r = semente_tipo.equals("fixa") ? semente + r - 1 : sorteio.nextLong();
+    Engine engine = createEngine();
+    engine.setDefaultRandomGenerator(new Random(semente_r));
+    Main root = new Main(engine, null, null);
+    root.setParametersToDefaultValues();
+    root.replicacao_atual = r;           // log em logs/sim_rep<r>.log
+    engine.start(root);                  // o On startup do Main define a parada em duracao_h
+    engine.runFast();                    // sem animação, até o fim
+    traceln(String.format("[replicacoes] replicação %d/%d terminou em %.1f h (semente %d)",
+        r, replicacoes, root.time(HOUR), semente_r));
+    engine.stop();
+}
+traceln("[replicacoes] fim");]]></Code>
+	</CustomExperiment>
 	<SimulationExperiment ActiveObjectClassId="1772633102337">
 		<Id>1772633102345</Id>
 		<Name><![CDATA[Simulation]]></Name>
@@ -7,7 +49,7 @@
 		<MaximumMemory>8192</MaximumMemory>
 		<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
 		<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-		<SeedValue>1</SeedValue>
+		<SeedValue>5</SeedValue>
 		<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 		<VmArgs/>
 		<LoadRootFromSnapshot>false</LoadRootFromSnapshot>

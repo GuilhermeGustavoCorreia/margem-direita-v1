@@ -3,8 +3,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1798200000711</Id>
 		<Name><![CDATA[log_de_analise]]></Name>
-		<X>4300</X>
-		<Y>130</Y>
+		<X>-440</X>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -18,7 +18,7 @@
               StaticVariable="false">
 			<Type><![CDATA[boolean]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[false]]></Code>
+				<Code><![CDATA[true]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -382,8 +382,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1791222717183</Id>
 		<Name><![CDATA[quantidade_alivio]]></Name>
-		<X>-610</X>
-		<Y>450</Y>
+		<X>-640</X>
+		<Y>440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -738,8 +738,8 @@
 	<Variable Class="CollectionVariable">
 		<Id>1790950057429</Id>
 		<Name><![CDATA[primeiro_alivio_faixas]]></Name>
-		<X>-610</X>
-		<Y>430</Y>
+		<X>-640</X>
+		<Y>420</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

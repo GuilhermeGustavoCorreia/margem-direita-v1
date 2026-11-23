@@ -54,6 +54,9 @@ td.x{width:28px;text-align:center;color:var(--err);cursor:pointer}
 svg text{font-family:'Open Sans';font-size:11px}
 .atalho{padding:3px 8px;font-size:12px}
 .atalho.ativo{background:var(--azul);color:#fff}
+.toggle{display:inline-flex}.toggle button{border-radius:0;margin:0}.toggle button:first-child{border-radius:4px 0 0 4px}.toggle button:last-child{border-radius:0 4px 4px 0;border-left:none}
+.toggle button.ativo{background:var(--azul);color:#fff;border-color:var(--azul)}
+.tc-leg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-bottom:6px}.tc-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .dois{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:800px){.dois{grid-template-columns:1fr}}
 </style>
@@ -125,11 +128,37 @@ svg text{font-family:'Open Sans';font-size:11px}
     <div class="tabwrap" style="max-height:none;margin-top:12px"><table id="tabTec"></table></div>
     <div class="msg">— = o terminal não opera essa ferrovia (Configurações). Arquivo: <code>input/tempo_entre_chegadas.csv</code>.</div>
   </div>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Produtividade dos terminais <span title="O modelo ainda não lê input/produtividade.csv" style="display:inline-block;vertical-align:middle;margin-left:8px;padding:2px 10px;border-radius:12px;background:#FFF3CD;color:#8A5A00;border:1px solid #F2C94C;font-size:12px;font-weight:600;letter-spacing:.3px">EM DESENVOLVIMENTO</span></h2>
+        <div class="msg" id="msgProd">Vagões descarregados por hora (vgs/h) em cada terminal.</div></div>
+      <div class="acoes" style="margin:0">
+        <button id="btnProdLer">Recarregar de input/</button>
+        <button class="prim" id="btnProdSalvar">Salvar em input/</button>
+      </div>
+    </div>
+    <div class="tabwrap" style="max-height:none;margin-top:12px"><table id="tabProd"></table></div>
+    <div class="msg">Vazio = usa o valor que já está no modelo. Arquivo: <code>input/produtividade.csv</code>.</div>
+  </div>
 </section>
 
 <!-- ===================== 3. RESULTADOS ===================== -->
 <section id="resultados" class="aba">
-  <div class="card"><h2>Resultados</h2><div class="msg">Em construção.</div></div>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0">Trens criados</h2>
+        <div class="msg" id="msgTc">Trens que entraram na malha por dia (<code>data_entrada</code>). Arquivo: <code>output/trens_criados/trens_criados.csv</code>.</div></div>
+      <div class="acoes" style="margin:0">
+        <span class="toggle" role="group" aria-label="Visualização">
+          <button id="tcVerTabela" class="ativo">Tabela</button><button id="tcVerGrafico">Gráfico</button>
+        </span>
+        <button class="prim" id="btnTcLer">Recarregar</button>
+      </div>
+    </div>
+    <div class="msg" id="tcResumo"></div>
+    <div id="tcTabela" class="tabwrap" style="max-height:60vh;margin-top:12px"><table id="tabTc"></table></div>
+    <div id="tcGrafico" style="display:none;margin-top:12px"></div>
+  </div>
 </section>
 
 <!-- ===================== 4. LOGS ===================== -->
@@ -221,7 +250,11 @@ svg text{font-family:'Open Sans';font-size:11px}
    │  ├─ terminais_moega.csv
    │  └─ simulacao.csv
    └─ input\
-      └─ tempo_entre_chegadas.csv
+      ├─ tempo_entre_chegadas.csv
+      └─ produtividade.csv
+   └─ output\
+      └─ trens_criados\
+         └─ trens_criados.csv        (gerado pelo AnyLogic)
 └─ logs\
    └─ sim.log                        (gerado pelo AnyLogic)</pre>
     <div class="tabwrap" style="max-height:none"><table>
@@ -229,6 +262,8 @@ svg text{font-family:'Open Sans';font-size:11px}
       <tr><td><code>config/terminais_moega.csv</code></td><td>Configurações</td><td>agente, instância, segmento, Rumo/MRS/VLI</td></tr>
       <tr><td><code>config/simulacao.csv</code></td><td>Configurações</td><td>duração, warm-up, replicações</td></tr>
       <tr><td><code>input/tempo_entre_chegadas.csv</code></td><td>Programação</td><td>intervalo (h) por terminal × ferrovia</td></tr>
+      <tr><td><code>input/produtividade.csv</code></td><td>Programação</td><td>produtividade (vgs/h) por terminal</td></tr>
+      <tr><td><code>output/trens_criados/trens_criados.csv</code></td><td>Resultados</td><td>um trem por linha: pedido, prefixo, terminal, ferrovia, segmento, data_pedido, data_entrada, warm_up (só leitura)</td></tr>
       <tr><td><code>..\logs\sim.log</code></td><td>Logs</td><td>console da última rodada (só leitura)</td></tr>
     </table></div>
   </div>
@@ -346,7 +381,7 @@ async function usarPasta(h){
   if(!temConfig && !confirm(`A pasta "${h.name}" não tem a subpasta config/.\nUsar mesmo assim? (os arquivos serão criados nela)`)) return false;
   S.dir = h; handleSalvo = h; await IDB.set('pasta', h);
   $('nomePasta').textContent = h.name; $('btnPasta').textContent = 'Trocar pasta';
-  await lerTerminais(true); await lerTec(true); await lerSim();
+  await lerTerminais(true); await lerTec(true); await lerProd(true); await lerSim();
   return true;
 }
 async function escolherPasta(){
@@ -583,7 +618,7 @@ function renderTerminais(){
     `<datalist id="lstSeg">${[...new Set([...SEGMENTOS, ...S.terminais.map(t => t.segmento).filter(Boolean)])].map(v => `<option value="${v}">`).join('')}</datalist>`;
 }
 function terminaisMudaram(aviso=true){
-  aplicarCFG(); renderTerminais(); renderDemanda(); renderTec();
+  aplicarCFG(); renderTerminais(); renderDemanda(); renderTec(); renderProd();
   if(aviso) msg('msgTerm', 'Alterações não salvas — clique em <b>Salvar CSV</b>.', 'warn');
 }
 document.addEventListener('change', e => {
@@ -647,7 +682,7 @@ async function lerTerminais(silencioso=false){
 }
 $('btnTermLer').onclick = () => lerTerminais(false);
 $('btnTermPadrao').onclick = () => {
-  if(!confirm('Substituir o cadastro pelos 12 terminais do modelo? (só grava ao salvar)')) return;
+  if(!confirm(`Substituir o cadastro pelos ${TERMINAIS_MODELO.length} terminais do modelo? (só grava ao salvar)`)) return;
   S.terminais = clone(TERMINAIS_MODELO); terminaisMudaram();
 };
 
@@ -709,6 +744,44 @@ async function lerTec(silencioso=false){
   msg('msgTec', `✓ Carregado de input/tempo_entre_chegadas.csv` + (ignoradas.length ? `<br><span class="warn">⚠ Ignoradas (terminal/ferrovia não cadastrado): ${ignoradas.join(', ')}</span>` : ''), 'ok');
 }
 $('btnTecLer').onclick = () => lerTec(false);
+
+/* --- Produtividade (vgs/h) por terminal --- */
+const COLS_PROD = ['agente','instancia','vgs_h'];
+S.prod = {};   // { agente: 4.5 }
+function renderProd(){
+  $('tabProd').innerHTML = `<tr><th>Terminal</th><th>Segmento</th><th style="text-align:center">Produtividade (vgs/h)</th></tr>` +
+    S.terminais.filter(t => t.agente).map(t => `<tr><td><b>${t.agente}</b></td><td>${t.segmento || ''}</td>` +
+      `<td><input type="number" min="0" step="0.1" style="text-align:center" data-prod="${t.agente}" value="${S.prod[t.agente] ?? ''}" placeholder="—"></td></tr>`).join('');
+}
+document.addEventListener('change', e => {
+  const el = e.target; if(el.dataset.prod === undefined) return;
+  const v = el.value.trim();
+  S.prod[el.dataset.prod] = v === '' ? '' : num(v);
+  msg('msgProd', 'Alterações não salvas — clique em <b>Salvar em input/</b>.', 'warn');
+});
+$('btnProdSalvar').onclick = async () => {
+  const linhas = S.terminais.filter(t => t.agente && S.prod[t.agente] !== '' && S.prod[t.agente] !== undefined)
+    .map(t => ({agente:t.agente, instancia:t.instancia, vgs_h:S.prod[t.agente]}));
+  const ruins = linhas.filter(l => !(num(l.vgs_h) > 0));
+  if(ruins.length){ msg('msgProd', '✕ Produtividade deve ser maior que 0: ' + ruins.map(l => l.agente).join(', '), 'err'); return; }
+  if(!linhas.length){ msg('msgProd', 'Nenhuma produtividade preenchida.', 'warn'); return; }
+  try{
+    await escrever('input', 'produtividade.csv', toCSV(linhas, COLS_PROD));
+    msg('msgProd', `✓ ${linhas.length} terminais salvos em ${S.dir ? S.dir.name + '/input/produtividade.csv' : 'downloads'}`, 'ok');
+  }catch(e){ msg('msgProd', 'Erro ao salvar: ' + e.message, 'err'); }
+};
+async function lerProd(silencioso=false){
+  const txt = (await lerVarios('input', ['produtividade.csv']))['produtividade.csv'];
+  if(!txt){ if(!silencioso) msg('msgProd', 'input/produtividade.csv não encontrado.', 'warn'); return; }
+  S.prod = {}; const ignoradas = [];
+  for(const l of parseCSV(txt)){
+    if(!S.terminais.some(t => t.agente === l.agente)){ ignoradas.push(l.agente); continue; }
+    S.prod[l.agente] = num(l.vgs_h);
+  }
+  renderProd();
+  msg('msgProd', '✓ Carregado de input/produtividade.csv' + (ignoradas.length ? `<br><span class="warn">⚠ Ignorados (terminal não cadastrado): ${ignoradas.join(', ')}</span>` : ''), 'ok');
+}
+$('btnProdLer').onclick = () => lerProd(false);
 
 /* =========================================================
    4. CONFIGURAÇÕES — parâmetros da simulação
@@ -1019,9 +1092,95 @@ $('logAuto').onchange = e => {
   if(e.target.checked) S.log.timer = setInterval(() => S.log.handle && lerLog(false), 5000);
 };
 // ao abrir a aba, lê o log se já tiver acesso
+/* =========================================================
+   3. RESULTADOS — Trens criados (output/trens_criados/trens_criados.csv)
+   ========================================================= */
+const COR_TC = {rumo:'#004B9B', mrs:'#2E9E5B', vli:'#E07B00'};
+S.tc = {dias: [], vista: 'tabela'};
+
+// lê um arquivo dentro de subpastas de output/ sem criar nada
+async function lerOutput(caminho){
+  const partes = caminho.split('/'), nome = partes.pop();
+  if(temFS && !(await garantirPasta())) return null;
+  if(S.dir){
+    try{
+      let d = await S.dir.getDirectoryHandle(CFG.pastas.output || 'output');
+      for(const p of partes) d = await d.getDirectoryHandle(p);
+      return await (await (await d.getFileHandle(nome)).getFile()).text();
+    }catch(e){ return null; }
+  }
+  return (await lerVarios('output', [nome]))[nome];
+}
+const dataHora = s => { const m = /^(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2}))?/.exec(s||''); return m ? {dia:`${m[3]}-${m[2]}-${m[1]}`, rot:`${m[1]}/${m[2]}`} : null; };
+
+async function lerTrensCriados(){
+  msg('msgTc', 'Lendo…');
+  const txt = await lerOutput('trens_criados/trens_criados.csv');
+  if(!txt){ msg('msgTc', 'output/trens_criados/trens_criados.csv não encontrado — rode o modelo ou confira a pasta.', 'warn'); S.tc.dias = []; renderTc(); return; }
+  const por = {}; let sem = 0;
+  for(const l of parseCSV(txt)){
+    const d = dataHora(l.data_entrada); if(!d){ sem++; continue; }
+    const o = por[d.dia] ||= {dia:d.dia, rot:d.rot, rumo:0, mrs:0, vli:0, outra:0, total:0, warmup:0};
+    const f = normTxt(l.ferrovia);
+    o[FERROVIAS_TERM.includes(f) ? f : 'outra']++; o.total++;
+    if(String(l.warm_up).toLowerCase() === 'true') o.warmup++;
+  }
+  S.tc.dias = Object.values(por).sort((a,b) => a.dia < b.dia ? -1 : 1);
+  renderTc();
+  msg('msgTc', `✓ Carregado de output/trens_criados/trens_criados.csv` + (sem ? ` · <span class="warn">${sem} linha(s) sem data_entrada ignorada(s)</span>` : ''), 'ok');
+}
+
+function renderTc(){
+  const D = S.tc.dias, temOutra = D.some(d => d.outra);
+  const tot = D.reduce((a,d) => a + d.total, 0), wu = D.reduce((a,d) => a + d.warmup, 0);
+  const medidos = D.filter(d => d.warmup < d.total);
+  $('tcResumo').innerHTML = D.length
+    ? `<b>${fmt(tot)}</b> trens em <b>${D.length}</b> dias · ${fmt(wu)} no warm-up · média <b>${fmt((tot-wu)/Math.max(1, medidos.length),1)}</b> trens/dia fora do warm-up`
+    : '';
+  const fer = [...FERROVIAS_TERM, ...(temOutra ? ['outra'] : [])];
+  $('tabTc').innerHTML = D.length ? `<tr><th>Dia</th>${fer.map(f => `<th style="text-align:center">${NOME_FERROVIA[f] || 'Outra'}</th>`).join('')}<th style="text-align:center">Total</th><th style="text-align:center">No warm-up</th></tr>` +
+    D.map(d => `<tr${d.warmup === d.total ? ' style="color:#7a8696"' : ''}><td>${d.rot}</td>${fer.map(f => `<td style="text-align:center">${d[f] || ''}</td>`).join('')}<td style="text-align:center"><b>${d.total}</b></td><td style="text-align:center">${d.warmup || ''}</td></tr>`).join('') : '';
+  $('tcTabela').style.display = S.tc.vista === 'tabela' ? '' : 'none';
+  $('tcGrafico').style.display = S.tc.vista === 'grafico' ? '' : 'none';
+  if(S.tc.vista === 'grafico') renderTcGrafico(fer);
+  $('tcVerTabela').classList.toggle('ativo', S.tc.vista === 'tabela');
+  $('tcVerGrafico').classList.toggle('ativo', S.tc.vista === 'grafico');
+}
+
+function renderTcGrafico(fer){
+  const D = S.tc.dias, el = $('tcGrafico');
+  if(!D.length){ el.innerHTML = ''; return; }
+  const W = Math.max(640, el.clientWidth || 900), H = 300, m = {t:10, r:10, b:40, l:40};
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const max = Math.max(...D.map(d => d.total));
+  const passo = [1,2,5,10,20,25,50,100,200,500].find(p => max / p <= 6) || Math.ceil(max/6);
+  const topo = Math.ceil(max / passo) * passo || 1;
+  const bw = iw / D.length, gap = Math.min(4, bw * .2);
+  const y = v => m.t + ih - v / topo * ih;
+  const cor = f => (COR_FERROVIA[NOME_FERROVIA[f]] || COR_TC[f]) || '#8a96a6';
+  let svg = '';
+  for(let v = 0; v <= topo; v += passo) svg += `<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" stroke="#E3E8EE"/><text x="${m.l-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#5b6675">${v}</text>`;
+  const cada = Math.ceil(D.length / Math.floor(iw / 44));
+  D.forEach((d, i) => {
+    const x = m.l + i * bw + gap/2, w = bw - gap; let acc = 0;
+    const op = d.warmup === d.total ? .4 : 1;
+    fer.forEach(f => { const v = d[f]; if(!v) return;
+      svg += `<rect x="${x}" y="${y(acc+v)}" width="${w}" height="${y(acc)-y(acc+v)}" fill="${cor(f)}" opacity="${op}"/>`; acc += v; });
+    svg += `<rect x="${m.l + i*bw}" y="${m.t}" width="${bw}" height="${ih}" fill="transparent"><title>${d.rot}: ${d.total} trens (${fer.filter(f => d[f]).map(f => `${NOME_FERROVIA[f] || 'Outra'} ${d[f]}`).join(', ')})${d.warmup ? ` · ${d.warmup} no warm-up` : ''}</title></rect>`;
+    if(i % cada === 0) svg += `<text x="${m.l + i*bw + bw/2}" y="${H-m.b+16}" text-anchor="middle" font-size="11" fill="#5b6675">${d.rot}</text>`;
+  });
+  svg += `<line x1="${m.l}" x2="${W-m.r}" y1="${y(0)}" y2="${y(0)}" stroke="#9aa6b4"/>`;
+  el.innerHTML = `<div class="tc-leg">${fer.map(f => `<span><i style="background:${cor(f)}"></i>${NOME_FERROVIA[f] || 'Outra'}</span>`).join('')}<span><i style="background:#004B9B;opacity:.4"></i>dia só de warm-up</span></div>` +
+    `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block" font-family="'Open Sans',sans-serif" role="img" aria-label="Trens criados por dia">${svg}<text x="12" y="${m.t+ih/2}" transform="rotate(-90 12 ${m.t+ih/2})" text-anchor="middle" font-size="11" fill="#5b6675">trens/dia</text></svg>`;
+}
+$('tcVerTabela').onclick = () => { S.tc.vista = 'tabela'; renderTc(); };
+$('tcVerGrafico').onclick = () => { S.tc.vista = 'grafico'; renderTc(); };
+$('btnTcLer').onclick = () => lerTrensCriados();
+window.addEventListener('resize', () => { if(S.tc.vista === 'grafico' && S.tc.dias.length) renderTc(); });
+document.querySelector('nav button[data-aba="resultados"]').addEventListener('click', () => { if(!S.tc.dias.length) lerTrensCriados(); else renderTc(); });
 document.querySelector('nav button[data-aba="logs"]').addEventListener('click', () => { if(!S.log.linhas.length) lerLog(false); });
 
-aplicarCFG(); renderTerminais(); renderDemanda(); renderTec(); renderSim();
+aplicarCFG(); renderTerminais(); renderDemanda(); renderTec(); renderProd(); renderSim();
 </script>
 </body>
 </html>

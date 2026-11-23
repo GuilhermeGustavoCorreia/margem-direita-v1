@@ -2406,8 +2406,8 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792420140596</Id>
 		<Name><![CDATA[acoplar_loco_mnb]]></Name>
-		<X>980</X>
-		<Y>970</Y>
+		<X>1090</X>
+		<Y>1000</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-20</Y>
@@ -2473,8 +2473,8 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792420182440</Id>
 		<Name><![CDATA[trainEnter]]></Name>
-		<X>780</X>
-		<Y>1010</Y>
+		<X>760</X>
+		<Y>1090</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-25</Y>
@@ -2548,8 +2548,8 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792420184802</Id>
 		<Name><![CDATA[trainMoveTo]]></Name>
-		<X>870</X>
-		<Y>1010</Y>
+		<X>850</X>
+		<Y>1090</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -2699,7 +2699,7 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 		<Id>1792420298484</Id>
 		<Name><![CDATA[usar_recurso_loco]]></Name>
 		<X>900</X>
-		<Y>950</Y>
+		<Y>980</Y>
 		<Label>
 			<X>-25</X>
 			<Y>55</Y>
@@ -2911,11 +2911,11 @@ atualizarFerroviaEProdutoEmAtendimento((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1797213100000</Id>
 		<Name><![CDATA[ocupar_silosMuro_c_loco]]></Name>
-		<X>900</X>
-		<Y>1010</Y>
+		<X>970</X>
+		<Y>980</Y>
 		<Label>
 			<X>-40</X>
-			<Y>55</Y>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3130,8 +3130,8 @@ loco_pcx_starts.inject();]]></Code>
 	<EmbeddedObject>
 		<Id>1797213100002</Id>
 		<Name><![CDATA[liberar_silosMuro_c_loco]]></Name>
-		<X>1020</X>
-		<Y>1070</Y>
+		<X>1200</X>
+		<Y>980</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>
@@ -3251,8 +3251,8 @@ Log.info("ADM", "liberar_silosMuro_c_loco", String.format("lote=%d engatou a loc
 	<EmbeddedObject>
 		<Id>1792420327626</Id>
 		<Name><![CDATA[loco_pcx_starts]]></Name>
-		<X>640</X>
-		<Y>1020</Y>
+		<X>670</X>
+		<Y>1100</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-30</Y>
@@ -3498,8 +3498,8 @@ Log.info("ADM", "liberar_silosMuro_c_loco", String.format("lote=%d engatou a loc
 	<EmbeddedObject>
 		<Id>1792420512280</Id>
 		<Name><![CDATA[para_encoste_moega]]></Name>
-		<X>1180</X>
-		<Y>960</Y>
+		<X>1350</X>
+		<Y>940</Y>
 		<Label>
 			<X>-15</X>
 			<Y>-15</Y>
@@ -5928,8 +5928,8 @@ main().getTamanhoDoTrem(lote_moegaX) == 0 ]]></Code>
 	<EmbeddedObject>
 		<Id>1792429076719</Id>
 		<Name><![CDATA[para_linha_moegaV]]></Name>
-		<X>1850</X>
-		<Y>1690</Y>
+		<X>1900</X>
+		<Y>1740</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -6160,11 +6160,11 @@ ajuste_loco.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792430153356</Id>
 		<Name><![CDATA[ficar_linha_moegaV]]></Name>
-		<X>1580</X>
-		<Y>1740</Y>
+		<X>1480</X>
+		<Y>1790</Y>
 		<Label>
-			<X>-5</X>
-			<Y>-15</Y>
+			<X>-30</X>
+			<Y>-18</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -8575,7 +8575,7 @@ descarregar_moegaX.take(agent);]]></Code>
 		<Id>1792435185197</Id>
 		<Name><![CDATA[para_ficar_linha_moegaX]]></Name>
 		<X>1850</X>
-		<Y>1390</Y>
+		<Y>1440</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -9256,7 +9256,7 @@ descarregar_moegaV.take(agent);]]></Code>
 		<Id>1792436392369</Id>
 		<Name><![CDATA[para_ficar_linha_moegaV]]></Name>
 		<X>1900</X>
-		<Y>1890</Y>
+		<Y>1940</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>

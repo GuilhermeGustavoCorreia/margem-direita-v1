@@ -3,8 +3,8 @@
 	<EmbeddedObject>
 		<Id>1786122608289</Id>
 		<Name><![CDATA[gestorDeAlivios]]></Name>
-		<X>650</X>
-		<Y>80</Y>
+		<X>50</X>
+		<Y>90</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -59,8 +59,8 @@
 	<EmbeddedObject>
 		<Id>1787583156291</Id>
 		<Name><![CDATA[gestorDeLocomotivas]]></Name>
-		<X>650</X>
-		<Y>40</Y>
+		<X>50</X>
+		<Y>50</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -108,8 +108,8 @@
 	<EmbeddedObject>
 		<Id>1788186496914</Id>
 		<Name><![CDATA[bracell]]></Name>
-		<X>950</X>
-		<Y>40</Y>
+		<X>350</X>
+		<Y>50</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -157,8 +157,8 @@
 	<EmbeddedObject>
 		<Id>1788724048196</Id>
 		<Name><![CDATA[gestorDeCirculacao]]></Name>
-		<X>650</X>
-		<Y>60</Y>
+		<X>50</X>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -206,8 +206,8 @@
 	<EmbeddedObject>
 		<Id>1788997195204</Id>
 		<Name><![CDATA[coperXI]]></Name>
-		<X>850</X>
-		<Y>180</Y>
+		<X>250</X>
+		<Y>190</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -304,8 +304,8 @@
 	<EmbeddedObject>
 		<Id>1790107904674</Id>
 		<Name><![CDATA[gestorDeDVs]]></Name>
-		<X>650</X>
-		<Y>100</Y>
+		<X>50</X>
+		<Y>110</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -369,8 +369,8 @@
 	<EmbeddedObject>
 		<Id>1790885457210</Id>
 		<Name><![CDATA[t39]]></Name>
-		<X>1050</X>
-		<Y>80</Y>
+		<X>450</X>
+		<Y>90</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -443,8 +443,8 @@
 	<EmbeddedObject>
 		<Id>1791643905209</Id>
 		<Name><![CDATA[coperXXI]]></Name>
-		<X>850</X>
-		<Y>90</Y>
+		<X>250</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -492,8 +492,8 @@
 	<EmbeddedObject>
 		<Id>1791667957164</Id>
 		<Name><![CDATA[tgrao]]></Name>
-		<X>850</X>
-		<Y>210</Y>
+		<X>250</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -548,8 +548,8 @@
 	<EmbeddedObject>
 		<Id>1792083785283</Id>
 		<Name><![CDATA[costaLeite]]></Name>
-		<X>850</X>
-		<Y>160</Y>
+		<X>250</X>
+		<Y>170</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -616,8 +616,8 @@
 	<EmbeddedObject>
 		<Id>1792172584137</Id>
 		<Name><![CDATA[adm]]></Name>
-		<X>1050</X>
-		<Y>60</Y>
+		<X>450</X>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -684,8 +684,8 @@
 	<EmbeddedObject>
 		<Id>1792517221367</Id>
 		<Name><![CDATA[suzano]]></Name>
-		<X>950</X>
-		<Y>60</Y>
+		<X>350</X>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -733,8 +733,8 @@
 	<EmbeddedObject>
 		<Id>1792519121517</Id>
 		<Name><![CDATA[tes]]></Name>
-		<X>1050</X>
-		<Y>40</Y>
+		<X>450</X>
+		<Y>50</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -798,8 +798,8 @@
 	<EmbeddedObject>
 		<Id>1793014787665</Id>
 		<Name><![CDATA[eldorado]]></Name>
-		<X>950</X>
-		<Y>80</Y>
+		<X>350</X>
+		<Y>90</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -847,8 +847,8 @@
 	<EmbeddedObject>
 		<Id>1793299542693</Id>
 		<Name><![CDATA[moegaoMar]]></Name>
-		<X>850</X>
-		<Y>110</Y>
+		<X>250</X>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -896,8 +896,8 @@
 	<EmbeddedObject>
 		<Id>1793301358770</Id>
 		<Name><![CDATA[moegaoTerra]]></Name>
-		<X>850</X>
-		<Y>130</Y>
+		<X>250</X>
+		<Y>140</Y>
 		<Label>
 			<X>10</X>
 			<Y>-2</Y>
@@ -945,8 +945,8 @@
 	<EmbeddedObject>
 		<Id>1795840000301</Id>
 		<Name><![CDATA[gestorDeChegadas]]></Name>
-		<X>650</X>
-		<Y>140</Y>
+		<X>50</X>
+		<Y>150</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -993,8 +993,8 @@
 	<EmbeddedObject>
 		<Id>1793903313052</Id>
 		<Name><![CDATA[gestorDeISN]]></Name>
-		<X>650</X>
-		<Y>120</Y>
+		<X>50</X>
+		<Y>130</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1042,8 +1042,8 @@
 	<EmbeddedObject>
 		<Id>1795094901851</Id>
 		<Name><![CDATA[tec]]></Name>
-		<X>850</X>
-		<Y>40</Y>
+		<X>250</X>
+		<Y>50</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1091,8 +1091,8 @@
 	<EmbeddedObject>
 		<Id>1795118315658</Id>
 		<Name><![CDATA[tecAcucar]]></Name>
-		<X>850</X>
-		<Y>60</Y>
+		<X>250</X>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

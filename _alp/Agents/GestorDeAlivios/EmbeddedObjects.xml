@@ -520,8 +520,8 @@
 	<EmbeddedObject>
 		<Id>1799200000001</Id>
 		<Name><![CDATA[seize_saida_4000]]></Name>
-		<X>2440</X>
-		<Y>1080</Y>
+		<X>1750</X>
+		<Y>1480</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -738,8 +738,8 @@ Log.info("GesAlivios", "seize_saida_4000", String.format("trem=%d pegou interval
 	<EmbeddedObject>
 		<Id>1790969688528</Id>
 		<Name><![CDATA[bloquear_faixas_ate_terminal]]></Name>
-		<X>2120</X>
-		<Y>780</Y>
+		<X>1130</X>
+		<Y>980</Y>
 		<Label>
 			<X>-50</X>
 			<Y>-10</Y>
@@ -948,11 +948,11 @@ ocuparFaixas(alivio_em_andamento_pcx.getFaixas())]]></Code>
 	<EmbeddedObject>
 		<Id>1800200000001</Id>
 		<Name><![CDATA[pegar_acesso_moema_pcx]]></Name>
-		<X>2050</X>
-		<Y>700</Y>
+		<X>1040</X>
+		<Y>980</Y>
 		<Label>
-			<X>-50</X>
-			<Y>-10</Y>
+			<X>-55</X>
+			<Y>50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -1629,8 +1629,8 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 	<EmbeddedObject>
 		<Id>1791230723161</Id>
 		<Name><![CDATA[linha_4000]]></Name>
-		<X>2000</X>
-		<Y>990</Y>
+		<X>1000</X>
+		<Y>1390</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -1752,8 +1752,8 @@ Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 c
 	<EmbeddedObject>
 		<Id>1791230743178</Id>
 		<Name><![CDATA[ir_linha_4000]]></Name>
-		<X>2120</X>
-		<Y>990</Y>
+		<X>1120</X>
+		<Y>1390</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -1912,8 +1912,8 @@ Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d voltou para a 4000 c
 	<EmbeddedObject>
 		<Id>1791230790661</Id>
 		<Name><![CDATA[wait_trem_4000]]></Name>
-		<X>2470</X>
-		<Y>1050</Y>
+		<X>1610</X>
+		<Y>1580</Y>
 		<Label>
 			<X>-5</X>
 			<Y>-15</Y>
@@ -2015,8 +2015,8 @@ Log.info("GesAlivios", "alivio_pcx", String.format("trem=%d espera na 4000 (%d v
 	<EmbeddedObject>
 		<Id>1791231831139</Id>
 		<Name><![CDATA[liberar_faixas_ate_terminal]]></Name>
-		<X>2220</X>
-		<Y>980</Y>
+		<X>1400</X>
+		<Y>1480</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-15</Y>
@@ -2120,8 +2120,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1800600000002</Id>
 		<Name><![CDATA[sel_excede_4000]]></Name>
-		<X>2170</X>
-		<Y>1140</Y>
+		<X>1230</X>
+		<Y>1390</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -2150,7 +2150,9 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().getNumeroDeVagoes((Trem) agent) > LIMITE_SEM_MANOBRA_4000]]></Code>
+					<Code><![CDATA[main().getNumeroDeVagoes(
+(Trem) agent
+) > LIMITE_SEM_MANOBRA_4000]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2198,8 +2200,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1800600000004</Id>
 		<Name><![CDATA[seize_intervalo_4000]]></Name>
-		<X>2240</X>
-		<Y>1130</Y>
+		<X>1400</X>
+		<Y>1380</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-10</Y>
@@ -2405,8 +2407,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1800600000006</Id>
 		<Name><![CDATA[avancar_criar_loco]]></Name>
-		<X>2310</X>
-		<Y>1140</Y>
+		<X>1520</X>
+		<Y>1390</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -2553,8 +2555,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1800600000008</Id>
 		<Name><![CDATA[recuar_track178]]></Name>
-		<X>2390</X>
-		<Y>1140</Y>
+		<X>1650</X>
+		<Y>1390</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -2704,8 +2706,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1800600000010</Id>
 		<Name><![CDATA[liberar_intervalo_4000]]></Name>
-		<X>2470</X>
-		<Y>1130</Y>
+		<X>1850</X>
+		<Y>1380</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-15</Y>
@@ -2806,8 +2808,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1791232846843</Id>
 		<Name><![CDATA[para_comeca_alivio]]></Name>
-		<X>2560</X>
-		<Y>1060</Y>
+		<X>1700</X>
+		<Y>1590</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -2935,8 +2937,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1791411159807</Id>
 		<Name><![CDATA[comecar_alivio]]></Name>
-		<X>2000</X>
-		<Y>790</Y>
+		<X>920</X>
+		<Y>990</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-15</Y>
@@ -3055,8 +3057,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 	<EmbeddedObject>
 		<Id>1791411159877</Id>
 		<Name><![CDATA[para_alivio_terminal_pcx2]]></Name>
-		<X>2420</X>
-		<Y>790</Y>
+		<X>1840</X>
+		<Y>990</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -3110,8 +3112,8 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1791411193209</Id>
 		<Name><![CDATA[ir_entrada_terminal]]></Name>
-		<X>2330</X>
-		<Y>790</Y>
+		<X>1400</X>
+		<Y>1090</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-25</Y>
@@ -3254,11 +3256,11 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1800700000001</Id>
 		<Name><![CDATA[sel_esta_no_excedente]]></Name>
-		<X>2190</X>
-		<Y>790</Y>
+		<X>1270</X>
+		<Y>990</Y>
 		<Label>
-			<X>-25</X>
-			<Y>-20</Y>
+			<X>-35</X>
+			<Y>-50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3284,7 +3286,11 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[condition]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[((Trem) agent).getAllOccupiedTracks().contains(main().railwayTrack178) || ((Trem) agent).getAllOccupiedTracks().contains(main().railwayTrack101)]]></Code>
+					<Code><![CDATA[((Trem) agent).getAllOccupiedTracks().contains(
+	main().railwayTrack178) || 
+((Trem) agent).getAllOccupiedTracks().contains(
+	main().railwayTrack101
+)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3332,8 +3338,8 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1800700000003</Id>
 		<Name><![CDATA[voltar_do_excedente]]></Name>
-		<X>2250</X>
-		<Y>860</Y>
+		<X>1490</X>
+		<Y>990</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-25</Y>
@@ -3492,11 +3498,11 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1797206000002</Id>
 		<Name><![CDATA[seize_intervalo_volta]]></Name>
-		<X>2250</X>
-		<Y>800</Y>
+		<X>1390</X>
+		<Y>980</Y>
 		<Label>
-			<X>-25</X>
-			<Y>-10</Y>
+			<X>-30</X>
+			<Y>50</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3702,11 +3708,11 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1797206000004</Id>
 		<Name><![CDATA[ir_entrada_terminal1]]></Name>
-		<X>2400</X>
-		<Y>860</Y>
+		<X>1590</X>
+		<Y>990</Y>
 		<Label>
-			<X>-25</X>
-			<Y>-25</Y>
+			<X>-30</X>
+			<Y>45</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -3846,8 +3852,8 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1797206000006</Id>
 		<Name><![CDATA[liberar_intervalo_volta]]></Name>
-		<X>2520</X>
-		<Y>860</Y>
+		<X>1690</X>
+		<Y>980</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-15</Y>
@@ -6504,8 +6510,8 @@ for (Faixa f : alivio_em_andamento_pst.get_faixas_saida()) {
 	<EmbeddedObject>
 		<Id>1791950000001</Id>
 		<Name><![CDATA[linha_4000_cheia]]></Name>
-		<X>2360</X>
-		<Y>990</Y>
+		<X>1530</X>
+		<Y>1490</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -6582,8 +6588,8 @@ for (Faixa f : alivio_em_andamento_pst.get_faixas_saida()) {
 	<EmbeddedObject>
 		<Id>1791950000003</Id>
 		<Name><![CDATA[liberar_linha_4000]]></Name>
-		<X>2470</X>
-		<Y>980</Y>
+		<X>1850</X>
+		<Y>1480</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -6686,8 +6692,8 @@ for (Faixa f : alivio_em_andamento_pst.get_faixas_saida()) {
 	<EmbeddedObject>
 		<Id>1797210000002</Id>
 		<Name><![CDATA[liberar_intervalo_criacao]]></Name>
-		<X>2390</X>
-		<Y>740</Y>
+		<X>1540</X>
+		<Y>1080</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-10</Y>
@@ -6788,8 +6794,8 @@ for (Faixa f : alivio_em_andamento_pst.get_faixas_saida()) {
 	<EmbeddedObject>
 		<Id>1791950000005</Id>
 		<Name><![CDATA[para_alivio_na_linha_4000]]></Name>
-		<X>2560</X>
-		<Y>990</Y>
+		<X>1950</X>
+		<Y>1490</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -6983,7 +6989,7 @@ main().gestorDeCirculacao.tentar_usar_faixa.take(agent);]]></Code>
 		<X>1410</X>
 		<Y>590</Y>
 		<Label>
-			<X>-10</X>
+			<X>-20</X>
 			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -7056,7 +7062,7 @@ main().pos_locoAlivio_PMC]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000306</Id>
 		<Name><![CDATA[ir_alivio_pmc]]></Name>
-		<X>1520</X>
+		<X>1510</X>
 		<Y>590</Y>
 		<Label>
 			<X>-15</X>
@@ -7197,7 +7203,7 @@ main().pos_locoAlivio_PMC]]></Code>
 	<EmbeddedObject>
 		<Id>1792014000308</Id>
 		<Name><![CDATA[para_alivio_terminal_pmc]]></Name>
-		<X>1630</X>
+		<X>1650</X>
 		<Y>590</Y>
 		<Label>
 			<X>-10</X>
@@ -7257,7 +7263,7 @@ terminal_alivio_pmc.takeAlivio((Trem) agent);]]></Code>
 		<Y>580</Y>
 		<Label>
 			<X>-35</X>
-			<Y>65</Y>
+			<Y>55</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -7716,8 +7722,8 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 		<X>1220</X>
 		<Y>580</Y>
 		<Label>
-			<X>-35</X>
-			<Y>65</Y>
+			<X>-40</X>
+			<Y>-10</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -7920,8 +7926,8 @@ contador_mnb = (contador_mnb >= 99) ? 1 : contador_mnb + 2;
 	<EmbeddedObject>
 		<Id>1797205000001</Id>
 		<Name><![CDATA[ocupar_mnb_pcx_saida_4000]]></Name>
-		<X>2400</X>
-		<Y>1040</Y>
+		<X>1650</X>
+		<Y>1480</Y>
 		<Label>
 			<X>-35</X>
 			<Y>65</Y>
@@ -8128,7 +8134,7 @@ Log.info("GesAlivios", "ocupar_mnb_pcx_saida_4000", String.format("trem=%d na fi
 	<EmbeddedObject>
 		<Id>1798140000304</Id>
 		<Name><![CDATA[soltar_mnb_pcx_pmc]]></Name>
-		<X>1310</X>
+		<X>1030</X>
 		<Y>840</Y>
 		<Label>
 			<X>-25</X>
@@ -8245,7 +8251,7 @@ Log.info("GesAlivios", "ocupar_mnb_pcx_saida_4000", String.format("trem=%d na fi
 	<EmbeddedObject>
 		<Id>1798140000306</Id>
 		<Name><![CDATA[liberar_mnb_pcx_pmc]]></Name>
-		<X>1460</X>
+		<X>1310</X>
 		<Y>830</Y>
 		<Label>
 			<X>-25</X>
@@ -8346,7 +8352,7 @@ new ResourcePool[0]]]></Code>
 	<EmbeddedObject>
 		<Id>1798140000308</Id>
 		<Name><![CDATA[para_circulacao_alivio_pmc]]></Name>
-		<X>1610</X>
+		<X>1650</X>
 		<Y>840</Y>
 		<Label>
 			<X>-10</X>

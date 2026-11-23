@@ -44008,8 +44008,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1786122608772</Id>
 		<Name><![CDATA[gestorDeAlivios_presentation]]></Name>
-		<X>1050</X>
-		<Y>560</Y>
+		<X>590</X>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -44821,8 +44821,8 @@ if (senha.equals("FIPS123")) {
 	<EmbeddedObjectPresentation>
 		<Id>1787583157123</Id>
 		<Name><![CDATA[gestorDeLocomotivas_presentation]]></Name>
-		<X>1260</X>
-		<Y>360</Y>
+		<X>800</X>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -45482,7 +45482,7 @@ if (senha.equals("FIPS123")) {
 		<Id>1793903315035</Id>
 		<Name><![CDATA[gestorDeISN_presentation]]></Name>
 		<X>20</X>
-		<Y>580</Y>
+		<Y>590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
