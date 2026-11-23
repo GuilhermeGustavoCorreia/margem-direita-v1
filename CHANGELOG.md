@@ -2506,3 +2506,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
 - **O que (GestorDeChegadas):** o CSV dos trens criados passa para a pasta própria `simulacao/output/trens_criados/` (`trens_criados.csv` ou `trens_criados_rep<n>.csv`). Só o caminho em `iniciar_csv_trens()`; a pasta é criada automaticamente.
 - **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `docs/gestores.md`
+
+## ALT-213 — loco-fips-pcx-pega-silosmuro-c
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** replicação 5 (semente 5), 02:24 de 01/01 (2,4 h): as 2 locos FIPS do TES nasceram em `t39_criar_loco_rechego` (`pst_silosMuro_c`) em cima da cauda do Y48, que ainda tinha a faixa licenciada. O ponto é usado por TES, ADM e T39, e nenhum pedia a faixa antes de criar a loco. A mensagem cita `loco_pcx_starts`, mas o carro era do TES.
+- **O que (TES, ADM, T39):** o lote pega a `silosMuro_c` antes de chamar a loco e solta depois do engate (a loco entra no `in2` e é absorvida; o lote segue).
+  - Seize novo `ocupar_silosMuro_c_loco` entre `usar_recurso_loco` e o TrainCouple (`acoplar_loco_pcx` / `acoplar_loco_mnb` / `acoplar_loco`); onExit faz `bloquear` na faixa e o `loco_pcx_starts.inject()`.
+  - O `inject()` saiu do onExit do `usar_recurso_loco` (TES, T39) e do `onEnter1` do `acoplar_loco_mnb` (ADM).
+  - Release novo `liberar_silosMuro_c_loco` (`ALL_FROM_SEIZES { ocupar_silosMuro_c_loco }`) depois do engate; onExit volta a faixa para LIVRE se estiver com o id do lote.
+- **Arquivos:** `_alp/Agents/TES|ADM|T39/EmbeddedObjects.xml`, `_alp/Agents/TES|ADM|T39/Connectors.xml`
