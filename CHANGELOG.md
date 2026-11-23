@@ -2528,6 +2528,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-216 — avanco-do-alivio-da-4000-pega-mnb-pcx-antes
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** deadlock às 04:19 de 01/01 (semente 5): o trem da 4000 (29969, 78 vgs) pegou a `intervalo4000_c/b` no avanço do T39 sem o `mnb_pcx` e esperava o `mnb_pcx` para o excedente; a loco do alívio da Bracell (29075) tinha o `mnb_pcx` e esperava a `intervalo4000_b/c`. Ordem de recursos invertida.
+- **Regra:** quem usa a `intervalo4000` pega o `mnb_pcx` antes.
+- **O que:**
+  - T39 e ADM: novo Seize `ocupar_mnb_pcx_avanco` antes do `ocupar_intervalo_avanco` (no ADM, as três entradas). Pede o `mnb_pcx` só acima de `LIMITE_VGS_INTERVALO_4000` e se o trem ainda não tem (`get_mnb_pcx_para_avancar`).
+  - GestorDeAlivios: funções `mnb_pcx_faltando(Trem)` e `get_mnb_pcx_para_avancar(Trem)`; `ocupar_mnb_pcx_excedente` e `ocupar_mnb_pcx_volta` passam a pedir `mnb_pcx_faltando`.
+  - Soltar: sem mudança (`liberar_intervalo_4000`/`_volta` ou `liberar_faixas_ate_terminal`).
+- **Efeito colateral:** em alívio do T39/ADM com mais de 40 vagões, o trem da 4000 segura o `mnb_pcx` até voltar para a 4000; Bracell, Suzano, Eldorado e Tgrao esperam.
+- **Arquivos:** `_alp/Agents/T39/EmbeddedObjects.xml`, `_alp/Agents/T39/Connectors.xml`, `_alp/Agents/ADM/EmbeddedObjects.xml`, `_alp/Agents/ADM/Connectors.xml`, `_alp/Agents/GestorDeAlivios/Code/Functions.java`, `_alp/Agents/GestorDeAlivios/Code/Functions.xml`, `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `docs/gestores.md`
+
 ## ALT-215 — excedente-da-4000-pega-mnb-pcx
 - **Data:** 2026-11-23
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

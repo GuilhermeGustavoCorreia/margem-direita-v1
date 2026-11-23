@@ -882,3 +882,18 @@ ResourcePool[][] get_intervalo_para_avancar(Trem trem)
 if (main().getNumeroDeVagoes(trem) <= LIMITE_VGS_INTERVALO_4000) return new ResourcePool[][] { new ResourcePool[0] };
 return pools_intervalo_faltando(trem);
 /*ALCODEEND*/}
+
+ResourcePool[][] mnb_pcx_faltando(Trem trem)
+{/*ALCODESTART::1797216000001*/
+// mnb_pcx só se o trem ainda não segura (vazio: o Seize passa direto)
+ResourcePool rp = main().gestorDeCirculacao.rp_mnb_pcx;
+if (!trem.resourceUnitsOfPool(rp).isEmpty()) return new ResourcePool[][] { new ResourcePool[0] };
+return new ResourcePool[][] { { rp } };
+/*ALCODEEND*/}
+
+ResourcePool[][] get_mnb_pcx_para_avancar(Trem trem)
+{/*ALCODESTART::1797216000002*/
+// avanço do alívio da 4000 no T39/ADM: acima do limite entra na intervalo4000, então pega o mnb_pcx antes
+if (main().getNumeroDeVagoes(trem) <= LIMITE_VGS_INTERVALO_4000) return new ResourcePool[][] { new ResourcePool[0] };
+return mnb_pcx_faltando(trem);
+/*ALCODEEND*/}

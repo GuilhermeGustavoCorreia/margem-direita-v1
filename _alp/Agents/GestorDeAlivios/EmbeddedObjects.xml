@@ -8164,7 +8164,8 @@ Log.info("GesAlivios", "ocupar_mnb_pcx_saida_4000", String.format("trem=%d na fi
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[new ResourcePool[][] { { main().gestorDeCirculacao.rp_mnb_pcx } }]]></Code>
+					<Code><![CDATA[// trem que vem do avanço do T39/ADM já segura o mnb_pcx
+mnb_pcx_faltando((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8372,7 +8373,8 @@ Log.info("GesAlivios", "ocupar_mnb_pcx_excedente", String.format("trem=%d na fil
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[new ResourcePool[][] { { main().gestorDeCirculacao.rp_mnb_pcx } }]]></Code>
+					<Code><![CDATA[// trem que vem do avanço do T39/ADM já segura o mnb_pcx
+mnb_pcx_faltando((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
