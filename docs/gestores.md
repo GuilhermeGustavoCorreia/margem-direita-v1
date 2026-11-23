@@ -157,6 +157,12 @@ Em desenvolvimento (ALT-084). Parte ligada ao ISN:
 - `receber_trem`: liga trem e pedido; destino ISN grava `gestorDeISN.lote_linha02` e `trem.estacionarISN = true`; entrega em `gestorDeISN.chegada`.
 - Os Exits `paraGestorCirculacao_chegadaCarregados` dos terminais (ADM, CoperXI, CoperXXI, MoegaoMar, MoegaoTerra, TES, Tgrao) chamam `receber_trem`.
 
+Saída (ALT-213): `simulacao/output/trens_criados.csv` (`trens_criados_rep<n>.csv` nas replicações).
+
+- `iniciar_csv_trens` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up`.
+- `registrar_trem_csv` (no `receber_trem`): uma linha por trem que nasceu com pedido, gravada na hora (append). `data_pedido` = horário programado do pedido; `data_entrada` = trem no trilho; datas `dd/MM/yyyy HH:mm` a partir de `data_inicio`; `segmento` do 1º vagão; `warm_up` = entrada antes de `warmup_h`.
+- Pedidos ainda na fila no fim da rodada não entram no arquivo.
+
 ## Como os gestores conversam com os terminais
 
 | De → Para | Chamada | Quando |

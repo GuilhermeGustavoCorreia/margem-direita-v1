@@ -111,6 +111,25 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+		<Id>1798300000503</Id>
+		<Name><![CDATA[csv_trens]]></Name>
+		<X>50</X>
+		<Y>140</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[String]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
 		<Id>1799800000002</Id>
 		<Name><![CDATA[log_analise_detalhada]]></Name>
 		<X>-600</X>

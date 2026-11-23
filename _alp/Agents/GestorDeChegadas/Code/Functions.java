@@ -35,6 +35,7 @@ for (String[] c : main().ler_csv(main().pasta_simulacao + "/input/tempo_entre_ch
 		f.instancia, f.ferrovia, f.proxima_h, f.intervalo_h));
 }
 Log.info("Chegadas", "fluxos", fluxos.size() + " fluxos de chegada");
+iniciar_csv_trens();
 /*ALCODEEND*/}
 
 double gerar_pedidos()
@@ -137,6 +138,7 @@ if (p == null) {
 		main().gestorDeCirculacao.trens_em_circulacao.add(trem);   // a caminho do terminal
 	}
 	atendidos.add(p);
+	registrar_trem_csv(p, trem);
 	Log.info("Chegadas", "entrou_trilho", String.format("%s trem=%d/%s entrou no trilho -> %s",
 		p, trem.getId(), trem.prefixo, p.destino));
 }
@@ -285,5 +287,47 @@ for (int i = 0; i < trem.size(); i++) {
 	if (c instanceof Vagao) { fer = ((Vagao) c).ferrovia; seg = ((Vagao) c).segmento; break; }
 }
 return pode_receber_tipo(terminal, fer, seg);
+/*ALCODEEND*/}
+
+double iniciar_csv_trens()
+{/*ALCODESTART::1798300000501*/
+// cria (sobrescreve) o CSV dos trens criados, só com o cabeçalho.
+// Rodada normal: trens_criados.csv; replicações: trens_criados_rep<n>.csv
+int rep = main().replicacao_atual;
+java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/"
+	+ (rep > 0 ? "trens_criados_rep" + rep + ".csv" : "trens_criados.csv")).getAbsoluteFile();
+arq.getParentFile().mkdirs();
+csv_trens = arq.getPath();
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(arq, false), "UTF-8")) {
+	w.write("pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up\n");
+} catch (Exception ex) {
+	error("[chegadas] não foi possível criar " + csv_trens + ": " + ex.getMessage());
+}
+Log.info("Chegadas", "csv", "trens criados em " + csv_trens);
+/*ALCODEEND*/}
+
+double registrar_trem_csv(Pedido p,Trem trem)
+{/*ALCODESTART::1798300000502*/
+// uma linha por trem criado, gravada na hora (append) para não perder dados se a rodada cair.
+// data_pedido = horário programado do pedido; data_entrada = trem no trilho.
+// warm_up = o trem entrou no trilho antes do fim do warm-up.
+String seg = "";
+for (int i = 0; i < trem.size(); i++) {
+	Agent c = trem.getCar(i);
+	if (c instanceof Vagao) { seg = ((Vagao) c).segmento; break; }
+}
+java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+java.time.LocalDateTime t0 = Log.data_inicio.atStartOfDay();
+String data_pedido  = t0.plusSeconds(Math.round(p.hora_pedido_h  * 3600)).format(fmt);
+String data_entrada = t0.plusSeconds(Math.round(p.hora_entrada_h * 3600)).format(fmt);
+boolean warm_up = p.hora_entrada_h < main().warmup_h;
+
+String linha = String.join(";", String.valueOf(p.numero), trem.prefixo, String.valueOf(trem.getId()),
+	p.instancia, p.ferrovia, seg == null ? "" : seg.toLowerCase(), data_pedido, data_entrada, String.valueOf(warm_up));
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(csv_trens, true), "UTF-8")) {
+	w.write(linha + "\n");
+} catch (Exception ex) {
+	Log.warn("Chegadas", "csv", "falha ao gravar trem " + trem.getId() + " em " + csv_trens + ": " + ex.getMessage());
+}
 /*ALCODEEND*/}
 

@@ -358,4 +358,46 @@
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1798300000501</Id>
+		<Name><![CDATA[iniciar_csv_trens]]></Name>
+		<Description><![CDATA[cria simulacao/output/trens_criados.csv só com o cabeçalho]]></Description>
+		<X>50</X>
+		<Y>530</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1798300000502</Id>
+		<Name><![CDATA[registrar_trem_csv]]></Name>
+		<Description><![CDATA[grava uma linha por trem criado no trens_criados.csv]]></Description>
+		<X>50</X>
+		<Y>550</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[p]]></Name>
+			<Type><![CDATA[Pedido]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>

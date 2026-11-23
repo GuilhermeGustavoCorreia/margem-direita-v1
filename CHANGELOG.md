@@ -2490,3 +2490,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - Experimento `Replicacoes`: lê `simulacao.csv` (replicações, semente_tipo, semente), roda em sequência e sem animação; semente `semente + r - 1` (fixa) ou sorteada (variável). A parada continua no On startup do Main (`duracao_h`).
   - `MaximumMemory` do `Simulation` já estava em 8192 MB (alterado pelo Guilherme).
 - **Arquivos:** `_alp/Agents/Main/Code/Functions.java`, `_alp/Agents/Main/Variables.xml`
+
+## ALT-213 — csv-trens-criados
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **O que (GestorDeChegadas):** primeiro indicador de saída para a interface. `simulacao/output/trens_criados.csv` (ou `trens_criados_rep<n>.csv`) com uma linha por trem criado: `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up`.
+  - `iniciar_csv_trens()` chamada no `iniciar()`: cria a pasta e o cabeçalho.
+  - `registrar_trem_csv(p, trem)` chamada no `receber_trem()`: grava em append na hora, para não perder dados se a rodada cair.
+  - Variável nova `csv_trens` (caminho do arquivo).
+  - Pedidos ainda na fila no fim da rodada ficam de fora; trens do warm-up entram com `warm_up = true`.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Code/Functions.xml`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `docs/gestores.md`
