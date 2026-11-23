@@ -864,3 +864,21 @@ for (Faixa f : java.util.List.of(
 return pools.toArray(new ResourcePool[0]);
 /*ALCODEEND*/}
 
+ResourcePool[][] pools_intervalo_faltando(Trem trem)
+{/*ALCODESTART::1797214000021*/
+// intervalo4000_c/b que o trem ainda não segura (vazio se já tem as duas: o Seize passa direto)
+List<ResourcePool> pools = new ArrayList<>();
+for (Faixa f : java.util.List.of(
+        main().gestorDeCirculacao.faixa_intervalo4000_c,
+        main().gestorDeCirculacao.faixa_intervalo4000_b)) {
+    if (trem.resourceUnitsOfPool(f.recurso).isEmpty()) pools.add(f.recurso);
+}
+return new ResourcePool[][] { pools.toArray(new ResourcePool[0]) };
+/*ALCODEEND*/}
+
+ResourcePool[][] get_intervalo_para_avancar(Trem trem)
+{/*ALCODESTART::1797214000022*/
+// alívio da 4000 no T39/ADM: acima do limite, o avanço até pos_linha_4000_criar_loco entra na intervalo4000_b
+if (main().getNumeroDeVagoes(trem) <= LIMITE_VGS_INTERVALO_4000) return new ResourcePool[][] { new ResourcePool[0] };
+return pools_intervalo_faltando(trem);
+/*ALCODEEND*/}

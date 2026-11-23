@@ -225,5 +225,6 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-211**: Interface e Main — simulacao.csv com data de início e semente, lido pelo nome da coluna
 - **ALT-212**: Main — log por replicação (sim_rep<n>.log) e experimento Replicacoes
 - **ALT-213**: TES, ADM, T39 — lote pega a silosMuro_c antes de chamar as locos FIPS
+- **ALT-214**: T39, ADM — avanço do alívio da 4000 acima de 40 vgs pega a intervalo4000_c/b
 - **ALT-213**: GestorDeChegadas — CSV dos trens criados (data do pedido, data de entrada, warm-up)
 - **ALT-214**: GestorDeChegadas — CSV dos trens criados na pasta output/trens_criados

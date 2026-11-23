@@ -2227,7 +2227,8 @@ alivio_em_andamento_pcx = new Alivio();]]></Code>
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ { main().gestorDeCirculacao.faixa_intervalo4000_c.recurso, main().gestorDeCirculacao.faixa_intervalo4000_b.recurso } }]]></Code>
+					<Code><![CDATA[// só o que o trem ainda não segura (o avanço no T39/ADM pode já ter pego)
+pools_intervalo_faltando((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3525,7 +3526,8 @@ alivio_em_andamento_pcx.get_moega_atual().takeAlivio((Trem) agent);]]></Code>
 			<Parameter>
 				<Name><![CDATA[resourceSets]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[{ { main().gestorDeCirculacao.faixa_intervalo4000_c.recurso, main().gestorDeCirculacao.faixa_intervalo4000_b.recurso } }]]></Code>
+					<Code><![CDATA[// só o que o trem ainda não segura (o avanço no T39/ADM pode já ter pego)
+pools_intervalo_faltando((Trem) agent)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

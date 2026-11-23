@@ -3666,11 +3666,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>sair_linha7</ItemName>
+			<ItemName>ocupar_intervalo_avanco</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -3721,11 +3721,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>sair_linha7</ItemName>
+			<ItemName>ocupar_intervalo_avanco</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -4202,11 +4202,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>margemdireitamodel</PackageName>
 			<ClassName>ADM</ClassName>
-			<ItemName>sair_linha7</ItemName>
+			<ItemName>ocupar_intervalo_avanco</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
-			<PackageName>com.anylogic.libraries.rail</PackageName>
-			<ClassName>TrainMoveTo</ClassName>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -6011,6 +6011,61 @@
 			<Point>
 				<X>60</X>
 				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1797214200095</Id>
+		<Name><![CDATA[con_ocupar_intervalo_avanco]]></Name>
+		<X>4190</X>
+		<Y>210</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>ocupar_intervalo_avanco</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Seize</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>margemdireitamodel</PackageName>
+			<ClassName>ADM</ClassName>
+			<ItemName>sair_linha7</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.rail</PackageName>
+			<ClassName>TrainMoveTo</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>40</Y>
+			</Point>
+			<Point>
+				<X>110</X>
+				<Y>40</Y>
+			</Point>
+			<Point>
+				<X>110</X>
+				<Y>-10</Y>
+			</Point>
+			<Point>
+				<X>150</X>
+				<Y>-10</Y>
 			</Point>
 		</Points>
 	</Connector>

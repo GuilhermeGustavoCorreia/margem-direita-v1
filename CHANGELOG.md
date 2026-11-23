@@ -2516,3 +2516,14 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - O `inject()` saiu do onExit do `usar_recurso_loco` (TES, T39) e do `onEnter1` do `acoplar_loco_mnb` (ADM).
   - Release novo `liberar_silosMuro_c_loco` (`ALL_FROM_SEIZES { ocupar_silosMuro_c_loco }`) depois do engate; onExit volta a faixa para LIVRE se estiver com o id do lote.
 - **Arquivos:** `_alp/Agents/TES|ADM|T39/EmbeddedObjects.xml`, `_alp/Agents/TES|ADM|T39/Connectors.xml`
+
+## ALT-214 — avanco-t39-adm-pega-intervalo4000
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** 04:17 de 01/01 (4,3 h): a loco do alívio da Bracell (MNB33) bateu no trem da 4000 (MNB25, 78 vgs) na `intervalo4000_b`. No alívio do T39, o `paraFrente` leva o trem até `pos_linha_4000_criar_loco` (intervalo4000_b), limitado ao comprimento; acima de ~40 vagões a ponta entra na intervalo sem o recurso. O `sair_linha7` do ADM tem o mesmo alvo.
+- **O que:**
+  - GestorDeAlivios: parâmetro `LIMITE_VGS_INTERVALO_4000 = 40`; funções `pools_intervalo_faltando(trem)` (intervalo4000_c/b que o trem não segura) e `get_intervalo_para_avancar(trem)` (vazio até o limite). `seize_intervalo_4000` e `seize_intervalo_volta` passam a usar `pools_intervalo_faltando`.
+  - T39: Seize `ocupar_intervalo_avanco` entre `trainMoveTo` e `paraFrente`.
+  - ADM: Seize `ocupar_intervalo_avanco` antes do `sair_linha7` (as três entradas).
+  - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
+- **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
