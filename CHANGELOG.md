@@ -2528,6 +2528,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-219 — coperxxi-alivio-termina-ao-sair-da-linha
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** replicação 1 (semente 1), 01:46 de 03/01 (49,8 h): o trace mostrou que o "vagão solo" era o alívio anterior (MNB29, loco + 2 vgs), parado na `psnSaidaCopexXXI_b` (470,5–528 m) esperando licença na `via1_intermar_c`. O CoperXXI já tinha liberado a descarga; o grupo 43488 bateu nele e o lote b se formou em 550–935 m, o lote a em 935–1058 m. No alívio seguinte a ponta passou do `_coperXII_moega` e o `engatar_a` ficou sem rota.
+- **O que (CoperXXI):**
+  - `retornar_gestorDeAlivios` (onExit): guarda o trem em `trem_alivio_na_linha` e não encerra o alívio.
+  - Novo evento cíclico `verificar_saida_alivio` (30 s): com o trem fora da `psnSaidaCopexXXI_b`, chama `finalizar_alivio()`.
+  - Nova função `finalizar_alivio()` com o código que estava no onExit.
+- **Arquivos:** `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `_alp/Agents/CoperXXI/Variables.xml`, `_alp/Agents/CoperXXI/AOC.CoperXXI.xml`, `_alp/Agents/CoperXXI/Code/Events.xml` (novo), `_alp/Agents/CoperXXI/Code/Events.java` (novo), `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/Code/Functions.xml`, `docs/terminais/coperxxi.md`
+
 ## ALT-218 — coperxxi-log-trens-na-linha
 - **Data:** 2026-11-23
 - **Status:** aplicada (só log)

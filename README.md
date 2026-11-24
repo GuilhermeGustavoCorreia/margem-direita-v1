@@ -230,5 +230,6 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-216**: T39/ADM — avanço do alívio da 4000 pega o mnb_pcx antes da intervalo4000
 - **ALT-217**: T39 — desliga o log de análise
 - **ALT-218**: CoperXXI — log de análise dos trens na linha quando um movimento bate
+- **ALT-219**: CoperXXI — alívio só termina quando o trem sai da psnSaidaCopexXXI_b
 - **ALT-213**: GestorDeChegadas — CSV dos trens criados (data do pedido, data de entrada, warm-up)
 - **ALT-214**: GestorDeChegadas — CSV dos trens criados na pasta output/trens_criados

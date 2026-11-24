@@ -472,3 +472,14 @@ for (Object o : trens) {
 	Log.info("CoperXXI", "trens_na_linha", String.format("%s |   %s | estoque=%s | %s", evento, desc, estoque, pos));
 }
 /*ALCODEEND*/}
+
+double finalizar_alivio()
+{/*ALCODESTART::1797219000004*/
+// linhas aliviadas e trem do alívio fora da linha: o lote_em_descarga (antiga segunda parte) começa
+aguardando_alivio = false;
+fazendoAlivio = false;
+liberar_espaco_vazios();
+iniciar_proximo_lote();
+// terminal sem carga e ainda com vazios: pede o próximo alívio
+verificar_alivio();
+/*ALCODEEND*/}

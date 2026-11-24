@@ -40,6 +40,12 @@
 - `ir_lote_a` / `ir_lote_b` levam o grupo descarregado até o ponto da linha. Se bater (`outHit`), passam por `tem_lote_a` / `tem_lote_b` (SelectOutput): com lote parado no estoque da linha (`estoque_x.size() > 0`), acopla; sem lote, segue pelo mesmo caminho do "chegou" (`para_chegou_vazios*`).
 - Motivo: com a linha a vazia (o alívio levou o lote a), o grupo encostou na cauda do lote b, que fica no mesmo ponto (`_coperXXI_lote_a` = `_coperXXI_lote_b_aux_mnb` = 399). O `outHit` mandava o grupo ao `acoplar_a`, que esperava para sempre um lote que não existia.
 
+## Fim do alívio
+
+- No `retornar_gestorDeAlivios` o trem do alívio volta ao GestorDeAlivios, mas o CoperXXI só considera o alívio terminado quando ele sai da `psnSaidaCopexXXI_b`: o onExit guarda o trem em `trem_alivio_na_linha` e mantém `fazendoAlivio = true`.
+- O evento cíclico `verificar_saida_alivio` (30 s) confere `psnSaidaCopexXXI_b.getTrains()`; quando o trem não está mais na linha, chama `finalizar_alivio()` (`aguardando_alivio = false`, `fazendoAlivio = false`, `liberar_espaco_vazios()`, `iniciar_proximo_lote()`, `verificar_alivio()`).
+- Motivo: o alívio esperando licença na `via1_intermar_c` ficava parado na linha; os grupos da descarga seguinte batiam nele e os lotes a/b se formavam fora do lugar.
+
 ## Logs de análise
 
 - Com `log_de_analise = true`, o `outHit` do `engatar_b`, `engatar_a`, `ir_lote_b` e `ir_lote_a` chama `listar_trens_linha(evento)`: grava (`trens_na_linha`) cada trem na `psnSaidaCopexXXI_b` com ID, carros, vagões, locos, `tipoDeLote`, estoque (b, a, moega ou -) e o trecho ocupado na linha (m). Serve para achar carros parados fora dos estoques.

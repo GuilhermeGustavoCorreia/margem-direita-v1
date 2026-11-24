@@ -5997,13 +5997,9 @@ traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[main().gestorDeAlivios.retornar_alivio.take(agent);
-// ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
-aguardando_alivio = false;
-fazendoAlivio = false;
-liberar_espaco_vazios();
-iniciar_proximo_lote();
-// terminal sem carga e ainda com vazios: pede o próximo alívio
-verificar_alivio();]]></Code>
+// o alívio segue em andamento até o trem sair da psnSaidaCopexXXI_b (evento verificar_saida_alivio)
+trem_alivio_na_linha = (Trem) agent;
+Log.info("CoperXXI", "alivio_aguarda_sair", String.format("trem=%d ainda na psnSaidaCopexXXI_b", agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
