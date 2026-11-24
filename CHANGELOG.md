@@ -2528,6 +2528,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-218 — coperxxi-log-trens-na-linha
+- **Data:** 2026-11-23
+- **Status:** aplicada (só log)
+- **Problema:** replicação 1 (semente 1) parou às 01:46 de 03/01 (49,8 h) no `engatar_a` do CoperXXI (sem rota: a ponta do trem já estava depois do `_coperXII_moega`). Um vagão solo, fora dos estoques, estava na `psnSaidaCopexXXI_b`; às 00:48 o grupo 43488 bateu nele (`ir_lote_b` outHit com estoque b vazio) e o lote b se formou fora do lugar. O log não mostra de onde veio o vagão.
+- **O que:** função `listar_trens_linha(String evento)` (log de análise, `trens_na_linha`), chamada no `onExitHit` de `engatar_b`, `engatar_a`, `ir_lote_b` e `ir_lote_a`.
+- **Arquivos:** `_alp/Agents/CoperXXI/Code/Functions.java`, `_alp/Agents/CoperXXI/Code/Functions.xml`, `_alp/Agents/CoperXXI/EmbeddedObjects.xml`, `docs/terminais/coperxxi.md`
+
 ## ALT-217 — desliga-log-de-analise-t39
 - **Data:** 2026-11-23
 - **Status:** aplicada

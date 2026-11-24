@@ -121,7 +121,8 @@ log_analise("engatar_b", train, "inicio");]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("engatar_b", train, "bateu (outHit)");]]></Code>
+					<Code><![CDATA[log_analise("engatar_b", train, "bateu (outHit)");
+listar_trens_linha("engatar_b");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -272,7 +273,8 @@ log_analise("engatar_a", train, "inicio");]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("engatar_a", train, "bateu (outHit)");]]></Code>
+					<Code><![CDATA[log_analise("engatar_a", train, "bateu (outHit)");
+listar_trens_linha("engatar_a");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3943,7 +3945,8 @@ log_analise("e_ultimo_grupo", agent, "true");]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("ir_lote_b", train, "bateu (outHit)");]]></Code>
+					<Code><![CDATA[log_analise("ir_lote_b", train, "bateu (outHit)");
+listar_trens_linha("ir_lote_b");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -4096,7 +4099,8 @@ log_analise("e_ultimo_grupo", agent, "true");]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[log_analise("ir_lote_a", train, "bateu (outHit)");]]></Code>
+					<Code><![CDATA[log_analise("ir_lote_a", train, "bateu (outHit)");
+listar_trens_linha("ir_lote_a");]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

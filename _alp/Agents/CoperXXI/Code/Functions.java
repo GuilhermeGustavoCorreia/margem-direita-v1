@@ -433,3 +433,42 @@ boolean pode_descarregar_grupo()
 return get_espaco_vazios() > 0 && !aguardando_alivio && !fazendoAlivio;
 /*ALCODEEND*/}
 
+double listar_trens_linha(String evento)
+{/*ALCODESTART::1797218000001*/
+// log de análise: lista o que está na psnSaidaCopexXXI_b quando um movimento bate (outHit)
+if (!log_de_analise) return;
+RailwayTrack linha = main().psnSaidaCopexXXI_b;
+java.util.Collection<?> trens = linha.getTrains();
+Log.info("CoperXXI", "trens_na_linha", String.format("%s | %d trem(ns) na psnSaidaCopexXXI_b", evento, trens.size()));
+for (Object o : trens) {
+	Agent t = (Agent) o;
+	String desc = "id=" + t.getId();
+	String estoque = "-";
+	String pos = "?";
+	if (t instanceof Trem) {
+		Trem tr = (Trem) t;
+		desc = String.format("trem=%d carros=%d vgs=%d locos=%d tipo=%s", tr.getId(), tr.size(), tr.getNumeroDeVagoes(), tr.getNumeroDeLocomotivas(), tr.tipoDeLote);
+		for (int i = 0; i < estoque_b.size(); i++)     if (estoque_b.get(i) == tr)     estoque = "b";
+		for (int i = 0; i < estoque_a.size(); i++)     if (estoque_a.get(i) == tr)     estoque = "a";
+		for (int i = 0; i < estoque_moega.size(); i++) if (estoque_moega.get(i) == tr) estoque = "moega";
+		try {
+			double ini = Double.MAX_VALUE, fim = -Double.MAX_VALUE;
+			for (int i = 0; i < tr.size(); i++) {
+				Agent carro = tr.getCar(i);
+				java.lang.reflect.Method getTrack  = carro.getClass().getMethod("getTrack", boolean.class);
+				java.lang.reflect.Method getOffset = carro.getClass().getMethod("getOffset", boolean.class);
+				for (boolean frente : new boolean[] { true, false }) {
+					if ((RailwayTrack) getTrack.invoke(carro, frente) != linha) continue;
+					double off = (double) getOffset.invoke(carro, frente);
+					ini = Math.min(ini, off);
+					fim = Math.max(fim, off);
+				}
+			}
+			if (ini <= fim) pos = String.format("%.1f a %.1f m", ini, fim);
+		} catch (Exception e) {
+			pos = "erro: " + e;
+		}
+	}
+	Log.info("CoperXXI", "trens_na_linha", String.format("%s |   %s | estoque=%s | %s", evento, desc, estoque, pos));
+}
+/*ALCODEEND*/}

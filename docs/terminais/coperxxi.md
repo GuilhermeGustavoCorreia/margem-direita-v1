@@ -39,3 +39,7 @@
 
 - `ir_lote_a` / `ir_lote_b` levam o grupo descarregado até o ponto da linha. Se bater (`outHit`), passam por `tem_lote_a` / `tem_lote_b` (SelectOutput): com lote parado no estoque da linha (`estoque_x.size() > 0`), acopla; sem lote, segue pelo mesmo caminho do "chegou" (`para_chegou_vazios*`).
 - Motivo: com a linha a vazia (o alívio levou o lote a), o grupo encostou na cauda do lote b, que fica no mesmo ponto (`_coperXXI_lote_a` = `_coperXXI_lote_b_aux_mnb` = 399). O `outHit` mandava o grupo ao `acoplar_a`, que esperava para sempre um lote que não existia.
+
+## Logs de análise
+
+- Com `log_de_analise = true`, o `outHit` do `engatar_b`, `engatar_a`, `ir_lote_b` e `ir_lote_a` chama `listar_trens_linha(evento)`: grava (`trens_na_linha`) cada trem na `psnSaidaCopexXXI_b` com ID, carros, vagões, locos, `tipoDeLote`, estoque (b, a, moega ou -) e o trecho ocupado na linha (m). Serve para achar carros parados fora dos estoques.
