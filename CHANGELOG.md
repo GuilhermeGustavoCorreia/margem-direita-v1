@@ -2528,6 +2528,13 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-220 — tgrao-saida-alivio-sem-via3c
+- **Data:** 2026-11-23
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** replicação 3 (semente 3) travou às 07:57 de 04/01 (≈80 h) sem erro: o `ocupar_saida_alivio` do Tgrao pedia `linha6000_a`, `marginal_c`, `silosMuro_a` e `via3_c` de uma vez; o Y72 (T39) estava na `via3_c` esperando a `silosMuro_a` livre, mas o pedido do Tgrao estava à frente na fila do `rp_silosMuro_a`. Em cascata: L68 (Suzano) no `cruzamento_porteira` esperando a `via3_intermar`, MNB15 (alívio Bracell) nas DVs esperando o cruzamento.
+- **O que (Tgrao):** `ocupar_saida_alivio` passa a pedir só `rp_pmc_linha6000_a`, `rp_pmc_marginal_c` e `rp_silosMuro_a`; o onExit não ocupa mais a `faixa_via3_c`. O trem do alívio entra na circulação pela `marginal_c`.
+- **Arquivos:** `_alp/Agents/Tgrao/EmbeddedObjects.xml`, `docs/terminais/tgrao.md`
+
 ## ALT-219 — coperxxi-alivio-termina-ao-sair-da-linha
 - **Data:** 2026-11-23
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

@@ -51,6 +51,7 @@ Alívio de vazios (locomotivas de manobra, sempre 40 vagões):
 3. `voltarPosInicial2` (MoverTremCompleto_Ponto) → `separarLocomotivas` (TrainDecouple) → `entrarNaLinhaDoTerminal` (TrainMoveTo) → `alivioVazios` (Enter) → `iniciar_alivio` (Enter).
 4. Saída: `paraSairDoTerminal` → `liberar_7000_abcd_alivio` → `voltarPosInicial3` → `ocupar_saida_alivio` → `trainCouple` → `trainMoveTo` → `ocupar_7000_abcd_locoB` → `aguardaLote7K`.
    O `ocupar_saida_alivio` ocupa as faixas linha 6000 a, marginal c e silos muro a no GestorDeCirculacao.
+   Não pega a `via3_c`: o trem do alívio entra na circulação pela `marginal_c`. Com a `via3_c` no conjunto, o pedido ficava na fila do `rp_silosMuro_a` à frente de um trem da circulação parado na `via3_c` (bloqueio de fila) e travava a circulação.
    Com isso o trem volta à circulação para sair da Margem Direita.
 
 Locomotivas no Tgrao:

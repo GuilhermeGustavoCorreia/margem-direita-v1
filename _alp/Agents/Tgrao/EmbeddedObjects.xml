@@ -8413,8 +8413,7 @@ new ResourcePool[][] {
     {
         main().gestorDeCirculacao.rp_pmc_linha6000_a,
         main().gestorDeCirculacao.rp_pmc_marginal_c,
-        main().gestorDeCirculacao.rp_silosMuro_a,
-        main().gestorDeCirculacao.rp_via3_c
+        main().gestorDeCirculacao.rp_silosMuro_a
     }
 }]]></Code>
 				</Value>
@@ -8553,7 +8552,7 @@ new ResourcePool[][] {
 main().gestorDeCirculacao.faixa_linha6000_a.ocupar((Trem) agent);
 main().gestorDeCirculacao.faixa_marginal_c.ocupar((Trem) agent);
 main().gestorDeCirculacao.faixa_silosMuro_a.ocupar((Trem) agent);
-main().gestorDeCirculacao.faixa_via3_c.ocupar((Trem) agent);
+// a saída do alívio entra na circulação pela marginal_c: a via3_c não faz parte do caminho
 
 
 
