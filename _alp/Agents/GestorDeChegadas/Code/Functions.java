@@ -336,7 +336,7 @@ try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStr
 
 double marcar_vagoes(Trem trem)
 {/*ALCODESTART::1801260000011*/
-// copia o terminal do trem para cada vagão e grava a posição no trem criado.
+// copia o terminal, o id e o prefixo do trem para cada vagão e grava a posição no trem criado.
 // posicao_absoluta = índice do carro (locos incluídas, 0 = cabeça, lado Ponta da Praia)
 // posicao_relativa = ordem só entre os vagões, a partir de 1
 int rel = 0;
@@ -347,6 +347,8 @@ for (int i = 0; i < trem.size(); i++) {
 	rel++;
 	v.posicao_absoluta = i;
 	v.posicao_relativa = rel;
+	v.trem_criado_id      = trem.getId();
+	v.prefixo_trem_criado = trem.prefixo;
 	if (trem.ITerminalMoega_destino != null) v.setTerminal(trem.ITerminalMoega_destino);
 }
 /*ALCODEEND*/}
@@ -361,7 +363,7 @@ java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/wagons/"
 arq.getParentFile().mkdirs();
 csv_vagoes = arq.getPath();
 try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(arq, false), "UTF-8")) {
-	w.write("vagao_id;terminal;ferrovia;segmento;posicao_absoluta;posicao_relativa;data_criacao;data_descarga;data_descarte;"
+	w.write("vagao_id;trem_criado_id;prefixo_trem_criado;terminal;ferrovia;segmento;posicao_absoluta;posicao_relativa;data_criacao;data_descarga;data_descarte;"
 		+ "tempo_ate_descarga_h;tempo_vazio_h;tempo_no_sistema_h;warm_up\n");
 } catch (Exception ex) {
 	error("[chegadas] não foi possível criar " + csv_vagoes + ": " + ex.getMessage());
@@ -401,6 +403,7 @@ String no_sistema    = (cri < 0 || fim < 0) ? "" : String.format(br, "%.2f", fim
 boolean warm_up = cri < main().warmup_h;
 
 String linha = String.join(";", String.valueOf(v.getId()),
+	String.valueOf(v.trem_criado_id), v.prefixo_trem_criado == null ? "" : v.prefixo_trem_criado,
 	v.terminal == null ? "" : v.terminal.getName(),
 	v.ferrovia == null ? "" : v.ferrovia.toLowerCase(),
 	v.segmento == null ? "" : v.segmento.toLowerCase(),

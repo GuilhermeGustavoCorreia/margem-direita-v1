@@ -2528,6 +2528,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-222 — vagoes-trem-criado-e-log-exit4
+- **Data:** 2026-11-26
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **O que:**
+  - Vagao: variáveis `trem_criado_id` e `prefixo_trem_criado`, preenchidas no `marcar_vagoes` (GestorDeChegadas).
+  - `vagoes.csv`: colunas `trem_criado_id;prefixo_trem_criado` depois de `vagao_id`.
+  - GestorDeDVs: contador `vagoes_no_exit4` e log `vagoes_exit4` (trem, vagões, acumulado) no `onExit` do `exit4`, para medir quantos vagões ficam vivos fora do fluxograma.
+  - Vagões ainda no modelo no fim da rodada continuam fora do CSV (decisão).
+- **Arquivos:** `_alp/Agents/Vagao/Variables.xml`, `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `_alp/Agents/GestorDeDVs/` (Variables.xml, EmbeddedObjects.xml), `docs/gestores.md`
+
 ## ALT-221 — indicador-de-vagoes
 - **Data:** 2026-11-26
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

@@ -2603,6 +2603,13 @@
 		<Parameters>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[// vagões que saíram da Margem Direita: ficam fora do fluxograma, mas não são destruídos
+int n = main().getNumeroDeVagoes((Trem) agent);
+vagoes_no_exit4 += n;
+Log.info("GesDVs", "vagoes_exit4", String.format("trem=%d vagoes=%d acumulado=%d",
+	agent.getId(), n, vagoes_no_exit4));]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
