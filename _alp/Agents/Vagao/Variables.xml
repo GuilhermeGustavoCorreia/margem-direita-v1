@@ -3,8 +3,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1773066591714</Id>
 		<Name><![CDATA[carregado]]></Name>
-		<X>25</X>
-		<Y>-120</Y>
+		<X>150</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -71,8 +71,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1782411109300</Id>
 		<Name><![CDATA[segmento]]></Name>
-		<X>25</X>
-		<Y>-100</Y>
+		<X>150</X>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -93,8 +93,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1782411125320</Id>
 		<Name><![CDATA[ferrovia]]></Name>
-		<X>25</X>
-		<Y>-80</Y>
+		<X>150</X>
+		<Y>140</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -138,8 +138,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1791556980766</Id>
 		<Name><![CDATA[terminal]]></Name>
-		<X>25</X>
-		<Y>-60</Y>
+		<X>150</X>
+		<Y>160</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -160,8 +160,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1801260000001</Id>
 		<Name><![CDATA[hora_criacao_h]]></Name>
-		<X>25</X>
-		<Y>-40</Y>
+		<X>150</X>
+		<Y>180</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -182,8 +182,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1801260000002</Id>
 		<Name><![CDATA[hora_descarga_h]]></Name>
-		<X>25</X>
-		<Y>-20</Y>
+		<X>150</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -204,8 +204,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1801260000003</Id>
 		<Name><![CDATA[hora_descarte_h]]></Name>
-		<X>25</X>
-		<Y>0</Y>
+		<X>150</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -226,8 +226,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1801260000004</Id>
 		<Name><![CDATA[posicao_absoluta]]></Name>
-		<X>25</X>
-		<Y>20</Y>
+		<X>150</X>
+		<Y>240</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -248,8 +248,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1801260000005</Id>
 		<Name><![CDATA[posicao_relativa]]></Name>
-		<X>25</X>
-		<Y>40</Y>
+		<X>150</X>
+		<Y>260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

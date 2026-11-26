@@ -17,7 +17,7 @@ switch (ferrovia) {
     case "vli":  
 	    
 	    vagao_carregado_vli.setVisible(false);  
-	    vagao_vazio_mrs.setVisible(true);
+	    vagao_vazio_vli.setVisible(true);
 	    break;
     
     default:
