@@ -165,7 +165,13 @@ Vagões (ALT-221): `marcar_vagoes` (no `receber_trem`) copia o terminal, o id e 
 
 - `iniciar_csv_trens` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up`.
 - `registrar_trem_csv` (no `receber_trem`): uma linha por trem que nasceu com pedido, gravada na hora (append). `data_pedido` = horário programado do pedido; `data_entrada` = trem no trilho; datas `dd/MM/yyyy HH:mm` a partir de `data_inicio`; `segmento` do 1º vagão; `warm_up` = entrada antes de `warmup_h`.
-- Pedidos ainda na fila no fim da rodada não entram no arquivo.
+- Pedidos ainda na fila no fim da rodada não entram no `trens_criados.csv`: vão para o arquivo de pedidos não atendidos (abaixo).
+
+Pedidos não atendidos (ALT-224): `simulacao/output/pedidos_nao_atendidos/pedidos_nao_atendidos.csv` (`pedidos_nao_atendidos_rep<n>.csv` nas replicações).
+
+- `iniciar_csv_pedidos` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;terminal;ferrovia;manual;data_pedido;espera_ate_fim_h;ultimo_motivo;warm_up`.
+- `registrar_fila_csv` (no último tique do `ev_relogio` antes de `duracao_h`, uma vez por rodada com `fila_registrada`): uma linha por pedido que não virou trem, o `pedido_atual` (motivo `injetado, trem não nasceu`) e depois a `fila`. `espera_ate_fim_h` = fim da rodada − hora do pedido; `;` do `ultimo_motivo` vira ` |`; `warm_up` = pedido antes de `warmup_h`.
+- Rodada que cai ou é parada antes do fim deixa o arquivo só com o cabeçalho.
 
 ## Como os gestores conversam com os terminais
 

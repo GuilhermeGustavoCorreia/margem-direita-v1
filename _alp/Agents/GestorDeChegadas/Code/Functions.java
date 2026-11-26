@@ -10,7 +10,7 @@ Log.iniciar(this);
 // monta os fluxos (terminal x ferrovia) a partir do tempo_entre_chegadas.csv.
 // O arquivo já foi validado por main().carregar_configuracao().
 fluxos.clear(); fila.clear(); atendidos.clear();
-pedido_atual = null; contador_pedidos = 0;
+pedido_atual = null; contador_pedidos = 0; fila_registrada = false;
 
 for (String[] c : main().ler_csv(main().pasta_simulacao + "/input/tempo_entre_chegadas.csv")) {
 	
@@ -38,6 +38,7 @@ for (String[] c : main().ler_csv(main().pasta_simulacao + "/input/tempo_entre_ch
 Log.info("Chegadas", "fluxos", fluxos.size() + " fluxos de chegada");
 iniciar_csv_trens();
 iniciar_csv_vagoes();
+iniciar_csv_pedidos();
 /*ALCODEEND*/}
 
 double gerar_pedidos()
@@ -451,3 +452,53 @@ Log.info("Chegadas", "csv", n + " vagões no_modelo gravados no fim da rodada ("
 	+ String.format(new java.util.Locale("pt", "BR"), "%.2f", time(HOUR)) + " h)");
 /*ALCODEEND*/}
 
+double iniciar_csv_pedidos()
+{/*ALCODESTART::1801261600001*/
+// cria (sobrescreve) o CSV dos pedidos não atendidos, só com o cabeçalho.
+// As linhas só entram no fim da rodada (registrar_fila_csv). Replicações: pedidos_nao_atendidos_rep<n>.csv
+int rep = main().replicacao_atual;
+java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/pedidos_nao_atendidos/"
+	+ (rep > 0 ? "pedidos_nao_atendidos_rep" + rep + ".csv" : "pedidos_nao_atendidos.csv")).getAbsoluteFile();
+arq.getParentFile().mkdirs();
+csv_pedidos = arq.getPath();
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(arq, false), "UTF-8")) {
+	w.write("pedido;terminal;ferrovia;manual;data_pedido;espera_ate_fim_h;ultimo_motivo;warm_up\n");
+} catch (Exception ex) {
+	error("[chegadas] não foi possível criar " + csv_pedidos + ": " + ex.getMessage());
+}
+Log.info("Chegadas", "csv", "pedidos não atendidos em " + csv_pedidos);
+/*ALCODEEND*/}
+
+double registrar_fila_csv()
+{/*ALCODESTART::1801261600002*/
+// fim da rodada (último tique do ev_relogio): uma linha por pedido que não virou trem.
+// pedido_atual = injetado, mas o trem ainda não nasceu; depois, os pedidos da fila, na ordem.
+// O motivo pode ter ";" (motivo_destino junta com "; "): vira " |" para não quebrar as colunas.
+if (fila_registrada) return;
+fila_registrada = true;
+
+java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+java.time.LocalDateTime t0 = Log.data_inicio.atStartOfDay();
+java.util.Locale br = new java.util.Locale("pt", "BR");
+double agora = time(HOUR);
+
+java.util.List<Pedido> lista = new java.util.ArrayList<Pedido>();
+if (pedido_atual != null) lista.add(pedido_atual);
+lista.addAll(fila);
+
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(csv_pedidos, true), "UTF-8")) {
+	for (Pedido p : lista) {
+		String motivo = (p == pedido_atual) ? "injetado, trem não nasceu"
+			: (p.ultimo_motivo == null ? "" : p.ultimo_motivo.replace(";", " |"));
+		String linha = String.join(";", String.valueOf(p.numero), p.instancia, p.ferrovia, String.valueOf(p.manual),
+			t0.plusSeconds(Math.round(p.hora_pedido_h * 3600)).format(fmt),
+			String.format(br, "%.2f", agora - p.hora_pedido_h),
+			motivo, String.valueOf(p.hora_pedido_h < main().warmup_h));
+		w.write(linha + "\n");
+	}
+} catch (Exception ex) {
+	Log.warn("Chegadas", "csv", "falha ao gravar os pedidos não atendidos em " + csv_pedidos + ": " + ex.getMessage());
+}
+Log.info("Chegadas", "fila_fim", String.format("%d pedidos não atendidos (fila=%d, injetado=%s) em %s",
+	lista.size(), fila.size(), pedido_atual == null ? "-" : pedido_atual.toString(), csv_pedidos));
+/*ALCODEEND*/}

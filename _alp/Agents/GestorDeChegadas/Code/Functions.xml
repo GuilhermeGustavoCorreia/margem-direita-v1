@@ -496,4 +496,38 @@
 		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801261600001</Id>
+		<Name><![CDATA[iniciar_csv_pedidos]]></Name>
+		<Description><![CDATA[cria simulacao/output/pedidos_nao_atendidos/pedidos_nao_atendidos.csv só com o cabeçalho]]></Description>
+		<X>50</X>
+		<Y>690</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801261600002</Id>
+		<Name><![CDATA[registrar_fila_csv]]></Name>
+		<Description><![CDATA[fim da rodada: grava os pedidos que não viraram trem]]></Description>
+		<X>50</X>
+		<Y>730</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>
