@@ -161,6 +161,8 @@ Em desenvolvimento (ALT-084). Parte ligada ao ISN:
 
 Saída (ALT-213, pasta na ALT-214): `simulacao/output/trens_criados/trens_criados.csv` (`trens_criados_rep<n>.csv` nas replicações).
 
+Vagões (ALT-221): `marcar_vagoes` (no `receber_trem`) copia o terminal do trem para cada vagão e grava `posicao_absoluta`/`posicao_relativa`. No `trainExit` do GestorDeDVs (fim do circuito), `registrar_vagoes_saida` marca `hora_descarte_h` e grava uma linha por vagão em `simulacao/output/wagons/vagoes.csv` (`vagoes_rep<n>.csv` nas replicações).
+
 - `iniciar_csv_trens` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up`.
 - `registrar_trem_csv` (no `receber_trem`): uma linha por trem que nasceu com pedido, gravada na hora (append). `data_pedido` = horário programado do pedido; `data_entrada` = trem no trilho; datas `dd/MM/yyyy HH:mm` a partir de `data_inicio`; `segmento` do 1º vagão; `warm_up` = entrada antes de `warmup_h`.
 - Pedidos ainda na fila no fim da rodada não entram no arquivo.

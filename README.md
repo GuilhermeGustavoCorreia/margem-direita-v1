@@ -232,5 +232,6 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-218**: CoperXXI — log de análise dos trens na linha quando um movimento bate
 - **ALT-219**: CoperXXI — alívio só termina quando o trem sai da psnSaidaCopexXXI_b
 - **ALT-220**: Tgrao — saída do alívio não pega mais a via3_c
+- **ALT-221**: indicador de vagões (vagoes.csv: terminal, posição no trem criado, criação, descarga e descarte)
 - **ALT-213**: GestorDeChegadas — CSV dos trens criados (data do pedido, data de entrada, warm-up)
 - **ALT-214**: GestorDeChegadas — CSV dos trens criados na pasta output/trens_criados

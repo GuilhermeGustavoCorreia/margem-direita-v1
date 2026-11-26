@@ -400,4 +400,84 @@
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801260000011</Id>
+		<Name><![CDATA[marcar_vagoes]]></Name>
+		<Description><![CDATA[copia o terminal do trem para os vagões e grava a posição no trem criado]]></Description>
+		<X>50</X>
+		<Y>590</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801260000012</Id>
+		<Name><![CDATA[iniciar_csv_vagoes]]></Name>
+		<Description><![CDATA[cria simulacao/output/wagons/vagoes.csv só com o cabeçalho]]></Description>
+		<X>50</X>
+		<Y>610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801260000013</Id>
+		<Name><![CDATA[registrar_vagoes_saida]]></Name>
+		<Description><![CDATA[marca o descarte dos vagões do trem que sai e grava no vagoes.csv]]></Description>
+		<X>50</X>
+		<Y>630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[trem]]></Name>
+			<Type><![CDATA[Trem]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1801260000014</Id>
+		<Name><![CDATA[registrar_vagao_csv]]></Name>
+		<Description><![CDATA[grava uma linha do vagão no vagoes.csv]]></Description>
+		<X>50</X>
+		<Y>650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[v]]></Name>
+			<Type><![CDATA[Vagao]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>

@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1773066591710</Id>
 	<Name><![CDATA[Vagao]]></Name>
+	<StartupCode><![CDATA[hora_criacao_h = time(HOUR);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1773066591705</Id>

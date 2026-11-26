@@ -2757,7 +2757,8 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[finalizar_manobra((Trem) train);]]></Code>
+					<Code><![CDATA[main().gestorDeChegadas.registrar_vagoes_saida((Trem) train);
+finalizar_manobra((Trem) train);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

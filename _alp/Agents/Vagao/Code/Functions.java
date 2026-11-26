@@ -26,6 +26,7 @@ switch (ferrovia) {
         return;
 }
 
+hora_descarga_h = time(HOUR);
 carregado = false;
 /*ALCODEEND*/}
 

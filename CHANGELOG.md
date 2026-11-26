@@ -2528,6 +2528,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-221 — indicador-de-vagoes
+- **Data:** 2026-11-26
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Objetivo:** registrar cada vagão do nascimento à saída da Margem Direita, com o terminal de origem, porque ao longo do processo o vagão é separado do trem original.
+- **O que:**
+  - Vagao: variáveis `hora_criacao_h` (On startup), `hora_descarga_h` (em `descarregar()`), `hora_descarte_h`, `posicao_absoluta` (índice do carro, locos incluídas, 0 = cabeça) e `posicao_relativa` (só vagões, a partir de 1).
+  - GestorDeChegadas: `marcar_vagoes(trem)` no `receber_trem` copia `trem.ITerminalMoega_destino` para cada vagão (`setTerminal`) e grava as posições; `iniciar_csv_vagoes()`, `registrar_vagoes_saida(trem)`, `registrar_vagao_csv(v)` e variável `csv_vagoes`.
+  - GestorDeDVs: o `onEnter` do `trainExit` (fim do circuito) chama `registrar_vagoes_saida` antes do `finalizar_manobra`.
+  - Saída: `simulacao/output/wagons/vagoes.csv` (`vagoes_rep<n>.csv` nas replicações), uma linha por vagão na saída: `vagao_id;terminal;ferrovia;segmento;posicao_absoluta;posicao_relativa;data_criacao;data_descarga;data_descarte;tempo_ate_descarga_h;tempo_vazio_h;tempo_no_sistema_h;warm_up`. Tempos em horas com vírgula decimal.
+- **Fora do escopo:** vagões ainda no modelo no fim da rodada não entram no CSV; o `exit4` continua Exit simples (vagões não são destruídos).
+- **Arquivos:** `_alp/Agents/Vagao/` (Variables.xml, AOC.Vagao.xml, Code/Functions.java), `_alp/Agents/GestorDeChegadas/` (Variables.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
 ## ALT-220 — tgrao-saida-alivio-sem-via3c
 - **Data:** 2026-11-23
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

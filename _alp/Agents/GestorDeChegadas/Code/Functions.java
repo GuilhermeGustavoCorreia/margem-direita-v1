@@ -36,6 +36,7 @@ for (String[] c : main().ler_csv(main().pasta_simulacao + "/input/tempo_entre_ch
 }
 Log.info("Chegadas", "fluxos", fluxos.size() + " fluxos de chegada");
 iniciar_csv_trens();
+iniciar_csv_vagoes();
 /*ALCODEEND*/}
 
 double gerar_pedidos()
@@ -142,6 +143,8 @@ if (p == null) {
 	Log.info("Chegadas", "entrou_trilho", String.format("%s trem=%d/%s entrou no trilho -> %s",
 		p, trem.getId(), trem.prefixo, p.destino));
 }
+// o vagão é separado do trem ao longo do processo: guarda o terminal e a posição em que nasceu
+marcar_vagoes(trem);
 main().gestorDeISN.chegada.take(trem);
 /*ALCODEEND*/}
 
@@ -331,3 +334,81 @@ try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStr
 }
 /*ALCODEEND*/}
 
+double marcar_vagoes(Trem trem)
+{/*ALCODESTART::1801260000011*/
+// copia o terminal do trem para cada vagão e grava a posição no trem criado.
+// posicao_absoluta = índice do carro (locos incluídas, 0 = cabeça, lado Ponta da Praia)
+// posicao_relativa = ordem só entre os vagões, a partir de 1
+int rel = 0;
+for (int i = 0; i < trem.size(); i++) {
+	Agent c = trem.getCar(i);
+	if (!(c instanceof Vagao)) continue;
+	Vagao v = (Vagao) c;
+	rel++;
+	v.posicao_absoluta = i;
+	v.posicao_relativa = rel;
+	if (trem.ITerminalMoega_destino != null) v.setTerminal(trem.ITerminalMoega_destino);
+}
+/*ALCODEEND*/}
+
+double iniciar_csv_vagoes()
+{/*ALCODESTART::1801260000012*/
+// cria (sobrescreve) o CSV dos vagões, só com o cabeçalho.
+// Rodada normal: vagoes.csv; replicações: vagoes_rep<n>.csv
+int rep = main().replicacao_atual;
+java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/wagons/"
+	+ (rep > 0 ? "vagoes_rep" + rep + ".csv" : "vagoes.csv")).getAbsoluteFile();
+arq.getParentFile().mkdirs();
+csv_vagoes = arq.getPath();
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(arq, false), "UTF-8")) {
+	w.write("vagao_id;terminal;ferrovia;segmento;posicao_absoluta;posicao_relativa;data_criacao;data_descarga;data_descarte;"
+		+ "tempo_ate_descarga_h;tempo_vazio_h;tempo_no_sistema_h;warm_up\n");
+} catch (Exception ex) {
+	error("[chegadas] não foi possível criar " + csv_vagoes + ": " + ex.getMessage());
+}
+Log.info("Chegadas", "csv", "vagões em " + csv_vagoes);
+/*ALCODEEND*/}
+
+double registrar_vagoes_saida(Trem trem)
+{/*ALCODESTART::1801260000013*/
+// chamado no trainExit do GestorDeDVs: o trem sai da Margem Direita.
+// Marca o descarte e grava uma linha por vagão.
+double agora = time(HOUR);
+for (int i = 0; i < trem.size(); i++) {
+	Agent c = trem.getCar(i);
+	if (!(c instanceof Vagao)) continue;
+	Vagao v = (Vagao) c;
+	v.hora_descarte_h = agora;
+	registrar_vagao_csv(v);
+}
+/*ALCODEEND*/}
+
+double registrar_vagao_csv(Vagao v)
+{/*ALCODESTART::1801260000014*/
+// datas em dd/MM/yyyy HH:mm (mesmo padrão do trens_criados); vazio quando o evento não aconteceu.
+// tempos em horas, com vírgula decimal.
+java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+java.time.LocalDateTime t0 = Log.data_inicio.atStartOfDay();
+java.util.Locale br = new java.util.Locale("pt", "BR");
+double cri = v.hora_criacao_h, des = v.hora_descarga_h, fim = v.hora_descarte_h;
+
+String data_criacao  = cri < 0 ? "" : t0.plusSeconds(Math.round(cri * 3600)).format(fmt);
+String data_descarga = des < 0 ? "" : t0.plusSeconds(Math.round(des * 3600)).format(fmt);
+String data_descarte = fim < 0 ? "" : t0.plusSeconds(Math.round(fim * 3600)).format(fmt);
+String ate_descarga  = (cri < 0 || des < 0) ? "" : String.format(br, "%.2f", des - cri);
+String vazio         = (des < 0 || fim < 0) ? "" : String.format(br, "%.2f", fim - des);
+String no_sistema    = (cri < 0 || fim < 0) ? "" : String.format(br, "%.2f", fim - cri);
+boolean warm_up = cri < main().warmup_h;
+
+String linha = String.join(";", String.valueOf(v.getId()),
+	v.terminal == null ? "" : v.terminal.getName(),
+	v.ferrovia == null ? "" : v.ferrovia.toLowerCase(),
+	v.segmento == null ? "" : v.segmento.toLowerCase(),
+	String.valueOf(v.posicao_absoluta), String.valueOf(v.posicao_relativa),
+	data_criacao, data_descarga, data_descarte, ate_descarga, vazio, no_sistema, String.valueOf(warm_up));
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(csv_vagoes, true), "UTF-8")) {
+	w.write(linha + "\n");
+} catch (Exception ex) {
+	Log.warn("Chegadas", "csv", "falha ao gravar vagão " + v.getId() + " em " + csv_vagoes + ": " + ex.getMessage());
+}
+/*ALCODEEND*/}
