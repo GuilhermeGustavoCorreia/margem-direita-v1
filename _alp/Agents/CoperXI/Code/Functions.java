@@ -182,26 +182,6 @@ else                                                        return true;
 
 /*ALCODEEND*/}
 
-boolean __existeTremComDestino(String moegaDestino)
-{/*ALCODESTART::1785246228648*/
-if (main().wait.size() > 0 ) {
-
-	for (int i = 0; i < main().wait.size(); i++) {
-		
-	    Trem train = (Trem) main().wait.get(i);
-	    String moegaDestinoDoTrem = main().getDestinoDoTrem(train);
-	
-	    if (moegaDestino.equals(moegaDestinoDoTrem)) {
-	        traceln("return true");
-	        return true;
-	    }
-	}
-}
-
-return false;
-
-/*ALCODEEND*/}
-
 int _getVagosLinhaMoega()
 {/*ALCODESTART::1785247647217*/
 int vagoes_MoegaMar 			= main().getTamanhoDoTrem(_loteDeCarregados_MoegaMar);
@@ -230,45 +210,6 @@ int total = vagoesMar + vagoesMeio + vagoesTerra + vagoesBomba + vagoes_aguardan
 
 
 return total;
-/*ALCODEEND*/}
-
-boolean _esteÉoUltimoLote()
-{/*ALCODESTART::1785331773710*/
-//nao tem mais carregados na linha de circulação
-//nao tem mais carregados na linha da moega 
-//nao tem mais descarregando.
-
-Boolean temVagoesNaMoega 				=  main().getTamanhoDoTrem(_loteEmDescarga) > 0 ? true : false;
-Boolean temCarregadosLinhaCirculacao	= __existeTremComDestino("coper-XI");
-Boolean temCarregadosLinhaMoega			= _getVagosLinhaMoega() > 0 ? true : false;
-
-if (temVagoesNaMoega || temCarregadosLinhaCirculacao || temCarregadosLinhaMoega){
-
- 	return false;
- 	
-}else{
-
-	return true;
-	
-}
-
-/*ALCODEEND*/}
-
-double _atualizarFazendoAlivio()
-{/*ALCODESTART::1785348747193*/
-int vazios_linhaMar_a = main().getTamanhoDoTrem(_loteDeVazios_LinhaMar_a);
-int vazios_linhaMar_b = main().getTamanhoDoTrem(_loteDeVazios_LinhaMar_b);
-
-int vazios_linhaTerra_a = main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_a);
-int vazios_linhaTerra_b = main().getTamanhoDoTrem(_loteDeVazios_LinhaTerra_b);
-
-
-int vazios_linhaMar 	= ( vazios_linhaMar_a 	+ vazios_linhaMar_b   );
-int vazios_linhaTerra 	= ( vazios_linhaTerra_a + vazios_linhaTerra_b );
-
-if (vazios_linhaMar + vazios_linhaTerra == 0) {
-	fazendoUltimoAlivio = false;
-}
 /*ALCODEEND*/}
 
 float getOverloadVazios()

@@ -10421,7 +10421,7 @@ if (excesso > CAPACIDADE_LINHA_7) {
 	<EmbeddedObject>
 		<Id>1792510000019</Id>
 		<Name><![CDATA[trainExit_excesso_l7]]></Name>
-		<X>4340</X>
+		<X>4710</X>
 		<Y>290</Y>
 		<Label>
 			<X>-35</X>
@@ -10478,7 +10478,7 @@ if (excesso > CAPACIDADE_LINHA_7) {
 	<EmbeddedObject>
 		<Id>1792510000021</Id>
 		<Name><![CDATA[wait_excesso_l7]]></Name>
-		<X>4440</X>
+		<X>4810</X>
 		<Y>280</Y>
 		<Label>
 			<X>-20</X>
@@ -10583,7 +10583,7 @@ if (excesso > CAPACIDADE_LINHA_7) {
 	<EmbeddedObject>
 		<Id>1792510000023</Id>
 		<Name><![CDATA[para_linha_07_excesso]]></Name>
-		<X>4600</X>
+		<X>4970</X>
 		<Y>290</Y>
 		<Label>
 			<X>-10</X>
@@ -10639,7 +10639,7 @@ linha_07.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792510000025</Id>
 		<Name><![CDATA[sair_linha7]]></Name>
-		<X>4340</X>
+		<X>4710</X>
 		<Y>190</Y>
 		<Label>
 			<X>-20</X>
@@ -10806,11 +10806,11 @@ linha_07.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1797214200000</Id>
 		<Name><![CDATA[ocupar_intervalo_avanco]]></Name>
-		<X>4280</X>
-		<Y>250</Y>
+		<X>4540</X>
+		<Y>180</Y>
 		<Label>
-			<X>-40</X>
-			<Y>55</Y>
+			<X>-35</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -11023,8 +11023,8 @@ main().gestorDeAlivios.get_intervalo_para_avancar((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1800716000200</Id>
 		<Name><![CDATA[ocupar_mnb_pcx_avanco]]></Name>
-		<X>4280</X>
-		<Y>330</Y>
+		<X>4440</X>
+		<Y>180</Y>
 		<Label>
 			<X>-40</X>
 			<Y>55</Y>
@@ -11240,7 +11240,7 @@ main().gestorDeAlivios.get_mnb_pcx_para_avancar((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792510000027</Id>
 		<Name><![CDATA[rls_mnb_alivio]]></Name>
-		<X>4610</X>
+		<X>4980</X>
 		<Y>180</Y>
 		<Label>
 			<X>-5</X>
@@ -11346,7 +11346,7 @@ liberar_espaco_linha7();]]></Code>
 	<EmbeddedObject>
 		<Id>1792510000029</Id>
 		<Name><![CDATA[para_linha_4000_adm]]></Name>
-		<X>4700</X>
+		<X>5070</X>
 		<Y>190</Y>
 		<Label>
 			<X>-10</X>
@@ -12065,7 +12065,7 @@ iniciar_descarga_moegas();]]></Code>
 	<EmbeddedObject>
 		<Id>1792550000001</Id>
 		<Name><![CDATA[ainda_na_linha7]]></Name>
-		<X>4430</X>
+		<X>4800</X>
 		<Y>190</Y>
 		<Label>
 			<X>-55</X>

@@ -359,8 +359,12 @@
 				<Y>30</Y>
 			</Point>
 			<Point>
-				<X>150</X>
-				<Y>30</Y>
+				<X>50</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>80</Y>
 			</Point>
 		</Points>
 	</Connector>
@@ -3769,8 +3773,12 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>100</X>
+				<X>50</X>
 				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>-50</Y>
 			</Point>
 			<Point>
 				<X>100</X>
@@ -3919,7 +3927,7 @@
 		<Id>1793298472981</Id>
 		<Name><![CDATA[connector1086]]></Name>
 		<X>1720</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3962,7 +3970,7 @@
 		<Id>1793298472983</Id>
 		<Name><![CDATA[connector1087]]></Name>
 		<X>1460</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4005,7 +4013,7 @@
 		<Id>1793298472985</Id>
 		<Name><![CDATA[connector1088]]></Name>
 		<X>1590</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4048,7 +4056,7 @@
 		<Id>1793298472987</Id>
 		<Name><![CDATA[connector1089]]></Name>
 		<X>1840</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4091,7 +4099,7 @@
 		<Id>1793298472989</Id>
 		<Name><![CDATA[connector1090]]></Name>
 		<X>1830</X>
-		<Y>750</Y>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4126,14 +4134,14 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>15</Y>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>75</X>
-				<Y>15</Y>
+				<X>70</X>
+				<Y>40</Y>
 			</Point>
 			<Point>
-				<X>75</X>
+				<X>70</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
@@ -4146,7 +4154,7 @@
 		<Id>1793298472991</Id>
 		<Name><![CDATA[connector1091]]></Name>
 		<X>1960</X>
-		<Y>740</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

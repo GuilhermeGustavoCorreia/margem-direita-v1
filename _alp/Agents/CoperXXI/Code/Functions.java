@@ -483,3 +483,4 @@ iniciar_proximo_lote();
 // terminal sem carga e ainda com vazios: pede o próximo alívio
 verificar_alivio();
 /*ALCODEEND*/}
+

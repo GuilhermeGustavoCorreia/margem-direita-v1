@@ -31,6 +31,9 @@
 			<Parameter>
 				<Name><![CDATA[LIMITE_SEM_MANOBRA_4000]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[LIMITE_VGS_INTERVALO_4000]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">

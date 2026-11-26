@@ -3680,18 +3680,18 @@
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>40</Y>
+				<Y>140</Y>
 			</Point>
 			<Point>
-				<X>110</X>
-				<Y>40</Y>
+				<X>160</X>
+				<Y>140</Y>
 			</Point>
 			<Point>
-				<X>110</X>
+				<X>160</X>
 				<Y>-10</Y>
 			</Point>
 			<Point>
-				<X>150</X>
+				<X>250</X>
 				<Y>-10</Y>
 			</Point>
 		</Points>
@@ -3734,7 +3734,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>170</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -3781,7 +3781,7 @@
 				<Y>80</Y>
 			</Point>
 			<Point>
-				<X>70</X>
+				<X>440</X>
 				<Y>80</Y>
 			</Point>
 		</Points>
@@ -3789,7 +3789,7 @@
 	<Connector>
 		<Id>1792510000047</Id>
 		<Name><![CDATA[connector_alt025_17]]></Name>
-		<X>4380</X>
+		<X>4750</X>
 		<Y>300</Y>
 		<Label>
 			<X>10</X>
@@ -3832,7 +3832,7 @@
 	<Connector>
 		<Id>1792510000048</Id>
 		<Name><![CDATA[connector_alt025_18]]></Name>
-		<X>4480</X>
+		<X>4850</X>
 		<Y>300</Y>
 		<Label>
 			<X>10</X>
@@ -3875,7 +3875,7 @@
 	<Connector>
 		<Id>1792510000050</Id>
 		<Name><![CDATA[connector_alt025_20]]></Name>
-		<X>4650</X>
+		<X>5020</X>
 		<Y>200</Y>
 		<Label>
 			<X>10</X>
@@ -4137,7 +4137,7 @@
 	<Connector>
 		<Id>1792550000003</Id>
 		<Name><![CDATA[connector_alt029_1]]></Name>
-		<X>4380</X>
+		<X>4750</X>
 		<Y>200</Y>
 		<Label>
 			<X>10</X>
@@ -4180,7 +4180,7 @@
 	<Connector>
 		<Id>1792550000004</Id>
 		<Name><![CDATA[connector_alt029_2]]></Name>
-		<X>4460</X>
+		<X>4830</X>
 		<Y>200</Y>
 		<Label>
 			<X>10</X>
@@ -4215,27 +4215,27 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>0</X>
+				<X>30</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>40</X>
-				<Y>0</Y>
-			</Point>
-			<Point>
-				<X>40</X>
+				<X>30</X>
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>-140</X>
+				<X>-180</X>
 				<Y>-50</Y>
 			</Point>
 			<Point>
-				<X>-140</X>
+				<X>-460</X>
+				<Y>-50</Y>
+			</Point>
+			<Point>
+				<X>-460</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-120</X>
+				<X>-390</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -4243,7 +4243,7 @@
 	<Connector>
 		<Id>1792550000005</Id>
 		<Name><![CDATA[connector_alt029_3]]></Name>
-		<X>4450</X>
+		<X>4820</X>
 		<Y>210</Y>
 		<Label>
 			<X>10</X>
@@ -6017,8 +6017,8 @@
 	<Connector>
 		<Id>1797214200095</Id>
 		<Name><![CDATA[con_ocupar_intervalo_avanco]]></Name>
-		<X>4190</X>
-		<Y>210</Y>
+		<X>4580</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6052,28 +6052,16 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>0</X>
-				<Y>40</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>40</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>-10</Y>
-			</Point>
-			<Point>
-				<X>150</X>
-				<Y>-10</Y>
+				<X>130</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>
 	<Connector>
 		<Id>1800716000295</Id>
 		<Name><![CDATA[con_ocupar_mnb_pcx_avanco]]></Name>
-		<X>4190</X>
-		<Y>210</Y>
+		<X>4480</X>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -6107,20 +6095,8 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>0</X>
-				<Y>40</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>40</Y>
-			</Point>
-			<Point>
-				<X>110</X>
-				<Y>-10</Y>
-			</Point>
-			<Point>
-				<X>150</X>
-				<Y>-10</Y>
+				<X>60</X>
+				<Y>0</Y>
 			</Point>
 		</Points>
 	</Connector>

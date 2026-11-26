@@ -9053,7 +9053,7 @@
 	<Connector>
 		<Id>1791567673915</Id>
 		<Name><![CDATA[connector212]]></Name>
-		<X>1410</X>
+		<X>1550</X>
 		<Y>1100</Y>
 		<Label>
 			<X>10</X>
@@ -9096,7 +9096,7 @@
 	<Connector>
 		<Id>1791568209650</Id>
 		<Name><![CDATA[connector213]]></Name>
-		<X>1310</X>
+		<X>1330</X>
 		<Y>1100</Y>
 		<Label>
 			<X>10</X>
@@ -9131,7 +9131,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
+				<X>-90</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9139,7 +9139,7 @@
 	<Connector>
 		<Id>1797208000100</Id>
 		<Name><![CDATA[con_bloquear_marginal_rechego]]></Name>
-		<X>1310</X>
+		<X>1450</X>
 		<Y>1100</Y>
 		<Label>
 			<X>10</X>
@@ -9174,7 +9174,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-70</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -9182,7 +9182,7 @@
 	<Connector>
 		<Id>1791568287416</Id>
 		<Name><![CDATA[connector214]]></Name>
-		<X>1520</X>
+		<X>1660</X>
 		<Y>1100</Y>
 		<Label>
 			<X>10</X>

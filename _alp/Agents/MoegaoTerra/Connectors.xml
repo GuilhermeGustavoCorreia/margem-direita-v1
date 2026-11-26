@@ -359,8 +359,12 @@
 				<Y>30</Y>
 			</Point>
 			<Point>
-				<X>150</X>
-				<Y>30</Y>
+				<X>50</X>
+				<Y>80</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>80</Y>
 			</Point>
 		</Points>
 	</Connector>

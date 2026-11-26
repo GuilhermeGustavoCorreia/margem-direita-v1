@@ -11639,7 +11639,7 @@ traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs 
 	<EmbeddedObject>
 		<Id>1794506038060</Id>
 		<Name><![CDATA[precisa_mais_vgs]]></Name>
-		<X>5300</X>
+		<X>5190</X>
 		<Y>290</Y>
 		<Label>
 			<X>-20</X>
@@ -11724,7 +11724,7 @@ ainda_tem_lote_vazios()]]></Code>
 	<EmbeddedObject>
 		<Id>1794506038062</Id>
 		<Name><![CDATA[para_alivio_seguir2]]></Name>
-		<X>5650</X>
+		<X>5360</X>
 		<Y>290</Y>
 		<Label>
 			<X>-10</X>
@@ -11779,8 +11779,8 @@ alivio_seguir((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794506038064</Id>
 		<Name><![CDATA[para_fim_alivio]]></Name>
-		<X>5650</X>
-		<Y>350</Y>
+		<X>5360</X>
+		<Y>390</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -11836,8 +11836,8 @@ proxima_peca((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794800000001</Id>
 		<Name><![CDATA[entrar_cortar_peca]]></Name>
-		<X>5030</X>
-		<Y>520</Y>
+		<X>5230</X>
+		<Y>490</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -11957,7 +11957,7 @@ proxima_peca((Trem) agent);]]></Code>
 		<Id>1794800000003</Id>
 		<Name><![CDATA[entrar_mover_a]]></Name>
 		<X>5030</X>
-		<Y>600</Y>
+		<Y>690</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -12077,7 +12077,7 @@ proxima_peca((Trem) agent);]]></Code>
 		<Id>1794800000005</Id>
 		<Name><![CDATA[entrar_mover_b]]></Name>
 		<X>5030</X>
-		<Y>680</Y>
+		<Y>790</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -12196,8 +12196,8 @@ proxima_peca((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794800000007</Id>
 		<Name><![CDATA[mover_peca_a]]></Name>
-		<X>5180</X>
-		<Y>600</Y>
+		<X>5140</X>
+		<Y>680</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -12289,8 +12289,8 @@ proxima_peca((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794800000009</Id>
 		<Name><![CDATA[mover_peca_b]]></Name>
-		<X>5180</X>
-		<Y>680</Y>
+		<X>5140</X>
+		<Y>780</Y>
 		<Label>
 			<X>-20</X>
 			<Y>-10</Y>
@@ -12382,8 +12382,8 @@ proxima_peca((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794800000011</Id>
 		<Name><![CDATA[cortar_peca]]></Name>
-		<X>5350</X>
-		<Y>520</Y>
+		<X>5380</X>
+		<Y>600</Y>
 		<Label>
 			<X>-25</X>
 			<Y>-20</Y>
@@ -12517,7 +12517,7 @@ proxima_peca((Trem) agent);]]></Code>
 		<Id>1794800000015</Id>
 		<Name><![CDATA[para_guardar_peca]]></Name>
 		<X>5550</X>
-		<Y>470</Y>
+		<Y>690</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -12571,7 +12571,7 @@ proxima_peca((Trem) agent);]]></Code>
 		<Id>1794800000017</Id>
 		<Name><![CDATA[para_proxima_peca]]></Name>
 		<X>5550</X>
-		<Y>560</Y>
+		<Y>590</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-15</Y>
@@ -12625,7 +12625,7 @@ proxima_peca((Trem) agent);]]></Code>
 		<Id>1794810000003</Id>
 		<Name><![CDATA[entrar_mover_moega]]></Name>
 		<X>5030</X>
-		<Y>440</Y>
+		<Y>590</Y>
 		<Label>
 			<X>-10</X>
 			<Y>-10</Y>
@@ -12744,8 +12744,8 @@ proxima_peca((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1794810000001</Id>
 		<Name><![CDATA[mover_peca_moega]]></Name>
-		<X>5180</X>
-		<Y>520</Y>
+		<X>5150</X>
+		<Y>590</Y>
 		<Label>
 			<X>-30</X>
 			<Y>-24</Y>

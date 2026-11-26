@@ -897,3 +897,4 @@ ResourcePool[][] get_mnb_pcx_para_avancar(Trem trem)
 if (main().getNumeroDeVagoes(trem) <= LIMITE_VGS_INTERVALO_4000) return new ResourcePool[][] { new ResourcePool[0] };
 return mnb_pcx_faltando(trem);
 /*ALCODEEND*/}
+

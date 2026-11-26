@@ -3,8 +3,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1796400000010</Id>
 		<Name><![CDATA[log_de_analise]]></Name>
-		<X>550</X>
-		<Y>140</Y>
+		<X>50</X>
+		<Y>370</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -25,8 +25,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1796300000002</Id>
 		<Name><![CDATA[_trem_chegando]]></Name>
-		<X>610</X>
-		<Y>140</Y>
+		<X>50</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -179,7 +179,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1790777451765</Id>
 		<Name><![CDATA[ferrovia_em_atendimento]]></Name>
-		<X>60</X>
+		<X>50</X>
 		<Y>200</Y>
 		<Label>
 			<X>10</X>
@@ -198,7 +198,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1790777451767</Id>
 		<Name><![CDATA[segmento_em_atendimento]]></Name>
-		<X>60</X>
+		<X>50</X>
 		<Y>220</Y>
 		<Label>
 			<X>10</X>

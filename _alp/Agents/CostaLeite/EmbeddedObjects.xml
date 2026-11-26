@@ -790,238 +790,6 @@ aguardaDescarregar.recalculateConditions();*/]]></Code>
 		<QuantityColumn/>
 	</EmbeddedObject>
 	<EmbeddedObject>
-		<Id>1792086054642</Id>
-		<Name><![CDATA[pst_marginal_bloquear]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>840</X>
-		<Y>230</Y>
-		<Label>
-			<X>-42</X>
-			<Y>58</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Seize</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-				<ClassName>Seize</ClassName>
-				<ItemName>1412336243147</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[seizeFromOnePool]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceSets]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[new ResourcePool[][] {
-    {
-        main().gestorDeCirculacao.rp_pmc_marginal_a,
-        main().gestorDeCirculacao.rp_pmc_marginal_b,
-        main().gestorDeCirculacao.rp_pmc_marginal_c,
-        main().gestorDeCirculacao.rp_pmc_intervalo4000_a,
-        main().gestorDeCirculacao.rp_pmc_intervalo4000_b
-    }
-}]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourcePool]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[new ResourcePool[][] {
-    {main().gestorDeCirculacao.rp_pmc_marginal_a},
-    {main().gestorDeCirculacao.rp_pmc_marginal_b},
-    {main().gestorDeCirculacao.rp_pmc_marginal_c},
-    {main().gestorDeCirculacao.rp_pmc_intervalo4000_a},
-    {main().gestorDeCirculacao.rp_pmc_intervalo4000_b}
-}]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceQuantity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[seizePolicy]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[capacity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[maximumCapacity]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[sendResources]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationType]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationNode]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationAttractor]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationResource]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationX]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationY]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[destinationZ]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[attachResources]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[entityLocationQueue]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[priority]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskPreemptionPolicy]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[terminatedTaskProcessing]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[terminatedTasksEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[suspendResumeEntities]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[customizeResourceChoice]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceChoiceCondition]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceSelectionMode]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceRating]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[resourceComparison]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskStartBlocksAreConnected]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[taskStartBlocks]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[enableTimeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[timeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[enablePreemption]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[canceledUnitsBehavior]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[canceledUnitsRelease]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[pushProtocol]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[forceStatisticsCollection]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onEnter]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitTimeout]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExitPreempted]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onSeizeUnit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onPrepareUnit]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onExit]]></Name>
-				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeCirculacao.faixa_marginal_a.bloquear((Trem) agent);
-main().gestorDeCirculacao.faixa_marginal_b.bloquear((Trem) agent);
-main().gestorDeCirculacao.faixa_marginal_c.bloquear((Trem) agent);
-main().gestorDeCirculacao.faixa_intervalo4000_a.bloquear((Trem) agent);
-main().gestorDeCirculacao.faixa_intervalo4000_b.bloquear((Trem) agent);
-
-
-main().railwaySwitch73.connectTracks(
-	main().pst_marginal_a,
-	main().pst_marginal_b
-);]]></Code>
-				</Value>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onRemove]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskTerminated]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[comparison]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskSuspended]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onTaskResumed]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[onUnitFinishedWrapUp]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>false</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>SPECIFIED_NUMBER</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<Id>1792086054640</Id>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
 		<Id>1792086900000</Id>
 		<Name><![CDATA[encostes_moega]]></Name>
 		<X>630</X>
@@ -2042,7 +1810,7 @@ lote_costaLeite_lateralMoega = ((Trem) train2);
 	<EmbeddedObject>
 		<Id>1792086900024</Id>
 		<Name><![CDATA[desacoplar_11vgs]]></Name>
-		<X>890</X>
+		<X>930</X>
 		<Y>1200</Y>
 		<Label>
 			<X>-40</X>
@@ -2271,7 +2039,7 @@ lote_costaLeite_linhaMar_a = ((Trem) train2);
 	<EmbeddedObject>
 		<Id>1792086900030</Id>
 		<Name><![CDATA[desacoplar_10vgs]]></Name>
-		<X>890</X>
+		<X>880</X>
 		<Y>1400</Y>
 		<Label>
 			<X>-35</X>
@@ -2624,7 +2392,7 @@ descarga.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792086900042</Id>
 		<Name><![CDATA[fica_lote_linhaMar_a]]></Name>
-		<X>1010</X>
+		<X>1050</X>
 		<Y>1290</Y>
 		<Label>
 			<X>-5</X>
@@ -4995,7 +4763,7 @@ avancar_linhaMar_a.take(agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1792093000018</Id>
 		<Name><![CDATA[para_avancar_linhaMar_b]]></Name>
-		<X>1010</X>
+		<X>1050</X>
 		<Y>1190</Y>
 		<Label>
 			<X>-5</X>

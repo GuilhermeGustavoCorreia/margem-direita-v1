@@ -14133,7 +14133,7 @@ main().gestorDeAlivios.linha_4000.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1791227731375</Id>
 		<Name><![CDATA[reiniciar_alivio]]></Name>
-		<X>5050</X>
+		<X>5250</X>
 		<Y>1440</Y>
 		<Label>
 			<X>-20</X>
@@ -15213,11 +15213,11 @@ alvoAcumulado4000((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1791237869477</Id>
 		<Name><![CDATA[paraFrente]]></Name>
-		<X>4950</X>
+		<X>5150</X>
 		<Y>1440</Y>
 		<Label>
-			<X>-20</X>
-			<Y>-25</Y>
+			<X>-10</X>
+			<Y>45</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -15384,11 +15384,11 @@ main()._16]]></Code>
 	<EmbeddedObject>
 		<Id>1797214100000</Id>
 		<Name><![CDATA[ocupar_intervalo_avanco]]></Name>
-		<X>4890</X>
-		<Y>1500</Y>
+		<X>5050</X>
+		<Y>1430</Y>
 		<Label>
-			<X>-40</X>
-			<Y>55</Y>
+			<X>-45</X>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -15601,8 +15601,8 @@ main().gestorDeAlivios.get_intervalo_para_avancar((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1800716000000</Id>
 		<Name><![CDATA[ocupar_mnb_pcx_avanco]]></Name>
-		<X>4890</X>
-		<Y>1440</Y>
+		<X>4940</X>
+		<Y>1430</Y>
 		<Label>
 			<X>-40</X>
 			<Y>55</Y>
@@ -17696,8 +17696,8 @@ Log.info("T39", "train_exit2", "removido: " + train + " | id=" + train.getId());
 		<X>4945</X>
 		<Y>1240</Y>
 		<Label>
-			<X>-10</X>
-			<Y>-25</Y>
+			<X>-5</X>
+			<Y>40</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>

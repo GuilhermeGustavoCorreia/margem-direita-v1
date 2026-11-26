@@ -1455,7 +1455,7 @@ atualizar_licenciamento_linha3000((Trem) train);]]></Code>
 	<EmbeddedObject>
 		<Id>1792519325624</Id>
 		<Name><![CDATA[linha3000_vazia]]></Name>
-		<X>380</X>
+		<X>330</X>
 		<Y>540</Y>
 		<Label>
 			<X>-30</X>
@@ -15676,8 +15676,8 @@ Log.info("TES", "acoplar_locos_3000", String.format("lote=%d com %d vagoes esper
 	<EmbeddedObject>
 		<Id>1797213000000</Id>
 		<Name><![CDATA[ocupar_silosMuro_c_loco]]></Name>
-		<X>230</X>
-		<Y>1390</Y>
+		<X>300</X>
+		<Y>1330</Y>
 		<Label>
 			<X>-40</X>
 			<Y>55</Y>
@@ -15895,8 +15895,8 @@ loco_pcx_starts.inject();]]></Code>
 	<EmbeddedObject>
 		<Id>1797213000002</Id>
 		<Name><![CDATA[liberar_silosMuro_c_loco]]></Name>
-		<X>350</X>
-		<Y>1450</Y>
+		<X>480</X>
+		<Y>1330</Y>
 		<Label>
 			<X>-40</X>
 			<Y>-10</Y>

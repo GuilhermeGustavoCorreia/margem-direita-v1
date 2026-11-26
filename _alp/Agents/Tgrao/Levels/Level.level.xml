@@ -302,32 +302,6 @@ LUGAR DO ENCOSTE, SÓ FICAM CINZA]]]></Text>
 		<Alignment>LEFT</Alignment>
 	</Text>
 	<Text>
-		<Id>1786968748624</Id>
-		<Name><![CDATA[text18]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>500</X>
-		<Y>1110</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Precisa Remover Locomotiva]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>22</Size>
-			<Style>1</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
 		<Id>1787666219938</Id>
 		<Name><![CDATA[text43]]></Name>
 		<X>770</X>

@@ -983,7 +983,7 @@ main()._suzano_inversao_6000c]]></Code>
 	<EmbeddedObject>
 		<Id>1792760000000</Id>
 		<Name><![CDATA[deixar_24vgs_L7000]]></Name>
-		<X>770</X>
+		<X>780</X>
 		<Y>650</Y>
 		<Label>
 			<X>-20</X>
@@ -7686,8 +7686,8 @@ for (Faixa f : primeiro_alivio_faixas) {
 	<EmbeddedObject>
 		<Id>1796500000001</Id>
 		<Name><![CDATA[liberar_linha6000_alivio]]></Name>
-		<X>5500</X>
-		<Y>560</Y>
+		<X>5550</X>
+		<Y>480</Y>
 		<Label>
 			<X>-35</X>
 			<Y>-15</Y>
@@ -8026,7 +8026,7 @@ main().gestorDeCirculacao.get_recursos_linha_5000_6000((Trem) agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000006</Id>
 		<Name><![CDATA[acoplar_alivio_L1]]></Name>
-		<X>4130</X>
+		<X>4140</X>
 		<Y>300</Y>
 		<Label>
 			<X>-20</X>
@@ -8095,7 +8095,7 @@ loteVazios_L1 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000008</Id>
 		<Name><![CDATA[alivio_vz_L1]]></Name>
-		<X>4070</X>
+		<X>4030</X>
 		<Y>390</Y>
 		<Label>
 			<X>-5</X>
@@ -8452,7 +8452,7 @@ loteVazios_L1 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000014</Id>
 		<Name><![CDATA[acoplar_alivio_L2]]></Name>
-		<X>4430</X>
+		<X>4440</X>
 		<Y>350</Y>
 		<Label>
 			<X>-20</X>
@@ -8521,7 +8521,7 @@ loteVazios_L2 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000016</Id>
 		<Name><![CDATA[alivio_vz_L2]]></Name>
-		<X>4370</X>
+		<X>4330</X>
 		<Y>440</Y>
 		<Label>
 			<X>-5</X>
@@ -8878,7 +8878,7 @@ loteVazios_L2 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000022</Id>
 		<Name><![CDATA[acoplar_alivio_L3]]></Name>
-		<X>4730</X>
+		<X>4740</X>
 		<Y>400</Y>
 		<Label>
 			<X>-20</X>
@@ -8947,7 +8947,7 @@ loteVazios_L3 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000024</Id>
 		<Name><![CDATA[alivio_vz_L3]]></Name>
-		<X>4670</X>
+		<X>4630</X>
 		<Y>490</Y>
 		<Label>
 			<X>-5</X>
@@ -9304,7 +9304,7 @@ loteVazios_L3 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000030</Id>
 		<Name><![CDATA[acoplar_alivio_L4]]></Name>
-		<X>5030</X>
+		<X>5040</X>
 		<Y>450</Y>
 		<Label>
 			<X>-20</X>
@@ -9373,7 +9373,7 @@ loteVazios_L4 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000032</Id>
 		<Name><![CDATA[alivio_vz_L4]]></Name>
-		<X>4970</X>
+		<X>4930</X>
 		<Y>540</Y>
 		<Label>
 			<X>-5</X>
@@ -9745,7 +9745,7 @@ main().pmc_linha6000_d]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000038</Id>
 		<Name><![CDATA[acoplar_alivio_L7000]]></Name>
-		<X>5330</X>
+		<X>5340</X>
 		<Y>500</Y>
 		<Label>
 			<X>-20</X>
@@ -9814,7 +9814,7 @@ loteVazios_L7000 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000040</Id>
 		<Name><![CDATA[alivio_vz_L7000]]></Name>
-		<X>5270</X>
+		<X>5230</X>
 		<Y>590</Y>
 		<Label>
 			<X>-5</X>
@@ -9934,7 +9934,7 @@ loteVazios_L7000 = null;]]></Code>
 	<EmbeddedObject>
 		<Id>1792790000042</Id>
 		<Name><![CDATA[para_sair_alivio]]></Name>
-		<X>5550</X>
+		<X>5650</X>
 		<Y>490</Y>
 		<Label>
 			<X>-10</X>
@@ -10119,7 +10119,7 @@ remover_loco_circulacao.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792954667430</Id>
 		<Name><![CDATA[rmv_40vgs]]></Name>
-		<X>970</X>
+		<X>930</X>
 		<Y>450</Y>
 		<Label>
 			<X>-20</X>
@@ -12280,10 +12280,10 @@ linha03a.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792957192918</Id>
 		<Name><![CDATA[trainEnter1]]></Name>
-		<X>3250</X>
+		<X>3310</X>
 		<Y>240</Y>
 		<Label>
-			<X>-10</X>
+			<X>10</X>
 			<Y>-25</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -12938,7 +12938,7 @@ linha03a.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792957256530</Id>
 		<Name><![CDATA[para_pegar_lote_7000]]></Name>
-		<X>3350</X>
+		<X>3410</X>
 		<Y>240</Y>
 		<Label>
 			<X>-10</X>
@@ -12993,11 +12993,11 @@ pegar_lote_7000.take(agent)]]></Code>
 	<EmbeddedObject>
 		<Id>1792957633433</Id>
 		<Name><![CDATA[ocupar_faixas_triangulacao]]></Name>
-		<X>3150</X>
+		<X>3210</X>
 		<Y>230</Y>
 		<Label>
 			<X>-55</X>
-			<Y>55</Y>
+			<Y>-15</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -13602,8 +13602,8 @@ main().gestorDeCirculacao.faixa_linha6000_a.ocupar((Trem) agent);]]></Code>
 	<EmbeddedObject>
 		<Id>1798140000101</Id>
 		<Name><![CDATA[ocupar_mnb_pcx_triangulacao]]></Name>
-		<X>3100</X>
-		<Y>170</Y>
+		<X>3130</X>
+		<Y>230</Y>
 		<Label>
 			<X>-55</X>
 			<Y>55</Y>
