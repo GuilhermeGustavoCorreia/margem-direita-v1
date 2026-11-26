@@ -170,4 +170,26 @@
 			<Type><![CDATA[String]]></Type>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1801260000031</Id>
+		<Name><![CDATA[vagoes_ativos]]></Name>
+		<X>50</X>
+		<Y>180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[java.util.LinkedHashSet<Vagao>]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new java.util.LinkedHashSet<Vagao>()]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 </Variables>

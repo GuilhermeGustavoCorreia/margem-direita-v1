@@ -2528,6 +2528,16 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-223 — lista-de-vagoes-ativos
+- **Data:** 2026-11-26
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Objetivo:** seção 1 do registro dos vagões que não chegam ao `trainExit`: saber quais vagões ainda estão no modelo.
+- **O que:**
+  - GestorDeChegadas: collection `vagoes_ativos` (`LinkedHashSet<Vagao>`); `marcar_vagoes` adiciona o vagão na criação do trem e `registrar_vagoes_saida` remove no `trainExit`.
+  - GestorDeDVs: o log `vagoes_exit4` mostra também `ativos=<n>`.
+- **Próximas seções:** gravar os ativos no fim da rodada (coluna `situacao`), coluna `carregado`, coluna `track_final`.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/` (Variables.xml, Code/Functions.java), `_alp/Agents/GestorDeDVs/EmbeddedObjects.xml`, `docs/gestores.md`
+
 ## ALT-222 — vagoes-trem-criado-e-log-exit4
 - **Data:** 2026-11-26
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

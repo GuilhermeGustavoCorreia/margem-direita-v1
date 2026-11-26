@@ -2607,8 +2607,8 @@
 					<Code><![CDATA[// vagões que saíram da Margem Direita: ficam fora do fluxograma, mas não são destruídos
 int n = main().getNumeroDeVagoes((Trem) agent);
 vagoes_no_exit4 += n;
-Log.info("GesDVs", "vagoes_exit4", String.format("trem=%d vagoes=%d acumulado=%d",
-	agent.getId(), n, vagoes_no_exit4));]]></Code>
+Log.info("GesDVs", "vagoes_exit4", String.format("trem=%d vagoes=%d acumulado=%d ativos=%d",
+	agent.getId(), n, vagoes_no_exit4, main().gestorDeChegadas.vagoes_ativos.size()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

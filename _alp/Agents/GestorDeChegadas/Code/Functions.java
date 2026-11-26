@@ -349,6 +349,7 @@ for (int i = 0; i < trem.size(); i++) {
 	v.posicao_relativa = rel;
 	v.trem_criado_id      = trem.getId();
 	v.prefixo_trem_criado = trem.prefixo;
+	vagoes_ativos.add(v);   // vagão vivo no modelo até o trainExit
 	if (trem.ITerminalMoega_destino != null) v.setTerminal(trem.ITerminalMoega_destino);
 }
 /*ALCODEEND*/}
@@ -381,6 +382,7 @@ for (int i = 0; i < trem.size(); i++) {
 	if (!(c instanceof Vagao)) continue;
 	Vagao v = (Vagao) c;
 	v.hora_descarte_h = agora;
+	vagoes_ativos.remove(v);
 	registrar_vagao_csv(v);
 }
 /*ALCODEEND*/}
