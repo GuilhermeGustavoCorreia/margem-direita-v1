@@ -2528,6 +2528,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-224 — pedidos-nao-atendidos
+- **Data:** 2026-11-26
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** os pedidos que ainda estavam na fila no fim da rodada não iam para nenhum arquivo. Na rodada de 26/11 foram cerca de 20 mil pedidos para 1.632 trens criados.
+- **O que (GestorDeChegadas):**
+  - `iniciar_csv_pedidos()` (no `iniciar`): cria `simulacao/output/pedidos_nao_atendidos/pedidos_nao_atendidos.csv` (`pedidos_nao_atendidos_rep<n>.csv` nas replicações) só com o cabeçalho `pedido;terminal;ferrovia;manual;data_pedido;espera_ate_fim_h;ultimo_motivo;warm_up`.
+  - `registrar_fila_csv()`: uma linha por pedido que não virou trem: o `pedido_atual` (motivo `injetado, trem não nasceu`) e os pedidos da `fila`, na ordem. `;` do motivo vira ` |`.
+  - `ev_relogio`: chama `registrar_fila_csv()` no último tique antes de `duracao_h` (uma vez por rodada, variável `fila_registrada`). Funciona com e sem replicações.
+  - Variáveis `csv_pedidos` (String) e `fila_registrada` (boolean, `false`).
+- **Riscos conhecidos:** se a rodada cair ou for parada antes do fim, o arquivo fica só com o cabeçalho.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/` (Variables.xml, Code/Functions.java, Code/Functions.xml, Code/Events.java), `docs/gestores.md`
+
 ## ALT-223 — lista-de-vagoes-ativos
 - **Data:** 2026-11-26
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)

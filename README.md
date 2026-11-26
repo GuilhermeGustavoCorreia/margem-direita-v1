@@ -235,5 +235,6 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-221**: indicador de vagões (vagoes.csv: terminal, posição no trem criado, criação, descarga e descarte)
 - **ALT-222**: vagões com id e prefixo do trem criado; log dos vagões no exit4 das DVs
 - **ALT-223**: lista de vagões ativos (vagoes_ativos) e ativos no log vagoes_exit4
+- **ALT-224**: pedidos não atendidos (pedidos_nao_atendidos.csv no fim da rodada)
 - **ALT-213**: GestorDeChegadas — CSV dos trens criados (data do pedido, data de entrada, warm-up)
 - **ALT-214**: GestorDeChegadas — CSV dos trens criados na pasta output/trens_criados
