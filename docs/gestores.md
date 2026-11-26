@@ -163,9 +163,10 @@ Saída (ALT-213, pasta na ALT-214): `simulacao/output/trens_criados/trens_criado
 
 Vagões (ALT-221): `marcar_vagoes` (no `receber_trem`) copia o terminal, o id e o prefixo do trem para cada vagão e grava `posicao_absoluta`/`posicao_relativa`. No `trainExit` do GestorDeDVs (fim do circuito), `registrar_vagoes_saida` marca `hora_descarte_h` e grava uma linha por vagão em `simulacao/output/wagons/vagoes.csv` (`vagoes_rep<n>.csv` nas replicações). No `exit4` do GestorDeDVs, o log `vagoes_exit4` mostra quantos vagões saíram e o acumulado (`vagoes_no_exit4`): eles não são destruídos. A collection `vagoes_ativos` (GestorDeChegadas) guarda os vagões vivos: entra no `marcar_vagoes`, sai no `registrar_vagoes_saida`; o log mostra `ativos=<n>`.
 
-- `iniciar_csv_trens` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up`.
+- `iniciar_csv_trens` (no `iniciar`): sobrescreve o arquivo só com o cabeçalho `pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up;situacao;motivo`.
 - `registrar_trem_csv` (no `receber_trem`): uma linha por trem que nasceu com pedido, gravada na hora (append). `data_pedido` = horário programado do pedido; `data_entrada` = trem no trilho; datas `dd/MM/yyyy HH:mm` a partir de `data_inicio`; `segmento` do 1º vagão; `warm_up` = entrada antes de `warmup_h`.
-- Pedidos ainda na fila no fim da rodada não entram no arquivo.
+- `registrar_trem_csv` grava `situacao = criado` e `motivo` vazio.
+- `registrar_pedidos_pendentes` (ALT-224, no On destroy do Main, uma vez por rodada): grava no mesmo arquivo os pedidos que não viraram trem. `situacao = injetado` para o `pedido_atual` (trem injetado, ainda não nasceu) e `aguardando` para os da `fila`; `motivo` = `ultimo_motivo` do pedido (com `;` trocado por ` /`). `prefixo`, `trem_id`, `segmento` e `data_entrada` ficam vazios; `warm_up` = pedido antes de `warmup_h`.
 
 ## Como os gestores conversam com os terminais
 

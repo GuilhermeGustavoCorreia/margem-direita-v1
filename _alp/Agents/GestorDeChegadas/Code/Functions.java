@@ -303,7 +303,7 @@ java.io.File arq = new java.io.File(main().pasta_simulacao + "/output/trens_cria
 arq.getParentFile().mkdirs();
 csv_trens = arq.getPath();
 try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(arq, false), "UTF-8")) {
-	w.write("pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up\n");
+	w.write("pedido;prefixo;trem_id;terminal;ferrovia;segmento;data_pedido;data_entrada;warm_up;situacao;motivo\n");
 } catch (Exception ex) {
 	error("[chegadas] não foi possível criar " + csv_trens + ": " + ex.getMessage());
 }
@@ -315,6 +315,7 @@ double registrar_trem_csv(Pedido p,Trem trem)
 // uma linha por trem criado, gravada na hora (append) para não perder dados se a rodada cair.
 // data_pedido = horário programado do pedido; data_entrada = trem no trilho.
 // warm_up = o trem entrou no trilho antes do fim do warm-up.
+// situacao = criado; motivo vazio (os pedidos não criados entram no fim da rodada, em registrar_pedidos_pendentes).
 String seg = "";
 for (int i = 0; i < trem.size(); i++) {
 	Agent c = trem.getCar(i);
@@ -327,7 +328,8 @@ String data_entrada = t0.plusSeconds(Math.round(p.hora_entrada_h * 3600)).format
 boolean warm_up = p.hora_entrada_h < main().warmup_h;
 
 String linha = String.join(";", String.valueOf(p.numero), trem.prefixo, String.valueOf(trem.getId()),
-	p.instancia, p.ferrovia, seg == null ? "" : seg.toLowerCase(), data_pedido, data_entrada, String.valueOf(warm_up));
+	p.instancia, p.ferrovia, seg == null ? "" : seg.toLowerCase(), data_pedido, data_entrada, String.valueOf(warm_up),
+	"criado", "");
 try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(csv_trens, true), "UTF-8")) {
 	w.write(linha + "\n");
 } catch (Exception ex) {
@@ -449,5 +451,43 @@ for (Vagao v : new java.util.ArrayList<Vagao>(vagoes_ativos)) {
 }
 Log.info("Chegadas", "csv", n + " vagões no_modelo gravados no fim da rodada (" 
 	+ String.format(new java.util.Locale("pt", "BR"), "%.2f", time(HOUR)) + " h)");
+/*ALCODEEND*/}
+
+double registrar_pedidos_pendentes()
+{/*ALCODESTART::1801261651001*/
+// chamado no On destroy do Main: grava no trens_criados.csv os pedidos que não viraram trem.
+// injetado = pedido_atual (trem injetado, ainda não nasceu); aguardando = ainda na fila.
+// prefixo, trem_id, segmento e data_entrada ficam vazios; warm_up = pedido antes do fim do warm-up.
+// roda uma vez só por rodada/replicação.
+if (pedidos_pendentes_registrados || csv_trens == null) return;
+pedidos_pendentes_registrados = true;
+
+java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+java.time.LocalDateTime t0 = Log.data_inicio.atStartOfDay();
+
+java.util.List<Pedido> pendentes = new java.util.ArrayList<Pedido>();
+if (pedido_atual != null) pendentes.add(pedido_atual);
+pendentes.addAll(fila);
+
+int n_injetado = 0, n_aguardando = 0;
+try (java.io.Writer w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(csv_trens, true), "UTF-8")) {
+	for (Pedido p : pendentes) {
+		boolean injetado = (p == pedido_atual);
+		if (injetado) n_injetado++; else n_aguardando++;
+		String data_pedido = t0.plusSeconds(Math.round(p.hora_pedido_h * 3600)).format(fmt);
+		boolean warm_up = p.hora_pedido_h < main().warmup_h;
+		String motivo = injetado ? "trem injetado, ainda não nasceu"
+			: (p.ultimo_motivo == null ? "" : p.ultimo_motivo);
+		motivo = motivo.replace(";", " /");   // o motivo_destino junta motivos com ";", que é o separador do CSV
+		String linha = String.join(";", String.valueOf(p.numero), "", "",
+			p.instancia, p.ferrovia, "", data_pedido, "", String.valueOf(warm_up),
+			injetado ? "injetado" : "aguardando", motivo);
+		w.write(linha + "\n");
+	}
+} catch (Exception ex) {
+	Log.warn("Chegadas", "csv", "falha ao gravar pedidos pendentes em " + csv_trens + ": " + ex.getMessage());
+}
+Log.info("Chegadas", "pedidos_pendentes", String.format("%d pedidos não criados gravados no fim da rodada (aguardando=%d, injetado=%d) em %s",
+	n_injetado + n_aguardando, n_aguardando, n_injetado, csv_trens));
 /*ALCODEEND*/}
 

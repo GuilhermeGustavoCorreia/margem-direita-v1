@@ -15,7 +15,8 @@ carregar_configuracao();
 getEngine().setStopTime(time() + toModelTime(duracao_h, HOUR));
 traceln(String.format("[sim] simulação até %.1f h", duracao_h));
 gestorDeChegadas.iniciar();]]></StartupCode>
-	<DestroyCode>gestorDeChegadas.registrar_vagoes_ativos();</DestroyCode>
+	<DestroyCode>gestorDeChegadas.registrar_vagoes_ativos();
+gestorDeChegadas.registrar_pedidos_pendentes();</DestroyCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772633102342</Id>

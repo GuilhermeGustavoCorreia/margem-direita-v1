@@ -2528,6 +2528,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - A soltura fica no `liberar_faixas_ate_terminal` (volta para a 4000).
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/` (Variables.xml, EmbeddedObjects.xml, Code/Functions.java, Code/Functions.xml), `_alp/Agents/T39/` e `_alp/Agents/ADM/` (EmbeddedObjects.xml, Connectors.xml), `docs/gestores.md`
 
+## ALT-224 — pedidos-nao-criados-no-trens-criados
+- **Data:** 2026-11-26
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** pedidos que não viraram trem até o fim da rodada (na `fila` ou o `pedido_atual` já injetado) não eram registrados em nenhum CSV.
+- **O que (GestorDeChegadas):**
+  - `trens_criados.csv` ganha as colunas `situacao` (`criado` / `aguardando` / `injetado`) e `motivo`.
+  - `registrar_trem_csv` grava `criado` e motivo vazio.
+  - Nova função `registrar_pedidos_pendentes()`: grava o `pedido_atual` (`injetado`) e os pedidos da `fila` (`aguardando`, motivo = `ultimo_motivo`, `;` trocado por ` /`). `prefixo`, `trem_id`, `segmento` e `data_entrada` vazios; `warm_up` = pedido antes de `warmup_h`. Guarda `pedidos_pendentes_registrados` para rodar uma vez.
+  - Main, On destroy: chama `gestorDeChegadas.registrar_pedidos_pendentes()` depois do `registrar_vagoes_ativos()`.
+- **Atenção:** o cabeçalho do CSV mudou; a interface precisa aceitar as duas colunas novas.
+- **Arquivos:** `_alp/Agents/GestorDeChegadas/Code/Functions.java`, `_alp/Agents/GestorDeChegadas/Code/Functions.xml`, `_alp/Agents/GestorDeChegadas/Variables.xml`, `_alp/Agents/Main/AOC.Main.xml`, `docs/gestores.md`
+
 ## ALT-223 — lista-de-vagoes-ativos
 - **Data:** 2026-11-26
 - **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
