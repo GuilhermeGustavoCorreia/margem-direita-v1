@@ -46,11 +46,15 @@ public class Log {
     }
 
     // Posição do trem: c0 = frente do carro 0, cN = traseira do último carro (track/offset em m).
-    public static String pos(com.anylogic.libraries.rail.Train t) {
+    public static String pos(com.anylogic.engine.Agent a) {
+        return (a instanceof Trem) ? pos((Trem) a) : "-";
+    }
+
+    public static String pos(Trem t) {
         if (t == null || t.size() == 0) return "-";
         try {
-            com.anylogic.libraries.rail.RailCar a = (com.anylogic.libraries.rail.RailCar) t.getCar(0);
-            com.anylogic.libraries.rail.RailCar b = (com.anylogic.libraries.rail.RailCar) t.getCar(t.size() - 1);
+            com.anylogic.engine.Agent a = t.getCar(0);
+            com.anylogic.engine.Agent b = t.getCar(t.size() - 1);
             return String.format(java.util.Locale.ROOT, "c0=%s/%.0f cN=%s/%.0f",
                 nome_track(a.getTrack(true)), a.getOffset(true), nome_track(b.getTrack(false)), b.getOffset(false));
         } catch (Exception e) {
@@ -59,16 +63,20 @@ public class Log {
     }
 
     // Outros trens nas tracks das duas pontas de t.
-    public static String trens_vizinhos(com.anylogic.libraries.rail.Train t) {
+    public static String trens_vizinhos(com.anylogic.engine.Agent a) {
+        return (a instanceof Trem) ? trens_vizinhos((Trem) a) : "-";
+    }
+
+    public static String trens_vizinhos(Trem t) {
         if (t == null || t.size() == 0) return "-";
         java.util.LinkedHashSet<String> ids = new java.util.LinkedHashSet<String>();
         try {
-            com.anylogic.libraries.rail.RailCar a = (com.anylogic.libraries.rail.RailCar) t.getCar(0);
-            com.anylogic.libraries.rail.RailCar b = (com.anylogic.libraries.rail.RailCar) t.getCar(t.size() - 1);
-            for (com.anylogic.libraries.rail.RailwayTrack tr : new com.anylogic.libraries.rail.RailwayTrack[] { a.getTrack(true), b.getTrack(false) }) {
+            com.anylogic.engine.Agent a = t.getCar(0);
+            com.anylogic.engine.Agent b = t.getCar(t.size() - 1);
+            for (com.anylogic.engine.markup.RailwayTrack tr : new com.anylogic.engine.markup.RailwayTrack[] { a.getTrack(true), b.getTrack(false) }) {
                 if (tr == null) continue;
                 for (Object o : tr.getCars()) {
-                    com.anylogic.libraries.rail.Train outro = ((com.anylogic.libraries.rail.RailCar) o).getTrain();
+                    com.anylogic.engine.Agent outro = ((com.anylogic.engine.Agent) o).getTrain();
                     if (outro != null && outro != t) ids.add(outro.getId() + "@" + tr.getName());
                 }
             }
@@ -78,7 +86,7 @@ public class Log {
         return ids.isEmpty() ? "nenhum" : String.join(",", ids);
     }
 
-    private static String nome_track(com.anylogic.libraries.rail.RailwayTrack tr) {
+    private static String nome_track(com.anylogic.engine.markup.RailwayTrack tr) {
         return tr == null ? "-" : tr.getName();
     }
 }
