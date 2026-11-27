@@ -2639,4 +2639,5 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - `set_quantidade_alivio`: `qtd_alivio_recebida` (o alívio ainda engata os 41).
   - MoegaoMar: traces `[CoperXII]` passam a `[MoegaoMar]` (`tipoDeLote` sem mudança).
 - **Correção (27/11):** `com.anylogic.libraries.rail.Train`/`RailCar` não existem no modelo (erro de compilação no `cortar_grupo` do MoegaoMar). Os helpers passam a usar `Trem`, `com.anylogic.engine.Agent` e `com.anylogic.engine.markup.RailwayTrack`.
+- **Correção 2 (27/11):** `getTrack`/`getOffset` não existem no `Agent`; os helpers fazem cast para `Vagao` ou `Locomotiva` (`track_de`, `offset_de`).
 - **Arquivos:** `_alp/Classes/Class.Log.java`, `_alp/Agents/MoegaoTerra/Code/Functions.java`, `_alp/Agents/MoegaoTerra/EmbeddedObjects.xml`, `_alp/Agents/MoegaoMar/Code/Functions.java`, `_alp/Agents/MoegaoMar/EmbeddedObjects.xml`

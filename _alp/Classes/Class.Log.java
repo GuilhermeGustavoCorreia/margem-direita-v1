@@ -56,7 +56,7 @@ public class Log {
             com.anylogic.engine.Agent a = t.getCar(0);
             com.anylogic.engine.Agent b = t.getCar(t.size() - 1);
             return String.format(java.util.Locale.ROOT, "c0=%s/%.0f cN=%s/%.0f",
-                nome_track(a.getTrack(true)), a.getOffset(true), nome_track(b.getTrack(false)), b.getOffset(false));
+                nome_track(track_de(a, true)), offset_de(a, true), nome_track(track_de(b, false)), offset_de(b, false));
         } catch (Exception e) {
             return "fora_da_rede";
         }
@@ -73,7 +73,7 @@ public class Log {
         try {
             com.anylogic.engine.Agent a = t.getCar(0);
             com.anylogic.engine.Agent b = t.getCar(t.size() - 1);
-            for (com.anylogic.engine.markup.RailwayTrack tr : new com.anylogic.engine.markup.RailwayTrack[] { a.getTrack(true), b.getTrack(false) }) {
+            for (com.anylogic.engine.markup.RailwayTrack tr : new com.anylogic.engine.markup.RailwayTrack[] { track_de(a, true), track_de(b, false) }) {
                 if (tr == null) continue;
                 for (Object o : tr.getCars()) {
                     com.anylogic.engine.Agent outro = ((com.anylogic.engine.Agent) o).getTrain();
@@ -88,5 +88,18 @@ public class Log {
 
     private static String nome_track(com.anylogic.engine.markup.RailwayTrack tr) {
         return tr == null ? "-" : tr.getName();
+    }
+
+    // getTrack/getOffset só existem nos tipos de carro (Vagao e Locomotiva), não no Agent.
+    private static com.anylogic.engine.markup.RailwayTrack track_de(com.anylogic.engine.Agent c, boolean frente) {
+        if (c instanceof Vagao)      return ((Vagao) c).getTrack(frente);
+        if (c instanceof Locomotiva) return ((Locomotiva) c).getTrack(frente);
+        return null;
+    }
+
+    private static double offset_de(com.anylogic.engine.Agent c, boolean frente) {
+        if (c instanceof Vagao)      return ((Vagao) c).getOffset(frente);
+        if (c instanceof Locomotiva) return ((Locomotiva) c).getOffset(frente);
+        return -1;
     }
 }
