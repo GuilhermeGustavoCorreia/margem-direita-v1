@@ -12,17 +12,12 @@ Log.iniciar(this);
 
 linhas_e_recursos.put(rp_linha5000, coll_trecho5000);
 
-linhas_e_recursos.put(rp_linha_intervalo4000, 		coll_intervalo4k		);
-linhas_e_recursos.put(rp_linha_marginalRetaVelha, 	coll_marginalRetaVelha	);
-linhas_e_recursos.put(rp_linha_via2, 				coll_via2				);
-linhas_e_recursos.put(rp_linha_via2_intermar, 		coll_via2_intermar		); 
+//linhas_e_recursos.put(rp_linha_intervalo4000, 		coll_intervalo4k		);
+//linhas_e_recursos.put(rp_linha_marginalRetaVelha, 	coll_marginalRetaVelha	);
+//linhas_e_recursos.put(rp_linha_via2, 				coll_via2				);
+//linhas_e_recursos.put(rp_linha_via2_intermar, 		coll_via2_intermar		); 
 
 Log.info("GesCirculacao", "startup", "linhas_e_recursos");
-/*ALCODEEND*/}
-
-double configurar_rota(Trem trem)
-{/*ALCODESTART::1787667154475*/
-destino = trem.posicao_destino;
 /*ALCODEEND*/}
 
 ResourcePool[] liberar_faixas_ocupadas(Trem trem)

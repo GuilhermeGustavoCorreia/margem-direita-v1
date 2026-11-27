@@ -92,7 +92,7 @@ registrar_faixas();]]></StartupCode>
 	<ScaleRuler>
 		<Id>1793876761866</Id>
 		<Name><![CDATA[scale]]></Name>
-		<X>510</X>
+		<X>1000</X>
 		<Y>390</Y>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
@@ -115,8 +115,8 @@ registrar_faixas();]]></StartupCode>
 			<Id>1793903315067</Id>
 			<Name><![CDATA[main]]></Name>
 			<ExcludeFromBuild>true</ExcludeFromBuild>
-			<X>50</X>
-			<Y>-100</Y>
+			<X>1160</X>
+			<Y>80</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
