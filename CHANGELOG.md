@@ -2640,4 +2640,18 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - MoegaoMar: traces `[CoperXII]` passam a `[MoegaoMar]` (`tipoDeLote` sem mudança).
 - **Correção (27/11):** `com.anylogic.libraries.rail.Train`/`RailCar` não existem no modelo (erro de compilação no `cortar_grupo` do MoegaoMar). Os helpers passam a usar `Trem`, `com.anylogic.engine.Agent` e `com.anylogic.engine.markup.RailwayTrack`.
 - **Correção 2 (27/11):** `getTrack`/`getOffset` não existem no `Agent`; os helpers fazem cast para `Vagao` ou `Locomotiva` (`track_de`, `offset_de`).
+- **Correção 3 (27/11):** `getTrain()` também não existe no `Agent`; novo helper `trem_de` (cast para `Vagao`/`Locomotiva`).
 - **Arquivos:** `_alp/Classes/Class.Log.java`, `_alp/Agents/MoegaoTerra/Code/Functions.java`, `_alp/Agents/MoegaoTerra/EmbeddedObjects.xml`, `_alp/Agents/MoegaoMar/Code/Functions.java`, `_alp/Agents/MoegaoMar/EmbeddedObjects.xml`
+
+## ALT-226 — moegoes-proximo-lote-depois-da-saida-do-alivio
+- **Data:** 2026-11-27
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema (confirmado pelos logs da ALT-225, rodada de 20 h):** o `retornar_gestorDeAlivios` chamava `liberar_espaco_vazios()` e `iniciar_proximo_lote()` logo ao entregar o trem do alívio ao gestor, com o trem ainda dentro do terminal (esperando a licença da `via1_intermar_c`). O 1º grupo do próximo lote batia nele com o `lote_b` vazio e travava no `acoplar_b` (`WARN bateu_com_lote_b_vazio`: MoegaoMar 05:18, trem 28991; MoegaoTerra 07:20, trem 28975).
+- **O que (MoegaoTerra e MoegaoMar):**
+  - `retornar_gestorDeAlivios`: grava `trem_alivio_saindo` no lugar de chamar `liberar_espaco_vazios()` e `iniciar_proximo_lote()`.
+  - Variável `trem_alivio_saindo` (Trem).
+  - Função `tentar_iniciar_proximo_lote()`: quando o trem do alívio sai das linhas do terminal, loga `alivio_saiu`, chama `liberar_espaco_vazios()` e `iniciar_proximo_lote()`.
+  - Função `alivio_no_terminal(Trem)`: frente ou traseira ainda nas linhas do terminal. Mar: `pstMoegao_LinhaMeio`, `pstLinha03/04/05`, `pstSaidaMoegao`. Terra: `railwayTrack36`, `pstLinha01/02`, `railwayTrack15`, `pstSaidaMoegao`.
+- **O que (GestorDeAlivios):** `atualizar_analises` (1 s) chama `tentar_iniciar_proximo_lote()` dos dois Moegões.
+- **Fica pendente:** cruzamento Terra × Mar × CoperXXI na saída comum (`pstSaidaMoegao`, `psnSaidaCopexXXI_a`, `linhaPaqueta_a`), a licenciar pelo GestorDeCirculacao; o CoperXXI tem o mesmo bug; o alívio dos Moegões ainda engata 41 mesmo com o limite das DVs.
+- **Arquivos:** `_alp/Agents/MoegaoTerra/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/MoegaoMar/{EmbeddedObjects.xml,Variables.xml,Code/Functions.java,Code/Functions.xml}`, `_alp/Agents/GestorDeAlivios/Code/Events.java`, `_alp/Classes/Class.Log.java` (correção 3 da ALT-225)

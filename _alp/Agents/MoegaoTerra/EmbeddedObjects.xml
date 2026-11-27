@@ -5754,8 +5754,8 @@ main().gestorDeAlivios.retornar_alivio.take(agent);
 // ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
 aguardando_alivio = false;
 fazendoAlivio = false;
-liberar_espaco_vazios();
-iniciar_proximo_lote();]]></Code>
+// o próximo lote só começa quando o trem do alívio sair das linhas do terminal (tentar_iniciar_proximo_lote)
+trem_alivio_saindo = (Trem) agent;]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>

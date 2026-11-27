@@ -308,3 +308,29 @@ return (
 );
 /*ALCODEEND*/}
 
+double tentar_iniciar_proximo_lote()
+{/*ALCODESTART::1796270000012*/
+// chamada a cada 1 s pelo GestorDeAlivios (atualizar_analises).
+// Depois do alívio, o próximo lote só começa quando o trem do alívio sai das linhas do terminal;
+// antes disso, o 1º grupo batia na cauda dele com o lote_b vazio e travava no acoplar_b.
+if (trem_alivio_saindo == null) return;
+if (alivio_no_terminal(trem_alivio_saindo)) return;
+Log.info("MoegaoTerra", "alivio_saiu", String.format(java.util.Locale.ROOT,
+	"t=%.1f trem=%d -> libera proximo lote", time(), trem_alivio_saindo.getId()));
+trem_alivio_saindo = null;
+liberar_espaco_vazios();
+iniciar_proximo_lote();
+/*ALCODEEND*/}
+
+boolean alivio_no_terminal(Trem t)
+{/*ALCODESTART::1796270000013*/
+// true se a frente ou a traseira do trem ainda está numa linha do terminal (a traseira é a última a sair)
+if (t == null || t.size() == 0) return false;
+java.util.List<RailwayTrack> linhas = java.util.Arrays.asList(main().railwayTrack36, main().pstLinha01, main().pstLinha02, main().railwayTrack15, main().pstSaidaMoegao);
+for (Agent c : new Agent[] { t.getCar(0), t.getCar(t.size() - 1) }) {
+	RailwayTrack tr = (c instanceof Vagao) ? ((Vagao) c).getTrack(true)
+	                : (c instanceof Locomotiva) ? ((Locomotiva) c).getTrack(true) : null;
+	if (tr != null && linhas.contains(tr)) return true;
+}
+return false;
+/*ALCODEEND*/}

@@ -76,7 +76,7 @@ public class Log {
             for (com.anylogic.engine.markup.RailwayTrack tr : new com.anylogic.engine.markup.RailwayTrack[] { track_de(a, true), track_de(b, false) }) {
                 if (tr == null) continue;
                 for (Object o : tr.getCars()) {
-                    com.anylogic.engine.Agent outro = ((com.anylogic.engine.Agent) o).getTrain();
+                    com.anylogic.engine.Agent outro = trem_de((com.anylogic.engine.Agent) o);
                     if (outro != null && outro != t) ids.add(outro.getId() + "@" + tr.getName());
                 }
             }
@@ -90,7 +90,7 @@ public class Log {
         return tr == null ? "-" : tr.getName();
     }
 
-    // getTrack/getOffset só existem nos tipos de carro (Vagao e Locomotiva), não no Agent.
+    // getTrack/getOffset/getTrain só existem nos tipos de carro (Vagao e Locomotiva), não no Agent.
     private static com.anylogic.engine.markup.RailwayTrack track_de(com.anylogic.engine.Agent c, boolean frente) {
         if (c instanceof Vagao)      return ((Vagao) c).getTrack(frente);
         if (c instanceof Locomotiva) return ((Locomotiva) c).getTrack(frente);
@@ -101,5 +101,11 @@ public class Log {
         if (c instanceof Vagao)      return ((Vagao) c).getOffset(frente);
         if (c instanceof Locomotiva) return ((Locomotiva) c).getOffset(frente);
         return -1;
+    }
+
+    private static com.anylogic.engine.Agent trem_de(com.anylogic.engine.Agent c) {
+        if (c instanceof Vagao)      return ((Vagao) c).getTrain();
+        if (c instanceof Locomotiva) return ((Locomotiva) c).getTrain();
+        return null;
     }
 }

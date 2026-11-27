@@ -375,6 +375,28 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+		<Id>1796270000011</Id>
+		<Name><![CDATA[trem_alivio_saindo]]></Name>
+		<X>510</X>
+		<Y>1730</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Trem]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[null]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
 		<Id>1793300679308</Id>
 		<Name><![CDATA[destino_segunda_parte]]></Name>
 		<X>510</X>
