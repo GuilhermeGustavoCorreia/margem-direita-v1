@@ -96,7 +96,7 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_b", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][alivio] trem=%d engatando lote_b", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -240,7 +240,7 @@
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote_a", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][alivio] trem=%d engatando lote_a", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1203,7 +1203,7 @@ if (agent instanceof Trem) {
 		produto_em_atendimento  = v.segmento;
 	}
 }
-traceln(String.format("[%.1f][CoperXII][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));
+traceln(String.format("[%.1f][MoegaoMar][chegada] trem=%d carros=%d", time(), agent.getId(), ((Trem) agent).size()));
 // terminal não recebe outro trem até este entrar no ciclo da moega
 _trem_chegando = (Trem) agent;]]></Code>
 				</Value>
@@ -1384,7 +1384,7 @@ _trem_chegando = (Trem) agent;]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_em_descarga = (Trem) agent;
 _trem_chegando = null;
-traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros na fila da moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][entrar_moega] trem=%d lote com %d carros na fila da moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -1585,7 +1585,7 @@ traceln(String.format("[%.1f][CoperXII][entrar_moega] trem=%d lote com %d carros
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][ir_encoste] trem=%d chegou no _coperXII_encoste", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][ir_encoste] trem=%d chegou no _coperXII_encoste", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2034,7 +2034,7 @@ else                              ir_vazios.take(agent);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[aguarda_grupo.block();
-traceln(String.format("[%.1f][CoperXII][corte] trem=%d corta %d carros da frente", time(), train.getId(), _grupo_carros));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][corte] trem=%d corta %d carros da frente", time(), train.getId(), _grupo_carros));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2042,6 +2042,9 @@ traceln(String.format("[%.1f][CoperXII][corte] trem=%d corta %d carros da frente
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoMar", "corte_grupo", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d destino=%s pos=%s", time(), train2.getId(), train2.size(), _grupo_linha, Log.pos(train2)));]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -2586,7 +2589,7 @@ if ("b".equals(etapa_alivio)) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][vazios] trem=%d chegou na linha com %d carros", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][vazios] trem=%d chegou na linha com %d carros", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -2924,7 +2927,7 @@ get_carros_ate_segunda_loco((Trem) train)]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-073: o lote 2 é o trem original (sai pelo out) e espera no Wait espera_segunda_parte
 lote_segunda_parte = (Trem) train;
-traceln(String.format("[%.1f][CoperXII][corte_lotes] trem=%d lote1=%d carros", time(), train.getId(), get_carros_ate_segunda_loco((Trem) train)));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][corte_lotes] trem=%d lote1=%d carros", time(), train.getId(), get_carros_ate_segunda_loco((Trem) train)));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3340,7 +3343,7 @@ if (get_espaco_vazios() <= 0) aguarda_espaco_vazios.block();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][espaco] trem=%d 41 vazios prontos: lote espera o alívio onde está", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][espaco] trem=%d 41 vazios prontos: lote espera o alívio onde está", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -3573,7 +3576,7 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitTrue]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][corte] trem=%d último grupo do lote", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][corte] trem=%d último grupo do lote", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -3843,6 +3846,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoMar", "ir_lote_b_inicio", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d etapa_alivio=%s pos=%s", time(), train.getId(), train.size(), etapa_alivio, Log.pos(train)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -3861,6 +3867,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoMar", "ir_lote_b_bateu", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d pos=%s trens_na_linha=%s", time(), train.getId(), train.size(), Log.pos(train), Log.trens_vizinhos(train)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4439,7 +4448,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter1]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-065: grupo bateu nos vazios da linha: solta o estoque para acoplar
+					<Code><![CDATA[if (lote_vazios_b == null && !"b".equals(etapa_alivio))
+	Log.warn("MoegaoMar", "bateu_com_lote_b_vazio", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d pos=%s trens_na_linha=%s", time(), train.getId(), train.size(), Log.pos(train), Log.trens_vizinhos(train)));
+// ALT-065: grupo bateu nos vazios da linha: solta o estoque para acoplar
 estoque_b.unblock();]]></Code>
 				</Value>
 			</Parameter>
@@ -5156,7 +5167,7 @@ estoque_b.unblock();]]></Code>
 					<Code><![CDATA[// ALT-076: fim do lote; a segunda parte vira lote_em_descarga e começa já se ainda faltam vazios para o alívio de 41
 trocar_lote_em_descarga();
 if (get_espaco_vazios() > 0) iniciar_proximo_lote();
-traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega liberada", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][vazios] trem=%d lote terminou: moega liberada", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5261,7 +5272,7 @@ traceln(String.format("[%.1f][CoperXII][vazios] trem=%d lote terminou: moega lib
 					<Code><![CDATA[// ALT-076: lote terminou na moega
 trocar_lote_em_descarga();
 if (get_espaco_vazios() > 0) iniciar_proximo_lote();
-traceln(String.format("[%.1f][CoperXII][resto] trem=%d lote terminou na moega: moega liberada", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][resto] trem=%d lote terminou na moega: moega liberada", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5678,7 +5689,7 @@ proximo_grupo.take(agent);]]></Code>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[fazendoAlivio = true;
-traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (%d carros)", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][alivio] trem=%d loco do alívio chegou (%d carros)", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -5738,7 +5749,8 @@ traceln(String.format("[%.1f][CoperXII][alivio] trem=%d loco do alívio chegou (
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeAlivios.retornar_alivio.take(agent);
+					<Code><![CDATA[Log.info("MoegaoMar", "saida_alivio", String.format(java.util.Locale.ROOT, "t=%.1f trem=%d vgs=%d pos=%s", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes(), Log.pos((Trem) agent)));
+main().gestorDeAlivios.retornar_alivio.take(agent);
 // ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
 aguardando_alivio = false;
 fazendoAlivio = false;
@@ -6217,7 +6229,7 @@ iniciar_proximo_lote();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d engatando lote da moega", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][alivio] trem=%d engatando lote da moega", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -6534,7 +6546,7 @@ if ("moega".equals(etapa_alivio)) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][alivio] trem=%d alívio engatado: %d vgs, voltando ao GestorDeAlivios", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][alivio] trem=%d alívio engatado: %d vgs, voltando ao GestorDeAlivios", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -7134,7 +7146,7 @@ if ("b".equals(etapa_alivio)) {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][segunda_parte] trem=%d segunda parte esperando (%d carros, locos=%d)", time(), agent.getId(), ((Trem) agent).size(), ((Trem) agent).getNumeroDeLocomotivas()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][segunda_parte] trem=%d segunda parte esperando (%d carros, locos=%d)", time(), agent.getId(), ((Trem) agent).size(), ((Trem) agent).getNumeroDeLocomotivas()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -7409,7 +7421,7 @@ if ("loco".equals(destino_segunda_parte)) {
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d lote sem loco: buscando loco", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d lote sem loco: buscando loco", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -7494,7 +7506,7 @@ lote_segunda_parte != null && lote_segunda_parte.temLocomotiva(true)]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExitFalse]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d sem segunda parte: pedindo loco FIPS PST", time(), agent.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d sem segunda parte: pedindo loco FIPS PST", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -7769,7 +7781,7 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco acoplada na cauda do lote (%d carros)", time(), train1.getId(), ((Trem) train1).size()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d loco acoplada na cauda do lote (%d carros)", time(), train1.getId(), ((Trem) train1).size()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8011,7 +8023,7 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d tirando a loco da segunda parte", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d tirando a loco da segunda parte", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8194,7 +8206,7 @@ loco_fips.inject();]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco da segunda parte indo para a cauda do lote", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d loco da segunda parte indo para a cauda do lote", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -8448,7 +8460,7 @@ loco_fips.inject();]]></Code>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
 					<Code><![CDATA[// ALT-075
-traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS PST criada (entra em pos_loco_pera)", time(), train.getId()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d loco FIPS PST criada (entra em pos_loco_pera)", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -8582,7 +8594,7 @@ new RailwayTrack[] {
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS PST indo para a cauda do lote", time(), train.getId()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d loco FIPS PST indo para a cauda do lote", time(), train.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9195,7 +9207,7 @@ main().gestorDeCirculacao.faixa_entrada_pera.bloquear((Trem) agent);]]></Code>
 					<Code><![CDATA[// ALT-075: loco FIPS encostou no lote: solta só as faixas que ela bloqueou, antes de acoplar
 main().gestorDeCirculacao.faixa_via2_c.liberar();
 main().gestorDeCirculacao.faixa_entrada_pera.liberar();
-traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS encostou e soltou as faixas", time(), agent.getId()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][loco] trem=%d loco FIPS encostou e soltou as faixas", time(), agent.getId()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9315,7 +9327,7 @@ traceln(String.format("[%.1f][CoperXII][loco] trem=%d loco FIPS encostou e solto
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[traceln(String.format("[%.1f][CoperXII][moega] trem=%d grupo de %d carros fica na moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
+					<Code><![CDATA[traceln(String.format("[%.1f][MoegaoMar][moega] trem=%d grupo de %d carros fica na moega", time(), agent.getId(), ((Trem) agent).size()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
@@ -9598,7 +9610,7 @@ lote_vazios_moega != null]]></Code>
 				<Value Class="CodeValue">
 					<Code><![CDATA[lote_vazios_moega = (Trem) agent;
 ((Trem) agent).tipoDeLote = "coperXII_vazios_moega";
-traceln(String.format("[%.1f][CoperXII][moega] trem=%d lote da moega com %d vgs (capacidade %d)", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes(), get_capacidade_moega()));]]></Code>
+traceln(String.format("[%.1f][MoegaoMar][moega] trem=%d lote da moega com %d vgs (capacidade %d)", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes(), get_capacidade_moega()));]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>

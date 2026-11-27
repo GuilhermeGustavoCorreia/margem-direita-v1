@@ -2625,3 +2625,17 @@ Convenção: cada alteração recebe um código `ALT-NNN-descricao`, vira um com
   - O encoste da Bracell já pega o `mnb_pcx` no `para_via3_b` (sem mudança).
 - **A conferir:** se, depois do `recuar_track178`, a ponta do trem de 80+ vagões do lado do sw53 fica livre.
 - **Arquivos:** `_alp/Agents/GestorDeAlivios/EmbeddedObjects.xml`, `_alp/Agents/GestorDeAlivios/Connectors.xml`, `docs/gestores.md`
+
+## ALT-225 — logs-do-grupo-no-lote-b-dos-moegoes
+- **Data:** 2026-11-27
+- **Status:** aplicada, em teste (abrir no AnyLogic e compilar)
+- **Problema:** na rodada de 27/11 (720 h), o Moegão Mar travou às 05:18 de 01/01 e o Terra às 07:20. Logo depois do alívio, o grupo de vazios cortado para o `lote_b` nunca chegou. Hipótese: com o `lote_b` vazio, o grupo bate na cauda do trem do alívio (parado esperando a `via1_intermar_c`), sai pelo `ir_lote_b.outHit` para o `acoplar_b.in1` e espera para sempre um `in2` que não vem (estoque b vazio). Os terminais param de receber e o 31588 fica na linha 02 do ISN até o fim.
+- **O que (MoegaoTerra e MoegaoMar), só logs, sem mudança de lógica:**
+  - `Log.pos(trem)` e `Log.trens_vizinhos(trem)` na classe `Log`.
+  - `cortar_grupo.onExitDecoupled`: `corte_grupo` com o id do grupo novo.
+  - `ir_lote_b`: `ir_lote_b_inicio` (onEnter) e `ir_lote_b_bateu` (onExitHit).
+  - `acoplar_b.onEnter1`: WARN `bateu_com_lote_b_vazio` quando `lote_vazios_b == null` fora do alívio.
+  - `retornar_gestorDeAlivios`: `saida_alivio` com a posição do trem do alívio.
+  - `set_quantidade_alivio`: `qtd_alivio_recebida` (o alívio ainda engata os 41).
+  - MoegaoMar: traces `[CoperXII]` passam a `[MoegaoMar]` (`tipoDeLote` sem mudança).
+- **Arquivos:** `_alp/Classes/Class.Log.java`, `_alp/Agents/MoegaoTerra/Code/Functions.java`, `_alp/Agents/MoegaoTerra/EmbeddedObjects.xml`, `_alp/Agents/MoegaoMar/Code/Functions.java`, `_alp/Agents/MoegaoMar/EmbeddedObjects.xml`

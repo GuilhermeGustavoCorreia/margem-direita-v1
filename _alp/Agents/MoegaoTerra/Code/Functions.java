@@ -91,6 +91,7 @@ return new ArrayList<Faixa>();
 double set_quantidade_alivio(int qt_quantidade)
 {/*ALCODESTART::1793300679236*/
 // ALT-003: provisório — alívio do CoperXXI ainda é próprio (leva tudo das linhas a e b)
+Log.info("MoegaoTerra", "qtd_alivio_recebida", String.format(java.util.Locale.ROOT, "t=%.1f pedido=%d vazios=%d (o alívio ainda engata todos)", time(), qt_quantidade, get_quantidade_vazios()));
 /*ALCODEEND*/}
 
 int get_quantidade_vazios()

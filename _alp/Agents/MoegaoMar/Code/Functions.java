@@ -96,6 +96,7 @@ return new ArrayList<Faixa>();
 double set_quantidade_alivio(int qt_quantidade)
 {/*ALCODESTART::1793298470512*/
 // ALT-003: provisório — alívio do CoperXXI ainda é próprio (leva tudo das linhas a e b)
+Log.info("MoegaoMar", "qtd_alivio_recebida", String.format(java.util.Locale.ROOT, "t=%.1f pedido=%d vazios=%d (o alívio ainda engata todos)", time(), qt_quantidade, get_quantidade_vazios()));
 /*ALCODEEND*/}
 
 int get_quantidade_vazios()
@@ -169,7 +170,7 @@ _grupo_carros = locos + _grupo_vagoes;
 // ALT-073: se o grupo leva todos os carregados, leva o lote inteiro (inclui a loco que empurra na cauda)
 if (_grupo_vagoes >= carregados) _grupo_carros = lote.size();
 
-traceln(String.format("[%.1f][CoperXII][grupo] trem=%d linha=%s vagoes=%d carros=%d (lote tem %d carros, espaco b=%d a=%d)",
+traceln(String.format("[%.1f][MoegaoMar][grupo] trem=%d linha=%s vagoes=%d carros=%d (lote tem %d carros, espaco b=%d a=%d)",
 	time(), lote.getId(), _grupo_linha, _grupo_vagoes, _grupo_carros, lote.size(), get_espaco_linha("b"), get_espaco_linha("a")));
 /*ALCODEEND*/}
 
@@ -182,7 +183,7 @@ if ("b".equals(_grupo_linha)) lote_vazios_b = trem;
 else                          lote_vazios_a = trem;
 
 if (trem.getNumeroDeLocomotivas() > 0)
-	traceln(String.format("[%.1f][CoperXII][vazios] ⚠️ trem=%d ficou com %d loco(s) no meio do lote de vazios",
+	traceln(String.format("[%.1f][MoegaoMar][vazios] ⚠️ trem=%d ficou com %d loco(s) no meio do lote de vazios",
 		time(), trem.getId(), trem.getNumeroDeLocomotivas()));
 /*ALCODEEND*/}
 
@@ -197,7 +198,7 @@ if ("coperXII_vazios_b".equals(trem.tipoDeLote)) {
 	entrar_estoque_a.take(trem);
 }
 
-traceln(String.format("[%.1f][CoperXII][vazios] trem=%d guardado (%s) | lote_b=%d/%d lote_a=%d/%d",
+traceln(String.format("[%.1f][MoegaoMar][vazios] trem=%d guardado (%s) | lote_b=%d/%d lote_a=%d/%d",
 	time(), trem.getId(), trem.tipoDeLote,
 	CAPACIDADE_LOTE_B - get_espaco_linha("b"), CAPACIDADE_LOTE_B,
 	CAPACIDADE_LOTE_A - get_espaco_linha("a"), CAPACIDADE_LOTE_A));
@@ -234,7 +235,7 @@ double iniciar_proximo_lote()
 {/*ALCODESTART::1793298470538*/
 // ALT-073: solta o lote_em_descarga (antiga segunda parte, parada no Wait espera_segunda_parte)
 if (lote_em_descarga != null && lote_em_descarga.getNumeroDeVagoesCarregados() > 0 && esta_na_espera(lote_em_descarga)) {
-	traceln(String.format("[%.1f][CoperXII][segunda_parte] trem=%d começa a descarga (%d vgs carregados, locos=%d)",
+	traceln(String.format("[%.1f][MoegaoMar][segunda_parte] trem=%d começa a descarga (%d vgs carregados, locos=%d)",
 		time(), lote_em_descarga.getId(), lote_em_descarga.getNumeroDeVagoesCarregados(), lote_em_descarga.getNumeroDeLocomotivas()));
 	destino_segunda_parte = "descarga";
 	espera_segunda_parte.free(lote_em_descarga);
@@ -254,7 +255,7 @@ return pools.toArray(new ResourcePool[0]);
 double trocar_lote_em_descarga()
 {/*ALCODESTART::1793298470542*/
 // ALT-073: o lote em descarga acabou; a segunda parte passa a ser o lote em descarga
-traceln(String.format("[%.1f][CoperXII][segunda_parte] lote_em_descarga=%s -> %s",
+traceln(String.format("[%.1f][MoegaoMar][segunda_parte] lote_em_descarga=%s -> %s",
 	time(), lote_em_descarga == null ? "-" : String.valueOf(lote_em_descarga.getId()),
 	lote_segunda_parte == null ? "-" : String.valueOf(lote_segunda_parte.getId())));
 lote_em_descarga   = lote_segunda_parte;
@@ -268,7 +269,7 @@ if (lote_segunda_parte != null && esta_na_espera(lote_segunda_parte)) {
 	destino_segunda_parte = "loco";
 	espera_segunda_parte.free(lote_segunda_parte);
 } else {
-	error("CoperXII: pedir_loco_segunda_parte sem segunda parte no Wait");
+	error("MoegaoMar: pedir_loco_segunda_parte sem segunda parte no Wait");
 }
 /*ALCODEEND*/}
 
@@ -292,7 +293,7 @@ double verificar_alivio()
 // ALT-076: pede alívio quando lote_b, lote_a e o lote da moega somam QTD_ALIVIO
 if (!aguardando_alivio && get_espaco_vazios() == 0) {
 	aguardando_alivio = true;
-	traceln(String.format("[%.1f][CoperXII][alivio] %d vazios prontos (b=%d a=%d moega=%d): pedindo alívio",
+	traceln(String.format("[%.1f][MoegaoMar][alivio] %d vazios prontos (b=%d a=%d moega=%d): pedindo alívio",
 		time(), QTD_ALIVIO, CAPACIDADE_LOTE_B, CAPACIDADE_LOTE_A, get_capacidade_moega()));
 }
 /*ALCODEEND*/}

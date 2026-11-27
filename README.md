@@ -238,3 +238,4 @@ Detalhes no [`CHANGELOG.md`](CHANGELOG.md).
 - **ALT-224**: GestorDeChegadas — pedidos não criados no trens_criados.csv (situacao e motivo)
 - **ALT-213**: GestorDeChegadas — CSV dos trens criados (data do pedido, data de entrada, warm-up)
 - **ALT-214**: GestorDeChegadas — CSV dos trens criados na pasta output/trens_criados
+- **ALT-225**: MoegaoTerra/MoegaoMar — logs do grupo no lote_b e da saída do alívio

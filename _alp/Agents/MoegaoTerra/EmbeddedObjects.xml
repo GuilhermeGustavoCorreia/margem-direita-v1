@@ -2042,6 +2042,9 @@ traceln(String.format("[%.1f][MoegaoTerra][corte] trem=%d corta %d carros da fre
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitDecoupled]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoTerra", "corte_grupo", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d destino=%s pos=%s", time(), train2.getId(), train2.size(), _grupo_linha, Log.pos(train2)));]]></Code>
+				</Value>
 			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
@@ -3843,6 +3846,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoTerra", "ir_lote_b_inicio", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d etapa_alivio=%s pos=%s", time(), train.getId(), train.size(), etapa_alivio, Log.pos(train)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onAtSwitch]]></Name>
@@ -3861,6 +3867,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onExitHit]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[Log.info("MoegaoTerra", "ir_lote_b_bateu", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d pos=%s trens_na_linha=%s", time(), train.getId(), train.size(), Log.pos(train), Log.trens_vizinhos(train)));]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -4439,7 +4448,9 @@ _grupo_carros >= ((Trem) agent).size()]]></Code>
 			<Parameter>
 				<Name><![CDATA[onEnter1]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[// ALT-065: grupo bateu nos vazios da linha: solta o estoque para acoplar
+					<Code><![CDATA[if (lote_vazios_b == null && !"b".equals(etapa_alivio))
+	Log.warn("MoegaoTerra", "bateu_com_lote_b_vazio", String.format(java.util.Locale.ROOT, "t=%.1f grupo=%d carros=%d pos=%s trens_na_linha=%s", time(), train.getId(), train.size(), Log.pos(train), Log.trens_vizinhos(train)));
+// ALT-065: grupo bateu nos vazios da linha: solta o estoque para acoplar
 estoque_b.unblock();]]></Code>
 				</Value>
 			</Parameter>
@@ -5738,7 +5749,8 @@ traceln(String.format("[%.1f][MoegaoTerra][alivio] trem=%d loco do alívio chego
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[main().gestorDeAlivios.retornar_alivio.take(agent);
+					<Code><![CDATA[Log.info("MoegaoTerra", "saida_alivio", String.format(java.util.Locale.ROOT, "t=%.1f trem=%d vgs=%d pos=%s", time(), agent.getId(), ((Trem) agent).getNumeroDeVagoes(), Log.pos((Trem) agent)));
+main().gestorDeAlivios.retornar_alivio.take(agent);
 // ALT-070/071/073: linhas aliviadas: o lote_em_descarga (antiga segunda parte) começa
 aguardando_alivio = false;
 fazendoAlivio = false;
